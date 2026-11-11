@@ -1,0 +1,107 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Maestro Armero - Misión de Crafteo / Fabricación",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Maestro Armero",
+    variantType: "DESERT_FLETCHER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Maestro Armero"}',
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator minecraft:arrow 32", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 2 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_armero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_armero_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_armero_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Armero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Excelentes cuerdas y madera! Toma tus flechas y paga.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Arcos y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_armero_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [{ Text: "¡Estos arcos tienen una tensión perfecta! Los arqueros de la torre podrán disparar con precisión. ¡Aquí está tu recompensa!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo en la mesa de crafteo" }
+          ],
+          Conditions: [{ Name: "q_armero_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "¿Dónde están esos 2 arcos? Usa palos y cuerda en tu mesa de trabajo para fabricarlos." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_armero_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "El arsenal de arquería está al completo gracias a tu manufactura." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Arsenal de Arqueros" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "Los vigías de las torres necesitan arcos nuevos para defender el paso. ¿Sabes usar una mesa de trabajo?" }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_armero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Armero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Fabrica 2 Arcos en la mesa de crafteo.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Misión (Craftear 2 Arcos)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Junta palos y cuerdas y craftea 2 Arcos en tu mesa de trabajo. Te entregaré un buen fajo de flechas y experiencia." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:bow" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "FLETCHER",
+    VariantType: "DESERT_FLETCHER",
+    VillagerData: { profession: "minecraft:fletcher", type: "minecraft:desert" },
+    id: "easy_npc:villager"
+  }
+}
+

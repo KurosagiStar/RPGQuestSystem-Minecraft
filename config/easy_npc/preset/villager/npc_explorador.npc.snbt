@@ -1,0 +1,107 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Explorador del Sendero - Zona Amplia y Brújula",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Explorador del Sendero",
+    variantType: "SAVANNA_CARTOGRAPHER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#55FFFF","bold":true,"text":"Explorador del Sendero"}',
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator minecraft:spyglass 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator cisco_mod:champion_coin 5", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 3 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_explorador_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_explorador_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_explorador_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Explorador] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Gran mapa! Has recibido un Catalejo y 5 Monedas de Campeón.\",\"color\":\"white\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Informe del Valle y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_explorador_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [{ Text: "¡Veo que tus antorchas despejaron la niebla y cartografiaste el sector! Con este informe sabremos por dónde vigilar. ¡Toma tu paga y este catalejo!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo explorando el sector con la brújula" }
+          ],
+          Conditions: [{ Name: "q_explorador_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "Mira el indicador de brújula en tu HUD: te mostrará hacia dónde queda la zona amplia en las colinas este. ¡No olvides las antorchas!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_explorador_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "Gracias a tu exploración, el valle este vuelve a ser seguro para los viajeros." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: La Torre de la Niebla" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "¡Saludos, aventurero! La niebla cubre el valle este y se escuchan ruidos extraños en las alturas. ¿Sabes orientarte en el terreno?" }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_explorador_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Explorador] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Misión aceptada! Sigue la flecha del HUD hacia la zona de búsqueda.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Expedición (Torre de la Niebla)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Sigue la orientación en tu HUD hacia el sector este. Es una zona amplia de 180 bloques. Fabrica 4 antorchas para iluminar y, si puedes, lleva una brújula de apoyo." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:spyglass" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "CARTOGRAPHER",
+    VariantType: "SAVANNA_CARTOGRAPHER",
+    VillagerData: { profession: "minecraft:cartographer", type: "minecraft:savanna" },
+    id: "easy_npc:villager"
+  }
+}
