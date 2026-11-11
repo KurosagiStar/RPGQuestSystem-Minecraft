@@ -1,0 +1,40 @@
+# INSTRUCCIONES DE TRANSFERENCIA: RPG QUEST ENGINE
+
+Esta carpeta contiene todo lo necesario para trasladar el sistema MMORPG a cualquier modpack de Minecraft Forge 1.20.1.
+
+---
+
+## 1. Archivos que debes copiar a tu nuevo modpack
+
+### A) Carpeta `mods/` (Copiar a la carpeta `mods/` de tu modpack):
+- `rpgquestengine-1.0.0.jar` (NUESTRO MOD: HUD Witcher, Diario J, Sonidos, Sincronización Servidor/Cliente, Motor Universal)
+- `easy_npc-forge-1.20.1-7.18.0.jar` (Motor de NPCs físicos y diálogos)
+- `easy_npc_config_ui-forge-1.20.1-7.18.0.jar` (UI gráfica de configuración de Easy NPC)
+- `easy_npc_bundle-forge-1.20.1-7.18.0.jar` (Librería de compatibilidad de Easy NPC)
+
+### B) Carpeta `config/` (Copiar a la carpeta `config/` de tu modpack):
+- `rpg_quests.json` (Archivo con todas las misiones configuradas: Matar, Minar, Craftear, Pescar, Hornear)
+- `easy_npc/preset/villager/` (Presets listos para spawnear en el juego)
+
+---
+
+## 2. Presets de NPCs incluidos listos para usar:
+
+| Archivo Preset | NPC | Tipo de Misión | Comando de Importación en el juego |
+|---|---|---|---|
+| `npc_matar.npc.snbt` | Capitán de la Guardia | **KILL** (Matar 5 zombies) | `/easy_npc preset import npc_matar` |
+| `npc_minar.npc.snbt` | Herrero Enano | **MINE** (Picar 8 Mena de Hierro) | `/easy_npc preset import npc_minar` |
+| `npc_craftear.npc.snbt` | Maestro Armero | **CRAFT** (Craftear 2 Arcos) | `/easy_npc preset import npc_craftear` |
+| `npc_pescar.npc.snbt` | Pescador del Muelle | **FISH** (Pescar 3 peces) | `/easy_npc preset import npc_pescar` |
+| `npc_hornear.npc.snbt` | Panadero de la Aldea | **SMELT** (Cocinar 6 panes) | `/easy_npc preset import npc_hornear` |
+
+---
+
+## 3. ¿Cómo añadir nuevos objetivos a cualquier mod?
+
+Solo edita `config/rpg_quests.json`. El mod soporta cualquier ID de cualquier mod:
+- Matar Dragones: `"type": "KILL", "target": "iceandfire:fire_dragon"`
+- Minar Netherite: `"type": "MINE", "target": "minecraft:ancient_debris"`
+- Craftear Armas Modded: `"type": "CRAFT", "target": "apotheosis:gem"`
+- Entregar Ítems (Fetch): `"type": "ITEM", "target": "minecraft:diamond"`
+
