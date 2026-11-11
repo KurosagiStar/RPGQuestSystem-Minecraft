@@ -4,10 +4,32 @@ Sistema universal e independiente de misiones estilo MMORPG / The Witcher 3 con 
 
 ---
 
+## 📁 Estructura del Repositorio
+
+```text
+RPGQuestSystem-Minecraft/
+├── Mods/                             <-- Archivos instalables en el juego (.jar)
+│   └── rpgquestengine-1.0.0.jar      <-- Mod compilado listo para .minecraft/mods/
+├── Code/                             <-- Todo el código fuente de los sistemas
+│   ├── rpg-quest-engine/             <-- Código fuente del mod Java Forge
+│   │   ├── src/
+│   │   ├── build.gradle
+│   │   └── gradlew.bat
+│   └── easy-npc-spawner/             <-- Código / scripts del addon de spawn
+├── config/                           <-- Configuraciones compartidas
+│   ├── rpg_quests.json               <-- Definición de misiones
+│   └── easy_npc/preset/villager/     <-- Presets SNBT de Easy NPC
+├── docs/                             <-- Guías técnicas y skills
+│   └── skills/
+└── README.md
+```
+
+---
+
 ## 🚀 Instalación Rápida (Jugador / Servidor)
 
-1. Copia el archivo de la carpeta `mods/`:
-   - `mods/rpgquestengine-1.0.0.jar` ➔ en la carpeta `.minecraft/mods/` (cliente y servidor).
+1. Copia el archivo de la carpeta `Mods/`:
+   - `Mods/rpgquestengine-1.0.0.jar` ➔ en la carpeta `.minecraft/mods/` (cliente y servidor).
 2. Copia la carpeta `config/`:
    - `config/rpg_quests.json` ➔ en `.minecraft/config/rpg_quests.json`.
    - `config/easy_npc/preset/` ➔ en `.minecraft/config/easy_npc/preset/`.
@@ -129,7 +151,10 @@ Importar un preset en el juego mirando al NPC:
 Requisitos: JDK 17.
 
 ```bash
-# En la raíz del repositorio:
+# Entrar a la carpeta del motor:
+cd Code/rpg-quest-engine
+
+# Compilar:
 ./gradlew build
-# El jar resultante se genera en build/libs/rpgquestengine-1.0.0.jar
+# El jar resultante se genera en Code/rpg-quest-engine/build/libs/rpgquestengine-1.0.0.jar
 ```

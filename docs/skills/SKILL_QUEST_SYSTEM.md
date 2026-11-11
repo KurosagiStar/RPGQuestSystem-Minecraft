@@ -18,7 +18,7 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 
 ### A. Repositorio Oficial en GitHub y Local
 - **GitHub:** `https://github.com/KurosagiStar/RPGQuestSystem-Minecraft.git` (rama `main`)
-- **Directorio de desarrollo local:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\`
+- **Directorio de desarrollo local:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\`
 - **ModID:** `rpgquestengine`
 - **Nombre en Forge:** `NPC RPG Quest System`
 - **Paquete Java:** `com.rpgquestengine`
@@ -37,8 +37,8 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 - `NetworkHandler.java` & `SyncPlayerQuestsPacket.java`: Replicación bidireccional cliente-servidor.
 
 ### C. Rutas de Despliegue en el Sistema
-Al compilar con `.\gradlew.bat build --no-daemon`, el archivo `build/libs/rpgquestengine-1.0.0.jar` se sincroniza en:
-1. Repositorio: `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\mods\rpgquestengine-1.0.0.jar`
+Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el archivo `build/libs/rpgquestengine-1.0.0.jar` se sincroniza en:
+1. Repositorio: `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Mods\rpgquestengine-1.0.0.jar`
 2. Instancia jugable: `D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
 3. Cliente de respaldo: `C:\Users\Kuromi\Desktop\cisco\Client\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
 4. Servidor dedicado: `C:\Users\Kuromi\Desktop\cisco\Server\mods\`
