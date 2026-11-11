@@ -1,0 +1,107 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine_Cisco",
+    category: "CiscoAddon",
+    created: 1794353213551L,
+    description: "Centinela Veterano - Contrato de Fell Knights",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Centinela Veterano",
+    variantType: "SNOW_WEAPONSMITH",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Centinela Veterano"}',
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator cisco_mod:champion_coin 8", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 3 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_fell_knights_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_fell_knights_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_fell_knights_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Centinela] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Gran valor, guerrero! Toma tus Monedas de Campeón.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Informe de Caballeros y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_fell_knights_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Contrato Cumplido",
+          Priority: 20,
+          Texts: [{ Text: "¡Has quebrado la guardia personal del Fell King! Esas armaduras negras no volverán a aterrorizar los senderos. ¡Toma tu paga de campeón!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo cazando Caballeros Caídos" }
+          ],
+          Conditions: [{ Name: "q_fell_knights_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "¿Dónde están las 3 bajas de los Caballeros Caídos? Mantente alerta, sus espadas están bañadas en oscuridad." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_fell_knights_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "Tu nombre ya es respetado entre los centinelas del reino." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Contrato: Cazar 3 Fell Knights" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "Los Caballeros Caídos han sido vistos en las cercanías. No son simples monstruos; son combatientes de élite." }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_fell_knights_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Centinela] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Contrato aceptado! Elimina 3 Fell Knights.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Contrato (3 Caballeros Caídos)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Elimina a 3 Fell Knights con vida. Te pagaré con 8 Monedas de Campeón de la ciudadela y valiosa experiencia de combate." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:diamond_sword" },
+      { Count: 1b, id: "minecraft:shield" }
+    ],
+    Profession: "WEAPONSMITH",
+    VariantType: "SNOW_WEAPONSMITH",
+    VillagerData: { profession: "minecraft:weaponsmith", type: "minecraft:snow" },
+    id: "easy_npc:villager"
+  }
+}
+

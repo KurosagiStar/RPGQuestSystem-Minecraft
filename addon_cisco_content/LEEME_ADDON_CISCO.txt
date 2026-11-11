@@ -1,0 +1,41 @@
+# ADDON DE CONTENIDO PARA CISCO'S FANTASY MEDIEVAL RPG
+
+Esta subcarpeta contiene el paquete de contenido adaptado 100% al lore, jefes, economía y recompensas del modpack de Cisco.
+
+---
+
+## 1. ¿Cómo instalar este Addon?
+
+Simplemente copia y pega el contenido de esta carpeta dentro de tu instancia de Cisco:
+- `config/rpg_quests.json` -> Copiar a tu carpeta `config/` (sustituye o fusiona las misiones).
+- `config/easy_npc/preset/villager/` -> Copiar a tu carpeta `config/easy_npc/preset/villager/`.
+
+---
+
+## 2. Contenido incluido en el Addon de Cisco:
+
+### Misiones y Contratos (`rpg_quests.json`):
+1. **La Amenaza del Fell King (`CONTRACT`):**
+   - Objetivo: Derrotar al jefe final `cisco_mod:fell_king`.
+   - Recompensas: 15 Monedas de Campeón, 5 Niveles XP, 1 Fragmento de Sol.
+2. **Purga de los Caballeros Caídos (`CONTRACT`):**
+   - Objetivo: Cazar 3 `cisco_mod:fell_knight`.
+   - Recompensas: 8 Monedas de Campeón, 3 Niveles XP.
+3. **Forja del Héroe Medieval (`MAIN`):**
+   - Objetivo: Conseguir 2 `cisco_mod:dark_matter` para forja legendaria.
+   - Recompensas: 10 Monedas de Campeón, 4 Niveles XP.
+4. **Monstruos de la Calamidad: Ignis (`CONTRACT`):**
+   - Objetivo: Vencer al jefe colosal `cataclysm:ignis`.
+   - Recompensas: 20 Monedas de Campeón, 10 Niveles XP.
+
+---
+
+## 3. Presets de NPCs oficiales de Cisco:
+
+- **`cisco_capitan_guardia.npc.snbt`**: Capitán de la guardia que encarga la purga nocturna y paga con `cisco_mod:champion_coin`.
+- **`cisco_centinela_veterano.npc.snbt`**: Centinela de nieve que ofrece el contrato de los Caballeros Caídos (`cisco_mod:fell_knight`).
+
+### Comando rápido para spawnear en el juego:
+- `/easy_npc preset import cisco_capitan_guardia`
+- `/easy_npc preset import cisco_centinela_veterano`
+

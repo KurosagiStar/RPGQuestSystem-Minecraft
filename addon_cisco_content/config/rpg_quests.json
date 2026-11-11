@@ -1,0 +1,95 @@
+[
+  {
+    "id": "cisco_fell_king",
+    "category": "CONTRACT",
+    "title": "La Amenaza del Fell King",
+    "npc": "Capitán de la Guardia",
+    "description": "El monarca caído acecha en su fortaleza oscura. Derrótalo para liberar la región de su corrupción.",
+    "suggestedLevel": 50,
+    "activeTag": "q_fell_king_activa",
+    "doneTag": "q_fell_king_lista",
+    "completedTag": "q_fell_king_entregada",
+    "rewards": [
+      "15x Monedas de Campeón",
+      "5 Niveles de Experiencia",
+      "1x Fragmento del Sol"
+    ],
+    "stages": [
+      {
+        "description": "Derrota al Fell King",
+        "type": "KILL",
+        "target": "cisco_mod:fell_king",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_explorar_undergarden",
+    "category": "MAIN",
+    "title": "Viaje a las Profundidades Oscuras",
+    "npc": "Erudito Arcano",
+    "description": "Cruza el portal arcano y adéntrate en la dimensión subterránea de The Undergarden.",
+    "suggestedLevel": 20,
+    "activeTag": "q_undergarden_activa",
+    "doneTag": "q_undergarden_lista",
+    "completedTag": "q_undergarden_entregada",
+    "rewards": [
+      "10x Monedas de Campeón",
+      "3 Niveles de Experiencia"
+    ],
+    "stages": [
+      {
+        "description": "Entra a la dimensión The Undergarden",
+        "type": "DIMENSION",
+        "target": "undergarden:undergarden",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_fortaleza_cataclysm",
+    "category": "CONTRACT",
+    "title": "La Fragua de las Almas",
+    "npc": "Cazador de Bestias",
+    "description": "Encuentra e infíltrate en la Forja de Almas Negras en el inframundo.",
+    "suggestedLevel": 35,
+    "activeTag": "q_fragua_activa",
+    "doneTag": "q_fragua_lista",
+    "completedTag": "q_fragua_entregada",
+    "rewards": [
+      "12x Monedas de Campeón",
+      "4 Niveles de Experiencia"
+    ],
+    "stages": [
+      {
+        "description": "Descubre la Forja de Almas Negras (Cataclysm)",
+        "type": "STRUCTURE",
+        "target": "cataclysm:soul_black_smith",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_bioma_mistico",
+    "category": "SECONDARY",
+    "title": "Tierras de Magia Antigua",
+    "npc": "Alquimista Elena",
+    "description": "Localiza el bosque místico donde crecen las esencias arcanas puras.",
+    "suggestedLevel": 15,
+    "activeTag": "q_bioma_activa",
+    "doneTag": "q_bioma_lista",
+    "completedTag": "q_bioma_entregada",
+    "rewards": [
+      "6x Monedas de Campeón",
+      "2 Pociones de Salud Mayor"
+    ],
+    "stages": [
+      {
+        "description": "Explora el Bosque Místico",
+        "type": "BIOME",
+        "target": "biomesoplenty:mystic_grove",
+        "amount": 1
+      }
+    ]
+  }
+]
