@@ -1,5 +1,33 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
+## [1.1.0-update] - 2026-11-12
+
+### 1. Cadenas de Misiones y Relevos entre NPCs (Handoff)
+- **Soporte de Prerrequisitos (`prerequisiteQuestId`):** Permite encadenar misiones (ej. `Misión B` solo es aceptable si `Misión A` ya tiene su `completedTag` entregada). Si un jugador intenta forzar la activación sin cumplir el prerrequisito, el motor revoca el tag y emite advertencia sonora/visual.
+- **Nuevas Etapas de Misión:**
+  - `TALK`: Completada al interactuar con un NPC objetivo específico (`target: "villager_centinela"` o tag de NPC).
+  - `DELIVER`: Entrega de objetos o informes al interactuar con el NPC de destino.
+
+### 2. Detección Robusta de Kills Indirectos y Jefes
+- **Resolución Avanzada de Asesino (`resolvePlayerKiller`):**
+  - **Proyectiles:** Detección de daño causado por flechas, tridentes y proyectiles mágicos (`Projectile.getOwner()`).
+  - **Mascotas e Invocaciones:** Crédito de kill para el dueño de perros, lobos y summons domesticados (`TamableAnimal.getOwner()`).
+  - **Magia y Daño de Área:** Daño de hechizos (ej. *Iron's Spells and Spellbooks*) registrado mediante el último jugador atacante registrado en la entidad (`victim.getLastHurtByMob()`).
+  - **Jefes Multipart:** Detección del piloto o vehículo si la parte destruida es un sub-componente (`victim.getVehicle()`).
+
+### 3. Soporte de NBT para Gemas de Apotheosis e Ítems Modded
+- **Filtrado NBT en Etapas `ITEM`:** Las etapas `ITEM` ahora admiten `nbtKey` (con soporte para claves anidadas separadas por punto como `affix_data.gem`) y `nbtValue` opcional.
+- Permite crear misiones de recolección de gemas de Apotheosis (`apotheosis:gem`) distinguiendo gemas específicas o cualquier gema engarzable sin falsos positivos con ítems base vacíos.
+
+### 4. Separación Estricta de Bases de Datos de Misiones
+- **Base Vanilla (`Addons/RPG Quest Engine (Base)/.minecraft/config/rpg_quests.json`):** 100% libre de dependencias de mods externos. Compatible con cualquier servidor o cliente vanilla/forge estándar.
+- **Addon Cisco Implementation (`Addons/Cisco Implementation/.minecraft/config/rpg_quests.json`):** Misiones y contratos exclusivos para los jefes y dimensiones del modpack:
+  - Jefes: *Fell King Boss* (`cisco_mod:fellkingboss`), *Ignis* (`cataclysm:ignis`), *Netherite Monstrosity* (`cataclysm:netherite_monstrosity`), *The Harbinger* (`cataclysm:the_harbinger`), *Night Lich* (`bosses_of_mass_destruction:lich`), *Frostmaw* (`mowziesmobs:frostmaw`).
+  - Dimensiones: *The Aether* (`aether:the_aether`), *Twilight Forest* (`twilightforest:twilight_forest`).
+  - Gemas de *Apotheosis*.
+
+---
+
 ## [1.0.0-update] - 2026-11-12
 
 ### 1. Sistema de Misiones y Tracking

@@ -30,6 +30,14 @@ public class QuestConfig {
     public static boolean hudEnabled = true;
     public static String trackedQuestId = "";
 
+    public static QuestDefinition getQuestById(String id) {
+        if (id == null || id.isEmpty()) return null;
+        for (QuestDefinition q : QUESTS) {
+            if (id.equals(q.id)) return q;
+        }
+        return null;
+    }
+
     public static void loadConfig() {
         Path configDir = FMLPaths.CONFIGDIR.get();
         File questFile = configDir.resolve("rpg_quests.json").toFile();

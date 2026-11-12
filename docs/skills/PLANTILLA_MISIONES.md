@@ -191,7 +191,39 @@ No requiere coordenadas manuales:
 }
 ```
 
-### 10. Objetivo Opcional (`"optional": true`)
+### 10. Hablar con otro NPC / Relevo (`TALK`)
+```json
+{
+  "description": "Habla con el Centinela Veterano en la torre",
+  "type": "TALK",
+  "target": "villager_centinela",
+  "amount": 1
+}
+```
+
+### 11. Entregar Informe u Objetos (`DELIVER`)
+```json
+{
+  "description": "Entrega las órdenes selladas al Capitán",
+  "type": "DELIVER",
+  "target": "villager_guardia",
+  "amount": 1
+}
+```
+
+### 12. Ítems con NBT Específico (ej. Gemas de Apotheosis)
+```json
+{
+  "description": "Consigue una Gema de Apotheosis",
+  "type": "ITEM",
+  "target": "apotheosis:gem",
+  "amount": 1,
+  "nbtKey": "affix_data.gem",
+  "nbtValue": ""
+}
+```
+
+### 13. Objetivo Opcional (`"optional": true`)
 ```json
 {
   "description": "Prepara flechas extra (Opcional)",

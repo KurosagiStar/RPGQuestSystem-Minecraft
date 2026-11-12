@@ -48,6 +48,10 @@ public class QuestDefinition {
         public String mobToSpawn = "minecraft:cave_spider";
         public int mobSpawnCount = 4;
 
+        // Soporte para filtrado por NBT (ej. Gemas de Apotheosis: nbtKey="affix_data.gem", nbtValue="apotheosis:core/warlord")
+        public String nbtKey = "";
+        public String nbtValue = "";
+
         public QuestStage() {}
 
         public QuestStage(String desc, String type, String target, int amount) {

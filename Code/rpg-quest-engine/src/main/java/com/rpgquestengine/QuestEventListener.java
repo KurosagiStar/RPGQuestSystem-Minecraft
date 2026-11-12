@@ -61,12 +61,53 @@ public class QuestEventListener {
 
     @SubscribeEvent
     public static void onEntityKilled(LivingDeathEvent event) {
-        if (event.getSource().getEntity() instanceof ServerPlayer sp) {
-            ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(event.getEntity().getType());
+        ServerPlayer sp = resolvePlayerKiller(event.getSource(), event.getEntity());
+        if (sp != null) {
+            LivingEntity victim = event.getEntity();
+            ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(victim.getType());
             if (entityId != null) {
                 incrementQuestTarget(sp, "KILL", entityId.toString());
             }
+
+            // Soporte para jefes multipart (ej. Ice and Fire, Cataclysm)
+            if (victim.getVehicle() instanceof LivingEntity parentLiving) {
+                ResourceLocation parentId = ForgeRegistries.ENTITY_TYPES.getKey(parentLiving.getType());
+                if (parentId != null && !parentId.equals(entityId)) {
+                    incrementQuestTarget(sp, "KILL", parentId.toString());
+                }
+            }
         }
+    }
+
+    private static ServerPlayer resolvePlayerKiller(net.minecraft.world.damagesource.DamageSource source, LivingEntity victim) {
+        // 1. Causa directa o indirecta
+        if (source.getEntity() instanceof ServerPlayer sp) {
+            return sp;
+        }
+        if (source.getDirectEntity() instanceof ServerPlayer sp) {
+            return sp;
+        }
+
+        // 2. Proyectil lanzado por jugador (flecha, tridente, magia de mods)
+        if (source.getDirectEntity() instanceof net.minecraft.world.entity.projectile.Projectile proj) {
+            if (proj.getOwner() instanceof ServerPlayer sp) {
+                return sp;
+            }
+        }
+
+        // 3. Mascota o invocación domesticada (lobo, minion de magia)
+        if (source.getEntity() instanceof net.minecraft.world.entity.TamableAnimal tamable) {
+            if (tamable.getOwner() instanceof ServerPlayer sp) {
+                return sp;
+            }
+        }
+
+        // 4. Último jugador que le hizo daño reciente (dentro de los últimos segundos)
+        if (victim.getLastHurtByMob() instanceof ServerPlayer sp) {
+            return sp;
+        }
+
+        return null;
     }
 
     @SubscribeEvent
@@ -100,7 +141,36 @@ public class QuestEventListener {
                 }
                 sp.addTag("rqe_last_npc_" + entityUuid + "_" + posX + "_" + posZ);
 
-                // 2. Asociar a cualquier misión activa que el jugador tenga pendiente de entrega o aceptación
+                // 2. Evaluar objetivos de hablar / entregar a este NPC (TALK / DELIVER)
+                for (QuestDefinition q : QuestConfig.QUESTS) {
+                    if (sp.getTags().contains(q.activeTag) && !sp.getTags().contains(q.completedTag)) {
+                        for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                            QuestDefinition.QuestStage stage = q.stages.get(sIdx);
+                            String stType = stage.type != null ? stage.type.toUpperCase() : "";
+                            if ("TALK".equals(stType) || "DELIVER".equals(stType)) {
+                                boolean targetMatch = false;
+                                if (stage.target != null && !stage.target.isEmpty()) {
+                                    if ("any".equalsIgnoreCase(stage.target)) targetMatch = true;
+                                    for (String entTag : living.getTags()) {
+                                        if (entTag.equalsIgnoreCase(stage.target)) { targetMatch = true; break; }
+                                    }
+                                    if (!targetMatch) {
+                                        String tNorm = java.text.Normalizer.normalize(stage.target, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                                        String eNorm = java.text.Normalizer.normalize(entityName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                                        String cNorm = java.text.Normalizer.normalize(customName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                                        if (eNorm.contains(tNorm) || cNorm.contains(tNorm) || tNorm.contains(eNorm)) targetMatch = true;
+                                    }
+                                }
+                                if (targetMatch) {
+                                    String internalKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
+                                    RPGQuestEngine.setInternalScore(sp, internalKey, 1);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // 3. Asociar a cualquier misión activa que el jugador tenga pendiente de entrega o aceptación
                 for (QuestDefinition q : QuestConfig.QUESTS) {
                     boolean matches = false;
 

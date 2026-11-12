@@ -139,6 +139,17 @@ public class RPGQuestEngine {
 
         for (QuestDefinition q : QuestConfig.QUESTS) {
             if (playerTags.contains(q.activeTag) && !playerTags.contains(q.completedTag)) {
+                // 1. Validar Prerrequisito si tiene uno configurado
+                if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                    QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
+                    if (prereq != null && prereq.completedTag != null && !playerTags.contains(prereq.completedTag)) {
+                        // El jugador no completó la misión previa: cancelar activación
+                        sp.removeTag(q.activeTag);
+                        sp.displayClientMessage(net.minecraft.network.chat.Component.literal("§c[RPGQuestEngine] Bloqueado: Completa primero \"" + prereq.title + "\"."), true);
+                        continue;
+                    }
+                }
+
                 // Si la misión está activa pero aún no tiene NPC asignado, asignarle el último NPC interactuado
                 boolean hasAssignedPos = false;
                 for (String t : playerTags) {
@@ -175,7 +186,7 @@ public class RPGQuestEngine {
 
                     switch (type) {
                         case "ITEM":
-                            current = countItemInInventory(sp.getInventory(), stage.target);
+                            current = countItemInInventory(sp.getInventory(), stage.target, stage.nbtKey, stage.nbtValue);
                             break;
 
                         case "TAG":
@@ -426,13 +437,39 @@ public class RPGQuestEngine {
         }
     }
 
-    private int countItemInInventory(Inventory inv, String itemId) {
+    private int countItemInInventory(Inventory inv, String itemId, String nbtKey, String nbtValue) {
         Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemId));
         if (item == null) return 0;
         int count = 0;
         for (int i = 0; i < inv.getContainerSize(); i++) {
             ItemStack stack = inv.getItem(i);
             if (!stack.isEmpty() && stack.getItem() == item) {
+                if (nbtKey != null && !nbtKey.isEmpty()) {
+                    net.minecraft.nbt.CompoundTag tag = stack.getTag();
+                    if (tag == null) continue;
+                    
+                    // Soporte de claves anidadas separadas por punto (ej. "affix_data.gem")
+                    String[] parts = nbtKey.split("\\.");
+                    net.minecraft.nbt.CompoundTag currentTag = tag;
+                    boolean match = true;
+                    for (int p = 0; p < parts.length - 1; p++) {
+                        if (currentTag.contains(parts[p], net.minecraft.nbt.Tag.TAG_COMPOUND)) {
+                            currentTag = currentTag.getCompound(parts[p]);
+                        } else {
+                            match = false;
+                            break;
+                        }
+                    }
+                    if (!match) continue;
+                    
+                    String leafKey = parts[parts.length - 1];
+                    if (!currentTag.contains(leafKey)) continue;
+
+                    if (nbtValue != null && !nbtValue.isEmpty()) {
+                        String valStr = currentTag.getString(leafKey);
+                        if (!nbtValue.equalsIgnoreCase(valStr)) continue;
+                    }
+                }
                 count += stack.getCount();
             }
         }
