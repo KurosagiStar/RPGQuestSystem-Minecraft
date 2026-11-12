@@ -1,0 +1,223 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine_Chain",
+    category: "ChainQuests",
+    created: 1794353213551L,
+    description: "Eslabón 1: Comandante de la Guardia (Inicia Cadena Muralla)",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Comandante de la Guardia",
+    variantType: "PLAINS_ARMORER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [
+          {
+            Type: "OPEN_DEFAULT_DIALOG"
+          }
+        ]
+      }
+    },
+    ArmorItems: [
+      { Count: 1b, id: "minecraft:iron_boots" },
+      { Count: 1b, id: "minecraft:iron_leggings" },
+      { Count: 1b, id: "minecraft:iron_chestplate" },
+      { Count: 1b, id: "minecraft:iron_helmet" }
+    ],
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Comandante de la Muralla"}',
+    Tags: ["chain_muralla_1_comandante"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/give @initiator cisco_mod:champion_coin 5",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/experience add @initiator 2 levels",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_capitan_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_capitan_lista",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_capitan_entregada",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Comandante] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Defensa impecable! Ahora tengo una misión crucial: lleva la orden de relevo a la Torre Norte.\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Puntos de Guardia y Cobrar"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_capitan_lista",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "mision_lista",
+          Name: "Muralla Asegurada",
+          Priority: 30,
+          Texts: [
+            {
+              Text: "¡Las bajas de zombies han sido confirmadas! Las murallas respiran en paz por ahora. Toma tu recompensa de la guarnición."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_relevo_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Comandante] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Entendido! Lleva este sello al Centinela de la Torre Norte.\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_cadena",
+              Name: "Aceptar: Llevar el Relevo a la Torre Norte"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Luego vuelvo"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_capitan_entregada",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "desbloquear_siguiente",
+          Name: "Siguiente Orden de la Cadena",
+          Priority: 25,
+          Texts: [
+            {
+              Text: "Soldado, la primera línea resistió, pero el Centinela en la Torre Norte no responde a las señales de humo. Ve hacia allá y coordina el relevo defensivo de inmediato."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "en_progreso_1",
+              Name: "Sigo limpiando la muralla"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_capitan_activa",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "en_progreso",
+          Name: "En Combate",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¿Aún quedan zombies en pie junto a la muralla? No podemos bajar la guardia hasta que caigan los 5."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_capitan_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Comandante] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡A las armas! Purga a los 5 no-muertos.\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_primera",
+              Name: "Aceptar: La Caída de la Noche (Paso 1)"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Aún no estoy listo"
+            }
+          ],
+          Conditions: [],
+          Label: "bienvenida",
+          Name: "Puesto de Guardia",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "¡Saludos, aventurero! Los no-muertos están azotando los muros exteriores. Si ayudas a defender el perímetro, te confiaré una misión de relevo táctico hacia los puestos avanzados."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

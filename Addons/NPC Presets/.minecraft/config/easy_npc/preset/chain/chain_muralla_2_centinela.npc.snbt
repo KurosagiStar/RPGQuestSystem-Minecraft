@@ -1,0 +1,272 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine_Chain",
+    category: "ChainQuests",
+    created: 1794353213551L,
+    description: "Eslabón 2: Centinela de la Torre Norte (Recibe Relevo y da Contrato)",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Centinela de la Torre Norte",
+    variantType: "SNOW_WEAPONSMITH",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [
+          {
+            Type: "OPEN_DEFAULT_DIALOG"
+          }
+        ]
+      }
+    },
+    ArmorItems: [
+      { Count: 1b, id: "minecraft:chainmail_boots" },
+      { Count: 1b, id: "minecraft:chainmail_leggings" },
+      { Count: 1b, id: "minecraft:chainmail_chestplate" },
+      { Count: 1b, id: "minecraft:iron_helmet" }
+    ],
+    CustomName: '{"color":"#55FFFF","bold":true,"text":"Centinela de la Torre"}',
+    Tags: ["chain_muralla_2_centinela"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/give @initiator cisco_mod:champion_coin 8",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/experience add @initiator 3 levels",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_fell_knights_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_fell_knights_lista",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_fell_knights_entregada",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Centinela] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Las sombras retroceden! Ahora ve con el Cazador del Pantano para dar el golpe final.\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "cobrar_contrato",
+              Name: "Entregar Emblemas de Sombras y Cobrar"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_fell_knights_lista",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "contrato_cumplido",
+          Name: "Camino Asegurado",
+          Priority: 30,
+          Texts: [
+            {
+              Text: "¡Excelente combate! Esos caballeros oscuros ya no bloquearán la ruta hacia el campamento del pantano. Has demostrado estar listo para la verdadera cacería."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/give @initiator cisco_mod:champion_coin 6",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/experience add @initiator 2 levels",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_relevo_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_relevo_lista",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_relevo_entregada",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Centinela] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Orden sellada recibida! Gracias al Comandante. Ahora atiende este contrato urgente.\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_relevo",
+              Name: "Entregar Orden Sellada del Comandante"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Un momento"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_relevo_activa",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "recibir_relevo",
+          Name: "Relevo Recibido",
+          Priority: 25,
+          Texts: [
+            {
+              Text: "¡Por fin alguien de la guarnición principal! Estábamos incomunicados por una escuadra de sombras que rodea los riscos. Rompe el sello del Comandante y escucha la situación."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_fell_knights_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Centinela] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Elimina a los 3 soldados oscuros en el sendero!\",\"color\":\"red\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_contrato",
+              Name: "Aceptar Contrato: Purgar los Riscos (Paso 3)"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Volveré armado"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_relevo_entregada",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "siguiente_paso",
+          Name: "La Emboscada del Desfiladero",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "Ahora que el relevo fue registrado, necesitamos despejar la vanguardia de sombras antes de conectar con el Cazador de Bestias del pantano. Elimina a 3 Caballeros Caídos en el camino."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Comprendido"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_fell_knights_activa",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "en_caza",
+          Name: "Cazando en los Riscos",
+          Priority: 15,
+          Texts: [
+            {
+              Text: "Los 3 caballeros oscuros siguen patrullando el desfiladero norte. ¡No dejes que se reagrupen!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [],
+          Label: "sin_acceso",
+          Name: "Torre Sellada",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "La torre se encuentra en estado de alerta máxima. Solo atiendo a emisarios de la guarnición con la orden de relevo sellada del Comandante de la Muralla."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

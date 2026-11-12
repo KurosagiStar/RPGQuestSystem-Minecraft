@@ -1,0 +1,207 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine_Chain",
+    category: "ChainQuests",
+    created: 1794353213551L,
+    description: "Eslabón 3: Cazador del Pantano (Cierre de Cadena y Boss)",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Cazador del Pantano",
+    variantType: "SWAMP_ARMORER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [
+          {
+            Type: "OPEN_DEFAULT_DIALOG"
+          }
+        ]
+      }
+    },
+    ArmorItems: [
+      { Count: 1b, id: "minecraft:leather_boots" },
+      { Count: 1b, id: "minecraft:iron_leggings" },
+      { Count: 1b, id: "minecraft:iron_chestplate" },
+      { Count: 1b, id: "minecraft:leather_helmet" }
+    ],
+    CustomName: '{"color":"#55FF55","bold":true,"text":"Cazador de Bestias"}',
+    Tags: ["chain_muralla_3_cazador"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/give @initiator cisco_mod:champion_coin 15",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/give @initiator minecraft:bow{Enchantments:[{id:\"minecraft:power\",lvl:3s}]}",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/experience add @initiator 5 levels",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cazador_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cazador_lista",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cazador_entregada",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Cazador] \",\"color\":\"green\",\"bold\":true},{\"text\":\"¡Nido erradicado y cadena completada! Has salvado todo el sector.\",\"color\":\"gold\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "cobrar_caza",
+              Name: "Entregar Trofeos de Caza y Reclamar Arco de Maestro"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cazador_lista",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "caza_cumplida",
+          Name: "Bestia Erradicada",
+          Priority: 30,
+          Texts: [
+            {
+              Text: "¡Excelente rastreo! El nido arácnido ha sido completamente aniquilado. Con la muralla defendida, el desfiladero despejado y la cueva limpia, toda la región te debe su supervivencia."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cazador_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Cazador] \",\"color\":\"green\",\"bold\":true},{\"text\":\"¡Sigue la brújula y destruye a las bestias en el nido!\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_caza_final",
+              Name: "Aceptar Contrato Final: La Bestia de la Cueva"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Aún debo afilar mi espada"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_fell_knights_entregada",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "contrato_final",
+          Name: "El Nido en las Profundidades",
+          Priority: 25,
+          Texts: [
+            {
+              Text: "¡El Centinela me mandó un emisario! Me alegra que hayas quebrado la guardia de los caballeros caídos. Ahora tenemos el camino libre para el verdadero golpe: un nido de monstruos arácnidos en la caverna profunda."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Sigo en la cueva"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cazador_activa",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "en_caza_activa",
+          Name: "Rastreando el Nido",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "Tu brújula apunta directo al corazón del nido. Entra, haz que salgan y elimina las 4 arañas de cueva."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [],
+          Label: "cazador_bloqueado",
+          Name: "Campamento Oculto",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Las bestias salvajes y los caballeros caídos rondan demasiado cerca. No acepto novatos a menos que el Centinela de la Torre Norte certifique que despejaron el desfiladero."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
