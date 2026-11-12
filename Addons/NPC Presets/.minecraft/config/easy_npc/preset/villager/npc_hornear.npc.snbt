@@ -3,7 +3,7 @@
     author: "RPGQuestEngine",
     category: "General",
     created: 1794353213551L,
-    description: "Panadero de la Aldea - Misión de Cocina / Hornear",
+    description: "Panadero de la Aldea - Mision de Cocina / Hornear",
     entityTypeId: "easy_npc:villager",
     modified: 1794353213551L,
     name: "Panadero de la Aldea",
@@ -40,7 +40,7 @@
           Label: "mision_lista",
           Name: "Mision Completada",
           Priority: 20,
-          Texts: [{ Text: "¡Huele a pan recién horneado y comida crujiente! Con estas raciones los centinelas no pasarán hambre. ¡Aquí tienes tu paga!" }]
+          Texts: [{ Text: "¡Huele a comida recién horneada y crujiente! Con estas raciones los centinelas no pasarán hambre. ¡Aquí tienes tu paga!" }]
         },
         {
           Buttons: [
@@ -50,7 +50,7 @@
           Label: "en_progreso",
           Name: "En Progreso",
           Priority: 10,
-          Texts: [{ Text: "¿Cómo van esas 6 raciones? Enciende el horno con carbón y asegúrate de hornear el alimento." }]
+          Texts: [{ Text: "¿Cómo van esas 4 raciones horneadas? Enciende el horno con carbón y asegúrate de hornear el alimento." }]
         },
         {
           Buttons: [
@@ -64,7 +64,7 @@
         },
         {
           Buttons: [
-            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Raciones para la Guarnición" },
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Raciones para la Guarnicion" },
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Label: "default",
@@ -77,25 +77,25 @@
             {
               Actions: [
                 { Cmd: "/tag @initiator add q_panadero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Panadero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Cocina u hornea 6 panes en el horno.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Panadero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Cocina u hornea 4 patatas o carnes en el horno.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],
               Label: "aceptar",
-              Name: "Aceptar Misión (Hornear 6 Panes)"
+              Name: "Aceptar Mision (Hornear 4 Alimentos)"
             },
             { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
           ],
           Label: "mision",
           Name: "Mision",
           Priority: -1,
-          Texts: [{ Text: "Mete masa o trigo a hornear para preparar 6 unidades de Pan caliente. Te recompensaré con manzanas frescas y esmeraldas." }]
+          Texts: [{ Text: "Hornea 4 Patatas Asadas (minecraft:baked_potato) en un horno encendido. Te recompensaré con manzanas frescas y esmeraldas." }]
         }
       ],
       Type: "CUSTOM"
     },
     EasyNPCVersion: 3,
     HandItems: [
-      { Count: 1b, id: "minecraft:bread" },
+      { Count: 1b, id: "minecraft:baked_potato" },
       { Count: -1b, id: "minecraft:air" }
     ],
     Profession: "FARMER",
@@ -104,4 +104,3 @@
     id: "easy_npc:villager"
   }
 }
-

@@ -1,0 +1,107 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Naturalista - Mision de Descubrir Bioma",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Naturalista de la Arboleda",
+    variantType: "JUNGLE_CARTOGRAPHER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#55FF55","bold":true,"text":"Naturalista de la Arboleda"}',
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator minecraft:golden_apple 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator cisco_mod:champion_coin 5", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 2 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_bioma_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_bioma_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_bioma_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Naturalista] \",\"color\":\"green\",\"bold\":true},{\"text\":\"¡Gran descubrimiento botánico! Toma tu manzana dorada.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Informe y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_bioma_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [{ Text: "¡Has catalogado el bioma con éxito! La naturaleza aún guarda secretos maravillosos. ¡Toma tu recompensa!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando el bioma" }
+          ],
+          Conditions: [{ Name: "q_bioma_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "Viaja hacia el bioma indicado en tu HUD. Solo necesitas pisar sus tierras." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_bioma_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "El herbolario y los mapas botánicos están al día gracias a tus viajes." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Sendero del Bosque" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "¡Saludos, caminante! Busco a alguien con buen calzado dispuesto a explorar las tierras del bosque." }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_bioma_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Naturalista] \",\"color\":\"green\",\"bold\":true},{\"text\":\"¡Misión aceptada! Explora el bioma del bosque.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Mision (Descubrir Bosque)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Encuentra y pisa el bioma de bosque (Forest). Te pagaré con una manzana dorada y monedas de campeón." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:oak_sapling" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "CARTOGRAPHER",
+    VariantType: "JUNGLE_CARTOGRAPHER",
+    VillagerData: { profession: "minecraft:cartographer", type: "minecraft:jungle" },
+    id: "easy_npc:villager"
+  }
+}
