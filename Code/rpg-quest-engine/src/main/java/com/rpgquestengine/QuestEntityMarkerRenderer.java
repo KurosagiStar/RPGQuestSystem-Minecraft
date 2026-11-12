@@ -113,6 +113,16 @@ public class QuestEntityMarkerRenderer {
                             continue;
                         }
                     }
+                    boolean isBlocked = false;
+                    if (q.blockedByTags != null) {
+                        for (String bTag : q.blockedByTags) {
+                            if (ClientQuestData.hasTag(bTag)) {
+                                isBlocked = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (isBlocked) continue;
                     if (isMatchingNpc(living, q)) {
                         String cat = q.category != null ? q.category.toUpperCase() : "MAIN";
                         if ("CONTRACT".equals(cat)) {

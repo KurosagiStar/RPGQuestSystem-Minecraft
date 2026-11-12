@@ -157,6 +157,22 @@ public class RPGQuestEngine {
                     }
                 }
 
+                // 1b. Validar blockedByTags (rutas ramificadas excluyentes)
+                if (q.blockedByTags != null && !q.blockedByTags.isEmpty()) {
+                    boolean blocked = false;
+                    for (String bTag : q.blockedByTags) {
+                        if (playerTags.contains(bTag)) {
+                            blocked = true;
+                            break;
+                        }
+                    }
+                    if (blocked) {
+                        sp.removeTag(q.activeTag);
+                        sp.displayClientMessage(net.minecraft.network.chat.Component.literal("§c[RPGQuestEngine] Esta ruta ha quedado bloqueada por tus decisiones."), true);
+                        continue;
+                    }
+                }
+
                 // Si la misión está activa pero aún no tiene NPC asignado, asignarle el último NPC interactuado
                 boolean hasAssignedPos = false;
                 for (String t : playerTags) {
@@ -290,6 +306,14 @@ public class RPGQuestEngine {
                             double dist = Math.sqrt(dx * dx + dz * dz);
                             if (dist <= stage.radius) {
                                 checkAndSpawnNearbyMobs(level, sp, stage.mobToSpawn, stage.mobSpawnCount, stage.radius);
+                                String ambushTag = "rqe_ambush_" + q.id + "_" + sIdx;
+                                if (stage.ambushTitle != null && !stage.ambushTitle.isEmpty() && !playerTags.contains(ambushTag)) {
+                                    sp.addTag(ambushTag);
+                                    sp.connection.send(new net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket(
+                                            net.minecraft.network.chat.Component.literal(stage.ambushTitle)));
+                                    level.playSound(null, sp.blockPosition(), net.minecraft.sounds.SoundEvents.RAVAGER_ROAR,
+                                            net.minecraft.sounds.SoundSource.HOSTILE, 0.8F, 1.0F);
+                                }
                             }
                         }
                     }
@@ -305,6 +329,32 @@ public class RPGQuestEngine {
                         sp.addTag(q.doneTag);
                     } else if (!allNonOptionalDone && playerTags.contains(q.doneTag)) {
                         sp.removeTag(q.doneTag);
+                    }
+                }
+            }
+        }
+
+        // Entrega automática de recompensas configuradas (XP + Ítems) al completar
+        for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (q.completedTag != null && playerTags.contains(q.completedTag)) {
+                String rewardedTag = "rqe_rewarded_" + q.id;
+                if (!playerTags.contains(rewardedTag)) {
+                    sp.addTag(rewardedTag);
+                    if (q.rewardXp > 0) {
+                        sp.giveExperiencePoints(q.rewardXp);
+                    }
+                    if (q.rewardItems != null) {
+                        for (QuestDefinition.RewardItem ri : q.rewardItems) {
+                            if (ri.id != null && !ri.id.isEmpty() && ri.count > 0) {
+                                Item rItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(ri.id));
+                                if (rItem != null && rItem != net.minecraft.world.item.Items.AIR) {
+                                    net.minecraft.world.item.ItemStack stack = new net.minecraft.world.item.ItemStack(rItem, ri.count);
+                                    if (!sp.getInventory().add(stack)) {
+                                        sp.drop(stack, false);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

@@ -15,6 +15,17 @@ public class QuestDefinition {
 
     // Prerrequisito para encadenar misiones (Punto 5)
     public String prerequisiteQuestId = "";
+    // Tags que bloquean esta misión (para rutas ramificadas / decisiones excluyentes)
+    public List<String> blockedByTags = new ArrayList<>();
+
+    // Recompensas automáticas otorgadas por el motor al completarse
+    public int rewardXp = 0;
+    public List<RewardItem> rewardItems = new ArrayList<>();
+
+    public static class RewardItem {
+        public String id = "minecraft:emerald";
+        public int count = 1;
+    }
 
     public String activeTag;
     public String doneTag;
@@ -43,10 +54,11 @@ public class QuestDefinition {
         public int posZ = 0;
         public int radius = 150; // Radio amplio de búsqueda (ej. 150 o 200 bloques)
 
-        // Spawneo dinámico garantizado en la zona (Punto 4 / Cacerías)
+        // Spawneo dinámico garantizado en la zona (Punto 4 / Cacerías / Emboscadas)
         public boolean spawnMobsOnEntry = false;
         public String mobToSpawn = "minecraft:cave_spider";
         public int mobSpawnCount = 4;
+        public String ambushTitle = "";
 
         // Soporte para filtrado por NBT (ej. Gemas de Apotheosis: nbtKey="affix_data.gem", nbtValue="apotheosis:core/warlord")
         public String nbtKey = "";

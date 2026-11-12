@@ -233,3 +233,35 @@ No requiere coordenadas manuales:
   "optional": true
 }
 ```
+
+
+---
+
+## Nuevas Capacidades del Motor (v1.3.0+)
+
+### 1. Recompensas Reales Automáticas (`rewardXp` y `rewardItems`)
+El motor entrega XP e ítems automáticamente al recibir `completedTag`:
+```json
+"rewardXp": 250,
+"rewardItems": [
+  { "id": "minecraft:emerald", "count": 8 },
+  { "id": "minecraft:golden_apple", "count": 1 }
+]
+```
+
+### 2. Rutas Ramificadas y Decisiones Excluyentes (`blockedByTags`)
+Permite crear misiones con 2 finales posibles (ej. Ruta A bloquea Ruta B):
+```json
+"blockedByTags": ["q_ruta_b_entregada"]
+```
+Si el jugador tiene cualquiera de esos tags, la misión no mostrará marcador `!` ni se podrá activar.
+
+### 3. Emboscadas / Oleadas con Alerta en Pantalla (`ambushTitle`)
+Dentro de cualquier etapa con `spawnMobsOnEntry: true`:
+```json
+"spawnMobsOnEntry": true,
+"mobToSpawn": "minecraft:pillager",
+"mobSpawnCount": 5,
+"ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!"
+```
+Dispara título en pantalla y sonido de alerta al entrar al radio de la zona.
