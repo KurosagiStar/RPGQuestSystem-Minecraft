@@ -1,352 +1,352 @@
-[
+﻿[
     {
-        "id": "caza_zombies",
-        "category": "MAIN",
-        "title": "La Caída de la Noche",
-        "npc": "Capitán de la Guardia",
-        "npcId": "villager_guardia",
-        "description": "El Capitán solicita purgar las murallas contra la invasión de no-muertos.",
-        "suggestedLevel": 5,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_capitan_activa",
-        "doneTag": "q_capitan_lista",
-        "completedTag": "q_capitan_entregada",
-        "rewards": [
-            "5x Lingotes de Oro",
-            "2 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Elimina 5 zombies en los alrededores",
-                "type": "KILL",
-                "target": "minecraft:zombie",
-                "amount": 5
-            }
-        ]
+        "id":  "caza_zombies",
+        "category":  "MAIN",
+        "title":  "La Caída de la Noche",
+        "npc":  "Comandante de la Muralla",
+        "npcId":  "chain_muralla_1_comandante",
+        "description":  "El Capitán solicita purgar las murallas contra la invasión de no-muertos.",
+        "suggestedLevel":  5,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_capitan_activa",
+        "doneTag":  "q_capitan_lista",
+        "completedTag":  "q_capitan_entregada",
+        "rewards":  [
+                        "5x Lingotes de Oro",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 5 zombies en los alrededores",
+                           "type":  "KILL",
+                           "target":  "minecraft:zombie",
+                           "amount":  5
+                       }
+                   ]
     },
     {
-        "id": "cadena_informe_centinela",
-        "category": "MAIN",
-        "title": "El Relevo de la Muralla",
-        "npc": "Capitán de la Guardia",
-        "npcId": "villager_guardia",
-        "description": "Lleva la orden de defensa sellada al Centinela Veterano en el puesto de vigilancia avanzado.",
-        "suggestedLevel": 6,
-        "prerequisiteQuestId": "caza_zombies",
-        "activeTag": "q_relevo_activa",
-        "doneTag": "q_relevo_lista",
-        "completedTag": "q_relevo_entregada",
-        "rewards": [
-            "1x Casco de Hierro Reforzado",
-            "2 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Habla con el Centinela Veterano en la torre",
-                "type": "TALK",
-                "target": "villager_centinela",
-                "amount": 1
-            }
-        ]
+        "id":  "cadena_informe_centinela",
+        "category":  "MAIN",
+        "title":  "El Relevo de la Muralla",
+        "npc":  "Comandante de la Muralla",
+        "npcId":  "chain_muralla_1_comandante",
+        "description":  "Lleva la orden de defensa sellada al Centinela Veterano en el puesto de vigilancia avanzado.",
+        "suggestedLevel":  6,
+        "prerequisiteQuestId":  "caza_zombies",
+        "activeTag":  "q_relevo_activa",
+        "doneTag":  "q_relevo_lista",
+        "completedTag":  "q_relevo_entregada",
+        "rewards":  [
+                        "1x Casco de Hierro Reforzado",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Habla con el Centinela Veterano en la torre",
+                           "type":  "TALK",
+                           "target":  "chain_muralla_2_centinela",
+                           "amount":  1
+                       }
+                   ]
     },
     {
-        "id": "cazador_pantano",
-        "category": "CONTRACT",
-        "title": "Contrato: La Bestia de la Cueva",
-        "npc": "Cazador de Bestias",
-        "npcId": "villager_cazador",
-        "description": "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
-        "suggestedLevel": 6,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_cazador_activa",
-        "doneTag": "q_cazador_lista",
-        "completedTag": "q_cazador_entregada",
-        "rewards": [
-            "12x Monedas de Oro",
-            "1x Arco Mejorado"
-        ],
-        "stages": [
-            {
-                "description": "Rastrea el sector del nido en la cueva",
-                "type": "SCORE",
-                "target": "dummy_none",
-                "amount": 0,
-                "hasLocation": true,
-                "posX": -250,
-                "posZ": 350,
-                "radius": 25,
-                "spawnMobsOnEntry": true,
-                "mobToSpawn": "minecraft:cave_spider",
-                "mobSpawnCount": 4
-            },
-            {
-                "description": "Elimina 4 Arañas de Cueva",
-                "type": "KILL",
-                "target": "minecraft:cave_spider",
-                "amount": 4
-            },
-            {
-                "description": "(Opcional) Consigue Ojos de Araña fermentados",
-                "type": "ITEM",
-                "target": "minecraft:fermented_spider_eye",
-                "amount": 2,
-                "optional": true
-            }
-        ]
+        "id":  "cazador_pantano",
+        "category":  "CONTRACT",
+        "title":  "Contrato: La Bestia de la Cueva",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "chain_muralla_3_cazador",
+        "description":  "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
+        "suggestedLevel":  6,
+        "prerequisiteQuestId":  "contrato_esqueletos_wither",
+        "activeTag":  "q_cazador_activa",
+        "doneTag":  "q_cazador_lista",
+        "completedTag":  "q_cazador_entregada",
+        "rewards":  [
+                        "12x Monedas de Oro",
+                        "1x Arco Mejorado"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Rastrea el sector del nido en la cueva",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  -250,
+                           "posZ":  350,
+                           "radius":  25,
+                           "spawnMobsOnEntry":  true,
+                           "mobToSpawn":  "minecraft:cave_spider",
+                           "mobSpawnCount":  4
+                       },
+                       {
+                           "description":  "Elimina 4 Arañas de Cueva",
+                           "type":  "KILL",
+                           "target":  "minecraft:cave_spider",
+                           "amount":  4
+                       },
+                       {
+                           "description":  "(Opcional) Consigue Ojos de Araña fermentados",
+                           "type":  "ITEM",
+                           "target":  "minecraft:fermented_spider_eye",
+                           "amount":  2,
+                           "optional":  true
+                       }
+                   ]
     },
     {
-        "id": "craftear_arcos",
-        "category": "SECONDARY",
-        "title": "Armamento de la Guarnición",
-        "npc": "Armero Maestro",
-        "npcId": "villager_craftear",
-        "description": "Los arqueros de la muralla necesitan munición y arcos frescos. Fabrica arcos para la armería.",
-        "suggestedLevel": 3,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_craftear_activa",
-        "doneTag": "q_craftear_lista",
-        "completedTag": "q_craftear_entregada",
-        "rewards": [
-            "32x Flechas",
-            "1x Ballesta"
-        ],
-        "stages": [
-            {
-                "description": "Fabrica 2 Arcos",
-                "type": "CRAFT",
-                "target": "minecraft:bow",
-                "amount": 2
-            }
-        ]
+        "id":  "craftear_arcos",
+        "category":  "SECONDARY",
+        "title":  "Armamento de la Guarnición",
+        "npc":  "Armero Maestro",
+        "npcId":  "villager_craftear",
+        "description":  "Los arqueros de la muralla necesitan munición y arcos frescos. Fabrica arcos para la armería.",
+        "suggestedLevel":  3,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_craftear_activa",
+        "doneTag":  "q_craftear_lista",
+        "completedTag":  "q_craftear_entregada",
+        "rewards":  [
+                        "32x Flechas",
+                        "1x Ballesta"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Fabrica 2 Arcos",
+                           "type":  "CRAFT",
+                           "target":  "minecraft:bow",
+                           "amount":  2
+                       }
+                   ]
     },
     {
-        "id": "minar_hierro",
-        "category": "SECONDARY",
-        "title": "Suministros de Acero",
-        "npc": "Capataz de la Mina",
-        "npcId": "villager_minar",
-        "description": "Extrae mineral de hierro crudo de las profundidades de la cantera.",
-        "suggestedLevel": 4,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_minar_activa",
-        "doneTag": "q_minar_lista",
-        "completedTag": "q_minar_entregada",
-        "rewards": [
-            "1x Pico de Hierro Encantado",
-            "16x Carbón"
-        ],
-        "stages": [
-            {
-                "description": "Pica 16 Minerales de Hierro",
-                "type": "MINE",
-                "target": "minecraft:iron_ore",
-                "amount": 16
-            }
-        ]
+        "id":  "minar_hierro",
+        "category":  "SECONDARY",
+        "title":  "Suministros de Acero",
+        "npc":  "Capataz de la Mina",
+        "npcId":  "villager_minar",
+        "description":  "Extrae mineral de hierro crudo de las profundidades de la cantera.",
+        "suggestedLevel":  4,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_minar_activa",
+        "doneTag":  "q_minar_lista",
+        "completedTag":  "q_minar_entregada",
+        "rewards":  [
+                        "1x Pico de Hierro Encantado",
+                        "16x Carbón"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pica 16 Minerales de Hierro",
+                           "type":  "MINE",
+                           "target":  "minecraft:iron_ore",
+                           "amount":  16
+                       }
+                   ]
     },
     {
-        "id": "pescar_rio",
-        "category": "REPEATABLE",
-        "title": "Pesca en Aguas Claras",
-        "npc": "Pescador del Muelle",
-        "npcId": "villager_pescar",
-        "description": "Consigue pescado fresco para el abastecimiento de la taberna.",
-        "suggestedLevel": 1,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_pescar_activa",
-        "doneTag": "q_pescar_lista",
-        "completedTag": "q_pescar_entregada",
-        "rewards": [
-            "8x Panes",
-            "1x Caña de Pescar de la Suerte"
-        ],
-        "stages": [
-            {
-                "description": "Pesca 6 Bacalaos crudos",
-                "type": "FISH",
-                "target": "minecraft:cod",
-                "amount": 6
-            }
-        ]
+        "id":  "pescar_rio",
+        "category":  "REPEATABLE",
+        "title":  "Pesca en Aguas Claras",
+        "npc":  "Pescador del Muelle",
+        "npcId":  "villager_pescar",
+        "description":  "Consigue pescado fresco para el abastecimiento de la taberna.",
+        "suggestedLevel":  1,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_pescar_activa",
+        "doneTag":  "q_pescar_lista",
+        "completedTag":  "q_pescar_entregada",
+        "rewards":  [
+                        "8x Panes",
+                        "1x Caña de Pescar de la Suerte"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pesca 6 Bacalaos crudos",
+                           "type":  "FISH",
+                           "target":  "minecraft:cod",
+                           "amount":  6
+                       }
+                   ]
     },
     {
-        "id": "elena_alquimia",
-        "category": "SECONDARY",
-        "title": "Ingredientes de Brujería",
-        "npc": "Alquimista Elena",
-        "npcId": "villager_alquimista",
-        "description": "Elena necesita verrugas del inframundo y botellas de agua para sus pociones de curación.",
-        "suggestedLevel": 7,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_alquimia_activa",
-        "doneTag": "q_alquimia_lista",
-        "completedTag": "q_alquimia_entregada",
-        "rewards": [
-            "3x Pociones de Curación II",
-            "1x Soporte de Pociones"
-        ],
-        "stages": [
-            {
-                "description": "Reúne 3 Verrugas del Nether",
-                "type": "ITEM",
-                "target": "minecraft:nether_wart",
-                "amount": 3
-            }
-        ]
+        "id":  "elena_alquimia",
+        "category":  "SECONDARY",
+        "title":  "Ingredientes de Brujería",
+        "npc":  "Alquimista Elena",
+        "npcId":  "villager_alquimista",
+        "description":  "Elena necesita verrugas del inframundo y botellas de agua para sus pociones de curación.",
+        "suggestedLevel":  7,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_alquimia_activa",
+        "doneTag":  "q_alquimia_lista",
+        "completedTag":  "q_alquimia_entregada",
+        "rewards":  [
+                        "3x Pociones de Curación II",
+                        "1x Soporte de Pociones"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Reúne 3 Verrugas del Nether",
+                           "type":  "ITEM",
+                           "target":  "minecraft:nether_wart",
+                           "amount":  3
+                       }
+                   ]
     },
     {
-        "id": "hornear_pan",
-        "category": "REPEATABLE",
-        "title": "Raciones para las Tropas",
-        "npc": "Panadero del Pueblo",
-        "npcId": "villager_hornear",
-        "description": "Cocina y hornea pan caliente en los hornos de la plaza para los heridos.",
-        "suggestedLevel": 1,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_hornear_activa",
-        "doneTag": "q_hornear_lista",
-        "completedTag": "q_hornear_entregada",
-        "rewards": [
-            "4x Tartas de Calabaza",
-            "1 Nivel de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Cocina 8 Panes o Comida en horno",
-                "type": "SMELT",
-                "target": "minecraft:bread",
-                "amount": 8
-            }
-        ]
+        "id":  "hornear_pan",
+        "category":  "REPEATABLE",
+        "title":  "Raciones para las Tropas",
+        "npc":  "Panadero del Pueblo",
+        "npcId":  "villager_hornear",
+        "description":  "Cocina y hornea pan caliente en los hornos de la plaza para los heridos.",
+        "suggestedLevel":  1,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_hornear_activa",
+        "doneTag":  "q_hornear_lista",
+        "completedTag":  "q_hornear_entregada",
+        "rewards":  [
+                        "4x Tartas de Calabaza",
+                        "1 Nivel de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Cocina 8 Panes o Comida en horno",
+                           "type":  "SMELT",
+                           "target":  "minecraft:bread",
+                           "amount":  8
+                       }
+                   ]
     },
     {
-        "id": "explorar_torre",
-        "category": "MAIN",
-        "title": "El Puesto de Observación",
-        "npc": "Explorador Real",
-        "npcId": "villager_explorador",
-        "description": "Avanza hacia las colinas y asegura el puesto de vigilancia abandonado.",
-        "suggestedLevel": 4,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_explorador_activa",
-        "doneTag": "q_explorador_lista",
-        "completedTag": "q_explorador_entregada",
-        "rewards": [
-            "1x Catalejo",
-            "1x Mapa Misterioso"
-        ],
-        "stages": [
-            {
-                "description": "Llega a las coordenadas de la colina",
-                "type": "SCORE",
-                "target": "dummy_none",
-                "amount": 0,
-                "hasLocation": true,
-                "posX": 120,
-                "posZ": -180,
-                "radius": 30
-            }
-        ]
+        "id":  "explorar_torre",
+        "category":  "MAIN",
+        "title":  "El Puesto de Observación",
+        "npc":  "Explorador Real",
+        "npcId":  "villager_explorador",
+        "description":  "Avanza hacia las colinas y asegura el puesto de vigilancia abandonado.",
+        "suggestedLevel":  4,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_explorador_activa",
+        "doneTag":  "q_explorador_lista",
+        "completedTag":  "q_explorador_entregada",
+        "rewards":  [
+                        "1x Catalejo",
+                        "1x Mapa Misterioso"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Llega a las coordenadas de la colina",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  120,
+                           "posZ":  -180,
+                           "radius":  30
+                       }
+                   ]
     },
     {
-        "id": "contrato_esqueletos_wither",
-        "category": "CONTRACT",
-        "title": "Contrato: La Guardia Negra",
-        "npc": "Centinela Veterano",
-        "npcId": "villager_centinela",
-        "description": "Elimina a la guardia de esqueletos oscuros que asedian la fortaleza.",
-        "suggestedLevel": 8,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_wither_guardia_activa",
-        "doneTag": "q_wither_guardia_lista",
-        "completedTag": "q_wither_guardia_entregada",
-        "rewards": [
-            "10x Lingotes de Hierro",
-            "3 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Elimina 3 Esqueletos Wither",
-                "type": "KILL",
-                "target": "minecraft:wither_skeleton",
-                "amount": 3
-            }
-        ]
+        "id":  "contrato_esqueletos_wither",
+        "category":  "CONTRACT",
+        "title":  "Contrato: La Guardia Negra",
+        "npc":  "Centinela de la Torre",
+        "npcId":  "chain_muralla_2_centinela",
+        "description":  "Elimina a la guardia de esqueletos oscuros que asedian la fortaleza.",
+        "suggestedLevel":  8,
+        "prerequisiteQuestId":  "cadena_informe_centinela",
+        "activeTag":  "q_wither_guardia_activa",
+        "doneTag":  "q_wither_guardia_lista",
+        "completedTag":  "q_wither_guardia_entregada",
+        "rewards":  [
+                        "10x Lingotes de Hierro",
+                        "3 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 3 Esqueletos Wither",
+                           "type":  "KILL",
+                           "target":  "minecraft:wither_skeleton",
+                           "amount":  3
+                       }
+                   ]
     },
     {
-        "id": "explorar_bioma",
-        "category": "SECONDARY",
-        "title": "Expedición Botánica",
-        "npc": "Herborista del Bosque",
-        "npcId": "villager_bioma",
-        "description": "Busca especímenes vegetales silvestres en las profundidades del bosque.",
-        "suggestedLevel": 2,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_bioma_activa",
-        "doneTag": "q_bioma_lista",
-        "completedTag": "q_bioma_entregada",
-        "rewards": [
-            "1x Manzana Dorada",
-            "5x Esmeraldas"
-        ],
-        "stages": [
-            {
-                "description": "Explora un Bosque (Forest)",
-                "type": "BIOME",
-                "target": "minecraft:forest",
-                "amount": 1
-            }
-        ]
+        "id":  "explorar_bioma",
+        "category":  "SECONDARY",
+        "title":  "Expedición Botánica",
+        "npc":  "Herborista del Bosque",
+        "npcId":  "villager_bioma",
+        "description":  "Busca especímenes vegetales silvestres en las profundidades del bosque.",
+        "suggestedLevel":  2,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_bioma_activa",
+        "doneTag":  "q_bioma_lista",
+        "completedTag":  "q_bioma_entregada",
+        "rewards":  [
+                        "1x Manzana Dorada",
+                        "5x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Explora un Bosque (Forest)",
+                           "type":  "BIOME",
+                           "target":  "minecraft:forest",
+                           "amount":  1
+                       }
+                   ]
     },
     {
-        "id": "descubrir_aldea",
-        "category": "SECONDARY",
-        "title": "Localizar una Aldea",
-        "npc": "Vigía de la Ciudadela",
-        "npcId": "villager_estructura",
-        "description": "Confirma la presencia y posición de asentamientos civiles en las llanuras.",
-        "suggestedLevel": 3,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_estructura_activa",
-        "doneTag": "q_estructura_lista",
-        "completedTag": "q_estructura_entregada",
-        "rewards": [
-            "8x Lingotes de Hierro",
-            "6x Esmeraldas"
-        ],
-        "stages": [
-            {
-                "description": "Entra al perímetro de una Aldea",
-                "type": "STRUCTURE",
-                "target": "minecraft:village_plains",
-                "amount": 1
-            }
-        ]
+        "id":  "descubrir_aldea",
+        "category":  "SECONDARY",
+        "title":  "Localizar una Aldea",
+        "npc":  "Vigía de la Ciudadela",
+        "npcId":  "villager_estructura",
+        "description":  "Confirma la presencia y posición de asentamientos civiles en las llanuras.",
+        "suggestedLevel":  3,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_estructura_activa",
+        "doneTag":  "q_estructura_lista",
+        "completedTag":  "q_estructura_entregada",
+        "rewards":  [
+                        "8x Lingotes de Hierro",
+                        "6x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Entra al perímetro de una Aldea",
+                           "type":  "STRUCTURE",
+                           "target":  "minecraft:village_plains",
+                           "amount":  1
+                       }
+                   ]
     },
     {
-        "id": "viaje_nether",
-        "category": "MAIN",
-        "title": "El Portal al Inframundo",
-        "npc": "Ocultista del Vacío",
-        "npcId": "villager_dimension",
-        "description": "Construye o activa un portal y atraviesa el umbral hacia el inframundo.",
-        "suggestedLevel": 10,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_nether_activa",
-        "doneTag": "q_nether_lista",
-        "completedTag": "q_nether_entregada",
-        "rewards": [
-            "2x Varas de Blaze",
-            "5x Diamantes",
-            "3 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Atraviesa el portal al Nether",
-                "type": "DIMENSION",
-                "target": "minecraft:the_nether",
-                "amount": 1
-            }
-        ]
+        "id":  "viaje_nether",
+        "category":  "MAIN",
+        "title":  "El Portal al Inframundo",
+        "npc":  "Ocultista del Vacío",
+        "npcId":  "villager_dimension",
+        "description":  "Construye o activa un portal y atraviesa el umbral hacia el inframundo.",
+        "suggestedLevel":  10,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_nether_activa",
+        "doneTag":  "q_nether_lista",
+        "completedTag":  "q_nether_entregada",
+        "rewards":  [
+                        "2x Varas de Blaze",
+                        "5x Diamantes",
+                        "3 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Atraviesa el portal al Nether",
+                           "type":  "DIMENSION",
+                           "target":  "minecraft:the_nether",
+                           "amount":  1
+                       }
+                   ]
     }
 ]

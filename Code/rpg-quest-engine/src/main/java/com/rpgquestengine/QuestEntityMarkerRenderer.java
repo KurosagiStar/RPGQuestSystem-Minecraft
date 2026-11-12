@@ -59,7 +59,33 @@ public class QuestEntityMarkerRenderer {
                 }
             }
 
-            // NPC objetivo de hablar/relevo o emisor activo
+            // 1. Verificar si este NPC es el destino de una etapa TALK o DELIVER
+            if (markerText == null) {
+                for (QuestDefinition.QuestStage stage : tracked.stages) {
+                    if ("TALK".equalsIgnoreCase(stage.type) || "DELIVER".equalsIgnoreCase(stage.type)) {
+                        if (stage.target != null && !stage.target.isEmpty()) {
+                            for (String tag : living.getTags()) {
+                                if (tag.equalsIgnoreCase(stage.target)) {
+                                    markerText = "§b§l✦ §fHablar";
+                                    markerColor = 0x55FFFF;
+                                    break;
+                                }
+                            }
+                            if (markerText == null) {
+                                String entityName = normalize(living.getName().getString());
+                                String customName = living.getCustomName() != null ? normalize(living.getCustomName().getString()) : "";
+                                String targetNorm = normalize(stage.target);
+                                if (entityName.contains(targetNorm) || targetNorm.contains(entityName) || customName.contains(targetNorm) || targetNorm.contains(customName)) {
+                                    markerText = "§b§l✦ §fHablar";
+                                    markerColor = 0x55FFFF;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 2. NPC emisor de la misión activa
             if (markerText == null && isMatchingNpc(living, tracked)) {
                 markerText = "§b§l✦ §fEn progreso";
                 markerColor = 0x55FFFF;

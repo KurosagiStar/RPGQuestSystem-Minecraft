@@ -27,7 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#55FFFF","bold":true,"text":"Centinela de la Torre"}',
-    Tags: ["chain_muralla_2_centinela", "villager_centinela"],
+    Tags: ["chain_muralla_2_centinela"],
     DialogData: {
       DialogDataSet: [
         {
