@@ -3,6 +3,8 @@ package com.rpgquestengine;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,14 +13,33 @@ public class QuestTitleBannerOverlay {
     private static String bannerHeader = "";
     private static String bannerTitle = "";
     private static int bannerColor = 0xFFFFAA00;
+    private static String promptQuestId = "";
+    private static ItemStack bannerIcon = ItemStack.EMPTY;
     private static long showUntilTime = 0;
-    private static final long DISPLAY_DURATION = 3500; // 3.5 segundos
+    private static final long DISPLAY_DURATION = 5000; // 5 segundos
 
-    public static void showBanner(String header, String title, int color) {
+    private static final ResourceLocation TOAST_TEXTURE = new ResourceLocation("textures/gui/toasts.png");
+
+    public static void showBanner(String header, String title, ItemStack icon, int color, String questIdForPrompt) {
         bannerHeader = header;
         bannerTitle = title;
+        bannerIcon = icon != null ? icon : ItemStack.EMPTY;
         bannerColor = color;
+        promptQuestId = questIdForPrompt != null ? questIdForPrompt : "";
         showUntilTime = System.currentTimeMillis() + DISPLAY_DURATION;
+    }
+
+    public static boolean hasActivePrompt() {
+        return System.currentTimeMillis() <= showUntilTime && !promptQuestId.isEmpty();
+    }
+
+    public static String getActivePromptQuestId() {
+        return promptQuestId;
+    }
+
+    public static void clearPrompt() {
+        promptQuestId = "";
+        showUntilTime = 0;
     }
 
     @SubscribeEvent
@@ -48,27 +69,42 @@ public class QuestTitleBannerOverlay {
         Font font = mc.font;
         int screenWidth = mc.getWindow().getGuiScaledWidth();
         int centerX = screenWidth / 2;
-        int startY = 40;
+        int startY = 25; // Centro arriba
 
-        int bgWidth = 260;
-        int bgHeight = 44;
-        int bgX = centerX - (bgWidth / 2);
+        boolean hasPrompt = !promptQuestId.isEmpty();
+        int boxW = 280;
+        int boxH = hasPrompt ? 46 : 38;
+        int boxX = centerX - (boxW / 2);
 
-        // Fondo oscuro estilizado con fade
-        int bgColor = (alphaInt << 24) | 0x000F0F0F;
-        graphics.fill(bgX, startY, bgX + bgWidth, startY + bgHeight, bgColor);
+        // Fondo oscuro RPG con desvanecimiento
+        int bgColor = (alphaInt << 24) | 0x121215;
+        graphics.fill(boxX, startY, boxX + boxW, startY + boxH, bgColor);
 
-        // Líneas doradas superior e inferior
-        int lineBorderColor = (alphaInt << 24) | (bannerColor & 0x00FFFFFF);
-        graphics.fill(bgX + 15, startY, bgX + bgWidth - 15, startY + 1, lineBorderColor);
-        graphics.fill(bgX + 15, startY + bgHeight - 1, bgX + bgWidth - 15, startY + bgHeight, lineBorderColor);
+        // Bordes dorados temáticos con desvanecimiento
+        int borderColor = (alphaInt << 24) | (bannerColor & 0x00FFFFFF);
+        graphics.fill(boxX, startY, boxX + boxW, startY + 1, borderColor);
+        graphics.fill(boxX, startY + boxH - 1, boxX + boxW, startY + boxH, borderColor);
+        graphics.fill(boxX, startY, boxX + 1, startY + boxH, borderColor);
+        graphics.fill(boxX + boxW - 1, startY, boxX + boxW, startY + boxH, borderColor);
 
-        // Textos centrados
+        // Icono a la izquierda
+        int textStartX = boxX + 12;
+        if (!bannerIcon.isEmpty()) {
+            graphics.renderFakeItem(bannerIcon, boxX + 10, startY + 10);
+            textStartX = boxX + 34;
+        }
+
         int headerColor = (alphaInt << 24) | (bannerColor & 0x00FFFFFF);
         int titleColor = (alphaInt << 24) | 0x00FFFFFF;
 
-        graphics.drawCenteredString(font, bannerHeader, centerX, startY + 10, headerColor);
-        graphics.drawCenteredString(font, "§l" + bannerTitle, centerX, startY + 24, titleColor);
+        graphics.drawString(font, bannerHeader, textStartX, startY + 8, headerColor, false);
+        graphics.drawString(font, "§l" + bannerTitle, textStartX, startY + 20, titleColor, false);
+
+        if (hasPrompt) {
+            int promptColor = (alphaInt << 24) | 0x00AAAAAA;
+            graphics.drawString(font, "§e[Presiona V para seguir]", textStartX, startY + 32, promptColor, false);
+        }
     }
 }
+
 

@@ -1,95 +1,139 @@
-[
-  {
-    "id": "cisco_fell_king",
-    "category": "CONTRACT",
-    "title": "La Amenaza del Fell King",
-    "npc": "Capitán de la Guardia",
-    "description": "El monarca caído acecha en su fortaleza oscura. Derrótalo para liberar la región de su corrupción.",
-    "suggestedLevel": 50,
-    "activeTag": "q_fell_king_activa",
-    "doneTag": "q_fell_king_lista",
-    "completedTag": "q_fell_king_entregada",
-    "rewards": [
-      "15x Monedas de Campeón",
-      "5 Niveles de Experiencia",
-      "1x Fragmento del Sol"
-    ],
-    "stages": [
-      {
-        "description": "Derrota al Fell King",
-        "type": "KILL",
-        "target": "cisco_mod:fell_king",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "cisco_explorar_undergarden",
-    "category": "MAIN",
-    "title": "Viaje a las Profundidades Oscuras",
-    "npc": "Erudito Arcano",
-    "description": "Cruza el portal arcano y adéntrate en la dimensión subterránea de The Undergarden.",
-    "suggestedLevel": 20,
-    "activeTag": "q_undergarden_activa",
-    "doneTag": "q_undergarden_lista",
-    "completedTag": "q_undergarden_entregada",
-    "rewards": [
-      "10x Monedas de Campeón",
-      "3 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Entra a la dimensión The Undergarden",
-        "type": "DIMENSION",
-        "target": "undergarden:undergarden",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "cisco_fortaleza_cataclysm",
-    "category": "CONTRACT",
-    "title": "La Fragua de las Almas",
-    "npc": "Cazador de Bestias",
-    "description": "Encuentra e infíltrate en la Forja de Almas Negras en el inframundo.",
-    "suggestedLevel": 35,
-    "activeTag": "q_fragua_activa",
-    "doneTag": "q_fragua_lista",
-    "completedTag": "q_fragua_entregada",
-    "rewards": [
-      "12x Monedas de Campeón",
-      "4 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Descubre la Forja de Almas Negras (Cataclysm)",
-        "type": "STRUCTURE",
-        "target": "cataclysm:soul_black_smith",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "id": "cisco_bioma_mistico",
-    "category": "SECONDARY",
-    "title": "Tierras de Magia Antigua",
-    "npc": "Alquimista Elena",
-    "description": "Localiza el bosque místico donde crecen las esencias arcanas puras.",
-    "suggestedLevel": 15,
-    "activeTag": "q_bioma_activa",
-    "doneTag": "q_bioma_lista",
-    "completedTag": "q_bioma_entregada",
-    "rewards": [
-      "6x Monedas de Campeón",
-      "2 Pociones de Salud Mayor"
-    ],
-    "stages": [
-      {
-        "description": "Explora el Bosque Místico",
-        "type": "BIOME",
-        "target": "biomesoplenty:mystic_grove",
-        "amount": 1
-      }
-    ]
-  }
+﻿[
+    {
+        "id":  "caza_zombies",
+        "category":  "MAIN",
+        "title":  "La Caída de la Noche",
+        "npc":  "Capitán de la Guardia",
+        "npcId":  "npc_matar",
+        "description":  "El Capitán solicita purgar las murallas contra la invasión de no-muertos.",
+        "suggestedLevel":  5,
+        "activeTag":  "q_capitan_activa",
+        "doneTag":  "q_capitan_lista",
+        "completedTag":  "q_capitan_entregada",
+        "rewards":  [
+                        "5x Lingotes de Oro",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 5 zombies en los alrededores",
+                           "type":  "KILL",
+                           "target":  "minecraft:zombie",
+                           "amount":  5
+                       }
+                   ]
+    },
+    {
+        "id":  "cazador_pantano",
+        "category":  "CONTRACT",
+        "title":  "Contrato: La Bestia de la Cueva",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "npc_cazador",
+        "description":  "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
+        "suggestedLevel":  6,
+        "activeTag":  "q_cazador_activa",
+        "doneTag":  "q_cazador_lista",
+        "completedTag":  "q_cazador_entregada",
+        "rewards":  [
+                        "12x Monedas de Campeón",
+                        "1x Arco Mejorado"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Rastrea el sector del nido en la cueva",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  -250,
+                           "posZ":  350,
+                           "radius":  25,
+                           "spawnMobsOnEntry":  true,
+                           "mobToSpawn":  "minecraft:cave_spider",
+                           "mobSpawnCount":  4
+                       },
+                       {
+                           "description":  "Elimina 3 Arañas de Cueva",
+                           "type":  "KILL",
+                           "target":  "minecraft:cave_spider",
+                           "amount":  3
+                       },
+                       {
+                           "description":  "Prepara 2 Flechas adicionales para la caza",
+                           "type":  "CRAFT",
+                           "target":  "minecraft:arrow",
+                           "amount":  8,
+                           "optional":  true
+                       }
+                   ]
+    },
+    {
+        "id":  "craftear_arcos",
+        "category":  "SECONDARY",
+        "title":  "Arsenal de Arqueros",
+        "npc":  "Maestro Armero",
+        "description":  "Los arqueros de la torre requieren nuevos arcos reforzados.",
+        "suggestedLevel":  2,
+        "activeTag":  "q_armero_activa",
+        "doneTag":  "q_armero_lista",
+        "completedTag":  "q_armero_entregada",
+        "rewards":  [
+                        "32x Flechas",
+                        "1x Carcaj Reforzado"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Fabrica 2 Arcos en la mesa de crafteo",
+                           "type":  "CRAFT",
+                           "target":  "minecraft:bow",
+                           "amount":  2
+                       }
+                   ]
+    },
+    {
+        "id":  "minar_hierro",
+        "category":  "SECONDARY",
+        "title":  "Suministros de la Forja",
+        "npc":  "Herrero Enano",
+        "description":  "La forja comunal necesita menas crudas para equipar a las tropas.",
+        "suggestedLevel":  2,
+        "activeTag":  "q_minero_activa",
+        "doneTag":  "q_minero_lista",
+        "completedTag":  "q_minero_entregada",
+        "rewards":  [
+                        "8x Carbón",
+                        "1x Pico de Hierro"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pica 8 bloques de Mena de Hierro",
+                           "type":  "MINE",
+                           "target":  "minecraft:iron_ore",
+                           "amount":  8
+                       }
+                   ]
+    },
+    {
+        "id":  "pescar_rio",
+        "category":  "REPEATABLE",
+        "title":  "La Pesca del Día",
+        "npc":  "Pescador del Muelle",
+        "description":  "Pesca en las aguas cercanas para el mercado del puerto.",
+        "suggestedLevel":  1,
+        "activeTag":  "q_pescador_activa",
+        "doneTag":  "q_pescador_lista",
+        "completedTag":  "q_pescador_entregada",
+        "rewards":  [
+                        "3x Esmeraldas",
+                        "1 Nivel de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pesca 3 capturas en el río",
+                           "type":  "FISH",
+                           "target":  "any",
+                           "amount":  3
+                       }
+                   ]
+    }
 ]

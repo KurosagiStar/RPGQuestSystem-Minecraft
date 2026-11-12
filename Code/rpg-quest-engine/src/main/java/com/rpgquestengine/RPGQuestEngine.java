@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -19,6 +21,9 @@ import net.minecraft.world.scores.Score;
 import net.minecraft.world.scores.Scoreboard;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -35,6 +40,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -63,6 +69,7 @@ public class RPGQuestEngine {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             NetworkHandler.register();
+            QuestConfig.loadConfig();
         });
     }
 
@@ -77,6 +84,42 @@ public class RPGQuestEngine {
         if (event.getEntity() instanceof ServerPlayer sp) {
             checkAndSyncQuests(sp);
         }
+    }
+
+    @SubscribeEvent
+    public void onRegisterCommands(RegisterCommandsEvent event) {
+        event.getDispatcher().register(
+            Commands.literal("rpgquest")
+                .requires(s -> s.hasPermission(0))
+                .then(Commands.literal("reset")
+                    .executes(ctx -> {
+                        ServerPlayer sp = ctx.getSource().getPlayerOrException();
+                        Scoreboard sb = sp.getServer().getScoreboard();
+
+                        int removedTags = 0;
+                        for (QuestDefinition q : QuestConfig.QUESTS) {
+                            if (q.activeTag != null && sp.removeTag(q.activeTag)) removedTags++;
+                            if (q.doneTag != null && sp.removeTag(q.doneTag)) removedTags++;
+                            if (q.completedTag != null && sp.removeTag(q.completedTag)) removedTags++;
+
+                            for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                                QuestDefinition.QuestStage st = q.stages.get(sIdx);
+                                String key = getInternalScoreKey(q.id, sIdx, st.type);
+                                Objective obj = sb.getObjective(key);
+                                if (obj != null) {
+                                    sb.resetPlayerScore(sp.getScoreboardName(), obj);
+                                }
+                            }
+                        }
+
+                        // Forzar sincronización inmediata al cliente
+                        checkAndSyncQuests(sp);
+
+                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Progreso de todas las misiones reseteado exitosamente."), false);
+                        return 1;
+                    })
+                )
+        );
     }
 
     @SubscribeEvent
@@ -180,6 +223,34 @@ public class RPGQuestEngine {
                         }
                     }
 
+                    // Spawneo si el jugador está en la zona, la misión NO está completada/lista, y aún faltan kills de ese mob
+                    if (stage.hasLocation && stage.spawnMobsOnEntry && stage.mobToSpawn != null && !stage.mobToSpawn.isEmpty()) {
+                        boolean questAlreadyDone = (q.doneTag != null && playerTags.contains(q.doneTag)) || playerTags.contains(q.completedTag);
+                        
+                        // Verificar si el objetivo de matar a ese mob ya se cumplió en esta misión
+                        boolean mobTargetFinished = false;
+                        for (int kIdx = 0; kIdx < q.stages.size(); kIdx++) {
+                            QuestDefinition.QuestStage otherSt = q.stages.get(kIdx);
+                            if ("KILL".equalsIgnoreCase(otherSt.type) && stage.mobToSpawn.equalsIgnoreCase(otherSt.target)) {
+                                String killKey = getInternalScoreKey(q.id, kIdx, otherSt.type);
+                                int killed = getInternalScore(sp, killKey);
+                                if (killed >= otherSt.amount) {
+                                    mobTargetFinished = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!questAlreadyDone && !mobTargetFinished) {
+                            double dx = stage.posX - sp.getX();
+                            double dz = stage.posZ - sp.getZ();
+                            double dist = Math.sqrt(dx * dx + dz * dz);
+                            if (dist <= stage.radius) {
+                                checkAndSpawnNearbyMobs(level, sp, stage.mobToSpawn, stage.mobSpawnCount, stage.radius);
+                            }
+                        }
+                    }
+
                     // Si no es opcional y no se cumplió, la misión aún no está lista (Punto 2)
                     if (!stage.optional && current < required) {
                         allNonOptionalDone = false;
@@ -196,7 +267,47 @@ public class RPGQuestEngine {
             }
         }
 
-        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncPlayerQuestsPacket(sp.getTags(), scores));
+        // Rastrear posición de los NPCs asignados a misiones activas
+        Map<String, double[]> npcLivePositions = new HashMap<>();
+
+        // 1. Primero cargar última posición persistente de tags (funciona aún si el chunk está descargado)
+        for (String tag : playerTags) {
+            if (tag.startsWith("rqe_pos_")) {
+                String remainder = tag.substring("rqe_pos_".length());
+                // formato: {questId}_{x}_{z}
+                int first_ = remainder.indexOf('_');
+                int second_ = remainder.lastIndexOf('_');
+                if (first_ > 0 && second_ > first_) {
+                    String qId = remainder.substring(0, first_);
+                    try {
+                        double px = Double.parseDouble(remainder.substring(first_ + 1, second_));
+                        double pz = Double.parseDouble(remainder.substring(second_ + 1));
+                        npcLivePositions.put(qId, new double[]{px, pz});
+                    } catch (Exception ignored) {}
+                }
+            }
+        }
+
+        // 2. Si la entidad está viva y en chunks cargados, sobreescribir con su posición exacta en tiempo real
+        for (String tag : playerTags) {
+            if (tag.startsWith("rqe_npc_")) {
+                String remainder = tag.substring("rqe_npc_".length());
+                int lastUnderscore = remainder.lastIndexOf('_');
+                if (lastUnderscore > 0) {
+                    String qId = remainder.substring(0, lastUnderscore);
+                    String uuidStr = remainder.substring(lastUnderscore + 1);
+                    try {
+                        java.util.UUID uuid = java.util.UUID.fromString(uuidStr);
+                        Entity npcEnt = level.getEntity(uuid);
+                        if (npcEnt != null && npcEnt.isAlive()) {
+                            npcLivePositions.put(qId, new double[]{npcEnt.getX(), npcEnt.getZ()});
+                        }
+                    } catch (Exception ignored) {}
+                }
+            }
+        }
+
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncPlayerQuestsPacket(sp.getTags(), scores, npcLivePositions));
     }
 
     public static String getInternalScoreKey(String questId, int stageIndex, String type) {
@@ -227,6 +338,69 @@ public class RPGQuestEngine {
         sb.getOrCreatePlayerScore(sp.getScoreboardName(), obj).setScore(val);
     }
 
+    private void checkAndSpawnNearbyMobs(ServerLevel level, ServerPlayer sp, String mobId, int minRequired, int searchRadius) {
+        EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(mobId));
+        if (entityType == null) return;
+
+        // Contar cuántos mobs de este tipo ya existen cerca (en radio de búsqueda o 32 bloques)
+        double checkRadius = Math.max(25.0, (double) searchRadius);
+        net.minecraft.world.phys.AABB area = sp.getBoundingBox().inflate(checkRadius, 16.0, checkRadius);
+        List<? extends Entity> nearby = level.getEntities(entityType, area, Entity::isAlive);
+
+        int needed = minRequired - nearby.size();
+        if (needed <= 0) return; // Ya hay suficientes
+
+        spawnQuestMobs(level, sp, mobId, needed);
+    }
+
+    private void spawnQuestMobs(ServerLevel level, ServerPlayer sp, String mobId, int count) {
+        EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(mobId));
+        if (entityType == null) return;
+
+        BlockPos playerPos = sp.blockPosition();
+        java.util.Random rnd = new java.util.Random();
+        int spawned = 0;
+
+        for (int attempts = 0; attempts < 40 && spawned < count; attempts++) {
+            int offsetX = rnd.nextInt(16) - 8;
+            int offsetZ = rnd.nextInt(16) - 8;
+            if (offsetX == 0 && offsetZ == 0) offsetX = 2;
+
+            BlockPos checkPos = playerPos.offset(offsetX, 0, offsetZ);
+            
+            // Buscar verticalmente suelo adecuado (-6 a +6)
+            BlockPos spawnPos = null;
+            for (int dy = 4; dy >= -5; dy--) {
+                BlockPos p = checkPos.offset(0, dy, 0);
+                if (level.getBlockState(p).isAir() && level.getBlockState(p.above()).isAir() && !level.getBlockState(p.below()).isAir()) {
+                    spawnPos = p;
+                    break;
+                }
+            }
+
+            // Fallback: cerca directo del jugador si no halló suelo
+            if (spawnPos == null && level.getBlockState(checkPos).isAir()) {
+                spawnPos = checkPos;
+            }
+
+            if (spawnPos != null) {
+                Entity entity = entityType.create(level);
+                if (entity instanceof net.minecraft.world.entity.Mob mob) {
+                    mob.moveTo(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, rnd.nextFloat() * 360F, 0.0F);
+                    mob.setPersistenceRequired(); // No desaparece
+                    level.addFreshEntity(mob);
+                    spawned++;
+                }
+            }
+        }
+
+        if (spawned > 0) {
+            sp.displayClientMessage(net.minecraft.network.chat.Component.literal("§c⚔ ¡Bestias acechando en la zona! (" + spawned + " generadas)"), true);
+            // Mandar paquete directo al cliente para reproducir el sonido en la UI/auriculares del jugador sin atenuación de distancia
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(5));
+        }
+    }
+
     private int countItemInInventory(Inventory inv, String itemId) {
         Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemId));
         if (item == null) return 0;
@@ -248,6 +422,20 @@ public class RPGQuestEngine {
                 if (mc.screen == null) {
                     QuestConfig.loadConfig();
                     mc.setScreen(new QuestJournalScreen());
+                }
+            }
+
+            if (KeyBindings.TRACK_PROMPT_KEY.consumeClick()) {
+                if (QuestTitleBannerOverlay.hasActivePrompt()) {
+                    String qId = QuestTitleBannerOverlay.getActivePromptQuestId();
+                    QuestConfig.trackedQuestId = qId;
+                    QuestConfig.saveSettings();
+                    QuestTitleBannerOverlay.clearPrompt();
+                    ClientQuestData.playClientSound(1);
+                    Minecraft mc = Minecraft.getInstance();
+                    if (mc.player != null) {
+                        mc.player.displayClientMessage(Component.literal("§a[RPGQuestEngine] Siguiendo misión actual."), true);
+                    }
                 }
             }
         }

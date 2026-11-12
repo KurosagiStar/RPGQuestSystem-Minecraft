@@ -8,6 +8,7 @@ public class QuestDefinition {
     public String category = "SECONDARY"; // MAIN, SECONDARY, REPEATABLE, CONTRACT
     public String title = "Misión";
     public String npc = "Desconocido";
+    public String npcId = ""; // ID técnico del NPC (ej: "npc_matar", "capitan_guardia") para rastreo robusto
     public String description = "";
     public int suggestedLevel = 1;
     public List<String> rewards = new ArrayList<>();
@@ -41,6 +42,11 @@ public class QuestDefinition {
         public int posX = 0;
         public int posZ = 0;
         public int radius = 150; // Radio amplio de búsqueda (ej. 150 o 200 bloques)
+
+        // Spawneo dinámico garantizado en la zona (Punto 4 / Cacerías)
+        public boolean spawnMobsOnEntry = false;
+        public String mobToSpawn = "minecraft:cave_spider";
+        public int mobSpawnCount = 4;
 
         public QuestStage() {}
 

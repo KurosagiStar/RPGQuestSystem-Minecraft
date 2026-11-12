@@ -19,6 +19,10 @@ public class NetworkHandler {
                 SyncPlayerQuestsPacket::encode,
                 SyncPlayerQuestsPacket::decode,
                 SyncPlayerQuestsPacket::handle);
+        CHANNEL.registerMessage(id++, PlayQuestSoundPacket.class,
+                PlayQuestSoundPacket::encode,
+                PlayQuestSoundPacket::decode,
+                PlayQuestSoundPacket::handle);
     }
 }
 

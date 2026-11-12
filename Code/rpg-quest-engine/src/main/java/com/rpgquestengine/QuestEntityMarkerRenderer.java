@@ -39,9 +39,9 @@ public class QuestEntityMarkerRenderer {
         int markerColor = 0xFFFF55; // Amarillo por defecto
 
         if (isDone) {
-            // Misión lista para entregar: Marcar al NPC de entrega
-            if (isMatchingNpc(living, tracked.npc)) {
-                markerText = "§6[ ! ] §e" + tracked.npc;
+            // Misión lista para entregar: Signo de exclamación clásico RPG sobre la cabeza
+            if (isMatchingNpc(living, tracked)) {
+                markerText = "§6§l[ ! ]";
                 markerColor = 0xFFAA00;
             }
         } else {
@@ -62,8 +62,8 @@ public class QuestEntityMarkerRenderer {
             }
 
             // También marcar NPC si requiere hablar/interactuar o si es quien dio la misión
-            if (markerText == null && isMatchingNpc(living, tracked.npc)) {
-                markerText = "§e✦ §6" + tracked.npc;
+            if (markerText == null && isMatchingNpc(living, tracked)) {
+                markerText = "§e§l✦";
                 markerColor = 0xFFFF55;
             }
         }
@@ -73,12 +73,47 @@ public class QuestEntityMarkerRenderer {
         }
     }
 
-    private static boolean isMatchingNpc(LivingEntity living, String targetNpcName) {
+    private static boolean isMatchingNpc(LivingEntity living, QuestDefinition quest) {
+        if (quest == null) return false;
+
+        // 1. Coincidencia por npcId explícito (ej: "npc_matar", "cisco_capitan_guardia")
+        if (quest.npcId != null && !quest.npcId.isEmpty()) {
+            for (String tag : living.getTags()) {
+                if (tag.equalsIgnoreCase(quest.npcId)) {
+                    ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
+                    ClientQuestData.rememberNpcPosition(quest.npc, living.getX(), living.getZ());
+                    return true;
+                }
+            }
+        }
+
+        // 2. Coincidencia por nombre normalizado
+        String targetNpcName = quest.npc;
         if (targetNpcName == null || targetNpcName.isEmpty()) return false;
-        String entityName = living.getName().getString();
-        if (entityName.equalsIgnoreCase(targetNpcName) || entityName.contains(targetNpcName)) return true;
-        String customName = living.getCustomName() != null ? living.getCustomName().getString() : "";
-        return customName.equalsIgnoreCase(targetNpcName) || customName.contains(targetNpcName);
+        String entityName = normalize(living.getName().getString());
+        String targetNorm = normalize(targetNpcName);
+
+        boolean matches = entityName.contains(targetNorm) || targetNorm.contains(entityName);
+        if (!matches && living.getCustomName() != null) {
+            String customName = normalize(living.getCustomName().getString());
+            matches = customName.contains(targetNorm) || targetNorm.contains(customName);
+        }
+
+        if (matches) {
+            ClientQuestData.rememberNpcPosition(targetNpcName, living.getX(), living.getZ());
+            if (quest.npcId != null && !quest.npcId.isEmpty()) {
+                ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
+            }
+        }
+        return matches;
+    }
+
+    private static String normalize(String s) {
+        if (s == null) return "";
+        return java.text.Normalizer.normalize(s, java.text.Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .toLowerCase()
+                .trim();
     }
 
     private static QuestDefinition getTrackedQuest() {
@@ -103,18 +138,19 @@ public class QuestEntityMarkerRenderer {
         PoseStack poseStack = event.getPoseStack();
         poseStack.pushPose();
 
-        // Elevar por encima del nametag regular
-        poseStack.translate(0.0D, event.getEntity().getBbHeight() + 0.65F, 0.0D);
+        // Elevar significativamente por encima del nametag y barra de vida regular (+0.95F)
+        poseStack.translate(0.0D, event.getEntity().getBbHeight() + 0.95F, 0.0D);
         poseStack.mulPose(Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation());
         poseStack.scale(-0.025F, -0.025F, 0.025F);
 
         Matrix4f matrix = poseStack.last().pose();
         float halfW = font.width(text) / 2.0F;
 
-        // Fondo oscuro para legibilidad óptima
-        Minecraft.getInstance().renderBuffers().bufferSource();
-        int bg = (int) (Minecraft.getInstance().options.getBackgroundOpacity(0.25F) * 255.0F) << 24;
+        // Luz completa 0xF000F0 (brillo / emisión total en oscuridad y sombras)
+        int fullBright = 0xF000F0;
+        int bg = 0x90000000;
 
+        // Texto visible a través de paredes y obstáculos (See-Through)
         font.drawInBatch(
                 text,
                 -halfW,
@@ -125,20 +161,21 @@ public class QuestEntityMarkerRenderer {
                 event.getMultiBufferSource(),
                 Font.DisplayMode.SEE_THROUGH,
                 bg,
-                event.getPackedLight()
+                fullBright
         );
 
+        // Texto normal brillante con color vívido
         font.drawInBatch(
                 text,
                 -halfW,
                 0,
-                0xFFFFFF,
+                color,
                 false,
                 matrix,
                 event.getMultiBufferSource(),
                 Font.DisplayMode.NORMAL,
                 0,
-                event.getPackedLight()
+                fullBright
         );
 
         poseStack.popPose();

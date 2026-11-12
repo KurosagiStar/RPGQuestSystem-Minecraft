@@ -98,9 +98,43 @@ public class QuestHudOverlay {
             List<FormattedCharSequence> returnLines = font.split(Component.literal("§a✔ Regresa con " + q.npc + " para entregar."), maxTextWidth);
 
             String npcCompassInfo = "";
+            double targetNpcX = 0;
+            double targetNpcZ = 0;
+            boolean hasValidNpcTarget = false;
+
             if (q.hasNpcLocation) {
-                double dx = q.npcX - player.getX();
-                double dz = q.npcZ - player.getZ();
+                targetNpcX = q.npcX;
+                targetNpcZ = q.npcZ;
+                hasValidNpcTarget = true;
+            } else {
+                // 1. Intentar por posición en vivo del servidor vía UUID tracking
+                double[] livePos = ClientQuestData.getServerNpcPosition(q.id);
+                if (livePos != null) {
+                    targetNpcX = livePos[0];
+                    targetNpcZ = livePos[1];
+                    hasValidNpcTarget = true;
+                } else {
+                    // 2. Intentar por npcId explícito si está configurado
+                    double[] remembered = null;
+                    if (q.npcId != null && !q.npcId.isEmpty()) {
+                        remembered = ClientQuestData.getKnownNpcPosition(q.npcId);
+                    }
+                    // 3. Si no, por nombre del NPC
+                    if (remembered == null) {
+                        remembered = ClientQuestData.getKnownNpcPosition(q.npc);
+                    }
+
+                    if (remembered != null) {
+                        targetNpcX = remembered[0];
+                        targetNpcZ = remembered[1];
+                        hasValidNpcTarget = true;
+                    }
+                }
+            }
+
+            if (hasValidNpcTarget) {
+                double dx = targetNpcX - player.getX();
+                double dz = targetNpcZ - player.getZ();
                 double dist = Math.sqrt(dx * dx + dz * dz);
                 if (dist <= 6.0) {
                     npcCompassInfo = "§a◎ Cerca de " + q.npc;

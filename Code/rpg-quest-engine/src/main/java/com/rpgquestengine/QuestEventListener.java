@@ -4,6 +4,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -63,6 +65,51 @@ public class QuestEventListener {
             ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(event.getEntity().getType());
             if (entityId != null) {
                 incrementQuestTarget(sp, "KILL", entityId.toString());
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
+        if (event.getTarget() instanceof LivingEntity living) {
+            if (event.getLevel().isClientSide()) {
+                String name = living.getName().getString();
+                ClientQuestData.rememberNpcPosition(name, living.getX(), living.getZ());
+                if (living.getCustomName() != null) {
+                    ClientQuestData.rememberNpcPosition(living.getCustomName().getString(), living.getX(), living.getZ());
+                }
+                for (String tag : living.getTags()) {
+                    ClientQuestData.rememberNpcPosition(tag, living.getX(), living.getZ());
+                }
+            } else if (event.getEntity() instanceof ServerPlayer sp) {
+                // LADO SERVIDOR: Vincular automáticamente la entidad física con la misión
+                String entityUuid = living.getStringUUID();
+                String entityName = living.getName().getString();
+                String customName = living.getCustomName() != null ? living.getCustomName().getString() : "";
+
+                for (QuestDefinition q : QuestConfig.QUESTS) {
+                    boolean matches = false;
+                    if (q.npc != null && !q.npc.isEmpty()) {
+                        String qNorm = java.text.Normalizer.normalize(q.npc, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                        String eNorm = java.text.Normalizer.normalize(entityName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                        String cNorm = java.text.Normalizer.normalize(customName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
+                        if (eNorm.contains(qNorm) || qNorm.contains(eNorm) || cNorm.contains(qNorm) || qNorm.contains(cNorm)) {
+                            matches = true;
+                        }
+                    }
+
+                    if (matches) {
+                        // Limpiar tags de asignación anterior si había
+                        for (String t : new java.util.ArrayList<>(sp.getTags())) {
+                            if (t.startsWith("rqe_npc_" + q.id + "_") || t.startsWith("rqe_pos_" + q.id + "_")) {
+                                sp.removeTag(t);
+                            }
+                        }
+                        // Registrar este NPC exacto por UUID y posición fija persistente para esta misión
+                        sp.addTag("rqe_npc_" + q.id + "_" + entityUuid);
+                        sp.addTag("rqe_pos_" + q.id + "_" + (long) living.getX() + "_" + (long) living.getZ());
+                    }
+                }
             }
         }
     }
