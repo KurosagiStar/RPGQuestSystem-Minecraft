@@ -34,12 +34,14 @@ public class QuestEntityMarkerRenderer {
         QuestDefinition tracked = getTrackedQuest();
         boolean isDone = tracked != null && ClientQuestData.hasTag(tracked.doneTag);
         String markerText = null;
+        String markerIcon = null;
         int markerColor = 0xFFFF55; // Amarillo por defecto
 
         if (tracked != null && isDone) {
             // Misión lista para cobrar: Icono de interrogación dorado RPG con estilo limpio
             if (isMatchingNpc(living, tracked)) {
-                markerText = "§6§l? §e§lCompletada";
+                markerText = "§e§lCompletada";
+                markerIcon = "quest_completed.png";
                 markerColor = 0xFFAA00;
             }
         } else if (tracked != null) {
@@ -51,7 +53,8 @@ public class QuestEntityMarkerRenderer {
                     if (cur < stage.amount) {
                         ResourceLocation entityType = ForgeRegistries.ENTITY_TYPES.getKey(living.getType());
                         if (entityType != null && ("any".equalsIgnoreCase(stage.target) || entityType.toString().equalsIgnoreCase(stage.target))) {
-                            markerText = "§c⚔ §fObjetivo";
+                            markerText = "§fObjetivo";
+                            markerIcon = "quest_objective.png";
                             markerColor = 0xFF5555;
                             break;
                         }
@@ -71,7 +74,8 @@ public class QuestEntityMarkerRenderer {
                             }
                             for (String tag : living.getTags()) {
                                 if (tag.equalsIgnoreCase(stage.target)) {
-                                    markerText = "§b§l✦ §fHablar";
+                                    markerText = "§fHablar";
+                                    markerIcon = "quest_in_progress.png";
                                     markerColor = 0x55FFFF;
                                     break;
                                 }
@@ -81,7 +85,8 @@ public class QuestEntityMarkerRenderer {
                                 String customName = living.getCustomName() != null ? normalize(living.getCustomName().getString()) : "";
                                 String targetNorm = normalize(stage.target);
                                 if (entityName.contains(targetNorm) || targetNorm.contains(entityName) || customName.contains(targetNorm) || targetNorm.contains(customName)) {
-                                    markerText = "§b§l✦ §fHablar";
+                                    markerText = "§fHablar";
+                                    markerIcon = "quest_in_progress.png";
                                     markerColor = 0x55FFFF;
                                 }
                             }
@@ -92,7 +97,8 @@ public class QuestEntityMarkerRenderer {
 
             // 2. NPC emisor de la misión activa
             if (markerText == null && isMatchingNpc(living, tracked)) {
-                markerText = "§b§l✦ §fEn progreso";
+                markerText = "§fEn progreso";
+                markerIcon = "quest_in_progress.png";
                 markerColor = 0x55FFFF;
             }
         }
@@ -108,7 +114,8 @@ public class QuestEntityMarkerRenderer {
                         }
                     }
                     if (isMatchingNpc(living, q)) {
-                        markerText = "§e§l! §6§lMisión";
+                        markerText = "§6§lMisión";
+                        markerIcon = "quest_available.png";
                         markerColor = 0xFFFF55;
                         break;
                     }
@@ -117,7 +124,7 @@ public class QuestEntityMarkerRenderer {
         }
 
         if (markerText != null) {
-            renderFloatingMarker(event, mc.font, markerText, markerColor);
+            renderFloatingMarker(event, mc.font, markerText, markerIcon, markerColor);
         }
     }
 
@@ -188,12 +195,12 @@ public class QuestEntityMarkerRenderer {
         return null;
     }
 
-    private static void renderFloatingMarker(RenderNameTagEvent event, Font font, String text, int color) {
+    private static void renderFloatingMarker(RenderNameTagEvent event, Font font, String text, String iconFile, int color) {
         PoseStack poseStack = event.getPoseStack();
         poseStack.pushPose();
 
-        // Elevar significativamente por encima del nametag y barra de vida regular (+0.95F)
-        poseStack.translate(0.0D, event.getEntity().getBbHeight() + 0.95F, 0.0D);
+        // Elevar significativamente por encima del nametag, nivel y barra de vida (+1.35F)
+        poseStack.translate(0.0D, event.getEntity().getBbHeight() + 1.35F, 0.0D);
         poseStack.mulPose(Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation());
         poseStack.scale(-0.025F, -0.025F, 0.025F);
 
@@ -203,6 +210,21 @@ public class QuestEntityMarkerRenderer {
         // Luz completa 0xF000F0 (brillo / emisión total en oscuridad y sombras)
         int fullBright = 0xF000F0;
         int bg = 0x90000000;
+
+        // Dibujar icono moderno centrado arriba del texto
+        if (iconFile != null) {
+            ResourceLocation iconRl = new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/" + iconFile);
+            com.mojang.blaze3d.vertex.VertexConsumer vc = event.getMultiBufferSource().getBuffer(net.minecraft.client.renderer.RenderType.entityTranslucent(iconRl));
+            float size = 14.0F;
+            float x0 = -size / 2.0F;
+            float x1 = size / 2.0F;
+            float y0 = -size - 2.0F;
+            float y1 = -2.0F;
+            vc.vertex(matrix, x0, y0, 0).color(255, 255, 255, 255).uv(0, 0).overlayCoords(net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY).uv2(fullBright).normal(0, 0, 1).endVertex();
+            vc.vertex(matrix, x0, y1, 0).color(255, 255, 255, 255).uv(0, 1).overlayCoords(net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY).uv2(fullBright).normal(0, 0, 1).endVertex();
+            vc.vertex(matrix, x1, y1, 0).color(255, 255, 255, 255).uv(1, 1).overlayCoords(net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY).uv2(fullBright).normal(0, 0, 1).endVertex();
+            vc.vertex(matrix, x1, y0, 0).color(255, 255, 255, 255).uv(1, 0).overlayCoords(net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY).uv2(fullBright).normal(0, 0, 1).endVertex();
+        }
 
         // Texto visible a través de paredes y obstáculos (See-Through)
         font.drawInBatch(
