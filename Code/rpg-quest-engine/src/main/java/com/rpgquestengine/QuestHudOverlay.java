@@ -167,6 +167,7 @@ public class QuestHudOverlay {
 
             int drawY = y;
             drawBadge(graphics, font, catName, x, drawY, badgeBoxW, badgeBoxH, badgeBgColor, badgeBorderColor);
+            graphics.blit(new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/quest_completed.png"), x + badgeBoxW + 6, drawY - 1, 0, 0, 12, 12, 12, 12);
             drawY += badgeBoxH + 4;
 
             for (FormattedCharSequence line : titleLines) {
