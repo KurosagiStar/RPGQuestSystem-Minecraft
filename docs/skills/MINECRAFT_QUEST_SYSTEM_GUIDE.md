@@ -74,8 +74,8 @@ Comando: `/easy_npc preset import villager/<nombre>`
 - `villager_estructura`: Vigía de la Ciudadela (Misión: `descubrir_aldea`)
 - `villager_dimension`: Ocultista del Vacío (Misión: `viaje_nether`)
 
-### B. Presets de Misiones Encadenadas (`preset/chain/`):
-Comando: `/easy_npc preset import chain/<nombre>`
+### B. Presets de Misiones Encadenadas (`preset/villager/`):
+Comando: `/easy_npc preset import villager/<nombre>`
 - `chain_muralla_1_comandante`: Paso 1 - Defiende muralla y entrega la orden sellada de relevo (`q_relevo_activa`).
 - `chain_muralla_2_centinela`: Paso 2 - Recibe la orden de relevo (`TALK`) y encarga purgar los riscos de caballeros caídos (`q_fell_knights_activa`).
 - `chain_muralla_3_cazador`: Paso 3 - Desbloqueado tras limpiar los riscos; encarga destruir el nido de arañas (`q_cazador_activa`) y otorga recompensa final.

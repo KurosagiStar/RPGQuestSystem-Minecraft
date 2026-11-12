@@ -13,13 +13,13 @@ description: Natural and procedural spawning module for Easy NPC entities in Min
 ## 1. Identificadores y Nombres de Presets Creados
 
 ### A. Cadena de la Muralla (Trilogía Encadenada)
-Ubicación de archivos: `config/easy_npc/preset/chain/`
+Ubicación de archivos: `config/easy_npc/preset/villager/`
 
 | Eslabón | Archivo Preset (`.snbt`) | Comando In-Game para Importar | Tag Técnico de Entidad | Bioma / Estructura Sugerida |
 | :--- | :--- | :--- | :--- | :--- |
-| **Paso 1** | `chain_muralla_1_comandante.npc.snbt` | `/easy_npc preset import chain/chain_muralla_1_comandante` | `chain_muralla_1_comandante` | Aldea (`#minecraft:village`), Murallas, Llanuras |
-| **Paso 2** | `chain_muralla_2_centinela.npc.snbt` | `/easy_npc preset import chain/chain_muralla_2_centinela` | `chain_muralla_2_centinela` | Puesto Avanzado / Torres de Nieve / Colinas |
-| **Paso 3** | `chain_muralla_3_cazador.npc.snbt` | `/easy_npc preset import chain/chain_muralla_3_cazador` | `chain_muralla_3_cazador` | Pantano (`#minecraft:is_swamp`), Entrada de Cavernas |
+| **Paso 1** | `chain_muralla_1_comandante.npc.snbt` | `/easy_npc preset import villager/chain_muralla_1_comandante` | `chain_muralla_1_comandante` | Aldea (`#minecraft:village`), Murallas, Llanuras |
+| **Paso 2** | `chain_muralla_2_centinela.npc.snbt` | `/easy_npc preset import villager/chain_muralla_2_centinela` | `chain_muralla_2_centinela` | Puesto Avanzado / Torres de Nieve / Colinas |
+| **Paso 3** | `chain_muralla_3_cazador.npc.snbt` | `/easy_npc preset import villager/chain_muralla_3_cazador` | `chain_muralla_3_cazador` | Pantano (`#minecraft:is_swamp`), Entrada de Cavernas |
 
 ---
 
