@@ -53,12 +53,15 @@ RPGQuestSystem-Minecraft/
    - Brújula cardinal (`▲ ↗ ▶ ↘ ▼ ↙ ◀ ↖`) y distancia en metros hacia zonas amplias de exploración o de regreso al NPC.
 2. **Notificaciones tipo Logro Vanilla (QuestToast)**:
    - Notificación animada en la esquina superior derecha al iniciar, progresar o completar misiones.
-3. **Marcadores sobre Mobs y NPCs**:
-   - `§c⚔ §fObjetivo` sobre monstruos que debes cazar para la misión activa.
-   - `§e§l! §6§lMisión` sobre el NPC con misión disponible para aceptar.
-   - `§b§l✦ §fEn progreso` sobre el NPC que otorgó la misión activa.
-   - `§b§l✦ §fHablar` sobre el NPC de destino de informes o entregas (`TALK` / `DELIVER`).
-   - `§6§l? §e§lCompletada` sobre el NPC cuando la misión está lista para reclamar recompensas.
+3. **Marcadores 3D Modernos sobre Mobs y NPCs**:
+   - Iconos vectoriales 64x64 sobre la cabeza (`+1.35F` para no chocar con niveles/barras) diferenciados por categoría:
+     - **Principal**: Amarillo `!` (`§6§lMisión`)
+     - **Secundaria**: Azul `!` (`§9§lSecundaria`)
+     - **Contrato**: Rojo `!` (`§c§lContrato`)
+     - **Repetible**: Verde `!` (`§a§lRepetible`)
+     - **En progreso / Hablar**: Celeste `✦`
+     - **Completada**: Dorado `?`
+     - **Objetivo (`KILL`)**: Rojo `⚔`
 4. **Sincronización Cliente-Servidor Nativa**:
    - Paquete `SyncPlayerQuestsPacket` cada 10 ticks (0.5s) para scores, misiones activas y posiciones en vivo.
    - Paquete `SyncEntityTagsPacket` enviado en `StartTracking` para replicar tags internos de entidades (`npcId`) al cliente, garantizando detección precisa sin falsos positivos por nombres repetidos.

@@ -6,13 +6,17 @@
 - **Resolución de Limitación Vanilla/Forge:** Minecraft Forge no sincroniza los scoreboard tags (`living.getTags()`) de entidades al cliente. Se implementó `SyncEntityTagsPacket` enviado automáticamente cuando el jugador comienza a rastrear la entidad (`PlayerEvent.StartTracking`).
 - **Eliminación Total de Colisión por Nombres Visibles:** `QuestEntityMarkerRenderer` y `isMatchingNpc` priorizan de forma estricta los `npcId` internos registrados en las misiones. Si una misión define `npcId` (ej. `chain_muralla_1_comandante`), solo las entidades que contengan ese tag recibirán marcadores, sin colisionar jamás con NPCs de nombres idénticos o similares.
 
-### 2. Modernización Visual de Marcadores Flotantes 3D
-- **Nuevo Sistema de Indicadores:**
-  - `§e§l! §6§lMisión`: Misión disponible para aceptar (sin prerrequisitos pendientes).
-  - `§b§l✦ §fEn progreso`: NPC emisor de la misión activa actualmente rastreada.
-  - `§b§l✦ §fHablar`: NPC objetivo de etapas `TALK` o `DELIVER` hacia el que el jugador debe dirigirse.
-  - `§6§l? §e§lCompletada`: Misión lista para entregar (`doneTag`).
-  - `§c⚔ §fObjetivo`: Monstruos y jefes objetivo de cacería (`KILL`).
+### 2. Modernización Visual de Marcadores Flotantes 3D e Iconos por Categoría
+- **Iconos Modernos 64x64 RGBA (`textures/gui/icons/`):** Renderizados en 3D encima del texto a altura elevada (`+1.35F`) para evitar solapamientos con niveles y barras de vida:
+  - **Principal (`MAIN`):** `quest_available.png` (Amarillo `!`) + `§6§lMisión`.
+  - **Secundaria (`SECONDARY`):** `quest_available_secondary.png` (Azul `!`) + `§9§lSecundaria`.
+  - **Contrato (`CONTRACT`):** `quest_available_contract.png` (Rojo `!`) + `§c§lContrato`.
+  - **Repetible (`REPEATABLE`):** `quest_available_repeatable.png` (Verde `!`) + `§a§lRepetible`.
+  - **En Progreso / Hablar:** `quest_in_progress.png` (Celeste `✦`).
+  - **Completada:** `quest_completed.png` (Dorado `?`, también visible junto al badge en el HUD).
+  - **Objetivo (`KILL`):** `quest_objective.png` (Rojo `⚔`).
+- **Radar en Tiempo Real:** `QuestHudOverlay` prioriza coordenadas vivas en el cliente por `npcId` frame a frame y `RPGQuestEngine` sincroniza tags de entidades cercanas (radio 48 bloques) cada 10 ticks.
+- **Presets `villager_*.npc.snbt`:** Todos los presets individuales ahora incluyen su campo `Tags: ["villager_<nombre>"]` para coincidencia estricta por `npcId`.
 
 ### 3. Presets Oficiales de Cadena de Misiones (Easy NPC v7.18.0)
 - Presets reubicados de forma estándar en `config/easy_npc/preset/villager/` con importación nativa:

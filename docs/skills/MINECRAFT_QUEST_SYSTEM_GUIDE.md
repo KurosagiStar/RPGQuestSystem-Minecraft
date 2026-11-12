@@ -26,12 +26,7 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 ### B. Clases Críticas del Mod
 - `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler de validación en servidor cada 10 ticks (0.5s), verificación de metas (`DIMENSION`, `STRUCTURE`, `BIOME`, `ITEM`, `TAG`, `SCORE`), soporte NBT para ítems/gemas (`nbtKey`, `nbtValue`), aislamiento por índice (`getInternalScoreKey(questId, stageIndex, type)`) y sincronización de red.
 - `QuestToast.java`: Notificaciones animadas nativas de Minecraft usando la UI de logros / avances (`ToastComponent`, `textures/gui/toasts.png`).
-- `QuestEntityMarkerRenderer.java`: Renderiza marcadores flotantes 3D modernos sobre la cabeza de entidades en un radio de 32 bloques:
-  - `§c⚔ §fObjetivo`: Monstruos de cacería (`KILL`).
-  - `§e§l! §6§lMisión`: Misión disponible para aceptar (con prerrequisitos satisfechos).
-  - `§b§l✦ §fEn progreso`: NPC emisor de la misión activa.
-  - `§b§l✦ §fHablar`: NPC objetivo de relevos o diálogos (`TALK` / `DELIVER`).
-  - `§6§l? §e§lCompletada`: Misión completada lista para reclamar recompensa.
+- `QuestEntityMarkerRenderer.java`: Renderiza iconos modernos 3D (`textures/gui/icons/*.png`) y texto a altura `+1.35F` sobre entidades en un radio de 32 bloques, diferenciados por categoría (`MAIN` amarillo, `SECONDARY` azul, `CONTRACT` rojo, `REPEATABLE` verde), `quest_in_progress.png` (celeste), `quest_completed.png` (dorado) y `quest_objective.png` (rojo).
 - `QuestHudOverlay.java`: HUD flotante moderno con badge de categoría, títulos limpios en negrita temática, divisores, progreso por objetivos, y brújula cardinal hacia objetivos y hacia el NPC de entrega (`§e▲ Capitán (45m)`).
 - `QuestJournalScreen.java`: Menú completo en tecla `J` con pestaña inicial `Activas`, agrupación por categoría, word-wrap de 2 líneas y botón dinámico `Seguir` / `Dejar de seguir`.
 - `QuestEventListener.java`: Listener Forge nativo para `KILL`, `MINE`, `CRAFT`, `FISH`, `SMELT`, `TALK`, `DELIVER`. Incluye resolución avanzada de kills de bosses/magia/proyectiles/mascotas (`resolvePlayerKiller`), replicación en `StartTracking` de tags y sonidos de oficio para aldeanos con cooldown de 1.4s.

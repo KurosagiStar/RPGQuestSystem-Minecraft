@@ -56,3 +56,6 @@ Al diseñar la lógica del spawner (sea datapack con estructuras, mod Java o fun
 1. **Spawn Único por Área:** Los NPCs de cadena no deben acumularse ni duplicarse en el mismo chunk.
 2. **Inmunidad:** Configurar las entidades generadas con `Invulnerable: 1b` o `PersistenceRequired: 1b` para evitar que mueran por mobs hostiles antes de interactuar.
 3. **Tags de Identificación:** Cada entidad debe poseer en su lista `Tags` el tag técnico correspondiente (`chain_muralla_1_comandante`, `chain_muralla_2_centinela`, etc.) para que el motor `rpgquestengine` pueda rastrearlo con exactitud en la brújula y eventos `TALK`/`DELIVER`.
+
+> [!IMPORTANT]
+> **Compatibilidad con npcId estricto:** Todos los presets villager_*.npc.snbt y chain_muralla_*.npc.snbt incluyen su tag unico en Tags. Al spawnear entidades desde codigo o spawner, conserva siempre el tag unico del preset para que rpgquestengine muestre el marcador 3D correspondiente.
