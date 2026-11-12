@@ -351,6 +351,17 @@ public class RPGQuestEngine {
         }
 
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncPlayerQuestsPacket(sp.getTags(), scores, npcLivePositions));
+
+        // 3. Sincronizar tags de entidades vivas cercanas (radio 48 bloques) para garantizar marcadores actualizados en tiempo real
+        net.minecraft.world.phys.AABB syncBox = sp.getBoundingBox().inflate(48.0D);
+        for (net.minecraft.world.entity.LivingEntity nearby : level.getEntitiesOfClass(net.minecraft.world.entity.LivingEntity.class, syncBox)) {
+            if (nearby != sp && !nearby.getTags().isEmpty()) {
+                NetworkHandler.CHANNEL.send(
+                        PacketDistributor.PLAYER.with(() -> sp),
+                        new SyncEntityTagsPacket(nearby.getId(), new java.util.ArrayList<>(nearby.getTags()))
+                );
+            }
+        }
     }
 
     public static String getInternalScoreKey(String questId, int stageIndex, String type) {
