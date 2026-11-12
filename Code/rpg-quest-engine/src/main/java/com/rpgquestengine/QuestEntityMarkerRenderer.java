@@ -32,19 +32,17 @@ public class QuestEntityMarkerRenderer {
         if (distSq > 1024.0) return; // Máximo 32 bloques de visión
 
         QuestDefinition tracked = getTrackedQuest();
-        if (tracked == null) return;
-
-        boolean isDone = ClientQuestData.hasTag(tracked.doneTag);
+        boolean isDone = tracked != null && ClientQuestData.hasTag(tracked.doneTag);
         String markerText = null;
         int markerColor = 0xFFFF55; // Amarillo por defecto
 
-        if (isDone) {
+        if (tracked != null && isDone) {
             // Misión lista para entregar: Signo de exclamación clásico RPG sobre la cabeza
             if (isMatchingNpc(living, tracked)) {
                 markerText = "§6§l[ ! ]";
                 markerColor = 0xFFAA00;
             }
-        } else {
+        } else if (tracked != null) {
             // Misión en progreso: Verificar si es objetivo de cacería (KILL)
             for (int sIdx = 0; sIdx < tracked.stages.size(); sIdx++) {
                 QuestDefinition.QuestStage stage = tracked.stages.get(sIdx);
@@ -65,6 +63,27 @@ public class QuestEntityMarkerRenderer {
             if (markerText == null && isMatchingNpc(living, tracked)) {
                 markerText = "§e§l✦";
                 markerColor = 0xFFFF55;
+            }
+        }
+
+        // Si no tiene marcador por misión activa o de combate, verificar si el NPC tiene una misión DISPONIBLE para aceptar
+        if (markerText == null) {
+            for (QuestDefinition q : QuestConfig.QUESTS) {
+                // Disponible = no activa y no entregada
+                if (!ClientQuestData.hasTag(q.activeTag) && !ClientQuestData.hasTag(q.completedTag)) {
+                    // Si tiene prerrequisito, verificar que la anterior esté completada
+                    if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                        QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
+                        if (prereq != null && !ClientQuestData.hasTag(prereq.completedTag)) {
+                            continue; // Aún bloqueada
+                        }
+                    }
+                    if (isMatchingNpc(living, q)) {
+                        markerText = "§e§l✦"; // Estrella amarilla brillante sobre la cabeza
+                        markerColor = 0xFFFF55;
+                        break;
+                    }
+                }
             }
         }
 
