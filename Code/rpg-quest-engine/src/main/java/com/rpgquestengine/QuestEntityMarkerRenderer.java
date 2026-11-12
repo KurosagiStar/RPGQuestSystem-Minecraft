@@ -119,18 +119,25 @@ public class QuestEntityMarkerRenderer {
     private static boolean isMatchingNpc(LivingEntity living, QuestDefinition quest) {
         if (quest == null) return false;
 
-        // 1. Coincidencia por npcId explícito (ej: "npc_matar", "cisco_capitan_guardia")
+        // 1. Si la misión define un npcId explícito, la coincidencia por tag es ESTRICTA y OBLIGATORIA
         if (quest.npcId != null && !quest.npcId.isEmpty()) {
+            boolean hasTagMatch = false;
             for (String tag : living.getTags()) {
                 if (tag.equalsIgnoreCase(quest.npcId)) {
-                    ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
-                    ClientQuestData.rememberNpcPosition(quest.npc, living.getX(), living.getZ());
-                    return true;
+                    hasTagMatch = true;
+                    break;
                 }
             }
+            if (hasTagMatch) {
+                ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
+                ClientQuestData.rememberNpcPosition(quest.npc, living.getX(), living.getZ());
+                return true;
+            }
+            // Si tiene npcId pero la entidad viva NO tiene ese tag, NO debe coincidir por nombre (evita colisión entre presets distintos con mismo nombre)
+            return false;
         }
 
-        // 2. Coincidencia por nombre normalizado
+        // 2. Coincidencia por nombre normalizado (solo cuando no se especificó npcId en la misión)
         String targetNpcName = quest.npc;
         if (targetNpcName == null || targetNpcName.isEmpty()) return false;
         String entityName = normalize(living.getName().getString());
@@ -144,9 +151,6 @@ public class QuestEntityMarkerRenderer {
 
         if (matches) {
             ClientQuestData.rememberNpcPosition(targetNpcName, living.getX(), living.getZ());
-            if (quest.npcId != null && !quest.npcId.isEmpty()) {
-                ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
-            }
         }
         return matches;
     }
