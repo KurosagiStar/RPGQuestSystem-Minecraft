@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Maestro Armero"}',
-    Tags: ["villager_craftear"],
+    Tags: ["villager_craftear_secondary"],
     DialogData: {
       DialogDataSet: [
         {

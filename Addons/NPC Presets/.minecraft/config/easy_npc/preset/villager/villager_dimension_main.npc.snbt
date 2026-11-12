@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#AA00AA","bold":true,"text":"Ocultista del Vacio"}',
-    Tags: ["villager_dimension"],
+    Tags: ["villager_dimension_main"],
     DialogData: {
       DialogDataSet: [
         {

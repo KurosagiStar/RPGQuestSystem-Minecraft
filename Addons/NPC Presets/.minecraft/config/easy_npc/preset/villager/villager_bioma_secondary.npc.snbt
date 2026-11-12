@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#55FF55","bold":true,"text":"Naturalista de la Arboleda"}',
-    Tags: ["villager_bioma"],
+    Tags: ["villager_bioma_secondary"],
     DialogData: {
       DialogDataSet: [
         {

@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Herrero Enano"}',
-    Tags: ["villager_minar"],
+    Tags: ["villager_minar_secondary"],
     DialogData: {
       DialogDataSet: [
         {

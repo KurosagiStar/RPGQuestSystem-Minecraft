@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Vigia de la Ciudadela"}',
-    Tags: ["villager_estructura"],
+    Tags: ["villager_estructura_secondary"],
     DialogData: {
       DialogDataSet: [
         {

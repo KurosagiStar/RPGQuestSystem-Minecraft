@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#55FFFF","bold":true,"text":"Pescador del Muelle"}',
-    Tags: ["villager_pescar"],
+    Tags: ["villager_pescar_repeatable"],
     DialogData: {
       DialogDataSet: [
         {

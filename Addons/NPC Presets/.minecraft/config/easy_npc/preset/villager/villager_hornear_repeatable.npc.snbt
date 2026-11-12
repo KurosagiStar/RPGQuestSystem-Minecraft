@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Panadero de la Aldea"}',
-    Tags: ["villager_hornear"],
+    Tags: ["villager_hornear_repeatable"],
     DialogData: {
       DialogDataSet: [
         {
