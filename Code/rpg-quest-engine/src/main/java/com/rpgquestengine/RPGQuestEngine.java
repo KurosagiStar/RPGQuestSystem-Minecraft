@@ -97,10 +97,17 @@ public class RPGQuestEngine {
                         Scoreboard sb = sp.getServer().getScoreboard();
 
                         int removedTags = 0;
+                        for (String t : new java.util.ArrayList<>(sp.getTags())) {
+                            if (t.startsWith("q_") || t.startsWith("rqe_")) {
+                                sp.removeTag(t);
+                                removedTags++;
+                            }
+                        }
+
                         for (QuestDefinition q : QuestConfig.QUESTS) {
-                            if (q.activeTag != null && sp.removeTag(q.activeTag)) removedTags++;
-                            if (q.doneTag != null && sp.removeTag(q.doneTag)) removedTags++;
-                            if (q.completedTag != null && sp.removeTag(q.completedTag)) removedTags++;
+                            if (q.activeTag != null) sp.removeTag(q.activeTag);
+                            if (q.doneTag != null) sp.removeTag(q.doneTag);
+                            if (q.completedTag != null) sp.removeTag(q.completedTag);
 
                             for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                                 QuestDefinition.QuestStage st = q.stages.get(sIdx);

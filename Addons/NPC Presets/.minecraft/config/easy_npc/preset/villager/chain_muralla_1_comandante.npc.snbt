@@ -27,7 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Comandante de la Muralla"}',
-    Tags: ["chain_muralla_1_comandante"],
+    Tags: ["chain_muralla_1_comandante", "villager_guardia"],
     DialogData: {
       DialogDataSet: [
         {
