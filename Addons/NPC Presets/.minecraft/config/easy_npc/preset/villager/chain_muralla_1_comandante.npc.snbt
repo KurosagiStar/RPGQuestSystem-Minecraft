@@ -218,6 +218,15 @@
           ]
         }
       ]
-    }
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:iron_sword" },
+      { Count: 1b, id: "minecraft:shield" }
+    ],
+    Profession: "ARMORER",
+    VariantType: "PLAINS_ARMORER",
+    VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
+    id: "easy_npc:villager"
   }
 }

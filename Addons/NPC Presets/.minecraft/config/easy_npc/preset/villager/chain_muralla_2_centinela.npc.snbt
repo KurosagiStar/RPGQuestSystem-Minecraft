@@ -267,6 +267,15 @@
           ]
         }
       ]
-    }
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:iron_sword" },
+      { Count: 1b, id: "minecraft:shield" }
+    ],
+    Profession: "WEAPONSMITH",
+    VariantType: "SNOW_WEAPONSMITH",
+    VillagerData: { profession: "minecraft:weaponsmith", type: "minecraft:snow" },
+    id: "easy_npc:villager"
   }
 }
