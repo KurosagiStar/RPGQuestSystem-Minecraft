@@ -64,6 +64,11 @@ public class QuestEntityMarkerRenderer {
                 for (QuestDefinition.QuestStage stage : tracked.stages) {
                     if ("TALK".equalsIgnoreCase(stage.type) || "DELIVER".equalsIgnoreCase(stage.type)) {
                         if (stage.target != null && !stage.target.isEmpty()) {
+                            if (ClientQuestData.entityHasTag(living.getId(), stage.target)) {
+                                markerText = "§b§l✦ §fHablar";
+                                markerColor = 0x55FFFF;
+                                break;
+                            }
                             for (String tag : living.getTags()) {
                                 if (tag.equalsIgnoreCase(stage.target)) {
                                     markerText = "§b§l✦ §fHablar";
@@ -119,18 +124,27 @@ public class QuestEntityMarkerRenderer {
     private static boolean isMatchingNpc(LivingEntity living, QuestDefinition quest) {
         if (quest == null) return false;
 
-        // 1. Coincidencia por tag si la entidad lo tiene en el cliente
+        // 1. Si la misión define un npcId (tag de entidad interno), comprobación ESTRICTA y PRIORITARIA
         if (quest.npcId != null && !quest.npcId.isEmpty()) {
-            for (String tag : living.getTags()) {
-                if (tag.equalsIgnoreCase(quest.npcId)) {
-                    ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
-                    ClientQuestData.rememberNpcPosition(quest.npc, living.getX(), living.getZ());
-                    return true;
+            boolean hasId = ClientQuestData.entityHasTag(living.getId(), quest.npcId);
+            if (!hasId) {
+                for (String tag : living.getTags()) {
+                    if (tag.equalsIgnoreCase(quest.npcId)) {
+                        hasId = true;
+                        break;
+                    }
                 }
             }
+            if (hasId) {
+                ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
+                ClientQuestData.rememberNpcPosition(quest.npc, living.getX(), living.getZ());
+                return true;
+            }
+            // Si la misión requiere un npcId interno y la entidad no lo tiene, NO debe coincidir nunca por nombre
+            return false;
         }
 
-        // 2. Coincidencia por nombre normalizado (soporte clientes sin tags sincronizados)
+        // 2. Coincidencia por nombre normalizado (únicamente si la misión NO define npcId)
         String targetNpcName = quest.npc;
         if (targetNpcName == null || targetNpcName.isEmpty()) return false;
         String entityName = normalize(living.getName().getString());
@@ -144,9 +158,6 @@ public class QuestEntityMarkerRenderer {
 
         if (matches) {
             ClientQuestData.rememberNpcPosition(targetNpcName, living.getX(), living.getZ());
-            if (quest.npcId != null && !quest.npcId.isEmpty()) {
-                ClientQuestData.rememberNpcPosition(quest.npcId, living.getX(), living.getZ());
-            }
         }
         return matches;
     }

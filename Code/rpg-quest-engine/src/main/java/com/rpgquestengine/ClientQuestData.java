@@ -8,6 +8,7 @@ import net.minecraft.world.item.Items;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,7 +17,31 @@ public class ClientQuestData {
     private static final Map<String, Integer> PLAYER_SCORES = new HashMap<>();
     private static final Map<String, double[]> KNOWN_NPC_POSITIONS = new HashMap<>();
     private static final Map<String, double[]> SERVER_NPC_POSITIONS = new HashMap<>(); // questId -> [x, z] en vivo
+    private static final Map<Integer, Set<String>> ENTITY_TAGS = new HashMap<>(); // entityId -> tags sincronizados
     private static boolean initialized = false;
+
+    public static synchronized void updateEntityTags(int entityId, List<String> tags) {
+        if (tags == null || tags.isEmpty()) {
+            ENTITY_TAGS.remove(entityId);
+        } else {
+            ENTITY_TAGS.put(entityId, new HashSet<>(tags));
+        }
+    }
+
+    public static synchronized boolean entityHasTag(int entityId, String tag) {
+        if (tag == null || tag.isEmpty()) return false;
+        Set<String> tags = ENTITY_TAGS.get(entityId);
+        if (tags != null) {
+            for (String t : tags) {
+                if (t.equalsIgnoreCase(tag)) return true;
+            }
+        }
+        return false;
+    }
+
+    public static synchronized Set<String> getEntityTags(int entityId) {
+        return ENTITY_TAGS.getOrDefault(entityId, java.util.Collections.emptySet());
+    }
 
     public static void setServerNpcPosition(String questId, double x, double z) {
         if (questId != null && !questId.isEmpty()) {

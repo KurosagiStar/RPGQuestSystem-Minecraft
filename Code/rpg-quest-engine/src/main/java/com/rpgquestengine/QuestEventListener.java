@@ -12,9 +12,12 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = RPGQuestEngine.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class QuestEventListener {
@@ -108,6 +111,19 @@ public class QuestEventListener {
         }
 
         return null;
+    }
+
+    @SubscribeEvent
+    public static void onStartTracking(PlayerEvent.StartTracking event) {
+        if (event.getEntity() instanceof ServerPlayer sp && event.getTarget() instanceof LivingEntity living) {
+            Set<String> tags = living.getTags();
+            if (tags != null && !tags.isEmpty()) {
+                NetworkHandler.CHANNEL.send(
+                        PacketDistributor.PLAYER.with(() -> sp),
+                        new SyncEntityTagsPacket(living.getId(), new ArrayList<>(tags))
+                );
+            }
+        }
     }
 
     @SubscribeEvent
