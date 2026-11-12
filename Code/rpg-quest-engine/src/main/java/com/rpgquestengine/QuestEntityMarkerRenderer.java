@@ -37,9 +37,9 @@ public class QuestEntityMarkerRenderer {
         int markerColor = 0xFFFF55; // Amarillo por defecto
 
         if (tracked != null && isDone) {
-            // Misión lista para entregar: Signo de exclamación clásico RPG sobre la cabeza
+            // Misión lista para cobrar: Icono de interrogación dorado RPG con estilo limpio
             if (isMatchingNpc(living, tracked)) {
-                markerText = "§6§l[ ! ]";
+                markerText = "§6§l? §e§lCompletada";
                 markerColor = 0xFFAA00;
             }
         } else if (tracked != null) {
@@ -51,7 +51,7 @@ public class QuestEntityMarkerRenderer {
                     if (cur < stage.amount) {
                         ResourceLocation entityType = ForgeRegistries.ENTITY_TYPES.getKey(living.getType());
                         if (entityType != null && ("any".equalsIgnoreCase(stage.target) || entityType.toString().equalsIgnoreCase(stage.target))) {
-                            markerText = "§c⚔ §f[Objetivo] §c⚔";
+                            markerText = "§c⚔ §fObjetivo";
                             markerColor = 0xFF5555;
                             break;
                         }
@@ -59,27 +59,25 @@ public class QuestEntityMarkerRenderer {
                 }
             }
 
-            // También marcar NPC si requiere hablar/interactuar o si es quien dio la misión
+            // NPC objetivo de hablar/relevo o emisor activo
             if (markerText == null && isMatchingNpc(living, tracked)) {
-                markerText = "§e§l✦";
-                markerColor = 0xFFFF55;
+                markerText = "§b§l✦ §fEn progreso";
+                markerColor = 0x55FFFF;
             }
         }
 
-        // Si no tiene marcador por misión activa o de combate, verificar si el NPC tiene una misión DISPONIBLE para aceptar
+        // Si no tiene marcador activo, verificar si el NPC tiene una misión DISPONIBLE para aceptar
         if (markerText == null) {
             for (QuestDefinition q : QuestConfig.QUESTS) {
-                // Disponible = no activa y no entregada
                 if (!ClientQuestData.hasTag(q.activeTag) && !ClientQuestData.hasTag(q.completedTag)) {
-                    // Si tiene prerrequisito, verificar que la anterior esté completada
                     if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
                         QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
                         if (prereq != null && !ClientQuestData.hasTag(prereq.completedTag)) {
-                            continue; // Aún bloqueada
+                            continue;
                         }
                     }
                     if (isMatchingNpc(living, q)) {
-                        markerText = "§e§l✦"; // Estrella amarilla brillante sobre la cabeza
+                        markerText = "§e§l! §6§lMisión";
                         markerColor = 0xFFFF55;
                         break;
                     }
