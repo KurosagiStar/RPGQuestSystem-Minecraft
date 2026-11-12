@@ -102,11 +102,25 @@ public class QuestHudOverlay {
             double targetNpcZ = 0;
             boolean hasValidNpcTarget = false;
 
-            if (q.hasNpcLocation) {
+            // 0. Prioridad máxima: entidad viva en el cliente con npcId coincidente (precisión exacta frame a frame)
+            Minecraft mcInstance = Minecraft.getInstance();
+            if (q.npcId != null && !q.npcId.isEmpty() && mcInstance.level != null) {
+                for (net.minecraft.world.entity.Entity ent : mcInstance.level.entitiesForRendering()) {
+                    if (ent instanceof net.minecraft.world.entity.LivingEntity && ent.isAlive()
+                            && ClientQuestData.entityHasTag(ent.getId(), q.npcId)) {
+                        targetNpcX = ent.getX();
+                        targetNpcZ = ent.getZ();
+                        hasValidNpcTarget = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!hasValidNpcTarget && q.hasNpcLocation) {
                 targetNpcX = q.npcX;
                 targetNpcZ = q.npcZ;
                 hasValidNpcTarget = true;
-            } else {
+            } else if (!hasValidNpcTarget) {
                 // 1. Intentar por posición en vivo del servidor vía UUID tracking
                 double[] livePos = ClientQuestData.getServerNpcPosition(q.id);
                 if (livePos != null) {
