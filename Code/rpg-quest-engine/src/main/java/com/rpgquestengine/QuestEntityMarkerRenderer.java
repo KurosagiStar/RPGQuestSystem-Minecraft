@@ -114,9 +114,24 @@ public class QuestEntityMarkerRenderer {
                         }
                     }
                     if (isMatchingNpc(living, q)) {
-                        markerText = "§6§lMisión";
-                        markerIcon = "quest_available.png";
-                        markerColor = 0xFFFF55;
+                        String cat = q.category != null ? q.category.toUpperCase() : "MAIN";
+                        if ("CONTRACT".equals(cat)) {
+                            markerText = "§c§lContrato";
+                            markerIcon = "quest_available_contract.png";
+                            markerColor = 0xFF5555;
+                        } else if ("SECONDARY".equals(cat) || "SIDE".equals(cat)) {
+                            markerText = "§9§lSecundaria";
+                            markerIcon = "quest_available_secondary.png";
+                            markerColor = 0x55AAFF;
+                        } else if ("REPEATABLE".equals(cat)) {
+                            markerText = "§a§lRepetible";
+                            markerIcon = "quest_available_repeatable.png";
+                            markerColor = 0x55FF55;
+                        } else {
+                            markerText = "§6§lMisión";
+                            markerIcon = "quest_available.png";
+                            markerColor = 0xFFFF55;
+                        }
                         break;
                     }
                 }
