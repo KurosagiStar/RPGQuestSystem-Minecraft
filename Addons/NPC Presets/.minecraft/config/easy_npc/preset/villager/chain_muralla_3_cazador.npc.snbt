@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:leather_helmet" }
     ],
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Cazador de Bestias"}',
+    CustomName: '{"color":"#55FF55","bold":true,"text":"Cazador del Pantano"}',
     Tags: ["chain_muralla_3_cazador"],
     DialogData: {
       DialogDataSet: [

@@ -286,7 +286,7 @@
         "id":  "cazador_pantano",
         "category":  "CONTRACT",
         "title":  "Contrato: La Bestia de la Cueva",
-        "npc":  "Cazador de Bestias",
+        "npc":  "Cazador del Pantano",
         "npcId":  "chain_muralla_3_cazador",
         "description":  "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
         "suggestedLevel":  6,
