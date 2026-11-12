@@ -82,6 +82,9 @@ public class QuestEventListener {
                     ClientQuestData.rememberNpcPosition(tag, living.getX(), living.getZ());
                 }
             } else if (event.getEntity() instanceof ServerPlayer sp) {
+                // Reproducir sonido temático de aldeano según tipo/profesión (cooldown de 1.4s)
+                playNpcInteractSound(sp, living);
+
                 // LADO SERVIDOR: Recordar siempre la última entidad con la que interactuó el jugador
                 String entityUuid = living.getStringUUID();
                 String entityName = living.getName().getString();
@@ -180,6 +183,42 @@ public class QuestEventListener {
                 }
             }
         }
+    }
+
+    private static final java.util.Map<java.util.UUID, Long> LAST_SOUND_TIME = new java.util.concurrent.ConcurrentHashMap<>();
+
+    private static void playNpcInteractSound(ServerPlayer sp, LivingEntity living) {
+        String entityType = ForgeRegistries.ENTITY_TYPES.getKey(living.getType()).toString().toLowerCase();
+        boolean isVillagerNpc = entityType.contains("villager") || entityType.contains("npc");
+        if (!isVillagerNpc) return;
+
+        long now = System.currentTimeMillis();
+        Long last = LAST_SOUND_TIME.get(sp.getUUID());
+        if (last != null && (now - last) < 1400) return;
+        LAST_SOUND_TIME.put(sp.getUUID(), now);
+
+        String name = living.getName().getString().toLowerCase();
+        String custom = living.getCustomName() != null ? living.getCustomName().getString().toLowerCase() : "";
+        String combo = name + " " + custom;
+
+        net.minecraft.sounds.SoundEvent sound = net.minecraft.sounds.SoundEvents.VILLAGER_AMBIENT;
+        float pitch = 0.95F + (new java.util.Random().nextFloat() * 0.15F);
+
+        if (combo.contains("alquimi") || combo.contains("cleric") || combo.contains("elena") || combo.contains("ocultista")) {
+            sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_CLERIC;
+        } else if (combo.contains("armero") || combo.contains("weapon") || combo.contains("guardia") || combo.contains("centinela")) {
+            sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_WEAPONSMITH;
+        } else if (combo.contains("herrero") || combo.contains("minero") || combo.contains("forja")) {
+            sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_ARMORER;
+        } else if (combo.contains("panader") || combo.contains("horn") || combo.contains("farmer")) {
+            sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_FARMER;
+        } else if (combo.contains("pesca")) {
+            sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_FISHERMAN;
+        } else if (combo.contains("explora") || combo.contains("bioma") || combo.contains("cartograph")) {
+            sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_CARTOGRAPHER;
+        }
+
+        sp.serverLevel().playSound(null, living.getX(), living.getY(), living.getZ(), sound, net.minecraft.sounds.SoundSource.NEUTRAL, 1.0F, pitch);
     }
 }
 
