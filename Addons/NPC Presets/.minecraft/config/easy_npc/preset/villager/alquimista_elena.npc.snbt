@@ -1,0 +1,115 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794344600000L,
+    description: "Alquimista Elena - Recoleccion de Ojos de Arana",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794344600000L,
+    name: "Alquimista Elena",
+    variantType: "SWAMP_CLERIC",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    ArmorItems: [
+      {}, {}, {},
+      { Count: 1b, id: "minecraft:leather_helmet", tag: { display: { color: 6700445 } } }
+    ],
+    CustomName: '{"color":"#D040FB","bold":true,"text":"Alquimista Elena"}',
+    CustomNameVisible: 1b,
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/clear @initiator minecraft:spider_eye 4", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator cisco_mod:champion_coin 6", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator minecraft:potion{Potion:\"minecraft:healing\"} 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 2 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_elena_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_elena_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_elena_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Elena] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"¡Reactivos obtenidos! Has recibido una Poción y 6 Monedas de Campeón.\",\"color\":\"white\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar 4 Ojos de Araña y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_elena_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [{ Text: "¡Excelente! Estos ojos de araña servirán para destilar el antídoto contra la miasma. ¡Toma tu recompensa!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando ojos de araña" }
+          ],
+          Conditions: [{ Name: "q_elena_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "¿Dónde están los 4 ojos de araña? Búscalos en las cuevas o en la noche cazando arácnidos." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "OPEN_TRADING_SCREEN" }], Label: "trade", Name: "Botica Arcana" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_elena_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "El laboratorio está abastecido gracias a tu ayuda. Siempre tengo pociones a la venta si necesitas." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Reactivos Alquimicos" },
+            { Actions: [{ Type: "OPEN_TRADING_SCREEN" }], Label: "trade", Name: "Botica Arcana" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "Saludos, viajero. La miasma del Fell King envenena el agua y los suelos. ¿Me ayudas a recolectar ingredientes para un elixir purificador?" }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_elena_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Elena] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"¡Misión aceptada! Trae 4 ojos de araña.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Mision (Conseguir 4 Ojos de Arana)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Consigue 4 ojos de araña eliminando arácnidos. Te pagaré con monedas de campeón y un elixir de curación." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:potion", tag: { Potion: "minecraft:night_vision" } },
+      {}
+    ],
+    Profession: "CLERIC",
+    VariantType: "SWAMP_CLERIC",
+    VillagerData: { profession: "minecraft:cleric", type: "minecraft:swamp" },
+    id: "easy_npc:villager"
+  }
+}

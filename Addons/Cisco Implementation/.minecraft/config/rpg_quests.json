@@ -1,218 +1,243 @@
 ﻿[
-  {
-    "id": "caza_zombies",
-    "category": "MAIN",
-    "title": "La Caída de la Noche",
-    "npc": "Capitán de la Guardia",
-    "npcId": "npc_matar",
-    "description": "El Capitán solicita purgar las murallas contra la invasión de no-muertos.",
-    "suggestedLevel": 5,
-    "activeTag": "q_capitan_activa",
-    "doneTag": "q_capitan_lista",
-    "completedTag": "q_capitan_entregada",
-    "rewards": [
-      "5x Lingotes de Oro",
-      "2 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Elimina 5 zombies en los alrededores",
-        "type": "KILL",
-        "target": "minecraft:zombie",
-        "amount": 5
-      }
-    ]
-  },
-  {
-    "id": "cazador_pantano",
-    "category": "CONTRACT",
-    "title": "Contrato: La Bestia de la Cueva",
-    "npc": "Cazador de Bestias",
-    "npcId": "npc_cazador",
-    "description": "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
-    "suggestedLevel": 6,
-    "activeTag": "q_cazador_activa",
-    "doneTag": "q_cazador_lista",
-    "completedTag": "q_cazador_entregada",
-    "rewards": [
-      "12x Monedas de Campeón",
-      "1x Arco Mejorado"
-    ],
-    "stages": [
-      {
-        "description": "Rastrea el sector del nido en la cueva",
-        "type": "SCORE",
-        "target": "dummy_none",
-        "amount": 0,
-        "hasLocation": true,
-        "posX": -250,
-        "posZ": 350,
-        "radius": 25,
-        "spawnMobsOnEntry": true,
-        "mobToSpawn": "minecraft:cave_spider",
-        "mobSpawnCount": 4
-      },
-      {
-        "description": "Elimina 3 Arañas de Cueva",
-        "type": "KILL",
-        "target": "minecraft:cave_spider",
-        "amount": 3
-      },
-      {
-        "description": "Prepara 2 Flechas adicionales para la caza",
-        "type": "CRAFT",
-        "target": "minecraft:arrow",
-        "amount": 8,
-        "optional": true
-      }
-    ]
-  },
-  {
-    "id": "craftear_arcos",
-    "category": "SECONDARY",
-    "title": "Arsenal de Arqueros",
-    "npc": "Maestro Armero",
-    "npcId": "npc_craftear",
-    "description": "Los arqueros de la torre requieren nuevos arcos reforzados.",
-    "suggestedLevel": 2,
-    "activeTag": "q_armero_activa",
-    "doneTag": "q_armero_lista",
-    "completedTag": "q_armero_entregada",
-    "rewards": [
-      "32x Flechas",
-      "1x Carcaj Reforzado"
-    ],
-    "stages": [
-      {
-        "description": "Fabrica 2 Arcos en la mesa de crafteo",
-        "type": "CRAFT",
-        "target": "minecraft:bow",
-        "amount": 2
-      }
-    ]
-  },
-  {
-    "id": "minar_hierro",
-    "category": "SECONDARY",
-    "title": "Suministros de la Forja",
-    "npc": "Herrero Enano",
-    "npcId": "npc_minar",
-    "description": "La forja comunal necesita menas crudas para equipar a las tropas.",
-    "suggestedLevel": 2,
-    "activeTag": "q_minero_activa",
-    "doneTag": "q_minero_lista",
-    "completedTag": "q_minero_entregada",
-    "rewards": [
-      "8x Carbón",
-      "1x Pico de Hierro"
-    ],
-    "stages": [
-      {
-        "description": "Pica 8 bloques de Mena de Hierro",
-        "type": "MINE",
-        "target": "minecraft:iron_ore",
-        "amount": 8
-      }
-    ]
-  },
-  {
-    "id": "pescar_rio",
-    "category": "REPEATABLE",
-    "title": "La Pesca del Día",
-    "npc": "Pescador del Muelle",
-    "npcId": "npc_pescar",
-    "description": "Pesca en las aguas cercanas para el mercado del puerto.",
-    "suggestedLevel": 1,
-    "activeTag": "q_pescador_activa",
-    "doneTag": "q_pescador_lista",
-    "completedTag": "q_pescador_entregada",
-    "rewards": [
-      "3x Esmeraldas",
-      "1 Nivel de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Pesca 3 capturas en el río",
-        "type": "FISH",
-        "target": "any",
-        "amount": 3
-      }
-    ]
-  },
-  {
-    "id": "hornear_pan",
-    "category": "SECONDARY",
-    "title": "Raciones para la Guarnición",
-    "npc": "Panadero de la Aldea",
-    "npcId": "npc_hornear",
-    "description": "El panadero necesita provisiones horneadas para alimentar a los centinelas.",
-    "suggestedLevel": 1,
-    "activeTag": "q_panadero_activa",
-    "doneTag": "q_panadero_lista",
-    "completedTag": "q_panadero_entregada",
-    "rewards": [
-      "4x Manzanas",
-      "5x Esmeraldas"
-    ],
-    "stages": [
-      {
-        "description": "Hornea o cocina 4 piezas de Pan",
-        "type": "ITEM",
-        "target": "minecraft:bread",
-        "amount": 4
-      }
-    ]
-  },
-  {
-    "id": "explorar_torre",
-    "category": "SECONDARY",
-    "title": "La Torre de la Niebla",
-    "npc": "Explorador del Sendero",
-    "npcId": "npc_explorador",
-    "description": "Cartografía las tierras altas para vigilar los pasos montañosos.",
-    "suggestedLevel": 3,
-    "activeTag": "q_explorador_activa",
-    "doneTag": "q_explorador_lista",
-    "completedTag": "q_explorador_entregada",
-    "rewards": [
-      "1x Catalejo",
-      "5x Monedas de Campeón"
-    ],
-    "stages": [
-      {
-        "description": "Explora el sector del sendero alto",
-        "type": "SCORE",
-        "target": "dummy_none",
-        "amount": 0,
-        "hasLocation": true,
-        "posX": 180,
-        "posZ": -220,
-        "radius": 30
-      }
-    ]
-  },
-  {
-    "id": "contrato_fell_knights",
-    "category": "CONTRACT",
-    "title": "Contrato: Caballeros Caídos",
-    "npc": "Centinela Veterano",
-    "npcId": "cisco_centinela_veterano",
-    "description": "Elimina a la guardia personal del Fell King que merodea los caminos.",
-    "suggestedLevel": 8,
-    "activeTag": "q_fell_knights_activa",
-    "doneTag": "q_fell_knights_lista",
-    "completedTag": "q_fell_knights_entregada",
-    "rewards": [
-      "8x Monedas de Campeón",
-      "3 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Elimina 3 Caballeros Caídos",
-        "type": "KILL",
-        "target": "minecraft:wither_skeleton",
-        "amount": 3
-      }
-    ]
-  }
+    {
+        "id":  "caza_zombies",
+        "category":  "MAIN",
+        "title":  "La CaÃ­da de la Noche",
+        "npc":  "CapitÃ¡n de la Guardia",
+        "npcId":  "npc_matar",
+        "description":  "El CapitÃ¡n solicita purgar las murallas contra la invasiÃ³n de no-muertos.",
+        "suggestedLevel":  5,
+        "activeTag":  "q_capitan_activa",
+        "doneTag":  "q_capitan_lista",
+        "completedTag":  "q_capitan_entregada",
+        "rewards":  [
+                        "5x Lingotes de Oro",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 5 zombies en los alrededores",
+                           "type":  "KILL",
+                           "target":  "minecraft:zombie",
+                           "amount":  5
+                       }
+                   ]
+    },
+    {
+        "id":  "cazador_pantano",
+        "category":  "CONTRACT",
+        "title":  "Contrato: La Bestia de la Cueva",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "npc_cazador",
+        "description":  "Un peligroso arÃ¡cnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
+        "suggestedLevel":  6,
+        "activeTag":  "q_cazador_activa",
+        "doneTag":  "q_cazador_lista",
+        "completedTag":  "q_cazador_entregada",
+        "rewards":  [
+                        "12x Monedas de CampeÃ³n",
+                        "1x Arco Mejorado"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Rastrea el sector del nido en la cueva",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  -250,
+                           "posZ":  350,
+                           "radius":  25,
+                           "spawnMobsOnEntry":  true,
+                           "mobToSpawn":  "minecraft:cave_spider",
+                           "mobSpawnCount":  4
+                       },
+                       {
+                           "description":  "Elimina 3 AraÃ±as de Cueva",
+                           "type":  "KILL",
+                           "target":  "minecraft:cave_spider",
+                           "amount":  3
+                       },
+                       {
+                           "description":  "Prepara 2 Flechas adicionales para la caza",
+                           "type":  "CRAFT",
+                           "target":  "minecraft:arrow",
+                           "amount":  8,
+                           "optional":  true
+                       }
+                   ]
+    },
+    {
+        "id":  "craftear_arcos",
+        "category":  "SECONDARY",
+        "title":  "Arsenal de Arqueros",
+        "npc":  "Maestro Armero",
+        "npcId":  "npc_craftear",
+        "description":  "Los arqueros de la torre requieren nuevos arcos reforzados.",
+        "suggestedLevel":  2,
+        "activeTag":  "q_armero_activa",
+        "doneTag":  "q_armero_lista",
+        "completedTag":  "q_armero_entregada",
+        "rewards":  [
+                        "32x Flechas",
+                        "1x Carcaj Reforzado"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Fabrica 2 Arcos en la mesa de crafteo",
+                           "type":  "CRAFT",
+                           "target":  "minecraft:bow",
+                           "amount":  2
+                       }
+                   ]
+    },
+    {
+        "id":  "minar_hierro",
+        "category":  "SECONDARY",
+        "title":  "Suministros de la Forja",
+        "npc":  "Herrero Enano",
+        "npcId":  "npc_minar",
+        "description":  "La forja comunal necesita menas crudas para equipar a las tropas.",
+        "suggestedLevel":  2,
+        "activeTag":  "q_minero_activa",
+        "doneTag":  "q_minero_lista",
+        "completedTag":  "q_minero_entregada",
+        "rewards":  [
+                        "8x CarbÃ³n",
+                        "1x Pico de Hierro"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pica 8 bloques de Mena de Hierro",
+                           "type":  "MINE",
+                           "target":  "minecraft:iron_ore",
+                           "amount":  8
+                       }
+                   ]
+    },
+    {
+        "id":  "pescar_rio",
+        "category":  "REPEATABLE",
+        "title":  "La Pesca del DÃ­a",
+        "npc":  "Pescador del Muelle",
+        "npcId":  "npc_pescar",
+        "description":  "Pesca en las aguas cercanas para el mercado del puerto.",
+        "suggestedLevel":  1,
+        "activeTag":  "q_pescador_activa",
+        "doneTag":  "q_pescador_lista",
+        "completedTag":  "q_pescador_entregada",
+        "rewards":  [
+                        "3x Esmeraldas",
+                        "1 Nivel de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pesca 3 capturas en el rÃ­o",
+                           "type":  "FISH",
+                           "target":  "any",
+                           "amount":  3
+                       }
+                   ]
+    },
+    {
+        "id":  "hornear_pan",
+        "category":  "SECONDARY",
+        "title":  "Raciones para la GuarniciÃ³n",
+        "npc":  "Panadero de la Aldea",
+        "npcId":  "npc_hornear",
+        "description":  "El panadero necesita provisiones horneadas para alimentar a los centinelas.",
+        "suggestedLevel":  1,
+        "activeTag":  "q_panadero_activa",
+        "doneTag":  "q_panadero_lista",
+        "completedTag":  "q_panadero_entregada",
+        "rewards":  [
+                        "4x Manzanas",
+                        "5x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Hornea o cocina 4 piezas de Pan",
+                           "type":  "ITEM",
+                           "target":  "minecraft:bread",
+                           "amount":  4
+                       }
+                   ]
+    },
+    {
+        "id":  "explorar_torre",
+        "category":  "SECONDARY",
+        "title":  "La Torre de la Niebla",
+        "npc":  "Explorador del Sendero",
+        "npcId":  "npc_explorador",
+        "description":  "CartografÃ­a las tierras altas para vigilar los pasos montaÃ±osos.",
+        "suggestedLevel":  3,
+        "activeTag":  "q_explorador_activa",
+        "doneTag":  "q_explorador_lista",
+        "completedTag":  "q_explorador_entregada",
+        "rewards":  [
+                        "1x Catalejo",
+                        "5x Monedas de CampeÃ³n"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Explora el sector del sendero alto",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  180,
+                           "posZ":  -220,
+                           "radius":  30
+                       }
+                   ]
+    },
+    {
+        "id":  "contrato_fell_knights",
+        "category":  "CONTRACT",
+        "title":  "Contrato: Caballeros CaÃ­dos",
+        "npc":  "Centinela Veterano",
+        "npcId":  "cisco_centinela_veterano",
+        "description":  "Elimina a la guardia personal del Fell King que merodea los caminos.",
+        "suggestedLevel":  8,
+        "activeTag":  "q_fell_knights_activa",
+        "doneTag":  "q_fell_knights_lista",
+        "completedTag":  "q_fell_knights_entregada",
+        "rewards":  [
+                        "8x Monedas de CampeÃ³n",
+                        "3 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 3 Caballeros CaÃ­dos",
+                           "type":  "KILL",
+                           "target":  "minecraft:wither_skeleton",
+                           "amount":  3
+                       }
+                   ]
+    },
+    {
+        "id":  "elena_alquimia",
+        "category":  "SECONDARY",
+        "title":  "Reactivos para el Elixir",
+        "npc":  "Alquimista Elena",
+        "npcId":  "alquimista_elena",
+        "description":  "Elena necesita 4 ojos de araña para destilar un antídoto contra la miasma.",
+        "suggestedLevel":  3,
+        "activeTag":  "q_elena_activa",
+        "doneTag":  "q_elena_lista",
+        "completedTag":  "q_elena_entregada",
+        "rewards":  [
+                        "1x Poción de Curación",
+                        "6x Monedas de Campeón",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Recolecta 4 Ojos de Araña",
+                           "type":  "ITEM",
+                           "target":  "minecraft:spider_eye",
+                           "amount":  4
+                       }
+                   ]
+    }
 ]
