@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Centinela Veterano"}',
+    Tags: ["villager_centinela"],
     DialogData: {
       DialogDataSet: [
         {

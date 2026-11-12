@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#55FFFF","bold":true,"text":"Explorador del Sendero"}',
+    Tags: ["villager_explorador"],
     DialogData: {
       DialogDataSet: [
         {

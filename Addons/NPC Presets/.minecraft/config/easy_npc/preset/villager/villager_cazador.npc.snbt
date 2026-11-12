@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#FF5555","bold":true,"text":"Cazador de Bestias"}',
+    Tags: ["villager_cazador"],
     DialogData: {
       DialogDataSet: [
         {

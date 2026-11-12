@@ -21,6 +21,7 @@
       { Count: 1b, id: "minecraft:leather_helmet", tag: { display: { color: 6700445 } } }
     ],
     CustomName: '{"color":"#D040FB","bold":true,"text":"Alquimista Elena"}',
+    Tags: ["villager_alquimista"],
     CustomNameVisible: 1b,
     DialogData: {
       DialogDataSet: [

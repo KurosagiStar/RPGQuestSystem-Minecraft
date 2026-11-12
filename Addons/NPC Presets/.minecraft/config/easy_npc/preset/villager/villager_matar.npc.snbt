@@ -27,6 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitan de la Guardia"}',
+    Tags: ["villager_matar"],
     DialogData: {
       DialogDataSet: [
         {
