@@ -62,7 +62,7 @@ Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el 
 ## 3. Presets Oficiales de Easy NPC
 
 ### A. Presets de Aldeano Individuales (`preset/villager/`):
-Comando: `/easy_npc preset import villager/<nombre>`
+Comando: `/easy_npc preset custom import villager/<nombre>`
 - `villager_guardia`: Capitán de la Guardia (Misión: `caza_zombies`)
 - `villager_centinela`: Centinela Veterano (Misión: `contrato_fell_knights`)
 - `villager_cazador`: Cazador de Bestias (Misión: `cazador_pantano`)
@@ -77,9 +77,10 @@ Comando: `/easy_npc preset import villager/<nombre>`
 - `villager_dimension`: Ocultista del Vacío (Misión: `viaje_nether`)
 
 ### B. Presets de Misiones Encadenadas (`preset/villager/`):
-Comando: `/easy_npc preset import villager/<nombre>`
+Comando: `/easy_npc preset custom import villager/<nombre>`
+Cada preset incluye su scoreboard tag único (`Tags: ["<nombre>"]`) sincronizado automáticamente con el cliente (`SyncEntityTagsPacket`) para emparejamiento estricto por `npcId` sin colisiones por nombre visible:
 - `chain_muralla_1_comandante`: Paso 1 - Defiende muralla y entrega la orden sellada de relevo (`q_relevo_activa`).
-- `chain_muralla_2_centinela`: Paso 2 - Recibe la orden de relevo (`TALK`) y encarga purgar los riscos de caballeros caídos (`q_fell_knights_activa`).
+- `chain_muralla_2_centinela`: Paso 2 - Recibe la orden de relevo (`TALK` con `target: "chain_muralla_2_centinela"`) y encarga purgar los riscos de caballeros caídos (`q_fell_knights_activa`).
 - `chain_muralla_3_cazador`: Paso 3 - Desbloqueado tras limpiar los riscos; encarga destruir el nido de arañas (`q_cazador_activa`) y otorga recompensa final.
 
 ---
