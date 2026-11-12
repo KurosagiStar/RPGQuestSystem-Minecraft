@@ -82,14 +82,35 @@ public class QuestEventListener {
                     ClientQuestData.rememberNpcPosition(tag, living.getX(), living.getZ());
                 }
             } else if (event.getEntity() instanceof ServerPlayer sp) {
-                // LADO SERVIDOR: Vincular automáticamente la entidad física con la misión
+                // LADO SERVIDOR: Recordar siempre la última entidad con la que interactuó el jugador
                 String entityUuid = living.getStringUUID();
                 String entityName = living.getName().getString();
                 String customName = living.getCustomName() != null ? living.getCustomName().getString() : "";
+                long posX = (long) living.getX();
+                long posZ = (long) living.getZ();
 
+                // 1. Guardar referencia temporal del último NPC interactuado
+                for (String t : new java.util.ArrayList<>(sp.getTags())) {
+                    if (t.startsWith("rqe_last_npc_")) {
+                        sp.removeTag(t);
+                    }
+                }
+                sp.addTag("rqe_last_npc_" + entityUuid + "_" + posX + "_" + posZ);
+
+                // 2. Asociar a cualquier misión activa que el jugador tenga pendiente de entrega o aceptación
                 for (QuestDefinition q : QuestConfig.QUESTS) {
                     boolean matches = false;
-                    if (q.npc != null && !q.npc.isEmpty()) {
+
+                    // A) Si la entidad tiene un tag directo que coincide con el ID de misión o npcId
+                    for (String entTag : living.getTags()) {
+                        if (entTag.equalsIgnoreCase(q.id) || entTag.equalsIgnoreCase(q.npcId) || entTag.equalsIgnoreCase(q.activeTag)) {
+                            matches = true;
+                            break;
+                        }
+                    }
+
+                    // B) Si el nombre coincide
+                    if (!matches && q.npc != null && !q.npc.isEmpty()) {
                         String qNorm = java.text.Normalizer.normalize(q.npc, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
                         String eNorm = java.text.Normalizer.normalize(entityName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
                         String cNorm = java.text.Normalizer.normalize(customName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
@@ -98,16 +119,26 @@ public class QuestEventListener {
                         }
                     }
 
+                    // C) Si el jugador tiene la misión activa y no tenía ningún NPC asignado aún
+                    boolean alreadyHasNpc = false;
+                    for (String t : sp.getTags()) {
+                        if (t.startsWith("rqe_pos_" + q.id + "_")) {
+                            alreadyHasNpc = true;
+                            break;
+                        }
+                    }
+                    if (!matches && sp.getTags().contains(q.activeTag) && !alreadyHasNpc) {
+                        matches = true;
+                    }
+
                     if (matches) {
-                        // Limpiar tags de asignación anterior si había
                         for (String t : new java.util.ArrayList<>(sp.getTags())) {
                             if (t.startsWith("rqe_npc_" + q.id + "_") || t.startsWith("rqe_pos_" + q.id + "_")) {
                                 sp.removeTag(t);
                             }
                         }
-                        // Registrar este NPC exacto por UUID y posición fija persistente para esta misión
                         sp.addTag("rqe_npc_" + q.id + "_" + entityUuid);
-                        sp.addTag("rqe_pos_" + q.id + "_" + (long) living.getX() + "_" + (long) living.getZ());
+                        sp.addTag("rqe_pos_" + q.id + "_" + posX + "_" + posZ);
                     }
                 }
             }

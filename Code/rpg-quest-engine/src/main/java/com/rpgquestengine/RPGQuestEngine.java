@@ -139,6 +139,31 @@ public class RPGQuestEngine {
 
         for (QuestDefinition q : QuestConfig.QUESTS) {
             if (playerTags.contains(q.activeTag) && !playerTags.contains(q.completedTag)) {
+                // Si la misión está activa pero aún no tiene NPC asignado, asignarle el último NPC interactuado
+                boolean hasAssignedPos = false;
+                for (String t : playerTags) {
+                    if (t.startsWith("rqe_pos_" + q.id + "_")) {
+                        hasAssignedPos = true;
+                        break;
+                    }
+                }
+                if (!hasAssignedPos) {
+                    for (String t : playerTags) {
+                        if (t.startsWith("rqe_last_npc_")) {
+                            // formato: rqe_last_npc_{uuid}_{x}_{z}
+                            String rem = t.substring("rqe_last_npc_".length());
+                            int uEnd = rem.indexOf('_');
+                            if (uEnd > 0) {
+                                String uStr = rem.substring(0, uEnd);
+                                String posPart = rem.substring(uEnd + 1);
+                                sp.addTag("rqe_npc_" + q.id + "_" + uStr);
+                                sp.addTag("rqe_pos_" + q.id + "_" + posPart);
+                            }
+                            break;
+                        }
+                    }
+                }
+
                 boolean allNonOptionalDone = true;
 
                 for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
