@@ -9,7 +9,7 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 > **REGLA DE ORO PARA CUALQUIER AGENTE:**
 > **NUNCA** reintroducir dependencias con `FTB Quests` o `UIQuest`. Ambos mods fueron descartados por problemas de sincronización de paquetes, pérdida de auto-tracking y rigidez en comandos.
 > Este sistema es **100% autónomo** y funciona sobre dos pilares desacoplados:
-> 1. **`rpgquestengine` (Mod Forge custom en Java)**: Diario (`J`), HUD flotante Witcher 3, QuestToast estilo logros vanilla, marcadores flotantes sobre entidades y NPCs (`QuestEntityMarkerRenderer`), brújula con distancia hacia zonas amplias o NPCs de regreso, validación de eventos, estructuras, dimensiones, biomas, y sincronización de red Servidor <-> Cliente.
+> 1. **`rpgquestengine` (Mod Forge custom en Java)**: Diario (`J`), HUD flotante Witcher 3, QuestToast estilo logros vanilla, marcadores flotantes sobre entidades y NPCs (`QuestEntityMarkerRenderer`), brújula con distancia hacia zonas amplias o NPCs de regreso, validación de eventos, estructuras, dimensiones, biomas, soporte NBT, resolución de kills indirectos, y sincronización de red Servidor <-> Cliente.
 > 2. **`easy_npc` (v7.18.0+)**: Gestiona modelos de NPCs y árboles de diálogo mediante condiciones `PLAYER_TAG` y jerarquía de `Priority`.
 
 ---
@@ -24,17 +24,19 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 - **Paquete Java:** `com.rpgquestengine`
 
 ### B. Clases Críticas del Mod
-- `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler de validación en servidor cada 10 ticks (0.5s), verificación de metas (`DIMENSION`, `STRUCTURE`, `BIOME`, `ITEM`, `TAG`, `SCORE`), aislamiento por índice (`getInternalScoreKey(questId, stageIndex, type)`) y sincronización de red.
+- `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler de validación en servidor cada 10 ticks (0.5s), verificación de metas (`DIMENSION`, `STRUCTURE`, `BIOME`, `ITEM`, `TAG`, `SCORE`), soporte NBT para ítems/gemas (`nbtKey`, `nbtValue`), aislamiento por índice (`getInternalScoreKey(questId, stageIndex, type)`) y sincronización de red.
 - `QuestToast.java`: Notificaciones animadas nativas de Minecraft usando la UI de logros / avances (`ToastComponent`, `textures/gui/toasts.png`).
-- `QuestEntityMarkerRenderer.java`: Renderiza marcadores flotantes 3D sobre la cabeza de entidades en un radio de 32 bloques:
-  - `§c⚔ [Objetivo] ⚔` sobre los monstruos objetivo (`KILL`) de la misión seguida.
-  - `§e✦ [Nombre NPC]` sobre el NPC emisor de la misión activa.
-  - `§6[ ! ] [Nombre NPC]` sobre el NPC cuando la misión está lista para entregar.
+- `QuestEntityMarkerRenderer.java`: Renderiza marcadores flotantes 3D modernos sobre la cabeza de entidades en un radio de 32 bloques:
+  - `§c⚔ §fObjetivo`: Monstruos de cacería (`KILL`).
+  - `§e§l! §6§lMisión`: Misión disponible para aceptar (con prerrequisitos satisfechos).
+  - `§b§l✦ §fEn progreso`: NPC emisor de la misión activa.
+  - `§b§l✦ §fHablar`: NPC objetivo de relevos o diálogos (`TALK` / `DELIVER`).
+  - `§6§l? §e§lCompletada`: Misión completada lista para reclamar recompensa.
 - `QuestHudOverlay.java`: HUD flotante moderno con badge de categoría, títulos limpios en negrita temática, divisores, progreso por objetivos, y brújula cardinal hacia objetivos y hacia el NPC de entrega (`§e▲ Capitán (45m)`).
 - `QuestJournalScreen.java`: Menú completo en tecla `J` con pestaña inicial `Activas`, agrupación por categoría, word-wrap de 2 líneas y botón dinámico `Seguir` / `Dejar de seguir`.
-- `QuestEventListener.java`: Listener Forge nativo para `KILL`, `MINE`, `CRAFT`, `FISH`, `SMELT`.
-- `QuestConfig.java`: Carga y guardado UTF-8 de `config/rpg_quests.json`.
-- `NetworkHandler.java` & `SyncPlayerQuestsPacket.java`: Replicación bidireccional cliente-servidor.
+- `QuestEventListener.java`: Listener Forge nativo para `KILL`, `MINE`, `CRAFT`, `FISH`, `SMELT`, `TALK`, `DELIVER`. Incluye resolución avanzada de kills de bosses/magia/proyectiles/mascotas (`resolvePlayerKiller`), replicación en `StartTracking` de tags y sonidos de oficio para aldeanos con cooldown de 1.4s.
+- `QuestConfig.java`: Carga y guardado UTF-8 de `config/rpg_quests.json` tanto en cliente como en servidor (`commonSetup`).
+- `NetworkHandler.java`, `SyncPlayerQuestsPacket.java` & `SyncEntityTagsPacket.java`: Replicación bidireccional cliente-servidor de progreso y sincronización de scoreboard tags de entidades hacia el cliente para coincidencia estricta por `npcId`.
 
 ### C. Rutas de Despliegue en el Sistema
 Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el archivo `build/libs/rpgquestengine-1.0.0.jar` se sincroniza en:
@@ -42,105 +44,63 @@ Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el 
 2. Instancia jugable: `D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
 3. Cliente de respaldo: `C:\Users\Kuromi\Desktop\cisco\Client\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
 4. Servidor dedicado: `C:\Users\Kuromi\Desktop\cisco\Server\mods\`
-5. Paquete de distribución: `C:\Users\Kuromi\Desktop\RPGQuestEngine_Distribution\mods\`
 
 ---
 
-## 2. Configuración de Misiones (`config/rpg_quests.json`)
+## 2. Bases de Datos de Misiones Separadas
 
-```json
-[
-  {
-    "id": "cazador_pantano",
-    "category": "CONTRACT",
-    "title": "La Bestia de la Cueva",
-    "npc": "Cazador de Bestias",
-    "description": "Neutraliza el nido de arañas del pantano.",
-    "suggestedLevel": 6,
-    "activeTag": "q_cazador_activa",
-    "doneTag": "q_cazador_lista",
-    "completedTag": "q_cazador_entregada",
-    "hasNpcLocation": true,
-    "npcX": -120,
-    "npcZ": 240,
-    "rewards": ["12x Monedas de Campeón", "1x Arco Mejorado"],
-    "stages": [
-      {
-        "description": "Explora el sector del pantano",
-        "type": "SCORE",
-        "target": "dummy_none",
-        "amount": 0,
-        "hasLocation": true,
-        "posX": -250,
-        "posZ": 350,
-        "radius": 160
-      },
-      {
-        "description": "Elimina 3 Arañas de Cueva",
-        "type": "KILL",
-        "target": "minecraft:cave_spider",
-        "amount": 3
-      },
-      {
-        "description": "Prepara flechas de reserva",
-        "type": "CRAFT",
-        "target": "minecraft:arrow",
-        "amount": 8,
-        "optional": true
-      }
-    ]
-  }
-]
-```
+1. **Base Vanilla (`Addons/RPG Quest Engine (Base)/.minecraft/config/rpg_quests.json`):**
+   - 100% compatible con Minecraft Vanilla y mods genéricos.
+   - Libre de dependencias externas.
+2. **Implementación Cisco (`Addons/Cisco Implementation/.minecraft/config/rpg_quests.json`):**
+   - Incluye contratos exclusivos: *Fell King Boss* (`cisco_mod:fellkingboss`), *Ignis* (`cataclysm:ignis`), *Netherite Monstrosity* (`cataclysm:netherite_monstrosity`), *The Harbinger* (`cataclysm:the_harbinger`), *Night Lich* (`bosses_of_mass_destruction:lich`), *Frostmaw* (`mowziesmobs:frostmaw`).
+   - Dimensiones: *The Aether* (`aether:the_aether`), *Twilight Forest* (`twilightforest:twilight_forest`).
+   - Gemas engarzables de *Apotheosis* (`apotheosis:gem` con `affix_data.gem`).
 
-### Tipos de Etapa (`type`):
-- `KILL`: IDs de entidades registradas (ej. `minecraft:zombie`, `minecraft:cave_spider`).
-- `ITEM`: Conteo de ítems en inventario (ej. `minecraft:iron_ingot`).
-- `MINE`: Minería de bloques por id (ej. `minecraft:diamond_ore`).
+---
+
+## 3. Presets Oficiales de Easy NPC
+
+### A. Presets de Aldeano Individuales (`preset/villager/`):
+Comando: `/easy_npc preset import villager/<nombre>`
+- `villager_guardia`: Capitán de la Guardia (Misión: `caza_zombies`)
+- `villager_centinela`: Centinela Veterano (Misión: `contrato_fell_knights`)
+- `villager_cazador`: Cazador de Bestias (Misión: `cazador_pantano`)
+- `villager_alquimista`: Alquimista Elena (Misión: `elena_alquimia`)
+- `villager_craftear`: Maestro Armero (Misión: `craftear_arcos`)
+- `villager_minar`: Herrero Enano (Misión: `minar_hierro`)
+- `villager_hornear`: Panadero de la Aldea (Misión: `hornear_pan`)
+- `villager_pescar`: Pescador del Muelle (Misión: `pescar_rio`)
+- `villager_explorador`: Explorador del Sendero (Misión: `explorar_torre`)
+- `villager_bioma`: Naturalista de la Arboleda (Misión: `explorar_bioma`)
+- `villager_estructura`: Vigía de la Ciudadela (Misión: `descubrir_aldea`)
+- `villager_dimension`: Ocultista del Vacío (Misión: `viaje_nether`)
+
+### B. Presets de Misiones Encadenadas (`preset/villager/`):
+Comando: `/easy_npc preset import villager/<nombre>`
+- `chain_muralla_1_comandante`: Paso 1 - Defiende muralla y entrega la orden sellada de relevo (`q_relevo_activa`).
+- `chain_muralla_2_centinela`: Paso 2 - Recibe la orden de relevo (`TALK`) y encarga purgar los riscos de caballeros caídos (`q_fell_knights_activa`).
+- `chain_muralla_3_cazador`: Paso 3 - Desbloqueado tras limpiar los riscos; encarga destruir el nido de arañas (`q_cazador_activa`) y otorga recompensa final.
+
+---
+
+## 4. Tipos de Etapa (`type`) Soportados
+
+- `KILL`: IDs de entidades (soporta proyectiles, magia, summons domesticados y multipartes).
+- `ITEM`: Conteo en inventario. Admite `nbtKey` anidado (ej. `affix_data.gem`) y `nbtValue`.
+- `TALK`: Interactuar con un NPC específico (`target: "villager_centinela"` o tag de entidad).
+- `DELIVER`: Entregar órdenes o reportes interactuando con el NPC de destino.
+- `MINE`: Minería de bloques por id.
 - `CRAFT`: Crafteo en mesa de trabajo o inventario.
-- `FISH`: Pesca de ítems (`target: "any"` o ID específico).
+- `FISH`: Pesca de ítems.
 - `SMELT`: Fundición en horno.
-- `BIOME`: Localización en bioma (ej. `minecraft:dripstone_caves`).
-- `STRUCTURE`: Localización en mazmorra o estructura (ej. `minecraft:mineshaft`).
+- `BIOME`: Localización en bioma.
+- `STRUCTURE`: Localización en mazmorra o estructura.
+- `DIMENSION`: Cruce a otra dimensión.
 - `SCORE`: Scoreboards dummy de vanilla.
-- `TAG`: Tags vanilla de entidad (`/tag`).
+- `TAG`: Tags vanilla de entidad.
 
 ---
 
-## 3. Integración con Easy NPC (Diálogos de 4 Estados)
-
-Comando para importar presets mirando al NPC:
-```text
-/easy_npc preset import [nombre_preset]
-```
-
-### Jerarquía de Prioridades en SNBT:
-1. **Prioridad 20 (Misión Entregada / Finalizada)**:
-   - Condición: `PLAYER_TAG: q_[id]_entregada`
-   - Diálogo: "Gracias por tu ayuda anterior, aventurero."
-2. **Prioridad 15 (Misión Lista para Cobrar)**:
-   - Condición: `PLAYER_TAG: q_[id]_lista`
-   - Acciones de Diálogo: Otorga recompensas y ejecuta:
-     ```text
-     /tag @p add q_[id]_entregada
-     /tag @p remove q_[id]_lista
-     /tag @p remove q_[id]_activa
-     ```
-3. **Prioridad 10 (Misión en Progreso)**:
-   - Condición: `PLAYER_TAG: q_[id]_activa`
-   - Diálogo: "¿Aún no has terminado? Vuelve cuando tengas los objetivos listos."
-4. **Prioridad 0 (Misión Disponible para Aceptar)**:
-   - Sin condiciones.
-   - Botón de aceptación:
-     ```text
-     /tag @p add q_[id]_activa
-     ```
-
----
-
-## 8. Plantilla y Gu�a de Tipos de Misiones
-Consulta PLANTILLA_MISIONES.md ubicado en este mismo directorio para ejemplos completos listos para copiar de:
-- Br�jula y seguimiento en vivo por UUID / coordenadas fijas de fallback.
-- Zonas de b�squeda con radio recomendado (20-30 m para cuevas, 40-60 m para exteriores).
-- Spawneo autom�tico controlado con cupo (mobSpawnCount), sonido por paquete UI y corte autom�tico al cumplir objetivo KILL.
-- Tipos de etapas: KILL, MINE, CRAFT, ITEM, SMELT, FISH, BIOME, STRUCTURE, DIMENSION.
+## 5. Documentación Completa de Misiones
+Consulta `PLANTILLA_MISIONES.md` en esta misma carpeta para ejemplos JSON completos de configuración.

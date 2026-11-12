@@ -1,6 +1,33 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
-## [1.1.0-update] - 2026-11-12
+## [1.2.0-update] - 2026-11-12
+
+### 1. Sincronización Estricta de Tags de Entidades (`SyncEntityTagsPacket`)
+- **Resolución de Limitación Vanilla/Forge:** Minecraft Forge no sincroniza los scoreboard tags (`living.getTags()`) de entidades al cliente. Se implementó `SyncEntityTagsPacket` enviado automáticamente cuando el jugador comienza a rastrear la entidad (`PlayerEvent.StartTracking`).
+- **Eliminación Total de Colisión por Nombres Visibles:** `QuestEntityMarkerRenderer` y `isMatchingNpc` priorizan de forma estricta los `npcId` internos registrados en las misiones. Si una misión define `npcId` (ej. `chain_muralla_1_comandante`), solo las entidades que contengan ese tag recibirán marcadores, sin colisionar jamás con NPCs de nombres idénticos o similares.
+
+### 2. Modernización Visual de Marcadores Flotantes 3D
+- **Nuevo Sistema de Indicadores:**
+  - `§e§l! §6§lMisión`: Misión disponible para aceptar (sin prerrequisitos pendientes).
+  - `§b§l✦ §fEn progreso`: NPC emisor de la misión activa actualmente rastreada.
+  - `§b§l✦ §fHablar`: NPC objetivo de etapas `TALK` o `DELIVER` hacia el que el jugador debe dirigirse.
+  - `§6§l? §e§lCompletada`: Misión lista para entregar (`doneTag`).
+  - `§c⚔ §fObjetivo`: Monstruos y jefes objetivo de cacería (`KILL`).
+
+### 3. Presets Oficiales de Cadena de Misiones (Easy NPC v7.18.0)
+- Presets reubicados de forma estándar en `config/easy_npc/preset/villager/` con importación nativa:
+  - `/easy_npc preset custom import villager/chain_muralla_1_comandante`
+  - `/easy_npc preset custom import villager/chain_muralla_2_centinela`
+  - `/easy_npc preset custom import villager/chain_muralla_3_cazador`
+- Metadatos completos y atributos `id: "easy_npc:villager"` y `EasyNPCVersion: 3` incluidos para compatibilidad 100% inmediata.
+
+### 4. Limpieza Profunda en Reset de Misiones
+- El comando `/rpgquest reset` ahora purga en tiempo real:
+  - Todos los tags de estado `q_*` y de seguimiento `rqe_*`.
+  - Tags de asignación y coordenadas fijas (`rqe_pos_*` y `rqe_npc_*`).
+  - Scoreboards internos y sincronización inmediata a cliente de UI y marcadores.
+
+---
 
 ### 1. Cadenas de Misiones y Relevos entre NPCs (Handoff)
 - **Soporte de Prerrequisitos (`prerequisiteQuestId`):** Permite encadenar misiones (ej. `Misión B` solo es aceptable si `Misión A` ya tiene su `completedTag` entregada). Si un jugador intenta forzar la activación sin cumplir el prerrequisito, el motor revoca el tag y emite advertencia sonora/visual.

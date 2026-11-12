@@ -41,3 +41,4 @@ public class SyncEntityTagsPacket {
         ctx.get().setPacketHandled(true);
     }
 }
+
