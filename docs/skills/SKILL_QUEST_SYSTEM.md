@@ -135,3 +135,12 @@ Comando para importar presets mirando al NPC:
      ```text
      /tag @p add q_[id]_activa
      ```
+
+---
+
+## 8. Plantilla y Guía de Tipos de Misiones
+Consulta PLANTILLA_MISIONES.md ubicado en este mismo directorio para ejemplos completos listos para copiar de:
+- Brújula y seguimiento en vivo por UUID / coordenadas fijas de fallback.
+- Zonas de búsqueda con radio recomendado (20-30 m para cuevas, 40-60 m para exteriores).
+- Spawneo automático controlado con cupo (mobSpawnCount), sonido por paquete UI y corte automático al cumplir objetivo KILL.
+- Tipos de etapas: KILL, MINE, CRAFT, ITEM, SMELT, FISH, BIOME, STRUCTURE, DIMENSION.

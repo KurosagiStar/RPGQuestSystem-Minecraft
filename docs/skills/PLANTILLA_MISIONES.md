@@ -1,6 +1,6 @@
 # Plantilla y Guía Maestra de Misiones (rpg_quests.json)
 
-Esta guía explica en detalle cómo configurar misiones, los tipos de objetivos, el sistema de brújula dinámica, y el nuevo sistema de zonas con spawneo automático de criaturas.
+Esta guía documenta la estructura de misiones, los tipos de objetivos, el sistema de brújula dinámica, zonas de spawneo automático, sonidos temáticos por profesión y los presets de aldeano disponibles.
 
 ---
 
@@ -12,7 +12,7 @@ Esta guía explica en detalle cómo configurar misiones, los tipos de objetivos,
   "category": "MAIN",               // MAIN | CONTRACT | SECONDARY | REPEATABLE
   "title": "Título de la Misión",
   "npc": "Nombre Visible del NPC",  // Nombre con el que se interactúa y entrega
-  "npcId": "id_preset_opcional",    // Opcional: ID del preset de Easy NPC (ej. npc_matar)
+  "npcId": "villager_guardia",      // ID del preset (ej. villager_guardia, villager_cazador)
   "description": "Texto descriptivo de la misión en el Diario (J).",
   "suggestedLevel": 5,              // Nivel sugerido visible en el Diario
   "prerequisiteQuestId": "",        // Opcional: ID de misión previa requerida
@@ -31,26 +31,51 @@ Esta guía explica en detalle cómo configurar misiones, los tipos de objetivos,
 
 ---
 
-## 2. Guía de Brújulas, Ubicaciones y Spawneo Automático
+## 2. Presets Oficiales de Aldeanos (`preset/villager/`)
 
-### ¿Cómo funciona la Brújula de Regreso al NPC?
-No necesitas poner coordenadas del NPC manualmente:
-1. Al interactuar con el NPC (clic derecho) para aceptar la misión, el motor guarda en tu jugador el UUID del NPC y su posición exacta (`rqe_pos_{questId}_{x}_{z}`).
-2. **Si el NPC está en chunks cargados:** La brújula lo sigue en tiempo real incluso si camina.
-3. **Si te alejas a miles de bloques (chunks descargados):** La brújula sigue funcionando usando las coordenadas fijas recordadas.
-4. Si quieres forzar coordenadas fijas del NPC desde el JSON:
-   ```json
-   "hasNpcLocation": true,
-   "npcX": 100,
-   "npcZ": -250
-   ```
+Para importar en el juego usa `/easy_npc preset import <nombre>`:
+
+| Preset | Nombre Visible | Profesión / Skin | Misión Asociada | Tipo |
+| :--- | :--- | :--- | :--- | :--- |
+| `villager_guardia` / `villager_matar` | Capitán de la Guardia | Armero / Nieve | `caza_zombies` | `KILL` |
+| `villager_centinela` | Centinela Veterano | Armero / Nieve | `contrato_fell_knights` | `KILL` (Elite) |
+| `villager_cazador` | Cazador de Bestias | Armero / Pantano | `cazador_pantano` | `SCORE` + Spawn |
+| `villager_alquimista` | Alquimista Elena | Clérigo / Pantano | `elena_alquimia` | `ITEM` |
+| `villager_craftear` | Maestro Armero | Armero / Sabana | `craftear_arcos` | `CRAFT` |
+| `villager_minar` | Herrero Enano | Armero / Montaña | `minar_hierro` | `MINE` |
+| `villager_hornear` | Panadero de la Aldea | Granjero / Llanura | `hornear_pan` | `SMELT` |
+| `villager_pescar` | Pescador del Muelle | Pescador / Taiga | `pescar_rio` | `FISH` |
+| `villager_explorador` | Explorador del Sendero | Cartógrafo / Sabana | `explorar_torre` | `SCORE` + Brújula |
+| `villager_bioma` | Naturalista de la Arboleda | Cartógrafo / Jungla | `explorar_bioma` | `BIOME` |
+| `villager_estructura` | Vigía de la Ciudadela | Armero / Desierto | `descubrir_aldea` | `STRUCTURE` |
+| `villager_dimension` | Ocultista del Vacío | Clérigo / Pantano | `viaje_nether` | `DIMENSION` |
 
 ---
 
-### ¿Cómo configurar una Zona de Búsqueda con Spawneo de Mobs?
+## 3. Sonidos Temáticos en la Interacción
 
-Para misiones donde el jugador debe ir a una cueva, campamento o ruina y eliminar criaturas:
+Al hacer clic derecho en cualquier NPC de aldeano, el motor reproduce automáticamente un sonido de trabajo acorde a su rol:
+- **Clérigos / Alquimistas / Ocultistas**: `VILLAGER_WORK_CLERIC`
+- **Armeros / Guardias / Centinelas**: `VILLAGER_WORK_WEAPONSMITH`
+- **Herreros / Mineros / Forja**: `VILLAGER_WORK_ARMORER`
+- **Panaderos / Granjeros**: `VILLAGER_WORK_FARMER`
+- **Pescadores**: `VILLAGER_WORK_FISHERMAN`
+- **Exploradores / Naturalistas / Cartógrafos**: `VILLAGER_WORK_CARTOGRAPHER`
+- **Otros / Genéricos**: `VILLAGER_AMBIENT`
 
+---
+
+## 4. Guía de Brújulas, Ubicaciones y Spawneo Automático
+
+### Brújula de Regreso al NPC (100% Desacoplada)
+No requiere coordenadas manuales:
+1. Al interactuar con el NPC para aceptar la misión, el motor vincula automáticamente a **esa entidad física** por su UUID y posición (`rqe_pos_{questId}_{x}_{z}`).
+2. **Si el NPC está en chunks cargados:** La brújula lo sigue en vivo aunque se mueva.
+3. **Si te alejas a chunks descargados:** La brújula usa las coordenadas guardadas.
+
+---
+
+### Zona de Búsqueda con Spawneo de Mobs
 ```json
 {
   "description": "Rastrea el sector del nido en la cueva",
@@ -67,79 +92,16 @@ Para misiones donde el jugador debe ir a una cueva, campamento o ruina y elimina
 }
 ```
 
-#### Parámetros clave de zona y spawneo:
-| Campo | Tipo | Explicación |
-| :--- | :--- | :--- |
-| `hasLocation` | `boolean` | Activa la brújula HUD con flecha dinámica (`▸ 150m`) hacia el punto. |
-| `posX`, `posZ` | `int` | Coordenadas centrales del sector. |
-| `radius` | `int` | **Radio de activación**. **Recomendado:** `20` a `30` para cuevas o casas; `40` a `60` para campamentos o aldeas. (Evitar valores de 100+ porque activa el evento demasiado lejos). |
-| `spawnMobsOnEntry` | `boolean` | Si es `true`, al pisar el radio genera los mobs automáticamente. |
-| `mobToSpawn` | `string` | ID de la entidad de Minecraft o mod (ej. `minecraft:cave_spider`, `minecraft:skeleton`). |
-| `mobSpawnCount` | `int` | Cantidad **mínima requerida** de mobs en la zona. |
-
-#### Reglas del motor para el spawneo:
-- **Control de cupo:** El motor escanea el área; solo genera las criaturas que falten para alcanzar `mobSpawnCount`.
-- **Corte automático:** En cuanto el jugador mata la cantidad requerida en la etapa de `KILL` de esa criatura, o la misión está completada, el generador **se apaga por completo** y no vuelve a generar más mobs ni mandar alertas.
-- **Sonido:** Dispara un aviso sonoro nítido en el cliente con sonido de cuerno de asalto (`RAID_HORN`) y alerta visual en pantalla.
+- **Radios recomendados:** `20-30` para cuevas o interiores; `40-60` para campamentos y exteriores.
+- **Control de cupo:** Solo genera las criaturas que falten para alcanzar `mobSpawnCount`.
+- **Corte automático:** En cuanto se cumple el objetivo `KILL` de esa criatura, el generador **se apaga por completo**.
+- **Aviso:** Sonido nítido en el cliente vía paquete UI (`RAID_HORN` + sonido de criatura).
 
 ---
 
-## 3. Patrón Recomendado: Misión de Contrato / Cueva
+## 5. Todos los Tipos de Etapas Disponibles (`type`)
 
-Combina una etapa de localización con una de eliminación:
-
-```json
-{
-  "id": "contrato_cueva_aranias",
-  "category": "CONTRACT",
-  "title": "Contrato: La Bestia de la Cueva",
-  "npc": "Cazador de Bestias",
-  "npcId": "npc_cazador",
-  "description": "Un peligroso arácnido acecha en las profundidades. Limpia la zona.",
-  "suggestedLevel": 6,
-  "activeTag": "q_cazador_activa",
-  "doneTag": "q_cazador_lista",
-  "completedTag": "q_cazador_entregada",
-  "rewards": [
-    "12x Monedas de Campeón",
-    "1x Arco Mejorado"
-  ],
-  "stages": [
-    {
-      "description": "Rastrea el sector del nido en la cueva",
-      "type": "SCORE",
-      "target": "dummy_none",
-      "amount": 0,
-      "hasLocation": true,
-      "posX": -250,
-      "posZ": 350,
-      "radius": 25,
-      "spawnMobsOnEntry": true,
-      "mobToSpawn": "minecraft:cave_spider",
-      "mobSpawnCount": 4
-    },
-    {
-      "description": "Elimina 3 Arañas de Cueva",
-      "type": "KILL",
-      "target": "minecraft:cave_spider",
-      "amount": 3
-    },
-    {
-      "description": "Prepara 8 Flechas para la caza (Opcional)",
-      "type": "CRAFT",
-      "target": "minecraft:arrow",
-      "amount": 8,
-      "optional": true
-    }
-  ]
-}
-```
-
----
-
-## 4. Todos los Tipos de Etapas Disponibles (`type`)
-
-### A. Eliminar Criaturas (`KILL`)
+### 1. Eliminar Criaturas (`KILL`)
 ```json
 {
   "description": "Elimina 5 Zombies",
@@ -149,7 +111,7 @@ Combina una etapa de localización con una de eliminación:
 }
 ```
 
-### B. Minar / Romper Bloques (`MINE`)
+### 2. Minar Bloques (`MINE`)
 ```json
 {
   "description": "Pica 8 Minerales de Hierro",
@@ -159,68 +121,67 @@ Combina una etapa de localización con una de eliminación:
 }
 ```
 
-### C. Craftear Ítems (`CRAFT`)
+### 3. Craftear en Mesa (`CRAFT`)
 ```json
 {
-  "description": "Fabrica 1 Escudo reforzado",
+  "description": "Fabrica 2 Arcos",
   "type": "CRAFT",
-  "target": "minecraft:shield",
-  "amount": 1
+  "target": "minecraft:bow",
+  "amount": 2
 }
 ```
 
-### D. Tener Ítems en Inventario (`ITEM`)
-Verifica posesión física en el inventario del jugador:
+### 4. Ítems en Inventario (`ITEM`)
 ```json
 {
-  "description": "Consigue 10 Plumas de Pollo",
+  "description": "Recolecta 4 Ojos de Araña",
   "type": "ITEM",
-  "target": "minecraft:feather",
-  "amount": 10
+  "target": "minecraft:spider_eye",
+  "amount": 4
 }
 ```
 
-### E. Cocinar / Fundir en Horno (`SMELT`)
+### 5. Cocinar / Fundir en Horno (`SMELT`)
 ```json
 {
-  "description": "Funde 5 Lingotes de Cobre",
+  "description": "Hornea 4 Patatas en el Horno",
   "type": "SMELT",
-  "target": "minecraft:copper_ingot",
-  "amount": 5
+  "target": "minecraft:baked_potato",
+  "amount": 4
 }
 ```
 
-### F. Pescar Ítems (`FISH`)
+### 6. Pescar con Caña (`FISH`)
 ```json
 {
-  "description": "Pesca 3 Peces tropicales",
+  "description": "Pesca 3 capturas en el río",
   "type": "FISH",
-  "target": "minecraft:tropical_fish",
+  "target": "any",
   "amount": 3
 }
 ```
 
-### G. Descubrir un Bioma (`BIOME`)
+### 7. Descubrir un Bioma (`BIOME`)
 ```json
 {
-  "description": "Explora el Pantano",
+  "description": "Explora un Bosque (Forest)",
   "type": "BIOME",
-  "target": "minecraft:swamp",
+  "target": "minecraft:forest",
   "amount": 1
 }
 ```
 
-### H. Descubrir una Estructura (`STRUCTURE`)
+### 8. Descubrir una Estructura (`STRUCTURE`)
 ```json
 {
-  "description": "Encuentra una Fortaleza del Nether",
+  "description": "Entra a una Aldea",
   "type": "STRUCTURE",
-  "target": "minecraft:fortress",
+  "target": "minecraft:village_plains",
   "amount": 1
 }
 ```
 
-### I. Viajar a una Dimensión (`DIMENSION`)
+### 9. Viajar a una Dimensión (`DIMENSION`)
 ```json
 {
   "description": "Atraviesa el portal al Nether",
@@ -230,14 +191,13 @@ Verifica posesión física en el inventario del jugador:
 }
 ```
 
-### J. Objetivo Opcional (`"optional": true`)
-No bloquea la entrega de la misión si no se cumple:
+### 10. Objetivo Opcional (`"optional": true`)
 ```json
 {
-  "description": "Recolecta pociones (Opcional)",
-  "type": "ITEM",
-  "target": "minecraft:potion",
-  "amount": 2,
+  "description": "Prepara flechas extra (Opcional)",
+  "type": "CRAFT",
+  "target": "minecraft:arrow",
+  "amount": 8,
   "optional": true
 }
 ```
