@@ -52,7 +52,7 @@
           Label: "en_progreso",
           Name: "En Progreso",
           Priority: 10,
-          Texts: [{ Text: "El nido está en el sector cruce del caminoso. Tu HUD te orienta hacia allá. Necesito 3 no-muertos abatidas." }]
+          Texts: [{ Text: "El nido está en el sector cruce del caminoso. Tu HUD te orienta hacia allá. Necesito la oleada de no-muertos durante 45 segundos abatidas." }]
         },
         {
           Buttons: [
@@ -90,7 +90,7 @@
           Label: "mision",
           Name: "Mision",
           Priority: -1,
-          Texts: [{ Text: "Sigue la dirección hacia el cruce del camino. Busca el nido en una zona de 160 bloques y abate 3 no-muertos. [Opcional] Prepara flechas extras si vas a distancia." }]
+          Texts: [{ Text: "Sigue la dirección hacia el cruce del camino. Busca el nido en una zona de 160 bloques y abate la oleada de no-muertos durante 45 segundos. [Opcional] Prepara flechas extras si vas a distancia." }]
         }
       ],
       Type: "CUSTOM"
