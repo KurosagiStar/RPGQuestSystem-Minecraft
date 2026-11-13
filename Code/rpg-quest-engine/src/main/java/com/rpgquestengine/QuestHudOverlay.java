@@ -225,8 +225,25 @@ public class QuestHudOverlay {
             item.showBar = (item.max > 0 && !isStageComplete);
 
             if (stage.hasLocation && !isStageComplete) {
-                double dx = stage.posX - player.getX();
-                double dz = stage.posZ - player.getZ();
+                double targetX = stage.posX;
+                double targetZ = stage.posZ;
+                if (stage.relativeToNpc) {
+                    String zonePrefix = "rqe_zone_" + q.id + "_" + sIdx + "_";
+                    for (String t : ClientQuestData.getTags()) {
+                        if (t.startsWith(zonePrefix)) {
+                            String[] parts = t.substring(zonePrefix.length()).split("_");
+                            if (parts.length == 2) {
+                                try {
+                                    targetX = Double.parseDouble(parts[0]);
+                                    targetZ = Double.parseDouble(parts[1]);
+                                } catch (Exception ignored) {}
+                            }
+                            break;
+                        }
+                    }
+                }
+                double dx = targetX - player.getX();
+                double dz = targetZ - player.getZ();
                 double dist = Math.sqrt(dx * dx + dz * dz);
 
                 if (dist <= stage.radius) {

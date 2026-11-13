@@ -301,8 +301,43 @@ public class RPGQuestEngine {
                         }
 
                         if (!questAlreadyDone && !mobTargetFinished) {
-                            double dx = stage.posX - sp.getX();
-                            double dz = stage.posZ - sp.getZ();
+                            double targetX = stage.posX;
+                            double targetZ = stage.posZ;
+                            if (stage.relativeToNpc) {
+                                String zonePrefix = "rqe_zone_" + q.id + "_" + sIdx + "_";
+                                String existingZone = null;
+                                for (String t : playerTags) {
+                                    if (t.startsWith(zonePrefix)) {
+                                        existingZone = t;
+                                        break;
+                                    }
+                                }
+                                if (existingZone != null) {
+                                    String[] parts = existingZone.substring(zonePrefix.length()).split("_");
+                                    if (parts.length == 2) {
+                                        try {
+                                            targetX = Double.parseDouble(parts[0]);
+                                            targetZ = Double.parseDouble(parts[1]);
+                                        } catch (Exception ignored) {}
+                                    }
+                                } else {
+                                    double dxOff = stage.posX;
+                                    double dzOff = stage.posZ;
+                                    double len = Math.sqrt(dxOff * dxOff + dzOff * dzOff);
+                                    if (len < 1.0) { dxOff = 80; dzOff = 0; len = 80; }
+                                    if (len > 300.0) {
+                                        dxOff = (dxOff / len) * 300.0;
+                                        dzOff = (dzOff / len) * 300.0;
+                                    }
+                                    int zx = (int) Math.round(sp.getX() + dxOff);
+                                    int zz = (int) Math.round(sp.getZ() + dzOff);
+                                    sp.addTag(zonePrefix + zx + "_" + zz);
+                                    targetX = zx;
+                                    targetZ = zz;
+                                }
+                            }
+                            double dx = targetX - sp.getX();
+                            double dz = targetZ - sp.getZ();
                             double dist = Math.sqrt(dx * dx + dz * dz);
                             if (dist <= stage.radius) {
                                 checkAndSpawnNearbyMobs(level, sp, stage.mobToSpawn, stage.mobSpawnCount, stage.radius);

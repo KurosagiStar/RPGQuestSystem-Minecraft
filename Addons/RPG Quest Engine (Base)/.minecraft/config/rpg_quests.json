@@ -383,13 +383,14 @@
                 "target": "minecraft:pillager",
                 "amount": 4,
                 "hasLocation": true,
-                "posX": 120,
-                "posZ": 120,
+                "posX": 80,
+                "posZ": 60,
                 "radius": 60,
                 "spawnMobsOnEntry": true,
                 "mobToSpawn": "minecraft:pillager",
                 "mobSpawnCount": 4,
-                "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!"
+                "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!",
+                "relativeToNpc": true
             }
         ]
     },

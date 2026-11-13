@@ -50,6 +50,7 @@ public class QuestDefinition {
 
         // Zona de búsqueda amplia / brújula (Punto 1)
         public boolean hasLocation = false;
+        public boolean relativeToNpc = false;
         public int posX = 0;
         public int posZ = 0;
         public int radius = 150; // Radio amplio de búsqueda (ej. 150 o 200 bloques)
