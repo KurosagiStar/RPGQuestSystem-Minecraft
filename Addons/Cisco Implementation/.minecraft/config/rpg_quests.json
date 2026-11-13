@@ -662,5 +662,45 @@
                 "amount": 12
             }
         ]
+    },
+    {
+        "id": "contrato_vigia_supervivencia",
+        "category": "CONTRACT",
+        "title": "Contrato: Resiste la Oleada",
+        "npc": "Vigía del Puesto",
+        "npcId": "villager_vigia_contracts",
+        "description": "Aguanta 45 segundos dentro del perímetro mientras llegan oleadas de no-muertos.",
+        "suggestedLevel": 6,
+        "activeTag": "q_vigia_activa",
+        "doneTag": "q_vigia_lista",
+        "completedTag": "q_vigia_entregada",
+        "rewardXp": 250,
+        "rewardItems": [
+            {
+                "id": "minecraft:emerald",
+                "count": 7
+            }
+        ],
+        "rewards": [
+            "250 XP",
+            "7x Esmeraldas"
+        ],
+        "stages": [
+            {
+                "description": "Sobrevive en la zona (segundos)",
+                "type": "SURVIVE",
+                "target": "survive",
+                "amount": 45,
+                "hasLocation": true,
+                "relativeToNpc": true,
+                "posX": 70,
+                "posZ": -50,
+                "radius": 45,
+                "spawnMobsOnEntry": true,
+                "mobToSpawn": "minecraft:zombie,minecraft:skeleton",
+                "mobSpawnCount": 6,
+                "ambushTitle": "§c⚔ ¡RESISTE LA OLEADA!"
+            }
+        ]
     }
 ]

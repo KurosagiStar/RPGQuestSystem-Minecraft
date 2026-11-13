@@ -236,6 +236,40 @@ public class RPGQuestEngine {
                             scores.put(stage.target, current);
                             break;
 
+                        case "SURVIVE": {
+                            String internalKey = getInternalScoreKey(q.id, sIdx, stage.type);
+                            current = getInternalScore(sp, internalKey);
+                            boolean inZone = true;
+                            if (stage.hasLocation) {
+                                double zx = stage.posX;
+                                double zz = stage.posZ;
+                                if (stage.relativeToNpc) {
+                                    String zonePrefix = "rqe_zone_" + q.id + "_" + sIdx + "_";
+                                    for (String t : playerTags) {
+                                        if (t.startsWith(zonePrefix)) {
+                                            String[] parts = t.substring(zonePrefix.length()).split("_");
+                                            if (parts.length == 2) {
+                                                try {
+                                                    zx = Double.parseDouble(parts[0]);
+                                                    zz = Double.parseDouble(parts[1]);
+                                                } catch (Exception ignored) {}
+                                            }
+                                            break;
+                                        }
+                                    }
+                                }
+                                double dxZ = zx - sp.getX();
+                                double dzZ = zz - sp.getZ();
+                                inZone = Math.sqrt(dxZ * dxZ + dzZ * dzZ) <= stage.radius;
+                            }
+                            if (inZone && current < required && sp.tickCount % 20 == 0) {
+                                current++;
+                                setInternalScore(sp, internalKey, current);
+                            }
+                            scores.put(internalKey, current);
+                            break;
+                        }
+
                         case "DIMENSION": {
                             String dimId = level.dimension().location().toString();
                             String internalKey = getInternalScoreKey(q.id, sIdx, stage.type);
