@@ -384,7 +384,8 @@ public class RPGQuestEngine {
                             double dz = targetZ - sp.getZ();
                             double dist = Math.sqrt(dx * dx + dz * dz);
                             if (dist <= stage.radius) {
-                                checkAndSpawnNearbyMobs(level, sp, stage.mobToSpawn, stage.mobSpawnCount, stage.radius);
+                                String waveTag = "rqe_wave_" + q.id + "_" + sIdx;
+                                checkAndSpawnNearbyMobs(level, sp, stage.mobToSpawn, stage.mobSpawnCount, stage.radius, waveTag);
                                 String ambushTag = "rqe_ambush_" + q.id + "_" + sIdx;
                                 if (stage.ambushTitle != null && !stage.ambushTitle.isEmpty() && !playerTags.contains(ambushTag)) {
                                     sp.addTag(ambushTag);
@@ -400,6 +401,20 @@ public class RPGQuestEngine {
                     // Si no es opcional y no se cumplió, la misión aún no está lista (Punto 2)
                     if (!stage.optional && current < required) {
                         allNonOptionalDone = false;
+                    } else if ("SURVIVE".equals(type) && current >= required && stage.spawnMobsOnEntry) {
+                        String waveTag = "rqe_wave_" + q.id + "_" + sIdx;
+                        int remaining = 0;
+                        for (net.minecraft.world.entity.LivingEntity ent : level.getEntitiesOfClass(
+                                net.minecraft.world.entity.LivingEntity.class, sp.getBoundingBox().inflate(80.0D))) {
+                            if (ent.isAlive() && ent.getTags().contains(waveTag)) {
+                                remaining++;
+                            }
+                        }
+                        if (remaining > 0) {
+                            allNonOptionalDone = false;
+                            sp.displayClientMessage(net.minecraft.network.chat.Component.literal(
+                                    "§c⚔ ¡Tiempo cumplido! Elimina a los " + remaining + " enemigos restantes"), true);
+                        }
                     }
                 }
 
@@ -521,7 +536,7 @@ public class RPGQuestEngine {
         sb.getOrCreatePlayerScore(sp.getScoreboardName(), obj).setScore(val);
     }
 
-    private void checkAndSpawnNearbyMobs(ServerLevel level, ServerPlayer sp, String mobIds, int minRequired, int searchRadius) {
+    private void checkAndSpawnNearbyMobs(ServerLevel level, ServerPlayer sp, String mobIds, int minRequired, int searchRadius, String waveTag) {
         if (mobIds == null || mobIds.isEmpty()) return;
         String[] idArray = mobIds.split(",");
         double checkRadius = Math.max(25.0, (double) searchRadius);
@@ -535,13 +550,15 @@ public class RPGQuestEngine {
             }
         }
 
+        // Solo spawnea al inicio (0) o cuando quedan menos de la mitad de enemigos vivos
+        if (existingCount > 0 && existingCount >= (minRequired / 2)) return;
         int needed = minRequired - existingCount;
         if (needed <= 0) return;
 
-        spawnQuestMobs(level, sp, idArray, needed);
+        spawnQuestMobs(level, sp, idArray, needed, waveTag);
     }
 
-    private void spawnQuestMobs(ServerLevel level, ServerPlayer sp, String[] idArray, int count) {
+    private void spawnQuestMobs(ServerLevel level, ServerPlayer sp, String[] idArray, int count, String waveTag) {
         java.util.List<EntityType<?>> validTypes = new java.util.ArrayList<>();
         for (String rawId : idArray) {
             EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(rawId.trim()));
@@ -581,6 +598,7 @@ public class RPGQuestEngine {
                 if (entity instanceof net.minecraft.world.entity.Mob mob) {
                     mob.moveTo(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, rnd.nextFloat() * 360F, 0.0F);
                     mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), net.minecraft.world.entity.MobSpawnType.EVENT, null, null);
+                    if (waveTag != null && !waveTag.isEmpty()) mob.addTag(waveTag);
                     mob.setPersistenceRequired(); // No desaparece
                     level.addFreshEntity(mob);
                     spawned++;

@@ -463,7 +463,7 @@
                 "radius": 45,
                 "spawnMobsOnEntry": true,
                 "mobToSpawn": "minecraft:zombie,minecraft:skeleton",
-                "mobSpawnCount": 6,
+                "mobSpawnCount": 20,
                 "ambushTitle": "§c⚔ ¡RESISTE LA OLEADA!"
             }
         ]

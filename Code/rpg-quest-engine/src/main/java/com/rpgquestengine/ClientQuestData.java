@@ -146,17 +146,6 @@ public class ClientQuestData {
             }
         }
 
-        if (newScores != null) {
-            for (Map.Entry<String, Integer> entry : newScores.entrySet()) {
-                int oldVal = PLAYER_SCORES.getOrDefault(entry.getKey(), 0);
-                int newVal = entry.getValue();
-                if (newVal > oldVal) {
-                    playClientSound(2);
-                    break;
-                }
-            }
-        }
-
         PLAYER_TAGS.clear();
         if (newTags != null) PLAYER_TAGS.addAll(newTags);
         PLAYER_SCORES.clear();
