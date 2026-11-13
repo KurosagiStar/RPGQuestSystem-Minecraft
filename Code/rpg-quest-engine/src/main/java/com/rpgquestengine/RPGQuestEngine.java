@@ -140,14 +140,8 @@ public class RPGQuestEngine {
     }
 
     @SubscribeEvent
-    public void onServerStarted(net.minecraftforge.event.server.ServerStartedEvent event) {
-        TownSpawner.trySpawnInitialTown(event.getServer().overworld());
-    }
-
-    @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && event.player instanceof ServerPlayer sp) {
-            TownSpawner.tickPlayerExploration(sp);
             if (sp.tickCount % 10 == 0) {
                 checkAndSyncQuests(sp);
             }
