@@ -83,7 +83,7 @@
                 { Type: "CLOSE_DIALOG" }
               ],
               Label: "aceptar",
-              Name: "Aceptar Contrato (Cazar 3 No-muertos)"
+              Name: "Aceptar Contrato (Resistir 45s)"
             },
             { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
           ],
