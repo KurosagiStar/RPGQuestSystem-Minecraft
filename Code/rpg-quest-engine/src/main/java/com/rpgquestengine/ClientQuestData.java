@@ -135,6 +135,7 @@ public class ClientQuestData {
                 if (newTags.contains(q.completedTag) && !PLAYER_TAGS.contains(q.completedTag)) {
                     playClientSound(4);
                     QuestTitleBannerOverlay.showBanner("MISIÓN COMPLETADA", q.title, new ItemStack(Items.EMERALD), 0xFFFFCC00, "");
+                    showRewardToast(q);
                     if (q.id.equals(QuestConfig.trackedQuestId)) {
                         // Pasar automáticamente a la siguiente misión pendiente
                         QuestConfig.trackedQuestId = findNextPendingQuestId(q.id, newTags);
@@ -160,6 +161,30 @@ public class ClientQuestData {
         if (newTags != null) PLAYER_TAGS.addAll(newTags);
         PLAYER_SCORES.clear();
         if (newScores != null) PLAYER_SCORES.putAll(newScores);
+    }
+
+    private static void showRewardToast(QuestDefinition q) {
+        ItemStack icon = new ItemStack(Items.EXPERIENCE_BOTTLE);
+        StringBuilder summary = new StringBuilder();
+        if (q.rewardXp > 0) {
+            summary.append("+").append(q.rewardXp).append(" XP");
+        }
+        if (q.rewardItems != null && !q.rewardItems.isEmpty()) {
+            QuestDefinition.RewardItem first = q.rewardItems.get(0);
+            net.minecraft.world.item.Item rItem = net.minecraftforge.registries.ForgeRegistries.ITEMS.getValue(
+                    new net.minecraft.resources.ResourceLocation(first.id));
+            if (rItem != null && rItem != Items.AIR) {
+                icon = new ItemStack(rItem, first.count);
+                if (summary.length() > 0) summary.append(", ");
+                summary.append(first.count).append("x ").append(icon.getHoverName().getString());
+            }
+        } else if (q.rewards != null && !q.rewards.isEmpty() && summary.length() == 0) {
+            icon = new ItemStack(Items.EMERALD);
+            summary.append(String.join(", ", q.rewards));
+        }
+        if (summary.length() > 0) {
+            showQuestToast("§eRecompensas", summary.toString(), icon, 0xFFAA00);
+        }
     }
 
     private static void showQuestToast(String header, String title, ItemStack icon, int color) {
