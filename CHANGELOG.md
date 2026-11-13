@@ -8,6 +8,7 @@
   - Búsqueda vertical de suelo limitada a `-1..+4` para evitar spawneos bajo tierra.
   - Equipamiento de armas por defecto (`CROSSBOW`, `IRON_AXE`, `IRON_SWORD`) para illagers que spawneen sin arma.
 - **Alineación y Diálogos en Presets:** Corregidos los `activeTag`/`lista`/`entregada` en 6 presets y añadidos los 9 diálogos faltantes de bosses/dimensiones/gemas en `chain_muralla_2_centinela`, `villager_cazador_contracts`, `villager_dimension_main`, `villager_explorador_main`, `villager_bioma_secondary` y `villager_alquimista_secondary`.
+- **Abandonar Misión (`AbandonQuestPacket`):** Añadido botón `Abandonar` en el Diario (`QuestJournalScreen`) para misiones activas `SECONDARY`, `CONTRACT` y `REPEATABLE` (bloqueado en `MAIN`); resetea tags y puntajes en servidor y muestra `QuestToast` `"Misión Abandonada"`.
 - **Migración de Misiones Anteriores (`rpg_quests.json`):** Añadido `relativeToNpc: true` en `cazador_pantano` y `explorar_torre`, y configurados `rewardXp` y `rewardItems` en las 22 misiones anteriores para mostrar el `QuestToast` de recompensas.
 
 ## [1.3.0-update] - 2026-11-12
