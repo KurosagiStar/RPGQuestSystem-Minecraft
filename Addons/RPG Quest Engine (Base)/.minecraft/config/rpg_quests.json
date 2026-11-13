@@ -17,10 +17,10 @@
         ],
         "stages": [
             {
-                "description": "Elimina 5 zombies en los alrededores",
+                "description": "Elimina 12 zombies en los alrededores",
                 "type": "KILL",
                 "target": "minecraft:zombie",
-                "amount": 5
+                "amount": 12
             }
         ]
     },
@@ -80,10 +80,10 @@
                 "mobSpawnCount": 4
             },
             {
-                "description": "Elimina 4 Arañas de Cueva",
+                "description": "Elimina 12 Arañas de Cueva",
                 "type": "KILL",
                 "target": "minecraft:cave_spider",
-                "amount": 4
+                "amount": 12
             },
             {
                 "description": "(Opcional) Consigue Ojos de Araña fermentados",
@@ -266,10 +266,10 @@
         ],
         "stages": [
             {
-                "description": "Elimina 3 Esqueletos Wither",
+                "description": "Elimina 12 Esqueletos Wither",
                 "type": "KILL",
                 "target": "minecraft:wither_skeleton",
-                "amount": 3
+                "amount": 12
             }
         ]
     },
@@ -381,14 +381,14 @@
                 "description": "Elimina a los saqueadores de la emboscada",
                 "type": "KILL",
                 "target": "minecraft:pillager",
-                "amount": 4,
+                "amount": 12,
                 "hasLocation": true,
                 "posX": 80,
                 "posZ": 60,
                 "radius": 60,
                 "spawnMobsOnEntry": true,
                 "mobToSpawn": "minecraft:pillager",
-                "mobSpawnCount": 5,
+                "mobSpawnCount": 6,
                 "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!",
                 "relativeToNpc": true
             }
@@ -421,10 +421,10 @@
         ],
         "stages": [
             {
-                "description": "Derrota 5 Esqueletos",
+                "description": "Derrota 12 Esqueletos",
                 "type": "KILL",
                 "target": "minecraft:skeleton",
-                "amount": 5
+                "amount": 12
             }
         ]
     }
