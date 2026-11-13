@@ -126,6 +126,16 @@ public class RPGQuestEngine {
                         return 1;
                     })
                 )
+                .then(Commands.literal("reload")
+                    .executes(ctx -> {
+                        QuestConfig.loadConfig();
+                        if (ctx.getSource().getEntity() instanceof ServerPlayer sp) {
+                            checkAndSyncQuests(sp);
+                        }
+                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Configuración rpg_quests.json recargada (" + QuestConfig.QUESTS.size() + " misiones)."), false);
+                        return 1;
+                    })
+                )
         );
     }
 
