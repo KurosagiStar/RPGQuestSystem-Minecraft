@@ -387,7 +387,7 @@
                 "posZ": 60,
                 "radius": 60,
                 "spawnMobsOnEntry": true,
-                "mobToSpawn": "minecraft:pillager,minecraft:vindicator",
+                "mobToSpawn": "minecraft:pillager",
                 "mobSpawnCount": 5,
                 "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!",
                 "relativeToNpc": true
