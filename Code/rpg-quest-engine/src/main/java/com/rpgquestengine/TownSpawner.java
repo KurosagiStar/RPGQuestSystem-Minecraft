@@ -275,7 +275,7 @@ public class TownSpawner {
                     for (int x = 0; x < width; x++) {
                         BlockState state = palette.get(grid[y][z][x]);
                         BlockPos target = origin.offset(x, y, z);
-                        if (state != null && !state.isAir()) {
+                        if (state != null && !state.isAir() && !state.is(Blocks.BARRIER)) {
                             level.setBlock(target, state, 2);
                             if (y == schemGroundY) {
                                 BlockPos below = target.below();
@@ -292,10 +292,40 @@ public class TownSpawner {
                     }
                 }
             }
+            smoothPerimeter(level, startX, startZ, width, length, worldGroundY, 10);
             return new int[]{width, height, length};
         } catch (Exception e) {
             System.err.println("[RPGQuestEngine] Error pasting schematic " + file.getName() + ": " + e.getMessage());
             return null;
+        }
+    }
+
+    private static void smoothPerimeter(ServerLevel level, int startX, int startZ, int width, int length, int groundY, int margin) {
+        int minX = startX - margin;
+        int maxX = startX + width + margin - 1;
+        int minZ = startZ - margin;
+        int maxZ = startZ + length + margin - 1;
+        for (int wx = minX; wx <= maxX; wx++) {
+            for (int wz = minZ; wz <= maxZ; wz++) {
+                if (wx >= startX && wx < startX + width && wz >= startZ && wz < startZ + length) continue;
+                int dx = wx < startX ? startX - wx : (wx >= startX + width ? wx - (startX + width - 1) : 0);
+                int dz = wz < startZ ? startZ - wz : (wz >= startZ + length ? wz - (startZ + length - 1) : 0);
+                double dist = Math.sqrt(dx * dx + dz * dz);
+                if (dist > margin) continue;
+                double t = dist / margin;
+                int curH = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, wx, wz);
+                int targetY = (int) Math.round(groundY * (1.0 - t) + curH * t);
+                for (int y = targetY + 1; y <= Math.max(curH + 6, targetY + 12); y++) {
+                    BlockPos p = new BlockPos(wx, y, wz);
+                    if (!level.getBlockState(p).isAir()) {
+                        level.setBlock(p, Blocks.AIR.defaultBlockState(), 2);
+                    }
+                }
+                level.setBlock(new BlockPos(wx, targetY, wz), Blocks.GRASS_BLOCK.defaultBlockState(), 2);
+                for (int y = targetY - 1; y >= targetY - 4; y--) {
+                    level.setBlock(new BlockPos(wx, y, wz), Blocks.DIRT.defaultBlockState(), 2);
+                }
+            }
         }
     }
 }
