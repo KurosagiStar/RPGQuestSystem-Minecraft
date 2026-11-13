@@ -477,24 +477,33 @@ public class RPGQuestEngine {
         sb.getOrCreatePlayerScore(sp.getScoreboardName(), obj).setScore(val);
     }
 
-    private void checkAndSpawnNearbyMobs(ServerLevel level, ServerPlayer sp, String mobId, int minRequired, int searchRadius) {
-        EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(mobId));
-        if (entityType == null) return;
-
-        // Contar cuántos mobs de este tipo ya existen cerca (en radio de búsqueda o 32 bloques)
+    private void checkAndSpawnNearbyMobs(ServerLevel level, ServerPlayer sp, String mobIds, int minRequired, int searchRadius) {
+        if (mobIds == null || mobIds.isEmpty()) return;
+        String[] idArray = mobIds.split(",");
         double checkRadius = Math.max(25.0, (double) searchRadius);
         net.minecraft.world.phys.AABB area = sp.getBoundingBox().inflate(checkRadius, 16.0, checkRadius);
-        List<? extends Entity> nearby = level.getEntities(entityType, area, Entity::isAlive);
 
-        int needed = minRequired - nearby.size();
-        if (needed <= 0) return; // Ya hay suficientes
+        int existingCount = 0;
+        for (String rawId : idArray) {
+            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(rawId.trim()));
+            if (et != null) {
+                existingCount += level.getEntities(et, area, Entity::isAlive).size();
+            }
+        }
 
-        spawnQuestMobs(level, sp, mobId, needed);
+        int needed = minRequired - existingCount;
+        if (needed <= 0) return;
+
+        spawnQuestMobs(level, sp, idArray, needed);
     }
 
-    private void spawnQuestMobs(ServerLevel level, ServerPlayer sp, String mobId, int count) {
-        EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(mobId));
-        if (entityType == null) return;
+    private void spawnQuestMobs(ServerLevel level, ServerPlayer sp, String[] idArray, int count) {
+        java.util.List<EntityType<?>> validTypes = new java.util.ArrayList<>();
+        for (String rawId : idArray) {
+            EntityType<?> et = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(rawId.trim()));
+            if (et != null) validTypes.add(et);
+        }
+        if (validTypes.isEmpty()) return;
 
         BlockPos playerPos = sp.blockPosition();
         java.util.Random rnd = new java.util.Random();
@@ -523,9 +532,11 @@ public class RPGQuestEngine {
             }
 
             if (spawnPos != null) {
-                Entity entity = entityType.create(level);
+                EntityType<?> chosenType = validTypes.get(rnd.nextInt(validTypes.size()));
+                Entity entity = chosenType.create(level);
                 if (entity instanceof net.minecraft.world.entity.Mob mob) {
                     mob.moveTo(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, rnd.nextFloat() * 360F, 0.0F);
+                    mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), net.minecraft.world.entity.MobSpawnType.EVENT, null, null);
                     mob.setPersistenceRequired(); // No desaparece
                     level.addFreshEntity(mob);
                     spawned++;
