@@ -174,11 +174,18 @@ public class TownSpawner {
             var blockLookup = level.holderLookup(Registries.BLOCK);
             for (String key : paletteTag.getAllKeys()) {
                 int id = paletteTag.getInt(key);
+                String fixedKey = key.replace("minecraft:grass_path", "minecraft:dirt_path");
                 try {
-                    BlockState state = BlockStateParser.parseForBlock(blockLookup, key, false).blockState();
+                    BlockState state = BlockStateParser.parseForBlock(blockLookup, fixedKey, false).blockState();
                     palette.put(id, state);
                 } catch (Exception e) {
-                    palette.put(id, Blocks.AIR.defaultBlockState());
+                    try {
+                        String baseId = fixedKey.contains("[") ? fixedKey.substring(0, fixedKey.indexOf('[')) : fixedKey;
+                        BlockState state = BlockStateParser.parseForBlock(blockLookup, baseId, false).blockState();
+                        palette.put(id, state);
+                    } catch (Exception e2) {
+                        palette.put(id, Blocks.AIR.defaultBlockState());
+                    }
                 }
             }
 
@@ -198,7 +205,17 @@ public class TownSpawner {
                         }
                         BlockState state = palette.get(value);
                         if (state != null && !state.isAir()) {
-                            level.setBlock(origin.offset(x, y, z), state, 2);
+                            BlockPos target = origin.offset(x, y, z);
+                            level.setBlock(target, state, 2);
+                            if (y == 0) {
+                                BlockPos below = target.below();
+                                int depth = 0;
+                                while (below.getY() > level.getMinBuildHeight() && depth < 24 && !level.getBlockState(below).isSolidRender(level, below)) {
+                                    level.setBlock(below, depth < 3 ? Blocks.DIRT.defaultBlockState() : Blocks.STONE.defaultBlockState(), 2);
+                                    below = below.below();
+                                    depth++;
+                                }
+                            }
                         }
                     }
                 }
