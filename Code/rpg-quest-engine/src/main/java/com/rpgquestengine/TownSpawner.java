@@ -90,7 +90,7 @@ public class TownSpawner {
             int centerZ = origin.getZ() + dims[2] / 2;
             int spawnY = overworld.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, centerX, centerZ);
             overworld.setDefaultSpawnPos(new BlockPos(centerX, Math.max(spawnY, y) + 1, centerZ), 0.0F);
-            spawnTownVillagers(overworld, centerX, centerZ, 10);
+            spawnTownVillagers(overworld, centerX, centerZ, 25);
             data.spawnTownPlaced = true;
             data.placedCoords.add(new int[]{centerX, centerZ});
             data.setDirty();
@@ -137,7 +137,7 @@ public class TownSpawner {
         if (dims != null) {
             int cx = targetX + dims[0] / 2;
             int cz = targetZ + dims[2] / 2;
-            spawnTownVillagers(level, cx, cz, 10);
+            spawnTownVillagers(level, cx, cz, 25);
             data.placedCoords.add(new int[]{cx, cz});
             data.counts.put(chosen, data.counts.getOrDefault(chosen, 0) + 1);
             data.setDirty();
@@ -146,8 +146,8 @@ public class TownSpawner {
 
     private static void spawnTownVillagers(ServerLevel level, int centerX, int centerZ, int count) {
         for (int i = 0; i < count; i++) {
-            int vx = centerX + level.random.nextInt(25) - 12;
-            int vz = centerZ + level.random.nextInt(25) - 12;
+            int vx = centerX + level.random.nextInt(49) - 24;
+            int vz = centerZ + level.random.nextInt(49) - 24;
             int vy = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, vx, vz);
             var villager = net.minecraft.world.entity.EntityType.VILLAGER.create(level);
             if (villager != null) {
