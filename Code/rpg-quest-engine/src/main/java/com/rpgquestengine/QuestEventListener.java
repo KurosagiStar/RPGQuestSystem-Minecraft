@@ -70,6 +70,9 @@ public class QuestEventListener {
             ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(victim.getType());
             if (entityId != null) {
                 incrementQuestTarget(sp, "KILL", entityId.toString());
+                if (isBowOrProjectileKill(event.getSource(), sp)) {
+                    incrementQuestTarget(sp, "KILL_BOW", entityId.toString());
+                }
             }
 
             // Soporte para jefes multipart (ej. Ice and Fire, Cataclysm)
@@ -80,6 +83,20 @@ public class QuestEventListener {
                 }
             }
         }
+    }
+
+    private static boolean isBowOrProjectileKill(net.minecraft.world.damagesource.DamageSource source, ServerPlayer sp) {
+        if (source.getDirectEntity() instanceof net.minecraft.world.entity.projectile.AbstractArrow) {
+            return true;
+        }
+        ItemStack main = sp.getMainHandItem();
+        ItemStack off = sp.getOffhandItem();
+        if (main.getItem() instanceof net.minecraft.world.item.ProjectileWeaponItem
+                || off.getItem() instanceof net.minecraft.world.item.ProjectileWeaponItem) {
+            return true;
+        }
+        ResourceLocation mainId = ForgeRegistries.ITEMS.getKey(main.getItem());
+        return mainId != null && mainId.getPath().contains("bow");
     }
 
     private static ServerPlayer resolvePlayerKiller(net.minecraft.world.damagesource.DamageSource source, LivingEntity victim) {

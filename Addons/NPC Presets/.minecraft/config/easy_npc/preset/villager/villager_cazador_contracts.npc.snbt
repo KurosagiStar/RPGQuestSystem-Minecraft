@@ -90,7 +90,7 @@
           Label: "mision",
           Name: "Mision",
           Priority: -1,
-          Texts: [{ Text: "Sigue la dirección hacia el pantano. Busca el nido en una zona de 160 bloques y abate 3 arañas de cueva. [Opcional] Prepara flechas extras si vas a distancia." }]
+          Texts: [{ Text: "Sigue la dirección hacia el pantano. Busca el nido en una zona de 160 bloques y abate 3 arañas de cueva. [Opcional] Elimina 4 enemigos con cualquier Arco." }]
         }
       ],
       Type: "CUSTOM"
