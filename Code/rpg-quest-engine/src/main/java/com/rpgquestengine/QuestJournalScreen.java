@@ -69,6 +69,8 @@ public class QuestJournalScreen extends Screen {
         this.abandonButton = Button.builder(Component.literal("§cAbandonar"), b -> {
             if (selectedQuest != null && !"MAIN".equalsIgnoreCase(selectedQuest.category)) {
                 NetworkHandler.CHANNEL.sendToServer(new AbandonQuestPacket(selectedQuest.id));
+                ClientQuestData.removeTag(selectedQuest.activeTag);
+                ClientQuestData.removeTag(selectedQuest.doneTag);
                 if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
                     QuestConfig.trackedQuestId = "none";
                     QuestConfig.saveSettings();

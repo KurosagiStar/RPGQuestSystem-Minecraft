@@ -245,6 +245,10 @@ public class ClientQuestData {
         return PLAYER_TAGS.contains(tag);
     }
 
+    public static synchronized void removeTag(String tag) {
+        if (tag != null && !tag.isEmpty()) PLAYER_TAGS.remove(tag);
+    }
+
     public static synchronized int getScore(String objective) {
         if (objective == null || objective.isEmpty()) return 0;
         return PLAYER_SCORES.getOrDefault(objective, 0);
