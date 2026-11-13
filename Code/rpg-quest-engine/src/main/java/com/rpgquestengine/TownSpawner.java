@@ -90,6 +90,7 @@ public class TownSpawner {
             int centerZ = origin.getZ() + dims[2] / 2;
             int spawnY = overworld.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, centerX, centerZ);
             overworld.setDefaultSpawnPos(new BlockPos(centerX, Math.max(spawnY, y) + 1, centerZ), 0.0F);
+            spawnTownVillagers(overworld, centerX, centerZ, 10);
             data.spawnTownPlaced = true;
             data.placedCoords.add(new int[]{centerX, centerZ});
             data.setDirty();
@@ -134,9 +135,27 @@ public class TownSpawner {
 
         int[] dims = pasteSchematic(level, schem, new BlockPos(targetX, y - 2, targetZ));
         if (dims != null) {
-            data.placedCoords.add(new int[]{targetX + dims[0] / 2, targetZ + dims[2] / 2});
+            int cx = targetX + dims[0] / 2;
+            int cz = targetZ + dims[2] / 2;
+            spawnTownVillagers(level, cx, cz, 10);
+            data.placedCoords.add(new int[]{cx, cz});
             data.counts.put(chosen, data.counts.getOrDefault(chosen, 0) + 1);
             data.setDirty();
+        }
+    }
+
+    private static void spawnTownVillagers(ServerLevel level, int centerX, int centerZ, int count) {
+        for (int i = 0; i < count; i++) {
+            int vx = centerX + level.random.nextInt(25) - 12;
+            int vz = centerZ + level.random.nextInt(25) - 12;
+            int vy = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, vx, vz);
+            var villager = net.minecraft.world.entity.EntityType.VILLAGER.create(level);
+            if (villager != null) {
+                villager.moveTo(vx + 0.5, vy + 0.5, vz + 0.5, level.random.nextFloat() * 360F, 0.0F);
+                villager.finalizeSpawn(level, level.getCurrentDifficultyAt(new BlockPos(vx, vy, vz)),
+                        net.minecraft.world.entity.MobSpawnType.STRUCTURE, null, null);
+                level.addFreshEntity(villager);
+            }
         }
     }
 
@@ -191,3 +210,4 @@ public class TownSpawner {
         }
     }
 }
+
