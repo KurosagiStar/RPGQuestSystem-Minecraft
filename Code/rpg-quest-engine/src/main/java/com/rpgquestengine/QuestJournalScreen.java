@@ -78,6 +78,7 @@ public class QuestJournalScreen extends Screen {
                 net.minecraft.client.Minecraft.getInstance().getToasts().addToast(
                         new QuestToast("Misión Abandonada", selectedQuest.title, net.minecraft.world.item.ItemStack.EMPTY, 0xFF5555));
                 selectedQuest = null;
+                refreshQuestLists();
                 selectFirstInCurrentTab();
             }
         }).bounds(this.width - 260, this.height - 28, 100, 20).build();
