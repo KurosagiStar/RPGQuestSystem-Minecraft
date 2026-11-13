@@ -20,6 +20,7 @@ public class QuestJournalScreen extends Screen {
 
     private int activeTab = 0;
     private Button trackButton = null;
+    private Button abandonButton = null;
 
     private static class ClickableItem {
         QuestDefinition quest;
@@ -65,6 +66,21 @@ public class QuestJournalScreen extends Screen {
         }).bounds(this.width - 150, this.height - 28, 130, 20).build();
         this.addRenderableWidget(this.trackButton);
 
+        this.abandonButton = Button.builder(Component.literal("§cAbandonar"), b -> {
+            if (selectedQuest != null && !"MAIN".equalsIgnoreCase(selectedQuest.category)) {
+                NetworkHandler.CHANNEL.sendToServer(new AbandonQuestPacket(selectedQuest.id));
+                if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
+                    QuestConfig.trackedQuestId = "none";
+                    QuestConfig.saveSettings();
+                }
+                net.minecraft.client.Minecraft.getInstance().getToasts().addToast(
+                        new QuestToast("Misión Abandonada", selectedQuest.title, net.minecraft.world.item.ItemStack.EMPTY, 0xFF5555));
+                selectedQuest = null;
+                selectFirstInCurrentTab();
+            }
+        }).bounds(this.width - 260, this.height - 28, 100, 20).build();
+        this.addRenderableWidget(this.abandonButton);
+
         int tabW = (this.width - 30) / 5;
         this.addRenderableWidget(Button.builder(Component.literal("§aActivas"), b -> { activeTab = 0; selectFirstInCurrentTab(); }).bounds(15 + (tabW * 0), 10, tabW - 4, 18).build());
         this.addRenderableWidget(Button.builder(Component.literal("§6Principales"), b -> { activeTab = 1; selectFirstInCurrentTab(); }).bounds(15 + (tabW * 1), 10, tabW - 4, 18).build());
@@ -82,6 +98,12 @@ public class QuestJournalScreen extends Screen {
             } else {
                 this.trackButton.setMessage(Component.literal("§aSeguir"));
             }
+        }
+        if (this.abandonButton != null) {
+            this.abandonButton.visible = (selectedQuest != null
+                    && !"MAIN".equalsIgnoreCase(selectedQuest.category)
+                    && ClientQuestData.hasTag(selectedQuest.activeTag)
+                    && !ClientQuestData.hasTag(selectedQuest.completedTag));
         }
     }
 

@@ -27,6 +27,10 @@ public class NetworkHandler {
                 SyncEntityTagsPacket::encode,
                 SyncEntityTagsPacket::decode,
                 SyncEntityTagsPacket::handle);
+        CHANNEL.registerMessage(id++, AbandonQuestPacket.class,
+                AbandonQuestPacket::encode,
+                AbandonQuestPacket::decode,
+                AbandonQuestPacket::handle);
     }
 }
 
