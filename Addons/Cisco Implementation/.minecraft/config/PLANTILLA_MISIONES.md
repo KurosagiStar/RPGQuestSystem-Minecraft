@@ -265,3 +265,10 @@ Dentro de cualquier etapa con `spawnMobsOnEntry: true`:
 "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!"
 ```
 Dispara título en pantalla y sonido de alerta al entrar al radio de la zona.
+
+### 4. Supervivencia por Oleadas (`SURVIVE`) y Combate con Arco (`KILL_BOW`)
+- `"type": "SURVIVE"` con `"amount": 45` (segundos) y `"spawnMobsOnEntry": true` mantiene oleadas activas (hasta `mobSpawnCount`, reponiendo en bloque al bajar del 50%) y exige limpiar los restantes al acabarse el tiempo.
+- `"type": "KILL_BOW"` con `"target": "any"` cuenta kills realizados con cualquier arco vanilla o modded (Cisco).
+
+### 5. Zonas Relativas Portables (`relativeToNpc`)
+- `"relativeToNpc": true` en una etapa con `hasLocation: true` calcula la zona relativa a donde se aceptó la misión (máximo 300 metros).

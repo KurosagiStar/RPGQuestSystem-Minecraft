@@ -1,5 +1,24 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
+## [1.3.0-update] - 2026-11-12
+
+### 1. Nuevas Mecánicas de Misión y Combate
+- **Recompensas Automáticas (`rewardXp` y `rewardItems`):** El motor entrega XP e ítems reales al completar la misión (`completedTag`), y muestra un **Toast de Recompensas** (`QuestToast`) con el icono del ítem obtenido.
+- **Rutas Ramificadas (`blockedByTags`):** Permite bloquear misiones excluyentes si el jugador completó otra ruta.
+- **Emboscadas, Oleadas y Supervivencia (`SURVIVE`, `ambushTitle`, `mobToSpawn` múltiple):**
+  - `SURVIVE`: Temporizador por segundos dentro de la zona de misión; al terminar el tiempo exige eliminar a los enemigos restantes de la oleada (`rqe_wave_*`) antes de completar la misión.
+  - Oleadas dinámicas: Spawnean enemigos armados (`finalizeSpawn`) y se reponen en bloque al bajar del 50% de vivos.
+  - Eliminado el sonido molesto en cada tick de progreso.
+- **Combate a Distancia (`KILL_BOW`):** Detecta kills con arcos vanilla y arcos modded/Cisco (`ProjectileWeaponItem` / flechas).
+- **Zonas Portables (`relativeToNpc`):** Calcula coordenadas relativas al jugador/NPC con un máximo de 300 metros.
+- **Comando `/rpgquest reload`:** Recarga `rpg_quests.json` en caliente sin reiniciar el juego.
+
+### 2. Estandarización de Presets por Categoría
+- Renombrados los presets individuales en `preset/villager/` con sufijos `_main`, `_secondary`, `_contracts`, `_repeatable` y sus `Tags` internos.
+- Añadidos nuevos presets de contrato: `villager_tabernero_contracts`, `villager_gremio_contracts` y `villager_vigia_contracts`.
+
+---
+
 ## [1.2.0-update] - 2026-11-12
 
 ### 1. Sincronización Estricta de Tags de Entidades (`SyncEntityTagsPacket`)

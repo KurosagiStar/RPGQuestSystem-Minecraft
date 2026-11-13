@@ -70,6 +70,11 @@ Comando: `/easy_npc preset custom import villager/<nombre>`
 - `villager_bioma`: Naturalista de la Arboleda (Misión: `explorar_bioma`)
 - `villager_estructura`: Vigía de la Ciudadela (Misión: `descubrir_aldea`)
 - `villager_dimension`: Ocultista del Vacío (Misión: `viaje_nether`)
+- `villager_tabernero_contracts`: Tabernero (Contratos de taberna)
+- `villager_gremio_contracts`: Maestro del Gremio (Contratos de gremio)
+- `villager_vigia_contracts`: Vigía de la Torre (Contratos de vigilancia)
+
+> **Sufijos estandarizados:** Los presets usan sufijos `_main`, `_secondary`, `_contracts` y `_repeatable` según su rol.
 
 ### B. Presets de Misiones Encadenadas (`preset/villager/`):
 Comando: `/easy_npc preset custom import villager/<nombre>`
@@ -83,6 +88,8 @@ Cada preset incluye su scoreboard tag único (`Tags: ["<nombre>"]`) sincronizado
 ## 4. Tipos de Etapa (`type`) Soportados
 
 - `KILL`: IDs de entidades (soporta proyectiles, magia, summons domesticados y multipartes).
+- `KILL_BOW`: Bajas con cualquier arco o ballesta (incluye arcos de Cisco/modded).
+- `SURVIVE`: Supervivencia cronometrada con oleadas dinámicas de enemigos (`mobToSpawn` soporta lista separada por comas, `ambushTitle` para alerta) y limpieza final de rezagados.
 - `ITEM`: Conteo en inventario. Admite `nbtKey` anidado (ej. `affix_data.gem`) y `nbtValue`.
 - `TALK`: Interactuar con un NPC específico (`target: "villager_centinela"` o tag de entidad).
 - `DELIVER`: Entregar órdenes o reportes interactuando con el NPC de destino.
