@@ -73,28 +73,47 @@ public class TownSpawner {
         }
     }
 
-    public static void trySpawnInitialTown(ServerLevel overworld) {
-        if (overworld == null || overworld.dimension() != Level.OVERWORLD) return;
+    public static BlockPos trySpawnInitialTown(ServerLevel overworld) {
+        if (overworld == null || overworld.dimension() != Level.OVERWORLD) return null;
         TownSavedData data = TownSavedData.get(overworld);
-        if (data.spawnTownPlaced) return;
+        if (data.spawnTownPlaced) return null;
 
         File schem = new File(FMLPaths.CONFIGDIR.get().toFile(), "rpgquestengine/towns/Medieval spawn.schem");
-        if (!schem.exists()) return;
+        if (!schem.exists()) return null;
 
-        int y = overworld.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, 0, 0);
-        if (y < 60) y = 64;
-        BlockPos origin = new BlockPos(-32, y - 2, -32);
-        int[] dims = pasteSchematic(overworld, schem, origin);
+        BlockPos site = findGreenBiomeNearOrigin(overworld);
+        int worldY = overworld.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, site.getX(), site.getZ());
+        if (worldY < 60) worldY = 64;
+        int[] dims = pasteSchematicAligned(overworld, schem, site.getX() - 32, worldY, site.getZ() - 32);
         if (dims != null) {
-            int centerX = origin.getX() + dims[0] / 2;
-            int centerZ = origin.getZ() + dims[2] / 2;
+            int centerX = (site.getX() - 32) + dims[0] / 2;
+            int centerZ = (site.getZ() - 32) + dims[2] / 2;
             int spawnY = overworld.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, centerX, centerZ);
-            overworld.setDefaultSpawnPos(new BlockPos(centerX, Math.max(spawnY, y) + 1, centerZ), 0.0F);
+            BlockPos spawnPos = new BlockPos(centerX, Math.max(spawnY, worldY) + 1, centerZ);
+            overworld.setDefaultSpawnPos(spawnPos, 0.0F);
             spawnTownVillagers(overworld, centerX, centerZ, 25);
             data.spawnTownPlaced = true;
             data.placedCoords.add(new int[]{centerX, centerZ});
             data.setDirty();
+            return spawnPos;
         }
+        return null;
+    }
+
+    private static BlockPos findGreenBiomeNearOrigin(ServerLevel level) {
+        for (int r = 0; r <= 1024; r += 64) {
+            for (int dx = -r; dx <= r; dx += 64) {
+                for (int dz = -r; dz <= r; dz += 64) {
+                    if (Math.abs(dx) != r && Math.abs(dz) != r) continue;
+                    String biome = level.getBiome(new BlockPos(dx, 64, dz)).unwrapKey()
+                            .map(k -> k.location().getPath()).orElse("");
+                    if (biome.contains("plains") || biome.contains("meadow") || biome.contains("forest")) {
+                        return new BlockPos(dx, 64, dz);
+                    }
+                }
+            }
+        }
+        return new BlockPos(0, 64, 0);
     }
 
     public static void tickPlayerExploration(ServerPlayer sp) {
@@ -103,7 +122,10 @@ public class TownSpawner {
 
         TownSavedData data = TownSavedData.get(level);
         if (!data.spawnTownPlaced) {
-            trySpawnInitialTown(level);
+            BlockPos spawnPos = trySpawnInitialTown(level);
+            if (spawnPos != null) {
+                sp.teleportTo(level, spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, 0.0F, 0.0F);
+            }
         }
 
         int px = sp.getBlockX();
@@ -133,7 +155,7 @@ public class TownSpawner {
         int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, targetX, targetZ);
         if (y < 60) y = 63;
 
-        int[] dims = pasteSchematic(level, schem, new BlockPos(targetX, y - 2, targetZ));
+        int[] dims = pasteSchematicAligned(level, schem, targetX, y, targetZ);
         if (dims != null) {
             int cx = targetX + dims[0] / 2;
             int cz = targetZ + dims[2] / 2;
@@ -159,7 +181,7 @@ public class TownSpawner {
         }
     }
 
-    private static int[] pasteSchematic(ServerLevel level, File file, BlockPos origin) {
+    private static int[] pasteSchematicAligned(ServerLevel level, File file, int startX, int worldGroundY, int startZ) {
         try (FileInputStream fis = new FileInputStream(file)) {
             CompoundTag root = NbtIo.readCompressed(fis);
             if (root.contains("Schematic")) root = root.getCompound("Schematic");
@@ -190,11 +212,12 @@ public class TownSpawner {
             }
 
             byte[] blockData = root.getByteArray("BlockData");
+            int[] groundCounts = new int[height];
+            int[][][] grid = new int[height][length][width];
             int idx = 0;
             for (int y = 0; y < height; y++) {
                 for (int z = 0; z < length; z++) {
                     for (int x = 0; x < width; x++) {
-                        if (idx >= blockData.length) break;
                         int value = 0;
                         int varintLen = 0;
                         while (idx < blockData.length) {
@@ -203,11 +226,33 @@ public class TownSpawner {
                             varintLen++;
                             if ((b & 128) == 0) break;
                         }
-                        BlockState state = palette.get(value);
+                        grid[y][z][x] = value;
+                        BlockState st = palette.get(value);
+                        if (st != null && (st.is(Blocks.GRASS_BLOCK) || st.is(Blocks.DIRT_PATH) || st.is(Blocks.COBBLESTONE) || st.is(Blocks.STONE_BRICKS))) {
+                            groundCounts[y]++;
+                        }
+                    }
+                }
+            }
+
+            int schemGroundY = 0;
+            int bestCount = -1;
+            for (int y = 0; y < height; y++) {
+                if (groundCounts[y] > bestCount) {
+                    bestCount = groundCounts[y];
+                    schemGroundY = y;
+                }
+            }
+            BlockPos origin = new BlockPos(startX, worldGroundY - schemGroundY, startZ);
+
+            for (int y = 0; y < height; y++) {
+                for (int z = 0; z < length; z++) {
+                    for (int x = 0; x < width; x++) {
+                        BlockState state = palette.get(grid[y][z][x]);
                         if (state != null && !state.isAir()) {
                             BlockPos target = origin.offset(x, y, z);
                             level.setBlock(target, state, 2);
-                            if (y == 0) {
+                            if (y == schemGroundY) {
                                 BlockPos below = target.below();
                                 int depth = 0;
                                 while (below.getY() > level.getMinBuildHeight() && depth < 24 && !level.getBlockState(below).isSolidRender(level, below)) {
