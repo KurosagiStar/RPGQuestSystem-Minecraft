@@ -125,15 +125,7 @@ public class TownSpawner {
                     String biome = level.getBiome(new BlockPos(dx, 64, dz)).unwrapKey()
                             .map(k -> k.location().getPath()).orElse("");
                     if (biome.contains("plains") || biome.contains("meadow") || biome.contains("forest")) {
-                        int h1 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx - 32, dz - 32);
-                        int h2 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx + 32, dz - 32);
-                        int h3 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx - 32, dz + 32);
-                        int h4 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx + 32, dz + 32);
-                        int minH = Math.min(Math.min(h1, h2), Math.min(h3, h4));
-                        int maxH = Math.max(Math.max(h1, h2), Math.max(h3, h4));
-                        if (maxH - minH <= 8) {
-                            return new BlockPos(dx, 64, dz);
-                        }
+                        return new BlockPos(dx, 64, dz);
                     }
                 }
             }
