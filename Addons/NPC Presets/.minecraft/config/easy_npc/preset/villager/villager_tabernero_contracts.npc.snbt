@@ -1,0 +1,108 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Tabernero Garrick - Contrato con Zona Amplia y Opcionales",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Tabernero Garrick",
+    variantType: "SWAMP_WEAPONSMITH",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#FF5555","bold":true,"text":"Tabernero Garrick"}',
+    Tags: ["villager_tabernero_contracts"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator minecraft:bow 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator cisco_mod:champion_coin 12", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 4 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_tabernero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_tabernero_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_tabernero_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Cazador] \",\"color\":\"red\",\"bold\":true},{\"text\":\"¡Gran cacería! Has recibido un Arco y 12 Monedas de Campeón.\",\"color\":\"white\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Trofeo de Caza y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_tabernero_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Contrato Completado",
+          Priority: 20,
+          Texts: [{ Text: "¡Impresionante! El veneno de esas arañas de cueva ya no amenazará los caminos del pantano. ¡Toma tu botín bien merecido!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo rastreando el pantano" }
+          ],
+          Conditions: [{ Name: "q_tabernero_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "El nido está en el sector pantanoso. Tu HUD te orienta hacia allá. Necesito 3 arañas de cueva abatidas." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_tabernero_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "El pantano está en calma. Eres un verdadero cazador." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Contrato: La Bestia de la Cueva" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "¡Eh, tú! Tengo un contrato de monstruos bien pagado si no le temes al veneno y la oscuridad." }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_tabernero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Cazador] \",\"color\":\"red\",\"bold\":true},{\"text\":\"¡Contrato aceptado! Rastrea la zona del pantano en tu HUD.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Contrato (Cazar 3 Arañas de Cueva)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Sigue la dirección hacia el pantano. Busca el nido en una zona de 160 bloques y abate 3 arañas de cueva. [Opcional] Prepara flechas extras si vas a distancia." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:crossbow" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "WEAPONSMITH",
+    VariantType: "SWAMP_WEAPONSMITH",
+    VillagerData: { profession: "minecraft:weaponsmith", type: "minecraft:swamp" },
+    id: "easy_npc:villager"
+  }
+}

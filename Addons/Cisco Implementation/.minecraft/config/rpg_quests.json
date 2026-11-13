@@ -583,5 +583,83 @@
                 "amount": 1
             }
         ]
+    },
+    {
+        "id": "contrato_taberna_emboscada",
+        "category": "CONTRACT",
+        "title": "Contrato: Emboscada en la Ruta",
+        "npc": "Tabernero Garrick",
+        "npcId": "villager_tabernero_contracts",
+        "description": "Saqueadores asaltan los suministros cerca del cruce. Acude al lugar y repele la emboscada.",
+        "suggestedLevel": 5,
+        "activeTag": "q_tabernero_activa",
+        "doneTag": "q_tabernero_lista",
+        "completedTag": "q_tabernero_entregada",
+        "rewardXp": 200,
+        "rewardItems": [
+            {
+                "id": "minecraft:emerald",
+                "count": 6
+            },
+            {
+                "id": "minecraft:cooked_beef",
+                "count": 8
+            }
+        ],
+        "rewards": [
+            "200 XP",
+            "6x Esmeraldas",
+            "8x Filetes"
+        ],
+        "stages": [
+            {
+                "description": "Elimina a los saqueadores de la emboscada",
+                "type": "KILL",
+                "target": "minecraft:pillager",
+                "amount": 4,
+                "hasLocation": true,
+                "posX": 120,
+                "posZ": 120,
+                "radius": 60,
+                "spawnMobsOnEntry": true,
+                "mobToSpawn": "minecraft:pillager",
+                "mobSpawnCount": 4,
+                "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!"
+            }
+        ]
+    },
+    {
+        "id": "contrato_gremio_ruta",
+        "category": "CONTRACT",
+        "title": "Contrato: Encargo del Gremio",
+        "npc": "Oficial del Gremio",
+        "npcId": "villager_gremio_contracts",
+        "description": "Demuestra tu valía limpiando esqueletos. (Bloqueado si ya completaste el contrato del Tabernero).",
+        "suggestedLevel": 4,
+        "blockedByTags": [
+            "q_tabernero_entregada"
+        ],
+        "activeTag": "q_gremio_activa",
+        "doneTag": "q_gremio_lista",
+        "completedTag": "q_gremio_entregada",
+        "rewardXp": 180,
+        "rewardItems": [
+            {
+                "id": "minecraft:emerald",
+                "count": 5
+            }
+        ],
+        "rewards": [
+            "180 XP",
+            "5x Esmeraldas"
+        ],
+        "stages": [
+            {
+                "description": "Derrota 5 Esqueletos",
+                "type": "KILL",
+                "target": "minecraft:skeleton",
+                "amount": 5
+            }
+        ]
     }
 ]
