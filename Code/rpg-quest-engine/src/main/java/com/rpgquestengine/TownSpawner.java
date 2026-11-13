@@ -88,8 +88,7 @@ public class TownSpawner {
         if (dims != null) {
             int centerX = (site.getX() - 32) + dims[0] / 2;
             int centerZ = (site.getZ() - 32) + dims[2] / 2;
-            int spawnY = overworld.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, centerX, centerZ);
-            BlockPos spawnPos = new BlockPos(centerX, Math.max(spawnY, worldY) + 1, centerZ);
+            BlockPos spawnPos = findSafeStreetSpawn(overworld, centerX, worldY, centerZ);
             overworld.setDefaultSpawnPos(spawnPos, 0.0F);
             spawnTownVillagers(overworld, centerX, centerZ, 25);
             data.spawnTownPlaced = true;
@@ -100,6 +99,24 @@ public class TownSpawner {
         return null;
     }
 
+    private static BlockPos findSafeStreetSpawn(ServerLevel level, int cx, int groundY, int cz) {
+        for (int r = 0; r <= 12; r++) {
+            for (int dx = -r; dx <= r; dx++) {
+                for (int dz = -r; dz <= r; dz++) {
+                    for (int dy = -2; dy <= 4; dy++) {
+                        BlockPos p = new BlockPos(cx + dx, groundY + dy, cz + dz);
+                        if (!level.getBlockState(p.below()).isAir()
+                                && level.getBlockState(p).isAir()
+                                && level.getBlockState(p.above()).isAir()) {
+                            return p;
+                        }
+                    }
+                }
+            }
+        }
+        return new BlockPos(cx, groundY + 1, cz);
+    }
+
     private static BlockPos findGreenBiomeNearOrigin(ServerLevel level) {
         for (int r = 0; r <= 1024; r += 64) {
             for (int dx = -r; dx <= r; dx += 64) {
@@ -108,7 +125,15 @@ public class TownSpawner {
                     String biome = level.getBiome(new BlockPos(dx, 64, dz)).unwrapKey()
                             .map(k -> k.location().getPath()).orElse("");
                     if (biome.contains("plains") || biome.contains("meadow") || biome.contains("forest")) {
-                        return new BlockPos(dx, 64, dz);
+                        int h1 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx - 32, dz - 32);
+                        int h2 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx + 32, dz - 32);
+                        int h3 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx - 32, dz + 32);
+                        int h4 = level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, dx + 32, dz + 32);
+                        int minH = Math.min(Math.min(h1, h2), Math.min(h3, h4));
+                        int maxH = Math.max(Math.max(h1, h2), Math.max(h3, h4));
+                        if (maxH - minH <= 8) {
+                            return new BlockPos(dx, 64, dz);
+                        }
                     }
                 }
             }
@@ -249,8 +274,8 @@ public class TownSpawner {
                 for (int z = 0; z < length; z++) {
                     for (int x = 0; x < width; x++) {
                         BlockState state = palette.get(grid[y][z][x]);
+                        BlockPos target = origin.offset(x, y, z);
                         if (state != null && !state.isAir()) {
-                            BlockPos target = origin.offset(x, y, z);
                             level.setBlock(target, state, 2);
                             if (y == schemGroundY) {
                                 BlockPos below = target.below();
@@ -261,6 +286,8 @@ public class TownSpawner {
                                     depth++;
                                 }
                             }
+                        } else if (y >= schemGroundY) {
+                            level.setBlock(target, Blocks.AIR.defaultBlockState(), 2);
                         }
                     }
                 }
