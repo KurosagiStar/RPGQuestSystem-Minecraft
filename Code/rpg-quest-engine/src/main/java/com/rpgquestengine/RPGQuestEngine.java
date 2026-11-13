@@ -408,13 +408,13 @@ public class RPGQuestEngine {
                     } else if ("SURVIVE".equals(type) && current >= required && stage.spawnMobsOnEntry) {
                         String waveTag = "rqe_wave_" + q.id + "_" + sIdx;
                         int remaining = 0;
-                        for (net.minecraft.world.entity.LivingEntity ent : level.getEntitiesOfClass(
-                                net.minecraft.world.entity.LivingEntity.class, sp.getBoundingBox().inflate(80.0D))) {
-                            if (ent.isAlive() && ent.getTags().contains(waveTag)) {
+                        for (net.minecraft.world.entity.Entity ent : level.getAllEntities()) {
+                            if (ent instanceof net.minecraft.world.entity.LivingEntity living && living.isAlive() && living.getTags().contains(waveTag)) {
                                 remaining++;
                             }
                         }
                         setInternalScore(sp, remKey, remaining);
+                        scores.put(remKey, remaining);
                         if (remaining > 0) {
                             allNonOptionalDone = false;
                         }
@@ -582,9 +582,9 @@ public class RPGQuestEngine {
 
             BlockPos checkPos = playerPos.offset(offsetX, 0, offsetZ);
             
-            // Buscar verticalmente suelo adecuado (-6 a +6)
+            // Buscar verticalmente suelo adecuado (-1 a +4) para no spawnear bajo tierra
             BlockPos spawnPos = null;
-            for (int dy = 4; dy >= -5; dy--) {
+            for (int dy = 4; dy >= -1; dy--) {
                 BlockPos p = checkPos.offset(0, dy, 0);
                 if (level.getBlockState(p).isAir() && level.getBlockState(p.above()).isAir() && !level.getBlockState(p.below()).isAir()) {
                     spawnPos = p;
@@ -603,6 +603,16 @@ public class RPGQuestEngine {
                 if (entity instanceof net.minecraft.world.entity.Mob mob) {
                     mob.moveTo(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, rnd.nextFloat() * 360F, 0.0F);
                     mob.finalizeSpawn(level, level.getCurrentDifficultyAt(spawnPos), net.minecraft.world.entity.MobSpawnType.EVENT, null, null);
+                    if (mob.getMainHandItem().isEmpty()) {
+                        String typeId = ForgeRegistries.ENTITY_TYPES.getKey(chosenType).toString();
+                        if (typeId.contains("pillager") || typeId.contains("provoker")) {
+                            mob.setItemSlot(net.minecraft.world.entity.EquipmentSlot.MAINHAND, new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.CROSSBOW));
+                        } else if (typeId.contains("vindicator") || typeId.contains("basher")) {
+                            mob.setItemSlot(net.minecraft.world.entity.EquipmentSlot.MAINHAND, new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.IRON_AXE));
+                        } else if (typeId.contains("marauder") || typeId.contains("illager")) {
+                            mob.setItemSlot(net.minecraft.world.entity.EquipmentSlot.MAINHAND, new net.minecraft.world.item.ItemStack(net.minecraft.world.item.Items.IRON_SWORD));
+                        }
+                    }
                     if (waveTag != null && !waveTag.isEmpty()) mob.addTag(waveTag);
                     mob.setPersistenceRequired(); // No desaparece
                     level.addFreshEntity(mob);

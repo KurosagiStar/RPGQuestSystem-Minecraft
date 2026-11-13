@@ -1,4 +1,4 @@
-{
+﻿{
   PresetMetadata: {
     author: "RPGQuestEngine",
     category: "General",
@@ -36,6 +36,8 @@
               Label: "cobrar",
               Name: "Entregar Informe y Cobrar"
             },
+            { Actions: [{ Cmd: "dlg_dimension_twilight_forest", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_twilight_forest", Name: "Mision: El Reino Crepuscular" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_bioma_lista", Type: "PLAYER_TAG" }],
@@ -46,6 +48,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_dimension_twilight_forest", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_twilight_forest", Name: "Mision: El Reino Crepuscular" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando el bioma" }
           ],
           Conditions: [{ Name: "q_bioma_activa", Type: "PLAYER_TAG" }],
@@ -56,6 +60,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_dimension_twilight_forest", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_twilight_forest", Name: "Mision: El Reino Crepuscular" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_bioma_entregada", Type: "PLAYER_TAG" }],
@@ -67,6 +73,8 @@
         {
           Buttons: [
             { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Sendero del Bosque" },
+            { Actions: [{ Cmd: "dlg_dimension_twilight_forest", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_twilight_forest", Name: "Mision: El Reino Crepuscular" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Label: "default",

@@ -1,9 +1,13 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
 ## [1.3.1-update] - 2026-11-13
-- **HUD de Supervivencia (`SURVIVE`):** El aviso de enemigos restantes al finalizar el tiempo (`¡Tiempo cumplido! Elimina restantes [N]`) ahora se muestra integrado en el HUD de misiones (`QuestHudOverlay`) en lugar de la barra inferior.
-- **Corrección de Oleadas:** Bloqueado el spawneo de nuevas oleadas cuando el temporizador `SURVIVE` ya alcanzó su objetivo (`current >= required`).
-- **Alineación de Tags en Presets:** Corregidos los `activeTag`/`lista`/`entregada` en `villager_matar_contracts`, `villager_pescar_repeatable`, `villager_hornear_repeatable`, `villager_minar_secondary`, `villager_craftear_secondary` y `villager_alquimista_secondary` para coincidir con `rpg_quests.json`.
+- **HUD de Supervivencia (`SURVIVE`):** El aviso de enemigos restantes al finalizar el tiempo (`⚔ Elimina enemigos restantes [N]`) se muestra como segundo objetivo en el HUD (`QuestHudOverlay`) y marca con `Objetivo` sobre sus cabezas a los rezagados (`QuestEntityMarkerRenderer`).
+- **Corrección de Oleadas y Spawneo:**
+  - Bloqueado el spawneo de nuevas oleadas cuando el temporizador `SURVIVE` ya alcanzó su objetivo (`current >= required`).
+  - Conteo global de rezagados por `waveTag` (`level.getAllEntities()`) sin depender del radio de 80 bloques.
+  - Búsqueda vertical de suelo limitada a `-1..+4` para evitar spawneos bajo tierra.
+  - Equipamiento de armas por defecto (`CROSSBOW`, `IRON_AXE`, `IRON_SWORD`) para illagers que spawneen sin arma.
+- **Alineación y Diálogos en Presets:** Corregidos los `activeTag`/`lista`/`entregada` en 6 presets y añadidos los 9 diálogos faltantes de bosses/dimensiones/gemas en `chain_muralla_2_centinela`, `villager_cazador_contracts`, `villager_dimension_main`, `villager_explorador_main`, `villager_bioma_secondary` y `villager_alquimista_secondary`.
 - **Migración de Misiones Anteriores (`rpg_quests.json`):** Añadido `relativeToNpc: true` en `cazador_pantano` y `explorar_torre`, y configurados `rewardXp` y `rewardItems` en las 22 misiones anteriores para mostrar el `QuestToast` de recompensas.
 
 ## [1.3.0-update] - 2026-11-12

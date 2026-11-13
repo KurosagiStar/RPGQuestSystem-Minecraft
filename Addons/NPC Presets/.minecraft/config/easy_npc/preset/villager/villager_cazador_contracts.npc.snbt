@@ -1,4 +1,4 @@
-{
+﻿{
   PresetMetadata: {
     author: "RPGQuestEngine",
     category: "General",
@@ -36,6 +36,14 @@
               Label: "cobrar",
               Name: "Entregar Trofeo de Caza y Cobrar"
             },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_ignis", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_ignis", Name: "Mision: Cataclismo: Ignis, el Titán de Fuego" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_monstrosity", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_monstrosity", Name: "Mision: Cataclismo: Monstruosidad de Netherita" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_harbinger", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_harbinger", Name: "Mision: Cataclismo: El Presagio Mecánico" },
+            { Actions: [{ Cmd: "dlg_boss_frostmaw_mowzie", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_frostmaw_mowzie", Name: "Mision: Cacería Feroz: Las Fauces de Hielo" },
+
+
+
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_cazador_lista", Type: "PLAYER_TAG" }],
@@ -46,6 +54,14 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_ignis", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_ignis", Name: "Mision: Cataclismo: Ignis, el Titán de Fuego" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_monstrosity", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_monstrosity", Name: "Mision: Cataclismo: Monstruosidad de Netherita" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_harbinger", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_harbinger", Name: "Mision: Cataclismo: El Presagio Mecánico" },
+            { Actions: [{ Cmd: "dlg_boss_frostmaw_mowzie", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_frostmaw_mowzie", Name: "Mision: Cacería Feroz: Las Fauces de Hielo" },
+
+
+
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo rastreando el pantano" }
           ],
           Conditions: [{ Name: "q_cazador_activa", Type: "PLAYER_TAG" }],
@@ -56,6 +72,14 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_ignis", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_ignis", Name: "Mision: Cataclismo: Ignis, el Titán de Fuego" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_monstrosity", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_monstrosity", Name: "Mision: Cataclismo: Monstruosidad de Netherita" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_harbinger", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_harbinger", Name: "Mision: Cataclismo: El Presagio Mecánico" },
+            { Actions: [{ Cmd: "dlg_boss_frostmaw_mowzie", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_frostmaw_mowzie", Name: "Mision: Cacería Feroz: Las Fauces de Hielo" },
+
+
+
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_cazador_entregada", Type: "PLAYER_TAG" }],
@@ -67,6 +91,14 @@
         {
           Buttons: [
             { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Contrato: La Bestia de la Cueva" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_ignis", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_ignis", Name: "Mision: Cataclismo: Ignis, el Titán de Fuego" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_monstrosity", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_monstrosity", Name: "Mision: Cataclismo: Monstruosidad de Netherita" },
+            { Actions: [{ Cmd: "dlg_cataclysm_boss_harbinger", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_cataclysm_boss_harbinger", Name: "Mision: Cataclismo: El Presagio Mecánico" },
+            { Actions: [{ Cmd: "dlg_boss_frostmaw_mowzie", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_frostmaw_mowzie", Name: "Mision: Cacería Feroz: Las Fauces de Hielo" },
+
+
+
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Label: "default",

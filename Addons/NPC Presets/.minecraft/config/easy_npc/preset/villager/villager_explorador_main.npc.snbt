@@ -1,4 +1,4 @@
-{
+﻿{
   PresetMetadata: {
     author: "RPGQuestEngine",
     category: "General",
@@ -36,6 +36,8 @@
               Label: "cobrar",
               Name: "Entregar Informe del Valle y Cobrar"
             },
+            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_explorador_lista", Type: "PLAYER_TAG" }],
@@ -46,6 +48,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo explorando el sector con la brújula" }
           ],
           Conditions: [{ Name: "q_explorador_activa", Type: "PLAYER_TAG" }],
@@ -56,6 +60,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_explorador_entregada", Type: "PLAYER_TAG" }],
@@ -67,6 +73,8 @@
         {
           Buttons: [
             { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: La Torre de la Niebla" },
+            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Label: "default",

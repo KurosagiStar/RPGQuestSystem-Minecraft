@@ -1,4 +1,4 @@
-{
+﻿{
   PresetMetadata: {
     author: "RPGQuestEngine",
     category: "General",
@@ -42,6 +42,8 @@
               Label: "cobrar",
               Name: "Entregar 4 Ojos de Araña y Cobrar"
             },
+            { Actions: [{ Cmd: "dlg_apotheosis_recolectar_gema", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_apotheosis_recolectar_gema", Name: "Mision: El Poder de las Gemas de Apotheosis" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_alquimia_lista", Type: "PLAYER_TAG" }],
@@ -52,6 +54,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_apotheosis_recolectar_gema", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_apotheosis_recolectar_gema", Name: "Mision: El Poder de las Gemas de Apotheosis" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando ojos de araña" }
           ],
           Conditions: [{ Name: "q_alquimia_activa", Type: "PLAYER_TAG" }],
@@ -63,6 +67,8 @@
         {
           Buttons: [
             { Actions: [{ Type: "OPEN_TRADING_SCREEN" }], Label: "trade", Name: "Botica Arcana" },
+            { Actions: [{ Cmd: "dlg_apotheosis_recolectar_gema", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_apotheosis_recolectar_gema", Name: "Mision: El Poder de las Gemas de Apotheosis" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_alquimia_entregada", Type: "PLAYER_TAG" }],
@@ -75,6 +81,8 @@
           Buttons: [
             { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Reactivos Alquimicos" },
             { Actions: [{ Type: "OPEN_TRADING_SCREEN" }], Label: "trade", Name: "Botica Arcana" },
+            { Actions: [{ Cmd: "dlg_apotheosis_recolectar_gema", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_apotheosis_recolectar_gema", Name: "Mision: El Poder de las Gemas de Apotheosis" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Label: "default",

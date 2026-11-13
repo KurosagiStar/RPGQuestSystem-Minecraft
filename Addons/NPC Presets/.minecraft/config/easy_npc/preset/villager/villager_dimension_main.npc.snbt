@@ -1,4 +1,4 @@
-{
+﻿{
   PresetMetadata: {
     author: "RPGQuestEngine",
     category: "General",
@@ -36,6 +36,8 @@
               Label: "cobrar",
               Name: "Entregar Reporte Infernal y Cobrar"
             },
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_nether_lista", Type: "PLAYER_TAG" }],
@@ -46,6 +48,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando el portal" }
           ],
           Conditions: [{ Name: "q_nether_activa", Type: "PLAYER_TAG" }],
@@ -56,6 +60,8 @@
         },
         {
           Buttons: [
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Conditions: [{ Name: "q_nether_entregada", Type: "PLAYER_TAG" }],
@@ -67,6 +73,8 @@
         {
           Buttons: [
             { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: El Portal al Inframundo" },
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
           Label: "default",

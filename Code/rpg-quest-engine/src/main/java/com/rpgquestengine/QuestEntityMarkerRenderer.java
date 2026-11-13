@@ -59,6 +59,14 @@ public class QuestEntityMarkerRenderer {
                             break;
                         }
                     }
+                } else if ("SURVIVE".equalsIgnoreCase(stage.type)) {
+                    int waveRem = ClientQuestData.getScore("rqe_wave_rem_" + tracked.id + "_" + sIdx);
+                    if (waveRem > 0 && ClientQuestData.entityHasTag(living.getId(), "rqe_wave_" + tracked.id + "_" + sIdx)) {
+                        markerText = "§fObjetivo";
+                        markerIcon = "quest_objective.png";
+                        markerColor = 0xFF5555;
+                        break;
+                    }
                 }
             }
 

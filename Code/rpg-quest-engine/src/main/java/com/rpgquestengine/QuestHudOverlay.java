@@ -210,14 +210,12 @@ public class QuestHudOverlay {
 
             String optPrefix = stage.optional ? "§8[Opcional] " : "";
             int waveRemaining = "SURVIVE".equalsIgnoreCase(stage.type) ? ClientQuestData.getScore("rqe_wave_rem_" + q.id + "_" + sIdx) : 0;
-            boolean isStageComplete = (item.max > 0 && item.cur >= item.max) && waveRemaining <= 0;
-            String checkIcon = isStageComplete ? "§a✔ " : (waveRemaining > 0 ? "§c⚔ " : "§6▸ ");
+            boolean isStageComplete = (item.max > 0 && item.cur >= item.max);
+            String checkIcon = isStageComplete ? "§a✔ " : "§6▸ ";
             String textColor = isStageComplete ? "§8<s>" : "§7";
 
             String progressText;
-            if (waveRemaining > 0 && item.max > 0 && item.cur >= item.max) {
-                progressText = checkIcon + optPrefix + "§c¡Tiempo cumplido! Elimina restantes §f[" + waveRemaining + "]";
-            } else if (stage.hasLocation && item.max == 0) {
+            if (stage.hasLocation && item.max == 0) {
                 progressText = checkIcon + optPrefix + textColor + stage.description;
             } else {
                 String countColor = isStageComplete ? "§8" : "§f";
@@ -262,6 +260,14 @@ public class QuestHudOverlay {
             if (!item.compassInfo.isEmpty()) calculatedHeight += 11;
 
             stageItems.add(item);
+
+            if (waveRemaining > 0 && isStageComplete) {
+                StageItem remItem = new StageItem();
+                remItem.lines = font.split(Component.literal("§c⚔ Elimina enemigos restantes §f[" + waveRemaining + "]"), maxTextWidth);
+                remItem.showBar = false;
+                calculatedHeight += 4 + (remItem.lines.size() * 10);
+                stageItems.add(remItem);
+            }
         }
 
         calculatedHeight += 6;
