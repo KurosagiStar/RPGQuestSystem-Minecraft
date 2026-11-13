@@ -42,17 +42,17 @@
           Label: "mision_lista",
           Name: "Contrato Completado",
           Priority: 20,
-          Texts: [{ Text: "¡Impresionante! El veneno de esas arañas de cueva ya no amenazará los caminos del pantano. ¡Toma tu botín bien merecido!" }]
+          Texts: [{ Text: "¡Impresionante! El veneno de esas esqueletos ya no amenazará los caminos del sector norte. ¡Toma tu botín bien merecido!" }]
         },
         {
           Buttons: [
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo rastreando el pantano" }
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo rastreando el sector norte" }
           ],
           Conditions: [{ Name: "q_gremio_activa", Type: "PLAYER_TAG" }],
           Label: "en_progreso",
           Name: "En Progreso",
           Priority: 10,
-          Texts: [{ Text: "El nido está en el sector pantanoso. Tu HUD te orienta hacia allá. Necesito 3 arañas de cueva abatidas." }]
+          Texts: [{ Text: "El nido está en el sector sector norteso. Tu HUD te orienta hacia allá. Necesito 3 esqueletos abatidas." }]
         },
         {
           Buttons: [
@@ -62,7 +62,7 @@
           Label: "terminado",
           Name: "Servicio Cumplido",
           Priority: 15,
-          Texts: [{ Text: "El pantano está en calma. Eres un verdadero cazador." }]
+          Texts: [{ Text: "El sector norte está en calma. Eres un verdadero cazador." }]
         },
         {
           Buttons: [
@@ -79,18 +79,18 @@
             {
               Actions: [
                 { Cmd: "/tag @initiator add q_gremio_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Cazador] \",\"color\":\"red\",\"bold\":true},{\"text\":\"¡Contrato aceptado! Rastrea la zona del pantano en tu HUD.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Cazador] \",\"color\":\"red\",\"bold\":true},{\"text\":\"¡Contrato aceptado! Rastrea la zona del sector norte en tu HUD.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],
               Label: "aceptar",
-              Name: "Aceptar Contrato (Cazar 3 Arañas de Cueva)"
+              Name: "Aceptar Contrato (Cazar 3 Esqueletos)"
             },
             { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
           ],
           Label: "mision",
           Name: "Mision",
           Priority: -1,
-          Texts: [{ Text: "Sigue la dirección hacia el pantano. Busca el nido en una zona de 160 bloques y abate 3 arañas de cueva. [Opcional] Prepara flechas extras si vas a distancia." }]
+          Texts: [{ Text: "Sigue la dirección hacia el sector norte. Busca el nido en una zona de 160 bloques y abate 3 esqueletos. [Opcional] Prepara flechas extras si vas a distancia." }]
         }
       ],
       Type: "CUSTOM"
