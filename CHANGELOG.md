@@ -4,6 +4,7 @@
 - **HUD de Supervivencia (`SURVIVE`):** El aviso de enemigos restantes al finalizar el tiempo (`¡Tiempo cumplido! Elimina restantes [N]`) ahora se muestra integrado en el HUD de misiones (`QuestHudOverlay`) en lugar de la barra inferior.
 - **Corrección de Oleadas:** Bloqueado el spawneo de nuevas oleadas cuando el temporizador `SURVIVE` ya alcanzó su objetivo (`current >= required`).
 - **Alineación de Tags en Presets:** Corregidos los `activeTag`/`lista`/`entregada` en `villager_matar_contracts`, `villager_pescar_repeatable`, `villager_hornear_repeatable`, `villager_minar_secondary`, `villager_craftear_secondary` y `villager_alquimista_secondary` para coincidir con `rpg_quests.json`.
+- **Migración de Misiones Anteriores (`rpg_quests.json`):** Añadido `relativeToNpc: true` en `cazador_pantano` y `explorar_torre`, y configurados `rewardXp` y `rewardItems` en las 22 misiones anteriores para mostrar el `QuestToast` de recompensas.
 
 ## [1.3.0-update] - 2026-11-12
 
