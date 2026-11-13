@@ -26,9 +26,9 @@
               Actions: [
                 { Cmd: "/give @initiator minecraft:iron_pickaxe 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/give @initiator minecraft:coal 8", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_minero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_minero_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator add q_minero_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_minar_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_minar_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_minar_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/tellraw @initiator [{\"text\":\"[Herrero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Buen mineral! Toma tus herramientas y carbón.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],
@@ -37,7 +37,7 @@
             },
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
-          Conditions: [{ Name: "q_minero_lista", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_minar_lista", Type: "PLAYER_TAG" }],
           Label: "mision_lista",
           Name: "Mision Completada",
           Priority: 20,
@@ -47,7 +47,7 @@
           Buttons: [
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo picando en las minas" }
           ],
-          Conditions: [{ Name: "q_minero_activa", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_minar_activa", Type: "PLAYER_TAG" }],
           Label: "en_progreso",
           Name: "En Progreso",
           Priority: 10,
@@ -57,7 +57,7 @@
           Buttons: [
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
-          Conditions: [{ Name: "q_minero_entregada", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_minar_entregada", Type: "PLAYER_TAG" }],
           Label: "terminado",
           Name: "Servicio Cumplido",
           Priority: 15,
@@ -77,7 +77,7 @@
           Buttons: [
             {
               Actions: [
-                { Cmd: "/tag @initiator add q_minero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_minar_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/tellraw @initiator [{\"text\":\"[Herrero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Pica 8 menas de hierro.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],

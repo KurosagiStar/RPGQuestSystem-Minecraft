@@ -328,7 +328,9 @@ public class RPGQuestEngine {
 
                     // Spawneo si el jugador está en la zona, la misión NO está completada/lista, y aún faltan kills de ese mob
                     if (stage.hasLocation && stage.spawnMobsOnEntry && stage.mobToSpawn != null && !stage.mobToSpawn.isEmpty()) {
-                        boolean questAlreadyDone = (q.doneTag != null && playerTags.contains(q.doneTag)) || playerTags.contains(q.completedTag);
+                        boolean questAlreadyDone = (q.doneTag != null && playerTags.contains(q.doneTag))
+                                || playerTags.contains(q.completedTag)
+                                || ("SURVIVE".equals(type) && current >= required);
                         
                         // Verificar si el objetivo de matar a ese mob ya se cumplió en esta misión
                         boolean mobTargetFinished = false;
@@ -399,8 +401,10 @@ public class RPGQuestEngine {
                     }
 
                     // Si no es opcional y no se cumplió, la misión aún no está lista (Punto 2)
+                    String remKey = "rqe_wave_rem_" + q.id + "_" + sIdx;
                     if (!stage.optional && current < required) {
                         allNonOptionalDone = false;
+                        if ("SURVIVE".equals(type)) setInternalScore(sp, remKey, 0);
                     } else if ("SURVIVE".equals(type) && current >= required && stage.spawnMobsOnEntry) {
                         String waveTag = "rqe_wave_" + q.id + "_" + sIdx;
                         int remaining = 0;
@@ -410,11 +414,12 @@ public class RPGQuestEngine {
                                 remaining++;
                             }
                         }
+                        setInternalScore(sp, remKey, remaining);
                         if (remaining > 0) {
                             allNonOptionalDone = false;
-                            sp.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                                    "§c⚔ ¡Tiempo cumplido! Elimina a los " + remaining + " enemigos restantes"), true);
                         }
+                    } else if ("SURVIVE".equals(type)) {
+                        setInternalScore(sp, remKey, 0);
                     }
                 }
 

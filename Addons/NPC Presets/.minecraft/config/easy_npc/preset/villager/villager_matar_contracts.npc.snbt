@@ -47,19 +47,19 @@
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tag @initiator remove q_capitan_activa",
+                  Cmd: "/tag @initiator remove q_matar_activa",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tag @initiator remove q_capitan_lista",
+                  Cmd: "/tag @initiator remove q_matar_lista",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tag @initiator add q_capitan_entregada",
+                  Cmd: "/tag @initiator add q_matar_entregada",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -103,7 +103,7 @@
           ],
           Conditions: [
             {
-              Name: "q_capitan_lista",
+              Name: "q_matar_lista",
               Type: "PLAYER_TAG"
             }
           ],
@@ -153,7 +153,7 @@
           ],
           Conditions: [
             {
-              Name: "q_capitan_activa",
+              Name: "q_matar_activa",
               Type: "PLAYER_TAG"
             }
           ],
@@ -188,7 +188,7 @@
           ],
           Conditions: [
             {
-              Name: "q_capitan_entregada",
+              Name: "q_matar_entregada",
               Type: "PLAYER_TAG"
             }
           ],
@@ -245,7 +245,7 @@
             {
               Actions: [
                 {
-                  Cmd: "/tag @initiator add q_capitan_activa",
+                  Cmd: "/tag @initiator add q_matar_activa",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"

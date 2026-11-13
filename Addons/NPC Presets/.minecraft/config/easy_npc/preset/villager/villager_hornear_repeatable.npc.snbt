@@ -26,9 +26,9 @@
               Actions: [
                 { Cmd: "/give @initiator minecraft:apple 4", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/give @initiator minecraft:emerald 5", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_panadero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_panadero_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator add q_panadero_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_hornear_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_hornear_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_hornear_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/tellraw @initiator [{\"text\":\"[Panadero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡El horno huele de maravilla! Toma tus esmeraldas.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],
@@ -37,7 +37,7 @@
             },
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
-          Conditions: [{ Name: "q_panadero_lista", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_hornear_lista", Type: "PLAYER_TAG" }],
           Label: "mision_lista",
           Name: "Mision Completada",
           Priority: 20,
@@ -47,7 +47,7 @@
           Buttons: [
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo con el horno encendido" }
           ],
-          Conditions: [{ Name: "q_panadero_activa", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_hornear_activa", Type: "PLAYER_TAG" }],
           Label: "en_progreso",
           Name: "En Progreso",
           Priority: 10,
@@ -57,7 +57,7 @@
           Buttons: [
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
-          Conditions: [{ Name: "q_panadero_entregada", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_hornear_entregada", Type: "PLAYER_TAG" }],
           Label: "terminado",
           Name: "Servicio Cumplido",
           Priority: 15,
@@ -77,7 +77,7 @@
           Buttons: [
             {
               Actions: [
-                { Cmd: "/tag @initiator add q_panadero_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_hornear_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/tellraw @initiator [{\"text\":\"[Panadero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Cocina u hornea 4 patatas o carnes en el horno.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],

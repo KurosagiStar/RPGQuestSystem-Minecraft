@@ -33,9 +33,9 @@
                 { Cmd: "/give @initiator cisco_mod:champion_coin 6", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/give @initiator minecraft:potion{Potion:\"minecraft:healing\"} 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/experience add @initiator 2 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_elena_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_elena_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator add q_elena_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_alquimia_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_alquimia_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_alquimia_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/tellraw @initiator [{\"text\":\"[Elena] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"¡Reactivos obtenidos! Has recibido una Poción y 6 Monedas de Campeón.\",\"color\":\"white\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],
@@ -44,7 +44,7 @@
             },
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
-          Conditions: [{ Name: "q_elena_lista", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_alquimia_lista", Type: "PLAYER_TAG" }],
           Label: "mision_lista",
           Name: "Mision Completada",
           Priority: 20,
@@ -54,7 +54,7 @@
           Buttons: [
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando ojos de araña" }
           ],
-          Conditions: [{ Name: "q_elena_activa", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_alquimia_activa", Type: "PLAYER_TAG" }],
           Label: "en_progreso",
           Name: "En Progreso",
           Priority: 10,
@@ -65,7 +65,7 @@
             { Actions: [{ Type: "OPEN_TRADING_SCREEN" }], Label: "trade", Name: "Botica Arcana" },
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
-          Conditions: [{ Name: "q_elena_entregada", Type: "PLAYER_TAG" }],
+          Conditions: [{ Name: "q_alquimia_entregada", Type: "PLAYER_TAG" }],
           Label: "terminado",
           Name: "Servicio Cumplido",
           Priority: 15,
@@ -86,7 +86,7 @@
           Buttons: [
             {
               Actions: [
-                { Cmd: "/tag @initiator add q_elena_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_alquimia_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Cmd: "/tellraw @initiator [{\"text\":\"[Elena] \",\"color\":\"light_purple\",\"bold\":true},{\"text\":\"¡Misión aceptada! Trae 4 ojos de araña.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
                 { Type: "CLOSE_DIALOG" }
               ],
