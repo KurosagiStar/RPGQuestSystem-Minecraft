@@ -15,6 +15,8 @@ public class AdminNpcManagerScreen extends Screen {
     private static final String[] CATEGORIES = {"ALL", "MAIN", "SECONDARY", "CONTRACT", "REPEATABLE"};
     private String selectedCategory = "MAIN";
     private String selectedNpcId = null;
+    private String selectedQuestId = null;
+    private boolean questView = true;
     private int scrollOffset = 0;
 
     private static class NpcEntry {
@@ -26,8 +28,10 @@ public class AdminNpcManagerScreen extends Screen {
     }
 
     private final List<NpcEntry> visibleNpcs = new ArrayList<>();
+    private final List<QuestDefinition> visibleQuests = new ArrayList<>();
     private Button spawnBtn;
     private Button moveBtn;
+    private Button viewToggleBtn;
 
     public AdminNpcManagerScreen() {
         super(Component.literal("Gestor de NPCs y Quests"));
@@ -51,6 +55,13 @@ public class AdminNpcManagerScreen extends Screen {
             }).bounds(tabX, topY, w, 18).build());
             tabX += w + 4;
         }
+
+        viewToggleBtn = this.addRenderableWidget(Button.builder(Component.literal(questView ? "Vista: Quests" : "Vista: NPCs"), b -> {
+            questView = !questView;
+            b.setMessage(Component.literal(questView ? "Vista: Quests" : "Vista: NPCs"));
+            scrollOffset = 0;
+            rebuildNpcList();
+        }).bounds(this.width - 110, topY, 90, 18).build());
 
         int rightX = this.width / 2 + 10;
         int btnY = this.height - 36;
@@ -77,11 +88,13 @@ public class AdminNpcManagerScreen extends Screen {
 
     private void rebuildNpcList() {
         visibleNpcs.clear();
+        visibleQuests.clear();
         Map<String, NpcEntry> map = new LinkedHashMap<>();
         for (QuestDefinition q : QuestConfig.QUESTS) {
             if (q.npcId == null || q.npcId.isEmpty()) continue;
             if (!"ALL".equals(selectedCategory) && !selectedCategory.equalsIgnoreCase(q.category)) continue;
 
+            visibleQuests.add(q);
             NpcEntry entry = map.computeIfAbsent(q.npcId, k -> {
                 NpcEntry e = new NpcEntry();
                 e.npcId = q.npcId;
@@ -103,7 +116,15 @@ public class AdminNpcManagerScreen extends Screen {
             int cmp = Integer.compare(a.chainStep, b.chainStep);
             return cmp != 0 ? cmp : a.npcName.compareToIgnoreCase(b.npcName);
         });
-        if (!visibleNpcs.isEmpty() && (selectedNpcId == null || visibleNpcs.stream().noneMatch(e -> e.npcId.equals(selectedNpcId)))) {
+        visibleQuests.sort((a, b) -> {
+            int cmp = Integer.compare(getChainDepth(a, 0), getChainDepth(b, 0));
+            return cmp != 0 ? cmp : (a.title != null ? a.title : a.id).compareToIgnoreCase(b.title != null ? b.title : b.id);
+        });
+        if (questView && !visibleQuests.isEmpty()) {
+            QuestDefinition selQ = visibleQuests.stream().filter(q -> q.id.equals(selectedQuestId)).findFirst().orElse(visibleQuests.get(0));
+            selectedQuestId = selQ.id;
+            selectedNpcId = selQ.npcId;
+        } else if (!visibleNpcs.isEmpty() && (selectedNpcId == null || visibleNpcs.stream().noneMatch(e -> e.npcId.equals(selectedNpcId)))) {
             selectedNpcId = visibleNpcs.get(0).npcId;
         }
         updateButtons();
@@ -133,8 +154,15 @@ public class AdminNpcManagerScreen extends Screen {
 
         if (mouseX >= leftX && mouseX <= leftX + listW && mouseY >= listY) {
             int idx = (int) ((mouseY - listY) / itemH) + scrollOffset;
-            if (idx >= 0 && idx < visibleNpcs.size() && (idx - scrollOffset) < maxRows) {
-                selectedNpcId = visibleNpcs.get(idx).npcId;
+            int listSize = questView ? visibleQuests.size() : visibleNpcs.size();
+            if (idx >= 0 && idx < listSize && (idx - scrollOffset) < maxRows) {
+                if (questView) {
+                    QuestDefinition q = visibleQuests.get(idx);
+                    selectedQuestId = q.id;
+                    selectedNpcId = q.npcId;
+                } else {
+                    selectedNpcId = visibleNpcs.get(idx).npcId;
+                }
                 updateButtons();
                 return true;
             }
@@ -146,7 +174,8 @@ public class AdminNpcManagerScreen extends Screen {
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
         int itemH = 22;
         int maxRows = Math.max(1, (this.height - 60 - 44) / itemH);
-        int maxScroll = Math.max(0, visibleNpcs.size() - maxRows);
+        int listSize = questView ? visibleQuests.size() : visibleNpcs.size();
+        int maxScroll = Math.max(0, listSize - maxRows);
         if (delta < 0) scrollOffset = Math.min(maxScroll, scrollOffset + 1);
         else if (delta > 0) scrollOffset = Math.max(0, scrollOffset - 1);
         return true;
@@ -165,16 +194,28 @@ public class AdminNpcManagerScreen extends Screen {
 
         g.fill(leftX - 2, listY - 2, leftX + listW + 2, this.height - 16, 0x88000000);
 
-        for (int i = 0; i < maxRows && (i + scrollOffset) < visibleNpcs.size(); i++) {
-            NpcEntry e = visibleNpcs.get(i + scrollOffset);
+        int listSize = questView ? visibleQuests.size() : visibleNpcs.size();
+        for (int i = 0; i < maxRows && (i + scrollOffset) < listSize; i++) {
             int y = listY + i * itemH;
-            boolean sel = e.npcId.equals(selectedNpcId);
-            g.fill(leftX, y, leftX + listW, y + itemH - 2, sel ? 0xAA335588 : 0x66222222);
+            if (questView) {
+                QuestDefinition q = visibleQuests.get(i + scrollOffset);
+                boolean sel = q.id.equals(selectedQuestId);
+                g.fill(leftX, y, leftX + listW, y + itemH - 2, sel ? 0xAA335588 : 0x66222222);
+                boolean hasPos = QuestConfig.NPC_LOCATIONS.containsKey(q.npcId);
+                String dot = hasPos ? "§a● " : "§7○ ";
+                int step = getChainDepth(q, 0);
+                g.drawString(font, dot + "§e[#" + step + "] §f" + q.title, leftX + 4, y + 3, 0xFFFFFF);
+                g.drawString(font, "§8" + (q.npc != null ? q.npc : q.npcId) + " (" + q.npcId + ")", leftX + 14, y + 12, 0xAAAAAA);
+            } else {
+                NpcEntry e = visibleNpcs.get(i + scrollOffset);
+                boolean sel = e.npcId.equals(selectedNpcId);
+                g.fill(leftX, y, leftX + listW, y + itemH - 2, sel ? 0xAA335588 : 0x66222222);
 
-            boolean hasPos = QuestConfig.NPC_LOCATIONS.containsKey(e.npcId);
-            String dot = hasPos ? "§a● " : "§7○ ";
-            g.drawString(font, dot + "§e[#" + e.chainStep + "] §f" + e.npcName + " §7(" + e.quests.size() + ")", leftX + 4, y + 3, 0xFFFFFF);
-            g.drawString(font, "§8" + e.npcId, leftX + 14, y + 12, 0xAAAAAA);
+                boolean hasPos = QuestConfig.NPC_LOCATIONS.containsKey(e.npcId);
+                String dot = hasPos ? "§a● " : "§7○ ";
+                g.drawString(font, dot + "§e[#" + e.chainStep + "] §f" + e.npcName + " §7(" + e.quests.size() + ")", leftX + 4, y + 3, 0xFFFFFF);
+                g.drawString(font, "§8" + e.npcId, leftX + 14, y + 12, 0xAAAAAA);
+            }
         }
 
         // Right panel
