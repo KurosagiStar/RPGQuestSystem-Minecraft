@@ -242,72 +242,6 @@
     ]
   },
   {
-    "id": "dimension_aether_expedition",
-    "category": "MAIN",
-    "title": "Más Allá de las Nubes: El Aether",
-    "npc": "Explorador Real",
-    "npcId": "npc_main_explorador",
-    "description": "Cruza el portal de piedra luminosa y agua hacia las islas celestiales flotantes del Aether.",
-    "suggestedLevel": 25,
-    "prerequisiteQuestId": "dimension_twilight_forest",
-    "activeTag": "q_aether_activa",
-    "doneTag": "q_aether_lista",
-    "completedTag": "q_aether_entregada",
-    "rewards": [
-      "20x Monedas de Campeón",
-      "1x Paracaídas Dorado",
-      "5 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Atraviesa el portal al Aether",
-        "type": "DIMENSION",
-        "target": "aether:the_aether",
-        "amount": 1
-      }
-    ],
-    "rewardXp": 300,
-    "rewardItems": [
-      {
-        "id": "minecraft:emerald",
-        "count": 6
-      }
-    ]
-  },
-  {
-    "id": "dimension_twilight_forest",
-    "category": "MAIN",
-    "title": "El Reino Crepuscular",
-    "npc": "Explorador Real",
-    "npcId": "npc_main_explorador",
-    "description": "Lanza un diamante en el manantial rodeado de flores y cruza al Bosque del Crepúsculo.",
-    "suggestedLevel": 20,
-    "prerequisiteQuestId": "trial_relic",
-    "activeTag": "q_twilight_activa",
-    "doneTag": "q_twilight_lista",
-    "completedTag": "q_twilight_entregada",
-    "rewards": [
-      "15x Monedas de Campeón",
-      "4x Plumas de Cuervo Mágico",
-      "5 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Cruza al Twilight Forest",
-        "type": "DIMENSION",
-        "target": "twilightforest:twilight_forest",
-        "amount": 1
-      }
-    ],
-    "rewardXp": 300,
-    "rewardItems": [
-      {
-        "id": "minecraft:emerald",
-        "count": 6
-      }
-    ]
-  },
-  {
     "id": "cazador_pantano",
     "category": "CONTRACT",
     "title": "Contrato: La Bestia de la Cueva",
@@ -567,43 +501,6 @@
     ]
   },
   {
-    "id": "explorar_torre",
-    "category": "MAIN",
-    "title": "El Puesto de Observación",
-    "npc": "Explorador Real",
-    "npcId": "npc_main_explorador",
-    "description": "Avanza hacia las colinas y asegura el puesto de vigilancia abandonado.",
-    "suggestedLevel": 4,
-    "prerequisiteQuestId": "",
-    "activeTag": "q_explorador_activa",
-    "doneTag": "q_explorador_lista",
-    "completedTag": "q_explorador_entregada",
-    "rewards": [
-      "1x Catalejo",
-      "1x Mapa Misterioso"
-    ],
-    "stages": [
-      {
-        "description": "Llega a las coordenadas de la colina",
-        "type": "SCORE",
-        "target": "dummy_none",
-        "amount": 0,
-        "hasLocation": true,
-        "posX": 120,
-        "posZ": -180,
-        "radius": 30,
-        "relativeToNpc": true
-      }
-    ],
-    "rewardXp": 150,
-    "rewardItems": [
-      {
-        "id": "minecraft:emerald",
-        "count": 3
-      }
-    ]
-  },
-  {
     "id": "explorar_bioma",
     "category": "SECONDARY",
     "title": "Expedición Botánica",
@@ -664,43 +561,6 @@
       {
         "id": "minecraft:emerald",
         "count": 3
-      }
-    ]
-  },
-  {
-    "id": "viaje_nether",
-    "category": "MAIN",
-    "title": "El Portal al Inframundo",
-    "npc": "Ocultista del Vacío",
-    "npcId": "npc_main_ocultista",
-    "description": "Construye o activa un portal y atraviesa el umbral hacia el inframundo.",
-    "suggestedLevel": 10,
-    "prerequisiteQuestId": "dimension_aether_expedition",
-    "activeTag": "q_nether_activa",
-    "doneTag": "q_nether_lista",
-    "completedTag": "q_nether_entregada",
-    "rewards": [
-      "2x Varas de Blaze",
-      "10x Monedas de Campeón",
-      "3 Niveles de Experiencia"
-    ],
-    "stages": [
-      {
-        "description": "Atraviesa el portal al Nether",
-        "type": "DIMENSION",
-        "target": "minecraft:the_nether",
-        "amount": 1
-      }
-    ],
-    "rewardXp": 300,
-    "rewardItems": [
-      {
-        "id": "minecraft:emerald",
-        "count": 6
-      },
-      {
-        "id": "apotheosis:mythic_material",
-        "count": 1
       }
     ]
   },
@@ -824,48 +684,6 @@
     ]
   },
   {
-    "id": "trial_warrior",
-    "category": "MAIN",
-    "title": "El Camino del Guerrero",
-    "npc": "Capitán de la Guardia",
-    "npcId": "npc_main_comandante",
-    "description": "Las murallas crujen bajo el asedio nocturno. Demuestra tu valía purgando esqueletos y zombis para ganarte el título de escudero.",
-    "suggestedLevel": 2,
-    "activeTag": "q_trial_warrior_activa",
-    "doneTag": "q_trial_warrior_lista",
-    "completedTag": "q_trial_warrior_entregada",
-    "rewardXp": 150,
-    "rewardItems": [
-      {
-        "id": "skilltree:wisdom_scroll",
-        "count": 1
-      },
-      {
-        "id": "apotheosis:mythic_material",
-        "count": 1
-      }
-    ],
-    "rewards": [
-      "150 XP",
-      "1x Pergamino de Sabiduría"
-    ],
-    "stages": [
-      {
-        "description": "Abate esqueletos",
-        "type": "KILL",
-        "target": "minecraft:skeleton",
-        "amount": 5
-      },
-      {
-        "description": "Abate zombis",
-        "type": "KILL",
-        "target": "minecraft:zombie",
-        "amount": 5
-      }
-    ],
-    "prerequisiteQuestId": "explorar_torre"
-  },
-  {
     "id": "trial_mage",
     "category": "SECONDARY",
     "title": "El Camino del Mago",
@@ -901,48 +719,6 @@
         "amount": 3
       }
     ]
-  },
-  {
-    "id": "trial_relic",
-    "category": "MAIN",
-    "title": "La Reliquia de los Ancestros",
-    "npc": "Explorador del Sendero",
-    "npcId": "npc_main_explorador",
-    "description": "Los saqueadores custodian reliquias antiguas entre las ruinas. Reúne hierro para tu equipo y recupera el legado.",
-    "suggestedLevel": 6,
-    "activeTag": "q_trial_relic_activa",
-    "doneTag": "q_trial_relic_lista",
-    "completedTag": "q_trial_relic_entregada",
-    "rewardXp": 250,
-    "rewardItems": [
-      {
-        "id": "minecraft:emerald",
-        "count": 5
-      },
-      {
-        "id": "apotheosis:mythic_material",
-        "count": 1
-      }
-    ],
-    "rewards": [
-      "250 XP",
-      "5x Esmeraldas"
-    ],
-    "stages": [
-      {
-        "description": "Obtén lingotes de hierro",
-        "type": "ITEM",
-        "target": "minecraft:iron_ingot",
-        "amount": 10
-      },
-      {
-        "description": "Elimina saqueadores (Pillagers)",
-        "type": "KILL",
-        "target": "minecraft:pillager",
-        "amount": 5
-      }
-    ],
-    "prerequisiteQuestId": "trial_warrior"
   },
   {
     "id": "bibliotecario_pergaminos",
