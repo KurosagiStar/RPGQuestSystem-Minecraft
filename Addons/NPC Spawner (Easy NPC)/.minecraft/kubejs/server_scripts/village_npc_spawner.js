@@ -34,9 +34,6 @@ function enableNpcCombat(npc) {
 
 // Tabla de presets configurados con su nombre visible y peso de aparicion
 var NPC_SELECTION_TABLE = [
-  { id: 'npc_main_comandante', name: 'Comandante', rl: 'easy_npc:preset/villager/npc_main_comandante.npc.snbt', weight: 10 },
-  { id: 'npc_main_explorador', name: 'Explorador', rl: 'easy_npc:preset/villager/npc_main_explorador.npc.snbt', weight: 10 },
-  { id: 'npc_main_ocultista', name: 'Ocultista', rl: 'easy_npc:preset/villager/npc_main_ocultista.npc.snbt', weight: 8 },
   { id: 'npc_sec_alquimista', name: 'Alquimista', rl: 'easy_npc:preset/villager/npc_sec_alquimista.npc.snbt', weight: 15 },
   { id: 'npc_sec_armero', name: 'Armero', rl: 'easy_npc:preset/villager/npc_sec_armero.npc.snbt', weight: 15 },
   { id: 'npc_sec_minero', name: 'Minero', rl: 'easy_npc:preset/villager/npc_sec_minero.npc.snbt', weight: 15 },
