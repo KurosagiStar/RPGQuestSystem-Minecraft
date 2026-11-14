@@ -19,6 +19,8 @@ public class QuestDefinition {
     public List<String> blockedByTags = new ArrayList<>();
     // ID hexadecimal opcional de FTB Quests para sincronizar progreso al entregar
     public String ftbQuestId = "";
+    // Ítem opcional (ej. "ars_nouveau:novice_spell_book") para mostrar su icono en HUD/Diario
+    public String iconItem = "";
 
     // Recompensas automáticas otorgadas por el motor al completarse
     public int rewardXp = 0;

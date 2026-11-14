@@ -167,7 +167,14 @@ public class QuestHudOverlay {
 
             int drawY = y;
             drawBadge(graphics, font, catName, x, drawY, badgeBoxW, badgeBoxH, badgeBgColor, badgeBorderColor);
-            graphics.blit(new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/quest_completed.png"), x + badgeBoxW + 6, drawY - 1, 0, 0, 12, 12, 12, 12);
+            if (q.iconItem != null && !q.iconItem.isEmpty()) {
+                Item icon = ForgeRegistries.ITEMS.getValue(new ResourceLocation(q.iconItem));
+                if (icon != null && icon != net.minecraft.world.item.Items.AIR) {
+                    graphics.renderItem(new net.minecraft.world.item.ItemStack(icon), x + badgeBoxW + 6, drawY - 3);
+                }
+            } else {
+                graphics.blit(new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/quest_completed.png"), x + badgeBoxW + 6, drawY - 1, 0, 0, 12, 12, 12, 12);
+            }
             drawY += badgeBoxH + 4;
 
             for (FormattedCharSequence line : titleLines) {
