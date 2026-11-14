@@ -1,706 +1,973 @@
 [
     {
-        "id": "caza_zombies",
-        "category": "MAIN",
-        "title": "La Caída de la Noche",
-        "npc": "Comandante de la Muralla",
-        "npcId": "chain_muralla_1_comandante",
-        "description": "El Capitán solicita purgar las murallas contra la invasión de no-muertos.",
-        "suggestedLevel": 5,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_capitan_activa",
-        "doneTag": "q_capitan_lista",
-        "completedTag": "q_capitan_entregada",
-        "rewards": [
-            "5x Monedas de Campeón",
-            "2 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Elimina 12 zombies en los alrededores",
-                "type": "KILL",
-                "target": "minecraft:zombie",
-                "amount": 12
-            }
-        ]
+        "id":  "caza_zombies",
+        "category":  "MAIN",
+        "title":  "La Caída de la Noche",
+        "npc":  "Comandante de la Muralla",
+        "npcId":  "chain_muralla_1_comandante",
+        "description":  "El Capitán solicita purgar las murallas contra la invasión de no-muertos.",
+        "suggestedLevel":  5,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_capitan_activa",
+        "doneTag":  "q_capitan_lista",
+        "completedTag":  "q_capitan_entregada",
+        "rewards":  [
+                        "5x Monedas de Campeón",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 12 zombies en los alrededores",
+                           "type":  "KILL",
+                           "target":  "minecraft:zombie",
+                           "amount":  12
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "cadena_informe_centinela",
-        "category": "MAIN",
-        "title": "El Relevo de la Muralla",
-        "npc": "Comandante de la Muralla",
-        "npcId": "chain_muralla_1_comandante",
-        "description": "Lleva la orden de defensa sellada al Centinela Veterano en el puesto de vigilancia avanzado.",
-        "suggestedLevel": 6,
-        "prerequisiteQuestId": "caza_zombies",
-        "activeTag": "q_relevo_activa",
-        "doneTag": "q_relevo_lista",
-        "completedTag": "q_relevo_entregada",
-        "rewards": [
-            "6x Monedas de Campeón",
-            "2 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Habla con el Centinela Veterano en la torre",
-                "type": "TALK",
-                "target": "chain_muralla_2_centinela",
-                "amount": 1
-            }
-        ]
+        "id":  "cadena_informe_centinela",
+        "category":  "MAIN",
+        "title":  "El Relevo de la Muralla",
+        "npc":  "Comandante de la Muralla",
+        "npcId":  "chain_muralla_1_comandante",
+        "description":  "Lleva la orden de defensa sellada al Centinela Veterano en el puesto de vigilancia avanzado.",
+        "suggestedLevel":  6,
+        "prerequisiteQuestId":  "caza_zombies",
+        "activeTag":  "q_relevo_activa",
+        "doneTag":  "q_relevo_lista",
+        "completedTag":  "q_relevo_entregada",
+        "rewards":  [
+                        "6x Monedas de Campeón",
+                        "2 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Habla con el Centinela Veterano en la torre",
+                           "type":  "TALK",
+                           "target":  "chain_muralla_2_centinela",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "contrato_fell_knights",
-        "category": "CONTRACT",
-        "title": "Contrato: La Escuadra de Sombras",
-        "npc": "Centinela de la Torre",
-        "npcId": "chain_muralla_2_centinela",
-        "description": "Elimina a la guardia personal de Caballeros Caídos del Fell King que asolan los caminos.",
-        "suggestedLevel": 8,
-        "prerequisiteQuestId": "cadena_informe_centinela",
-        "activeTag": "q_fell_knights_activa",
-        "doneTag": "q_fell_knights_lista",
-        "completedTag": "q_fell_knights_entregada",
-        "rewards": [
-            "8x Monedas de Campeón",
-            "3 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Elimina 12 Caballeros Caídos",
-                "type": "KILL",
-                "target": "cisco_mod:fellknight",
-                "amount": 12
-            }
-        ]
+        "id":  "contrato_fell_knights",
+        "category":  "CONTRACT",
+        "title":  "Contrato: La Escuadra de Sombras",
+        "npc":  "Centinela de la Torre",
+        "npcId":  "chain_muralla_2_centinela",
+        "description":  "Elimina a la guardia personal de Caballeros Caídos del Fell King que asolan los caminos.",
+        "suggestedLevel":  8,
+        "prerequisiteQuestId":  "cadena_informe_centinela",
+        "activeTag":  "q_fell_knights_activa",
+        "doneTag":  "q_fell_knights_lista",
+        "completedTag":  "q_fell_knights_entregada",
+        "rewards":  [
+                        "8x Monedas de Campeón",
+                        "3 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina 12 Caballeros Caídos",
+                           "type":  "KILL",
+                           "target":  "cisco_mod:fellknight",
+                           "amount":  12
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "cisco_boss_fellking",
-        "category": "CONTRACT",
-        "title": "Gran Cacería: El Rey Caído",
-        "npc": "Centinela de la Torre",
-        "npcId": "chain_muralla_2_centinela",
-        "description": "El soberano de la oscuridad ha despertado. Marcha a su trono y derrota al Fell King Boss.",
-        "suggestedLevel": 50,
-        "prerequisiteQuestId": "contrato_fell_knights",
-        "activeTag": "q_fellking_activa",
-        "doneTag": "q_fellking_lista",
-        "completedTag": "q_fellking_entregada",
-        "rewards": [
-            "50x Monedas de Campeón",
-            "1x Alma del Rey Caído",
-            "15 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Derrota al Fell King Boss",
-                "type": "KILL",
-                "target": "cisco_mod:fellkingboss",
-                "amount": 1
-            }
-        ]
+        "id":  "cisco_boss_fellking",
+        "category":  "CONTRACT",
+        "title":  "Gran Cacería: El Rey Caído",
+        "npc":  "Centinela de la Torre",
+        "npcId":  "chain_muralla_2_centinela",
+        "description":  "El soberano de la oscuridad ha despertado. Marcha a su trono y derrota al Fell King Boss.",
+        "suggestedLevel":  50,
+        "prerequisiteQuestId":  "contrato_fell_knights",
+        "activeTag":  "q_fellking_activa",
+        "doneTag":  "q_fellking_lista",
+        "completedTag":  "q_fellking_entregada",
+        "rewards":  [
+                        "50x Monedas de Campeón",
+                        "1x Alma del Rey Caído",
+                        "15 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Derrota al Fell King Boss",
+                           "type":  "KILL",
+                           "target":  "cisco_mod:fellkingboss",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  500,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  10
+                            }
+                        ]
     },
     {
-        "id": "cataclysm_boss_ignis",
-        "category": "CONTRACT",
-        "title": "Cataclismo: Ignis, el Titán de Fuego",
-        "npc": "Cazador de Bestias",
-        "npcId": "villager_cazador_contracts",
-        "description": "En las profundidades ardientes del Nether duerme el coloso de la llama eterna. Destruye a Ignis.",
-        "suggestedLevel": 65,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_ignis_activa",
-        "doneTag": "q_ignis_lista",
-        "completedTag": "q_ignis_entregada",
-        "rewards": [
-            "75x Monedas de Campeón",
-            "1x Escudo Ardiente del Titán",
-            "20 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Derrota a Ignis en la Arena Abisal",
-                "type": "KILL",
-                "target": "cataclysm:ignis",
-                "amount": 1
-            }
-        ]
+        "id":  "cataclysm_boss_ignis",
+        "category":  "CONTRACT",
+        "title":  "Cataclismo: Ignis, el Titán de Fuego",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "npc_contract_cazador",
+        "description":  "En las profundidades ardientes del Nether duerme el coloso de la llama eterna. Destruye a Ignis.",
+        "suggestedLevel":  65,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_ignis_activa",
+        "doneTag":  "q_ignis_lista",
+        "completedTag":  "q_ignis_entregada",
+        "rewards":  [
+                        "75x Monedas de Campeón",
+                        "1x Escudo Ardiente del Titán",
+                        "20 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Derrota a Ignis en la Arena Abisal",
+                           "type":  "KILL",
+                           "target":  "cataclysm:ignis",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  500,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  10
+                            }
+                        ]
     },
     {
-        "id": "cataclysm_boss_monstrosity",
-        "category": "CONTRACT",
-        "title": "Cataclismo: Monstruosidad de Netherita",
-        "npc": "Cazador de Bestias",
-        "npcId": "villager_cazador_contracts",
-        "description": "La mayor aberración de metal y magma forjada en las profundidades. Destroza a la bestia acorazada.",
-        "suggestedLevel": 60,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_monstrosity_activa",
-        "doneTag": "q_monstrosity_lista",
-        "completedTag": "q_monstrosity_entregada",
-        "rewards": [
-            "60x Monedas de Campeón",
-            "2x Lingotes de Netherita",
-            "15 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Destruye la Netherite Monstrosity",
-                "type": "KILL",
-                "target": "cataclysm:netherite_monstrosity",
-                "amount": 1
-            }
-        ]
+        "id":  "cataclysm_boss_monstrosity",
+        "category":  "CONTRACT",
+        "title":  "Cataclismo: Monstruosidad de Netherita",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "npc_contract_cazador",
+        "description":  "La mayor aberración de metal y magma forjada en las profundidades. Destroza a la bestia acorazada.",
+        "suggestedLevel":  60,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_monstrosity_activa",
+        "doneTag":  "q_monstrosity_lista",
+        "completedTag":  "q_monstrosity_entregada",
+        "rewards":  [
+                        "60x Monedas de Campeón",
+                        "2x Lingotes de Netherita",
+                        "15 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Destruye la Netherite Monstrosity",
+                           "type":  "KILL",
+                           "target":  "cataclysm:netherite_monstrosity",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  500,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  10
+                            }
+                        ]
     },
     {
-        "id": "cataclysm_boss_harbinger",
-        "category": "CONTRACT",
-        "title": "Cataclismo: El Presagio Mecánico",
-        "npc": "Cazador de Bestias",
-        "npcId": "villager_cazador_contracts",
-        "description": "Una máquina de guerra ancestral patrulla las ruinas del fin. Apaga sus reactores.",
-        "suggestedLevel": 55,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_harbinger_activa",
-        "doneTag": "q_harbinger_lista",
-        "completedTag": "q_harbinger_entregada",
-        "rewards": [
-            "50x Monedas de Campeón",
-            "1x Ojo Láser Concentrado",
-            "15 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Desactiva a The Harbinger",
-                "type": "KILL",
-                "target": "cataclysm:the_harbinger",
-                "amount": 1
-            }
-        ]
+        "id":  "cataclysm_boss_harbinger",
+        "category":  "CONTRACT",
+        "title":  "Cataclismo: El Presagio Mecánico",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "npc_contract_cazador",
+        "description":  "Una máquina de guerra ancestral patrulla las ruinas del fin. Apaga sus reactores.",
+        "suggestedLevel":  55,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_harbinger_activa",
+        "doneTag":  "q_harbinger_lista",
+        "completedTag":  "q_harbinger_entregada",
+        "rewards":  [
+                        "50x Monedas de Campeón",
+                        "1x Ojo Láser Concentrado",
+                        "15 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Desactiva a The Harbinger",
+                           "type":  "KILL",
+                           "target":  "cataclysm:the_harbinger",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  500,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  10
+                            }
+                        ]
     },
     {
-        "id": "boss_lich_mass_destruction",
-        "category": "CONTRACT",
-        "title": "Tormento: El Lich de la Torre Nocturna",
-        "npc": "Ocultista del Vacío",
-        "npcId": "villager_dimension_main",
-        "description": "El hechicero inmortal de las torres en ruinas manipula las almas frías. Purgad su torre.",
-        "suggestedLevel": 35,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_lich_activa",
-        "doneTag": "q_lich_lista",
-        "completedTag": "q_lich_entregada",
-        "rewards": [
-            "30x Monedas de Campeón",
-            "1x Cetro de Almas Malditas",
-            "10 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Destruye al Night Lich",
-                "type": "KILL",
-                "target": "bosses_of_mass_destruction:lich",
-                "amount": 1
-            }
-        ]
+        "id":  "boss_lich_mass_destruction",
+        "category":  "CONTRACT",
+        "title":  "Tormento: El Lich de la Torre Nocturna",
+        "npc":  "Ocultista del Vacío",
+        "npcId":  "villager_dimension_main",
+        "description":  "El hechicero inmortal de las torres en ruinas manipula las almas frías. Purgad su torre.",
+        "suggestedLevel":  35,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_lich_activa",
+        "doneTag":  "q_lich_lista",
+        "completedTag":  "q_lich_entregada",
+        "rewards":  [
+                        "30x Monedas de Campeón",
+                        "1x Cetro de Almas Malditas",
+                        "10 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Destruye al Night Lich",
+                           "type":  "KILL",
+                           "target":  "bosses_of_mass_destruction:lich",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  500,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  10
+                            }
+                        ]
     },
     {
-        "id": "boss_frostmaw_mowzie",
-        "category": "CONTRACT",
-        "title": "Cacería Feroz: Las Fauces de Hielo",
-        "npc": "Cazador de Bestias",
-        "npcId": "villager_cazador_contracts",
-        "description": "En las tundras heladas duerme un gigante de nieve con cuernos de carámbano. Despiértalo y arranca su cuerno.",
-        "suggestedLevel": 30,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_frostmaw_activa",
-        "doneTag": "q_frostmaw_lista",
-        "completedTag": "q_frostmaw_entregada",
-        "rewards": [
-            "25x Monedas de Campeón",
-            "1x Cuerno de Escarcha",
-            "8 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Derrota al Frostmaw durmiente",
-                "type": "KILL",
-                "target": "mowziesmobs:frostmaw",
-                "amount": 1
-            }
-        ]
+        "id":  "boss_frostmaw_mowzie",
+        "category":  "CONTRACT",
+        "title":  "Cacería Feroz: Las Fauces de Hielo",
+        "npc":  "Cazador de Bestias",
+        "npcId":  "npc_contract_cazador",
+        "description":  "En las tundras heladas duerme un gigante de nieve con cuernos de carámbano. Despiértalo y arranca su cuerno.",
+        "suggestedLevel":  30,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_frostmaw_activa",
+        "doneTag":  "q_frostmaw_lista",
+        "completedTag":  "q_frostmaw_entregada",
+        "rewards":  [
+                        "25x Monedas de Campeón",
+                        "1x Cuerno de Escarcha",
+                        "8 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Derrota al Frostmaw durmiente",
+                           "type":  "KILL",
+                           "target":  "mowziesmobs:frostmaw",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  500,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  10
+                            }
+                        ]
     },
     {
-        "id": "dimension_aether_expedition",
-        "category": "MAIN",
-        "title": "Más Allá de las Nubes: El Aether",
-        "npc": "Explorador Real",
-        "npcId": "villager_explorador_main",
-        "description": "Cruza el portal de piedra luminosa y agua hacia las islas celestiales flotantes del Aether.",
-        "suggestedLevel": 25,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_aether_activa",
-        "doneTag": "q_aether_lista",
-        "completedTag": "q_aether_entregada",
-        "rewards": [
-            "20x Monedas de Campeón",
-            "1x Paracaídas Dorado",
-            "5 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Atraviesa el portal al Aether",
-                "type": "DIMENSION",
-                "target": "aether:the_aether",
-                "amount": 1
-            }
-        ]
+        "id":  "dimension_aether_expedition",
+        "category":  "MAIN",
+        "title":  "Más Allá de las Nubes: El Aether",
+        "npc":  "Explorador Real",
+        "npcId":  "npc_main_explorador",
+        "description":  "Cruza el portal de piedra luminosa y agua hacia las islas celestiales flotantes del Aether.",
+        "suggestedLevel":  25,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_aether_activa",
+        "doneTag":  "q_aether_lista",
+        "completedTag":  "q_aether_entregada",
+        "rewards":  [
+                        "20x Monedas de Campeón",
+                        "1x Paracaídas Dorado",
+                        "5 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Atraviesa el portal al Aether",
+                           "type":  "DIMENSION",
+                           "target":  "aether:the_aether",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  300,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  6
+                            }
+                        ]
     },
     {
-        "id": "dimension_twilight_forest",
-        "category": "MAIN",
-        "title": "El Reino Crepuscular",
-        "npc": "Herborista del Bosque",
-        "npcId": "villager_bioma_secondary",
-        "description": "Lanza un diamante en el manantial rodeado de flores y cruza al Bosque del Crepúsculo.",
-        "suggestedLevel": 20,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_twilight_activa",
-        "doneTag": "q_twilight_lista",
-        "completedTag": "q_twilight_entregada",
-        "rewards": [
-            "15x Monedas de Campeón",
-            "4x Plumas de Cuervo Mágico",
-            "5 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Cruza al Twilight Forest",
-                "type": "DIMENSION",
-                "target": "twilightforest:twilight_forest",
-                "amount": 1
-            }
-        ]
+        "id":  "dimension_twilight_forest",
+        "category":  "MAIN",
+        "title":  "El Reino Crepuscular",
+        "npc":  "Herborista del Bosque",
+        "npcId":  "villager_bioma_secondary",
+        "description":  "Lanza un diamante en el manantial rodeado de flores y cruza al Bosque del Crepúsculo.",
+        "suggestedLevel":  20,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_twilight_activa",
+        "doneTag":  "q_twilight_lista",
+        "completedTag":  "q_twilight_entregada",
+        "rewards":  [
+                        "15x Monedas de Campeón",
+                        "4x Plumas de Cuervo Mágico",
+                        "5 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Cruza al Twilight Forest",
+                           "type":  "DIMENSION",
+                           "target":  "twilightforest:twilight_forest",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  300,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  6
+                            }
+                        ]
     },
     {
-        "id": "cazador_pantano",
-        "category": "CONTRACT",
-        "title": "Contrato: La Bestia de la Cueva",
-        "npc": "Cazador del Pantano",
-        "npcId": "chain_muralla_3_cazador",
-        "description": "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
-        "suggestedLevel": 6,
-        "prerequisiteQuestId": "contrato_fell_knights",
-        "activeTag": "q_cazador_activa",
-        "doneTag": "q_cazador_lista",
-        "completedTag": "q_cazador_entregada",
-        "rewards": [
-            "12x Monedas de Campeón",
-            "1x Arco Mejorado"
-        ],
-        "stages": [
-            {
-                "description": "Rastrea el sector del nido en la cueva",
-                "type": "SCORE",
-                "target": "dummy_none",
-                "amount": 0,
-                "hasLocation": true,
-                "posX": -250,
-                "posZ": 350,
-                "radius": 25,
-                "spawnMobsOnEntry": true,
-                "mobToSpawn": "minecraft:cave_spider",
-                "mobSpawnCount": 4
-            },
-            {
-                "description": "Elimina 12 Arañas de Cueva",
-                "type": "KILL",
-                "target": "minecraft:cave_spider",
-                "amount": 12
-            },
-            {
-                "description": "(Opcional) Consigue Ojos de Araña fermentados",
-                "type": "ITEM",
-                "target": "minecraft:fermented_spider_eye",
-                "amount": 2,
-                "optional": true
-            }
-        ]
+        "id":  "cazador_pantano",
+        "category":  "CONTRACT",
+        "title":  "Contrato: La Bestia de la Cueva",
+        "npc":  "Cazador del Pantano",
+        "npcId":  "chain_muralla_3_cazador",
+        "description":  "Un peligroso arácnido acecha en las profundidades. Neutraliza la plaga y limpia el sector.",
+        "suggestedLevel":  6,
+        "prerequisiteQuestId":  "contrato_fell_knights",
+        "activeTag":  "q_cazador_activa",
+        "doneTag":  "q_cazador_lista",
+        "completedTag":  "q_cazador_entregada",
+        "rewards":  [
+                        "12x Monedas de Campeón",
+                        "1x Arco Mejorado"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Rastrea el sector del nido en la cueva",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  -250,
+                           "posZ":  350,
+                           "radius":  25,
+                           "spawnMobsOnEntry":  true,
+                           "mobToSpawn":  "minecraft:cave_spider",
+                           "mobSpawnCount":  4,
+                           "relativeToNpc":  true
+                       },
+                       {
+                           "description":  "Elimina 12 Arañas de Cueva",
+                           "type":  "KILL",
+                           "target":  "minecraft:cave_spider",
+                           "amount":  12
+                       },
+                       {
+                           "description":  "(Opcional) Consigue Ojos de Araña fermentados",
+                           "type":  "ITEM",
+                           "target":  "minecraft:fermented_spider_eye",
+                           "amount":  2,
+                           "optional":  true
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "apotheosis_recolectar_gema",
-        "category": "SECONDARY",
-        "title": "El Poder de las Gemas de Apotheosis",
-        "npc": "Alquimista Elena",
-        "npcId": "villager_alquimista_secondary",
-        "description": "Las gemas antiguas imbuyen armas y armaduras con poderes divinos. Consigue una gema engarzable.",
-        "suggestedLevel": 15,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_gema_activa",
-        "doneTag": "q_gema_lista",
-        "completedTag": "q_gema_entregada",
-        "rewards": [
-            "15x Monedas de Campeón",
-            "1x Vial de Polvo Gemario",
-            "4 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Consigue una Gema de Apotheosis en tu inventario",
-                "type": "ITEM",
-                "target": "apotheosis:gem",
-                "amount": 1,
-                "nbtKey": "affix_data.gem"
-            }
-        ]
+        "id":  "apotheosis_recolectar_gema",
+        "category":  "SECONDARY",
+        "title":  "El Poder de las Gemas de Apotheosis",
+        "npc":  "Alquimista Elena",
+        "npcId":  "villager_alquimista_secondary",
+        "description":  "Las gemas antiguas imbuyen armas y armaduras con poderes divinos. Consigue una gema engarzable.",
+        "suggestedLevel":  15,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_gema_activa",
+        "doneTag":  "q_gema_lista",
+        "completedTag":  "q_gema_entregada",
+        "rewards":  [
+                        "15x Monedas de Campeón",
+                        "1x Vial de Polvo Gemario",
+                        "4 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Consigue una Gema de Apotheosis en tu inventario",
+                           "type":  "ITEM",
+                           "target":  "apotheosis:gem",
+                           "amount":  1,
+                           "nbtKey":  "affix_data.gem"
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "craftear_arcos",
-        "category": "SECONDARY",
-        "title": "Armamento de la Guarnición",
-        "npc": "Armero Maestro",
-        "npcId": "villager_craftear_secondary",
-        "description": "Los arqueros de la muralla necesitan munición y arcos frescos. Fabrica arcos para la armería.",
-        "suggestedLevel": 3,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_craftear_activa",
-        "doneTag": "q_craftear_lista",
-        "completedTag": "q_craftear_entregada",
-        "rewards": [
-            "32x Flechas",
-            "1x Ballesta"
-        ],
-        "stages": [
-            {
-                "description": "Fabrica 2 Arcos",
-                "type": "CRAFT",
-                "target": "minecraft:bow",
-                "amount": 2
-            }
-        ]
+        "id":  "craftear_arcos",
+        "category":  "SECONDARY",
+        "title":  "Armamento de la Guarnición",
+        "npc":  "Armero Maestro",
+        "npcId":  "npc_sec_armero",
+        "description":  "Los arqueros de la muralla necesitan munición y arcos frescos. Fabrica arcos para la armería.",
+        "suggestedLevel":  3,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_craftear_activa",
+        "doneTag":  "q_craftear_lista",
+        "completedTag":  "q_craftear_entregada",
+        "rewards":  [
+                        "32x Flechas",
+                        "1x Ballesta"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Fabrica 2 Arcos",
+                           "type":  "CRAFT",
+                           "target":  "minecraft:bow",
+                           "amount":  2
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "minar_hierro",
-        "category": "SECONDARY",
-        "title": "Suministros de Acero",
-        "npc": "Capataz de la Mina",
-        "npcId": "villager_minar_secondary",
-        "description": "Extrae mineral de hierro crudo de las profundidades de la cantera.",
-        "suggestedLevel": 4,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_minar_activa",
-        "doneTag": "q_minar_lista",
-        "completedTag": "q_minar_entregada",
-        "rewards": [
-            "1x Pico de Hierro Encantado",
-            "16x Carbón"
-        ],
-        "stages": [
-            {
-                "description": "Pica 16 Minerales de Hierro",
-                "type": "MINE",
-                "target": "minecraft:iron_ore",
-                "amount": 16
-            }
-        ]
+        "id":  "minar_hierro",
+        "category":  "SECONDARY",
+        "title":  "Suministros de Acero",
+        "npc":  "Capataz de la Mina",
+        "npcId":  "npc_sec_minero",
+        "description":  "Extrae mineral de hierro crudo de las profundidades de la cantera.",
+        "suggestedLevel":  4,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_minar_activa",
+        "doneTag":  "q_minar_lista",
+        "completedTag":  "q_minar_entregada",
+        "rewards":  [
+                        "1x Pico de Hierro Encantado",
+                        "16x Carbón"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pica 16 Minerales de Hierro",
+                           "type":  "MINE",
+                           "target":  "minecraft:iron_ore",
+                           "amount":  16
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "pescar_rio",
-        "category": "REPEATABLE",
-        "title": "Pesca en Aguas Claras",
-        "npc": "Pescador del Muelle",
-        "npcId": "villager_pescar_repeatable",
-        "description": "Consigue pescado fresco para el abastecimiento de la taberna.",
-        "suggestedLevel": 1,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_pescar_activa",
-        "doneTag": "q_pescar_lista",
-        "completedTag": "q_pescar_entregada",
-        "rewards": [
-            "8x Panes",
-            "1x Caña de Pescar de la Suerte"
-        ],
-        "stages": [
-            {
-                "description": "Pesca 6 Bacalaos crudos",
-                "type": "FISH",
-                "target": "minecraft:cod",
-                "amount": 6
-            }
-        ]
+        "id":  "pescar_rio",
+        "category":  "REPEATABLE",
+        "title":  "Pesca en Aguas Claras",
+        "npc":  "Pescador del Muelle",
+        "npcId":  "npc_rep_pescador",
+        "description":  "Consigue pescado fresco para el abastecimiento de la taberna.",
+        "suggestedLevel":  1,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_pescar_activa",
+        "doneTag":  "q_pescar_lista",
+        "completedTag":  "q_pescar_entregada",
+        "rewards":  [
+                        "8x Panes",
+                        "1x Caña de Pescar de la Suerte"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Pesca 6 Bacalaos crudos",
+                           "type":  "FISH",
+                           "target":  "minecraft:cod",
+                           "amount":  6
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "elena_alquimia",
-        "category": "SECONDARY",
-        "title": "Ingredientes de Brujería",
-        "npc": "Alquimista Elena",
-        "npcId": "villager_alquimista_secondary",
-        "description": "Elena necesita verrugas del inframundo y botellas de agua para sus pociones de curación.",
-        "suggestedLevel": 7,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_alquimia_activa",
-        "doneTag": "q_alquimia_lista",
-        "completedTag": "q_alquimia_entregada",
-        "rewards": [
-            "3x Pociones de Curación II",
-            "1x Soporte de Pociones"
-        ],
-        "stages": [
-            {
-                "description": "Reúne 3 Verrugas del Nether",
-                "type": "ITEM",
-                "target": "minecraft:nether_wart",
-                "amount": 3
-            }
-        ]
+        "id":  "elena_alquimia",
+        "category":  "SECONDARY",
+        "title":  "Ingredientes de Brujería",
+        "npc":  "Alquimista Elena",
+        "npcId":  "villager_alquimista_secondary",
+        "description":  "Elena necesita verrugas del inframundo y botellas de agua para sus pociones de curación.",
+        "suggestedLevel":  7,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_alquimia_activa",
+        "doneTag":  "q_alquimia_lista",
+        "completedTag":  "q_alquimia_entregada",
+        "rewards":  [
+                        "3x Pociones de Curación II",
+                        "1x Soporte de Pociones"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Reúne 3 Verrugas del Nether",
+                           "type":  "ITEM",
+                           "target":  "minecraft:nether_wart",
+                           "amount":  3
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "hornear_pan",
-        "category": "REPEATABLE",
-        "title": "Raciones para las Tropas",
-        "npc": "Panadero del Pueblo",
-        "npcId": "villager_hornear_repeatable",
-        "description": "Cocina y hornea pan caliente en los hornos de la plaza para los heridos.",
-        "suggestedLevel": 1,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_hornear_activa",
-        "doneTag": "q_hornear_lista",
-        "completedTag": "q_hornear_entregada",
-        "rewards": [
-            "4x Tartas de Calabaza",
-            "1 Nivel de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Cocina 8 Panes o Comida en horno",
-                "type": "SMELT",
-                "target": "minecraft:bread",
-                "amount": 8
-            }
-        ]
+        "id":  "hornear_pan",
+        "category":  "REPEATABLE",
+        "title":  "Raciones para las Tropas",
+        "npc":  "Panadero del Pueblo",
+        "npcId":  "npc_rep_panadero",
+        "description":  "Cocina y hornea pan caliente en los hornos de la plaza para los heridos.",
+        "suggestedLevel":  1,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_hornear_activa",
+        "doneTag":  "q_hornear_lista",
+        "completedTag":  "q_hornear_entregada",
+        "rewards":  [
+                        "4x Tartas de Calabaza",
+                        "1 Nivel de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Cocina 8 Panes o Comida en horno",
+                           "type":  "SMELT",
+                           "target":  "minecraft:bread",
+                           "amount":  8
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "explorar_torre",
-        "category": "MAIN",
-        "title": "El Puesto de Observación",
-        "npc": "Explorador Real",
-        "npcId": "villager_explorador_main",
-        "description": "Avanza hacia las colinas y asegura el puesto de vigilancia abandonado.",
-        "suggestedLevel": 4,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_explorador_activa",
-        "doneTag": "q_explorador_lista",
-        "completedTag": "q_explorador_entregada",
-        "rewards": [
-            "1x Catalejo",
-            "1x Mapa Misterioso"
-        ],
-        "stages": [
-            {
-                "description": "Llega a las coordenadas de la colina",
-                "type": "SCORE",
-                "target": "dummy_none",
-                "amount": 0,
-                "hasLocation": true,
-                "posX": 120,
-                "posZ": -180,
-                "radius": 30
-            }
-        ]
+        "id":  "explorar_torre",
+        "category":  "MAIN",
+        "title":  "El Puesto de Observación",
+        "npc":  "Explorador Real",
+        "npcId":  "npc_main_explorador",
+        "description":  "Avanza hacia las colinas y asegura el puesto de vigilancia abandonado.",
+        "suggestedLevel":  4,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_explorador_activa",
+        "doneTag":  "q_explorador_lista",
+        "completedTag":  "q_explorador_entregada",
+        "rewards":  [
+                        "1x Catalejo",
+                        "1x Mapa Misterioso"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Llega a las coordenadas de la colina",
+                           "type":  "SCORE",
+                           "target":  "dummy_none",
+                           "amount":  0,
+                           "hasLocation":  true,
+                           "posX":  120,
+                           "posZ":  -180,
+                           "radius":  30,
+                           "relativeToNpc":  true
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "explorar_bioma",
-        "category": "SECONDARY",
-        "title": "Expedición Botánica",
-        "npc": "Herborista del Bosque",
-        "npcId": "villager_bioma_secondary",
-        "description": "Busca especímenes vegetales silvestres en las profundidades del bosque.",
-        "suggestedLevel": 2,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_bioma_activa",
-        "doneTag": "q_bioma_lista",
-        "completedTag": "q_bioma_entregada",
-        "rewards": [
-            "1x Manzana Dorada",
-            "5x Monedas de Campeón"
-        ],
-        "stages": [
-            {
-                "description": "Explora un Bosque (Forest)",
-                "type": "BIOME",
-                "target": "minecraft:forest",
-                "amount": 1
-            }
-        ]
+        "id":  "explorar_bioma",
+        "category":  "SECONDARY",
+        "title":  "Expedición Botánica",
+        "npc":  "Herborista del Bosque",
+        "npcId":  "villager_bioma_secondary",
+        "description":  "Busca especímenes vegetales silvestres en las profundidades del bosque.",
+        "suggestedLevel":  2,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_bioma_activa",
+        "doneTag":  "q_bioma_lista",
+        "completedTag":  "q_bioma_entregada",
+        "rewards":  [
+                        "1x Manzana Dorada",
+                        "5x Monedas de Campeón"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Explora un Bosque (Forest)",
+                           "type":  "BIOME",
+                           "target":  "minecraft:forest",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "descubrir_aldea",
-        "category": "SECONDARY",
-        "title": "Localizar una Aldea",
-        "npc": "Vigía de la Ciudadela",
-        "npcId": "villager_estructura_secondary",
-        "description": "Confirma la presencia y posición de asentamientos civiles en las llanuras.",
-        "suggestedLevel": 3,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_estructura_activa",
-        "doneTag": "q_estructura_lista",
-        "completedTag": "q_estructura_entregada",
-        "rewards": [
-            "8x Lingotes de Hierro",
-            "6x Monedas de Campeón"
-        ],
-        "stages": [
-            {
-                "description": "Entra al perímetro de una Aldea",
-                "type": "STRUCTURE",
-                "target": "minecraft:village_plains",
-                "amount": 1
-            }
-        ]
+        "id":  "descubrir_aldea",
+        "category":  "SECONDARY",
+        "title":  "Localizar una Aldea",
+        "npc":  "Vigía de la Ciudadela",
+        "npcId":  "villager_estructura_secondary",
+        "description":  "Confirma la presencia y posición de asentamientos civiles en las llanuras.",
+        "suggestedLevel":  3,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_estructura_activa",
+        "doneTag":  "q_estructura_lista",
+        "completedTag":  "q_estructura_entregada",
+        "rewards":  [
+                        "8x Lingotes de Hierro",
+                        "6x Monedas de Campeón"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Entra al perímetro de una Aldea",
+                           "type":  "STRUCTURE",
+                           "target":  "minecraft:village_plains",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  3
+                            }
+                        ]
     },
     {
-        "id": "viaje_nether",
-        "category": "MAIN",
-        "title": "El Portal al Inframundo",
-        "npc": "Ocultista del Vacío",
-        "npcId": "villager_dimension_main",
-        "description": "Construye o activa un portal y atraviesa el umbral hacia el inframundo.",
-        "suggestedLevel": 10,
-        "prerequisiteQuestId": "",
-        "activeTag": "q_nether_activa",
-        "doneTag": "q_nether_lista",
-        "completedTag": "q_nether_entregada",
-        "rewards": [
-            "2x Varas de Blaze",
-            "10x Monedas de Campeón",
-            "3 Niveles de Experiencia"
-        ],
-        "stages": [
-            {
-                "description": "Atraviesa el portal al Nether",
-                "type": "DIMENSION",
-                "target": "minecraft:the_nether",
-                "amount": 1
-            }
-        ]
+        "id":  "viaje_nether",
+        "category":  "MAIN",
+        "title":  "El Portal al Inframundo",
+        "npc":  "Ocultista del Vacío",
+        "npcId":  "npc_main_ocultista",
+        "description":  "Construye o activa un portal y atraviesa el umbral hacia el inframundo.",
+        "suggestedLevel":  10,
+        "prerequisiteQuestId":  "",
+        "activeTag":  "q_nether_activa",
+        "doneTag":  "q_nether_lista",
+        "completedTag":  "q_nether_entregada",
+        "rewards":  [
+                        "2x Varas de Blaze",
+                        "10x Monedas de Campeón",
+                        "3 Niveles de Experiencia"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Atraviesa el portal al Nether",
+                           "type":  "DIMENSION",
+                           "target":  "minecraft:the_nether",
+                           "amount":  1
+                       }
+                   ],
+        "rewardXp":  300,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  6
+                            }
+                        ]
     },
     {
-        "id": "contrato_taberna_emboscada",
-        "category": "CONTRACT",
-        "title": "Contrato: Emboscada en la Ruta",
-        "npc": "Tabernero Garrick",
-        "npcId": "villager_tabernero_contracts",
-        "description": "Saqueadores asaltan los suministros cerca del cruce. Acude al lugar y repele la emboscada.",
-        "suggestedLevel": 5,
-        "activeTag": "q_tabernero_activa",
-        "doneTag": "q_tabernero_lista",
-        "completedTag": "q_tabernero_entregada",
-        "rewardXp": 200,
-        "rewardItems": [
-            {
-                "id": "minecraft:emerald",
-                "count": 6
-            },
-            {
-                "id": "minecraft:cooked_beef",
-                "count": 8
-            }
-        ],
-        "rewards": [
-            "200 XP",
-            "6x Esmeraldas",
-            "8x Filetes"
-        ],
-        "stages": [
-            {
-                "description": "Elimina a los saqueadores de la emboscada",
-                "type": "KILL",
-                "target": "minecraft:pillager",
-                "amount": 12,
-                "hasLocation": true,
-                "posX": 80,
-                "posZ": 60,
-                "radius": 60,
-                "spawnMobsOnEntry": true,
-                "mobToSpawn": "minecraft:pillager",
-                "mobSpawnCount": 6,
-                "ambushTitle": "§c⚔ ¡EMBOSCADA DE SAQUEADORES!",
-                "relativeToNpc": true
-            }
-        ]
+        "id":  "contrato_taberna_emboscada",
+        "category":  "CONTRACT",
+        "title":  "Contrato: Emboscada en la Ruta",
+        "npc":  "Tabernero Garrick",
+        "npcId":  "npc_contract_tabernero",
+        "description":  "Saqueadores asaltan los suministros cerca del cruce. Acude al lugar y repele la emboscada.",
+        "suggestedLevel":  5,
+        "activeTag":  "q_tabernero_activa",
+        "doneTag":  "q_tabernero_lista",
+        "completedTag":  "q_tabernero_entregada",
+        "rewardXp":  200,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  6
+                            },
+                            {
+                                "id":  "minecraft:cooked_beef",
+                                "count":  8
+                            }
+                        ],
+        "rewards":  [
+                        "200 XP",
+                        "6x Esmeraldas",
+                        "8x Filetes"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Elimina a los saqueadores de la emboscada",
+                           "type":  "KILL",
+                           "target":  "minecraft:pillager",
+                           "amount":  12,
+                           "hasLocation":  true,
+                           "posX":  80,
+                           "posZ":  60,
+                           "radius":  60,
+                           "spawnMobsOnEntry":  true,
+                           "mobToSpawn":  "minecraft:pillager",
+                           "mobSpawnCount":  6,
+                           "ambushTitle":  "§c⚔ ¡EMBOSCADA DE SAQUEADORES!",
+                           "relativeToNpc":  true
+                       }
+                   ]
     },
     {
-        "id": "contrato_gremio_ruta",
-        "category": "CONTRACT",
-        "title": "Contrato: Encargo del Gremio",
-        "npc": "Oficial del Gremio",
-        "npcId": "villager_gremio_contracts",
-        "description": "Demuestra tu valía limpiando esqueletos. (Bloqueado si ya completaste el contrato del Tabernero).",
-        "suggestedLevel": 4,
-        "blockedByTags": [
-            "q_tabernero_entregada"
-        ],
-        "activeTag": "q_gremio_activa",
-        "doneTag": "q_gremio_lista",
-        "completedTag": "q_gremio_entregada",
-        "rewardXp": 180,
-        "rewardItems": [
-            {
-                "id": "minecraft:emerald",
-                "count": 5
-            }
-        ],
-        "rewards": [
-            "180 XP",
-            "5x Esmeraldas"
-        ],
-        "stages": [
-            {
-                "description": "Derrota 12 Esqueletos",
-                "type": "KILL",
-                "target": "minecraft:skeleton",
-                "amount": 12
-            }
-        ]
+        "id":  "contrato_gremio_ruta",
+        "category":  "CONTRACT",
+        "title":  "Contrato: Encargo del Gremio",
+        "npc":  "Oficial del Gremio",
+        "npcId":  "villager_gremio_contracts",
+        "description":  "Demuestra tu valía limpiando esqueletos. (Bloqueado si ya completaste el contrato del Tabernero).",
+        "suggestedLevel":  4,
+        "blockedByTags":  [
+                              "q_tabernero_entregada"
+                          ],
+        "activeTag":  "q_gremio_activa",
+        "doneTag":  "q_gremio_lista",
+        "completedTag":  "q_gremio_entregada",
+        "rewardXp":  180,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  5
+                            }
+                        ],
+        "rewards":  [
+                        "180 XP",
+                        "5x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Derrota 12 Esqueletos",
+                           "type":  "KILL",
+                           "target":  "minecraft:skeleton",
+                           "amount":  12
+                       }
+                   ]
     },
     {
-        "id": "contrato_vigia_supervivencia",
-        "category": "CONTRACT",
-        "title": "Contrato: Resiste la Oleada",
-        "npc": "Vigía del Puesto",
-        "npcId": "villager_vigia_contracts",
-        "description": "Aguanta 45 segundos dentro del perímetro mientras llegan oleadas de no-muertos.",
-        "suggestedLevel": 6,
-        "activeTag": "q_vigia_activa",
-        "doneTag": "q_vigia_lista",
-        "completedTag": "q_vigia_entregada",
-        "rewardXp": 250,
-        "rewardItems": [
-            {
-                "id": "minecraft:emerald",
-                "count": 7
-            }
-        ],
-        "rewards": [
-            "250 XP",
-            "7x Esmeraldas"
-        ],
-        "stages": [
-            {
-                "description": "Sobrevive en la zona (segundos)",
-                "type": "SURVIVE",
-                "target": "survive",
-                "amount": 45,
-                "hasLocation": true,
-                "relativeToNpc": true,
-                "posX": 70,
-                "posZ": -50,
-                "radius": 45,
-                "spawnMobsOnEntry": true,
-                "mobToSpawn": "minecraft:zombie,minecraft:skeleton",
-                "mobSpawnCount": 20,
-                "ambushTitle": "§c⚔ ¡RESISTE LA OLEADA!"
-            }
-        ]
+        "id":  "contrato_vigia_supervivencia",
+        "category":  "CONTRACT",
+        "title":  "Contrato: Resiste la Oleada",
+        "npc":  "Vigía del Puesto",
+        "npcId":  "npc_contract_vigia",
+        "description":  "Aguanta 45 segundos dentro del perímetro mientras llegan oleadas de no-muertos.",
+        "suggestedLevel":  6,
+        "activeTag":  "q_vigia_activa",
+        "doneTag":  "q_vigia_lista",
+        "completedTag":  "q_vigia_entregada",
+        "rewardXp":  250,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  7
+                            }
+                        ],
+        "rewards":  [
+                        "250 XP",
+                        "7x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Sobrevive en la zona (segundos)",
+                           "type":  "SURVIVE",
+                           "target":  "survive",
+                           "amount":  45,
+                           "hasLocation":  true,
+                           "relativeToNpc":  true,
+                           "posX":  70,
+                           "posZ":  -50,
+                           "radius":  45,
+                           "spawnMobsOnEntry":  true,
+                           "mobToSpawn":  "iceandfire:dread_thrall,iceandfire:dread_ghoul,cataclysm:draugr,cataclysm:royal_draugr,illagerinvasion:marauder,illagerinvasion:basher,illagerinvasion:provoker,minecraft:wither_skeleton,minecraft:stray,minecraft:husk",
+                           "mobSpawnCount":  20,
+                           "ambushTitle":  "§c⚔ ¡RESISTE LA OLEADA!"
+                       }
+                   ]
+    },
+    {
+        "id":  "trial_warrior",
+        "category":  "MAIN",
+        "title":  "El Camino del Guerrero",
+        "npc":  "Capitán de la Guardia",
+        "npcId":  "npc_main_comandante",
+        "description":  "Las murallas crujen bajo el asedio nocturno. Demuestra tu valía purgando esqueletos y zombis para ganarte el título de escudero.",
+        "suggestedLevel":  2,
+        "activeTag":  "q_trial_warrior_activa",
+        "doneTag":  "q_trial_warrior_lista",
+        "completedTag":  "q_trial_warrior_entregada",
+        "rewardXp":  150,
+        "rewardItems":  [
+                            {
+                                "id":  "skilltree:wisdom_scroll",
+                                "count":  1
+                            }
+                        ],
+        "rewards":  [
+                        "150 XP",
+                        "1x Pergamino de Sabiduría"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Abate esqueletos",
+                           "type":  "KILL",
+                           "target":  "minecraft:skeleton",
+                           "amount":  5
+                       },
+                       {
+                           "description":  "Abate zombis",
+                           "type":  "KILL",
+                           "target":  "minecraft:zombie",
+                           "amount":  5
+                       }
+                   ]
+    },
+    {
+        "id":  "trial_mage",
+        "category":  "SECONDARY",
+        "title":  "El Camino del Mago",
+        "npc":  "Alquimista Elena",
+        "npcId":  "npc_sec_alquimista",
+        "description":  "La magia arcana despierta en estas tierras. Consigue un Grimorio de Aprendiz y pon a prueba tu poder contra los creepers.",
+        "suggestedLevel":  4,
+        "activeTag":  "q_trial_mage_activa",
+        "doneTag":  "q_trial_mage_lista",
+        "completedTag":  "q_trial_mage_entregada",
+        "rewardXp":  200,
+        "rewardItems":  [
+                            {
+                                "id":  "ars_nouveau:source_gem",
+                                "count":  4
+                            }
+                        ],
+        "rewards":  [
+                        "200 XP",
+                        "4x Gema de Fuente"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Consigue un Grimorio de Aprendiz",
+                           "type":  "ITEM",
+                           "target":  "ars_nouveau:novice_spell_book",
+                           "amount":  1
+                       },
+                       {
+                           "description":  "Elimina creepers con tu magia",
+                           "type":  "KILL",
+                           "target":  "minecraft:creeper",
+                           "amount":  3
+                       }
+                   ]
+    },
+    {
+        "id":  "trial_relic",
+        "category":  "MAIN",
+        "title":  "La Reliquia de los Ancestros",
+        "npc":  "Explorador del Sendero",
+        "npcId":  "npc_main_explorador",
+        "description":  "Los saqueadores custodian reliquias antiguas entre las ruinas. Reúne hierro para tu equipo y recupera el legado.",
+        "suggestedLevel":  6,
+        "activeTag":  "q_trial_relic_activa",
+        "doneTag":  "q_trial_relic_lista",
+        "completedTag":  "q_trial_relic_entregada",
+        "rewardXp":  250,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  5
+                            }
+                        ],
+        "rewards":  [
+                        "250 XP",
+                        "5x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Obtén lingotes de hierro",
+                           "type":  "ITEM",
+                           "target":  "minecraft:iron_ingot",
+                           "amount":  10
+                       },
+                       {
+                           "description":  "Elimina saqueadores (Pillagers)",
+                           "type":  "KILL",
+                           "target":  "minecraft:pillager",
+                           "amount":  5
+                       }
+                   ]
     }
 ]
