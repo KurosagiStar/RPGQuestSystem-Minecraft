@@ -1,0 +1,178 @@
+{
+  PresetMetadata: {
+    access: "PUBLIC",
+    author: "Cisco RPG Team",
+    category: "Cisco RPG",
+    description: "Capitán de la Guardia con equipamiento medieval, sonido y comercio",
+    entityTypeId: "easy_npc:humanoid",
+    name: "Capitán de la Guardia (Avanzado)",
+    variantType: "STEVE",
+    version: "1.1.0"
+  },
+  data: {
+    CustomName: '{"text":"Capitán de la Guardia","color":"gold","bold":true}',
+    CustomNameVisible: 1b,
+    Invulnerable: 1b,
+    PersistenceRequired: 1b,
+    Attributes: [
+      {
+        Base: 100.0d,
+        Name: "minecraft:generic.max_health"
+      },
+      {
+        Base: 0.0d,
+        Name: "minecraft:generic.movement_speed"
+      }
+    ],
+    ArmorItems: [
+      {
+        Count: 1b,
+        id: "minecraft:iron_boots"
+      },
+      {
+        Count: 1b,
+        id: "minecraft:iron_leggings"
+      },
+      {
+        Count: 1b,
+        id: "minecraft:iron_chestplate"
+      },
+      {
+        Count: 1b,
+        id: "minecraft:iron_helmet"
+      }
+    ],
+    HandItems: [
+      {
+        Count: 1b,
+        id: "minecraft:iron_sword"
+      },
+      {
+        Count: 1b,
+        id: "minecraft:shield"
+      }
+    ],
+    ArmorDropChances: [0.0f, 0.0f, 0.0f, 0.0f],
+    HandDropChances: [0.0f, 0.0f],
+    SoundData: {
+      AmbientSound: "minecraft:entity.villager.ambient",
+      HurtSound: "minecraft:entity.villager.hurt",
+      DeathSound: "minecraft:entity.villager.death"
+    },
+    TradingData: {
+      Offers: {
+        Recipes: [
+          {
+            buy: {
+              Count: 10b,
+              id: "cisco_mod:champion_coin"
+            },
+            sell: {
+              Count: 1b,
+              id: "minecraft:health_boost_potion",
+              tag: {
+                Potion: "minecraft:strong_healing"
+              }
+            },
+            maxUses: 9999
+          },
+          {
+            buy: {
+              Count: 25b,
+              id: "cisco_mod:champion_coin"
+            },
+            sell: {
+              Count: 1b,
+              id: "apotheosis:gem",
+              tag: {
+                rarity: "rare"
+              }
+            },
+            maxUses: 9999
+          }
+        ]
+      }
+    },
+    ObjectiveData: {
+      ObjectiveDataSet: [
+        {
+          Type: "LOOK_AT_PLAYER"
+        }
+      ]
+    },
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [
+          {
+            Type: "OPEN_DEFAULT_DIALOG"
+          }
+        ]
+      }
+    },
+    DialogData: {
+      DefaultDialog: "cisco_guard_root",
+      DialogDataSet: [
+        {
+          Id: "cisco_guard_root",
+          Label: "El Llamado de la Guardia",
+          Question: "Saludos, forastero. Mis centinelas reportan nidos de monstruos en los alrededores del bosque. ¿Te unes a la defensa de la aldea?",
+          Buttons: [
+            {
+              Label: "[Mision] Cazar 5 Zombies",
+              Actions: [
+                {
+                  Type: "COMMAND",
+                  Command: "tellraw @p {\"text\":\"[Mision Aceptada] Elimina 5 zombies y vuelve por tu recompensa.\",\"color\":\"gold\"}"
+                },
+                {
+                  Type: "OPEN_NAMED_DIALOG",
+                  Dialog: "cisco_guard_ongoing"
+                }
+              ]
+            },
+            {
+              Label: "[Cobrar] Entregar Cabezas de Zombies",
+              Actions: [
+                {
+                  Type: "COMMAND",
+                  Command: "give @p cisco_mod:champion_coin 5"
+                },
+                {
+                  Type: "COMMAND",
+                  Command: "experience add @p 100 points"
+                },
+                {
+                  Type: "COMMAND",
+                  Command: "tellraw @p {\"text\":\"[Capitán] ¡Gran servicio! Aqui tienes tus 5 Monedas de Campeon y experiencia.\",\"color\":\"green\"}"
+                }
+              ]
+            },
+            {
+              Label: "[Comercio] Ver Suministros Militares",
+              Actions: [
+                {
+                  Type: "OPEN_TRADING_SCREEN"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          Id: "cisco_guard_ongoing",
+          Label: "En Curso",
+          Question: "No descanses hasta que el bosque sea seguro. Vuelve a cobrar cuando completes la purga.",
+          Buttons: [
+            {
+              Label: "Entendido.",
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

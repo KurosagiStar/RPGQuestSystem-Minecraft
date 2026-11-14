@@ -1,0 +1,348 @@
+{
+  PresetMetadata: {
+    author: "Server",
+    category: "General",
+    created: 1794353213551L,
+    description: "Capitán de la Guardia - Sistema Autónomo",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Capitan de la Guardia",
+    variantType: "PLAINS_ARMORER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [
+          {
+            Type: "OPEN_DEFAULT_DIALOG"
+          }
+        ]
+      }
+    },
+    ArmorItems: [
+      { Count: 1b, id: "minecraft:iron_boots" },
+      { Count: 1b, id: "minecraft:iron_leggings" },
+      { Count: 1b, id: "minecraft:iron_chestplate" },
+      { Count: 1b, id: "minecraft:iron_helmet" }
+    ],
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitan de la Guardia"}',
+    Tags: ["npc_main_comandante"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/give @initiator cisco_mod:champion_coin 5",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/experience add @initiator 2 levels",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_capitan_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_capitan_lista",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_capitan_entregada",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/scoreboard players reset @initiator cisco_z_kills",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"green\",\"bold\":true},{\"text\":\"¡Gran trabajo! Has recibido 5 Monedas de Campeón y 2 niveles de XP.\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Informe y Cobrar Recompensa"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING_SCREEN"
+                }
+              ],
+              Label: "comercio",
+              Name: "Comercio Militar"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_capitan_lista",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Mis centinelas me informan que limpiaste los alrededores!\\n\\n¡Buen trabajo, forastero! Entrega tu reporte militar y toma tu paga."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Aún estoy esperando el informe de las 5 bajas. Revisa tu HUD en pantalla.\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entendido",
+              Name: "Entendido, sigo cazando"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING_SCREEN"
+                }
+              ],
+              Label: "comercio",
+              Name: "Comercio Militar"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_capitan_activa",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "en_progreso",
+          Name: "Mision en Progreso",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "¡Forastero! Mis centinelas reportan que la horda sigue merodeando en las cercanías.\\n\\n¿Cómo va esa cacería de zombies? Recuerda que necesito 5 bajas confirmadas."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING_SCREEN"
+                }
+              ],
+              Label: "comercio",
+              Name: "Comercio Militar"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_capitan_entregada",
+              Type: "PLAYER_TAG"
+            }
+          ],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [
+            {
+              Text: "Gracias a tu valiente servicio, el perímetro sigue despejado."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "mision",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "mision",
+              Name: "Mision: Purgar No-muertos"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING_SCREEN"
+                }
+              ],
+              Label: "comercio",
+              Name: "Comercio Militar"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "¡Alto ahí, civil! Mis centinelas custodian esta aldea del asedio del Fell King.\\n\\n¿En qué puedo servirte?"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_capitan_activa",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/scoreboard objectives add cisco_z_kills dummy",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/scoreboard players set @initiator cisco_z_kills 0",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Elimina 5 zombies en los alrededores.\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Misión (Cazar 5 Zombies)"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Los bosques aledaños están infestados de zombies corruptos.\\n\\nNecesito que caces al menos 5 de ellos para asegurar el perímetro exterior."
+            }
+          ]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    EntityAttribute: {
+      CanCloseDoor: 1b,
+      CanFloat: 1b,
+      CanOpenDoor: 1b,
+      CanPassDoor: 1b,
+      IsInvulnerable: 1b
+    },
+    HandItems: [
+      { Count: 1b, id: "minecraft:iron_sword" },
+      { Count: 1b, id: "minecraft:shield" }
+    ],
+    ObjectiveData: {
+      ObjectiveDataSet: [
+        { Type: "LOOK_AT_PLAYER" },
+        { Type: "LOOK_AT_MOB" },
+        { Type: "LOOK_AT_RESET" }
+      ]
+    },
+    Offers: {
+      Inventory: {},
+      Recipes: {
+        Recipes: [
+          {
+            buy: { Count: 10b, id: "cisco_mod:champion_coin" },
+            buyB: { Count: -1b, id: "minecraft:air" },
+            demand: 0,
+            maxUses: 9999,
+            priceMultiplier: 1.0f,
+            rewardExp: 1b,
+            sell: { Count: 1b, id: "minecraft:potion", tag: { Potion: "minecraft:strong_healing" } },
+            specialPrice: 0,
+            uses: 0,
+            xp: 1
+          }
+        ]
+      }
+    },
+    PersistenceRequired: 1b,
+    PresetUUID: [I; -1532748211, 1287364520, -1948220147, 839145663],
+    Profession: "ARMORER",
+    Rotation: [0.0f, 0.0f],
+    SkinData: { Name: "PLAINS_ARMORER" },
+    TradingData: { TradingDataSet: { LastReset: 0L, Type: "BASIC" } },
+    UUID: [I; 840268351, 1150437155, -1439209100, -704086221],
+    VariantType: "PLAINS_ARMORER",
+    VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
+    id: "easy_npc:villager"
+  }
+}
