@@ -46,6 +46,10 @@ public class AdminNpcActionPacket {
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
                 sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] NPC " + msg.npcId + " spawneado y guardado."));
             } else if ("MOVE".equals(msg.action)) {
+                double[] oldPos = QuestConfig.NPC_LOCATIONS.get(msg.npcId);
+                if (oldPos != null && oldPos.length >= 3) {
+                    sp.serverLevel().getChunk(((int) Math.floor(oldPos[0])) >> 4, ((int) Math.floor(oldPos[2])) >> 4);
+                }
                 int moved = 0;
                 for (ServerLevel level : sp.getServer().getAllLevels()) {
                     for (Entity ent : level.getAllEntities()) {
