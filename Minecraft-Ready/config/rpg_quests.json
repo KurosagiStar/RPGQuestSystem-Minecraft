@@ -249,7 +249,7 @@
     "npcId": "npc_main_explorador",
     "description": "Cruza el portal de piedra luminosa y agua hacia las islas celestiales flotantes del Aether.",
     "suggestedLevel": 25,
-    "prerequisiteQuestId": "",
+    "prerequisiteQuestId": "dimension_twilight_forest",
     "activeTag": "q_aether_activa",
     "doneTag": "q_aether_lista",
     "completedTag": "q_aether_entregada",
@@ -282,7 +282,7 @@
     "npcId": "npc_main_explorador",
     "description": "Lanza un diamante en el manantial rodeado de flores y cruza al Bosque del Crepúsculo.",
     "suggestedLevel": 20,
-    "prerequisiteQuestId": "",
+    "prerequisiteQuestId": "trial_relic",
     "activeTag": "q_twilight_activa",
     "doneTag": "q_twilight_lista",
     "completedTag": "q_twilight_entregada",
@@ -675,7 +675,7 @@
     "npcId": "npc_main_ocultista",
     "description": "Construye o activa un portal y atraviesa el umbral hacia el inframundo.",
     "suggestedLevel": 10,
-    "prerequisiteQuestId": "",
+    "prerequisiteQuestId": "dimension_aether_expedition",
     "activeTag": "q_nether_activa",
     "doneTag": "q_nether_lista",
     "completedTag": "q_nether_entregada",
@@ -862,7 +862,8 @@
         "target": "minecraft:zombie",
         "amount": 5
       }
-    ]
+    ],
+    "prerequisiteQuestId": "explorar_torre"
   },
   {
     "id": "trial_mage",
@@ -940,7 +941,8 @@
         "target": "minecraft:pillager",
         "amount": 5
       }
-    ]
+    ],
+    "prerequisiteQuestId": "trial_warrior"
   },
   {
     "id": "bibliotecario_pergaminos",
