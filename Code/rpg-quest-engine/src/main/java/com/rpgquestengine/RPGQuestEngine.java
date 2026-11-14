@@ -439,6 +439,11 @@ public class RPGQuestEngine {
                 String rewardedTag = "rqe_rewarded_" + q.id;
                 if (!playerTags.contains(rewardedTag)) {
                     sp.addTag(rewardedTag);
+                    if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty()) {
+                        sp.getServer().getCommands().performPrefixedCommand(
+                                sp.createCommandSourceStack().withPermission(4).withSuppressedOutput(),
+                                "ftbquests change_progress " + sp.getScoreboardName() + " complete " + q.ftbQuestId);
+                    }
                     if (q.rewardXp > 0) {
                         sp.giveExperiencePoints(q.rewardXp);
                     }

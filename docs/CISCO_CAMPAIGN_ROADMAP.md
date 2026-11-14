@@ -28,3 +28,4 @@ Seguimiento de capítulos de Cisco convertidos a misiones de NPCs, su importanci
 | **Cisco's Legacy / Divine Relics / Ashes of Allegiance** | `MAIN` / `SECONDARY` | Alta | Larga |
 | **Weapons of Legend / Celestial Weaponry** | `SECONDARY` | Media | Larga |
 | **Trophies of the Tide / Fermented Flavours / Foundation** | `REPEATABLE` / `SECONDARY` | Baja | Media |
+

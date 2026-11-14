@@ -17,6 +17,8 @@ public class QuestDefinition {
     public String prerequisiteQuestId = "";
     // Tags que bloquean esta misión (para rutas ramificadas / decisiones excluyentes)
     public List<String> blockedByTags = new ArrayList<>();
+    // ID hexadecimal opcional de FTB Quests para sincronizar progreso al entregar
+    public String ftbQuestId = "";
 
     // Recompensas automáticas otorgadas por el motor al completarse
     public int rewardXp = 0;
