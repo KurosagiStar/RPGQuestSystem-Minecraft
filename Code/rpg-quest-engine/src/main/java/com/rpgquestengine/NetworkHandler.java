@@ -31,6 +31,14 @@ public class NetworkHandler {
                 AbandonQuestPacket::encode,
                 AbandonQuestPacket::decode,
                 AbandonQuestPacket::handle);
+        CHANNEL.registerMessage(id++, AdminNpcActionPacket.class,
+                AdminNpcActionPacket::encode,
+                AdminNpcActionPacket::decode,
+                AdminNpcActionPacket::handle);
+        CHANNEL.registerMessage(id++, OpenAdminUiPacket.class,
+                OpenAdminUiPacket::encode,
+                OpenAdminUiPacket::decode,
+                OpenAdminUiPacket::handle);
     }
 }
 

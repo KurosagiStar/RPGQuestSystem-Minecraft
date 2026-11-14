@@ -142,6 +142,13 @@ public class QuestHudOverlay {
                         targetNpcX = remembered[0];
                         targetNpcZ = remembered[1];
                         hasValidNpcTarget = true;
+                    } else if (q.npcId != null && QuestConfig.NPC_LOCATIONS.containsKey(q.npcId)) {
+                        double[] cfgLoc = QuestConfig.NPC_LOCATIONS.get(q.npcId);
+                        if (cfgLoc != null && cfgLoc.length >= 3) {
+                            targetNpcX = cfgLoc[0];
+                            targetNpcZ = cfgLoc[2];
+                            hasValidNpcTarget = true;
+                        }
                     }
                 }
             }

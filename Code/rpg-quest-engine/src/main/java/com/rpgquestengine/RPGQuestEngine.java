@@ -177,6 +177,41 @@ public class RPGQuestEngine {
                         return count;
                     })
                 )
+                .then(Commands.literal("set_npc_pos")
+                    .then(Commands.argument("npc_id", com.mojang.brigadier.arguments.StringArgumentType.word())
+                        .executes(ctx -> {
+                            ServerPlayer sp = ctx.getSource().getPlayerOrException();
+                            String npcId = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "npc_id");
+                            QuestConfig.setNpcLocation(npcId, sp.getX(), sp.getY(), sp.getZ());
+                            ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Posición guardada para " + npcId + " (" + (int)sp.getX() + ", " + (int)sp.getY() + ", " + (int)sp.getZ() + ")."), true);
+                            return 1;
+                        })
+                    )
+                )
+                .then(Commands.literal("spawn_npc")
+                    .then(Commands.argument("npc_id", com.mojang.brigadier.arguments.StringArgumentType.word())
+                        .executes(ctx -> {
+                            ServerPlayer sp = ctx.getSource().getPlayerOrException();
+                            String npcId = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "npc_id");
+                            String dim = sp.serverLevel().dimension().location().toString();
+                            String cmd = String.format(java.util.Locale.ROOT,
+                                "execute in %s positioned %.3f %.3f %.3f rotated %.2f %.2f run easy_npc preset custom import villager/%s",
+                                dim, sp.getX(), sp.getY(), sp.getZ(), sp.getYRot(), sp.getXRot(), npcId);
+                            sp.getServer().getCommands().performPrefixedCommand(
+                                sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), cmd);
+                            QuestConfig.setNpcLocation(npcId, sp.getX(), sp.getY(), sp.getZ());
+                            ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] NPC " + npcId + " spawneado y posición guardada."), true);
+                            return 1;
+                        })
+                    )
+                )
+                .then(Commands.literal("ui")
+                    .executes(ctx -> {
+                        ServerPlayer sp = ctx.getSource().getPlayerOrException();
+                        NetworkHandler.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp), new OpenAdminUiPacket());
+                        return 1;
+                    })
+                )
         );
     }
 

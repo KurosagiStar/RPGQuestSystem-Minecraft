@@ -24,6 +24,7 @@ public class QuestConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static List<QuestDefinition> QUESTS = new ArrayList<>();
+    public static java.util.Map<String, double[]> NPC_LOCATIONS = new java.util.HashMap<>();
 
     public static int hudPosX = 10;
     public static int hudPosY = 15;
@@ -36,6 +37,17 @@ public class QuestConfig {
             if (id.equals(q.id)) return q;
         }
         return null;
+    }
+
+    public static void setNpcLocation(String npcId, double x, double y, double z) {
+        if (npcId == null || npcId.isEmpty()) return;
+        NPC_LOCATIONS.put(npcId, new double[]{x, y, z});
+        File npcLocFile = FMLPaths.CONFIGDIR.get().resolve("rpg_npc_locations.json").toFile();
+        try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(npcLocFile), StandardCharsets.UTF_8)) {
+            GSON.toJson(NPC_LOCATIONS, writer);
+        } catch (Exception e) {
+            LOGGER.error("[RPGQuestEngine] Error saving rpg_npc_locations.json", e);
+        }
     }
 
     public static void loadConfig() {
@@ -59,6 +71,17 @@ public class QuestConfig {
                 LOGGER.info("[RPGQuestEngine] Loaded {} quests from rpg_quests.json", QUESTS.size());
             } catch (Exception e) {
                 LOGGER.error("[RPGQuestEngine] Error loading rpg_quests.json", e);
+            }
+        }
+
+        File npcLocFile = configDir.resolve("rpg_npc_locations.json").toFile();
+        if (npcLocFile.exists()) {
+            try (InputStreamReader reader = new InputStreamReader(new FileInputStream(npcLocFile), StandardCharsets.UTF_8)) {
+                Type mapType = new TypeToken<java.util.Map<String, double[]>>() {}.getType();
+                java.util.Map<String, double[]> loadedLocs = GSON.fromJson(reader, mapType);
+                if (loadedLocs != null) NPC_LOCATIONS = loadedLocs;
+            } catch (Exception e) {
+                LOGGER.error("[RPGQuestEngine] Error loading rpg_npc_locations.json", e);
             }
         }
 
