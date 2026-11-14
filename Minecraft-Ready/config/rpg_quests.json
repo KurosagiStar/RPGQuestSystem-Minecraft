@@ -28,10 +28,6 @@
       {
         "id": "minecraft:emerald",
         "count": 3
-      },
-      {
-        "id": "apotheosis:mythic_material",
-        "count": 1
       }
     ]
   },
@@ -64,10 +60,6 @@
       {
         "id": "minecraft:emerald",
         "count": 3
-      },
-      {
-        "id": "apotheosis:mythic_material",
-        "count": 1
       }
     ]
   },
@@ -343,10 +335,6 @@
       {
         "id": "minecraft:emerald",
         "count": 6
-      },
-      {
-        "id": "apotheosis:mythic_material",
-        "count": 1
       }
     ]
   },
@@ -773,6 +761,10 @@
       {
         "id": "minecraft:emerald",
         "count": 6
+      },
+      {
+        "id": "apotheosis:mythic_material",
+        "count": 1
       }
     ]
   },
@@ -911,6 +903,10 @@
       {
         "id": "skilltree:wisdom_scroll",
         "count": 1
+      },
+      {
+        "id": "apotheosis:mythic_material",
+        "count": 1
       }
     ],
     "rewards": [
@@ -985,6 +981,10 @@
       {
         "id": "minecraft:emerald",
         "count": 5
+      },
+      {
+        "id": "apotheosis:mythic_material",
+        "count": 1
       }
     ],
     "rewards": [
