@@ -1,0 +1,117 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Ocultista - Mision de Viajar al Nether",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Ocultista del Vacio",
+    variantType: "SWAMP_CLERIC",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#AA00AA","bold":true,"text":"Ocultista del Vacio"}',
+    Tags: ["npc_main_ocultista"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator minecraft:blaze_rod 2", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator cisco_mod:champion_coin 10", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/experience add @initiator 3 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_nether_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_nether_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_nether_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Ocultista] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"¡Has regresado del inframundo! Toma tus varas de blaze y monedas.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Reporte Infernal y Cobrar"
+            },
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_nether_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [{ Text: "¡El calor del fuego eterno aún emana de tu armadura! Pocos mortales cruzan ese umbral y regresan cuerdos. ¡Toma tu tributo!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando el portal" }
+          ],
+          Conditions: [{ Name: "q_nether_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "Construye un portal de obsidiana y enciéndelo. Solo necesitas pisar el suelo de la dimensión del Nether." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_nether_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "Los secretos del plano infernal están documentados en nuestros grimorios." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: El Portal al Inframundo" },
+            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
+
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "¿Sientes el eco de la obsidiana? Las dimensiones se agitan. Busco a un aventurero con el coraje de cruzar el umbral del fuego." }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_nether_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Ocultista] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"¡Misión aceptada! Cruza el portal al Nether.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Mision (Viajar al Nether)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Construye o encuentra un portal y viaja a la dimensión del Nether (minecraft:the_nether). Te pagaré con varas de blaze y monedas de campeón." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:obsidian" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "CLERIC",
+    VariantType: "SWAMP_CLERIC",
+    VillagerData: { profession: "minecraft:cleric", type: "minecraft:swamp" },
+    id: "easy_npc:villager"
+  }
+}
+

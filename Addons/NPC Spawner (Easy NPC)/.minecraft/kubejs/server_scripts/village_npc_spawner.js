@@ -34,22 +34,17 @@ function enableNpcCombat(npc) {
 
 // Tabla de presets configurados con su nombre visible y peso de aparicion
 var NPC_SELECTION_TABLE = [
-  { id: 'villager_guardia_main', name: 'Guardia', rl: 'easy_npc:preset/villager/villager_guardia_main.npc.snbt', weight: 10 },
-  { id: 'villager_explorador_main', name: 'Explorador', rl: 'easy_npc:preset/villager/villager_explorador_main.npc.snbt', weight: 10 },
-  { id: 'villager_dimension_main', name: 'Viajero Dimensional', rl: 'easy_npc:preset/villager/villager_dimension_main.npc.snbt', weight: 8 },
-  { id: 'villager_alquimista_secondary', name: 'Alquimista', rl: 'easy_npc:preset/villager/villager_alquimista_secondary.npc.snbt', weight: 15 },
-  { id: 'villager_bioma_secondary', name: 'Erudito de Biomas', rl: 'easy_npc:preset/villager/villager_bioma_secondary.npc.snbt', weight: 15 },
-  { id: 'villager_craftear_secondary', name: 'Artesano', rl: 'easy_npc:preset/villager/villager_craftear_secondary.npc.snbt', weight: 15 },
-  { id: 'villager_estructura_secondary', name: 'Cartografo', rl: 'easy_npc:preset/villager/villager_estructura_secondary.npc.snbt', weight: 15 },
-  { id: 'villager_minar_secondary', name: 'Minero', rl: 'easy_npc:preset/villager/villager_minar_secondary.npc.snbt', weight: 15 },
-  { id: 'villager_cazador_contracts', name: 'Cazador', rl: 'easy_npc:preset/villager/villager_cazador_contracts.npc.snbt', weight: 12 },
-  { id: 'villager_centinela_contracts', name: 'Centinela', rl: 'easy_npc:preset/villager/villager_centinela_contracts.npc.snbt', weight: 12 },
-  { id: 'villager_gremio_contracts', name: 'Maestro del Gremio', rl: 'easy_npc:preset/villager/villager_gremio_contracts.npc.snbt', weight: 12 },
-  { id: 'villager_matar_contracts', name: 'Mercenario', rl: 'easy_npc:preset/villager/villager_matar_contracts.npc.snbt', weight: 12 },
-  { id: 'villager_tabernero_contracts', name: 'Tabernero', rl: 'easy_npc:preset/villager/villager_tabernero_contracts.npc.snbt', weight: 12 },
-  { id: 'villager_vigia_contracts', name: 'Vigia', rl: 'easy_npc:preset/villager/villager_vigia_contracts.npc.snbt', weight: 12 },
-  { id: 'villager_hornear_repeatable', name: 'Panadero', rl: 'easy_npc:preset/villager/villager_hornear_repeatable.npc.snbt', weight: 18 },
-  { id: 'villager_pescar_repeatable', name: 'Pescador', rl: 'easy_npc:preset/villager/villager_pescar_repeatable.npc.snbt', weight: 18 }
+  { id: 'npc_main_comandante', name: 'Comandante', rl: 'easy_npc:preset/villager/npc_main_comandante.npc.snbt', weight: 10 },
+  { id: 'npc_main_explorador', name: 'Explorador', rl: 'easy_npc:preset/villager/npc_main_explorador.npc.snbt', weight: 10 },
+  { id: 'npc_main_ocultista', name: 'Ocultista', rl: 'easy_npc:preset/villager/npc_main_ocultista.npc.snbt', weight: 8 },
+  { id: 'npc_sec_alquimista', name: 'Alquimista', rl: 'easy_npc:preset/villager/npc_sec_alquimista.npc.snbt', weight: 15 },
+  { id: 'npc_sec_armero', name: 'Armero', rl: 'easy_npc:preset/villager/npc_sec_armero.npc.snbt', weight: 15 },
+  { id: 'npc_sec_minero', name: 'Minero', rl: 'easy_npc:preset/villager/npc_sec_minero.npc.snbt', weight: 15 },
+  { id: 'npc_contract_cazador', name: 'Cazador', rl: 'easy_npc:preset/villager/npc_contract_cazador.npc.snbt', weight: 12 },
+  { id: 'npc_contract_tabernero', name: 'Tabernero', rl: 'easy_npc:preset/villager/npc_contract_tabernero.npc.snbt', weight: 12 },
+  { id: 'npc_contract_vigia', name: 'Vigia', rl: 'easy_npc:preset/villager/npc_contract_vigia.npc.snbt', weight: 12 },
+  { id: 'npc_rep_panadero', name: 'Panadero', rl: 'easy_npc:preset/villager/npc_rep_panadero.npc.snbt', weight: 18 },
+  { id: 'npc_rep_pescador', name: 'Pescador', rl: 'easy_npc:preset/villager/npc_rep_pescador.npc.snbt', weight: 18 }
 ]
 
 // Obtiene los identificadores de presets que ya existen en el radio para no repetirlos

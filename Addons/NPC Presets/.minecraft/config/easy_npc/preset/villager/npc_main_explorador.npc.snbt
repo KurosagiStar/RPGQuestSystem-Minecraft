@@ -1,4 +1,4 @@
-﻿{
+{
   PresetMetadata: {
     author: "RPGQuestEngine",
     category: "General",
@@ -17,7 +17,7 @@
       }
     },
     CustomName: '{"color":"#55FFFF","bold":true,"text":"Explorador del Sendero"}',
-    Tags: ["villager_explorador_main"],
+    Tags: ["npc_main_explorador"],
     DialogData: {
       DialogDataSet: [
         {
@@ -37,6 +37,8 @@
               Name: "Entregar Informe del Valle y Cobrar"
             },
             { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
+
 
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
@@ -49,6 +51,8 @@
         {
           Buttons: [
             { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
+
 
             { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo explorando el sector con la brújula" }
           ],
@@ -61,6 +65,8 @@
         {
           Buttons: [
             { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
+
 
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
@@ -74,6 +80,8 @@
           Buttons: [
             { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: La Torre de la Niebla" },
             { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
+            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
+
 
             { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
           ],
