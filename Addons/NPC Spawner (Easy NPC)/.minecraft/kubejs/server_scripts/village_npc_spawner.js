@@ -41,7 +41,11 @@ var NPC_SELECTION_TABLE = [
   { id: 'npc_contract_tabernero', name: 'Tabernero', rl: 'easy_npc:preset/villager/npc_contract_tabernero.npc.snbt', weight: 12, blocks: ['minecraft:barrel', 'minecraft:smoker', 'minecraft:lantern'] },
   { id: 'npc_contract_vigia', name: 'Vigia', rl: 'easy_npc:preset/villager/npc_contract_vigia.npc.snbt', weight: 12, blocks: ['minecraft:bell', 'minecraft:lantern', 'minecraft:stone_brick_wall'] },
   { id: 'npc_rep_panadero', name: 'Panadero', rl: 'easy_npc:preset/villager/npc_rep_panadero.npc.snbt', weight: 18, blocks: ['minecraft:smoker', 'minecraft:hay_block', 'minecraft:composter'] },
-  { id: 'npc_rep_pescador', name: 'Pescador', rl: 'easy_npc:preset/villager/npc_rep_pescador.npc.snbt', weight: 18, blocks: ['minecraft:barrel', 'minecraft:water'] }
+  { id: 'npc_rep_pescador', name: 'Pescador', rl: 'easy_npc:preset/villager/npc_rep_pescador.npc.snbt', weight: 18, blocks: ['minecraft:barrel', 'minecraft:water'] },
+  { id: 'npc_sec_bibliotecario', name: 'Bibliotecario', rl: 'easy_npc:preset/villager/npc_sec_bibliotecario.npc.snbt', weight: 15, blocks: ['minecraft:lectern', 'minecraft:bookshelf'] },
+  { id: 'npc_sec_cartografo', name: 'Cartografo', rl: 'easy_npc:preset/villager/npc_sec_cartografo.npc.snbt', weight: 15, blocks: ['minecraft:cartography_table'] },
+  { id: 'npc_contract_mercenario', name: 'Mercenario', rl: 'easy_npc:preset/villager/npc_contract_mercenario.npc.snbt', weight: 12, blocks: ['minecraft:grindstone', 'minecraft:bell', 'minecraft:iron_bars'] },
+  { id: 'npc_rep_cazador_nocturno', name: 'Cazador Nocturno', rl: 'easy_npc:preset/villager/npc_rep_cazador_nocturno.npc.snbt', weight: 14, blocks: ['minecraft:campfire', 'minecraft:lantern'] }
 ]
 
 // Obtiene los identificadores de presets que ya existen en el radio para no repetirlos

@@ -1,0 +1,108 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Herrero Enano - Misión de Minería",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Herrero Enano",
+    variantType: "TAIGA_ARMORER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Herrero Enano"}',
+    Tags: ["npc_sec_bibliotecario"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/give @initiator minecraft:iron_pickaxe 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/give @initiator minecraft:coal 8", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_biblio_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator remove q_biblio_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tag @initiator add q_biblio_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Herrero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Buen mineral! Toma tus herramientas y carbón.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "cobrar",
+              Name: "Entregar Menas y Cobrar"
+            },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_biblio_lista", Type: "PLAYER_TAG" }],
+          Label: "mision_lista",
+          Name: "Mision Completada",
+          Priority: 20,
+          Texts: [{ Text: "¡Por las barbas de mi padre! Ese mineral de hierro servirá para forjar las mejores hojas. ¡Aquí tienes tu paga!" }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo picando en las minas" }
+          ],
+          Conditions: [{ Name: "q_biblio_activa", Type: "PLAYER_TAG" }],
+          Label: "en_progreso",
+          Name: "En Progreso",
+          Priority: 10,
+          Texts: [{ Text: "¿Dónde están las 8 menas de hierro? La forja se enfría, baja a las cavernas y pica ese mineral." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Conditions: [{ Name: "q_biblio_entregada", Type: "PLAYER_TAG" }],
+          Label: "terminado",
+          Name: "Servicio Cumplido",
+          Priority: 15,
+          Texts: [{ Text: "La forja arde gracias a tus menas. Que el acero te acompañe." }]
+        },
+        {
+          Buttons: [
+            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: Suministros de la Forja" },
+            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [{ Text: "¡Saludos, viajero! El fuelle nunca descansa, pero me estoy quedando sin mineral de hierro para las armas." }]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                { Cmd: "/tag @initiator add q_biblio_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Cmd: "/tellraw @initiator [{\"text\":\"[Herrero] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Pica 8 menas de hierro.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
+                { Type: "CLOSE_DIALOG" }
+              ],
+              Label: "aceptar",
+              Name: "Aceptar Misión (Picar 8 Hierro)"
+            },
+            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+          ],
+          Label: "mision",
+          Name: "Mision",
+          Priority: -1,
+          Texts: [{ Text: "Necesito que bajes a las minas y piques al menos 8 bloques de Mena de Hierro. Te recompensaré con buen carbón y herramientas forjadas." }]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:iron_pickaxe" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "TOOLSMITH",
+    VariantType: "TAIGA_ARMORER",
+    VillagerData: { profession: "minecraft:toolsmith", type: "minecraft:taiga" },
+    id: "easy_npc:villager"
+  }
+}
+

@@ -969,5 +969,147 @@
                            "amount":  5
                        }
                    ]
+    },
+    {
+        "id":  "bibliotecario_pergaminos",
+        "category":  "SECONDARY",
+        "title":  "Los Tomos Perdidos",
+        "npc":  "Bibliotecario",
+        "npcId":  "npc_sec_bibliotecario",
+        "description":  "Necesito restaurar el archivo de la aldea. Tráeme libros y gemas de fuente.",
+        "suggestedLevel":  3,
+        "activeTag":  "q_biblio_activa",
+        "doneTag":  "q_biblio_lista",
+        "completedTag":  "q_biblio_entregada",
+        "rewardXp":  180,
+        "rewardItems":  [
+                            {
+                                "id":  "skilltree:wisdom_scroll",
+                                "count":  1
+                            }
+                        ],
+        "rewards":  [
+                        "180 XP",
+                        "1x Pergamino de Sabiduría"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Reúne libros",
+                           "type":  "ITEM",
+                           "target":  "minecraft:book",
+                           "amount":  8
+                       },
+                       {
+                           "description":  "Reúne gemas de fuente",
+                           "type":  "ITEM",
+                           "target":  "ars_nouveau:source_gem",
+                           "amount":  2
+                       }
+                   ]
+    },
+    {
+        "id":  "cartografo_ruinas",
+        "category":  "SECONDARY",
+        "title":  "Rutas Olvidadas",
+        "npc":  "Cartógrafo",
+        "npcId":  "npc_sec_cartografo",
+        "description":  "Traza los alrededores localizando una torre de saqueadores cercana.",
+        "suggestedLevel":  5,
+        "activeTag":  "q_carto_activa",
+        "doneTag":  "q_carto_lista",
+        "completedTag":  "q_carto_entregada",
+        "rewardXp":  220,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  5
+                            }
+                        ],
+        "rewards":  [
+                        "220 XP",
+                        "5x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Localiza un Puesto de Saqueadores",
+                           "type":  "STRUCTURE",
+                           "target":  "minecraft:pillager_outpost",
+                           "amount":  1
+                       }
+                   ]
+    },
+    {
+        "id":  "contrato_mercenario_horda",
+        "category":  "CONTRACT",
+        "title":  "Contrato: Purgación de la Horda",
+        "npc":  "Mercenario",
+        "npcId":  "npc_contract_mercenario",
+        "description":  "Los caminos están infestados. Limpia zombis, esqueletos y arañas.",
+        "suggestedLevel":  4,
+        "activeTag":  "q_merc_horda_activa",
+        "doneTag":  "q_merc_horda_lista",
+        "completedTag":  "q_merc_horda_entregada",
+        "rewardXp":  250,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:emerald",
+                                "count":  6
+                            }
+                        ],
+        "rewards":  [
+                        "250 XP",
+                        "6x Esmeraldas"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Abate zombis",
+                           "type":  "KILL",
+                           "target":  "minecraft:zombie",
+                           "amount":  8
+                       },
+                       {
+                           "description":  "Abate esqueletos",
+                           "type":  "KILL",
+                           "target":  "minecraft:skeleton",
+                           "amount":  6
+                       },
+                       {
+                           "description":  "Abate arañas",
+                           "type":  "KILL",
+                           "target":  "minecraft:spider",
+                           "amount":  4
+                       }
+                   ]
+    },
+    {
+        "id":  "rep_cazador_nocturno",
+        "category":  "REPEATABLE",
+        "title":  "Caza Nocturna",
+        "npc":  "Cazador Nocturno",
+        "npcId":  "npc_rep_cazador_nocturno",
+        "description":  "Los Endermen merodean al caer la noche. Tráeme pruebas de su derrota.",
+        "suggestedLevel":  7,
+        "activeTag":  "q_nocturno_activa",
+        "doneTag":  "q_nocturno_lista",
+        "completedTag":  "q_nocturno_entregada",
+        "rewardXp":  200,
+        "rewardItems":  [
+                            {
+                                "id":  "minecraft:ender_pearl",
+                                "count":  2
+                            }
+                        ],
+        "rewards":  [
+                        "200 XP",
+                        "2x Perlas de Ender"
+                    ],
+        "stages":  [
+                       {
+                           "description":  "Abate Endermen",
+                           "type":  "KILL",
+                           "target":  "minecraft:enderman",
+                           "amount":  3
+                       }
+                   ]
     }
 ]
