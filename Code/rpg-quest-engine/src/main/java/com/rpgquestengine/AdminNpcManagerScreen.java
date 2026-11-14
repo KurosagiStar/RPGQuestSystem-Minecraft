@@ -223,31 +223,66 @@ public class AdminNpcManagerScreen extends Screen {
         int rightW = this.width - rightX - 20;
         g.fill(rightX - 4, listY - 2, rightX + rightW, this.height - 44, 0x88000000);
 
-        NpcEntry selEntry = visibleNpcs.stream().filter(e -> e.npcId.equals(selectedNpcId)).findFirst().orElse(null);
-        if (selEntry != null) {
-            int y = listY + 4;
-            g.drawString(font, "§6§l" + selEntry.npcName, rightX + 4, y, 0xFFFFFF);
-            y += 12;
-            g.drawString(font, "§7ID: §f" + selEntry.npcId + "  §e[Paso #" + selEntry.chainStep + (selEntry.chainStep == 1 ? " - Inicio" : " - Encadenado") + "]", rightX + 4, y, 0xFFFFFF);
-            y += 12;
+        if (questView) {
+            QuestDefinition selQ = visibleQuests.stream().filter(q -> q.id.equals(selectedQuestId)).findFirst().orElse(null);
+            if (selQ != null) {
+                int y = listY + 4;
+                g.drawString(font, "§6§l" + selQ.title, rightX + 4, y, 0xFFFFFF);
+                y += 12;
+                g.drawString(font, "§7Quest ID: §f" + selQ.id, rightX + 4, y, 0xFFFFFF);
+                y += 12;
+                g.drawString(font, "§7NPC: §f" + (selQ.npc != null ? selQ.npc : selQ.npcId) + " §8(" + selQ.npcId + ")", rightX + 4, y, 0xFFFFFF);
+                y += 12;
 
-            double[] pos = QuestConfig.NPC_LOCATIONS.get(selEntry.npcId);
-            String posStr = pos != null && pos.length >= 3
-                ? String.format("§a(%d, %d, %d)", (int) pos[0], (int) pos[1], (int) pos[2])
-                : "§cSin posición guardada";
-            g.drawString(font, "§7Posición: " + posStr, rightX + 4, y, 0xFFFFFF);
-            y += 16;
+                double[] pos = QuestConfig.NPC_LOCATIONS.get(selQ.npcId);
+                String posStr = pos != null && pos.length >= 3
+                    ? String.format("§a(%d, %d, %d)", (int) pos[0], (int) pos[1], (int) pos[2])
+                    : "§cSin posición guardada";
+                g.drawString(font, "§7Posición NPC: " + posStr, rightX + 4, y, 0xFFFFFF);
+                y += 12;
 
-            g.drawString(font, "§eMisiones asignadas:", rightX + 4, y, 0xFFFFFF);
-            y += 12;
+                if (selQ.prerequisiteQuestId != null && !selQ.prerequisiteQuestId.isEmpty()) {
+                    g.drawString(font, "§7Prerrequisito: §b" + selQ.prerequisiteQuestId, rightX + 4, y, 0xFFFFFF);
+                    y += 12;
+                }
+                y += 4;
+                g.drawString(font, "§eObjetivos:", rightX + 4, y, 0xFFFFFF);
+                y += 12;
+                if (selQ.stages != null) {
+                    for (QuestDefinition.QuestStage st : selQ.stages) {
+                        if (y > this.height - 58) break;
+                        g.drawString(font, "§f- [" + st.type + "] " + st.description, rightX + 6, y, 0xFFFFFF);
+                        y += 10;
+                    }
+                }
+            }
+        } else {
+            NpcEntry selEntry = visibleNpcs.stream().filter(e -> e.npcId.equals(selectedNpcId)).findFirst().orElse(null);
+            if (selEntry != null) {
+                int y = listY + 4;
+                g.drawString(font, "§6§l" + selEntry.npcName, rightX + 4, y, 0xFFFFFF);
+                y += 12;
+                g.drawString(font, "§7ID: §f" + selEntry.npcId + "  §e[Paso #" + selEntry.chainStep + (selEntry.chainStep == 1 ? " - Inicio" : " - Encadenado") + "]", rightX + 4, y, 0xFFFFFF);
+                y += 12;
 
-            for (QuestDefinition q : selEntry.quests) {
-                if (y > this.height - 58) break;
-                g.drawString(font, "§f- [" + q.category + "] " + q.title, rightX + 6, y, 0xFFFFFF);
-                y += 10;
-                if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
-                    g.drawString(font, "  §7Prerreq: §b" + q.prerequisiteQuestId, rightX + 6, y, 0xAAAAAA);
+                double[] pos = QuestConfig.NPC_LOCATIONS.get(selEntry.npcId);
+                String posStr = pos != null && pos.length >= 3
+                    ? String.format("§a(%d, %d, %d)", (int) pos[0], (int) pos[1], (int) pos[2])
+                    : "§cSin posición guardada";
+                g.drawString(font, "§7Posición: " + posStr, rightX + 4, y, 0xFFFFFF);
+                y += 16;
+
+                g.drawString(font, "§eMisiones asignadas:", rightX + 4, y, 0xFFFFFF);
+                y += 12;
+
+                for (QuestDefinition q : selEntry.quests) {
+                    if (y > this.height - 58) break;
+                    g.drawString(font, "§f- [" + q.category + "] " + q.title, rightX + 6, y, 0xFFFFFF);
                     y += 10;
+                    if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                        g.drawString(font, "  §7Prerreq: §b" + q.prerequisiteQuestId, rightX + 6, y, 0xAAAAAA);
+                        y += 10;
+                    }
                 }
             }
         }
