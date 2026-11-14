@@ -195,8 +195,8 @@ public class RPGQuestEngine {
                             String npcId = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "npc_id");
                             String dim = sp.serverLevel().dimension().location().toString();
                             String cmd = String.format(java.util.Locale.ROOT,
-                                "execute in %s positioned %.3f %.3f %.3f rotated %.2f %.2f run easy_npc preset custom import villager/%s",
-                                dim, sp.getX(), sp.getY(), sp.getZ(), sp.getYRot(), sp.getXRot(), npcId);
+                                "execute in %s run easy_npc preset custom import villager/%s %.3f %.3f %.3f",
+                                dim, npcId, sp.getX(), sp.getY(), sp.getZ());
                             sp.getServer().getCommands().performPrefixedCommand(
                                 sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), cmd);
                             QuestConfig.setNpcLocation(npcId, sp.getX(), sp.getY(), sp.getZ());

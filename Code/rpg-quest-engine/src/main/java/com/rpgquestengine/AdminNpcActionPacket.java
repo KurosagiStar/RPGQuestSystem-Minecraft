@@ -42,8 +42,8 @@ public class AdminNpcActionPacket {
             if ("SPAWN".equals(msg.action)) {
                 String dim = sp.serverLevel().dimension().location().toString();
                 String cmd = String.format(Locale.ROOT,
-                    "execute in %s positioned %.3f %.3f %.3f rotated %.2f %.2f run easy_npc preset custom import villager/%s",
-                    dim, x, y, z, yRot, xRot, msg.npcId);
+                    "execute in %s run easy_npc preset custom import villager/%s %.3f %.3f %.3f",
+                    dim, msg.npcId, x, y, z);
                 sp.getServer().getCommands().performPrefixedCommand(
                     sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), cmd);
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
@@ -69,3 +69,4 @@ public class AdminNpcActionPacket {
         ctx.get().setPacketHandled(true);
     }
 }
+
