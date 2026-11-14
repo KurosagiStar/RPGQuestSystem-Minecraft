@@ -193,12 +193,9 @@ public class RPGQuestEngine {
                         .executes(ctx -> {
                             ServerPlayer sp = ctx.getSource().getPlayerOrException();
                             String npcId = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "npc_id");
-                            String dim = sp.serverLevel().dimension().location().toString();
-                            String cmd = String.format(java.util.Locale.ROOT,
-                                "execute in %s run easy_npc preset custom import villager/%s %.3f %.3f %.3f",
-                                dim, npcId, sp.getX(), sp.getY(), sp.getZ());
+                            String cmd = "easy_npc preset custom import villager/" + npcId;
                             sp.getServer().getCommands().performPrefixedCommand(
-                                sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), cmd);
+                                sp.createCommandSourceStack().withPermission(4), cmd);
                             QuestConfig.setNpcLocation(npcId, sp.getX(), sp.getY(), sp.getZ());
                             ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] NPC " + npcId + " spawneado y posición guardada."), true);
                             return 1;

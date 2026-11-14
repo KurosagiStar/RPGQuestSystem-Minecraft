@@ -40,12 +40,9 @@ public class AdminNpcActionPacket {
             float xRot = sp.getXRot();
 
             if ("SPAWN".equals(msg.action)) {
-                String dim = sp.serverLevel().dimension().location().toString();
-                String cmd = String.format(Locale.ROOT,
-                    "execute in %s run easy_npc preset custom import villager/%s %.3f %.3f %.3f",
-                    dim, msg.npcId, x, y, z);
+                String cmd = "easy_npc preset custom import villager/" + msg.npcId;
                 sp.getServer().getCommands().performPrefixedCommand(
-                    sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), cmd);
+                    sp.createCommandSourceStack().withPermission(4), cmd);
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
                 sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] NPC " + msg.npcId + " spawneado y guardado."));
             } else if ("MOVE".equals(msg.action)) {
