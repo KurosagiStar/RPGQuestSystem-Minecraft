@@ -21,6 +21,7 @@ public class AdminNpcManagerScreen extends Screen {
         String npcId;
         String npcName;
         String category;
+        int chainStep = 1;
         List<QuestDefinition> quests = new ArrayList<>();
     }
 
@@ -91,10 +92,27 @@ public class AdminNpcManagerScreen extends Screen {
             entry.quests.add(q);
         }
         visibleNpcs.addAll(map.values());
+        for (NpcEntry e : visibleNpcs) {
+            int minStep = Integer.MAX_VALUE;
+            for (QuestDefinition q : e.quests) {
+                minStep = Math.min(minStep, getChainDepth(q, 0));
+            }
+            e.chainStep = minStep == Integer.MAX_VALUE ? 1 : minStep;
+        }
+        visibleNpcs.sort((a, b) -> {
+            int cmp = Integer.compare(a.chainStep, b.chainStep);
+            return cmp != 0 ? cmp : a.npcName.compareToIgnoreCase(b.npcName);
+        });
         if (!visibleNpcs.isEmpty() && (selectedNpcId == null || visibleNpcs.stream().noneMatch(e -> e.npcId.equals(selectedNpcId)))) {
             selectedNpcId = visibleNpcs.get(0).npcId;
         }
         updateButtons();
+    }
+
+    private int getChainDepth(QuestDefinition q, int guard) {
+        if (q == null || guard > 15 || q.prerequisiteQuestId == null || q.prerequisiteQuestId.isEmpty()) return 1;
+        QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
+        return prereq == null ? 1 : 1 + getChainDepth(prereq, guard + 1);
     }
 
     private void updateButtons() {
@@ -155,7 +173,7 @@ public class AdminNpcManagerScreen extends Screen {
 
             boolean hasPos = QuestConfig.NPC_LOCATIONS.containsKey(e.npcId);
             String dot = hasPos ? "§a● " : "§7○ ";
-            g.drawString(font, dot + "§f" + e.npcName + " §7(" + e.quests.size() + ")", leftX + 4, y + 3, 0xFFFFFF);
+            g.drawString(font, dot + "§e[#" + e.chainStep + "] §f" + e.npcName + " §7(" + e.quests.size() + ")", leftX + 4, y + 3, 0xFFFFFF);
             g.drawString(font, "§8" + e.npcId, leftX + 14, y + 12, 0xAAAAAA);
         }
 
@@ -169,7 +187,7 @@ public class AdminNpcManagerScreen extends Screen {
             int y = listY + 4;
             g.drawString(font, "§6§l" + selEntry.npcName, rightX + 4, y, 0xFFFFFF);
             y += 12;
-            g.drawString(font, "§7ID: §f" + selEntry.npcId, rightX + 4, y, 0xFFFFFF);
+            g.drawString(font, "§7ID: §f" + selEntry.npcId + "  §e[Paso #" + selEntry.chainStep + (selEntry.chainStep == 1 ? " - Inicio" : " - Encadenado") + "]", rightX + 4, y, 0xFFFFFF);
             y += 12;
 
             double[] pos = QuestConfig.NPC_LOCATIONS.get(selEntry.npcId);
@@ -199,3 +217,4 @@ public class AdminNpcManagerScreen extends Screen {
         return false;
     }
 }
+
