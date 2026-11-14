@@ -34,14 +34,14 @@ function enableNpcCombat(npc) {
 
 // Tabla de presets configurados con su nombre visible y peso de aparicion
 var NPC_SELECTION_TABLE = [
-  { id: 'npc_sec_alquimista', name: 'Alquimista', rl: 'easy_npc:preset/villager/npc_sec_alquimista.npc.snbt', weight: 15 },
-  { id: 'npc_sec_armero', name: 'Armero', rl: 'easy_npc:preset/villager/npc_sec_armero.npc.snbt', weight: 15 },
-  { id: 'npc_sec_minero', name: 'Minero', rl: 'easy_npc:preset/villager/npc_sec_minero.npc.snbt', weight: 15 },
-  { id: 'npc_contract_cazador', name: 'Cazador', rl: 'easy_npc:preset/villager/npc_contract_cazador.npc.snbt', weight: 12 },
-  { id: 'npc_contract_tabernero', name: 'Tabernero', rl: 'easy_npc:preset/villager/npc_contract_tabernero.npc.snbt', weight: 12 },
-  { id: 'npc_contract_vigia', name: 'Vigia', rl: 'easy_npc:preset/villager/npc_contract_vigia.npc.snbt', weight: 12 },
-  { id: 'npc_rep_panadero', name: 'Panadero', rl: 'easy_npc:preset/villager/npc_rep_panadero.npc.snbt', weight: 18 },
-  { id: 'npc_rep_pescador', name: 'Pescador', rl: 'easy_npc:preset/villager/npc_rep_pescador.npc.snbt', weight: 18 }
+  { id: 'npc_sec_alquimista', name: 'Alquimista', rl: 'easy_npc:preset/villager/npc_sec_alquimista.npc.snbt', weight: 15, blocks: ['minecraft:brewing_stand', 'minecraft:bookshelf', 'minecraft:cauldron'] },
+  { id: 'npc_sec_armero', name: 'Armero', rl: 'easy_npc:preset/villager/npc_sec_armero.npc.snbt', weight: 15, blocks: ['minecraft:anvil', 'minecraft:smithing_table', 'minecraft:grindstone', 'minecraft:fletching_table'] },
+  { id: 'npc_sec_minero', name: 'Minero', rl: 'easy_npc:preset/villager/npc_sec_minero.npc.snbt', weight: 15, blocks: ['minecraft:blast_furnace', 'minecraft:stonecutter'] },
+  { id: 'npc_contract_cazador', name: 'Cazador', rl: 'easy_npc:preset/villager/npc_contract_cazador.npc.snbt', weight: 12, blocks: ['minecraft:campfire', 'minecraft:target', 'minecraft:fletching_table'] },
+  { id: 'npc_contract_tabernero', name: 'Tabernero', rl: 'easy_npc:preset/villager/npc_contract_tabernero.npc.snbt', weight: 12, blocks: ['minecraft:barrel', 'minecraft:smoker', 'minecraft:lantern'] },
+  { id: 'npc_contract_vigia', name: 'Vigia', rl: 'easy_npc:preset/villager/npc_contract_vigia.npc.snbt', weight: 12, blocks: ['minecraft:bell', 'minecraft:lantern', 'minecraft:stone_brick_wall'] },
+  { id: 'npc_rep_panadero', name: 'Panadero', rl: 'easy_npc:preset/villager/npc_rep_panadero.npc.snbt', weight: 18, blocks: ['minecraft:smoker', 'minecraft:hay_block', 'minecraft:composter'] },
+  { id: 'npc_rep_pescador', name: 'Pescador', rl: 'easy_npc:preset/villager/npc_rep_pescador.npc.snbt', weight: 18, blocks: ['minecraft:barrel', 'minecraft:water'] }
 ]
 
 // Obtiene los identificadores de presets que ya existen en el radio para no repetirlos
@@ -97,14 +97,35 @@ function getExistingPresetNamesNearby(level, pos, radius) {
 // Selecciona un preset aleatorio garantizando que no este ya en el diametro de la aldea
 function chooseUniquePreset(level, pos, radius) {
   var existing = getExistingPresetNamesNearby(level, pos, radius)
+  var nearbyBlocks = {}
+  for (var dx = -6; dx <= 6; dx += 2) {
+    for (var dy = -2; dy <= 4; dy += 2) {
+      for (var dz = -6; dz <= 6; dz += 2) {
+        var bid = level.getBlockState(pos.offset(dx, dy, dz)).block.id
+        nearbyBlocks[bid] = true
+      }
+    }
+  }
+
   var available = []
+  var weights = []
   var totalWeight = 0
 
   for (var i = 0; i < NPC_SELECTION_TABLE.length; i++) {
     var item = NPC_SELECTION_TABLE[i]
     if (!existing[item.id]) {
+      var w = item.weight
+      if (item.blocks) {
+        for (var b = 0; b < item.blocks.length; b++) {
+          if (nearbyBlocks[item.blocks[b]]) {
+            w = w * 8
+            break
+          }
+        }
+      }
       available.push(item)
-      totalWeight += item.weight
+      weights.push(w)
+      totalWeight += w
     }
   }
 
@@ -116,7 +137,7 @@ function chooseUniquePreset(level, pos, radius) {
   var randomVal = Math.random() * totalWeight
   var running = 0
   for (var j = 0; j < available.length; j++) {
-    running += available[j].weight
+    running += weights[j]
     if (randomVal <= running) {
       return available[j]
     }
