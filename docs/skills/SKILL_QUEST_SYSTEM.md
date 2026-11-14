@@ -56,27 +56,19 @@ Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el 
 
 ## 3. Presets Oficiales de Easy NPC
 
-### A. Presets de Aldeano Individuales (`preset/villager/`):
-Comando: `/easy_npc preset custom import villager/<nombre>`
-- `villager_guardia`: Capitán de la Guardia (Misión: `caza_zombies`)
-- `villager_centinela`: Centinela Veterano (Misión: `contrato_fell_knights`)
-- `villager_cazador`: Cazador de Bestias (Misión: `cazador_pantano`)
-- `villager_alquimista`: Alquimista Elena (Misión: `elena_alquimia`)
-- `villager_craftear`: Maestro Armero (Misión: `craftear_arcos`)
-- `villager_minar`: Herrero Enano (Misión: `minar_hierro`)
-- `villager_hornear`: Panadero de la Aldea (Misión: `hornear_pan`)
-- `villager_pescar`: Pescador del Muelle (Misión: `pescar_rio`)
-- `villager_explorador`: Explorador del Sendero (Misión: `explorar_torre`)
-- `villager_bioma`: Naturalista de la Arboleda (Misión: `explorar_bioma`)
-- `villager_estructura`: Vigía de la Ciudadela (Misión: `descubrir_aldea`)
-- `villager_dimension`: Ocultista del Vacío (Misión: `viaje_nether`)
-- `villager_tabernero_contracts`: Tabernero (Contratos de taberna)
-- `villager_gremio_contracts`: Maestro del Gremio (Contratos de gremio)
-- `villager_vigia_contracts`: Vigía de la Torre (Contratos de vigilancia)
+> **Archivo histórico:** Los 19 presets de prueba anteriores están archivados en `preset/ejemplos/`.
 
-> **Sufijos estandarizados:** Los presets usan sufijos `_main`, `_secondary`, `_contracts` y `_repeatable` según su rol.
+### A. NPCs Principales (`MAIN` — colocación manual en historia/spawn):
+- `npc_main_comandante`: Comandante (*El Camino del Guerrero* `trial_warrior`)
+- `npc_main_explorador`: Explorador (*La Reliquia de los Ancestros* `trial_relic`, *El Puesto de Observación* `explorar_torre`, *El Aether* `dimension_aether_expedition`)
+- `npc_main_ocultista`: Ocultista (*El Portal al Inframundo* `viaje_nether`)
 
-### B. Presets de Misiones Encadenadas (`preset/villager/`):
+### B. NPCs de Spawn Natural (`preset/villager/` — 12 en `village_npc_spawner.js`):
+- **Secundarios (5):** `npc_sec_alquimista`, `npc_sec_armero`, `npc_sec_minero`, `npc_sec_bibliotecario`, `npc_sec_cartografo`
+- **Contratos (4):** `npc_contract_cazador`, `npc_contract_tabernero`, `npc_contract_vigia`, `npc_contract_mercenario`
+- **Repetibles (3):** `npc_rep_panadero`, `npc_rep_pescador`, `npc_rep_cazador_nocturno`
+
+### C. Presets de Misiones Encadenadas (archivados en `preset/ejemplos/`):
 Comando: `/easy_npc preset custom import villager/<nombre>`
 Cada preset incluye su scoreboard tag único (`Tags: ["<nombre>"]`) sincronizado automáticamente con el cliente (`SyncEntityTagsPacket`) para emparejamiento estricto por `npcId` sin colisiones por nombre visible:
 - `chain_muralla_1_comandante`: Paso 1 - Defiende muralla y entrega la orden sellada de relevo (`q_relevo_activa`).
