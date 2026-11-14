@@ -9,6 +9,8 @@
   - Equipamiento de armas por defecto (`CROSSBOW`, `IRON_AXE`, `IRON_SWORD`) para illagers que spawneen sin arma.
 - **Alineación y Diálogos en Presets:** Corregidos los `activeTag`/`lista`/`entregada` en 6 presets y añadidos los 9 diálogos faltantes de bosses/dimensiones/gemas en `chain_muralla_2_centinela`, `villager_cazador_contracts`, `villager_dimension_main`, `villager_explorador_main`, `villager_bioma_secondary` y `villager_alquimista_secondary`.
 - **Abandonar Misión (`AbandonQuestPacket`):** Añadido botón `Abandonar` en el Diario (`QuestJournalScreen`) para misiones activas `SECONDARY`, `CONTRACT` y `REPEATABLE` (bloqueado en `MAIN`); resetea tags y puntajes en servidor y muestra `QuestToast` `"Misión Abandonada"`.
+- **Acto I (`The Champion's Trials`) e Integración FTB Quests:** Añadidas `trial_warrior`, `trial_mage` y `trial_relic` espejando objetivos de Cisco FTB Quests.
+- **Presets Limpios y Spawner Natural por Afinidad:** Archivados los presets antiguos en `ejemplos/`, creados 11 presets oficiales `npc_*` (`npc_main_*`, `npc_sec_*`, `npc_contract_*`, `npc_rep_*`) sin BOM UTF-8, y actualizado `village_npc_spawner.js` para emparejar NPCs por estaciones de trabajo cercanas (`1x1` en radio `5x4x5`).
 - **Migración de Misiones Anteriores (`rpg_quests.json`):** Añadido `relativeToNpc: true` en `cazador_pantano` y `explorar_torre`, y configurados `rewardXp` y `rewardItems` en las 22 misiones anteriores para mostrar el `QuestToast` de recompensas.
 
 ## [1.3.0-update] - 2026-11-12
