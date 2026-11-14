@@ -40,6 +40,12 @@ Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el 
 3. Cliente de respaldo: `C:\Users\Kuromi\Desktop\cisco\Client\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
 4. Servidor dedicado: `C:\Users\Kuromi\Desktop\cisco\Server\mods\`
 
+### D. Comandos de Administración (`/rpgquest`)
+Todos los subcomandos de `/rpgquest` requieren permiso OP nivel 2 (`hasPermission(2)`):
+- `/rpgquest reset`: Resetea tags (`q_*`, `rqe_*`) y scores internos de todas las misiones del jugador ejecutor.
+- `/rpgquest reload`: Recarga `config/rpg_quests.json` en caliente y sincroniza al ejecutor.
+- `/rpgquest sync_npcs`: Busca NPCs en chunks cargados con tag `npc_*`, guarda posición/rotación, elimina la entidad vieja y reimporta el preset con `easy_npc preset custom import villager/<tag>`.
+
 ---
 
 ## 2. Bases de Datos de Misiones Separadas

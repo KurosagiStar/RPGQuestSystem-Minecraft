@@ -90,7 +90,7 @@ public class RPGQuestEngine {
     public void onRegisterCommands(RegisterCommandsEvent event) {
         event.getDispatcher().register(
             Commands.literal("rpgquest")
-                .requires(s -> s.hasPermission(0))
+                .requires(s -> s.hasPermission(2))
                 .then(Commands.literal("reset")
                     .executes(ctx -> {
                         ServerPlayer sp = ctx.getSource().getPlayerOrException();
@@ -134,6 +134,47 @@ public class RPGQuestEngine {
                         }
                         ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Configuración rpg_quests.json recargada (" + QuestConfig.QUESTS.size() + " misiones)."), false);
                         return 1;
+                    })
+                )
+                .then(Commands.literal("sync_npcs")
+                    .requires(s -> s.hasPermission(2))
+                    .executes(ctx -> {
+                        net.minecraft.server.MinecraftServer server = ctx.getSource().getServer();
+                        record NpcTarget(ServerLevel level, net.minecraft.world.entity.Entity entity, String tag) {}
+                        List<NpcTarget> targets = new java.util.ArrayList<>();
+
+                        for (ServerLevel level : server.getAllLevels()) {
+                            for (net.minecraft.world.entity.Entity entity : level.getAllEntities()) {
+                                for (String tag : entity.getTags()) {
+                                    if (tag.startsWith("npc_")) {
+                                        targets.add(new NpcTarget(level, entity, tag));
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        int synced = 0;
+                        var cmdSource = server.createCommandSourceStack().withSuppressedOutput().withPermission(4);
+                        for (NpcTarget t : targets) {
+                            double x = t.entity().getX();
+                            double y = t.entity().getY();
+                            double z = t.entity().getZ();
+                            float yRot = t.entity().getYRot();
+                            float xRot = t.entity().getXRot();
+                            String dim = t.level().dimension().location().toString();
+                            t.entity().discard();
+
+                            String cmd = String.format(java.util.Locale.ROOT,
+                                "execute in %s positioned %.3f %.3f %.3f rotated %.2f %.2f run easy_npc preset custom import villager/%s",
+                                dim, x, y, z, yRot, xRot, t.tag());
+                            server.getCommands().performPrefixedCommand(cmdSource, cmd);
+                            synced++;
+                        }
+
+                        final int count = synced;
+                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Sincronizados " + count + " NPCs cargados."), true);
+                        return count;
                     })
                 )
         );
