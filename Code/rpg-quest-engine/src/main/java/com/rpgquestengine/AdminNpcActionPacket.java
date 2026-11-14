@@ -40,7 +40,7 @@ public class AdminNpcActionPacket {
             float xRot = sp.getXRot();
 
             if ("SPAWN".equals(msg.action)) {
-                String cmd = "easy_npc preset custom import villager/" + msg.npcId;
+                String cmd = "easy_npc preset import custom villager/" + msg.npcId;
                 sp.getServer().getCommands().performPrefixedCommand(
                     sp.createCommandSourceStack().withPermission(4), cmd);
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
