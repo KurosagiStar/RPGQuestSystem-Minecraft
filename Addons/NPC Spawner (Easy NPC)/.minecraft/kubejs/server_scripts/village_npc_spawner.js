@@ -163,6 +163,7 @@ function findSolidGroundY(level, bx, startY, bz) {
 
 function tryConvertVillager(villager, level) {
   if (!villager || !villager.isAlive()) return
+  if (villager.tags && villager.tags.contains('no_quest_npc')) return
 
   // Marcar inmediatamente para que nunca sea evaluado dos veces
   villager.tags.add('cisco_evaluated_villager')

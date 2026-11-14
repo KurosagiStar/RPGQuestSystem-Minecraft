@@ -45,6 +45,7 @@ Todos los subcomandos de `/rpgquest` requieren permiso OP nivel 2 (`hasPermissio
 - `/rpgquest reset`: Resetea tags (`q_*`, `rqe_*`) y scores internos de todas las misiones del jugador ejecutor.
 - `/rpgquest reload`: Recarga `config/rpg_quests.json` en caliente y sincroniza al ejecutor.
 - `/rpgquest sync_npcs`: Busca NPCs en chunks cargados con tag `npc_*`, guarda posición/rotación, elimina la entidad vieja y reimporta el preset con `easy_npc preset custom import villager/<tag>`.
+- **Aldeanos vanilla sin conversión:** Spawnear con tag `no_quest_npc` (`/summon minecraft:villager ~ ~ ~ {Tags:["no_quest_npc"]}`) para que `village_npc_spawner.js` los ignore.
 
 ---
 
