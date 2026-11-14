@@ -98,9 +98,9 @@ function getExistingPresetNamesNearby(level, pos, radius) {
 function chooseUniquePreset(level, pos, radius) {
   var existing = getExistingPresetNamesNearby(level, pos, radius)
   var nearbyBlocks = {}
-  for (var dx = -6; dx <= 6; dx += 2) {
-    for (var dy = -2; dy <= 4; dy += 2) {
-      for (var dz = -6; dz <= 6; dz += 2) {
+  for (var dx = -5; dx <= 5; dx++) {
+    for (var dy = -2; dy <= 3; dy++) {
+      for (var dz = -5; dz <= 5; dz++) {
         var bid = level.getBlockState(pos.offset(dx, dy, dz)).block.id
         nearbyBlocks[bid] = true
       }
@@ -108,41 +108,42 @@ function chooseUniquePreset(level, pos, radius) {
   }
 
   var available = []
-  var weights = []
-  var totalWeight = 0
+  var matched = []
 
   for (var i = 0; i < NPC_SELECTION_TABLE.length; i++) {
     var item = NPC_SELECTION_TABLE[i]
     if (!existing[item.id]) {
-      var w = item.weight
+      available.push(item)
       if (item.blocks) {
         for (var b = 0; b < item.blocks.length; b++) {
           if (nearbyBlocks[item.blocks[b]]) {
-            w = w * 8
+            matched.push(item)
             break
           }
         }
       }
-      available.push(item)
-      weights.push(w)
-      totalWeight += w
     }
   }
 
-  // Si todos los presets ya estan presentes en la aldea, no spawneamos mas para no duplicar
-  if (available.length === 0) {
+  var pool = matched.length > 0 ? matched : available
+  if (pool.length === 0) {
     return null
+  }
+
+  var totalWeight = 0
+  for (var k = 0; k < pool.length; k++) {
+    totalWeight += pool[k].weight
   }
 
   var randomVal = Math.random() * totalWeight
   var running = 0
-  for (var j = 0; j < available.length; j++) {
-    running += weights[j]
+  for (var j = 0; j < pool.length; j++) {
+    running += pool[j].weight
     if (randomVal <= running) {
-      return available[j]
+      return pool[j]
     }
   }
-  return available[0]
+  return pool[0]
 }
 
 function findSolidGroundY(level, bx, startY, bz) {
