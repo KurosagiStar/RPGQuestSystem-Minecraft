@@ -124,7 +124,10 @@ public class AdminNpcManagerScreen extends Screen {
 
             QuestChain chain = new QuestChain();
             chain.rootId = root.id;
-            chain.title = root.title != null ? root.title : root.id;
+            if (root.id.startsWith("cisco_trials_")) chain.title = "The Champion's Trials";
+            else if (root.id.startsWith("cisco_traveller_")) chain.title = "Traveller's Journey";
+            else if (root.id.startsWith("cisco_dragons_")) chain.title = "Age of Dragons";
+            else chain.title = root.title != null ? root.title : root.id;
             collectChain(root, catQuests, chain, 0);
             visibleChains.add(chain);
         }
