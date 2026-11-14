@@ -1085,5 +1085,3963 @@
         "amount": 3
       }
     ]
+  },
+  {
+    "id": "cisco_trials_6f010e22cd886969",
+    "ftbQuestId": "6F010E22CD886969",
+    "category": "MAIN",
+    "title": "The Adventure Begins!",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The Adventure Begins!",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "activeTag": "q_cisco_trials_6f010e22cd886969_act",
+    "doneTag": "q_cisco_trials_6f010e22cd886969_done",
+    "completedTag": "q_cisco_trials_6f010e22cd886969_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 100,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar The Adventure Begins!",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_23864a4966441d61",
+    "ftbQuestId": "23864A4966441D61",
+    "category": "MAIN",
+    "title": "The path of the warrior",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The path of the warrior",
+    "suggestedLevel": 11,
+    "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
+    "activeTag": "q_cisco_trials_23864a4966441d61_act",
+    "doneTag": "q_cisco_trials_23864a4966441d61_done",
+    "completedTag": "q_cisco_trials_23864a4966441d61_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 125,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 5x zombie",
+        "target": "minecraft:zombie",
+        "required": 5
+      },
+      {
+        "type": "KILL",
+        "description": "Derrotar 10x zombie",
+        "target": "minecraft:zombie",
+        "required": 10
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_76e6e42a538c69fb",
+    "ftbQuestId": "76E6E42A538C69FB",
+    "category": "MAIN",
+    "title": "Novice spell caster",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Novice spell caster",
+    "suggestedLevel": 12,
+    "prerequisiteQuestId": "cisco_trials_642c85e431896fb0",
+    "activeTag": "q_cisco_trials_76e6e42a538c69fb_act",
+    "doneTag": "q_cisco_trials_76e6e42a538c69fb_done",
+    "completedTag": "q_cisco_trials_76e6e42a538c69fb_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 150,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Novice spell caster",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_642c85e431896fb0",
+    "ftbQuestId": "642C85E431896FB0",
+    "category": "MAIN",
+    "title": "The path of the mage",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The path of the mage",
+    "suggestedLevel": 13,
+    "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
+    "activeTag": "q_cisco_trials_642c85e431896fb0_act",
+    "doneTag": "q_cisco_trials_642c85e431896fb0_done",
+    "completedTag": "q_cisco_trials_642c85e431896fb0_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 175,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 5x zombie",
+        "target": "minecraft:zombie",
+        "required": 5
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_363d127c20eac8fc",
+    "ftbQuestId": "363D127C20EAC8FC",
+    "category": "MAIN",
+    "title": "Obtain iron",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Obtain iron",
+    "suggestedLevel": 14,
+    "prerequisiteQuestId": "cisco_trials_6f010e22cd886969",
+    "activeTag": "q_cisco_trials_363d127c20eac8fc_act",
+    "doneTag": "q_cisco_trials_363d127c20eac8fc_done",
+    "completedTag": "q_cisco_trials_363d127c20eac8fc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 200,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Obtain iron",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7d47ca06f299bb0a",
+    "ftbQuestId": "7D47CA06F299BB0A",
+    "category": "MAIN",
+    "title": "The relic of the ancients",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The relic of the ancients",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_trials_22b92de71f6f923d",
+    "activeTag": "q_cisco_trials_7d47ca06f299bb0a_act",
+    "doneTag": "q_cisco_trials_7d47ca06f299bb0a_done",
+    "completedTag": "q_cisco_trials_7d47ca06f299bb0a_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 225,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 15x zombie",
+        "target": "minecraft:zombie",
+        "required": 15
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_068b6dc27bc66d89",
+    "ftbQuestId": "068B6DC27BC66D89",
+    "category": "MAIN",
+    "title": "Misión 068B6D",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 068B6D",
+    "suggestedLevel": 16,
+    "prerequisiteQuestId": "cisco_trials_76e6e42a538c69fb",
+    "activeTag": "q_cisco_trials_068b6dc27bc66d89_act",
+    "doneTag": "q_cisco_trials_068b6dc27bc66d89_done",
+    "completedTag": "q_cisco_trials_068b6dc27bc66d89_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 250,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 068B6D",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_10b64a3d6500ac09",
+    "ftbQuestId": "10B64A3D6500AC09",
+    "category": "MAIN",
+    "title": "Amplified Magics",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Amplified Magics",
+    "suggestedLevel": 17,
+    "prerequisiteQuestId": "cisco_trials_5c15bccd252805dc",
+    "activeTag": "q_cisco_trials_10b64a3d6500ac09_act",
+    "doneTag": "q_cisco_trials_10b64a3d6500ac09_done",
+    "completedTag": "q_cisco_trials_10b64a3d6500ac09_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 275,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Amplified Magics",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_643a6bd7be518653",
+    "ftbQuestId": "643A6BD7BE518653",
+    "category": "MAIN",
+    "title": "Aquire Obsidian",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Aquire Obsidian",
+    "suggestedLevel": 18,
+    "prerequisiteQuestId": "cisco_trials_10b64a3d6500ac09",
+    "activeTag": "q_cisco_trials_643a6bd7be518653_act",
+    "doneTag": "q_cisco_trials_643a6bd7be518653_done",
+    "completedTag": "q_cisco_trials_643a6bd7be518653_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 300,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Aquire Obsidian",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7d59bd1308e6778f",
+    "ftbQuestId": "7D59BD1308E6778F",
+    "category": "MAIN",
+    "title": "The depths of Hell",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The depths of Hell",
+    "suggestedLevel": 19,
+    "prerequisiteQuestId": "cisco_trials_643a6bd7be518653",
+    "activeTag": "q_cisco_trials_7d59bd1308e6778f_act",
+    "doneTag": "q_cisco_trials_7d59bd1308e6778f_done",
+    "completedTag": "q_cisco_trials_7d59bd1308e6778f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 325,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar The depths of Hell",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_3e13eb56ee51145f",
+    "ftbQuestId": "3E13EB56EE51145F",
+    "category": "MAIN",
+    "title": "Acquire Quartz",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Acquire Quartz",
+    "suggestedLevel": 20,
+    "prerequisiteQuestId": "cisco_trials_7d59bd1308e6778f",
+    "activeTag": "q_cisco_trials_3e13eb56ee51145f_act",
+    "doneTag": "q_cisco_trials_3e13eb56ee51145f_done",
+    "completedTag": "q_cisco_trials_3e13eb56ee51145f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 350,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire Quartz",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5426802195e9dea6",
+    "ftbQuestId": "5426802195E9DEA6",
+    "category": "MAIN",
+    "title": "Rank up your magic",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Rank up your magic",
+    "suggestedLevel": 21,
+    "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
+    "activeTag": "q_cisco_trials_5426802195e9dea6_act",
+    "doneTag": "q_cisco_trials_5426802195e9dea6_done",
+    "completedTag": "q_cisco_trials_5426802195e9dea6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 375,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Rank up your magic",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_279bc431d5d067a3",
+    "ftbQuestId": "279BC431D5D067A3",
+    "category": "MAIN",
+    "title": "Find the an ancient runic tablet",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Find the an ancient runic tablet",
+    "suggestedLevel": 22,
+    "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
+    "activeTag": "q_cisco_trials_279bc431d5d067a3_act",
+    "doneTag": "q_cisco_trials_279bc431d5d067a3_done",
+    "completedTag": "q_cisco_trials_279bc431d5d067a3_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 400,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the an ancient runic tablet",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_2a5a2b19fd4a1abe",
+    "ftbQuestId": "2A5A2B19FD4A1ABE",
+    "category": "MAIN",
+    "title": "Aquire an enchanting table",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Aquire an enchanting table",
+    "suggestedLevel": 23,
+    "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
+    "activeTag": "q_cisco_trials_2a5a2b19fd4a1abe_act",
+    "doneTag": "q_cisco_trials_2a5a2b19fd4a1abe_done",
+    "completedTag": "q_cisco_trials_2a5a2b19fd4a1abe_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 425,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Aquire an enchanting table",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_4472063587820df7",
+    "ftbQuestId": "4472063587820DF7",
+    "category": "MAIN",
+    "title": "For Glory!",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): For Glory!",
+    "suggestedLevel": 24,
+    "prerequisiteQuestId": "cisco_trials_279bc431d5d067a3",
+    "activeTag": "q_cisco_trials_4472063587820df7_act",
+    "doneTag": "q_cisco_trials_4472063587820df7_done",
+    "completedTag": "q_cisco_trials_4472063587820df7_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 450,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar For Glory!",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_0d03a91a96743e87",
+    "ftbQuestId": "0D03A91A96743E87",
+    "category": "MAIN",
+    "title": "All shall kneel...",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): All shall kneel...",
+    "suggestedLevel": 25,
+    "prerequisiteQuestId": "cisco_trials_279bc431d5d067a3",
+    "activeTag": "q_cisco_trials_0d03a91a96743e87_act",
+    "doneTag": "q_cisco_trials_0d03a91a96743e87_done",
+    "completedTag": "q_cisco_trials_0d03a91a96743e87_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 475,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar All shall kneel...",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_441a82ced3f13122",
+    "ftbQuestId": "441A82CED3F13122",
+    "category": "MAIN",
+    "title": "Misión 441A82",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 441A82",
+    "suggestedLevel": 26,
+    "prerequisiteQuestId": "cisco_trials_0d03a91a96743e87",
+    "activeTag": "q_cisco_trials_441a82ced3f13122_act",
+    "doneTag": "q_cisco_trials_441a82ced3f13122_done",
+    "completedTag": "q_cisco_trials_441a82ced3f13122_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 500,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 441A82",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5ffc0e01052944a7",
+    "ftbQuestId": "5FFC0E01052944A7",
+    "category": "MAIN",
+    "title": "Misión 5FFC0E",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 5FFC0E",
+    "suggestedLevel": 27,
+    "prerequisiteQuestId": "cisco_trials_441a82ced3f13122",
+    "activeTag": "q_cisco_trials_5ffc0e01052944a7_act",
+    "doneTag": "q_cisco_trials_5ffc0e01052944a7_done",
+    "completedTag": "q_cisco_trials_5ffc0e01052944a7_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 525,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 5FFC0E",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_64286a21fdb8288f",
+    "ftbQuestId": "64286A21FDB8288F",
+    "category": "MAIN",
+    "title": "Slay the terror of the nether",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slay the terror of the nether",
+    "suggestedLevel": 28,
+    "prerequisiteQuestId": "cisco_trials_441a82ced3f13122",
+    "activeTag": "q_cisco_trials_64286a21fdb8288f_act",
+    "doneTag": "q_cisco_trials_64286a21fdb8288f_done",
+    "completedTag": "q_cisco_trials_64286a21fdb8288f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 550,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_2af361ba2a4fb5ef",
+    "ftbQuestId": "2AF361BA2A4FB5EF",
+    "category": "MAIN",
+    "title": "Slay the flame king",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slay the flame king",
+    "suggestedLevel": 29,
+    "prerequisiteQuestId": "cisco_trials_5ffc0e01052944a7",
+    "activeTag": "q_cisco_trials_2af361ba2a4fb5ef_act",
+    "doneTag": "q_cisco_trials_2af361ba2a4fb5ef_done",
+    "completedTag": "q_cisco_trials_2af361ba2a4fb5ef_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 575,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1aa5dcefec43dca6",
+    "ftbQuestId": "1AA5DCEFEC43DCA6",
+    "category": "MAIN",
+    "title": "Not gold but certainly glitters",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Not gold but certainly glitters",
+    "suggestedLevel": 30,
+    "prerequisiteQuestId": "cisco_trials_2a5a2b19fd4a1abe",
+    "activeTag": "q_cisco_trials_1aa5dcefec43dca6_act",
+    "doneTag": "q_cisco_trials_1aa5dcefec43dca6_done",
+    "completedTag": "q_cisco_trials_1aa5dcefec43dca6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 600,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Not gold but certainly glitters",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1413a1e7155ab369",
+    "ftbQuestId": "1413A1E7155AB369",
+    "category": "MAIN",
+    "title": "Apothic Enchanting",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Apothic Enchanting",
+    "suggestedLevel": 31,
+    "prerequisiteQuestId": "cisco_trials_2a5a2b19fd4a1abe",
+    "activeTag": "q_cisco_trials_1413a1e7155ab369_act",
+    "doneTag": "q_cisco_trials_1413a1e7155ab369_done",
+    "completedTag": "q_cisco_trials_1413a1e7155ab369_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 625,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Apothic Enchanting",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1ab06dc31fd237a6",
+    "ftbQuestId": "1AB06DC31FD237A6",
+    "category": "MAIN",
+    "title": "Collecting the 12 eyes",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Collecting the 12 eyes",
+    "suggestedLevel": 32,
+    "prerequisiteQuestId": "cisco_trials_64286a21fdb8288f",
+    "activeTag": "q_cisco_trials_1ab06dc31fd237a6_act",
+    "doneTag": "q_cisco_trials_1ab06dc31fd237a6_done",
+    "completedTag": "q_cisco_trials_1ab06dc31fd237a6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 650,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Collecting the 12 eyes",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_53f1fb5ee35750dc",
+    "ftbQuestId": "53F1FB5EE35750DC",
+    "category": "MAIN",
+    "title": "Enter the End Dimension",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Enter the End Dimension",
+    "suggestedLevel": 33,
+    "prerequisiteQuestId": "cisco_trials_1ab06dc31fd237a6",
+    "activeTag": "q_cisco_trials_53f1fb5ee35750dc_act",
+    "doneTag": "q_cisco_trials_53f1fb5ee35750dc_done",
+    "completedTag": "q_cisco_trials_53f1fb5ee35750dc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 675,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Enter the End Dimension",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_2f764777b6e4d941",
+    "ftbQuestId": "2F764777B6E4D941",
+    "category": "MAIN",
+    "title": "Slay the Ender Dragon",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slay the Ender Dragon",
+    "suggestedLevel": 34,
+    "prerequisiteQuestId": "cisco_trials_53f1fb5ee35750dc",
+    "activeTag": "q_cisco_trials_2f764777b6e4d941_act",
+    "doneTag": "q_cisco_trials_2f764777b6e4d941_done",
+    "completedTag": "q_cisco_trials_2f764777b6e4d941_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 700,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_2504d1884d6894fb",
+    "ftbQuestId": "2504D1884D6894FB",
+    "category": "MAIN",
+    "title": "Misión 2504D1",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 2504D1",
+    "suggestedLevel": 35,
+    "prerequisiteQuestId": "cisco_trials_2f764777b6e4d941",
+    "activeTag": "q_cisco_trials_2504d1884d6894fb_act",
+    "doneTag": "q_cisco_trials_2504d1884d6894fb_done",
+    "completedTag": "q_cisco_trials_2504d1884d6894fb_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 725,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 2504D1",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_6880914ef91d2c85",
+    "ftbQuestId": "6880914EF91D2C85",
+    "category": "MAIN",
+    "title": "Slay the Ender Guardian",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slay the Ender Guardian",
+    "suggestedLevel": 36,
+    "prerequisiteQuestId": "cisco_trials_2504d1884d6894fb",
+    "activeTag": "q_cisco_trials_6880914ef91d2c85_act",
+    "doneTag": "q_cisco_trials_6880914ef91d2c85_done",
+    "completedTag": "q_cisco_trials_6880914ef91d2c85_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 750,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1b9997b20d2187c9",
+    "ftbQuestId": "1B9997B20D2187C9",
+    "category": "MAIN",
+    "title": "The Greatest Magician",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The Greatest Magician",
+    "suggestedLevel": 37,
+    "prerequisiteQuestId": "cisco_trials_2f764777b6e4d941",
+    "activeTag": "q_cisco_trials_1b9997b20d2187c9_act",
+    "doneTag": "q_cisco_trials_1b9997b20d2187c9_done",
+    "completedTag": "q_cisco_trials_1b9997b20d2187c9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 775,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar The Greatest Magician",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_438d84b0f7bfd2a0",
+    "ftbQuestId": "438D84B0F7BFD2A0",
+    "category": "MAIN",
+    "title": "Misión 438D84",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 438D84",
+    "suggestedLevel": 38,
+    "prerequisiteQuestId": "cisco_trials_5426802195e9dea6",
+    "activeTag": "q_cisco_trials_438d84b0f7bfd2a0_act",
+    "doneTag": "q_cisco_trials_438d84b0f7bfd2a0_done",
+    "completedTag": "q_cisco_trials_438d84b0f7bfd2a0_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 800,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 438D84",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_0f7160fddb088526",
+    "ftbQuestId": "0F7160FDDB088526",
+    "category": "MAIN",
+    "title": "Misión 0F7160",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 0F7160",
+    "suggestedLevel": 39,
+    "prerequisiteQuestId": "cisco_trials_4472063587820df7",
+    "activeTag": "q_cisco_trials_0f7160fddb088526_act",
+    "doneTag": "q_cisco_trials_0f7160fddb088526_done",
+    "completedTag": "q_cisco_trials_0f7160fddb088526_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 825,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 0F7160",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_00cb68da83f73719",
+    "ftbQuestId": "00CB68DA83F73719",
+    "category": "MAIN",
+    "title": "Misión 00CB68",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 00CB68",
+    "suggestedLevel": 40,
+    "prerequisiteQuestId": "cisco_trials_0d03a91a96743e87",
+    "activeTag": "q_cisco_trials_00cb68da83f73719_act",
+    "doneTag": "q_cisco_trials_00cb68da83f73719_done",
+    "completedTag": "q_cisco_trials_00cb68da83f73719_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 850,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 00CB68",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5a24e1249722eea9",
+    "ftbQuestId": "5A24E1249722EEA9",
+    "category": "MAIN",
+    "title": "Misión 5A24E1",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 5A24E1",
+    "suggestedLevel": 41,
+    "prerequisiteQuestId": "cisco_trials_068b6dc27bc66d89",
+    "activeTag": "q_cisco_trials_5a24e1249722eea9_act",
+    "doneTag": "q_cisco_trials_5a24e1249722eea9_done",
+    "completedTag": "q_cisco_trials_5a24e1249722eea9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 875,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 5A24E1",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_4c0b49a4548b6df4",
+    "ftbQuestId": "4C0B49A4548B6DF4",
+    "category": "MAIN",
+    "title": "Craft the Ignitium set",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Craft the Ignitium set",
+    "suggestedLevel": 42,
+    "prerequisiteQuestId": "cisco_trials_2af361ba2a4fb5ef",
+    "activeTag": "q_cisco_trials_4c0b49a4548b6df4_act",
+    "doneTag": "q_cisco_trials_4c0b49a4548b6df4_done",
+    "completedTag": "q_cisco_trials_4c0b49a4548b6df4_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 900,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft the Ignitium set",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_74c563f2bb321af9",
+    "ftbQuestId": "74C563F2BB321AF9",
+    "category": "MAIN",
+    "title": "Misión 74C563",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 74C563",
+    "suggestedLevel": 43,
+    "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
+    "activeTag": "q_cisco_trials_74c563f2bb321af9_act",
+    "doneTag": "q_cisco_trials_74c563f2bb321af9_done",
+    "completedTag": "q_cisco_trials_74c563f2bb321af9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 925,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 74C563",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_28b406cdb662aaf8",
+    "ftbQuestId": "28B406CDB662AAF8",
+    "category": "MAIN",
+    "title": "Misión 28B406",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 28B406",
+    "suggestedLevel": 44,
+    "prerequisiteQuestId": "cisco_trials_74c563f2bb321af9",
+    "activeTag": "q_cisco_trials_28b406cdb662aaf8_act",
+    "doneTag": "q_cisco_trials_28b406cdb662aaf8_done",
+    "completedTag": "q_cisco_trials_28b406cdb662aaf8_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 950,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 28B406",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_78c3cc2b67ed66b6",
+    "ftbQuestId": "78C3CC2B67ED66B6",
+    "category": "MAIN",
+    "title": "Misión 78C3CC",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 78C3CC",
+    "suggestedLevel": 45,
+    "prerequisiteQuestId": "cisco_trials_28b406cdb662aaf8",
+    "activeTag": "q_cisco_trials_78c3cc2b67ed66b6_act",
+    "doneTag": "q_cisco_trials_78c3cc2b67ed66b6_done",
+    "completedTag": "q_cisco_trials_78c3cc2b67ed66b6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 975,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 78C3CC",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5319e400556cdc4d",
+    "ftbQuestId": "5319E400556CDC4D",
+    "category": "MAIN",
+    "title": "Misión 5319E4",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 5319E4",
+    "suggestedLevel": 46,
+    "prerequisiteQuestId": "cisco_trials_74c563f2bb321af9",
+    "activeTag": "q_cisco_trials_5319e400556cdc4d_act",
+    "doneTag": "q_cisco_trials_5319e400556cdc4d_done",
+    "completedTag": "q_cisco_trials_5319e400556cdc4d_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1000,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 5319E4",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1436bcc4578225db",
+    "ftbQuestId": "1436BCC4578225DB",
+    "category": "MAIN",
+    "title": "Misión 1436BC",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 1436BC",
+    "suggestedLevel": 47,
+    "prerequisiteQuestId": "cisco_trials_5319e400556cdc4d",
+    "activeTag": "q_cisco_trials_1436bcc4578225db_act",
+    "doneTag": "q_cisco_trials_1436bcc4578225db_done",
+    "completedTag": "q_cisco_trials_1436bcc4578225db_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1025,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 1436BC",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7519af7b737cb8ab",
+    "ftbQuestId": "7519AF7B737CB8AB",
+    "category": "MAIN",
+    "title": "Misión 7519AF",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 7519AF",
+    "suggestedLevel": 48,
+    "prerequisiteQuestId": "cisco_trials_5426802195e9dea6",
+    "activeTag": "q_cisco_trials_7519af7b737cb8ab_act",
+    "doneTag": "q_cisco_trials_7519af7b737cb8ab_done",
+    "completedTag": "q_cisco_trials_7519af7b737cb8ab_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1050,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 7519AF",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_569da7bbdc1f40fe",
+    "ftbQuestId": "569DA7BBDC1F40FE",
+    "category": "MAIN",
+    "title": "View skill tree",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): View skill tree",
+    "suggestedLevel": 49,
+    "prerequisiteQuestId": "cisco_trials_6f010e22cd886969",
+    "activeTag": "q_cisco_trials_569da7bbdc1f40fe_act",
+    "doneTag": "q_cisco_trials_569da7bbdc1f40fe_done",
+    "completedTag": "q_cisco_trials_569da7bbdc1f40fe_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1075,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar View skill tree",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7b1fa4c0929a40d9",
+    "ftbQuestId": "7B1FA4C0929A40D9",
+    "category": "MAIN",
+    "title": "Misión 7B1FA4",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 7B1FA4",
+    "suggestedLevel": 50,
+    "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
+    "activeTag": "q_cisco_trials_7b1fa4c0929a40d9_act",
+    "doneTag": "q_cisco_trials_7b1fa4c0929a40d9_done",
+    "completedTag": "q_cisco_trials_7b1fa4c0929a40d9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1100,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 7B1FA4",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7f28da2696d94242",
+    "ftbQuestId": "7F28DA2696D94242",
+    "category": "MAIN",
+    "title": "Brightsteel Armor",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Brightsteel Armor",
+    "suggestedLevel": 51,
+    "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
+    "activeTag": "q_cisco_trials_7f28da2696d94242_act",
+    "doneTag": "q_cisco_trials_7f28da2696d94242_done",
+    "completedTag": "q_cisco_trials_7f28da2696d94242_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1125,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Brightsteel Armor",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_25b412c443489bf9",
+    "ftbQuestId": "25B412C443489BF9",
+    "category": "MAIN",
+    "title": "Gilded Eagle",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Gilded Eagle",
+    "suggestedLevel": 52,
+    "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
+    "activeTag": "q_cisco_trials_25b412c443489bf9_act",
+    "doneTag": "q_cisco_trials_25b412c443489bf9_done",
+    "completedTag": "q_cisco_trials_25b412c443489bf9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1150,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Gilded Eagle",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_6853d0c9370fdc1f",
+    "ftbQuestId": "6853D0C9370FDC1F",
+    "category": "MAIN",
+    "title": "Misión 6853D0",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 6853D0",
+    "suggestedLevel": 53,
+    "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
+    "activeTag": "q_cisco_trials_6853d0c9370fdc1f_act",
+    "doneTag": "q_cisco_trials_6853d0c9370fdc1f_done",
+    "completedTag": "q_cisco_trials_6853d0c9370fdc1f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1175,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 6853D0",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7c0c571649f8e5aa",
+    "ftbQuestId": "7C0C571649F8E5AA",
+    "category": "MAIN",
+    "title": "Slay Spiders",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slay Spiders",
+    "suggestedLevel": 54,
+    "prerequisiteQuestId": "cisco_trials_6853d0c9370fdc1f",
+    "activeTag": "q_cisco_trials_7c0c571649f8e5aa_act",
+    "doneTag": "q_cisco_trials_7c0c571649f8e5aa_done",
+    "completedTag": "q_cisco_trials_7c0c571649f8e5aa_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1200,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 10x zombie",
+        "target": "minecraft:zombie",
+        "required": 10
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_553d2e842160b922",
+    "ftbQuestId": "553D2E842160B922",
+    "category": "MAIN",
+    "title": "Misión 553D2E",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 553D2E",
+    "suggestedLevel": 55,
+    "prerequisiteQuestId": "cisco_trials_7c0c571649f8e5aa",
+    "activeTag": "q_cisco_trials_553d2e842160b922_act",
+    "doneTag": "q_cisco_trials_553d2e842160b922_done",
+    "completedTag": "q_cisco_trials_553d2e842160b922_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1225,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 553D2E",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_159fd707980d3015",
+    "ftbQuestId": "159FD707980D3015",
+    "category": "MAIN",
+    "title": "Adventurers Garments",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Adventurers Garments",
+    "suggestedLevel": 56,
+    "prerequisiteQuestId": "cisco_trials_363d127c20eac8fc",
+    "activeTag": "q_cisco_trials_159fd707980d3015_act",
+    "doneTag": "q_cisco_trials_159fd707980d3015_done",
+    "completedTag": "q_cisco_trials_159fd707980d3015_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1250,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Adventurers Garments",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_163054d41143a0b9",
+    "ftbQuestId": "163054D41143A0B9",
+    "category": "MAIN",
+    "title": "Craft the brightsteel pickaxe",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Craft the brightsteel pickaxe",
+    "suggestedLevel": 57,
+    "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
+    "activeTag": "q_cisco_trials_163054d41143a0b9_act",
+    "doneTag": "q_cisco_trials_163054d41143a0b9_done",
+    "completedTag": "q_cisco_trials_163054d41143a0b9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1275,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft the brightsteel pickaxe",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5f0bbbf9a4360e45",
+    "ftbQuestId": "5F0BBBF9A4360E45",
+    "category": "MAIN",
+    "title": "Misión 5F0BBB",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 5F0BBB",
+    "suggestedLevel": 58,
+    "prerequisiteQuestId": "cisco_trials_163054d41143a0b9",
+    "activeTag": "q_cisco_trials_5f0bbbf9a4360e45_act",
+    "doneTag": "q_cisco_trials_5f0bbbf9a4360e45_done",
+    "completedTag": "q_cisco_trials_5f0bbbf9a4360e45_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1300,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 5F0BBB",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_30a0bc21027b02a6",
+    "ftbQuestId": "30A0BC21027B02A6",
+    "category": "MAIN",
+    "title": "Slayed Betrayed Guzzler",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slayed Betrayed Guzzler",
+    "suggestedLevel": 59,
+    "prerequisiteQuestId": "cisco_trials_5f0bbbf9a4360e45",
+    "activeTag": "q_cisco_trials_30a0bc21027b02a6_act",
+    "doneTag": "q_cisco_trials_30a0bc21027b02a6_done",
+    "completedTag": "q_cisco_trials_30a0bc21027b02a6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1325,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 5x zombie",
+        "target": "minecraft:zombie",
+        "required": 5
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7916f83211133602",
+    "ftbQuestId": "7916F83211133602",
+    "category": "MAIN",
+    "title": "Misión 7916F8",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 7916F8",
+    "suggestedLevel": 60,
+    "prerequisiteQuestId": "cisco_trials_642c85e431896fb0",
+    "activeTag": "q_cisco_trials_7916f83211133602_act",
+    "doneTag": "q_cisco_trials_7916f83211133602_done",
+    "completedTag": "q_cisco_trials_7916f83211133602_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1350,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 7916F8",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_12e6e8aa3ada8496",
+    "ftbQuestId": "12E6E8AA3ADA8496",
+    "category": "MAIN",
+    "title": "Acquiring Ink",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Acquiring Ink",
+    "suggestedLevel": 61,
+    "prerequisiteQuestId": "cisco_trials_4f6408adeb30e0fb",
+    "activeTag": "q_cisco_trials_12e6e8aa3ada8496_act",
+    "doneTag": "q_cisco_trials_12e6e8aa3ada8496_done",
+    "completedTag": "q_cisco_trials_12e6e8aa3ada8496_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1375,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquiring Ink",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1713c024e6505594",
+    "ftbQuestId": "1713C024E6505594",
+    "category": "MAIN",
+    "title": "Misión 1713C0",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 1713C0",
+    "suggestedLevel": 62,
+    "prerequisiteQuestId": "cisco_trials_12e6e8aa3ada8496",
+    "activeTag": "q_cisco_trials_1713c024e6505594_act",
+    "doneTag": "q_cisco_trials_1713c024e6505594_done",
+    "completedTag": "q_cisco_trials_1713c024e6505594_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1400,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 1713C0",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5c15bccd252805dc",
+    "ftbQuestId": "5C15BCCD252805DC",
+    "category": "MAIN",
+    "title": "Use Gems to increase spell power",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Use Gems to increase spell power",
+    "suggestedLevel": 63,
+    "prerequisiteQuestId": "cisco_trials_5a24e1249722eea9",
+    "activeTag": "q_cisco_trials_5c15bccd252805dc_act",
+    "doneTag": "q_cisco_trials_5c15bccd252805dc_done",
+    "completedTag": "q_cisco_trials_5c15bccd252805dc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1425,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Use Gems to increase spell power",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_430e2d9a0d2d5c61",
+    "ftbQuestId": "430E2D9A0D2D5C61",
+    "category": "MAIN",
+    "title": "Socketing Gems",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Socketing Gems",
+    "suggestedLevel": 64,
+    "prerequisiteQuestId": "cisco_trials_609257bfa1739c99",
+    "activeTag": "q_cisco_trials_430e2d9a0d2d5c61_act",
+    "doneTag": "q_cisco_trials_430e2d9a0d2d5c61_done",
+    "completedTag": "q_cisco_trials_430e2d9a0d2d5c61_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1450,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Socketing Gems",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_609257bfa1739c99",
+    "ftbQuestId": "609257BFA1739C99",
+    "category": "MAIN",
+    "title": "Misión 609257",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 609257",
+    "suggestedLevel": 65,
+    "prerequisiteQuestId": "cisco_trials_1713c024e6505594",
+    "activeTag": "q_cisco_trials_609257bfa1739c99_act",
+    "doneTag": "q_cisco_trials_609257bfa1739c99_done",
+    "completedTag": "q_cisco_trials_609257bfa1739c99_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1475,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 609257",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_03e41c9a2a59791a",
+    "ftbQuestId": "03E41C9A2A59791A",
+    "category": "MAIN",
+    "title": "The ultimate Spell Book",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): The ultimate Spell Book",
+    "suggestedLevel": 66,
+    "prerequisiteQuestId": "cisco_trials_430e2d9a0d2d5c61",
+    "activeTag": "q_cisco_trials_03e41c9a2a59791a_act",
+    "doneTag": "q_cisco_trials_03e41c9a2a59791a_done",
+    "completedTag": "q_cisco_trials_03e41c9a2a59791a_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1500,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar The ultimate Spell Book",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_4f6408adeb30e0fb",
+    "ftbQuestId": "4F6408ADEB30E0FB",
+    "category": "MAIN",
+    "title": "Click the the checkmark.",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Click the the checkmark.",
+    "suggestedLevel": 67,
+    "prerequisiteQuestId": "cisco_trials_7916f83211133602",
+    "activeTag": "q_cisco_trials_4f6408adeb30e0fb_act",
+    "doneTag": "q_cisco_trials_4f6408adeb30e0fb_done",
+    "completedTag": "q_cisco_trials_4f6408adeb30e0fb_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1525,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Click the the checkmark.",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_526d9e48aed9ff47",
+    "ftbQuestId": "526D9E48AED9FF47",
+    "category": "MAIN",
+    "title": "Misión 526D9E",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 526D9E",
+    "suggestedLevel": 68,
+    "prerequisiteQuestId": "cisco_trials_6853d0c9370fdc1f",
+    "activeTag": "q_cisco_trials_526d9e48aed9ff47_act",
+    "doneTag": "q_cisco_trials_526d9e48aed9ff47_done",
+    "completedTag": "q_cisco_trials_526d9e48aed9ff47_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1550,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 526D9E",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_1e29bfdbab318bb6",
+    "ftbQuestId": "1E29BFDBAB318BB6",
+    "category": "MAIN",
+    "title": "Visit Ocean Monument",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Visit Ocean Monument",
+    "suggestedLevel": 69,
+    "prerequisiteQuestId": "cisco_trials_64286a21fdb8288f",
+    "activeTag": "q_cisco_trials_1e29bfdbab318bb6_act",
+    "doneTag": "q_cisco_trials_1e29bfdbab318bb6_done",
+    "completedTag": "q_cisco_trials_1e29bfdbab318bb6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1575,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit Ocean Monument",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_58711e64c6f2abf5",
+    "ftbQuestId": "58711E64C6F2ABF5",
+    "category": "MAIN",
+    "title": "Slay the Elder Guardian",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Slay the Elder Guardian",
+    "suggestedLevel": 70,
+    "prerequisiteQuestId": "cisco_trials_1e29bfdbab318bb6",
+    "activeTag": "q_cisco_trials_58711e64c6f2abf5_act",
+    "doneTag": "q_cisco_trials_58711e64c6f2abf5_done",
+    "completedTag": "q_cisco_trials_58711e64c6f2abf5_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1600,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_7db626b9f20baadc",
+    "ftbQuestId": "7DB626B9F20BAADC",
+    "category": "MAIN",
+    "title": "Darksteel Armor",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Darksteel Armor",
+    "suggestedLevel": 71,
+    "prerequisiteQuestId": "cisco_trials_7f28da2696d94242",
+    "activeTag": "q_cisco_trials_7db626b9f20baadc_act",
+    "doneTag": "q_cisco_trials_7db626b9f20baadc_done",
+    "completedTag": "q_cisco_trials_7db626b9f20baadc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1625,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Darksteel Armor",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_3af40cdf74652218",
+    "ftbQuestId": "3AF40CDF74652218",
+    "category": "MAIN",
+    "title": "Misión 3AF40C",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 3AF40C",
+    "suggestedLevel": 72,
+    "prerequisiteQuestId": "cisco_trials_78c3cc2b67ed66b6",
+    "activeTag": "q_cisco_trials_3af40cdf74652218_act",
+    "doneTag": "q_cisco_trials_3af40cdf74652218_done",
+    "completedTag": "q_cisco_trials_3af40cdf74652218_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1650,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 3AF40C",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_22b92de71f6f923d",
+    "ftbQuestId": "22B92DE71F6F923D",
+    "category": "MAIN",
+    "title": "Find a bounty board",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Find a bounty board",
+    "suggestedLevel": 73,
+    "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
+    "activeTag": "q_cisco_trials_22b92de71f6f923d_act",
+    "doneTag": "q_cisco_trials_22b92de71f6f923d_done",
+    "completedTag": "q_cisco_trials_22b92de71f6f923d_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1675,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find a bounty board",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_5e23b10d82dbb573",
+    "ftbQuestId": "5E23B10D82DBB573",
+    "category": "MAIN",
+    "title": "Find a village",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Find a village",
+    "suggestedLevel": 74,
+    "prerequisiteQuestId": "cisco_trials_23864a4966441d61",
+    "activeTag": "q_cisco_trials_5e23b10d82dbb573_act",
+    "doneTag": "q_cisco_trials_5e23b10d82dbb573_done",
+    "completedTag": "q_cisco_trials_5e23b10d82dbb573_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1700,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find a village",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_6c3bf7e0c3286ef7",
+    "ftbQuestId": "6C3BF7E0C3286EF7",
+    "category": "MAIN",
+    "title": "Misión 6C3BF7",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 6C3BF7",
+    "suggestedLevel": 75,
+    "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
+    "activeTag": "q_cisco_trials_6c3bf7e0c3286ef7_act",
+    "doneTag": "q_cisco_trials_6c3bf7e0c3286ef7_done",
+    "completedTag": "q_cisco_trials_6c3bf7e0c3286ef7_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1725,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 6C3BF7",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_trials_0a9e8bacb6289283",
+    "ftbQuestId": "0A9E8BACB6289283",
+    "category": "MAIN",
+    "title": "Misión 0A9E8B",
+    "npc": "Capitán de la Guardia",
+    "npcId": "npc_main_comandante",
+    "description": "Misión oficial de Cisco (Trials): Misión 0A9E8B",
+    "suggestedLevel": 76,
+    "prerequisiteQuestId": "cisco_trials_6c3bf7e0c3286ef7",
+    "activeTag": "q_cisco_trials_0a9e8bacb6289283_act",
+    "doneTag": "q_cisco_trials_0a9e8bacb6289283_done",
+    "completedTag": "q_cisco_trials_0a9e8bacb6289283_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1750,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 0A9E8B",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_7815c719227c80e6",
+    "ftbQuestId": "7815C719227C80E6",
+    "category": "MAIN",
+    "title": "Misión 7815C7",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 7815C7",
+    "suggestedLevel": 20,
+    "prerequisiteQuestId": "",
+    "activeTag": "q_cisco_traveller_7815c719227c80e6_act",
+    "doneTag": "q_cisco_traveller_7815c719227c80e6_done",
+    "completedTag": "q_cisco_traveller_7815c719227c80e6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 100,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 7815C7",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_0409ee265b906649",
+    "ftbQuestId": "0409EE265B906649",
+    "category": "MAIN",
+    "title": "Visit the twilight forest",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the twilight forest",
+    "suggestedLevel": 21,
+    "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
+    "activeTag": "q_cisco_traveller_0409ee265b906649_act",
+    "doneTag": "q_cisco_traveller_0409ee265b906649_done",
+    "completedTag": "q_cisco_traveller_0409ee265b906649_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 125,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the twilight forest",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_3bd706c24344cd30",
+    "ftbQuestId": "3BD706C24344CD30",
+    "category": "MAIN",
+    "title": "Acquire Naga's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire Naga's Head",
+    "suggestedLevel": 22,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_3bd706c24344cd30_act",
+    "doneTag": "q_cisco_traveller_3bd706c24344cd30_done",
+    "completedTag": "q_cisco_traveller_3bd706c24344cd30_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 150,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire Naga's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_008b7e891a9c410e",
+    "ftbQuestId": "008B7E891A9C410E",
+    "category": "MAIN",
+    "title": "Acquire Lich's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire Lich's Head",
+    "suggestedLevel": 23,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_008b7e891a9c410e_act",
+    "doneTag": "q_cisco_traveller_008b7e891a9c410e_done",
+    "completedTag": "q_cisco_traveller_008b7e891a9c410e_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 175,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire Lich's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_5ba1ae423d7c3c4a",
+    "ftbQuestId": "5BA1AE423D7C3C4A",
+    "category": "MAIN",
+    "title": "Acquire Minoshroom's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire Minoshroom's Head",
+    "suggestedLevel": 24,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_5ba1ae423d7c3c4a_act",
+    "doneTag": "q_cisco_traveller_5ba1ae423d7c3c4a_done",
+    "completedTag": "q_cisco_traveller_5ba1ae423d7c3c4a_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 200,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire Minoshroom's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_5a7f819bcfdb9cbf",
+    "ftbQuestId": "5A7F819BCFDB9CBF",
+    "category": "MAIN",
+    "title": "Acquire the Hydra's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire the Hydra's Head",
+    "suggestedLevel": 25,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_5a7f819bcfdb9cbf_act",
+    "doneTag": "q_cisco_traveller_5a7f819bcfdb9cbf_done",
+    "completedTag": "q_cisco_traveller_5a7f819bcfdb9cbf_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 225,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire the Hydra's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_215073b10639703f",
+    "ftbQuestId": "215073B10639703F",
+    "category": "MAIN",
+    "title": "Acquire Knight Phantom's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire Knight Phantom's Head",
+    "suggestedLevel": 26,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_215073b10639703f_act",
+    "doneTag": "q_cisco_traveller_215073b10639703f_done",
+    "completedTag": "q_cisco_traveller_215073b10639703f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 250,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire Knight Phantom's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_50d2e142736f982f",
+    "ftbQuestId": "50D2E142736F982F",
+    "category": "MAIN",
+    "title": "Acquire the Ur-Ghast's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire the Ur-Ghast's Head",
+    "suggestedLevel": 27,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_50d2e142736f982f_act",
+    "doneTag": "q_cisco_traveller_50d2e142736f982f_done",
+    "completedTag": "q_cisco_traveller_50d2e142736f982f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 275,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire the Ur-Ghast's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_6799e933c08da23d",
+    "ftbQuestId": "6799E933C08DA23D",
+    "category": "MAIN",
+    "title": "Acquire the Alpha Yeti's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire the Alpha Yeti's Head",
+    "suggestedLevel": 28,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_6799e933c08da23d_act",
+    "doneTag": "q_cisco_traveller_6799e933c08da23d_done",
+    "completedTag": "q_cisco_traveller_6799e933c08da23d_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 300,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire the Alpha Yeti's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_1f2d9615ba7ce672",
+    "ftbQuestId": "1F2D9615BA7CE672",
+    "category": "MAIN",
+    "title": "Acquire the Snow Queen's Head",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Acquire the Snow Queen's Head",
+    "suggestedLevel": 29,
+    "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
+    "activeTag": "q_cisco_traveller_1f2d9615ba7ce672_act",
+    "doneTag": "q_cisco_traveller_1f2d9615ba7ce672_done",
+    "completedTag": "q_cisco_traveller_1f2d9615ba7ce672_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 325,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Acquire the Snow Queen's Head",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_0c7ef344c1930a6f",
+    "ftbQuestId": "0C7EF344C1930A6F",
+    "category": "MAIN",
+    "title": "Craft the explorer's compass",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Craft the explorer's compass",
+    "suggestedLevel": 30,
+    "prerequisiteQuestId": "cisco_traveller_1f2d9615ba7ce672",
+    "activeTag": "q_cisco_traveller_0c7ef344c1930a6f_act",
+    "doneTag": "q_cisco_traveller_0c7ef344c1930a6f_done",
+    "completedTag": "q_cisco_traveller_0c7ef344c1930a6f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 350,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft the explorer's compass",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_3c812f7976a9223d",
+    "ftbQuestId": "3C812F7976A9223D",
+    "category": "MAIN",
+    "title": "Visit keep kayra",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit keep kayra",
+    "suggestedLevel": 31,
+    "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
+    "activeTag": "q_cisco_traveller_3c812f7976a9223d_act",
+    "doneTag": "q_cisco_traveller_3c812f7976a9223d_done",
+    "completedTag": "q_cisco_traveller_3c812f7976a9223d_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 375,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit keep kayra",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_6c2dce962ac28480",
+    "ftbQuestId": "6C2DCE962AC28480",
+    "category": "MAIN",
+    "title": "Raid Shiraz Palace",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Raid Shiraz Palace",
+    "suggestedLevel": 32,
+    "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
+    "activeTag": "q_cisco_traveller_6c2dce962ac28480_act",
+    "doneTag": "q_cisco_traveller_6c2dce962ac28480_done",
+    "completedTag": "q_cisco_traveller_6c2dce962ac28480_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 400,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Raid Shiraz Palace",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_4b649072887655a1",
+    "ftbQuestId": "4B649072887655A1",
+    "category": "MAIN",
+    "title": "Raid Bastille",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Raid Bastille",
+    "suggestedLevel": 33,
+    "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
+    "activeTag": "q_cisco_traveller_4b649072887655a1_act",
+    "doneTag": "q_cisco_traveller_4b649072887655a1_done",
+    "completedTag": "q_cisco_traveller_4b649072887655a1_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 425,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Raid Bastille",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_0ac77373513b6cc9",
+    "ftbQuestId": "0AC77373513B6CC9",
+    "category": "MAIN",
+    "title": "Raid the Dungeon Crawl Dungeon",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Raid the Dungeon Crawl Dungeon",
+    "suggestedLevel": 34,
+    "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
+    "activeTag": "q_cisco_traveller_0ac77373513b6cc9_act",
+    "doneTag": "q_cisco_traveller_0ac77373513b6cc9_done",
+    "completedTag": "q_cisco_traveller_0ac77373513b6cc9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 450,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Raid the Dungeon Crawl Dungeon",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_22a1e4ba57d4a830",
+    "ftbQuestId": "22A1E4BA57D4A830",
+    "category": "MAIN",
+    "title": "Visit the aether dimension",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the aether dimension",
+    "suggestedLevel": 35,
+    "prerequisiteQuestId": "cisco_traveller_0ac77373513b6cc9",
+    "activeTag": "q_cisco_traveller_22a1e4ba57d4a830_act",
+    "doneTag": "q_cisco_traveller_22a1e4ba57d4a830_done",
+    "completedTag": "q_cisco_traveller_22a1e4ba57d4a830_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 475,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the aether dimension",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_3034fc307834e034",
+    "ftbQuestId": "3034FC307834E034",
+    "category": "MAIN",
+    "title": "Find the bronze dungeon",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Find the bronze dungeon",
+    "suggestedLevel": 36,
+    "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
+    "activeTag": "q_cisco_traveller_3034fc307834e034_act",
+    "doneTag": "q_cisco_traveller_3034fc307834e034_done",
+    "completedTag": "q_cisco_traveller_3034fc307834e034_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 500,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the bronze dungeon",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_4569ae5e16c87b01",
+    "ftbQuestId": "4569AE5E16C87B01",
+    "category": "MAIN",
+    "title": "Find the silver dungeon",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Find the silver dungeon",
+    "suggestedLevel": 37,
+    "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
+    "activeTag": "q_cisco_traveller_4569ae5e16c87b01_act",
+    "doneTag": "q_cisco_traveller_4569ae5e16c87b01_done",
+    "completedTag": "q_cisco_traveller_4569ae5e16c87b01_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 525,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the silver dungeon",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_3576d8407e23183e",
+    "ftbQuestId": "3576D8407E23183E",
+    "category": "MAIN",
+    "title": "Find the gold dungeon",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Find the gold dungeon",
+    "suggestedLevel": 38,
+    "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
+    "activeTag": "q_cisco_traveller_3576d8407e23183e_act",
+    "doneTag": "q_cisco_traveller_3576d8407e23183e_done",
+    "completedTag": "q_cisco_traveller_3576d8407e23183e_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 550,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the gold dungeon",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_1fa1b5af726f368e",
+    "ftbQuestId": "1FA1B5AF726F368E",
+    "category": "MAIN",
+    "title": "Defeat the slider",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Defeat the slider",
+    "suggestedLevel": 39,
+    "prerequisiteQuestId": "cisco_traveller_3034fc307834e034",
+    "activeTag": "q_cisco_traveller_1fa1b5af726f368e_act",
+    "doneTag": "q_cisco_traveller_1fa1b5af726f368e_done",
+    "completedTag": "q_cisco_traveller_1fa1b5af726f368e_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 575,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2e5bf8d65a759fff",
+    "ftbQuestId": "2E5BF8D65A759FFF",
+    "category": "MAIN",
+    "title": "Slay the Valkyrie Queen",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Slay the Valkyrie Queen",
+    "suggestedLevel": 40,
+    "prerequisiteQuestId": "cisco_traveller_4569ae5e16c87b01",
+    "activeTag": "q_cisco_traveller_2e5bf8d65a759fff_act",
+    "doneTag": "q_cisco_traveller_2e5bf8d65a759fff_done",
+    "completedTag": "q_cisco_traveller_2e5bf8d65a759fff_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 600,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2dd7b0278eacd633",
+    "ftbQuestId": "2DD7B0278EACD633",
+    "category": "MAIN",
+    "title": "Slay the Sun Spirit",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Slay the Sun Spirit",
+    "suggestedLevel": 41,
+    "prerequisiteQuestId": "cisco_traveller_3576d8407e23183e",
+    "activeTag": "q_cisco_traveller_2dd7b0278eacd633_act",
+    "doneTag": "q_cisco_traveller_2dd7b0278eacd633_done",
+    "completedTag": "q_cisco_traveller_2dd7b0278eacd633_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 625,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_5f2456e5bf06098c",
+    "ftbQuestId": "5F2456E5BF06098C",
+    "category": "MAIN",
+    "title": "Craft a backpack",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Craft a backpack",
+    "suggestedLevel": 42,
+    "prerequisiteQuestId": "cisco_traveller_2dd7b0278eacd633",
+    "activeTag": "q_cisco_traveller_5f2456e5bf06098c_act",
+    "doneTag": "q_cisco_traveller_5f2456e5bf06098c_done",
+    "completedTag": "q_cisco_traveller_5f2456e5bf06098c_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 650,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft a backpack",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_39ada7b5ed04f4c1",
+    "ftbQuestId": "39ADA7B5ED04F4C1",
+    "category": "MAIN",
+    "title": "Misión 39ADA7",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 39ADA7",
+    "suggestedLevel": 43,
+    "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
+    "activeTag": "q_cisco_traveller_39ada7b5ed04f4c1_act",
+    "doneTag": "q_cisco_traveller_39ada7b5ed04f4c1_done",
+    "completedTag": "q_cisco_traveller_39ada7b5ed04f4c1_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 675,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 39ADA7",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_22388f2d91480e82",
+    "ftbQuestId": "22388F2D91480E82",
+    "category": "MAIN",
+    "title": "Misión 22388F",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 22388F",
+    "suggestedLevel": 44,
+    "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
+    "activeTag": "q_cisco_traveller_22388f2d91480e82_act",
+    "doneTag": "q_cisco_traveller_22388f2d91480e82_done",
+    "completedTag": "q_cisco_traveller_22388f2d91480e82_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 700,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 22388F",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_1972ee649fc972e7",
+    "ftbQuestId": "1972EE649FC972E7",
+    "category": "MAIN",
+    "title": "Misión 1972EE",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 1972EE",
+    "suggestedLevel": 45,
+    "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
+    "activeTag": "q_cisco_traveller_1972ee649fc972e7_act",
+    "doneTag": "q_cisco_traveller_1972ee649fc972e7_done",
+    "completedTag": "q_cisco_traveller_1972ee649fc972e7_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 725,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 1972EE",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2dccc1e1567de875",
+    "ftbQuestId": "2DCCC1E1567DE875",
+    "category": "MAIN",
+    "title": "Misión 2DCCC1",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 2DCCC1",
+    "suggestedLevel": 46,
+    "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
+    "activeTag": "q_cisco_traveller_2dccc1e1567de875_act",
+    "doneTag": "q_cisco_traveller_2dccc1e1567de875_done",
+    "completedTag": "q_cisco_traveller_2dccc1e1567de875_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 750,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 2DCCC1",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_513c6a72927972c9",
+    "ftbQuestId": "513C6A72927972C9",
+    "category": "MAIN",
+    "title": "Misión 513C6A",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 513C6A",
+    "suggestedLevel": 47,
+    "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
+    "activeTag": "q_cisco_traveller_513c6a72927972c9_act",
+    "doneTag": "q_cisco_traveller_513c6a72927972c9_done",
+    "completedTag": "q_cisco_traveller_513c6a72927972c9_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 775,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 513C6A",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_4faecf44cfbe7eec",
+    "ftbQuestId": "4FAECF44CFBE7EEC",
+    "category": "MAIN",
+    "title": "Craft the iron furnace",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Craft the iron furnace",
+    "suggestedLevel": 48,
+    "prerequisiteQuestId": "cisco_traveller_513c6a72927972c9",
+    "activeTag": "q_cisco_traveller_4faecf44cfbe7eec_act",
+    "doneTag": "q_cisco_traveller_4faecf44cfbe7eec_done",
+    "completedTag": "q_cisco_traveller_4faecf44cfbe7eec_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 800,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft the iron furnace",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_02d166e4ffb3baf6",
+    "ftbQuestId": "02D166E4FFB3BAF6",
+    "category": "MAIN",
+    "title": "Craft the golden furnace",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Craft the golden furnace",
+    "suggestedLevel": 49,
+    "prerequisiteQuestId": "cisco_traveller_4faecf44cfbe7eec",
+    "activeTag": "q_cisco_traveller_02d166e4ffb3baf6_act",
+    "doneTag": "q_cisco_traveller_02d166e4ffb3baf6_done",
+    "completedTag": "q_cisco_traveller_02d166e4ffb3baf6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 825,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft the golden furnace",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2754c959bc321288",
+    "ftbQuestId": "2754C959BC321288",
+    "category": "MAIN",
+    "title": "Misión 2754C9",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 2754C9",
+    "suggestedLevel": 50,
+    "prerequisiteQuestId": "cisco_traveller_02d166e4ffb3baf6",
+    "activeTag": "q_cisco_traveller_2754c959bc321288_act",
+    "doneTag": "q_cisco_traveller_2754c959bc321288_done",
+    "completedTag": "q_cisco_traveller_2754c959bc321288_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 850,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 2754C9",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_736e4b5e45e37f9c",
+    "ftbQuestId": "736E4B5E45E37F9C",
+    "category": "MAIN",
+    "title": "Stone Wand",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Stone Wand",
+    "suggestedLevel": 51,
+    "prerequisiteQuestId": "cisco_traveller_2754c959bc321288",
+    "activeTag": "q_cisco_traveller_736e4b5e45e37f9c_act",
+    "doneTag": "q_cisco_traveller_736e4b5e45e37f9c_done",
+    "completedTag": "q_cisco_traveller_736e4b5e45e37f9c_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 875,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Stone Wand",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_4524817476a2b36d",
+    "ftbQuestId": "4524817476A2B36D",
+    "category": "MAIN",
+    "title": "Misión 452481",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Misión 452481",
+    "suggestedLevel": 52,
+    "prerequisiteQuestId": "cisco_traveller_736e4b5e45e37f9c",
+    "activeTag": "q_cisco_traveller_4524817476a2b36d_act",
+    "doneTag": "q_cisco_traveller_4524817476a2b36d_done",
+    "completedTag": "q_cisco_traveller_4524817476a2b36d_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 900,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 452481",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_5e30054f5210d394",
+    "ftbQuestId": "5E30054F5210D394",
+    "category": "MAIN",
+    "title": "Easy Villagers Auto Trader",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Auto Trader",
+    "suggestedLevel": 53,
+    "prerequisiteQuestId": "cisco_traveller_4524817476a2b36d",
+    "activeTag": "q_cisco_traveller_5e30054f5210d394_act",
+    "doneTag": "q_cisco_traveller_5e30054f5210d394_done",
+    "completedTag": "q_cisco_traveller_5e30054f5210d394_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 925,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Auto Trader",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2d15560c7952aff6",
+    "ftbQuestId": "2D15560C7952AFF6",
+    "category": "MAIN",
+    "title": "Easy Villagers Trading",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Trading",
+    "suggestedLevel": 54,
+    "prerequisiteQuestId": "cisco_traveller_5e30054f5210d394",
+    "activeTag": "q_cisco_traveller_2d15560c7952aff6_act",
+    "doneTag": "q_cisco_traveller_2d15560c7952aff6_done",
+    "completedTag": "q_cisco_traveller_2d15560c7952aff6_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 950,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Trading",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2ff19466e4710c4d",
+    "ftbQuestId": "2FF19466E4710C4D",
+    "category": "MAIN",
+    "title": "Easy Villagers Iron Farm",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Iron Farm",
+    "suggestedLevel": 55,
+    "prerequisiteQuestId": "cisco_traveller_2d15560c7952aff6",
+    "activeTag": "q_cisco_traveller_2ff19466e4710c4d_act",
+    "doneTag": "q_cisco_traveller_2ff19466e4710c4d_done",
+    "completedTag": "q_cisco_traveller_2ff19466e4710c4d_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 975,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Iron Farm",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_514e2cb906303e01",
+    "ftbQuestId": "514E2CB906303E01",
+    "category": "MAIN",
+    "title": "Easy Villagers Farmer",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Farmer",
+    "suggestedLevel": 56,
+    "prerequisiteQuestId": "cisco_traveller_2ff19466e4710c4d",
+    "activeTag": "q_cisco_traveller_514e2cb906303e01_act",
+    "doneTag": "q_cisco_traveller_514e2cb906303e01_done",
+    "completedTag": "q_cisco_traveller_514e2cb906303e01_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1000,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Farmer",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2ec1bd31a2a70282",
+    "ftbQuestId": "2EC1BD31A2A70282",
+    "category": "MAIN",
+    "title": "Easy Villagers Converting",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Converting",
+    "suggestedLevel": 57,
+    "prerequisiteQuestId": "cisco_traveller_514e2cb906303e01",
+    "activeTag": "q_cisco_traveller_2ec1bd31a2a70282_act",
+    "doneTag": "q_cisco_traveller_2ec1bd31a2a70282_done",
+    "completedTag": "q_cisco_traveller_2ec1bd31a2a70282_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1025,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Converting",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_61164317e99bf787",
+    "ftbQuestId": "61164317E99BF787",
+    "category": "MAIN",
+    "title": "Easy Villagers Breeding",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Breeding",
+    "suggestedLevel": 58,
+    "prerequisiteQuestId": "cisco_traveller_2ec1bd31a2a70282",
+    "activeTag": "q_cisco_traveller_61164317e99bf787_act",
+    "doneTag": "q_cisco_traveller_61164317e99bf787_done",
+    "completedTag": "q_cisco_traveller_61164317e99bf787_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1050,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Breeding",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_0342dba7699ae3d0",
+    "ftbQuestId": "0342DBA7699AE3D0",
+    "category": "MAIN",
+    "title": "Easy Villagers Incubator",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Incubator",
+    "suggestedLevel": 59,
+    "prerequisiteQuestId": "cisco_traveller_61164317e99bf787",
+    "activeTag": "q_cisco_traveller_0342dba7699ae3d0_act",
+    "doneTag": "q_cisco_traveller_0342dba7699ae3d0_done",
+    "completedTag": "q_cisco_traveller_0342dba7699ae3d0_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1075,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Easy Villagers Incubator",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_54ec21b27a5a31ad",
+    "ftbQuestId": "54EC21B27A5A31AD",
+    "category": "MAIN",
+    "title": "Find the Olympic Citadel",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Find the Olympic Citadel",
+    "suggestedLevel": 60,
+    "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
+    "activeTag": "q_cisco_traveller_54ec21b27a5a31ad_act",
+    "doneTag": "q_cisco_traveller_54ec21b27a5a31ad_done",
+    "completedTag": "q_cisco_traveller_54ec21b27a5a31ad_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1100,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the Olympic Citadel",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_099e53ee758f1f2c",
+    "ftbQuestId": "099E53EE758F1F2C",
+    "category": "MAIN",
+    "title": "Visit the Nether",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Nether",
+    "suggestedLevel": 61,
+    "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
+    "activeTag": "q_cisco_traveller_099e53ee758f1f2c_act",
+    "doneTag": "q_cisco_traveller_099e53ee758f1f2c_done",
+    "completedTag": "q_cisco_traveller_099e53ee758f1f2c_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1125,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Nether",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_0037e919a5da26df",
+    "ftbQuestId": "0037E919A5DA26DF",
+    "category": "MAIN",
+    "title": "Travel to the End",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Travel to the End",
+    "suggestedLevel": 62,
+    "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
+    "activeTag": "q_cisco_traveller_0037e919a5da26df_act",
+    "doneTag": "q_cisco_traveller_0037e919a5da26df_done",
+    "completedTag": "q_cisco_traveller_0037e919a5da26df_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1150,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Travel to the End",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_3b36c3ef12b4ff3c",
+    "ftbQuestId": "3B36C3EF12B4FF3C",
+    "category": "MAIN",
+    "title": "Visit the Soul Plain",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Soul Plain",
+    "suggestedLevel": 63,
+    "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
+    "activeTag": "q_cisco_traveller_3b36c3ef12b4ff3c_act",
+    "doneTag": "q_cisco_traveller_3b36c3ef12b4ff3c_done",
+    "completedTag": "q_cisco_traveller_3b36c3ef12b4ff3c_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1175,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Soul Plain",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_2fc3c0ef214ed424",
+    "ftbQuestId": "2FC3C0EF214ED424",
+    "category": "MAIN",
+    "title": "Find the Platinum dungeon",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Find the Platinum dungeon",
+    "suggestedLevel": 64,
+    "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
+    "activeTag": "q_cisco_traveller_2fc3c0ef214ed424_act",
+    "doneTag": "q_cisco_traveller_2fc3c0ef214ed424_done",
+    "completedTag": "q_cisco_traveller_2fc3c0ef214ed424_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1200,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the Platinum dungeon",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_63007c16471db9e3",
+    "ftbQuestId": "63007C16471DB9E3",
+    "category": "MAIN",
+    "title": "Defeat the Aerwhale King",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Defeat the Aerwhale King",
+    "suggestedLevel": 65,
+    "prerequisiteQuestId": "cisco_traveller_2fc3c0ef214ed424",
+    "activeTag": "q_cisco_traveller_63007c16471db9e3_act",
+    "doneTag": "q_cisco_traveller_63007c16471db9e3_done",
+    "completedTag": "q_cisco_traveller_63007c16471db9e3_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1225,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_7d909ecb706f1882",
+    "ftbQuestId": "7D909ECB706F1882",
+    "category": "MAIN",
+    "title": "Visit the Bone Reef",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Bone Reef",
+    "suggestedLevel": 66,
+    "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
+    "activeTag": "q_cisco_traveller_7d909ecb706f1882_act",
+    "doneTag": "q_cisco_traveller_7d909ecb706f1882_done",
+    "completedTag": "q_cisco_traveller_7d909ecb706f1882_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1250,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Bone Reef",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_74fbea79142079d2",
+    "ftbQuestId": "74FBEA79142079D2",
+    "category": "MAIN",
+    "title": "Visit the crimson glowing woods",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the crimson glowing woods",
+    "suggestedLevel": 67,
+    "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
+    "activeTag": "q_cisco_traveller_74fbea79142079d2_act",
+    "doneTag": "q_cisco_traveller_74fbea79142079d2_done",
+    "completedTag": "q_cisco_traveller_74fbea79142079d2_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1275,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the crimson glowing woods",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_71d9b5a1692b2449",
+    "ftbQuestId": "71D9B5A1692B2449",
+    "category": "MAIN",
+    "title": "Visit the dead upside down forest",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the dead upside down forest",
+    "suggestedLevel": 68,
+    "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
+    "activeTag": "q_cisco_traveller_71d9b5a1692b2449_act",
+    "doneTag": "q_cisco_traveller_71d9b5a1692b2449_done",
+    "completedTag": "q_cisco_traveller_71d9b5a1692b2449_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1300,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the dead upside down forest",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_7ab3a2feb07e0d8f",
+    "ftbQuestId": "7AB3A2FEB07E0D8F",
+    "category": "MAIN",
+    "title": "Visit the flooded deltas",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the flooded deltas",
+    "suggestedLevel": 69,
+    "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
+    "activeTag": "q_cisco_traveller_7ab3a2feb07e0d8f_act",
+    "doneTag": "q_cisco_traveller_7ab3a2feb07e0d8f_done",
+    "completedTag": "q_cisco_traveller_7ab3a2feb07e0d8f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1325,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the flooded deltas",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_715f9e89062b1f30",
+    "ftbQuestId": "715F9E89062B1F30",
+    "category": "MAIN",
+    "title": "Visit the Amber Land ",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Amber Land ",
+    "suggestedLevel": 70,
+    "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
+    "activeTag": "q_cisco_traveller_715f9e89062b1f30_act",
+    "doneTag": "q_cisco_traveller_715f9e89062b1f30_done",
+    "completedTag": "q_cisco_traveller_715f9e89062b1f30_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1350,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Amber Land ",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_22d351c8d4c06690",
+    "ftbQuestId": "22D351C8D4C06690",
+    "category": "MAIN",
+    "title": "Visit the Blossoming Spires",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Blossoming Spires",
+    "suggestedLevel": 71,
+    "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
+    "activeTag": "q_cisco_traveller_22d351c8d4c06690_act",
+    "doneTag": "q_cisco_traveller_22d351c8d4c06690_done",
+    "completedTag": "q_cisco_traveller_22d351c8d4c06690_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1375,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Blossoming Spires",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_6c6310591cf4d15f",
+    "ftbQuestId": "6C6310591CF4D15F",
+    "category": "MAIN",
+    "title": "Visit the Chorus Forest",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Chorus Forest",
+    "suggestedLevel": 72,
+    "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
+    "activeTag": "q_cisco_traveller_6c6310591cf4d15f_act",
+    "doneTag": "q_cisco_traveller_6c6310591cf4d15f_done",
+    "completedTag": "q_cisco_traveller_6c6310591cf4d15f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1400,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Chorus Forest",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_1cd2bf55b58e0dc0",
+    "ftbQuestId": "1CD2BF55B58E0DC0",
+    "category": "MAIN",
+    "title": "Visit the Crystal Mountains",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Crystal Mountains",
+    "suggestedLevel": 73,
+    "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
+    "activeTag": "q_cisco_traveller_1cd2bf55b58e0dc0_act",
+    "doneTag": "q_cisco_traveller_1cd2bf55b58e0dc0_done",
+    "completedTag": "q_cisco_traveller_1cd2bf55b58e0dc0_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1425,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Crystal Mountains",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_traveller_0e8170950eede373",
+    "ftbQuestId": "0E8170950EEDE373",
+    "category": "MAIN",
+    "title": "Visit the Dragon Graveyards",
+    "npc": "Explorador Real",
+    "npcId": "npc_main_explorador",
+    "description": "Misión oficial de Cisco (Traveller): Visit the Dragon Graveyards",
+    "suggestedLevel": 74,
+    "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
+    "activeTag": "q_cisco_traveller_0e8170950eede373_act",
+    "doneTag": "q_cisco_traveller_0e8170950eede373_done",
+    "completedTag": "q_cisco_traveller_0e8170950eede373_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 1450,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Visit the Dragon Graveyards",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_4b4bf1ff89c31aca",
+    "ftbQuestId": "4B4BF1FF89C31ACA",
+    "category": "MAIN",
+    "title": "Misión 4B4BF1",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 4B4BF1",
+    "suggestedLevel": 35,
+    "prerequisiteQuestId": "cisco_dragons_0d904a47c1eda7de",
+    "activeTag": "q_cisco_dragons_4b4bf1ff89c31aca_act",
+    "doneTag": "q_cisco_dragons_4b4bf1ff89c31aca_done",
+    "completedTag": "q_cisco_dragons_4b4bf1ff89c31aca_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 100,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 4B4BF1",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_2fb1578ebe95b902",
+    "ftbQuestId": "2FB1578EBE95B902",
+    "category": "MAIN",
+    "title": "Misión 2FB157",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 2FB157",
+    "suggestedLevel": 36,
+    "prerequisiteQuestId": "cisco_dragons_4b4bf1ff89c31aca",
+    "activeTag": "q_cisco_dragons_2fb1578ebe95b902_act",
+    "doneTag": "q_cisco_dragons_2fb1578ebe95b902_done",
+    "completedTag": "q_cisco_dragons_2fb1578ebe95b902_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 125,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 2FB157",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_57f0e543419b8d21",
+    "ftbQuestId": "57F0E543419B8D21",
+    "category": "MAIN",
+    "title": "Misión 57F0E5",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 57F0E5",
+    "suggestedLevel": 37,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_57f0e543419b8d21_act",
+    "doneTag": "q_cisco_dragons_57f0e543419b8d21_done",
+    "completedTag": "q_cisco_dragons_57f0e543419b8d21_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 150,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 57F0E5",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_7799076a92b03ca8",
+    "ftbQuestId": "7799076A92B03CA8",
+    "category": "MAIN",
+    "title": "Misión 779907",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 779907",
+    "suggestedLevel": 38,
+    "prerequisiteQuestId": "cisco_dragons_42821297260c128f",
+    "activeTag": "q_cisco_dragons_7799076a92b03ca8_act",
+    "doneTag": "q_cisco_dragons_7799076a92b03ca8_done",
+    "completedTag": "q_cisco_dragons_7799076a92b03ca8_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 175,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 779907",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_4e213c9d6719a0e0",
+    "ftbQuestId": "4E213C9D6719A0E0",
+    "category": "MAIN",
+    "title": "Misión 4E213C",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 4E213C",
+    "suggestedLevel": 39,
+    "prerequisiteQuestId": "cisco_dragons_32e7d93bb699594e",
+    "activeTag": "q_cisco_dragons_4e213c9d6719a0e0_act",
+    "doneTag": "q_cisco_dragons_4e213c9d6719a0e0_done",
+    "completedTag": "q_cisco_dragons_4e213c9d6719a0e0_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 200,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 4E213C",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_49b6952745916f6a",
+    "ftbQuestId": "49B6952745916F6A",
+    "category": "MAIN",
+    "title": "Befriend a pixie",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Befriend a pixie",
+    "suggestedLevel": 40,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_49b6952745916f6a_act",
+    "doneTag": "q_cisco_dragons_49b6952745916f6a_done",
+    "completedTag": "q_cisco_dragons_49b6952745916f6a_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 225,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Befriend a pixie",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_42115cd2d6becadc",
+    "ftbQuestId": "42115CD2D6BECADC",
+    "category": "MAIN",
+    "title": "Tame a Hippocampus",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Tame a Hippocampus",
+    "suggestedLevel": 41,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_42115cd2d6becadc_act",
+    "doneTag": "q_cisco_dragons_42115cd2d6becadc_done",
+    "completedTag": "q_cisco_dragons_42115cd2d6becadc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 250,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Tame a Hippocampus",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_1a46cb18c1eba3cc",
+    "ftbQuestId": "1A46CB18C1EBA3CC",
+    "category": "MAIN",
+    "title": "Tame a Hippogryth",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Tame a Hippogryth",
+    "suggestedLevel": 42,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_1a46cb18c1eba3cc_act",
+    "doneTag": "q_cisco_dragons_1a46cb18c1eba3cc_done",
+    "completedTag": "q_cisco_dragons_1a46cb18c1eba3cc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 275,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Tame a Hippogryth",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_08f7cb6dc5642787",
+    "ftbQuestId": "08F7CB6DC5642787",
+    "category": "MAIN",
+    "title": "Kill a Dread Lich",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Kill a Dread Lich",
+    "suggestedLevel": 43,
+    "prerequisiteQuestId": "cisco_dragons_7799076a92b03ca8",
+    "activeTag": "q_cisco_dragons_08f7cb6dc5642787_act",
+    "doneTag": "q_cisco_dragons_08f7cb6dc5642787_done",
+    "completedTag": "q_cisco_dragons_08f7cb6dc5642787_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 300,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_739e8acf6d6cb5f2",
+    "ftbQuestId": "739E8ACF6D6CB5F2",
+    "category": "MAIN",
+    "title": "Find the Mausoleum",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Find the Mausoleum",
+    "suggestedLevel": 44,
+    "prerequisiteQuestId": "cisco_dragons_08f7cb6dc5642787",
+    "activeTag": "q_cisco_dragons_739e8acf6d6cb5f2_act",
+    "doneTag": "q_cisco_dragons_739e8acf6d6cb5f2_done",
+    "completedTag": "q_cisco_dragons_739e8acf6d6cb5f2_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 325,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Find the Mausoleum",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_3581698345b96e17",
+    "ftbQuestId": "3581698345B96E17",
+    "category": "MAIN",
+    "title": "Slay Fire Dragons",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Slay Fire Dragons",
+    "suggestedLevel": 45,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_3581698345b96e17_act",
+    "doneTag": "q_cisco_dragons_3581698345b96e17_done",
+    "completedTag": "q_cisco_dragons_3581698345b96e17_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 350,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 3x zombie",
+        "target": "minecraft:zombie",
+        "required": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_5fdfc696623e2bda",
+    "ftbQuestId": "5FDFC696623E2BDA",
+    "category": "MAIN",
+    "title": "Slay Lightning Dragons",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Slay Lightning Dragons",
+    "suggestedLevel": 46,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_5fdfc696623e2bda_act",
+    "doneTag": "q_cisco_dragons_5fdfc696623e2bda_done",
+    "completedTag": "q_cisco_dragons_5fdfc696623e2bda_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 375,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 3x zombie",
+        "target": "minecraft:zombie",
+        "required": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_76ea98db3c884c58",
+    "ftbQuestId": "76EA98DB3C884C58",
+    "category": "MAIN",
+    "title": "Slay Ice Dragons",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Slay Ice Dragons",
+    "suggestedLevel": 47,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_76ea98db3c884c58_act",
+    "doneTag": "q_cisco_dragons_76ea98db3c884c58_done",
+    "completedTag": "q_cisco_dragons_76ea98db3c884c58_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 400,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 3x zombie",
+        "target": "minecraft:zombie",
+        "required": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_6b949cdb464620fc",
+    "ftbQuestId": "6B949CDB464620FC",
+    "category": "MAIN",
+    "title": "Misión 6B949C",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 6B949C",
+    "suggestedLevel": 48,
+    "prerequisiteQuestId": "cisco_dragons_50d03004776882cb",
+    "activeTag": "q_cisco_dragons_6b949cdb464620fc_act",
+    "doneTag": "q_cisco_dragons_6b949cdb464620fc_done",
+    "completedTag": "q_cisco_dragons_6b949cdb464620fc_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 425,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 6B949C",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_415040716e8b4edb",
+    "ftbQuestId": "415040716E8B4EDB",
+    "category": "MAIN",
+    "title": "The Cyclops",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): The Cyclops",
+    "suggestedLevel": 49,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_415040716e8b4edb_act",
+    "doneTag": "q_cisco_dragons_415040716e8b4edb_done",
+    "completedTag": "q_cisco_dragons_415040716e8b4edb_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 450,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_17cca12d76f9f396",
+    "ftbQuestId": "17CCA12D76F9F396",
+    "category": "MAIN",
+    "title": "The Gorgon",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): The Gorgon",
+    "suggestedLevel": 50,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_17cca12d76f9f396_act",
+    "doneTag": "q_cisco_dragons_17cca12d76f9f396_done",
+    "completedTag": "q_cisco_dragons_17cca12d76f9f396_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 475,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_0116c409c773f4a2",
+    "ftbQuestId": "0116C409C773F4A2",
+    "category": "MAIN",
+    "title": "The Hydra",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): The Hydra",
+    "suggestedLevel": 51,
+    "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
+    "activeTag": "q_cisco_dragons_0116c409c773f4a2_act",
+    "doneTag": "q_cisco_dragons_0116c409c773f4a2_done",
+    "completedTag": "q_cisco_dragons_0116c409c773f4a2_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 500,
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Derrotar 1x zombie",
+        "target": "minecraft:zombie",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_2b2cfa2d079b5332",
+    "ftbQuestId": "2B2CFA2D079B5332",
+    "category": "MAIN",
+    "title": "Tame a Dragon",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Tame a Dragon",
+    "suggestedLevel": 52,
+    "prerequisiteQuestId": "cisco_dragons_76ea98db3c884c58",
+    "activeTag": "q_cisco_dragons_2b2cfa2d079b5332_act",
+    "doneTag": "q_cisco_dragons_2b2cfa2d079b5332_done",
+    "completedTag": "q_cisco_dragons_2b2cfa2d079b5332_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 525,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Tame a Dragon",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_290d9d572a5d6c04",
+    "ftbQuestId": "290D9D572A5D6C04",
+    "category": "MAIN",
+    "title": "Fallen Heroes",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Fallen Heroes",
+    "suggestedLevel": 53,
+    "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
+    "activeTag": "q_cisco_dragons_290d9d572a5d6c04_act",
+    "doneTag": "q_cisco_dragons_290d9d572a5d6c04_done",
+    "completedTag": "q_cisco_dragons_290d9d572a5d6c04_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 550,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Fallen Heroes",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_292408bf95dc3f81",
+    "ftbQuestId": "292408BF95DC3F81",
+    "category": "MAIN",
+    "title": "Alexander",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Alexander",
+    "suggestedLevel": 54,
+    "prerequisiteQuestId": "cisco_dragons_290d9d572a5d6c04",
+    "activeTag": "q_cisco_dragons_292408bf95dc3f81_act",
+    "doneTag": "q_cisco_dragons_292408bf95dc3f81_done",
+    "completedTag": "q_cisco_dragons_292408bf95dc3f81_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 575,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Alexander",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_0d904a47c1eda7de",
+    "ftbQuestId": "0D904A47C1EDA7DE",
+    "category": "MAIN",
+    "title": "Draconic Era",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Draconic Era",
+    "suggestedLevel": 55,
+    "prerequisiteQuestId": "cisco_dragons_292408bf95dc3f81",
+    "activeTag": "q_cisco_dragons_0d904a47c1eda7de_act",
+    "doneTag": "q_cisco_dragons_0d904a47c1eda7de_done",
+    "completedTag": "q_cisco_dragons_0d904a47c1eda7de_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 600,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Draconic Era",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_32e7d93bb699594e",
+    "ftbQuestId": "32E7D93BB699594E",
+    "category": "MAIN",
+    "title": "Misión 32E7D9",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 32E7D9",
+    "suggestedLevel": 56,
+    "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
+    "activeTag": "q_cisco_dragons_32e7d93bb699594e_act",
+    "doneTag": "q_cisco_dragons_32e7d93bb699594e_done",
+    "completedTag": "q_cisco_dragons_32e7d93bb699594e_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 625,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 32E7D9",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_50d03004776882cb",
+    "ftbQuestId": "50D03004776882CB",
+    "category": "MAIN",
+    "title": "Misión 50D030",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 50D030",
+    "suggestedLevel": 57,
+    "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
+    "activeTag": "q_cisco_dragons_50d03004776882cb_act",
+    "doneTag": "q_cisco_dragons_50d03004776882cb_done",
+    "completedTag": "q_cisco_dragons_50d03004776882cb_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 650,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 50D030",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_42821297260c128f",
+    "ftbQuestId": "42821297260C128F",
+    "category": "MAIN",
+    "title": "Misión 428212",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 428212",
+    "suggestedLevel": 58,
+    "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
+    "activeTag": "q_cisco_dragons_42821297260c128f_act",
+    "doneTag": "q_cisco_dragons_42821297260c128f_done",
+    "completedTag": "q_cisco_dragons_42821297260c128f_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 675,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 428212",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_630c84a0fd01dd37",
+    "ftbQuestId": "630C84A0FD01DD37",
+    "category": "MAIN",
+    "title": "Misión 630C84",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 630C84",
+    "suggestedLevel": 59,
+    "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
+    "activeTag": "q_cisco_dragons_630c84a0fd01dd37_act",
+    "doneTag": "q_cisco_dragons_630c84a0fd01dd37_done",
+    "completedTag": "q_cisco_dragons_630c84a0fd01dd37_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 700,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 630C84",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_65747b80333e3613",
+    "ftbQuestId": "65747B80333E3613",
+    "category": "MAIN",
+    "title": "Craft Dragonsteel",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Craft Dragonsteel",
+    "suggestedLevel": 60,
+    "prerequisiteQuestId": "cisco_dragons_739e8acf6d6cb5f2",
+    "activeTag": "q_cisco_dragons_65747b80333e3613_act",
+    "doneTag": "q_cisco_dragons_65747b80333e3613_done",
+    "completedTag": "q_cisco_dragons_65747b80333e3613_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 725,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft Dragonsteel",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_2e78225f6244bf7a",
+    "ftbQuestId": "2E78225F6244BF7A",
+    "category": "MAIN",
+    "title": "Craft dreadsteel",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Craft dreadsteel",
+    "suggestedLevel": 61,
+    "prerequisiteQuestId": "cisco_dragons_65747b80333e3613",
+    "activeTag": "q_cisco_dragons_2e78225f6244bf7a_act",
+    "doneTag": "q_cisco_dragons_2e78225f6244bf7a_done",
+    "completedTag": "q_cisco_dragons_2e78225f6244bf7a_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 750,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft dreadsteel",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_5129a01a2dc55bb4",
+    "ftbQuestId": "5129A01A2DC55BB4",
+    "category": "MAIN",
+    "title": "Craft Dreadsteel Armor",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Craft Dreadsteel Armor",
+    "suggestedLevel": 62,
+    "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
+    "activeTag": "q_cisco_dragons_5129a01a2dc55bb4_act",
+    "doneTag": "q_cisco_dragons_5129a01a2dc55bb4_done",
+    "completedTag": "q_cisco_dragons_5129a01a2dc55bb4_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 775,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Craft Dreadsteel Armor",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_031859030d60c602",
+    "ftbQuestId": "031859030D60C602",
+    "category": "MAIN",
+    "title": "Misión 031859",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 031859",
+    "suggestedLevel": 63,
+    "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
+    "activeTag": "q_cisco_dragons_031859030d60c602_act",
+    "doneTag": "q_cisco_dragons_031859030d60c602_done",
+    "completedTag": "q_cisco_dragons_031859030d60c602_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 800,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 031859",
+        "target": "",
+        "required": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_dragons_635dd0dac9cf17d5",
+    "ftbQuestId": "635DD0DAC9CF17D5",
+    "category": "MAIN",
+    "title": "Misión 635DD0",
+    "npc": "Ocultista del Vacío",
+    "npcId": "npc_main_ocultista",
+    "description": "Misión oficial de Cisco (Dragons): Misión 635DD0",
+    "suggestedLevel": 64,
+    "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
+    "activeTag": "q_cisco_dragons_635dd0dac9cf17d5_act",
+    "doneTag": "q_cisco_dragons_635dd0dac9cf17d5_done",
+    "completedTag": "q_cisco_dragons_635dd0dac9cf17d5_comp",
+    "rewards": [
+      "Experiencia de Campaña"
+    ],
+    "rewardXp": 825,
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Habla para completar Misión 635DD0",
+        "target": "",
+        "required": 1
+      }
+    ]
   }
 ]
