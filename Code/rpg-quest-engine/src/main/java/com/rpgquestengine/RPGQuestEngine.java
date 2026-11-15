@@ -163,13 +163,14 @@ public class RPGQuestEngine {
                             float yRot = t.entity().getYRot();
                             float xRot = t.entity().getXRot();
                             String dim = t.level().dimension().location().toString();
-                            t.entity().discard();
-
                             String cmd = String.format(java.util.Locale.ROOT,
                                 "execute in %s positioned %.3f %.3f %.3f rotated %.2f %.2f run easy_npc preset import custom easy_npc:preset/villager/%s.npc.snbt",
                                 dim, x, y, z, yRot, xRot, t.tag());
-                            server.getCommands().performPrefixedCommand(cmdSource, cmd);
-                            synced++;
+                            int res = server.getCommands().performPrefixedCommand(cmdSource, cmd);
+                            if (res > 0) {
+                                t.entity().discard();
+                                synced++;
+                            }
                         }
 
                         final int count = synced;
