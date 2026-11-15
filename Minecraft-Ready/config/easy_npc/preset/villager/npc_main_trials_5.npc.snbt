@@ -210,6 +210,12 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
+              Conditions: [
+                {
+                  Name: "q_cisco_trials_430e2d9a0d2d5c61_comp",
+                  Type: "SCOREBOARD_TAG"
+                }
+              ],
               Label: "mision",
               Name: "Misión: The ultimate Spell Book"
             },
@@ -335,12 +341,11 @@
       }
     },
     PersistenceRequired: 1b,
-    PresetUUID: [I; -528203128, 1882775973, 1148014526, -1951126718],
+    Preset
     Profession: "ARMORER",
     Rotation: [0.0f, 0.0f],
     SkinData: { Name: "PLAINS_ARMORER" },
     TradingData: { TradingDataSet: { LastReset: 0L, Type: "BASIC" } },
-    UUID: [I; -528203128, 1882775973, 1148014526, -1951126718],
     VariantType: "PLAINS_ARMORER",
     VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
     id: "easy_npc:villager"

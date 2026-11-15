@@ -210,6 +210,12 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
+              Conditions: [
+                {
+                  Name: "q_cisco_trials_5426802195e9dea6_comp",
+                  Type: "SCOREBOARD_TAG"
+                }
+              ],
               Label: "mision",
               Name: "Misión: Misión 438D84"
             },
@@ -335,12 +341,11 @@
       }
     },
     PersistenceRequired: 1b,
-    PresetUUID: [I; 867129693, 2044159282, -709642109, 615139427],
+    Preset
     Profession: "ARMORER",
     Rotation: [0.0f, 0.0f],
     SkinData: { Name: "PLAINS_ARMORER" },
     TradingData: { TradingDataSet: { LastReset: 0L, Type: "BASIC" } },
-    UUID: [I; 867129693, 2044159282, -709642109, 615139427],
     VariantType: "PLAINS_ARMORER",
     VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
     id: "easy_npc:villager"

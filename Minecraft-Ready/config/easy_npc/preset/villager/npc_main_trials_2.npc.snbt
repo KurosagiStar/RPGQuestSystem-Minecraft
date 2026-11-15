@@ -210,6 +210,12 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
+              Conditions: [
+                {
+                  Name: "q_cisco_trials_279bc431d5d067a3_comp",
+                  Type: "SCOREBOARD_TAG"
+                }
+              ],
               Label: "mision",
               Name: "Misión: For Glory!"
             },
@@ -335,12 +341,11 @@
       }
     },
     PersistenceRequired: 1b,
-    PresetUUID: [I; -891607065, -480768513, -125916776, -1383064312],
+    Preset
     Profession: "ARMORER",
     Rotation: [0.0f, 0.0f],
     SkinData: { Name: "PLAINS_ARMORER" },
     TradingData: { TradingDataSet: { LastReset: 0L, Type: "BASIC" } },
-    UUID: [I; -891607065, -480768513, -125916776, -1383064312],
     VariantType: "PLAINS_ARMORER",
     VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
     id: "easy_npc:villager"

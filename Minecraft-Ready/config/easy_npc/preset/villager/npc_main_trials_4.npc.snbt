@@ -210,6 +210,12 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
+              Conditions: [
+                {
+                  Name: "q_cisco_trials_7b1fa4c0929a40d9_comp",
+                  Type: "SCOREBOARD_TAG"
+                }
+              ],
               Label: "mision",
               Name: "Misión: Gilded Eagle"
             },
@@ -335,12 +341,11 @@
       }
     },
     PersistenceRequired: 1b,
-    PresetUUID: [I; -1773232044, -1697132432, 872895776, 1505826828],
+    Preset
     Profession: "ARMORER",
     Rotation: [0.0f, 0.0f],
     SkinData: { Name: "PLAINS_ARMORER" },
     TradingData: { TradingDataSet: { LastReset: 0L, Type: "BASIC" } },
-    UUID: [I; -1773232044, -1697132432, 872895776, 1505826828],
     VariantType: "PLAINS_ARMORER",
     VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
     id: "easy_npc:villager"
