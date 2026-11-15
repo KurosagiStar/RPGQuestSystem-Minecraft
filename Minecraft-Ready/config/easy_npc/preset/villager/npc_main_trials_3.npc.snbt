@@ -335,12 +335,12 @@
       }
     },
     PersistenceRequired: 1b,
-    PresetUUID: [I; -1532748211, 1287364520, -1948220147, 839145663],
+    PresetUUID: [I; 867129693, 2044159282, -709642109, 615139427],
     Profession: "ARMORER",
     Rotation: [0.0f, 0.0f],
     SkinData: { Name: "PLAINS_ARMORER" },
     TradingData: { TradingDataSet: { LastReset: 0L, Type: "BASIC" } },
-    UUID: [I; 840268351, 1150437155, -1439209100, -704086221],
+    UUID: [I; 867129693, 2044159282, -709642109, 615139427],
     VariantType: "PLAINS_ARMORER",
     VillagerData: { profession: "minecraft:armorer", type: "minecraft:plains" },
     id: "easy_npc:villager"
