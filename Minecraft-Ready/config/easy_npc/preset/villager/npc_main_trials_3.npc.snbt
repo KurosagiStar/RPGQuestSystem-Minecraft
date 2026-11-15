@@ -211,7 +211,7 @@
                 }
               ],
               Label: "mision",
-              Name: "Mision: Purgar No-muertos"
+              Name: "Misión: Misión 438D84"
             },
             {
               Actions: [
@@ -273,7 +273,7 @@
                 }
               ],
               Label: "aceptar",
-              Name: "Aceptar Misión (Cazar 5 Zombies)"
+              Name: "Aceptar: Misión 438D84"
             },
             {
               Actions: [
