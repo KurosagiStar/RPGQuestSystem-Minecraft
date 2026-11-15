@@ -25,89 +25,2009 @@
           Buttons: [
             {
               Actions: [
-                { Cmd: "/give @initiator minecraft:spyglass 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/give @initiator cisco_mod:champion_coin 5", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/experience add @initiator 3 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_explorador_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_explorador_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator add q_explorador_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Explorador] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Gran mapa! Has recibido un Catalejo y 5 Monedas de Campeón.\",\"color\":\"white\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Type: "CLOSE_DIALOG" }
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_5f2456e5bf06098c_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_5f2456e5bf06098c_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_5f2456e5bf06098c_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Craft a backpack\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
               ],
-              Label: "cobrar",
-              Name: "Entregar Informe del Valle y Cobrar"
-            },
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+              Label: "entregar_0",
+              Name: "Entregar: Craft a backpack"
+            }
           ],
-          Conditions: [{ Name: "q_explorador_lista", Type: "PLAYER_TAG" }],
-          Label: "mision_lista",
-          Name: "Mision Completada",
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_lista",
+          Name: "Entregar Craft a backpack",
           Priority: 20,
-          Texts: [{ Text: "¡Veo que tus antorchas despejaron la niebla y cartografiaste el sector! Con este informe sabremos por dónde vigilar. ¡Toma tu paga y este catalejo!" }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo explorando el sector con la brújula" }
-          ],
-          Conditions: [{ Name: "q_explorador_activa", Type: "PLAYER_TAG" }],
-          Label: "en_progreso",
-          Name: "En Progreso",
-          Priority: 10,
-          Texts: [{ Text: "Mira el indicador de brújula en tu HUD: te mostrará hacia dónde queda la zona amplia en las colinas este. ¡No olvides las antorchas!" }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
-          ],
-          Conditions: [{ Name: "q_explorador_entregada", Type: "PLAYER_TAG" }],
-          Label: "terminado",
-          Name: "Servicio Cumplido",
-          Priority: 15,
-          Texts: [{ Text: "Gracias a tu exploración, el valle este vuelve a ser seguro para los viajeros." }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: La Torre de la Niebla" },
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
-          ],
-          Label: "default",
-          Name: "Welcome",
-          Priority: 0,
-          Texts: [{ Text: "¡Saludos, aventurero! La niebla cubre el valle este y se escuchan ruidos extraños en las alturas. ¿Sabes orientarte en el terreno?" }]
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Craft a backpack'! Aquí tienes tu recompensa."
+            }
+          ]
         },
         {
           Buttons: [
             {
               Actions: [
-                { Cmd: "/tag @initiator add q_explorador_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Explorador] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Misión aceptada! Sigue la flecha del HUD hacia la zona de búsqueda.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Type: "CLOSE_DIALOG" }
+                {
+                  Type: "CLOSE_DIALOG"
+                }
               ],
-              Label: "aceptar",
-              Name: "Aceptar Expedición (Torre de la Niebla)"
-            },
-            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+              Name: "Seguir en ello"
+            }
           ],
-          Label: "mision",
-          Name: "Mision",
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: Craft a backpack",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Craft a backpack': Habla para completar Craft a backpack"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: Craft a backpack",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Craft a backpack'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_5f2456e5bf06098c_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Craft a backpack: Habla para completar Craft a backpack\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_0",
+              Name: "Aceptar: Craft a backpack"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2dd7b0278eacd633_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: Craft a backpack",
           Priority: -1,
-          Texts: [{ Text: "Sigue la orientación en tu HUD hacia el sector este. Es una zona amplia de 180 bloques. Fabrica 4 antorchas para iluminar y, si puedes, lleva una brújula de apoyo." }]
+          Texts: [
+            {
+              Text: "Misión: Craft a backpack\n\nObjetivo: Habla para completar Craft a backpack"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Bloqueada: Craft a backpack",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Craft a backpack'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_39ada7b5ed04f4c1_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_39ada7b5ed04f4c1_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_39ada7b5ed04f4c1_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 39ADA7\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Misión 39ADA7"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_39ada7b5ed04f4c1_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Misión 39ADA7",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 39ADA7'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_39ada7b5ed04f4c1_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Misión 39ADA7",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 39ADA7': Habla para completar Misión 39ADA7"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_39ada7b5ed04f4c1_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Misión 39ADA7",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 39ADA7'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_39ada7b5ed04f4c1_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 39ADA7: Habla para completar Misión 39ADA7\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Misión 39ADA7"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Misión 39ADA7",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 39ADA7\n\nObjetivo: Habla para completar Misión 39ADA7"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Misión 39ADA7",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 39ADA7'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_22388f2d91480e82_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_22388f2d91480e82_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_22388f2d91480e82_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 22388F\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: Misión 22388F"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22388f2d91480e82_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar Misión 22388F",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 22388F'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22388f2d91480e82_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_progreso",
+          Name: "En Progreso: Misión 22388F",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 22388F': Habla para completar Misión 22388F"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22388f2d91480e82_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: Misión 22388F",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 22388F'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_22388f2d91480e82_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 22388F: Habla para completar Misión 22388F\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_2",
+              Name: "Aceptar: Misión 22388F"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: Misión 22388F",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 22388F\n\nObjetivo: Habla para completar Misión 22388F"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: Misión 22388F",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 22388F'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_1972ee649fc972e7_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_1972ee649fc972e7_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_1972ee649fc972e7_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 1972EE\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: Misión 1972EE"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1972ee649fc972e7_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar Misión 1972EE",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 1972EE'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1972ee649fc972e7_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: Misión 1972EE",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 1972EE': Habla para completar Misión 1972EE"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1972ee649fc972e7_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: Misión 1972EE",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 1972EE'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_1972ee649fc972e7_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 1972EE: Habla para completar Misión 1972EE\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: Misión 1972EE"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: Misión 1972EE",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 1972EE\n\nObjetivo: Habla para completar Misión 1972EE"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: Misión 1972EE",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 1972EE'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_2dccc1e1567de875_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_2dccc1e1567de875_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_2dccc1e1567de875_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 2DCCC1\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: Misión 2DCCC1"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2dccc1e1567de875_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar Misión 2DCCC1",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 2DCCC1'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2dccc1e1567de875_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: Misión 2DCCC1",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 2DCCC1': Habla para completar Misión 2DCCC1"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2dccc1e1567de875_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: Misión 2DCCC1",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 2DCCC1'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_2dccc1e1567de875_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 2DCCC1: Habla para completar Misión 2DCCC1\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: Misión 2DCCC1"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: Misión 2DCCC1",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 2DCCC1\n\nObjetivo: Habla para completar Misión 2DCCC1"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: Misión 2DCCC1",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 2DCCC1'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_513c6a72927972c9_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_513c6a72927972c9_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_513c6a72927972c9_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 513C6A\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Misión 513C6A"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_513c6a72927972c9_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Misión 513C6A",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 513C6A'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_513c6a72927972c9_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Misión 513C6A",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 513C6A': Habla para completar Misión 513C6A"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_513c6a72927972c9_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Misión 513C6A",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 513C6A'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_513c6a72927972c9_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 513C6A: Habla para completar Misión 513C6A\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Misión 513C6A"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5f2456e5bf06098c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Misión 513C6A",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 513C6A\n\nObjetivo: Habla para completar Misión 513C6A"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Misión 513C6A",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 513C6A'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_4faecf44cfbe7eec_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_4faecf44cfbe7eec_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_4faecf44cfbe7eec_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Craft the iron furnace\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_6",
+              Name: "Entregar: Craft the iron furnace"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4faecf44cfbe7eec_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_lista",
+          Name: "Entregar Craft the iron furnace",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Craft the iron furnace'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4faecf44cfbe7eec_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_progreso",
+          Name: "En Progreso: Craft the iron furnace",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Craft the iron furnace': Habla para completar Craft the iron furnace"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4faecf44cfbe7eec_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Completada: Craft the iron furnace",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Craft the iron furnace'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_4faecf44cfbe7eec_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Craft the iron furnace: Habla para completar Craft the iron furnace\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_6",
+              Name: "Aceptar: Craft the iron furnace"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_513c6a72927972c9_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Mision: Craft the iron furnace",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Craft the iron furnace\n\nObjetivo: Habla para completar Craft the iron furnace"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Bloqueada: Craft the iron furnace",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Craft the iron furnace'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_02d166e4ffb3baf6_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_02d166e4ffb3baf6_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_02d166e4ffb3baf6_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Craft the golden furnace\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_7",
+              Name: "Entregar: Craft the golden furnace"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_02d166e4ffb3baf6_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_lista",
+          Name: "Entregar Craft the golden furnace",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Craft the golden furnace'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_02d166e4ffb3baf6_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_progreso",
+          Name: "En Progreso: Craft the golden furnace",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Craft the golden furnace': Habla para completar Craft the golden furnace"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_02d166e4ffb3baf6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Completada: Craft the golden furnace",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Craft the golden furnace'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_02d166e4ffb3baf6_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Craft the golden furnace: Habla para completar Craft the golden furnace\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_7",
+              Name: "Aceptar: Craft the golden furnace"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4faecf44cfbe7eec_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Mision: Craft the golden furnace",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Craft the golden furnace\n\nObjetivo: Habla para completar Craft the golden furnace"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Bloqueada: Craft the golden furnace",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Craft the golden furnace'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_2754c959bc321288_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_2754c959bc321288_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_2754c959bc321288_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 2754C9\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_8",
+              Name: "Entregar: Misión 2754C9"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2754c959bc321288_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_lista",
+          Name: "Entregar Misión 2754C9",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 2754C9'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2754c959bc321288_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_progreso",
+          Name: "En Progreso: Misión 2754C9",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 2754C9': Habla para completar Misión 2754C9"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2754c959bc321288_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Completada: Misión 2754C9",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 2754C9'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_2754c959bc321288_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 2754C9: Habla para completar Misión 2754C9\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_8",
+              Name: "Aceptar: Misión 2754C9"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_02d166e4ffb3baf6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Mision: Misión 2754C9",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 2754C9\n\nObjetivo: Habla para completar Misión 2754C9"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Bloqueada: Misión 2754C9",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 2754C9'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_736e4b5e45e37f9c_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_736e4b5e45e37f9c_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_736e4b5e45e37f9c_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Stone Wand\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_9",
+              Name: "Entregar: Stone Wand"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_736e4b5e45e37f9c_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_lista",
+          Name: "Entregar Stone Wand",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Stone Wand'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_736e4b5e45e37f9c_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_progreso",
+          Name: "En Progreso: Stone Wand",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Stone Wand': Habla para completar Stone Wand"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_736e4b5e45e37f9c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Completada: Stone Wand",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Stone Wand'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_736e4b5e45e37f9c_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Stone Wand: Habla para completar Stone Wand\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_9",
+              Name: "Aceptar: Stone Wand"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2754c959bc321288_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Mision: Stone Wand",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Stone Wand\n\nObjetivo: Habla para completar Stone Wand"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Bloqueada: Stone Wand",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Stone Wand'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_4524817476a2b36d_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_4524817476a2b36d_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_4524817476a2b36d_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 452481\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_10",
+              Name: "Entregar: Misión 452481"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4524817476a2b36d_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_lista",
+          Name: "Entregar Misión 452481",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 452481'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4524817476a2b36d_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_progreso",
+          Name: "En Progreso: Misión 452481",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 452481': Habla para completar Misión 452481"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_4524817476a2b36d_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Completada: Misión 452481",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 452481'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_4524817476a2b36d_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 452481: Habla para completar Misión 452481\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_10",
+              Name: "Aceptar: Misión 452481"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_736e4b5e45e37f9c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Mision: Misión 452481",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 452481\n\nObjetivo: Habla para completar Misión 452481"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Bloqueada: Misión 452481",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 452481'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "mision_0",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_0",
+              Name: "Misión 1: Craft a backpack"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_1",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_1",
+              Name: "Misión 2: Misión 39ADA7"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_2",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_2",
+              Name: "Misión 3: Misión 22388F"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_3",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_3",
+              Name: "Misión 4: Misión 1972EE"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_4",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_4",
+              Name: "Misión 5: Misión 2DCCC1"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_5",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_5",
+              Name: "Misión 6: Misión 513C6A"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_6",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_6",
+              Name: "Misión 7: Craft the iron furnace"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_7",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_7",
+              Name: "Misión 8: Craft the golden furnace"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_8",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_8",
+              Name: "Misión 9: Misión 2754C9"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_9",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_9",
+              Name: "Misión 10: Stone Wand"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_10",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_10",
+              Name: "Misión 11: Misión 452481"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "Saludos, aventurero. Tengo 11 misiones asignadas para ti. Elige una en orden:"
+            }
+          ]
         }
       ],
       Type: "CUSTOM"

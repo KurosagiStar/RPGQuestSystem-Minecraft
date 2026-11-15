@@ -36,18 +36,6 @@
             {
               Actions: [
                 {
-                  Cmd: "/give @initiator cisco_mod:champion_coin 5",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
-                  Cmd: "/experience add @initiator 2 levels",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
                   Cmd: "/tag @initiator remove q_cisco_trials_03e41c9a2a59791a_act",
                   ExecAsUser: 0b,
                   PermLevel: 2,
@@ -66,13 +54,7 @@
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/scoreboard players reset @initiator cisco_z_kills",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
-                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"green\",\"bold\":true},{\"text\":\"¡Gran trabajo! Has recibido 5 Monedas de Campeón y 2 niveles de XP.\",\"color\":\"white\"}]",
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"The ultimate Spell Book\",\"color\":\"white\"}]",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -81,39 +63,22 @@
                   Type: "CLOSE_DIALOG"
                 }
               ],
-              Label: "cobrar",
-              Name: "Entregar Informe y Cobrar Recompensa"
-            },
-            {
-              Actions: [
-                {
-                  Type: "OPEN_TRADING_SCREEN"
-                }
-              ],
-              Label: "comercio",
-              Name: "Comercio Militar"
-            },
-            {
-              Actions: [
-                {
-                  Type: "CLOSE_DIALOG"
-                }
-              ],
-              Name: "Despedirse"
+              Label: "entregar_0",
+              Name: "Entregar: The ultimate Spell Book"
             }
           ],
           Conditions: [
             {
               Name: "q_cisco_trials_03e41c9a2a59791a_done",
-              Type: "PLAYER_TAG"
+              Type: "SCOREBOARD_TAG"
             }
           ],
-          Label: "mision_lista",
-          Name: "Mision Completada",
+          Label: "mision_0_lista",
+          Name: "Entregar The ultimate Spell Book",
           Priority: 20,
           Texts: [
             {
-              Text: "¡Mis centinelas me informan que limpiaste los alrededores!\\n\\n¡Buen trabajo, forastero! Entrega tu reporte militar y toma tu paga."
+              Text: "¡Excelente trabajo con 'The ultimate Spell Book'! Aquí tienes tu recompensa."
             }
           ]
         },
@@ -122,7 +87,65 @@
             {
               Actions: [
                 {
-                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Completa The ultimate Spell Book (Habla para completar The ultimate Spell Book). Revisa tu HUD.\",\"color\":\"white\"}]",
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_03e41c9a2a59791a_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: The ultimate Spell Book",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'The ultimate Spell Book': Habla para completar The ultimate Spell Book"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_03e41c9a2a59791a_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: The ultimate Spell Book",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'The ultimate Spell Book'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_03e41c9a2a59791a_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"The ultimate Spell Book: Habla para completar The ultimate Spell Book\",\"color\":\"yellow\"}]",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -131,39 +154,127 @@
                   Type: "CLOSE_DIALOG"
                 }
               ],
-              Label: "entendido",
-              Name: "Entendido, sigo cazando"
+              Label: "aceptar_0",
+              Name: "Aceptar: The ultimate Spell Book"
             },
             {
               Actions: [
                 {
-                  Type: "OPEN_TRADING_SCREEN"
+                  Type: "OPEN_DEFAULT_DIALOG"
                 }
               ],
-              Label: "comercio",
-              Name: "Comercio Militar"
-            },
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_430e2d9a0d2d5c61_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: The ultimate Spell Book",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: The ultimate Spell Book\n\nObjetivo: Habla para completar The ultimate Spell Book"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Bloqueada: The ultimate Spell Book",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'The ultimate Spell Book'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_4f6408adeb30e0fb_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_4f6408adeb30e0fb_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_4f6408adeb30e0fb_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Click the the checkmark.\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Click the the checkmark."
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_4f6408adeb30e0fb_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Click the the checkmark.",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Click the the checkmark.'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
             {
               Actions: [
                 {
                   Type: "CLOSE_DIALOG"
                 }
               ],
-              Name: "Despedirse"
+              Name: "Seguir en ello"
             }
           ],
           Conditions: [
             {
-              Name: "q_cisco_trials_03e41c9a2a59791a_act",
-              Type: "PLAYER_TAG"
+              Name: "q_cisco_trials_4f6408adeb30e0fb_act",
+              Type: "SCOREBOARD_TAG"
             }
           ],
-          Label: "en_progreso",
-          Name: "Mision en Progreso",
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Click the the checkmark.",
           Priority: 10,
           Texts: [
             {
-              Text: "¡Forastero! Mis centinelas reportan que la horda sigue merodeando en las cercanías.\\n\\n¿Cómo va esa cacería de zombies? Recuerda que necesito 5 bajas confirmadas."
+              Text: "Aún tienes pendiente 'Click the the checkmark.': Habla para completar Click the the checkmark."
             }
           ]
         },
@@ -172,33 +283,168 @@
             {
               Actions: [
                 {
-                  Type: "OPEN_TRADING_SCREEN"
+                  Type: "OPEN_DEFAULT_DIALOG"
                 }
               ],
-              Label: "comercio",
-              Name: "Comercio Militar"
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_4f6408adeb30e0fb_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Click the the checkmark.",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Click the the checkmark.'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_4f6408adeb30e0fb_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Click the the checkmark.: Habla para completar Click the the checkmark.\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Click the the checkmark."
             },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_7916f83211133602_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Click the the checkmark.",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Click the the checkmark.\n\nObjetivo: Habla para completar Click the the checkmark."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Click the the checkmark.",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Click the the checkmark.'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_526d9e48aed9ff47_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_526d9e48aed9ff47_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_526d9e48aed9ff47_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 526D9E\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: Misión 526D9E"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_526d9e48aed9ff47_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar Misión 526D9E",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 526D9E'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
             {
               Actions: [
                 {
                   Type: "CLOSE_DIALOG"
                 }
               ],
-              Name: "Despedirse"
+              Name: "Seguir en ello"
             }
           ],
           Conditions: [
             {
-              Name: "q_cisco_trials_03e41c9a2a59791a_comp",
-              Type: "PLAYER_TAG"
+              Name: "q_cisco_trials_526d9e48aed9ff47_act",
+              Type: "SCOREBOARD_TAG"
             }
           ],
-          Label: "terminado",
-          Name: "Servicio Cumplido",
-          Priority: 15,
+          Label: "mision_2_progreso",
+          Name: "En Progreso: Misión 526D9E",
+          Priority: 10,
           Texts: [
             {
-              Text: "Gracias a tu valiente servicio, el perímetro sigue despejado."
+              Text: "Aún tienes pendiente 'Misión 526D9E': Habla para completar Misión 526D9E"
             }
           ]
         },
@@ -207,27 +453,1573 @@
             {
               Actions: [
                 {
-                  Cmd: "mision",
-                  Type: "OPEN_NAMED_DIALOG"
+                  Type: "OPEN_DEFAULT_DIALOG"
                 }
               ],
-              Conditions: [
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_526d9e48aed9ff47_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: Misión 526D9E",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 526D9E'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
                 {
-                  Name: "q_cisco_trials_430e2d9a0d2d5c61_comp",
-                  Type: "SCOREBOARD_TAG"
+                  Cmd: "/tag @initiator add q_cisco_trials_526d9e48aed9ff47_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 526D9E: Habla para completar Misión 526D9E\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
                 }
               ],
-              Label: "mision",
-              Name: "Misión: The ultimate Spell Book"
+              Label: "aceptar_2",
+              Name: "Aceptar: Misión 526D9E"
             },
             {
               Actions: [
                 {
-                  Type: "OPEN_TRADING_SCREEN"
+                  Type: "OPEN_DEFAULT_DIALOG"
                 }
               ],
-              Label: "comercio",
-              Name: "Comercio Militar"
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_6853d0c9370fdc1f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: Misión 526D9E",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 526D9E\n\nObjetivo: Habla para completar Misión 526D9E"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: Misión 526D9E",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 526D9E'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_1e29bfdbab318bb6_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_1e29bfdbab318bb6_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_1e29bfdbab318bb6_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit Ocean Monument\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: Visit Ocean Monument"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_1e29bfdbab318bb6_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar Visit Ocean Monument",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit Ocean Monument'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_1e29bfdbab318bb6_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: Visit Ocean Monument",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit Ocean Monument': Habla para completar Visit Ocean Monument"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_1e29bfdbab318bb6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: Visit Ocean Monument",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit Ocean Monument'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_1e29bfdbab318bb6_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit Ocean Monument: Habla para completar Visit Ocean Monument\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: Visit Ocean Monument"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_64286a21fdb8288f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: Visit Ocean Monument",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit Ocean Monument\n\nObjetivo: Habla para completar Visit Ocean Monument"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: Visit Ocean Monument",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit Ocean Monument'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_58711e64c6f2abf5_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_58711e64c6f2abf5_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_58711e64c6f2abf5_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Slay the Elder Guardian\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: Slay the Elder Guardian"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_58711e64c6f2abf5_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar Slay the Elder Guardian",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Slay the Elder Guardian'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_58711e64c6f2abf5_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: Slay the Elder Guardian",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Slay the Elder Guardian': Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_58711e64c6f2abf5_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: Slay the Elder Guardian",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Slay the Elder Guardian'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_58711e64c6f2abf5_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Slay the Elder Guardian: Derrotar 1x zombie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: Slay the Elder Guardian"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_1e29bfdbab318bb6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: Slay the Elder Guardian",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Slay the Elder Guardian\n\nObjetivo: Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: Slay the Elder Guardian",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Slay the Elder Guardian'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_7db626b9f20baadc_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_7db626b9f20baadc_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_7db626b9f20baadc_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Darksteel Armor\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Darksteel Armor"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_7db626b9f20baadc_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Darksteel Armor",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Darksteel Armor'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_7db626b9f20baadc_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Darksteel Armor",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Darksteel Armor': Habla para completar Darksteel Armor"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_7db626b9f20baadc_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Darksteel Armor",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Darksteel Armor'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_7db626b9f20baadc_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Darksteel Armor: Habla para completar Darksteel Armor\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Darksteel Armor"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_7f28da2696d94242_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Darksteel Armor",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Darksteel Armor\n\nObjetivo: Habla para completar Darksteel Armor"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Darksteel Armor",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Darksteel Armor'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_3af40cdf74652218_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_3af40cdf74652218_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_3af40cdf74652218_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 3AF40C\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_6",
+              Name: "Entregar: Misión 3AF40C"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_3af40cdf74652218_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_lista",
+          Name: "Entregar Misión 3AF40C",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 3AF40C'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_3af40cdf74652218_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_progreso",
+          Name: "En Progreso: Misión 3AF40C",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 3AF40C': Habla para completar Misión 3AF40C"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_3af40cdf74652218_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Completada: Misión 3AF40C",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 3AF40C'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_3af40cdf74652218_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 3AF40C: Habla para completar Misión 3AF40C\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_6",
+              Name: "Aceptar: Misión 3AF40C"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_78c3cc2b67ed66b6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Mision: Misión 3AF40C",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 3AF40C\n\nObjetivo: Habla para completar Misión 3AF40C"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Bloqueada: Misión 3AF40C",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 3AF40C'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_22b92de71f6f923d_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_22b92de71f6f923d_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_22b92de71f6f923d_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Find a bounty board\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_7",
+              Name: "Entregar: Find a bounty board"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_22b92de71f6f923d_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_lista",
+          Name: "Entregar Find a bounty board",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Find a bounty board'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_22b92de71f6f923d_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_progreso",
+          Name: "En Progreso: Find a bounty board",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Find a bounty board': Habla para completar Find a bounty board"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_22b92de71f6f923d_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Completada: Find a bounty board",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Find a bounty board'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_22b92de71f6f923d_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Find a bounty board: Habla para completar Find a bounty board\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_7",
+              Name: "Aceptar: Find a bounty board"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_5e23b10d82dbb573_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Mision: Find a bounty board",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Find a bounty board\n\nObjetivo: Habla para completar Find a bounty board"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Bloqueada: Find a bounty board",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Find a bounty board'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_5e23b10d82dbb573_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_5e23b10d82dbb573_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_5e23b10d82dbb573_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Find a village\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_8",
+              Name: "Entregar: Find a village"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_5e23b10d82dbb573_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_lista",
+          Name: "Entregar Find a village",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Find a village'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_5e23b10d82dbb573_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_progreso",
+          Name: "En Progreso: Find a village",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Find a village': Habla para completar Find a village"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_5e23b10d82dbb573_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Completada: Find a village",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Find a village'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_5e23b10d82dbb573_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Find a village: Habla para completar Find a village\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_8",
+              Name: "Aceptar: Find a village"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_23864a4966441d61_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Mision: Find a village",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Find a village\n\nObjetivo: Habla para completar Find a village"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Bloqueada: Find a village",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Find a village'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_6c3bf7e0c3286ef7_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_6c3bf7e0c3286ef7_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_6c3bf7e0c3286ef7_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 6C3BF7\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_9",
+              Name: "Entregar: Misión 6C3BF7"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_6c3bf7e0c3286ef7_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_lista",
+          Name: "Entregar Misión 6C3BF7",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 6C3BF7'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_6c3bf7e0c3286ef7_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_progreso",
+          Name: "En Progreso: Misión 6C3BF7",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 6C3BF7': Habla para completar Misión 6C3BF7"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_6c3bf7e0c3286ef7_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Completada: Misión 6C3BF7",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 6C3BF7'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_6c3bf7e0c3286ef7_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 6C3BF7: Habla para completar Misión 6C3BF7\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_9",
+              Name: "Aceptar: Misión 6C3BF7"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_5e23b10d82dbb573_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Mision: Misión 6C3BF7",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 6C3BF7\n\nObjetivo: Habla para completar Misión 6C3BF7"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Bloqueada: Misión 6C3BF7",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 6C3BF7'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_0a9e8bacb6289283_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_trials_0a9e8bacb6289283_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_0a9e8bacb6289283_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 0A9E8B\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_10",
+              Name: "Entregar: Misión 0A9E8B"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_0a9e8bacb6289283_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_lista",
+          Name: "Entregar Misión 0A9E8B",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 0A9E8B'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_0a9e8bacb6289283_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_progreso",
+          Name: "En Progreso: Misión 0A9E8B",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 0A9E8B': Habla para completar Misión 0A9E8B"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_0a9e8bacb6289283_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Completada: Misión 0A9E8B",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 0A9E8B'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_trials_0a9e8bacb6289283_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 0A9E8B: Habla para completar Misión 0A9E8B\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_10",
+              Name: "Aceptar: Misión 0A9E8B"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_trials_6c3bf7e0c3286ef7_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Mision: Misión 0A9E8B",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 0A9E8B\n\nObjetivo: Habla para completar Misión 0A9E8B"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Bloqueada: Misión 0A9E8B",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 0A9E8B'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "mision_0",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_0",
+              Name: "Misión 1: The ultimate Spell Book"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_1",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_1",
+              Name: "Misión 2: Click the the checkmark."
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_2",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_2",
+              Name: "Misión 3: Misión 526D9E"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_3",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_3",
+              Name: "Misión 4: Visit Ocean Monument"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_4",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_4",
+              Name: "Misión 5: Slay the Elder Guardian"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_5",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_5",
+              Name: "Misión 6: Darksteel Armor"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_6",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_6",
+              Name: "Misión 7: Misión 3AF40C"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_7",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_7",
+              Name: "Misión 8: Find a bounty board"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_8",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_8",
+              Name: "Misión 9: Find a village"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_9",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_9",
+              Name: "Misión 10: Misión 6C3BF7"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_10",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_10",
+              Name: "Misión 11: Misión 0A9E8B"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
             },
             {
               Actions: [
@@ -243,91 +2035,7 @@
           Priority: 0,
           Texts: [
             {
-              Text: "¡Alto ahí, civil! Mis centinelas custodian esta aldea del asedio del Fell King.\\n\\n¿En qué puedo servirte?"
-            }
-          ]
-        },
-        {
-          Buttons: [
-            {
-              Actions: [
-                {
-                  Cmd: "/tag @initiator add q_cisco_trials_03e41c9a2a59791a_act",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
-                  Cmd: "/scoreboard objectives add cisco_z_kills dummy",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
-                  Cmd: "/scoreboard players set @initiator cisco_z_kills 0",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
-                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! The ultimate Spell Book: Habla para completar The ultimate Spell Book\",\"color\":\"yellow\"}]",
-                  ExecAsUser: 0b,
-                  PermLevel: 2,
-                  Type: "COMMAND"
-                },
-                {
-                  Type: "CLOSE_DIALOG"
-                }
-              ],
-              Label: "aceptar",
-              Name: "Aceptar: The ultimate Spell Book"
-            },
-            {
-              Actions: [
-                {
-                  Type: "OPEN_DEFAULT_DIALOG"
-                }
-              ],
-              Name: "Volver"
-            }
-          ],
-          Conditions: [
-
-            {
-
-              Name: "q_cisco_trials_430e2d9a0d2d5c61_comp",
-
-              Type: "SCOREBOARD_TAG"
-
-            }
-
-          ],
-          Label: "mision",
-          Name: "Mision",
-          Priority: -1,
-          Texts: [
-            {
-              Text: "Los bosques aledaños están infestados de zombies corruptos.\\n\\nNecesito que caces al menos 5 de ellos para asegurar el perímetro exterior."
-            }
-          ]
-        },
-        {
-          Buttons: [
-            {
-              Actions: [
-                {
-                  Type: "OPEN_DEFAULT_DIALOG"
-                }
-              ],
-              Name: "Volver"
-            }
-          ],
-          Label: "mision",
-          Name: "Mision Bloqueada",
-          Priority: -10,
-          Texts: [
-            {
-              Text: "Aún no estás listo para esta misión. Completa la misión anterior primero."
+              Text: "Saludos, aventurero. Tengo 11 misiones asignadas para ti. Elige una en orden:"
             }
           ]
         }

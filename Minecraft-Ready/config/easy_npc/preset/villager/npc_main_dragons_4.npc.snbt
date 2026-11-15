@@ -25,81 +25,1109 @@
           Buttons: [
             {
               Actions: [
-                { Cmd: "/give @initiator minecraft:blaze_rod 2", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/give @initiator cisco_mod:champion_coin 10", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/experience add @initiator 3 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_nether_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_nether_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator add q_nether_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Ocultista] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"¡Has regresado del inframundo! Toma tus varas de blaze y monedas.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Type: "CLOSE_DIALOG" }
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_290d9d572a5d6c04_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_290d9d572a5d6c04_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_290d9d572a5d6c04_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Fallen Heroes\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
               ],
-              Label: "cobrar",
-              Name: "Entregar Reporte Infernal y Cobrar"
-            },
-            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+              Label: "entregar_0",
+              Name: "Entregar: Fallen Heroes"
+            }
           ],
-          Conditions: [{ Name: "q_nether_lista", Type: "PLAYER_TAG" }],
-          Label: "mision_lista",
-          Name: "Mision Completada",
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_290d9d572a5d6c04_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_lista",
+          Name: "Entregar Fallen Heroes",
           Priority: 20,
-          Texts: [{ Text: "¡El calor del fuego eterno aún emana de tu armadura! Pocos mortales cruzan ese umbral y regresan cuerdos. ¡Toma tu tributo!" }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo buscando el portal" }
-          ],
-          Conditions: [{ Name: "q_nether_activa", Type: "PLAYER_TAG" }],
-          Label: "en_progreso",
-          Name: "En Progreso",
-          Priority: 10,
-          Texts: [{ Text: "Construye un portal de obsidiana y enciéndelo. Solo necesitas pisar el suelo de la dimensión del Nether." }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
-          ],
-          Conditions: [{ Name: "q_nether_entregada", Type: "PLAYER_TAG" }],
-          Label: "terminado",
-          Name: "Servicio Cumplido",
-          Priority: 15,
-          Texts: [{ Text: "Los secretos del plano infernal están documentados en nuestros grimorios." }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: El Portal al Inframundo" },
-            { Actions: [{ Cmd: "dlg_boss_lich_mass_destruction", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_boss_lich_mass_destruction", Name: "Mision: Tormento: El Lich de la Torre Nocturna" },
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
-          ],
-          Label: "default",
-          Name: "Welcome",
-          Priority: 0,
-          Texts: [{ Text: "¿Sientes el eco de la obsidiana? Las dimensiones se agitan. Busco a un aventurero con el coraje de cruzar el umbral del fuego." }]
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Fallen Heroes'! Aquí tienes tu recompensa."
+            }
+          ]
         },
         {
           Buttons: [
             {
               Actions: [
-                { Cmd: "/tag @initiator add q_nether_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Ocultista] \",\"color\":\"dark_purple\",\"bold\":true},{\"text\":\"¡Misión aceptada! Cruza el portal al Nether.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Type: "CLOSE_DIALOG" }
+                {
+                  Type: "CLOSE_DIALOG"
+                }
               ],
-              Label: "aceptar",
-              Name: "Aceptar Mision (Viajar al Nether)"
-            },
-            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+              Name: "Seguir en ello"
+            }
           ],
-          Label: "mision",
-          Name: "Mision",
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_290d9d572a5d6c04_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: Fallen Heroes",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Fallen Heroes': Habla para completar Fallen Heroes"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_290d9d572a5d6c04_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: Fallen Heroes",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Fallen Heroes'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_290d9d572a5d6c04_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Fallen Heroes: Habla para completar Fallen Heroes\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_0",
+              Name: "Aceptar: Fallen Heroes"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: Fallen Heroes",
           Priority: -1,
-          Texts: [{ Text: "Construye o encuentra un portal y viaja a la dimensión del Nether (minecraft:the_nether). Te pagaré con varas de blaze y monedas de campeón." }]
+          Texts: [
+            {
+              Text: "Misión: Fallen Heroes\n\nObjetivo: Habla para completar Fallen Heroes"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Bloqueada: Fallen Heroes",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Fallen Heroes'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_292408bf95dc3f81_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_292408bf95dc3f81_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_292408bf95dc3f81_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Alexander\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Alexander"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_292408bf95dc3f81_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Alexander",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Alexander'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_292408bf95dc3f81_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Alexander",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Alexander': Habla para completar Alexander"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_292408bf95dc3f81_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Alexander",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Alexander'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_292408bf95dc3f81_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Alexander: Habla para completar Alexander\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Alexander"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_290d9d572a5d6c04_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Alexander",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Alexander\n\nObjetivo: Habla para completar Alexander"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Alexander",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Alexander'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_0d904a47c1eda7de_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_0d904a47c1eda7de_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_0d904a47c1eda7de_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Draconic Era\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: Draconic Era"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0d904a47c1eda7de_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar Draconic Era",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Draconic Era'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0d904a47c1eda7de_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_progreso",
+          Name: "En Progreso: Draconic Era",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Draconic Era': Habla para completar Draconic Era"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0d904a47c1eda7de_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: Draconic Era",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Draconic Era'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_0d904a47c1eda7de_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Draconic Era: Habla para completar Draconic Era\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_2",
+              Name: "Aceptar: Draconic Era"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_292408bf95dc3f81_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: Draconic Era",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Draconic Era\n\nObjetivo: Habla para completar Draconic Era"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: Draconic Era",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Draconic Era'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_32e7d93bb699594e_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_32e7d93bb699594e_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_32e7d93bb699594e_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 32E7D9\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: Misión 32E7D9"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_32e7d93bb699594e_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar Misión 32E7D9",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 32E7D9'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_32e7d93bb699594e_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: Misión 32E7D9",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 32E7D9': Habla para completar Misión 32E7D9"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_32e7d93bb699594e_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: Misión 32E7D9",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 32E7D9'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_32e7d93bb699594e_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 32E7D9: Habla para completar Misión 32E7D9\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: Misión 32E7D9"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: Misión 32E7D9",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 32E7D9\n\nObjetivo: Habla para completar Misión 32E7D9"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: Misión 32E7D9",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 32E7D9'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_50d03004776882cb_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_50d03004776882cb_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_50d03004776882cb_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 50D030\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: Misión 50D030"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_50d03004776882cb_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar Misión 50D030",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 50D030'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_50d03004776882cb_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: Misión 50D030",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 50D030': Habla para completar Misión 50D030"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_50d03004776882cb_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: Misión 50D030",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 50D030'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_50d03004776882cb_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 50D030: Habla para completar Misión 50D030\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: Misión 50D030"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: Misión 50D030",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 50D030\n\nObjetivo: Habla para completar Misión 50D030"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: Misión 50D030",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 50D030'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_42821297260c128f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_42821297260c128f_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_42821297260c128f_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 428212\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Misión 428212"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_42821297260c128f_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Misión 428212",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 428212'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_42821297260c128f_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Misión 428212",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 428212': Habla para completar Misión 428212"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_42821297260c128f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Misión 428212",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 428212'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_42821297260c128f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 428212: Habla para completar Misión 428212\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Misión 428212"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Misión 428212",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 428212\n\nObjetivo: Habla para completar Misión 428212"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Misión 428212",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 428212'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "mision_0",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_0",
+              Name: "Misión 1: Fallen Heroes"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_1",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_1",
+              Name: "Misión 2: Alexander"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_2",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_2",
+              Name: "Misión 3: Draconic Era"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_3",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_3",
+              Name: "Misión 4: Misión 32E7D9"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_4",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_4",
+              Name: "Misión 5: Misión 50D030"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_5",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_5",
+              Name: "Misión 6: Misión 428212"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "Saludos, aventurero. Tengo 6 misiones asignadas para ti. Elige una en orden:"
+            }
+          ]
         }
       ],
       Type: "CUSTOM"

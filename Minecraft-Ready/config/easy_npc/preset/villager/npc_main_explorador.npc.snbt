@@ -25,89 +25,1983 @@
           Buttons: [
             {
               Actions: [
-                { Cmd: "/give @initiator minecraft:spyglass 1", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/give @initiator cisco_mod:champion_coin 5", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/experience add @initiator 3 levels", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_explorador_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator remove q_explorador_lista", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tag @initiator add q_explorador_entregada", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Explorador] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Gran mapa! Has recibido un Catalejo y 5 Monedas de Campeón.\",\"color\":\"white\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Type: "CLOSE_DIALOG" }
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_7815c719227c80e6_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_7815c719227c80e6_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_7815c719227c80e6_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 7815C7\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
               ],
-              Label: "cobrar",
-              Name: "Entregar Informe del Valle y Cobrar"
-            },
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
+              Label: "entregar_0",
+              Name: "Entregar: Misión 7815C7"
+            }
           ],
-          Conditions: [{ Name: "q_explorador_lista", Type: "PLAYER_TAG" }],
-          Label: "mision_lista",
-          Name: "Mision Completada",
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7815c719227c80e6_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_lista",
+          Name: "Entregar Misión 7815C7",
           Priority: 20,
-          Texts: [{ Text: "¡Veo que tus antorchas despejaron la niebla y cartografiaste el sector! Con este informe sabremos por dónde vigilar. ¡Toma tu paga y este catalejo!" }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Label: "entendido", Name: "Sigo explorando el sector con la brújula" }
-          ],
-          Conditions: [{ Name: "q_explorador_activa", Type: "PLAYER_TAG" }],
-          Label: "en_progreso",
-          Name: "En Progreso",
-          Priority: 10,
-          Texts: [{ Text: "Mira el indicador de brújula en tu HUD: te mostrará hacia dónde queda la zona amplia en las colinas este. ¡No olvides las antorchas!" }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
-          ],
-          Conditions: [{ Name: "q_explorador_entregada", Type: "PLAYER_TAG" }],
-          Label: "terminado",
-          Name: "Servicio Cumplido",
-          Priority: 15,
-          Texts: [{ Text: "Gracias a tu exploración, el valle este vuelve a ser seguro para los viajeros." }]
-        },
-        {
-          Buttons: [
-            { Actions: [{ Cmd: "mision", Type: "OPEN_NAMED_DIALOG" }], Label: "mision", Name: "Mision: La Torre de la Niebla" },
-            { Actions: [{ Cmd: "dlg_dimension_aether_expedition", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_dimension_aether_expedition", Name: "Mision: Más Allá de las Nubes: El Aether" },
-            { Actions: [{ Cmd: "dlg_trial_relic", Type: "OPEN_NAMED_DIALOG" }], Label: "dlg_trial_relic", Name: "Mision: La Reliquia de los Ancestros" },
-
-
-            { Actions: [{ Type: "CLOSE_DIALOG" }], Name: "Despedirse" }
-          ],
-          Label: "default",
-          Name: "Welcome",
-          Priority: 0,
-          Texts: [{ Text: "¡Saludos, aventurero! La niebla cubre el valle este y se escuchan ruidos extraños en las alturas. ¿Sabes orientarte en el terreno?" }]
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 7815C7'! Aquí tienes tu recompensa."
+            }
+          ]
         },
         {
           Buttons: [
             {
               Actions: [
-                { Cmd: "/tag @initiator add q_explorador_activa", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Cmd: "/tellraw @initiator [{\"text\":\"[Explorador] \",\"color\":\"aqua\",\"bold\":true},{\"text\":\"¡Misión aceptada! Sigue la flecha del HUD hacia la zona de búsqueda.\",\"color\":\"yellow\"}]", ExecAsUser: 0b, PermLevel: 2, Type: "COMMAND" },
-                { Type: "CLOSE_DIALOG" }
+                {
+                  Type: "CLOSE_DIALOG"
+                }
               ],
-              Label: "aceptar",
-              Name: "Aceptar Expedición (Torre de la Niebla)"
-            },
-            { Actions: [{ Type: "OPEN_DEFAULT_DIALOG" }], Name: "Volver" }
+              Name: "Seguir en ello"
+            }
           ],
-          Label: "mision",
-          Name: "Mision",
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7815c719227c80e6_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: Misión 7815C7",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 7815C7': Habla para completar Misión 7815C7"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7815c719227c80e6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: Misión 7815C7",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 7815C7'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_7815c719227c80e6_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 7815C7: Habla para completar Misión 7815C7\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_0",
+              Name: "Aceptar: Misión 7815C7"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: Misión 7815C7",
           Priority: -1,
-          Texts: [{ Text: "Sigue la orientación en tu HUD hacia el sector este. Es una zona amplia de 180 bloques. Fabrica 4 antorchas para iluminar y, si puedes, lleva una brújula de apoyo." }]
+          Texts: [
+            {
+              Text: "Misión: Misión 7815C7\n\nObjetivo: Habla para completar Misión 7815C7"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_0409ee265b906649_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_0409ee265b906649_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_0409ee265b906649_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the twilight forest\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Visit the twilight forest"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Visit the twilight forest",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the twilight forest'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Visit the twilight forest",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the twilight forest': Habla para completar Visit the twilight forest"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Visit the twilight forest",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the twilight forest'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_0409ee265b906649_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the twilight forest: Habla para completar Visit the twilight forest\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Visit the twilight forest"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7815c719227c80e6_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Visit the twilight forest",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the twilight forest\n\nObjetivo: Habla para completar Visit the twilight forest"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Visit the twilight forest",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the twilight forest'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_3bd706c24344cd30_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_3bd706c24344cd30_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_3bd706c24344cd30_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire Naga's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: Acquire Naga's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_3bd706c24344cd30_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar Acquire Naga's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire Naga's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_3bd706c24344cd30_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_progreso",
+          Name: "En Progreso: Acquire Naga's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire Naga's Head': Habla para completar Acquire Naga's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_3bd706c24344cd30_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: Acquire Naga's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire Naga's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_3bd706c24344cd30_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire Naga's Head: Habla para completar Acquire Naga's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_2",
+              Name: "Aceptar: Acquire Naga's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: Acquire Naga's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire Naga's Head\n\nObjetivo: Habla para completar Acquire Naga's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: Acquire Naga's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire Naga's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_008b7e891a9c410e_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_008b7e891a9c410e_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_008b7e891a9c410e_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire Lich's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: Acquire Lich's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_008b7e891a9c410e_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar Acquire Lich's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire Lich's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_008b7e891a9c410e_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: Acquire Lich's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire Lich's Head': Habla para completar Acquire Lich's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_008b7e891a9c410e_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: Acquire Lich's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire Lich's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_008b7e891a9c410e_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire Lich's Head: Habla para completar Acquire Lich's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: Acquire Lich's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: Acquire Lich's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire Lich's Head\n\nObjetivo: Habla para completar Acquire Lich's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: Acquire Lich's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire Lich's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_5ba1ae423d7c3c4a_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_5ba1ae423d7c3c4a_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_5ba1ae423d7c3c4a_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire Minoshroom's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: Acquire Minoshroom's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5ba1ae423d7c3c4a_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar Acquire Minoshroom's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire Minoshroom's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5ba1ae423d7c3c4a_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: Acquire Minoshroom's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire Minoshroom's Head': Habla para completar Acquire Minoshroom's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5ba1ae423d7c3c4a_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: Acquire Minoshroom's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire Minoshroom's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_5ba1ae423d7c3c4a_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire Minoshroom's Head: Habla para completar Acquire Minoshroom's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: Acquire Minoshroom's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: Acquire Minoshroom's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire Minoshroom's Head\n\nObjetivo: Habla para completar Acquire Minoshroom's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: Acquire Minoshroom's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire Minoshroom's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_5a7f819bcfdb9cbf_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_5a7f819bcfdb9cbf_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_5a7f819bcfdb9cbf_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire the Hydra's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Acquire the Hydra's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5a7f819bcfdb9cbf_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Acquire the Hydra's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire the Hydra's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5a7f819bcfdb9cbf_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Acquire the Hydra's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire the Hydra's Head': Habla para completar Acquire the Hydra's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_5a7f819bcfdb9cbf_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Acquire the Hydra's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire the Hydra's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_5a7f819bcfdb9cbf_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire the Hydra's Head: Habla para completar Acquire the Hydra's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Acquire the Hydra's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Acquire the Hydra's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire the Hydra's Head\n\nObjetivo: Habla para completar Acquire the Hydra's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Acquire the Hydra's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire the Hydra's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_215073b10639703f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_215073b10639703f_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_215073b10639703f_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire Knight Phantom's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_6",
+              Name: "Entregar: Acquire Knight Phantom's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_215073b10639703f_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_lista",
+          Name: "Entregar Acquire Knight Phantom's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire Knight Phantom's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_215073b10639703f_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_progreso",
+          Name: "En Progreso: Acquire Knight Phantom's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire Knight Phantom's Head': Habla para completar Acquire Knight Phantom's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_215073b10639703f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Completada: Acquire Knight Phantom's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire Knight Phantom's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_215073b10639703f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire Knight Phantom's Head: Habla para completar Acquire Knight Phantom's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_6",
+              Name: "Aceptar: Acquire Knight Phantom's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Mision: Acquire Knight Phantom's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire Knight Phantom's Head\n\nObjetivo: Habla para completar Acquire Knight Phantom's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Bloqueada: Acquire Knight Phantom's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire Knight Phantom's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_50d2e142736f982f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_50d2e142736f982f_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_50d2e142736f982f_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire the Ur-Ghast's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_7",
+              Name: "Entregar: Acquire the Ur-Ghast's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_50d2e142736f982f_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_lista",
+          Name: "Entregar Acquire the Ur-Ghast's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire the Ur-Ghast's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_50d2e142736f982f_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_progreso",
+          Name: "En Progreso: Acquire the Ur-Ghast's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire the Ur-Ghast's Head': Habla para completar Acquire the Ur-Ghast's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_50d2e142736f982f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Completada: Acquire the Ur-Ghast's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire the Ur-Ghast's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_50d2e142736f982f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire the Ur-Ghast's Head: Habla para completar Acquire the Ur-Ghast's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_7",
+              Name: "Aceptar: Acquire the Ur-Ghast's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Mision: Acquire the Ur-Ghast's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire the Ur-Ghast's Head\n\nObjetivo: Habla para completar Acquire the Ur-Ghast's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Bloqueada: Acquire the Ur-Ghast's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire the Ur-Ghast's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_6799e933c08da23d_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_6799e933c08da23d_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_6799e933c08da23d_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire the Alpha Yeti's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_8",
+              Name: "Entregar: Acquire the Alpha Yeti's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_6799e933c08da23d_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_lista",
+          Name: "Entregar Acquire the Alpha Yeti's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire the Alpha Yeti's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_6799e933c08da23d_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_progreso",
+          Name: "En Progreso: Acquire the Alpha Yeti's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire the Alpha Yeti's Head': Habla para completar Acquire the Alpha Yeti's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_6799e933c08da23d_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Completada: Acquire the Alpha Yeti's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire the Alpha Yeti's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_6799e933c08da23d_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire the Alpha Yeti's Head: Habla para completar Acquire the Alpha Yeti's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_8",
+              Name: "Aceptar: Acquire the Alpha Yeti's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Mision: Acquire the Alpha Yeti's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire the Alpha Yeti's Head\n\nObjetivo: Habla para completar Acquire the Alpha Yeti's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Bloqueada: Acquire the Alpha Yeti's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire the Alpha Yeti's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_1f2d9615ba7ce672_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_1f2d9615ba7ce672_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_1f2d9615ba7ce672_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Acquire the Snow Queen's Head\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_9",
+              Name: "Entregar: Acquire the Snow Queen's Head"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1f2d9615ba7ce672_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_lista",
+          Name: "Entregar Acquire the Snow Queen's Head",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Acquire the Snow Queen's Head'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1f2d9615ba7ce672_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_progreso",
+          Name: "En Progreso: Acquire the Snow Queen's Head",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Acquire the Snow Queen's Head': Habla para completar Acquire the Snow Queen's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1f2d9615ba7ce672_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Completada: Acquire the Snow Queen's Head",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Acquire the Snow Queen's Head'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_1f2d9615ba7ce672_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Acquire the Snow Queen's Head: Habla para completar Acquire the Snow Queen's Head\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_9",
+              Name: "Aceptar: Acquire the Snow Queen's Head"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0409ee265b906649_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Mision: Acquire the Snow Queen's Head",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Acquire the Snow Queen's Head\n\nObjetivo: Habla para completar Acquire the Snow Queen's Head"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Bloqueada: Acquire the Snow Queen's Head",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Acquire the Snow Queen's Head'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_0c7ef344c1930a6f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_0c7ef344c1930a6f_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_0c7ef344c1930a6f_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Craft the explorer's compass\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_10",
+              Name: "Entregar: Craft the explorer's compass"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0c7ef344c1930a6f_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_lista",
+          Name: "Entregar Craft the explorer's compass",
+          Priority: 20,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Craft the explorer's compass'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0c7ef344c1930a6f_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_progreso",
+          Name: "En Progreso: Craft the explorer's compass",
+          Priority: 10,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Craft the explorer's compass': Habla para completar Craft the explorer's compass"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0c7ef344c1930a6f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Completada: Craft the explorer's compass",
+          Priority: 5,
+          Texts: [
+            {
+              Text: "Ya completaste 'Craft the explorer's compass'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_0c7ef344c1930a6f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Craft the explorer's compass: Habla para completar Craft the explorer's compass\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_10",
+              Name: "Aceptar: Craft the explorer's compass"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1f2d9615ba7ce672_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Mision: Craft the explorer's compass",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Craft the explorer's compass\n\nObjetivo: Habla para completar Craft the explorer's compass"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Bloqueada: Craft the explorer's compass",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Craft the explorer's compass'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "mision_0",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_0",
+              Name: "Misión 1: Misión 7815C7"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_1",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_1",
+              Name: "Misión 2: Visit the twilight forest"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_2",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_2",
+              Name: "Misión 3: Acquire Naga's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_3",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_3",
+              Name: "Misión 4: Acquire Lich's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_4",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_4",
+              Name: "Misión 5: Acquire Minoshroom's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_5",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_5",
+              Name: "Misión 6: Acquire the Hydra's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_6",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_6",
+              Name: "Misión 7: Acquire Knight Phantom's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_7",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_7",
+              Name: "Misión 8: Acquire the Ur-Ghast's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_8",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_8",
+              Name: "Misión 9: Acquire the Alpha Yeti's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_9",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_9",
+              Name: "Misión 10: Acquire the Snow Queen's Head"
+            },
+            {
+              Actions: [
+                {
+                  Cmd: "mision_10",
+                  Type: "OPEN_NAMED_DIALOG"
+                }
+              ],
+              Label: "btn_mision_10",
+              Name: "Misión 11: Craft the explorer's compass"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "Saludos, aventurero. Tengo 11 misiones asignadas para ti. Elige una en orden:"
+            }
+          ]
         }
       ],
       Type: "CUSTOM"
