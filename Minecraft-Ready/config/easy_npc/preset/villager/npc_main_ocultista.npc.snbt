@@ -1050,58 +1050,8 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
-              Label: "btn_mision_0",
-              Name: "Misión 1: Misión 4B4BF1"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_1",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_1",
-              Name: "Misión 2: Misión 2FB157"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_2",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_2",
-              Name: "Misión 3: Misión 57F0E5"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_3",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_3",
-              Name: "Misión 4: Misión 779907"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_4",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_4",
-              Name: "Misión 5: Misión 4E213C"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_5",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_5",
-              Name: "Misión 6: Befriend a pixie"
+              Label: "btn_mision",
+              Name: "Misión"
             },
             {
               Actions: [

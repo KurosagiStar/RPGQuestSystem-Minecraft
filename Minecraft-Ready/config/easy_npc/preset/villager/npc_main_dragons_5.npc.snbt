@@ -1050,58 +1050,8 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
-              Label: "btn_mision_0",
-              Name: "Misión 1: Misión 630C84"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_1",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_1",
-              Name: "Misión 2: Craft Dragonsteel"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_2",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_2",
-              Name: "Misión 3: Craft dreadsteel"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_3",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_3",
-              Name: "Misión 4: Craft Dreadsteel Armor"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_4",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_4",
-              Name: "Misión 5: Misión 031859"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_5",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_5",
-              Name: "Misión 6: Misión 635DD0"
+              Label: "btn_mision",
+              Name: "Misión"
             },
             {
               Actions: [

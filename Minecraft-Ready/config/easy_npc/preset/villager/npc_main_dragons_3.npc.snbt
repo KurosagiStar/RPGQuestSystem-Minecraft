@@ -1050,58 +1050,8 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
-              Label: "btn_mision_0",
-              Name: "Misión 1: Slay Ice Dragons"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_1",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_1",
-              Name: "Misión 2: Misión 6B949C"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_2",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_2",
-              Name: "Misión 3: The Cyclops"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_3",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_3",
-              Name: "Misión 4: The Gorgon"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_4",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_4",
-              Name: "Misión 5: The Hydra"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_5",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_5",
-              Name: "Misión 6: Tame a Dragon"
+              Label: "btn_mision",
+              Name: "Misión"
             },
             {
               Actions: [

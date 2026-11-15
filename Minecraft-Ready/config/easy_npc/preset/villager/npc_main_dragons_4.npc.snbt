@@ -1050,58 +1050,8 @@
                   Type: "OPEN_NAMED_DIALOG"
                 }
               ],
-              Label: "btn_mision_0",
-              Name: "Misión 1: Fallen Heroes"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_1",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_1",
-              Name: "Misión 2: Alexander"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_2",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_2",
-              Name: "Misión 3: Draconic Era"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_3",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_3",
-              Name: "Misión 4: Misión 32E7D9"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_4",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_4",
-              Name: "Misión 5: Misión 50D030"
-            },
-            {
-              Actions: [
-                {
-                  Cmd: "mision_5",
-                  Type: "OPEN_NAMED_DIALOG"
-                }
-              ],
-              Label: "btn_mision_5",
-              Name: "Misión 6: Misión 428212"
+              Label: "btn_mision",
+              Name: "Misión"
             },
             {
               Actions: [
