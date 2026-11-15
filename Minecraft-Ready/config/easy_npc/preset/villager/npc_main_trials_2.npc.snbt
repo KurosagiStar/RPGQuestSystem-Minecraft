@@ -47,19 +47,19 @@
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tag @initiator remove q_capitan_activa",
+                  Cmd: "/tag @initiator remove q_cisco_trials_4472063587820df7_act",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tag @initiator remove q_capitan_lista",
+                  Cmd: "/tag @initiator remove q_cisco_trials_4472063587820df7_done",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tag @initiator add q_capitan_entregada",
+                  Cmd: "/tag @initiator add q_cisco_trials_4472063587820df7_comp",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -103,7 +103,7 @@
           ],
           Conditions: [
             {
-              Name: "q_capitan_lista",
+              Name: "q_cisco_trials_4472063587820df7_done",
               Type: "PLAYER_TAG"
             }
           ],
@@ -121,7 +121,7 @@
             {
               Actions: [
                 {
-                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Aún estoy esperando el informe de las 5 bajas. Revisa tu HUD en pantalla.\",\"color\":\"white\"}]",
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"yellow\",\"bold\":true},{\"text\":\"Completa For Glory! (Habla para completar For Glory!). Revisa tu HUD.\",\"color\":\"white\"}]",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -153,7 +153,7 @@
           ],
           Conditions: [
             {
-              Name: "q_capitan_activa",
+              Name: "q_cisco_trials_4472063587820df7_act",
               Type: "PLAYER_TAG"
             }
           ],
@@ -188,7 +188,7 @@
           ],
           Conditions: [
             {
-              Name: "q_capitan_entregada",
+              Name: "q_cisco_trials_4472063587820df7_comp",
               Type: "PLAYER_TAG"
             }
           ],
@@ -245,7 +245,7 @@
             {
               Actions: [
                 {
-                  Cmd: "/tag @initiator add q_capitan_activa",
+                  Cmd: "/tag @initiator add q_cisco_trials_4472063587820df7_act",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -263,7 +263,7 @@
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! Elimina 5 zombies en los alrededores.\",\"color\":\"yellow\"}]",
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! For Glory!: Habla para completar For Glory!\",\"color\":\"yellow\"}]",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
