@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Craft a backpack",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Craft a backpack'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Craft a backpack",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Craft a backpack': Habla para completar Craft a backpack"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Craft a backpack",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Craft a backpack'. ¡Buen trabajo!"
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Misión 39ADA7",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 39ADA7'! Aquí tienes tu recompensa."
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Misión 39ADA7",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 39ADA7': Habla para completar Misión 39ADA7"
@@ -287,7 +287,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Misión 39ADA7",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 39ADA7'. ¡Buen trabajo!"
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Misión 22388F",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 22388F'! Aquí tienes tu recompensa."
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Misión 22388F",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 22388F': Habla para completar Misión 22388F"
@@ -457,7 +457,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Misión 22388F",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 22388F'. ¡Buen trabajo!"
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Misión 1972EE",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 1972EE'! Aquí tienes tu recompensa."
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Misión 1972EE",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 1972EE': Habla para completar Misión 1972EE"
@@ -627,7 +627,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Misión 1972EE",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 1972EE'. ¡Buen trabajo!"
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Misión 2DCCC1",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 2DCCC1'! Aquí tienes tu recompensa."
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Misión 2DCCC1",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 2DCCC1': Habla para completar Misión 2DCCC1"
@@ -797,7 +797,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Misión 2DCCC1",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 2DCCC1'. ¡Buen trabajo!"
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Misión 513C6A",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 513C6A'! Aquí tienes tu recompensa."
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Misión 513C6A",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 513C6A': Habla para completar Misión 513C6A"
@@ -967,7 +967,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Misión 513C6A",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 513C6A'. ¡Buen trabajo!"
@@ -1085,7 +1085,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Craft the iron furnace",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Craft the iron furnace'! Aquí tienes tu recompensa."
@@ -1111,7 +1111,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Craft the iron furnace",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Craft the iron furnace': Habla para completar Craft the iron furnace"
@@ -1137,7 +1137,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Craft the iron furnace",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Craft the iron furnace'. ¡Buen trabajo!"
@@ -1255,7 +1255,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Craft the golden furnace",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Craft the golden furnace'! Aquí tienes tu recompensa."
@@ -1281,7 +1281,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Craft the golden furnace",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Craft the golden furnace': Habla para completar Craft the golden furnace"
@@ -1307,7 +1307,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Craft the golden furnace",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Craft the golden furnace'. ¡Buen trabajo!"
@@ -1425,7 +1425,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Misión 2754C9",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 2754C9'! Aquí tienes tu recompensa."
@@ -1451,7 +1451,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Misión 2754C9",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 2754C9': Habla para completar Misión 2754C9"
@@ -1477,7 +1477,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Misión 2754C9",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 2754C9'. ¡Buen trabajo!"
@@ -1595,7 +1595,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Stone Wand",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Stone Wand'! Aquí tienes tu recompensa."
@@ -1621,7 +1621,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Stone Wand",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Stone Wand': Habla para completar Stone Wand"
@@ -1647,7 +1647,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Stone Wand",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Stone Wand'. ¡Buen trabajo!"
@@ -1765,7 +1765,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Misión 452481",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 452481'! Aquí tienes tu recompensa."
@@ -1791,7 +1791,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Misión 452481",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 452481': Habla para completar Misión 452481"
@@ -1817,7 +1817,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Misión 452481",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 452481'. ¡Buen trabajo!"

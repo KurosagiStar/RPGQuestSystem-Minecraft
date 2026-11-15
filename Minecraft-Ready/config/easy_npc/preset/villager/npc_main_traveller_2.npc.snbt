@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Visit keep kayra",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit keep kayra'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Visit keep kayra",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit keep kayra': Habla para completar Visit keep kayra"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Visit keep kayra",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit keep kayra'. ¡Buen trabajo!"
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Raid Shiraz Palace",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Raid Shiraz Palace'! Aquí tienes tu recompensa."
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Raid Shiraz Palace",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Raid Shiraz Palace': Habla para completar Raid Shiraz Palace"
@@ -287,7 +287,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Raid Shiraz Palace",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Raid Shiraz Palace'. ¡Buen trabajo!"
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Raid Bastille",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Raid Bastille'! Aquí tienes tu recompensa."
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Raid Bastille",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Raid Bastille': Habla para completar Raid Bastille"
@@ -457,7 +457,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Raid Bastille",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Raid Bastille'. ¡Buen trabajo!"
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Raid the Dungeon Crawl Dungeon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Raid the Dungeon Crawl Dungeon'! Aquí tienes tu recompensa."
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Raid the Dungeon Crawl Dungeon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Raid the Dungeon Crawl Dungeon': Habla para completar Raid the Dungeon Crawl Dungeon"
@@ -627,7 +627,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Raid the Dungeon Crawl Dungeon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Raid the Dungeon Crawl Dungeon'. ¡Buen trabajo!"
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Visit the aether dimension",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the aether dimension'! Aquí tienes tu recompensa."
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Visit the aether dimension",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the aether dimension': Habla para completar Visit the aether dimension"
@@ -797,7 +797,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Visit the aether dimension",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the aether dimension'. ¡Buen trabajo!"
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Find the bronze dungeon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Find the bronze dungeon'! Aquí tienes tu recompensa."
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Find the bronze dungeon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Find the bronze dungeon': Habla para completar Find the bronze dungeon"
@@ -967,7 +967,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Find the bronze dungeon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Find the bronze dungeon'. ¡Buen trabajo!"
@@ -1085,7 +1085,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Find the silver dungeon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Find the silver dungeon'! Aquí tienes tu recompensa."
@@ -1111,7 +1111,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Find the silver dungeon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Find the silver dungeon': Habla para completar Find the silver dungeon"
@@ -1137,7 +1137,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Find the silver dungeon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Find the silver dungeon'. ¡Buen trabajo!"
@@ -1255,7 +1255,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Find the gold dungeon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Find the gold dungeon'! Aquí tienes tu recompensa."
@@ -1281,7 +1281,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Find the gold dungeon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Find the gold dungeon': Habla para completar Find the gold dungeon"
@@ -1307,7 +1307,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Find the gold dungeon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Find the gold dungeon'. ¡Buen trabajo!"
@@ -1425,7 +1425,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Defeat the slider",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Defeat the slider'! Aquí tienes tu recompensa."
@@ -1451,7 +1451,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Defeat the slider",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Defeat the slider': Derrotar 1x zombie"
@@ -1477,7 +1477,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Defeat the slider",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Defeat the slider'. ¡Buen trabajo!"
@@ -1595,7 +1595,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Slay the Valkyrie Queen",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay the Valkyrie Queen'! Aquí tienes tu recompensa."
@@ -1621,7 +1621,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Slay the Valkyrie Queen",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay the Valkyrie Queen': Derrotar 1x zombie"
@@ -1647,7 +1647,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Slay the Valkyrie Queen",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay the Valkyrie Queen'. ¡Buen trabajo!"
@@ -1765,7 +1765,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Slay the Sun Spirit",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay the Sun Spirit'! Aquí tienes tu recompensa."
@@ -1791,7 +1791,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Slay the Sun Spirit",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay the Sun Spirit': Derrotar 1x zombie"
@@ -1817,7 +1817,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Slay the Sun Spirit",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay the Sun Spirit'. ¡Buen trabajo!"

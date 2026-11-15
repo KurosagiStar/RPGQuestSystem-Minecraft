@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Easy Villagers Auto Trader",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Auto Trader'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Easy Villagers Auto Trader",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Auto Trader': Habla para completar Easy Villagers Auto Trader"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Easy Villagers Auto Trader",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Auto Trader'. ¡Buen trabajo!"
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Easy Villagers Trading",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Trading'! Aquí tienes tu recompensa."
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Easy Villagers Trading",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Trading': Habla para completar Easy Villagers Trading"
@@ -287,7 +287,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Easy Villagers Trading",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Trading'. ¡Buen trabajo!"
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Easy Villagers Iron Farm",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Iron Farm'! Aquí tienes tu recompensa."
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Easy Villagers Iron Farm",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Iron Farm': Habla para completar Easy Villagers Iron Farm"
@@ -457,7 +457,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Easy Villagers Iron Farm",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Iron Farm'. ¡Buen trabajo!"
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Easy Villagers Farmer",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Farmer'! Aquí tienes tu recompensa."
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Easy Villagers Farmer",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Farmer': Habla para completar Easy Villagers Farmer"
@@ -627,7 +627,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Easy Villagers Farmer",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Farmer'. ¡Buen trabajo!"
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Easy Villagers Converting",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Converting'! Aquí tienes tu recompensa."
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Easy Villagers Converting",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Converting': Habla para completar Easy Villagers Converting"
@@ -797,7 +797,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Easy Villagers Converting",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Converting'. ¡Buen trabajo!"
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Easy Villagers Breeding",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Breeding'! Aquí tienes tu recompensa."
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Easy Villagers Breeding",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Breeding': Habla para completar Easy Villagers Breeding"
@@ -967,7 +967,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Easy Villagers Breeding",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Breeding'. ¡Buen trabajo!"
@@ -1085,7 +1085,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Easy Villagers Incubator",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Easy Villagers Incubator'! Aquí tienes tu recompensa."
@@ -1111,7 +1111,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Easy Villagers Incubator",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Easy Villagers Incubator': Habla para completar Easy Villagers Incubator"
@@ -1137,7 +1137,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Easy Villagers Incubator",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Easy Villagers Incubator'. ¡Buen trabajo!"
@@ -1255,7 +1255,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Find the Olympic Citadel",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Find the Olympic Citadel'! Aquí tienes tu recompensa."
@@ -1281,7 +1281,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Find the Olympic Citadel",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Find the Olympic Citadel': Habla para completar Find the Olympic Citadel"
@@ -1307,7 +1307,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Find the Olympic Citadel",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Find the Olympic Citadel'. ¡Buen trabajo!"
@@ -1425,7 +1425,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Visit the Nether",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Nether'! Aquí tienes tu recompensa."
@@ -1451,7 +1451,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Visit the Nether",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Nether': Habla para completar Visit the Nether"
@@ -1477,7 +1477,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Visit the Nether",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Nether'. ¡Buen trabajo!"
@@ -1595,7 +1595,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Travel to the End",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Travel to the End'! Aquí tienes tu recompensa."
@@ -1621,7 +1621,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Travel to the End",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Travel to the End': Habla para completar Travel to the End"
@@ -1647,7 +1647,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Travel to the End",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Travel to the End'. ¡Buen trabajo!"
@@ -1765,7 +1765,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Visit the Soul Plain",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Soul Plain'! Aquí tienes tu recompensa."
@@ -1791,7 +1791,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Visit the Soul Plain",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Soul Plain': Habla para completar Visit the Soul Plain"
@@ -1817,7 +1817,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Visit the Soul Plain",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Soul Plain'. ¡Buen trabajo!"

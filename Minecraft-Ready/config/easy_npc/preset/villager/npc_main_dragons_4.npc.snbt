@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Fallen Heroes",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Fallen Heroes'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Fallen Heroes",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Fallen Heroes': Habla para completar Fallen Heroes"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Fallen Heroes",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Fallen Heroes'. ¡Buen trabajo!"
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Alexander",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Alexander'! Aquí tienes tu recompensa."
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Alexander",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Alexander': Habla para completar Alexander"
@@ -287,7 +287,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Alexander",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Alexander'. ¡Buen trabajo!"
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Draconic Era",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Draconic Era'! Aquí tienes tu recompensa."
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Draconic Era",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Draconic Era': Habla para completar Draconic Era"
@@ -457,7 +457,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Draconic Era",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Draconic Era'. ¡Buen trabajo!"
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Misión 32E7D9",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 32E7D9'! Aquí tienes tu recompensa."
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Misión 32E7D9",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 32E7D9': Habla para completar Misión 32E7D9"
@@ -627,7 +627,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Misión 32E7D9",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 32E7D9'. ¡Buen trabajo!"
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Misión 50D030",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 50D030'! Aquí tienes tu recompensa."
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Misión 50D030",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 50D030': Habla para completar Misión 50D030"
@@ -797,7 +797,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Misión 50D030",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 50D030'. ¡Buen trabajo!"
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Misión 428212",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 428212'! Aquí tienes tu recompensa."
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Misión 428212",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 428212': Habla para completar Misión 428212"
@@ -967,7 +967,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Misión 428212",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 428212'. ¡Buen trabajo!"

@@ -75,7 +75,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Misión 438D84",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 438D84'! Aquí tienes tu recompensa."
@@ -101,7 +101,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Misión 438D84",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 438D84': Habla para completar Misión 438D84"
@@ -127,7 +127,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Misión 438D84",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 438D84'. ¡Buen trabajo!"
@@ -245,7 +245,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Misión 0F7160",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 0F7160'! Aquí tienes tu recompensa."
@@ -271,7 +271,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Misión 0F7160",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 0F7160': Habla para completar Misión 0F7160"
@@ -297,7 +297,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Misión 0F7160",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 0F7160'. ¡Buen trabajo!"
@@ -415,7 +415,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Misión 00CB68",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 00CB68'! Aquí tienes tu recompensa."
@@ -441,7 +441,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Misión 00CB68",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 00CB68': Habla para completar Misión 00CB68"
@@ -467,7 +467,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Misión 00CB68",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 00CB68'. ¡Buen trabajo!"
@@ -585,7 +585,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Misión 5A24E1",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 5A24E1'! Aquí tienes tu recompensa."
@@ -611,7 +611,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Misión 5A24E1",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 5A24E1': Habla para completar Misión 5A24E1"
@@ -637,7 +637,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Misión 5A24E1",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 5A24E1'. ¡Buen trabajo!"
@@ -755,7 +755,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Craft the Ignitium set",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Craft the Ignitium set'! Aquí tienes tu recompensa."
@@ -781,7 +781,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Craft the Ignitium set",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Craft the Ignitium set': Habla para completar Craft the Ignitium set"
@@ -807,7 +807,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Craft the Ignitium set",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Craft the Ignitium set'. ¡Buen trabajo!"
@@ -925,7 +925,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Misión 74C563",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 74C563'! Aquí tienes tu recompensa."
@@ -951,7 +951,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Misión 74C563",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 74C563': Habla para completar Misión 74C563"
@@ -977,7 +977,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Misión 74C563",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 74C563'. ¡Buen trabajo!"
@@ -1095,7 +1095,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Misión 28B406",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 28B406'! Aquí tienes tu recompensa."
@@ -1121,7 +1121,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Misión 28B406",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 28B406': Habla para completar Misión 28B406"
@@ -1147,7 +1147,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Misión 28B406",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 28B406'. ¡Buen trabajo!"
@@ -1265,7 +1265,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Misión 78C3CC",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 78C3CC'! Aquí tienes tu recompensa."
@@ -1291,7 +1291,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Misión 78C3CC",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 78C3CC': Habla para completar Misión 78C3CC"
@@ -1317,7 +1317,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Misión 78C3CC",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 78C3CC'. ¡Buen trabajo!"
@@ -1435,7 +1435,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Misión 5319E4",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 5319E4'! Aquí tienes tu recompensa."
@@ -1461,7 +1461,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Misión 5319E4",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 5319E4': Habla para completar Misión 5319E4"
@@ -1487,7 +1487,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Misión 5319E4",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 5319E4'. ¡Buen trabajo!"
@@ -1605,7 +1605,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Misión 1436BC",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 1436BC'! Aquí tienes tu recompensa."
@@ -1631,7 +1631,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Misión 1436BC",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 1436BC': Habla para completar Misión 1436BC"
@@ -1657,7 +1657,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Misión 1436BC",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 1436BC'. ¡Buen trabajo!"
@@ -1775,7 +1775,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Misión 7519AF",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 7519AF'! Aquí tienes tu recompensa."
@@ -1801,7 +1801,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Misión 7519AF",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 7519AF': Habla para completar Misión 7519AF"
@@ -1827,7 +1827,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Misión 7519AF",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 7519AF'. ¡Buen trabajo!"
@@ -1945,7 +1945,7 @@
           ],
           Label: "mision_11_lista",
           Name: "Entregar View skill tree",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'View skill tree'! Aquí tienes tu recompensa."
@@ -1971,7 +1971,7 @@
           ],
           Label: "mision_11_progreso",
           Name: "En Progreso: View skill tree",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'View skill tree': Habla para completar View skill tree"
@@ -1997,7 +1997,7 @@
           ],
           Label: "mision_11",
           Name: "Completada: View skill tree",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'View skill tree'. ¡Buen trabajo!"
@@ -2115,7 +2115,7 @@
           ],
           Label: "mision_12_lista",
           Name: "Entregar Misión 7B1FA4",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 7B1FA4'! Aquí tienes tu recompensa."
@@ -2141,7 +2141,7 @@
           ],
           Label: "mision_12_progreso",
           Name: "En Progreso: Misión 7B1FA4",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 7B1FA4': Habla para completar Misión 7B1FA4"
@@ -2167,7 +2167,7 @@
           ],
           Label: "mision_12",
           Name: "Completada: Misión 7B1FA4",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 7B1FA4'. ¡Buen trabajo!"
@@ -2285,7 +2285,7 @@
           ],
           Label: "mision_13_lista",
           Name: "Entregar Brightsteel Armor",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Brightsteel Armor'! Aquí tienes tu recompensa."
@@ -2311,7 +2311,7 @@
           ],
           Label: "mision_13_progreso",
           Name: "En Progreso: Brightsteel Armor",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Brightsteel Armor': Habla para completar Brightsteel Armor"
@@ -2337,7 +2337,7 @@
           ],
           Label: "mision_13",
           Name: "Completada: Brightsteel Armor",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Brightsteel Armor'. ¡Buen trabajo!"

@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Slay Ice Dragons",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay Ice Dragons'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Slay Ice Dragons",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay Ice Dragons': Derrotar 3x zombie"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Slay Ice Dragons",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay Ice Dragons'. ¡Buen trabajo!"
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Misión 6B949C",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 6B949C'! Aquí tienes tu recompensa."
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Misión 6B949C",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 6B949C': Habla para completar Misión 6B949C"
@@ -287,7 +287,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Misión 6B949C",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 6B949C'. ¡Buen trabajo!"
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar The Cyclops",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'The Cyclops'! Aquí tienes tu recompensa."
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: The Cyclops",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'The Cyclops': Derrotar 1x zombie"
@@ -457,7 +457,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: The Cyclops",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'The Cyclops'. ¡Buen trabajo!"
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar The Gorgon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'The Gorgon'! Aquí tienes tu recompensa."
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: The Gorgon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'The Gorgon': Derrotar 1x zombie"
@@ -627,7 +627,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: The Gorgon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'The Gorgon'. ¡Buen trabajo!"
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar The Hydra",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'The Hydra'! Aquí tienes tu recompensa."
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: The Hydra",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'The Hydra': Derrotar 1x zombie"
@@ -797,7 +797,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: The Hydra",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'The Hydra'. ¡Buen trabajo!"
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Tame a Dragon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Tame a Dragon'! Aquí tienes tu recompensa."
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Tame a Dragon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Tame a Dragon': Habla para completar Tame a Dragon"
@@ -967,7 +967,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Tame a Dragon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Tame a Dragon'. ¡Buen trabajo!"

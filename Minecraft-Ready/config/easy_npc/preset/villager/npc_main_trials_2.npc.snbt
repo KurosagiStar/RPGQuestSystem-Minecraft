@@ -75,7 +75,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar For Glory!",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'For Glory!'! Aquí tienes tu recompensa."
@@ -101,7 +101,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: For Glory!",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'For Glory!': Habla para completar For Glory!"
@@ -127,7 +127,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: For Glory!",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'For Glory!'. ¡Buen trabajo!"
@@ -245,7 +245,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar All shall kneel...",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'All shall kneel...'! Aquí tienes tu recompensa."
@@ -271,7 +271,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: All shall kneel...",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'All shall kneel...': Habla para completar All shall kneel..."
@@ -297,7 +297,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: All shall kneel...",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'All shall kneel...'. ¡Buen trabajo!"
@@ -415,7 +415,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Misión 441A82",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 441A82'! Aquí tienes tu recompensa."
@@ -441,7 +441,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Misión 441A82",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 441A82': Habla para completar Misión 441A82"
@@ -467,7 +467,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Misión 441A82",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 441A82'. ¡Buen trabajo!"
@@ -585,7 +585,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Misión 5FFC0E",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 5FFC0E'! Aquí tienes tu recompensa."
@@ -611,7 +611,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Misión 5FFC0E",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 5FFC0E': Habla para completar Misión 5FFC0E"
@@ -637,7 +637,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Misión 5FFC0E",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 5FFC0E'. ¡Buen trabajo!"
@@ -755,7 +755,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Slay the terror of the nether",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay the terror of the nether'! Aquí tienes tu recompensa."
@@ -781,7 +781,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Slay the terror of the nether",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay the terror of the nether': Derrotar 1x zombie"
@@ -807,7 +807,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Slay the terror of the nether",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay the terror of the nether'. ¡Buen trabajo!"
@@ -925,7 +925,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Slay the flame king",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay the flame king'! Aquí tienes tu recompensa."
@@ -951,7 +951,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Slay the flame king",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay the flame king': Derrotar 1x zombie"
@@ -977,7 +977,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Slay the flame king",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay the flame king'. ¡Buen trabajo!"
@@ -1095,7 +1095,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Not gold but certainly glitters",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Not gold but certainly glitters'! Aquí tienes tu recompensa."
@@ -1121,7 +1121,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Not gold but certainly glitters",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Not gold but certainly glitters': Habla para completar Not gold but certainly glitters"
@@ -1147,7 +1147,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Not gold but certainly glitters",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Not gold but certainly glitters'. ¡Buen trabajo!"
@@ -1265,7 +1265,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Apothic Enchanting",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Apothic Enchanting'! Aquí tienes tu recompensa."
@@ -1291,7 +1291,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Apothic Enchanting",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Apothic Enchanting': Habla para completar Apothic Enchanting"
@@ -1317,7 +1317,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Apothic Enchanting",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Apothic Enchanting'. ¡Buen trabajo!"
@@ -1435,7 +1435,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Collecting the 12 eyes",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Collecting the 12 eyes'! Aquí tienes tu recompensa."
@@ -1461,7 +1461,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Collecting the 12 eyes",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Collecting the 12 eyes': Habla para completar Collecting the 12 eyes"
@@ -1487,7 +1487,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Collecting the 12 eyes",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Collecting the 12 eyes'. ¡Buen trabajo!"
@@ -1605,7 +1605,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Enter the End Dimension",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Enter the End Dimension'! Aquí tienes tu recompensa."
@@ -1631,7 +1631,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Enter the End Dimension",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Enter the End Dimension': Habla para completar Enter the End Dimension"
@@ -1657,7 +1657,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Enter the End Dimension",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Enter the End Dimension'. ¡Buen trabajo!"
@@ -1775,7 +1775,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Slay the Ender Dragon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay the Ender Dragon'! Aquí tienes tu recompensa."
@@ -1801,7 +1801,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Slay the Ender Dragon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay the Ender Dragon': Derrotar 1x zombie"
@@ -1827,7 +1827,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Slay the Ender Dragon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay the Ender Dragon'. ¡Buen trabajo!"
@@ -1945,7 +1945,7 @@
           ],
           Label: "mision_11_lista",
           Name: "Entregar Misión 2504D1",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 2504D1'! Aquí tienes tu recompensa."
@@ -1971,7 +1971,7 @@
           ],
           Label: "mision_11_progreso",
           Name: "En Progreso: Misión 2504D1",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 2504D1': Habla para completar Misión 2504D1"
@@ -1997,7 +1997,7 @@
           ],
           Label: "mision_11",
           Name: "Completada: Misión 2504D1",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 2504D1'. ¡Buen trabajo!"
@@ -2115,7 +2115,7 @@
           ],
           Label: "mision_12_lista",
           Name: "Entregar Slay the Ender Guardian",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Slay the Ender Guardian'! Aquí tienes tu recompensa."
@@ -2141,7 +2141,7 @@
           ],
           Label: "mision_12_progreso",
           Name: "En Progreso: Slay the Ender Guardian",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Slay the Ender Guardian': Derrotar 1x zombie"
@@ -2167,7 +2167,7 @@
           ],
           Label: "mision_12",
           Name: "Completada: Slay the Ender Guardian",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Slay the Ender Guardian'. ¡Buen trabajo!"
@@ -2285,7 +2285,7 @@
           ],
           Label: "mision_13_lista",
           Name: "Entregar The Greatest Magician",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'The Greatest Magician'! Aquí tienes tu recompensa."
@@ -2311,7 +2311,7 @@
           ],
           Label: "mision_13_progreso",
           Name: "En Progreso: The Greatest Magician",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'The Greatest Magician': Habla para completar The Greatest Magician"
@@ -2337,7 +2337,7 @@
           ],
           Label: "mision_13",
           Name: "Completada: The Greatest Magician",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'The Greatest Magician'. ¡Buen trabajo!"

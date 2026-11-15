@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Find the Platinum dungeon",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Find the Platinum dungeon'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Find the Platinum dungeon",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Find the Platinum dungeon': Habla para completar Find the Platinum dungeon"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Find the Platinum dungeon",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Find the Platinum dungeon'. ¡Buen trabajo!"
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Defeat the Aerwhale King",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Defeat the Aerwhale King'! Aquí tienes tu recompensa."
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Defeat the Aerwhale King",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Defeat the Aerwhale King': Derrotar 1x zombie"
@@ -287,7 +287,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Defeat the Aerwhale King",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Defeat the Aerwhale King'. ¡Buen trabajo!"
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Visit the Bone Reef",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Bone Reef'! Aquí tienes tu recompensa."
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Visit the Bone Reef",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Bone Reef': Habla para completar Visit the Bone Reef"
@@ -457,7 +457,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Visit the Bone Reef",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Bone Reef'. ¡Buen trabajo!"
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Visit the crimson glowing woods",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the crimson glowing woods'! Aquí tienes tu recompensa."
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Visit the crimson glowing woods",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the crimson glowing woods': Habla para completar Visit the crimson glowing woods"
@@ -627,7 +627,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Visit the crimson glowing woods",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the crimson glowing woods'. ¡Buen trabajo!"
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Visit the dead upside down forest",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the dead upside down forest'! Aquí tienes tu recompensa."
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Visit the dead upside down forest",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the dead upside down forest': Habla para completar Visit the dead upside down forest"
@@ -797,7 +797,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Visit the dead upside down forest",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the dead upside down forest'. ¡Buen trabajo!"
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Visit the flooded deltas",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the flooded deltas'! Aquí tienes tu recompensa."
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Visit the flooded deltas",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the flooded deltas': Habla para completar Visit the flooded deltas"
@@ -967,7 +967,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Visit the flooded deltas",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the flooded deltas'. ¡Buen trabajo!"
@@ -1085,7 +1085,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Visit the Amber Land ",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Amber Land '! Aquí tienes tu recompensa."
@@ -1111,7 +1111,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Visit the Amber Land ",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Amber Land ': Habla para completar Visit the Amber Land "
@@ -1137,7 +1137,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Visit the Amber Land ",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Amber Land '. ¡Buen trabajo!"
@@ -1255,7 +1255,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Visit the Blossoming Spires",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Blossoming Spires'! Aquí tienes tu recompensa."
@@ -1281,7 +1281,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Visit the Blossoming Spires",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Blossoming Spires': Habla para completar Visit the Blossoming Spires"
@@ -1307,7 +1307,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Visit the Blossoming Spires",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Blossoming Spires'. ¡Buen trabajo!"
@@ -1425,7 +1425,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Visit the Chorus Forest",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Chorus Forest'! Aquí tienes tu recompensa."
@@ -1451,7 +1451,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Visit the Chorus Forest",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Chorus Forest': Habla para completar Visit the Chorus Forest"
@@ -1477,7 +1477,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Visit the Chorus Forest",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Chorus Forest'. ¡Buen trabajo!"
@@ -1595,7 +1595,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Visit the Crystal Mountains",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Crystal Mountains'! Aquí tienes tu recompensa."
@@ -1621,7 +1621,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Visit the Crystal Mountains",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Crystal Mountains': Habla para completar Visit the Crystal Mountains"
@@ -1647,7 +1647,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Visit the Crystal Mountains",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Crystal Mountains'. ¡Buen trabajo!"
@@ -1765,7 +1765,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Visit the Dragon Graveyards",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the Dragon Graveyards'! Aquí tienes tu recompensa."
@@ -1791,7 +1791,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Visit the Dragon Graveyards",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the Dragon Graveyards': Habla para completar Visit the Dragon Graveyards"
@@ -1817,7 +1817,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Visit the Dragon Graveyards",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the Dragon Graveyards'. ¡Buen trabajo!"

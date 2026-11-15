@@ -65,7 +65,7 @@
           ],
           Label: "mision_0_lista",
           Name: "Entregar Misión 7815C7",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Misión 7815C7'! Aquí tienes tu recompensa."
@@ -91,7 +91,7 @@
           ],
           Label: "mision_0_progreso",
           Name: "En Progreso: Misión 7815C7",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Misión 7815C7': Habla para completar Misión 7815C7"
@@ -117,7 +117,7 @@
           ],
           Label: "mision_0",
           Name: "Completada: Misión 7815C7",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Misión 7815C7'. ¡Buen trabajo!"
@@ -209,7 +209,7 @@
           ],
           Label: "mision_1_lista",
           Name: "Entregar Visit the twilight forest",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Visit the twilight forest'! Aquí tienes tu recompensa."
@@ -235,7 +235,7 @@
           ],
           Label: "mision_1_progreso",
           Name: "En Progreso: Visit the twilight forest",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Visit the twilight forest': Habla para completar Visit the twilight forest"
@@ -261,7 +261,7 @@
           ],
           Label: "mision_1",
           Name: "Completada: Visit the twilight forest",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Visit the twilight forest'. ¡Buen trabajo!"
@@ -379,7 +379,7 @@
           ],
           Label: "mision_2_lista",
           Name: "Entregar Acquire Naga's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire Naga's Head'! Aquí tienes tu recompensa."
@@ -405,7 +405,7 @@
           ],
           Label: "mision_2_progreso",
           Name: "En Progreso: Acquire Naga's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire Naga's Head': Habla para completar Acquire Naga's Head"
@@ -431,7 +431,7 @@
           ],
           Label: "mision_2",
           Name: "Completada: Acquire Naga's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire Naga's Head'. ¡Buen trabajo!"
@@ -549,7 +549,7 @@
           ],
           Label: "mision_3_lista",
           Name: "Entregar Acquire Lich's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire Lich's Head'! Aquí tienes tu recompensa."
@@ -575,7 +575,7 @@
           ],
           Label: "mision_3_progreso",
           Name: "En Progreso: Acquire Lich's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire Lich's Head': Habla para completar Acquire Lich's Head"
@@ -601,7 +601,7 @@
           ],
           Label: "mision_3",
           Name: "Completada: Acquire Lich's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire Lich's Head'. ¡Buen trabajo!"
@@ -719,7 +719,7 @@
           ],
           Label: "mision_4_lista",
           Name: "Entregar Acquire Minoshroom's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire Minoshroom's Head'! Aquí tienes tu recompensa."
@@ -745,7 +745,7 @@
           ],
           Label: "mision_4_progreso",
           Name: "En Progreso: Acquire Minoshroom's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire Minoshroom's Head': Habla para completar Acquire Minoshroom's Head"
@@ -771,7 +771,7 @@
           ],
           Label: "mision_4",
           Name: "Completada: Acquire Minoshroom's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire Minoshroom's Head'. ¡Buen trabajo!"
@@ -889,7 +889,7 @@
           ],
           Label: "mision_5_lista",
           Name: "Entregar Acquire the Hydra's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire the Hydra's Head'! Aquí tienes tu recompensa."
@@ -915,7 +915,7 @@
           ],
           Label: "mision_5_progreso",
           Name: "En Progreso: Acquire the Hydra's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire the Hydra's Head': Habla para completar Acquire the Hydra's Head"
@@ -941,7 +941,7 @@
           ],
           Label: "mision_5",
           Name: "Completada: Acquire the Hydra's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire the Hydra's Head'. ¡Buen trabajo!"
@@ -1059,7 +1059,7 @@
           ],
           Label: "mision_6_lista",
           Name: "Entregar Acquire Knight Phantom's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire Knight Phantom's Head'! Aquí tienes tu recompensa."
@@ -1085,7 +1085,7 @@
           ],
           Label: "mision_6_progreso",
           Name: "En Progreso: Acquire Knight Phantom's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire Knight Phantom's Head': Habla para completar Acquire Knight Phantom's Head"
@@ -1111,7 +1111,7 @@
           ],
           Label: "mision_6",
           Name: "Completada: Acquire Knight Phantom's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire Knight Phantom's Head'. ¡Buen trabajo!"
@@ -1229,7 +1229,7 @@
           ],
           Label: "mision_7_lista",
           Name: "Entregar Acquire the Ur-Ghast's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire the Ur-Ghast's Head'! Aquí tienes tu recompensa."
@@ -1255,7 +1255,7 @@
           ],
           Label: "mision_7_progreso",
           Name: "En Progreso: Acquire the Ur-Ghast's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire the Ur-Ghast's Head': Habla para completar Acquire the Ur-Ghast's Head"
@@ -1281,7 +1281,7 @@
           ],
           Label: "mision_7",
           Name: "Completada: Acquire the Ur-Ghast's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire the Ur-Ghast's Head'. ¡Buen trabajo!"
@@ -1399,7 +1399,7 @@
           ],
           Label: "mision_8_lista",
           Name: "Entregar Acquire the Alpha Yeti's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire the Alpha Yeti's Head'! Aquí tienes tu recompensa."
@@ -1425,7 +1425,7 @@
           ],
           Label: "mision_8_progreso",
           Name: "En Progreso: Acquire the Alpha Yeti's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire the Alpha Yeti's Head': Habla para completar Acquire the Alpha Yeti's Head"
@@ -1451,7 +1451,7 @@
           ],
           Label: "mision_8",
           Name: "Completada: Acquire the Alpha Yeti's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire the Alpha Yeti's Head'. ¡Buen trabajo!"
@@ -1569,7 +1569,7 @@
           ],
           Label: "mision_9_lista",
           Name: "Entregar Acquire the Snow Queen's Head",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Acquire the Snow Queen's Head'! Aquí tienes tu recompensa."
@@ -1595,7 +1595,7 @@
           ],
           Label: "mision_9_progreso",
           Name: "En Progreso: Acquire the Snow Queen's Head",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Acquire the Snow Queen's Head': Habla para completar Acquire the Snow Queen's Head"
@@ -1621,7 +1621,7 @@
           ],
           Label: "mision_9",
           Name: "Completada: Acquire the Snow Queen's Head",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Acquire the Snow Queen's Head'. ¡Buen trabajo!"
@@ -1739,7 +1739,7 @@
           ],
           Label: "mision_10_lista",
           Name: "Entregar Craft the explorer's compass",
-          Priority: 20,
+          Priority: -1,
           Texts: [
             {
               Text: "¡Excelente trabajo con 'Craft the explorer's compass'! Aquí tienes tu recompensa."
@@ -1765,7 +1765,7 @@
           ],
           Label: "mision_10_progreso",
           Name: "En Progreso: Craft the explorer's compass",
-          Priority: 10,
+          Priority: -2,
           Texts: [
             {
               Text: "Aún tienes pendiente 'Craft the explorer's compass': Habla para completar Craft the explorer's compass"
@@ -1791,7 +1791,7 @@
           ],
           Label: "mision_10",
           Name: "Completada: Craft the explorer's compass",
-          Priority: 5,
+          Priority: -3,
           Texts: [
             {
               Text: "Ya completaste 'Craft the explorer's compass'. ¡Buen trabajo!"
