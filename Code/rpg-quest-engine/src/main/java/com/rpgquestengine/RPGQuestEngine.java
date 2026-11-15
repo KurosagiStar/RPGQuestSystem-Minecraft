@@ -224,7 +224,9 @@ public class RPGQuestEngine {
                             boolean exists = false;
                             for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
                                 if (e.getTags().contains(npcId)) {
-                                    e.teleportTo(level, pos[0], pos[1], pos[2], java.util.Set.of(), 0, 0);
+                                    String tpCmd = String.format(java.util.Locale.ROOT, "tp %s %.3f %.3f %.3f", e.getStringUUID(), pos[0], pos[1], pos[2]);
+                                    sp.getServer().getCommands().performPrefixedCommand(
+                                        sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), tpCmd);
                                     exists = true;
                                 }
                             }
@@ -235,7 +237,9 @@ public class RPGQuestEngine {
                                 if (res > 0) {
                                     for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
                                         if (e.getTags().contains(npcId)) {
-                                            e.teleportTo(level, pos[0], pos[1], pos[2], java.util.Set.of(), 0, 0);
+                                            String tpCmd = String.format(java.util.Locale.ROOT, "tp %s %.3f %.3f %.3f", e.getStringUUID(), pos[0], pos[1], pos[2]);
+                                            sp.getServer().getCommands().performPrefixedCommand(
+                                                sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), tpCmd);
                                         }
                                     }
                                     respawned++;
