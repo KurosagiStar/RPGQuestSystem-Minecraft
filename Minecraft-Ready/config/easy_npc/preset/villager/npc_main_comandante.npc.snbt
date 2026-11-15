@@ -336,7 +336,6 @@
       }
     },
     PersistenceRequired: 1b,
-    Preset
     Profession: "ARMORER",
     Rotation: [0.0f, 0.0f],
     SkinData: { Name: "PLAINS_ARMORER" },
