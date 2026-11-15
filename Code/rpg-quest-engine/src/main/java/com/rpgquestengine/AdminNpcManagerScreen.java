@@ -81,7 +81,7 @@ public class AdminNpcManagerScreen extends Screen {
                 selectedChainNpcIdx--;
                 updateButtons();
             }
-        }).bounds(rightX, btnY, 18, 20).build());
+        }).bounds(rightX, btnY, 16, 20).build());
 
         spawnBtn = this.addRenderableWidget(Button.builder(Component.literal("Spawnear aquí"), b -> {
             if (selectedNpcId != null && minecraft != null && minecraft.player != null) {
@@ -91,7 +91,7 @@ public class AdminNpcManagerScreen extends Screen {
                 });
                 updateButtons();
             }
-        }).bounds(rightX + 20, btnY, 102, 20).build());
+        }).bounds(rightX + 18, btnY, 80, 20).build());
 
         moveBtn = this.addRenderableWidget(Button.builder(Component.literal("Mover a pos. actual"), b -> {
             if (selectedNpcId != null && minecraft != null && minecraft.player != null) {
@@ -101,7 +101,7 @@ public class AdminNpcManagerScreen extends Screen {
                 });
                 updateButtons();
             }
-        }).bounds(rightX + 124, btnY, 110, 20).build());
+        }).bounds(rightX + 100, btnY, 80, 20).build());
 
         nextNpcBtn = this.addRenderableWidget(Button.builder(Component.literal(">"), b -> {
             QuestChain selC = visibleChains.stream().filter(c -> c.rootId.equals(selectedChainId)).findFirst().orElse(null);
@@ -109,7 +109,7 @@ public class AdminNpcManagerScreen extends Screen {
                 selectedChainNpcIdx++;
                 updateButtons();
             }
-        }).bounds(rightX + 236, btnY, 18, 20).build());
+        }).bounds(rightX + 182, btnY, 16, 20).build());
 
         rebuildNpcList();
     }
