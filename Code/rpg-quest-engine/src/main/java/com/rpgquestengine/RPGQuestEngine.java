@@ -136,6 +136,11 @@ public class RPGQuestEngine {
                         return 1;
                     })
                 )
+                .then(Commands.literal("talk")
+                    .then(Commands.argument("npcId", com.mojang.brigadier.arguments.StringArgumentType.word())
+                        .executes(ctx -> handleNpcTalk(ctx.getSource().getPlayerOrException(), com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "npcId")))
+                    )
+                )
                 .then(Commands.literal("sync_npcs")
                     .requires(s -> s.hasPermission(2))
                     .executes(ctx -> {
@@ -817,5 +822,60 @@ public class RPGQuestEngine {
                 }
             }
         }
+    }
+
+    private int handleNpcTalk(ServerPlayer sp, String npcId) {
+        java.util.List<QuestDefinition> npcQuests = new java.util.ArrayList<>();
+        for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (npcId.equals(q.npcId)) {
+                npcQuests.add(q);
+            }
+        }
+        if (npcQuests.isEmpty()) {
+            sp.sendSystemMessage(Component.literal("§c[RPGQuestEngine] No hay misiones para " + npcId));
+            return 0;
+        }
+        java.util.Set<String> tags = sp.getTags();
+        for (QuestDefinition q : npcQuests) {
+            if (q.doneTag != null && tags.contains(q.doneTag)) {
+                if (q.activeTag != null) sp.removeTag(q.activeTag);
+                sp.removeTag(q.doneTag);
+                if (q.completedTag != null) sp.addTag(q.completedTag);
+                if (q.rewardXp > 0) sp.giveExperiencePoints(q.rewardXp);
+                sp.sendSystemMessage(Component.literal("§a[Misión Completada] §f" + q.title + (q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "")));
+                checkAndSyncQuests(sp);
+                return 1;
+            }
+        }
+        for (QuestDefinition q : npcQuests) {
+            if (q.activeTag != null && tags.contains(q.activeTag)) {
+                String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
+                sp.sendSystemMessage(Component.literal("§e[En Progreso] §f" + q.title + ": §7" + desc));
+                return 1;
+            }
+        }
+        for (QuestDefinition q : npcQuests) {
+            if (q.completedTag != null && tags.contains(q.completedTag)) continue;
+            if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                QuestDefinition prereq = null;
+                for (QuestDefinition cand : QuestConfig.QUESTS) {
+                    if (q.prerequisiteQuestId.equals(cand.id)) {
+                        prereq = cand;
+                        break;
+                    }
+                }
+                if (prereq != null && (prereq.completedTag == null || !tags.contains(prereq.completedTag))) {
+                    sp.sendSystemMessage(Component.literal("§c[Bloqueada] §fCompleta primero: §e" + prereq.title));
+                    return 1;
+                }
+            }
+            if (q.activeTag != null) sp.addTag(q.activeTag);
+            String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
+            sp.sendSystemMessage(Component.literal("§6[Misión Aceptada] §f" + q.title + ": §e" + desc));
+            checkAndSyncQuests(sp);
+            return 1;
+        }
+        sp.sendSystemMessage(Component.literal("§a[NPC] §fYa completaste todas las misiones de este personaje."));
+        return 1;
     }
 }

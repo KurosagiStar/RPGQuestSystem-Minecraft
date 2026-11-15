@@ -2416,8 +2416,13 @@
             {
               Actions: [
                 {
-                  Cmd: "mision_0",
-                  Type: "OPEN_NAMED_DIALOG"
+                  Cmd: "/execute as @initiator run rpgquest talk npc_main_trials_2",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
                 }
               ],
               Label: "btn_mision",
