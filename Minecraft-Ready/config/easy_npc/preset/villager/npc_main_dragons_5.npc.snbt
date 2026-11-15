@@ -6,7 +6,7 @@
     description: "Ocultista - Mision de Viajar al Nether",
     entityTypeId: "easy_npc:villager",
     modified: 1794353213551L,
-    name: "Ocultista del Vacio",
+    name: "Señor de la Llama",
     variantType: "SWAMP_CLERIC",
     version: "1.0.0"
   },
@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#AA00AA","bold":true,"text":"Ocultista del Vacio"}',
+    CustomName: '{"color":"#AA00AA","bold":true,"text":"Señor de la Llama"}',
     Tags: ["npc_main_dragons_5"],
     DialogData: {
       DialogDataSet: [
