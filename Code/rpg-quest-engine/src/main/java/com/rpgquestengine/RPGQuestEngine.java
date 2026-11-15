@@ -231,8 +231,15 @@ public class RPGQuestEngine {
                             if (!exists) {
                                 String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + npcId + ".npc.snbt";
                                 int res = sp.getServer().getCommands().performPrefixedCommand(
-                                    sp.createCommandSourceStack().withPosition(new net.minecraft.world.phys.Vec3(pos[0], pos[1], pos[2])).withPermission(4), cmd);
-                                if (res > 0) respawned++;
+                                    sp.createCommandSourceStack().withPermission(4), cmd);
+                                if (res > 0) {
+                                    for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
+                                        if (e.getTags().contains(npcId)) {
+                                            e.teleportTo(level, pos[0], pos[1], pos[2], java.util.Set.of(), 0, 0);
+                                        }
+                                    }
+                                    respawned++;
+                                }
                             }
                         }
                         final int count = respawned;
