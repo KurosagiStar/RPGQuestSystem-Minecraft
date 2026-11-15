@@ -291,12 +291,43 @@
               Name: "Volver"
             }
           ],
+          Conditions: [
+
+            {
+
+              Name: "q_cisco_trials_279bc431d5d067a3_comp",
+
+              Type: "SCOREBOARD_TAG"
+
+            }
+
+          ],
           Label: "mision",
           Name: "Mision",
           Priority: -1,
           Texts: [
             {
               Text: "Los bosques aledaños están infestados de zombies corruptos.\\n\\nNecesito que caces al menos 5 de ellos para asegurar el perímetro exterior."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision",
+          Name: "Mision Bloqueada",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para esta misión. Completa la misión anterior primero."
             }
           ]
         }
