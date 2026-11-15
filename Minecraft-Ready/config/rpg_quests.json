@@ -908,7 +908,7 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 5x Skeleton",
+        "description": "Elimina 5x Esqueleto",
         "target": "minecraft:skeleton",
         "amount": 5
       },
@@ -992,7 +992,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Iron Ingot",
+        "description": "Consigue 1x Lingote de hierro",
         "target": "minecraft:iron_ingot",
         "amount": 1
       }
@@ -1096,7 +1096,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Obsidian",
+        "description": "Consigue 1x Obsidiana",
         "target": "minecraft:obsidian",
         "amount": 1
       }
@@ -1122,7 +1122,7 @@
     "stages": [
       {
         "type": "DIMENSION",
-        "description": "Viaja a The Nether",
+        "description": "Viaja a El Nether",
         "target": "minecraft:the_nether",
         "amount": 1
       }
@@ -1148,7 +1148,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Quartz",
+        "description": "Consigue 1x Cuarzo del Nether",
         "target": "minecraft:quartz",
         "amount": 1
       }
@@ -1226,7 +1226,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Enchanting Table",
+        "description": "Consigue 1x Mesa de encantamientos",
         "target": "minecraft:enchanting_table",
         "amount": 1
       }
@@ -1304,7 +1304,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Netherite Ingot",
+        "description": "Consigue 1x Lingote de Netherita",
         "target": "minecraft:netherite_ingot",
         "amount": 1
       }
@@ -1486,7 +1486,7 @@
     "stages": [
       {
         "type": "DIMENSION",
-        "description": "Viaja a The End",
+        "description": "Viaja a El End",
         "target": "minecraft:the_end",
         "amount": 1
       }
@@ -1512,7 +1512,7 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 1x Ender Dragon",
+        "description": "Elimina 1x Dragón del End",
         "target": "minecraft:ender_dragon",
         "amount": 1
       }
@@ -2032,7 +2032,7 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 10x Spider",
+        "description": "Elimina 10x Araña",
         "target": "minecraft:spider",
         "amount": 10
       }
@@ -3696,7 +3696,7 @@
     "stages": [
       {
         "type": "DIMENSION",
-        "description": "Viaja a The Nether",
+        "description": "Viaja a El Nether",
         "target": "minecraft:the_nether",
         "amount": 1
       }
@@ -3722,7 +3722,7 @@
     "stages": [
       {
         "type": "DIMENSION",
-        "description": "Viaja a The End",
+        "description": "Viaja a El End",
         "target": "minecraft:the_end",
         "amount": 1
       }
