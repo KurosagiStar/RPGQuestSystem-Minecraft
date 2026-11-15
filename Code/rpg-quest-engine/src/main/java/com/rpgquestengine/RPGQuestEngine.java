@@ -224,8 +224,8 @@ public class RPGQuestEngine {
                             boolean exists = false;
                             for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
                                 if (e.getTags().contains(npcId)) {
+                                    e.teleportTo(level, pos[0], pos[1], pos[2], java.util.Set.of(), 0, 0);
                                     exists = true;
-                                    break;
                                 }
                             }
                             if (!exists) {
