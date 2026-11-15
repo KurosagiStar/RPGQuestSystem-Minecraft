@@ -30,7 +30,8 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 - `QuestHudOverlay.java`: HUD flotante moderno con badge de categoría, títulos limpios en negrita temática, divisores, progreso por objetivos, y brújula cardinal hacia objetivos y hacia el NPC de entrega (`§e▲ Capitán (45m)`).
 - `QuestJournalScreen.java`: Menú completo en tecla `J` con pestaña inicial `Activas`, agrupación por categoría, word-wrap de 2 líneas y botón dinámico `Seguir` / `Dejar de seguir`.
 - `QuestEventListener.java`: Listener Forge nativo para `KILL`, `MINE`, `CRAFT`, `FISH`, `SMELT`, `TALK`, `DELIVER`. Incluye resolución avanzada de kills de bosses/magia/proyectiles/mascotas (`resolvePlayerKiller`), replicación en `StartTracking` de tags y sonidos de oficio para aldeanos con cooldown de 1.4s.
-- `QuestConfig.java`: Carga y guardado UTF-8 de `config/rpg_quests.json` tanto en cliente como en servidor (`commonSetup`).
+- `QuestConfig.java`: Carga y guardado UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json` tanto en cliente como en servidor (`commonSetup`).
+- `AdminNpcManagerScreen.java`, `AdminNpcActionPacket.java` & `OpenAdminUiPacket.java`: UI administrativa (`/rpgquest ui`) con Vista de Cadenas y Vista de NPCs, selector `<` `>`, botones de spawnear, mover y re-spawnear en coordenadas guardadas.
 - `NetworkHandler.java`, `SyncPlayerQuestsPacket.java` & `SyncEntityTagsPacket.java`: Replicación bidireccional cliente-servidor de progreso y sincronización de scoreboard tags de entidades hacia el cliente para coincidencia estricta por `npcId`.
 
 ### C. Rutas de Despliegue en el Sistema
@@ -44,7 +45,11 @@ Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el 
 Todos los subcomandos de `/rpgquest` requieren permiso OP nivel 2 (`hasPermission(2)`):
 - `/rpgquest reset`: Resetea tags (`q_*`, `rqe_*`) y scores internos de todas las misiones del jugador ejecutor.
 - `/rpgquest reload`: Recarga `config/rpg_quests.json` en caliente y sincroniza al ejecutor.
-- `/rpgquest sync_npcs`: Busca NPCs en chunks cargados con tag `npc_*`, guarda posición/rotación, elimina la entidad vieja y reimporta el preset con `easy_npc preset custom import villager/<tag>`.
+- `/rpgquest sync_npcs`: Busca NPCs en chunks cargados con tag `npc_*`, guarda posición/rotación, reimporta el preset con `easy_npc preset import custom easy_npc:preset/villager/<tag>.npc.snbt` y solo elimina el viejo si tiene éxito.
+- `/rpgquest spawn_npc <npc_id>`: Spawnea el preset `villager/<npc_id>` en tu posición y guarda sus coordenadas en `config/rpg_npc_locations.json`.
+- `/rpgquest set_npc_pos <npc_id>`: Guarda tu posición actual para un `<npc_id>` en `config/rpg_npc_locations.json`.
+- `/rpgquest ui`: Abre `AdminNpcManagerScreen` para gestionar cadenas de misiones, spawnear/mover NPCs en orden (`#1`, `#2`...) y re-spawnear todos.
+- `/rpgquest respawn_saved`: Re-spawnea o teleporta todos los NPCs de `rpg_npc_locations.json` a sus coordenadas guardadas.
 - **Aldeanos vanilla sin conversión:** Spawnear con tag `no_quest_npc` (`/summon minecraft:villager ~ ~ ~ {Tags:["no_quest_npc"]}`) para que `village_npc_spawner.js` los ignore.
 
 ---
