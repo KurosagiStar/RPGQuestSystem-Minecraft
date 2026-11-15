@@ -884,7 +884,7 @@
         "type": "KILL",
         "description": "Elimina 5 zombies en los alrededores",
         "target": "minecraft:zombie",
-        "required": 5
+        "amount": 5
       }
     ]
   },
@@ -910,7 +910,7 @@
         "type": "KILL",
         "description": "Derrotar 5x zombie",
         "target": "minecraft:zombie",
-        "required": 5
+        "amount": 5
       },
       {
         "type": "KILL",
@@ -968,7 +968,7 @@
         "type": "KILL",
         "description": "Derrotar 5x zombie",
         "target": "minecraft:zombie",
-        "required": 5
+        "amount": 5
       }
     ]
   },
@@ -2164,7 +2164,7 @@
         "type": "KILL",
         "description": "Derrotar 5x zombie",
         "target": "minecraft:zombie",
-        "required": 5
+        "amount": 5
       }
     ]
   },
