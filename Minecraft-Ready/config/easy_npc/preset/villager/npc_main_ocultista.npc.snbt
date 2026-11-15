@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 4B4BF1\n\nObjetivo: Habla para completar Misión 4B4BF1"
+              Text: "Misión: Misión 4B4BF1\\n\\nObjetivo: Habla para completar Misión 4B4BF1"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 2FB157\n\nObjetivo: Habla para completar Misión 2FB157"
+              Text: "Misión: Misión 2FB157\\n\\nObjetivo: Habla para completar Misión 2FB157"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 57F0E5\n\nObjetivo: Habla para completar Misión 57F0E5"
+              Text: "Misión: Misión 57F0E5\\n\\nObjetivo: Habla para completar Misión 57F0E5"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 779907\n\nObjetivo: Habla para completar Misión 779907"
+              Text: "Misión: Misión 779907\\n\\nObjetivo: Habla para completar Misión 779907"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 4E213C\n\nObjetivo: Habla para completar Misión 4E213C"
+              Text: "Misión: Misión 4E213C\\n\\nObjetivo: Habla para completar Misión 4E213C"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Befriend a pixie\n\nObjetivo: Habla para completar Befriend a pixie"
+              Text: "Misión: Befriend a pixie\\n\\nObjetivo: Habla para completar Befriend a pixie"
             }
           ]
         },

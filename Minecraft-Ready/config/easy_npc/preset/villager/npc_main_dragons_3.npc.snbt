@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay Ice Dragons\n\nObjetivo: Derrotar 3x zombie"
+              Text: "Misión: Slay Ice Dragons\\n\\nObjetivo: Derrotar 3x zombie"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 6B949C\n\nObjetivo: Habla para completar Misión 6B949C"
+              Text: "Misión: Misión 6B949C\\n\\nObjetivo: Habla para completar Misión 6B949C"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The Cyclops\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: The Cyclops\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The Gorgon\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: The Gorgon\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The Hydra\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: The Hydra\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Tame a Dragon\n\nObjetivo: Habla para completar Tame a Dragon"
+              Text: "Misión: Tame a Dragon\\n\\nObjetivo: Habla para completar Tame a Dragon"
             }
           ]
         },

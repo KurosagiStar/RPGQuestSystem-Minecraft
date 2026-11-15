@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Tame a Hippocampus\n\nObjetivo: Habla para completar Tame a Hippocampus"
+              Text: "Misión: Tame a Hippocampus\\n\\nObjetivo: Habla para completar Tame a Hippocampus"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Tame a Hippogryth\n\nObjetivo: Habla para completar Tame a Hippogryth"
+              Text: "Misión: Tame a Hippogryth\\n\\nObjetivo: Habla para completar Tame a Hippogryth"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Kill a Dread Lich\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Kill a Dread Lich\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the Mausoleum\n\nObjetivo: Habla para completar Find the Mausoleum"
+              Text: "Misión: Find the Mausoleum\\n\\nObjetivo: Habla para completar Find the Mausoleum"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay Fire Dragons\n\nObjetivo: Derrotar 3x zombie"
+              Text: "Misión: Slay Fire Dragons\\n\\nObjetivo: Derrotar 3x zombie"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay Lightning Dragons\n\nObjetivo: Derrotar 3x zombie"
+              Text: "Misión: Slay Lightning Dragons\\n\\nObjetivo: Derrotar 3x zombie"
             }
           ]
         },

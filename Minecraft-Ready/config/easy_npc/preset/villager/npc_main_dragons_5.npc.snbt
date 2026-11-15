@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 630C84\n\nObjetivo: Habla para completar Misión 630C84"
+              Text: "Misión: Misión 630C84\\n\\nObjetivo: Habla para completar Misión 630C84"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Craft Dragonsteel\n\nObjetivo: Habla para completar Craft Dragonsteel"
+              Text: "Misión: Craft Dragonsteel\\n\\nObjetivo: Habla para completar Craft Dragonsteel"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Craft dreadsteel\n\nObjetivo: Habla para completar Craft dreadsteel"
+              Text: "Misión: Craft dreadsteel\\n\\nObjetivo: Habla para completar Craft dreadsteel"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Craft Dreadsteel Armor\n\nObjetivo: Habla para completar Craft Dreadsteel Armor"
+              Text: "Misión: Craft Dreadsteel Armor\\n\\nObjetivo: Habla para completar Craft Dreadsteel Armor"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 031859\n\nObjetivo: Habla para completar Misión 031859"
+              Text: "Misión: Misión 031859\\n\\nObjetivo: Habla para completar Misión 031859"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 635DD0\n\nObjetivo: Habla para completar Misión 635DD0"
+              Text: "Misión: Misión 635DD0\\n\\nObjetivo: Habla para completar Misión 635DD0"
             }
           ]
         },

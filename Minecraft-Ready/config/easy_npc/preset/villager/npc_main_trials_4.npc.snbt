@@ -177,7 +177,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Gilded Eagle\n\nObjetivo: Habla para completar Gilded Eagle"
+              Text: "Misión: Gilded Eagle\\n\\nObjetivo: Habla para completar Gilded Eagle"
             }
           ]
         },
@@ -347,7 +347,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 6853D0\n\nObjetivo: Habla para completar Misión 6853D0"
+              Text: "Misión: Misión 6853D0\\n\\nObjetivo: Habla para completar Misión 6853D0"
             }
           ]
         },
@@ -517,7 +517,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay Spiders\n\nObjetivo: Derrotar 10x zombie"
+              Text: "Misión: Slay Spiders\\n\\nObjetivo: Derrotar 10x zombie"
             }
           ]
         },
@@ -687,7 +687,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 553D2E\n\nObjetivo: Habla para completar Misión 553D2E"
+              Text: "Misión: Misión 553D2E\\n\\nObjetivo: Habla para completar Misión 553D2E"
             }
           ]
         },
@@ -857,7 +857,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Adventurers Garments\n\nObjetivo: Habla para completar Adventurers Garments"
+              Text: "Misión: Adventurers Garments\\n\\nObjetivo: Habla para completar Adventurers Garments"
             }
           ]
         },
@@ -1027,7 +1027,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Craft the brightsteel pickaxe\n\nObjetivo: Habla para completar Craft the brightsteel pickaxe"
+              Text: "Misión: Craft the brightsteel pickaxe\\n\\nObjetivo: Habla para completar Craft the brightsteel pickaxe"
             }
           ]
         },
@@ -1197,7 +1197,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 5F0BBB\n\nObjetivo: Habla para completar Misión 5F0BBB"
+              Text: "Misión: Misión 5F0BBB\\n\\nObjetivo: Habla para completar Misión 5F0BBB"
             }
           ]
         },
@@ -1367,7 +1367,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slayed Betrayed Guzzler\n\nObjetivo: Derrotar 5x zombie"
+              Text: "Misión: Slayed Betrayed Guzzler\\n\\nObjetivo: Derrotar 5x zombie"
             }
           ]
         },
@@ -1537,7 +1537,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 7916F8\n\nObjetivo: Habla para completar Misión 7916F8"
+              Text: "Misión: Misión 7916F8\\n\\nObjetivo: Habla para completar Misión 7916F8"
             }
           ]
         },
@@ -1707,7 +1707,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquiring Ink\n\nObjetivo: Habla para completar Acquiring Ink"
+              Text: "Misión: Acquiring Ink\\n\\nObjetivo: Habla para completar Acquiring Ink"
             }
           ]
         },
@@ -1877,7 +1877,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 1713C0\n\nObjetivo: Habla para completar Misión 1713C0"
+              Text: "Misión: Misión 1713C0\\n\\nObjetivo: Habla para completar Misión 1713C0"
             }
           ]
         },
@@ -2047,7 +2047,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Use Gems to increase spell power\n\nObjetivo: Habla para completar Use Gems to increase spell power"
+              Text: "Misión: Use Gems to increase spell power\\n\\nObjetivo: Habla para completar Use Gems to increase spell power"
             }
           ]
         },
@@ -2217,7 +2217,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Socketing Gems\n\nObjetivo: Habla para completar Socketing Gems"
+              Text: "Misión: Socketing Gems\\n\\nObjetivo: Habla para completar Socketing Gems"
             }
           ]
         },
@@ -2387,7 +2387,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 609257\n\nObjetivo: Habla para completar Misión 609257"
+              Text: "Misión: Misión 609257\\n\\nObjetivo: Habla para completar Misión 609257"
             }
           ]
         },

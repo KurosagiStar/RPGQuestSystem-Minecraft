@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the Platinum dungeon\n\nObjetivo: Habla para completar Find the Platinum dungeon"
+              Text: "Misión: Find the Platinum dungeon\\n\\nObjetivo: Habla para completar Find the Platinum dungeon"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Defeat the Aerwhale King\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Defeat the Aerwhale King\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Bone Reef\n\nObjetivo: Habla para completar Visit the Bone Reef"
+              Text: "Misión: Visit the Bone Reef\\n\\nObjetivo: Habla para completar Visit the Bone Reef"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the crimson glowing woods\n\nObjetivo: Habla para completar Visit the crimson glowing woods"
+              Text: "Misión: Visit the crimson glowing woods\\n\\nObjetivo: Habla para completar Visit the crimson glowing woods"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the dead upside down forest\n\nObjetivo: Habla para completar Visit the dead upside down forest"
+              Text: "Misión: Visit the dead upside down forest\\n\\nObjetivo: Habla para completar Visit the dead upside down forest"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the flooded deltas\n\nObjetivo: Habla para completar Visit the flooded deltas"
+              Text: "Misión: Visit the flooded deltas\\n\\nObjetivo: Habla para completar Visit the flooded deltas"
             }
           ]
         },
@@ -1187,7 +1187,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Amber Land \n\nObjetivo: Habla para completar Visit the Amber Land "
+              Text: "Misión: Visit the Amber Land \\n\\nObjetivo: Habla para completar Visit the Amber Land "
             }
           ]
         },
@@ -1357,7 +1357,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Blossoming Spires\n\nObjetivo: Habla para completar Visit the Blossoming Spires"
+              Text: "Misión: Visit the Blossoming Spires\\n\\nObjetivo: Habla para completar Visit the Blossoming Spires"
             }
           ]
         },
@@ -1527,7 +1527,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Chorus Forest\n\nObjetivo: Habla para completar Visit the Chorus Forest"
+              Text: "Misión: Visit the Chorus Forest\\n\\nObjetivo: Habla para completar Visit the Chorus Forest"
             }
           ]
         },
@@ -1697,7 +1697,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Crystal Mountains\n\nObjetivo: Habla para completar Visit the Crystal Mountains"
+              Text: "Misión: Visit the Crystal Mountains\\n\\nObjetivo: Habla para completar Visit the Crystal Mountains"
             }
           ]
         },
@@ -1867,7 +1867,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Dragon Graveyards\n\nObjetivo: Habla para completar Visit the Dragon Graveyards"
+              Text: "Misión: Visit the Dragon Graveyards\\n\\nObjetivo: Habla para completar Visit the Dragon Graveyards"
             }
           ]
         },

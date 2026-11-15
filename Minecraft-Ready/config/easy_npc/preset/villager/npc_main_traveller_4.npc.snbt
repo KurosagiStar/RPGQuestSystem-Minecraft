@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Auto Trader\n\nObjetivo: Habla para completar Easy Villagers Auto Trader"
+              Text: "Misión: Easy Villagers Auto Trader\\n\\nObjetivo: Habla para completar Easy Villagers Auto Trader"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Trading\n\nObjetivo: Habla para completar Easy Villagers Trading"
+              Text: "Misión: Easy Villagers Trading\\n\\nObjetivo: Habla para completar Easy Villagers Trading"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Iron Farm\n\nObjetivo: Habla para completar Easy Villagers Iron Farm"
+              Text: "Misión: Easy Villagers Iron Farm\\n\\nObjetivo: Habla para completar Easy Villagers Iron Farm"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Farmer\n\nObjetivo: Habla para completar Easy Villagers Farmer"
+              Text: "Misión: Easy Villagers Farmer\\n\\nObjetivo: Habla para completar Easy Villagers Farmer"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Converting\n\nObjetivo: Habla para completar Easy Villagers Converting"
+              Text: "Misión: Easy Villagers Converting\\n\\nObjetivo: Habla para completar Easy Villagers Converting"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Breeding\n\nObjetivo: Habla para completar Easy Villagers Breeding"
+              Text: "Misión: Easy Villagers Breeding\\n\\nObjetivo: Habla para completar Easy Villagers Breeding"
             }
           ]
         },
@@ -1187,7 +1187,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Easy Villagers Incubator\n\nObjetivo: Habla para completar Easy Villagers Incubator"
+              Text: "Misión: Easy Villagers Incubator\\n\\nObjetivo: Habla para completar Easy Villagers Incubator"
             }
           ]
         },
@@ -1357,7 +1357,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the Olympic Citadel\n\nObjetivo: Habla para completar Find the Olympic Citadel"
+              Text: "Misión: Find the Olympic Citadel\\n\\nObjetivo: Habla para completar Find the Olympic Citadel"
             }
           ]
         },
@@ -1527,7 +1527,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Nether\n\nObjetivo: Habla para completar Visit the Nether"
+              Text: "Misión: Visit the Nether\\n\\nObjetivo: Habla para completar Visit the Nether"
             }
           ]
         },
@@ -1697,7 +1697,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Travel to the End\n\nObjetivo: Habla para completar Travel to the End"
+              Text: "Misión: Travel to the End\\n\\nObjetivo: Habla para completar Travel to the End"
             }
           ]
         },
@@ -1867,7 +1867,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the Soul Plain\n\nObjetivo: Habla para completar Visit the Soul Plain"
+              Text: "Misión: Visit the Soul Plain\\n\\nObjetivo: Habla para completar Visit the Soul Plain"
             }
           ]
         },

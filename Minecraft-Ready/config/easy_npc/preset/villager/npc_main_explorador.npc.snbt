@@ -161,7 +161,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 7815C7\n\nObjetivo: Habla para completar Misión 7815C7"
+              Text: "Misión: Misión 7815C7\\n\\nObjetivo: Habla para completar Misión 7815C7"
             }
           ]
         },
@@ -311,7 +311,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the twilight forest\n\nObjetivo: Habla para completar Visit the twilight forest"
+              Text: "Misión: Visit the twilight forest\\n\\nObjetivo: Habla para completar Visit the twilight forest"
             }
           ]
         },
@@ -481,7 +481,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire Naga's Head\n\nObjetivo: Habla para completar Acquire Naga's Head"
+              Text: "Misión: Acquire Naga's Head\\n\\nObjetivo: Habla para completar Acquire Naga's Head"
             }
           ]
         },
@@ -651,7 +651,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire Lich's Head\n\nObjetivo: Habla para completar Acquire Lich's Head"
+              Text: "Misión: Acquire Lich's Head\\n\\nObjetivo: Habla para completar Acquire Lich's Head"
             }
           ]
         },
@@ -821,7 +821,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire Minoshroom's Head\n\nObjetivo: Habla para completar Acquire Minoshroom's Head"
+              Text: "Misión: Acquire Minoshroom's Head\\n\\nObjetivo: Habla para completar Acquire Minoshroom's Head"
             }
           ]
         },
@@ -991,7 +991,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire the Hydra's Head\n\nObjetivo: Habla para completar Acquire the Hydra's Head"
+              Text: "Misión: Acquire the Hydra's Head\\n\\nObjetivo: Habla para completar Acquire the Hydra's Head"
             }
           ]
         },
@@ -1161,7 +1161,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire Knight Phantom's Head\n\nObjetivo: Habla para completar Acquire Knight Phantom's Head"
+              Text: "Misión: Acquire Knight Phantom's Head\\n\\nObjetivo: Habla para completar Acquire Knight Phantom's Head"
             }
           ]
         },
@@ -1331,7 +1331,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire the Ur-Ghast's Head\n\nObjetivo: Habla para completar Acquire the Ur-Ghast's Head"
+              Text: "Misión: Acquire the Ur-Ghast's Head\\n\\nObjetivo: Habla para completar Acquire the Ur-Ghast's Head"
             }
           ]
         },
@@ -1501,7 +1501,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire the Alpha Yeti's Head\n\nObjetivo: Habla para completar Acquire the Alpha Yeti's Head"
+              Text: "Misión: Acquire the Alpha Yeti's Head\\n\\nObjetivo: Habla para completar Acquire the Alpha Yeti's Head"
             }
           ]
         },
@@ -1671,7 +1671,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire the Snow Queen's Head\n\nObjetivo: Habla para completar Acquire the Snow Queen's Head"
+              Text: "Misión: Acquire the Snow Queen's Head\\n\\nObjetivo: Habla para completar Acquire the Snow Queen's Head"
             }
           ]
         },
@@ -1841,7 +1841,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Craft the explorer's compass\n\nObjetivo: Habla para completar Craft the explorer's compass"
+              Text: "Misión: Craft the explorer's compass\\n\\nObjetivo: Habla para completar Craft the explorer's compass"
             }
           ]
         },

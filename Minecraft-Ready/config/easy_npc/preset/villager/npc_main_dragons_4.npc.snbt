@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Fallen Heroes\n\nObjetivo: Habla para completar Fallen Heroes"
+              Text: "Misión: Fallen Heroes\\n\\nObjetivo: Habla para completar Fallen Heroes"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Alexander\n\nObjetivo: Habla para completar Alexander"
+              Text: "Misión: Alexander\\n\\nObjetivo: Habla para completar Alexander"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Draconic Era\n\nObjetivo: Habla para completar Draconic Era"
+              Text: "Misión: Draconic Era\\n\\nObjetivo: Habla para completar Draconic Era"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 32E7D9\n\nObjetivo: Habla para completar Misión 32E7D9"
+              Text: "Misión: Misión 32E7D9\\n\\nObjetivo: Habla para completar Misión 32E7D9"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 50D030\n\nObjetivo: Habla para completar Misión 50D030"
+              Text: "Misión: Misión 50D030\\n\\nObjetivo: Habla para completar Misión 50D030"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 428212\n\nObjetivo: Habla para completar Misión 428212"
+              Text: "Misión: Misión 428212\\n\\nObjetivo: Habla para completar Misión 428212"
             }
           ]
         },

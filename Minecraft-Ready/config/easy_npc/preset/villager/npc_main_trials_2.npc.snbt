@@ -177,7 +177,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: For Glory!\n\nObjetivo: Habla para completar For Glory!"
+              Text: "Misión: For Glory!\\n\\nObjetivo: Habla para completar For Glory!"
             }
           ]
         },
@@ -347,7 +347,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: All shall kneel...\n\nObjetivo: Habla para completar All shall kneel..."
+              Text: "Misión: All shall kneel...\\n\\nObjetivo: Habla para completar All shall kneel..."
             }
           ]
         },
@@ -517,7 +517,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 441A82\n\nObjetivo: Habla para completar Misión 441A82"
+              Text: "Misión: Misión 441A82\\n\\nObjetivo: Habla para completar Misión 441A82"
             }
           ]
         },
@@ -687,7 +687,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 5FFC0E\n\nObjetivo: Habla para completar Misión 5FFC0E"
+              Text: "Misión: Misión 5FFC0E\\n\\nObjetivo: Habla para completar Misión 5FFC0E"
             }
           ]
         },
@@ -857,7 +857,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the terror of the nether\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the terror of the nether\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -1027,7 +1027,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the flame king\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the flame king\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -1197,7 +1197,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Not gold but certainly glitters\n\nObjetivo: Habla para completar Not gold but certainly glitters"
+              Text: "Misión: Not gold but certainly glitters\\n\\nObjetivo: Habla para completar Not gold but certainly glitters"
             }
           ]
         },
@@ -1367,7 +1367,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Apothic Enchanting\n\nObjetivo: Habla para completar Apothic Enchanting"
+              Text: "Misión: Apothic Enchanting\\n\\nObjetivo: Habla para completar Apothic Enchanting"
             }
           ]
         },
@@ -1537,7 +1537,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Collecting the 12 eyes\n\nObjetivo: Habla para completar Collecting the 12 eyes"
+              Text: "Misión: Collecting the 12 eyes\\n\\nObjetivo: Habla para completar Collecting the 12 eyes"
             }
           ]
         },
@@ -1707,7 +1707,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Enter the End Dimension\n\nObjetivo: Habla para completar Enter the End Dimension"
+              Text: "Misión: Enter the End Dimension\\n\\nObjetivo: Habla para completar Enter the End Dimension"
             }
           ]
         },
@@ -1877,7 +1877,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the Ender Dragon\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the Ender Dragon\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -2047,7 +2047,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 2504D1\n\nObjetivo: Habla para completar Misión 2504D1"
+              Text: "Misión: Misión 2504D1\\n\\nObjetivo: Habla para completar Misión 2504D1"
             }
           ]
         },
@@ -2217,7 +2217,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the Ender Guardian\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the Ender Guardian\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -2387,7 +2387,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The Greatest Magician\n\nObjetivo: Habla para completar The Greatest Magician"
+              Text: "Misión: The Greatest Magician\\n\\nObjetivo: Habla para completar The Greatest Magician"
             }
           ]
         },

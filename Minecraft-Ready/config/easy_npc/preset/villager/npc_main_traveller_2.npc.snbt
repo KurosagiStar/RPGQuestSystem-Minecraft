@@ -167,7 +167,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit keep kayra\n\nObjetivo: Habla para completar Visit keep kayra"
+              Text: "Misión: Visit keep kayra\\n\\nObjetivo: Habla para completar Visit keep kayra"
             }
           ]
         },
@@ -337,7 +337,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Raid Shiraz Palace\n\nObjetivo: Habla para completar Raid Shiraz Palace"
+              Text: "Misión: Raid Shiraz Palace\\n\\nObjetivo: Habla para completar Raid Shiraz Palace"
             }
           ]
         },
@@ -507,7 +507,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Raid Bastille\n\nObjetivo: Habla para completar Raid Bastille"
+              Text: "Misión: Raid Bastille\\n\\nObjetivo: Habla para completar Raid Bastille"
             }
           ]
         },
@@ -677,7 +677,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Raid the Dungeon Crawl Dungeon\n\nObjetivo: Habla para completar Raid the Dungeon Crawl Dungeon"
+              Text: "Misión: Raid the Dungeon Crawl Dungeon\\n\\nObjetivo: Habla para completar Raid the Dungeon Crawl Dungeon"
             }
           ]
         },
@@ -847,7 +847,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit the aether dimension\n\nObjetivo: Habla para completar Visit the aether dimension"
+              Text: "Misión: Visit the aether dimension\\n\\nObjetivo: Habla para completar Visit the aether dimension"
             }
           ]
         },
@@ -1017,7 +1017,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the bronze dungeon\n\nObjetivo: Habla para completar Find the bronze dungeon"
+              Text: "Misión: Find the bronze dungeon\\n\\nObjetivo: Habla para completar Find the bronze dungeon"
             }
           ]
         },
@@ -1187,7 +1187,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the silver dungeon\n\nObjetivo: Habla para completar Find the silver dungeon"
+              Text: "Misión: Find the silver dungeon\\n\\nObjetivo: Habla para completar Find the silver dungeon"
             }
           ]
         },
@@ -1357,7 +1357,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the gold dungeon\n\nObjetivo: Habla para completar Find the gold dungeon"
+              Text: "Misión: Find the gold dungeon\\n\\nObjetivo: Habla para completar Find the gold dungeon"
             }
           ]
         },
@@ -1527,7 +1527,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Defeat the slider\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Defeat the slider\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -1697,7 +1697,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the Valkyrie Queen\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the Valkyrie Queen\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -1867,7 +1867,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the Sun Spirit\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the Sun Spirit\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },

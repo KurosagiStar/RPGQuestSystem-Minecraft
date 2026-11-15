@@ -171,7 +171,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The Adventure Begins!\n\nObjetivo: Elimina 5 zombies en los alrededores"
+              Text: "Misión: The Adventure Begins!\\n\\nObjetivo: Elimina 5 zombies en los alrededores"
             }
           ]
         },
@@ -321,7 +321,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The path of the warrior\n\nObjetivo: Derrotar 5x zombie"
+              Text: "Misión: The path of the warrior\\n\\nObjetivo: Derrotar 5x zombie"
             }
           ]
         },
@@ -491,7 +491,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Novice spell caster\n\nObjetivo: Habla para completar Novice spell caster"
+              Text: "Misión: Novice spell caster\\n\\nObjetivo: Habla para completar Novice spell caster"
             }
           ]
         },
@@ -661,7 +661,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The path of the mage\n\nObjetivo: Derrotar 5x zombie"
+              Text: "Misión: The path of the mage\\n\\nObjetivo: Derrotar 5x zombie"
             }
           ]
         },
@@ -831,7 +831,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Obtain iron\n\nObjetivo: Habla para completar Obtain iron"
+              Text: "Misión: Obtain iron\\n\\nObjetivo: Habla para completar Obtain iron"
             }
           ]
         },
@@ -1001,7 +1001,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The relic of the ancients\n\nObjetivo: Derrotar 15x zombie"
+              Text: "Misión: The relic of the ancients\\n\\nObjetivo: Derrotar 15x zombie"
             }
           ]
         },
@@ -1171,7 +1171,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 068B6D\n\nObjetivo: Habla para completar Misión 068B6D"
+              Text: "Misión: Misión 068B6D\\n\\nObjetivo: Habla para completar Misión 068B6D"
             }
           ]
         },
@@ -1341,7 +1341,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Amplified Magics\n\nObjetivo: Habla para completar Amplified Magics"
+              Text: "Misión: Amplified Magics\\n\\nObjetivo: Habla para completar Amplified Magics"
             }
           ]
         },
@@ -1511,7 +1511,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Aquire Obsidian\n\nObjetivo: Habla para completar Aquire Obsidian"
+              Text: "Misión: Aquire Obsidian\\n\\nObjetivo: Habla para completar Aquire Obsidian"
             }
           ]
         },
@@ -1681,7 +1681,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The depths of Hell\n\nObjetivo: Habla para completar The depths of Hell"
+              Text: "Misión: The depths of Hell\\n\\nObjetivo: Habla para completar The depths of Hell"
             }
           ]
         },
@@ -1851,7 +1851,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Acquire Quartz\n\nObjetivo: Habla para completar Acquire Quartz"
+              Text: "Misión: Acquire Quartz\\n\\nObjetivo: Habla para completar Acquire Quartz"
             }
           ]
         },
@@ -2021,7 +2021,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Rank up your magic\n\nObjetivo: Habla para completar Rank up your magic"
+              Text: "Misión: Rank up your magic\\n\\nObjetivo: Habla para completar Rank up your magic"
             }
           ]
         },
@@ -2191,7 +2191,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find the an ancient runic tablet\n\nObjetivo: Habla para completar Find the an ancient runic tablet"
+              Text: "Misión: Find the an ancient runic tablet\\n\\nObjetivo: Habla para completar Find the an ancient runic tablet"
             }
           ]
         },
@@ -2361,7 +2361,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Aquire an enchanting table\n\nObjetivo: Habla para completar Aquire an enchanting table"
+              Text: "Misión: Aquire an enchanting table\\n\\nObjetivo: Habla para completar Aquire an enchanting table"
             }
           ]
         },

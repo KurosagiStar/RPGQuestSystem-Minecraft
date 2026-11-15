@@ -177,7 +177,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: The ultimate Spell Book\n\nObjetivo: Habla para completar The ultimate Spell Book"
+              Text: "Misión: The ultimate Spell Book\\n\\nObjetivo: Habla para completar The ultimate Spell Book"
             }
           ]
         },
@@ -347,7 +347,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Click the the checkmark.\n\nObjetivo: Habla para completar Click the the checkmark."
+              Text: "Misión: Click the the checkmark.\\n\\nObjetivo: Habla para completar Click the the checkmark."
             }
           ]
         },
@@ -517,7 +517,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 526D9E\n\nObjetivo: Habla para completar Misión 526D9E"
+              Text: "Misión: Misión 526D9E\\n\\nObjetivo: Habla para completar Misión 526D9E"
             }
           ]
         },
@@ -687,7 +687,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Visit Ocean Monument\n\nObjetivo: Habla para completar Visit Ocean Monument"
+              Text: "Misión: Visit Ocean Monument\\n\\nObjetivo: Habla para completar Visit Ocean Monument"
             }
           ]
         },
@@ -857,7 +857,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Slay the Elder Guardian\n\nObjetivo: Derrotar 1x zombie"
+              Text: "Misión: Slay the Elder Guardian\\n\\nObjetivo: Derrotar 1x zombie"
             }
           ]
         },
@@ -1027,7 +1027,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Darksteel Armor\n\nObjetivo: Habla para completar Darksteel Armor"
+              Text: "Misión: Darksteel Armor\\n\\nObjetivo: Habla para completar Darksteel Armor"
             }
           ]
         },
@@ -1197,7 +1197,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 3AF40C\n\nObjetivo: Habla para completar Misión 3AF40C"
+              Text: "Misión: Misión 3AF40C\\n\\nObjetivo: Habla para completar Misión 3AF40C"
             }
           ]
         },
@@ -1367,7 +1367,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find a bounty board\n\nObjetivo: Habla para completar Find a bounty board"
+              Text: "Misión: Find a bounty board\\n\\nObjetivo: Habla para completar Find a bounty board"
             }
           ]
         },
@@ -1537,7 +1537,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Find a village\n\nObjetivo: Habla para completar Find a village"
+              Text: "Misión: Find a village\\n\\nObjetivo: Habla para completar Find a village"
             }
           ]
         },
@@ -1707,7 +1707,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 6C3BF7\n\nObjetivo: Habla para completar Misión 6C3BF7"
+              Text: "Misión: Misión 6C3BF7\\n\\nObjetivo: Habla para completar Misión 6C3BF7"
             }
           ]
         },
@@ -1877,7 +1877,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Misión: Misión 0A9E8B\n\nObjetivo: Habla para completar Misión 0A9E8B"
+              Text: "Misión: Misión 0A9E8B\\n\\nObjetivo: Habla para completar Misión 0A9E8B"
             }
           ]
         },
