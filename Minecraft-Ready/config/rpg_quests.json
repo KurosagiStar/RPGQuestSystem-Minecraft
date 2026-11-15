@@ -908,8 +908,8 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 5x zombie",
-        "target": "minecraft:zombie",
+        "description": "Elimina 5x Skeleton",
+        "target": "minecraft:skeleton",
         "amount": 5
       },
       {
@@ -939,10 +939,10 @@
     "rewardXp": 150,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Novice spell caster",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Novice Spell Book",
+        "target": "ars_nouveau:novice_spell_book",
+        "amount": 1
       }
     ]
   },
@@ -966,8 +966,8 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 5x zombie",
-        "target": "minecraft:zombie",
+        "description": "Elimina 5x Creeper",
+        "target": "minecraft:creeper",
         "amount": 5
       }
     ]
@@ -991,10 +991,10 @@
     "rewardXp": 200,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Obtain iron",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Iron Ingot",
+        "target": "minecraft:iron_ingot",
+        "amount": 1
       }
     ]
   },
@@ -1018,9 +1018,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 15x zombie",
-        "target": "minecraft:zombie",
-        "required": 15
+        "description": "Elimina 15x Pillager",
+        "target": "minecraft:pillager",
+        "amount": 15
       }
     ]
   },
@@ -1043,10 +1043,10 @@
     "rewardXp": 250,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 068B6D",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Scribes Table",
+        "target": "ars_nouveau:scribes_table",
+        "amount": 1
       }
     ]
   },
@@ -1069,10 +1069,10 @@
     "rewardXp": 275,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Amplified Magics",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Glyph Amplify",
+        "target": "ars_nouveau:glyph_amplify",
+        "amount": 1
       }
     ]
   },
@@ -1095,10 +1095,10 @@
     "rewardXp": 300,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Aquire Obsidian",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Obsidian",
+        "target": "minecraft:obsidian",
+        "amount": 1
       }
     ]
   },
@@ -1121,10 +1121,10 @@
     "rewardXp": 325,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar The depths of Hell",
-        "target": "",
-        "required": 1
+        "type": "DIMENSION",
+        "description": "Viaja a The Nether",
+        "target": "minecraft:the_nether",
+        "amount": 1
       }
     ]
   },
@@ -1147,10 +1147,10 @@
     "rewardXp": 350,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire Quartz",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Quartz",
+        "target": "minecraft:quartz",
+        "amount": 1
       }
     ]
   },
@@ -1173,10 +1173,10 @@
     "rewardXp": 375,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Rank up your magic",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Apprentice Spell Book",
+        "target": "ars_nouveau:apprentice_spell_book",
+        "amount": 1
       }
     ]
   },
@@ -1199,10 +1199,10 @@
     "rewardXp": 400,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Find the an ancient runic tablet",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Runic Tablet",
+        "target": "simplyswords:runic_tablet",
+        "amount": 1
       }
     ]
   },
@@ -1225,10 +1225,10 @@
     "rewardXp": 425,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Aquire an enchanting table",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Enchanting Table",
+        "target": "minecraft:enchanting_table",
+        "amount": 1
       }
     ]
   },
@@ -1251,10 +1251,10 @@
     "rewardXp": 450,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar For Glory!",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Righteous Relic",
+        "target": "simplyswords:righteous_relic",
+        "amount": 1
       }
     ]
   },
@@ -1277,10 +1277,10 @@
     "rewardXp": 475,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar All shall kneel...",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Tainted Relic",
+        "target": "simplyswords:tainted_relic",
+        "amount": 1
       }
     ]
   },
@@ -1303,10 +1303,10 @@
     "rewardXp": 500,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 441A82",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Netherite Ingot",
+        "target": "minecraft:netherite_ingot",
+        "amount": 1
       }
     ]
   },
@@ -1329,10 +1329,10 @@
     "rewardXp": 525,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 5FFC0E",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Flame Eye",
+        "target": "cataclysm:flame_eye",
+        "amount": 1
       }
     ]
   },
@@ -1356,9 +1356,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Wither",
+        "target": "minecraft:wither",
+        "amount": 1
       }
     ]
   },
@@ -1382,9 +1382,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Ignis",
+        "target": "cataclysm:ignis",
+        "amount": 1
       }
     ]
   },
@@ -1407,10 +1407,10 @@
     "rewardXp": 600,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Not gold but certainly glitters",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Amethyst Shard",
+        "target": "minecraft:amethyst_shard",
+        "amount": 1
       }
     ]
   },
@@ -1433,10 +1433,10 @@
     "rewardXp": 625,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Apothic Enchanting",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Seashelf",
+        "target": "apotheosis:seashelf",
+        "amount": 1
       }
     ]
   },
@@ -1459,10 +1459,10 @@
     "rewardXp": 650,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Collecting the 12 eyes",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Rogue Eye",
+        "target": "endrem:rogue_eye",
+        "amount": 1
       }
     ]
   },
@@ -1485,10 +1485,10 @@
     "rewardXp": 675,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Enter the End Dimension",
-        "target": "",
-        "required": 1
+        "type": "DIMENSION",
+        "description": "Viaja a The End",
+        "target": "minecraft:the_end",
+        "amount": 1
       }
     ]
   },
@@ -1512,9 +1512,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Ender Dragon",
+        "target": "minecraft:ender_dragon",
+        "amount": 1
       }
     ]
   },
@@ -1537,10 +1537,10 @@
     "rewardXp": 725,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 2504D1",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Void Eye",
+        "target": "cataclysm:void_eye",
+        "amount": 1
       }
     ]
   },
@@ -1564,9 +1564,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Ender Guardian",
+        "target": "cataclysm:ender_guardian",
+        "amount": 1
       }
     ]
   },
@@ -1589,10 +1589,10 @@
     "rewardXp": 775,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar The Greatest Magician",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Archmage Spell Book",
+        "target": "ars_nouveau:archmage_spell_book",
+        "amount": 1
       }
     ]
   },
@@ -1615,10 +1615,10 @@
     "rewardXp": 800,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 438D84",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Wilden Tribute",
+        "target": "ars_nouveau:wilden_tribute",
+        "amount": 1
       }
     ]
   },
@@ -1641,10 +1641,10 @@
     "rewardXp": 825,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 0F7160",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Sunfire",
+        "target": "simplyswords:sunfire",
+        "amount": 1
       }
     ]
   },
@@ -1667,10 +1667,10 @@
     "rewardXp": 850,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 00CB68",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Harbinger",
+        "target": "simplyswords:harbinger",
+        "amount": 1
       }
     ]
   },
@@ -1693,10 +1693,10 @@
     "rewardXp": 875,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 5A24E1",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Starbuncle Charm",
+        "target": "ars_nouveau:starbuncle_charm",
+        "amount": 1
       }
     ]
   },
@@ -1719,10 +1719,10 @@
     "rewardXp": 900,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft the Ignitium set",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Ignitium Chestplate",
+        "target": "cataclysm:ignitium_chestplate",
+        "amount": 1
       }
     ]
   },
@@ -1745,10 +1745,10 @@
     "rewardXp": 925,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 74C563",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Gem Cutting Table",
+        "target": "apotheosis:gem_cutting_table",
+        "amount": 1
       }
     ]
   },
@@ -1771,10 +1771,10 @@
     "rewardXp": 950,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 28B406",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Simple Reforging Table",
+        "target": "apotheosis:simple_reforging_table",
+        "amount": 1
       }
     ]
   },
@@ -1797,10 +1797,10 @@
     "rewardXp": 975,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 78C3CC",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Reforging Table",
+        "target": "apotheosis:reforging_table",
+        "amount": 1
       }
     ]
   },
@@ -1823,10 +1823,10 @@
     "rewardXp": 1000,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 5319E4",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Library",
+        "target": "apotheosis:library",
+        "amount": 1
       }
     ]
   },
@@ -1849,10 +1849,10 @@
     "rewardXp": 1025,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 1436BC",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Ender Library",
+        "target": "apotheosis:ender_library",
+        "amount": 1
       }
     ]
   },
@@ -1875,10 +1875,10 @@
     "rewardXp": 1050,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 7519AF",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Potion Charm",
+        "target": "apotheosis:potion_charm",
+        "amount": 1
       }
     ]
   },
@@ -1927,10 +1927,10 @@
     "rewardXp": 1100,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 7B1FA4",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Brightsteel Ingot",
+        "target": "cisco_mod:brightsteel_ingot",
+        "amount": 1
       }
     ]
   },
@@ -1953,10 +1953,10 @@
     "rewardXp": 1125,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Brightsteel Armor",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Brightsteel Helmet",
+        "target": "cisco_mod:brightsteel_helmet",
+        "amount": 1
       }
     ]
   },
@@ -1979,10 +1979,10 @@
     "rewardXp": 1150,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Gilded Eagle",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Gilded Eagle Helmet",
+        "target": "cisco_mod:gilded_eagle_helmet",
+        "amount": 1
       }
     ]
   },
@@ -2005,10 +2005,10 @@
     "rewardXp": 1175,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 6853D0",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Brightsteel Multi Tool",
+        "target": "cisco_mod:brightsteel_multi_tool",
+        "amount": 1
       }
     ]
   },
@@ -2032,9 +2032,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 10x zombie",
-        "target": "minecraft:zombie",
-        "required": 10
+        "description": "Elimina 10x Spider",
+        "target": "minecraft:spider",
+        "amount": 10
       }
     ]
   },
@@ -2083,10 +2083,10 @@
     "rewardXp": 1250,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Adventurers Garments",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Adventurer Chestplate",
+        "target": "cisco_mod:adventurer_chestplate",
+        "amount": 1
       }
     ]
   },
@@ -2109,10 +2109,10 @@
     "rewardXp": 1275,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft the brightsteel pickaxe",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Bright Pickaxe",
+        "target": "cisco_mod:bright_pickaxe",
+        "amount": 1
       }
     ]
   },
@@ -2135,10 +2135,10 @@
     "rewardXp": 1300,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 5F0BBB",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Dark Pickaxe",
+        "target": "cisco_mod:dark_pickaxe",
+        "amount": 1
       }
     ]
   },
@@ -2162,8 +2162,8 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 5x zombie",
-        "target": "minecraft:zombie",
+        "description": "Elimina 5x Betrayed Guzzler",
+        "target": "sons_of_sins:betrayed_guzzler",
         "amount": 5
       }
     ]
@@ -2187,10 +2187,10 @@
     "rewardXp": 1350,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 7916F8",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Copper Spell Book",
+        "target": "irons_spellbooks:copper_spell_book",
+        "amount": 1
       }
     ]
   },
@@ -2213,10 +2213,10 @@
     "rewardXp": 1375,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquiring Ink",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Common Ink",
+        "target": "irons_spellbooks:common_ink",
+        "amount": 1
       }
     ]
   },
@@ -2239,10 +2239,10 @@
     "rewardXp": 1400,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 1713C0",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Inscription Table",
+        "target": "irons_spellbooks:inscription_table",
+        "amount": 1
       }
     ]
   },
@@ -2317,10 +2317,10 @@
     "rewardXp": 1475,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 609257",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Arcane Anvil",
+        "target": "irons_spellbooks:arcane_anvil",
+        "amount": 1
       }
     ]
   },
@@ -2343,10 +2343,10 @@
     "rewardXp": 1500,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar The ultimate Spell Book",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Netherite Spell Book",
+        "target": "irons_spellbooks:netherite_spell_book",
+        "amount": 1
       }
     ]
   },
@@ -2395,10 +2395,10 @@
     "rewardXp": 1550,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 526D9E",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Darksteel Multitool",
+        "target": "cisco_mod:darksteel_multitool",
+        "amount": 1
       }
     ]
   },
@@ -2448,9 +2448,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Elder Guardian",
+        "target": "minecraft:elder_guardian",
+        "amount": 1
       }
     ]
   },
@@ -2473,10 +2473,10 @@
     "rewardXp": 1625,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Darksteel Armor",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Darksteel Armor Helmet",
+        "target": "cisco_mod:darksteel_armor_helmet",
+        "amount": 1
       }
     ]
   },
@@ -2629,10 +2629,10 @@
     "rewardXp": 100,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 7815C7",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Naturescompass",
+        "target": "naturescompass:naturescompass",
+        "amount": 1
       }
     ]
   },
@@ -2655,10 +2655,10 @@
     "rewardXp": 125,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the twilight forest",
-        "target": "",
-        "required": 1
+        "type": "DIMENSION",
+        "description": "Viaja a Twilight Forest",
+        "target": "twilightforest:twilight_forest",
+        "amount": 1
       }
     ]
   },
@@ -2681,10 +2681,10 @@
     "rewardXp": 150,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire Naga's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Naga Trophy",
+        "target": "twilightforest:naga_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2707,10 +2707,10 @@
     "rewardXp": 175,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire Lich's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Lich Trophy",
+        "target": "twilightforest:lich_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2733,10 +2733,10 @@
     "rewardXp": 200,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire Minoshroom's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Minoshroom Trophy",
+        "target": "twilightforest:minoshroom_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2759,10 +2759,10 @@
     "rewardXp": 225,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire the Hydra's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Hydra Trophy",
+        "target": "twilightforest:hydra_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2785,10 +2785,10 @@
     "rewardXp": 250,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire Knight Phantom's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Knight Phantom Trophy",
+        "target": "twilightforest:knight_phantom_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2811,10 +2811,10 @@
     "rewardXp": 275,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire the Ur-Ghast's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Ur Ghast Trophy",
+        "target": "twilightforest:ur_ghast_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2837,10 +2837,10 @@
     "rewardXp": 300,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire the Alpha Yeti's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Alpha Yeti Trophy",
+        "target": "twilightforest:alpha_yeti_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2863,10 +2863,10 @@
     "rewardXp": 325,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Acquire the Snow Queen's Head",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Snow Queen Trophy",
+        "target": "twilightforest:snow_queen_trophy",
+        "amount": 1
       }
     ]
   },
@@ -2889,10 +2889,10 @@
     "rewardXp": 350,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft the explorer's compass",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Explorerscompass",
+        "target": "explorerscompass:explorerscompass",
+        "amount": 1
       }
     ]
   },
@@ -3019,10 +3019,10 @@
     "rewardXp": 475,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the aether dimension",
-        "target": "",
-        "required": 1
+        "type": "DIMENSION",
+        "description": "Viaja a The Aether",
+        "target": "aether:the_aether",
+        "amount": 1
       }
     ]
   },
@@ -3124,9 +3124,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Slider",
+        "target": "aether:slider",
+        "amount": 1
       }
     ]
   },
@@ -3150,9 +3150,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Valkyrie Queen",
+        "target": "aether:valkyrie_queen",
+        "amount": 1
       }
     ]
   },
@@ -3176,9 +3176,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Sun Spirit",
+        "target": "aether:sun_spirit",
+        "amount": 1
       }
     ]
   },
@@ -3201,10 +3201,10 @@
     "rewardXp": 650,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft a backpack",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Backpack",
+        "target": "sophisticatedbackpacks:backpack",
+        "amount": 1
       }
     ]
   },
@@ -3227,10 +3227,10 @@
     "rewardXp": 675,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 39ADA7",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Stack Upgrade Tier 1",
+        "target": "sophisticatedbackpacks:stack_upgrade_tier_1",
+        "amount": 1
       }
     ]
   },
@@ -3253,10 +3253,10 @@
     "rewardXp": 700,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 22388F",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Everlasting Upgrade",
+        "target": "sophisticatedbackpacks:everlasting_upgrade",
+        "amount": 1
       }
     ]
   },
@@ -3279,10 +3279,10 @@
     "rewardXp": 725,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 1972EE",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Smelting Upgrade",
+        "target": "sophisticatedbackpacks:smelting_upgrade",
+        "amount": 1
       }
     ]
   },
@@ -3305,10 +3305,10 @@
     "rewardXp": 750,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 2DCCC1",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Crafting Upgrade",
+        "target": "sophisticatedbackpacks:crafting_upgrade",
+        "amount": 1
       }
     ]
   },
@@ -3331,10 +3331,10 @@
     "rewardXp": 775,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 513C6A",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Feeding Upgrade",
+        "target": "sophisticatedbackpacks:feeding_upgrade",
+        "amount": 1
       }
     ]
   },
@@ -3357,10 +3357,10 @@
     "rewardXp": 800,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft the iron furnace",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Iron Furnace",
+        "target": "ironfurnaces:iron_furnace",
+        "amount": 1
       }
     ]
   },
@@ -3383,10 +3383,10 @@
     "rewardXp": 825,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft the golden furnace",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Gold Furnace",
+        "target": "ironfurnaces:gold_furnace",
+        "amount": 1
       }
     ]
   },
@@ -3409,10 +3409,10 @@
     "rewardXp": 850,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 2754C9",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Sawmill",
+        "target": "woodworks:sawmill",
+        "amount": 1
       }
     ]
   },
@@ -3435,10 +3435,10 @@
     "rewardXp": 875,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Stone Wand",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Stone Wand",
+        "target": "constructionwand:stone_wand",
+        "amount": 1
       }
     ]
   },
@@ -3461,10 +3461,10 @@
     "rewardXp": 900,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 452481",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Iron Wand",
+        "target": "constructionwand:iron_wand",
+        "amount": 1
       }
     ]
   },
@@ -3487,10 +3487,10 @@
     "rewardXp": 925,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Auto Trader",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Auto Trader",
+        "target": "easy_villagers:auto_trader",
+        "amount": 1
       }
     ]
   },
@@ -3513,10 +3513,10 @@
     "rewardXp": 950,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Trading",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Trader",
+        "target": "easy_villagers:trader",
+        "amount": 1
       }
     ]
   },
@@ -3539,10 +3539,10 @@
     "rewardXp": 975,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Iron Farm",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Iron Farm",
+        "target": "easy_villagers:iron_farm",
+        "amount": 1
       }
     ]
   },
@@ -3565,10 +3565,10 @@
     "rewardXp": 1000,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Farmer",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Farmer",
+        "target": "easy_villagers:farmer",
+        "amount": 1
       }
     ]
   },
@@ -3591,10 +3591,10 @@
     "rewardXp": 1025,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Converting",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Converter",
+        "target": "easy_villagers:converter",
+        "amount": 1
       }
     ]
   },
@@ -3617,10 +3617,10 @@
     "rewardXp": 1050,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Breeding",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Breeder",
+        "target": "easy_villagers:breeder",
+        "amount": 1
       }
     ]
   },
@@ -3643,10 +3643,10 @@
     "rewardXp": 1075,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Easy Villagers Incubator",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Incubator",
+        "target": "easy_villagers:incubator",
+        "amount": 1
       }
     ]
   },
@@ -3695,10 +3695,10 @@
     "rewardXp": 1125,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Nether",
-        "target": "",
-        "required": 1
+        "type": "DIMENSION",
+        "description": "Viaja a The Nether",
+        "target": "minecraft:the_nether",
+        "amount": 1
       }
     ]
   },
@@ -3721,10 +3721,10 @@
     "rewardXp": 1150,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Travel to the End",
-        "target": "",
-        "required": 1
+        "type": "DIMENSION",
+        "description": "Viaja a The End",
+        "target": "minecraft:the_end",
+        "amount": 1
       }
     ]
   },
@@ -3747,10 +3747,10 @@
     "rewardXp": 1175,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Soul Plain",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Soul Plain",
+        "target": "betternether:soul_plain",
+        "amount": 1
       }
     ]
   },
@@ -3800,9 +3800,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Aerwhale King",
+        "target": "lost_aether_content:aerwhale_king",
+        "amount": 1
       }
     ]
   },
@@ -3851,10 +3851,10 @@
     "rewardXp": 1275,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the crimson glowing woods",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Crimson Glowing Woods",
+        "target": "betternether:crimson_glowing_woods",
+        "amount": 1
       }
     ]
   },
@@ -3877,10 +3877,10 @@
     "rewardXp": 1300,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the dead upside down forest",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Upside Down Forest",
+        "target": "betternether:upside_down_forest",
+        "amount": 1
       }
     ]
   },
@@ -3903,10 +3903,10 @@
     "rewardXp": 1325,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the flooded deltas",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Flooded Deltas",
+        "target": "betternether:flooded_deltas",
+        "amount": 1
       }
     ]
   },
@@ -3929,10 +3929,10 @@
     "rewardXp": 1350,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Amber Land ",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Amber Land",
+        "target": "betterend:amber_land",
+        "amount": 1
       }
     ]
   },
@@ -3955,10 +3955,10 @@
     "rewardXp": 1375,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Blossoming Spires",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Blossoming Spires",
+        "target": "betterend:blossoming_spires",
+        "amount": 1
       }
     ]
   },
@@ -3981,10 +3981,10 @@
     "rewardXp": 1400,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Chorus Forest",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Chorus Forest",
+        "target": "betterend:chorus_forest",
+        "amount": 1
       }
     ]
   },
@@ -4007,10 +4007,10 @@
     "rewardXp": 1425,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Crystal Mountains",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Crystal Mountains",
+        "target": "betterend:crystal_mountains",
+        "amount": 1
       }
     ]
   },
@@ -4033,10 +4033,10 @@
     "rewardXp": 1450,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Visit the Dragon Graveyards",
-        "target": "",
-        "required": 1
+        "type": "BIOME",
+        "description": "Explora Dragon Graveyards",
+        "target": "betterend:dragon_graveyards",
+        "amount": 1
       }
     ]
   },
@@ -4059,10 +4059,10 @@
     "rewardXp": 100,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 4B4BF1",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Bestiary",
+        "target": "iceandfire:bestiary",
+        "amount": 1
       }
     ]
   },
@@ -4085,10 +4085,10 @@
     "rewardXp": 125,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 2FB157",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Lectern",
+        "target": "iceandfire:lectern",
+        "amount": 1
       }
     ]
   },
@@ -4111,10 +4111,10 @@
     "rewardXp": 150,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 57F0E5",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Silver Ingot",
+        "target": "iceandfire:silver_ingot",
+        "amount": 1
       }
     ]
   },
@@ -4137,10 +4137,10 @@
     "rewardXp": 175,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 779907",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Summoning Crystal Ice",
+        "target": "iceandfire:summoning_crystal_ice",
+        "amount": 1
       }
     ]
   },
@@ -4163,10 +4163,10 @@
     "rewardXp": 200,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 4E213C",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Summoning Crystal Lightning",
+        "target": "iceandfire:summoning_crystal_lightning",
+        "amount": 1
       }
     ]
   },
@@ -4268,9 +4268,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Dread Lich",
+        "target": "iceandfire:dread_lich",
+        "amount": 1
       }
     ]
   },
@@ -4320,9 +4320,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 3x zombie",
-        "target": "minecraft:zombie",
-        "required": 3
+        "description": "Elimina 3x Fire Dragon",
+        "target": "iceandfire:fire_dragon",
+        "amount": 3
       }
     ]
   },
@@ -4346,9 +4346,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 3x zombie",
-        "target": "minecraft:zombie",
-        "required": 3
+        "description": "Elimina 3x Lightning Dragon",
+        "target": "iceandfire:lightning_dragon",
+        "amount": 3
       }
     ]
   },
@@ -4372,9 +4372,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 3x zombie",
-        "target": "minecraft:zombie",
-        "required": 3
+        "description": "Elimina 3x Ice Dragon",
+        "target": "iceandfire:ice_dragon",
+        "amount": 3
       }
     ]
   },
@@ -4397,10 +4397,10 @@
     "rewardXp": 425,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 6B949C",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Summoning Crystal Fire",
+        "target": "iceandfire:summoning_crystal_fire",
+        "amount": 1
       }
     ]
   },
@@ -4424,9 +4424,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Cyclops",
+        "target": "iceandfire:cyclops",
+        "amount": 1
       }
     ]
   },
@@ -4450,9 +4450,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Gorgon",
+        "target": "iceandfire:gorgon",
+        "amount": 1
       }
     ]
   },
@@ -4476,9 +4476,9 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Derrotar 1x zombie",
-        "target": "minecraft:zombie",
-        "required": 1
+        "description": "Elimina 1x Hydra",
+        "target": "iceandfire:hydra",
+        "amount": 1
       }
     ]
   },
@@ -4605,10 +4605,10 @@
     "rewardXp": 625,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 32E7D9",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Eye Of Lightning Dragon",
+        "target": "eyesoficeandfire:eye_of_lightning_dragon",
+        "amount": 1
       }
     ]
   },
@@ -4631,10 +4631,10 @@
     "rewardXp": 650,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 50D030",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Eye Of Fire Dragon",
+        "target": "eyesoficeandfire:eye_of_fire_dragon",
+        "amount": 1
       }
     ]
   },
@@ -4657,10 +4657,10 @@
     "rewardXp": 675,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 428212",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Eye Of Ice Dragon",
+        "target": "eyesoficeandfire:eye_of_ice_dragon",
+        "amount": 1
       }
     ]
   },
@@ -4683,10 +4683,10 @@
     "rewardXp": 700,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 630C84",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Dragon Stick",
+        "target": "iceandfire:dragon_stick",
+        "amount": 1
       }
     ]
   },
@@ -4735,10 +4735,10 @@
     "rewardXp": 750,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft dreadsteel",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Dreadsteel Ingot",
+        "target": "dreadsteel:dreadsteel_ingot",
+        "amount": 1
       }
     ]
   },
@@ -4761,10 +4761,10 @@
     "rewardXp": 775,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Craft Dreadsteel Armor",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Dreadsteel Helmet",
+        "target": "dreadsteel:dreadsteel_helmet",
+        "amount": 1
       }
     ]
   },
@@ -4787,10 +4787,10 @@
     "rewardXp": 800,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 031859",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Dreadsteel Scythe",
+        "target": "dreadsteel:dreadsteel_scythe",
+        "amount": 1
       }
     ]
   },
@@ -4813,10 +4813,10 @@
     "rewardXp": 825,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar Misión 635DD0",
-        "target": "",
-        "required": 1
+        "type": "ITEM",
+        "description": "Consigue 1x Dreadsteel Shield",
+        "target": "dreadsteel:dreadsteel_shield",
+        "amount": 1
       }
     ]
   }
