@@ -40,7 +40,7 @@ public class AdminNpcActionPacket {
             float xRot = sp.getXRot();
 
             if ("SPAWN".equals(msg.action)) {
-                String cmd = "easy_npc preset import custom villager/" + msg.npcId;
+                String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + msg.npcId + ".npc.snbt";
                 sp.getServer().getCommands().performPrefixedCommand(
                     sp.createCommandSourceStack().withPermission(4), cmd);
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
@@ -63,7 +63,7 @@ public class AdminNpcActionPacket {
                 if (moved > 0) {
                     sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] Movido " + msg.npcId + " (" + moved + ") a tu posición."));
                 } else {
-                    String cmd = "easy_npc preset import custom villager/" + msg.npcId;
+                    String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + msg.npcId + ".npc.snbt";
                     sp.getServer().getCommands().performPrefixedCommand(
                         sp.createCommandSourceStack().withPermission(4), cmd);
                     sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] Entidad no cargada; spawneado " + msg.npcId + " en tu posición."));
