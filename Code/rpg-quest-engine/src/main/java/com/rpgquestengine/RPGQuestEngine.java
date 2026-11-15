@@ -210,6 +210,36 @@ public class RPGQuestEngine {
                         return 1;
                     })
                 )
+                .then(Commands.literal("respawn_saved")
+                    .executes(ctx -> {
+                        ServerPlayer sp = ctx.getSource().getPlayerOrException();
+                        ServerLevel level = sp.serverLevel();
+                        int respawned = 0;
+                        for (Map.Entry<String, double[]> entry : QuestConfig.NPC_LOCATIONS.entrySet()) {
+                            String npcId = entry.getKey();
+                            double[] pos = entry.getValue();
+                            if (pos == null || pos.length < 3) continue;
+                            level.getChunk(((int) Math.floor(pos[0])) >> 4, ((int) Math.floor(pos[2])) >> 4);
+
+                            boolean exists = false;
+                            for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
+                                if (e.getTags().contains(npcId)) {
+                                    exists = true;
+                                    break;
+                                }
+                            }
+                            if (!exists) {
+                                String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + npcId + ".npc.snbt";
+                                int res = sp.getServer().getCommands().performPrefixedCommand(
+                                    sp.createCommandSourceStack().withPosition(new net.minecraft.world.phys.Vec3(pos[0], pos[1], pos[2])).withPermission(4), cmd);
+                                if (res > 0) respawned++;
+                            }
+                        }
+                        final int count = respawned;
+                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Re-spawneados " + count + " NPCs en sus coordenadas guardadas."), true);
+                        return count;
+                    })
+                )
         );
     }
 
