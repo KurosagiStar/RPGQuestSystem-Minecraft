@@ -3,7 +3,7 @@
     author: "Server",
     category: "General",
     created: 1794353213551L,
-    description: "Capitán de la Guardia - Sistema Autónomo",
+    description: "Maestro de Combate - Sistema Autónomo",
     entityTypeId: "easy_npc:villager",
     modified: 1794353213551L,
     name: "Capitan de la Guardia",
