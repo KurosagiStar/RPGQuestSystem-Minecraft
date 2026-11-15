@@ -74,6 +74,10 @@ public class AdminNpcManagerScreen extends Screen {
             rebuildNpcList();
         }).bounds(this.width - 110, topY, 90, 18).build());
 
+        this.addRenderableWidget(Button.builder(Component.literal("Re-spawnear"), b -> {
+            NetworkHandler.CHANNEL.sendToServer(new AdminNpcActionPacket("RESPAWN_ALL", ""));
+        }).bounds(this.width - 194, topY, 80, 18).build());
+
         int rightX = this.width / 2 + 10;
         int btnY = this.height - 36;
         prevNpcBtn = this.addRenderableWidget(Button.builder(Component.literal("<"), b -> {

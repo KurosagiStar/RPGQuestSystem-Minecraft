@@ -45,6 +45,9 @@ public class AdminNpcActionPacket {
                     sp.createCommandSourceStack().withPermission(4), cmd);
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
                 sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] NPC " + msg.npcId + " spawneado y guardado."));
+            } else if ("RESPAWN_ALL".equals(msg.action)) {
+                sp.getServer().getCommands().performPrefixedCommand(
+                    sp.createCommandSourceStack().withPermission(2), "rpgquest respawn_saved");
             } else if ("MOVE".equals(msg.action)) {
                 double[] oldPos = QuestConfig.NPC_LOCATIONS.get(msg.npcId);
                 if (oldPos != null && oldPos.length >= 3) {
