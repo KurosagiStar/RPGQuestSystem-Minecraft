@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#AA00AA","bold":true,"text":"Ocultista del Vacio"}',
+    UUID: [I; -25291814, -878871507, -916030930, -350152805],
     Tags: ["npc_main_ocultista"],
     DialogData: {
       DialogDataSet: [

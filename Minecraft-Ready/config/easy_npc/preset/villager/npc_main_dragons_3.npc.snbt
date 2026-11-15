@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#AA00AA","bold":true,"text":"Forjador Dracónico"}',
+    UUID: [I; 1704435644, 1600403392, -1295714399, 94653086],
     Tags: ["npc_main_dragons_3"],
     DialogData: {
       DialogDataSet: [

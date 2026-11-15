@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#AA00AA","bold":true,"text":"Cazadragones"}',
+    UUID: [I; 576556746, -548586670, -1566162992, 1496301786],
     Tags: ["npc_main_dragons_2"],
     DialogData: {
       DialogDataSet: [

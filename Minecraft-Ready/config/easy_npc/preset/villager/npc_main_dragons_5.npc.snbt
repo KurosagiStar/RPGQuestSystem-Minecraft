@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#AA00AA","bold":true,"text":"Señor de la Llama"}',
+    UUID: [I; 459859710, 1890633846, 2070495778, 1829012838],
     Tags: ["npc_main_dragons_5"],
     DialogData: {
       DialogDataSet: [

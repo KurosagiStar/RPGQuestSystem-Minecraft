@@ -27,6 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Maestro de Combate"}',
+    UUID: [I; 2123315858, -380077806, -611629429, -783993361],
     Tags: ["npc_main_trials_3"],
     DialogData: {
       DialogDataSet: [

@@ -17,6 +17,7 @@
       }
     },
     CustomName: '{"color":"#55FFFF","bold":true,"text":"Explorador del Sendero"}',
+    UUID: [I; 14794902, 1546642871, -1753221895, 1463834854],
     Tags: ["npc_main_traveller_2"],
     DialogData: {
       DialogDataSet: [

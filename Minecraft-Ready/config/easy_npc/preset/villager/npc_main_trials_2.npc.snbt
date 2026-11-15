@@ -27,6 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Instructor de Armas"}',
+    UUID: [I; -1564500128, 130592988, 898288481, 686316697],
     Tags: ["npc_main_trials_2"],
     DialogData: {
       DialogDataSet: [

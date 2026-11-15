@@ -27,6 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Campeón del Reino"}',
+    UUID: [I; -1767327554, 1871525382, 182539029, -593684064],
     Tags: ["npc_main_trials_5"],
     DialogData: {
       DialogDataSet: [
