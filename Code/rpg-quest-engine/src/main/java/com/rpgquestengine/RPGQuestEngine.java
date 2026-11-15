@@ -163,12 +163,17 @@ public class RPGQuestEngine {
                             float yRot = t.entity().getYRot();
                             float xRot = t.entity().getXRot();
                             String dim = t.level().dimension().location().toString();
-                            String cmd = String.format(java.util.Locale.ROOT,
-                                "execute in %s positioned %.3f %.3f %.3f rotated %.2f %.2f run easy_npc preset import custom easy_npc:preset/villager/%s.npc.snbt",
-                                dim, x, y, z, yRot, xRot, t.tag());
+                            java.util.UUID oldUuid = t.entity().getUUID();
+                            String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + t.tag() + ".npc.snbt";
                             int res = server.getCommands().performPrefixedCommand(cmdSource, cmd);
                             if (res > 0) {
                                 t.entity().discard();
+                                for (net.minecraft.world.entity.Entity e : t.level().getAllEntities()) {
+                                    if (e.getTags().contains(t.tag()) && !e.getUUID().equals(oldUuid)) {
+                                        String tpCmd = String.format(java.util.Locale.ROOT, "tp %s %.3f %.3f %.3f", e.getStringUUID(), x, y, z);
+                                        server.getCommands().performPrefixedCommand(cmdSource, tpCmd);
+                                    }
+                                }
                                 synced++;
                             }
                         }
