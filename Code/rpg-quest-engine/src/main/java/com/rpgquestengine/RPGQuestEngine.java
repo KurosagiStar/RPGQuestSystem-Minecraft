@@ -854,6 +854,7 @@ public class RPGQuestEngine {
                 return 1;
             }
         }
+        QuestDefinition firstBlockedPrereq = null;
         for (QuestDefinition q : npcQuests) {
             if (q.completedTag != null && tags.contains(q.completedTag)) continue;
             if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
@@ -865,14 +866,18 @@ public class RPGQuestEngine {
                     }
                 }
                 if (prereq != null && (prereq.completedTag == null || !tags.contains(prereq.completedTag))) {
-                    sp.sendSystemMessage(Component.literal("§c[Bloqueada] §fCompleta primero: §e" + prereq.title));
-                    return 1;
+                    if (firstBlockedPrereq == null) firstBlockedPrereq = prereq;
+                    continue;
                 }
             }
             if (q.activeTag != null) sp.addTag(q.activeTag);
             String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
             sp.sendSystemMessage(Component.literal("§6[Misión Aceptada] §f" + q.title + ": §e" + desc));
             checkAndSyncQuests(sp);
+            return 1;
+        }
+        if (firstBlockedPrereq != null) {
+            sp.sendSystemMessage(Component.literal("§c[Bloqueada] §fCompleta primero: §e" + firstBlockedPrereq.title));
             return 1;
         }
         sp.sendSystemMessage(Component.literal("§a[NPC] §fYa completaste todas las misiones de este personaje."));
