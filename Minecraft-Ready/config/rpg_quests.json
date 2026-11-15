@@ -881,10 +881,10 @@
     "rewardXp": 100,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla para completar The Adventure Begins!",
-        "target": "",
-        "required": 1
+        "type": "KILL",
+        "description": "Elimina 5 zombies en los alrededores",
+        "target": "minecraft:zombie",
+        "required": 5
       }
     ]
   },

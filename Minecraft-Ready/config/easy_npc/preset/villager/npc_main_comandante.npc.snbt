@@ -264,7 +264,7 @@
                   Type: "COMMAND"
                 },
                 {
-                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! The Adventure Begins!: Habla para completar The Adventure Begins!\",\"color\":\"yellow\"}]",
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Capitan] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"¡Misión aceptada! The Adventure Begins!: Elimina 5 zombies en los alrededores.\",\"color\":\"yellow\"}]",
                   ExecAsUser: 0b,
                   PermLevel: 2,
                   Type: "COMMAND"
@@ -290,7 +290,7 @@
           Priority: -1,
           Texts: [
             {
-              Text: "Los bosques aledaños están infestados de zombies corruptos.\\n\\nNecesito que caces al menos 5 de ellos para asegurar el perímetro exterior."
+              Text: "¡Bienvenido, viajero! Tu aventura en estas tierras comienza hoy.\\n\\nLos bosques cercanos están infestados de zombies. Elimina 5 de ellos para demostrar tu valía y ganarte el respeto de la guardia."
             }
           ]
         }
