@@ -37,8 +37,11 @@ public class AdminNpcManagerScreen extends Screen {
     private final List<NpcEntry> visibleNpcs = new ArrayList<>();
     private final List<QuestChain> visibleChains = new ArrayList<>();
     private String selectedChainId = null;
+    private int selectedChainNpcIdx = 0;
     private Button spawnBtn;
     private Button moveBtn;
+    private Button prevNpcBtn;
+    private Button nextNpcBtn;
     private Button viewToggleBtn;
 
     public AdminNpcManagerScreen() {
@@ -73,6 +76,13 @@ public class AdminNpcManagerScreen extends Screen {
 
         int rightX = this.width / 2 + 10;
         int btnY = this.height - 36;
+        prevNpcBtn = this.addRenderableWidget(Button.builder(Component.literal("<"), b -> {
+            if (selectedChainNpcIdx > 0) {
+                selectedChainNpcIdx--;
+                updateButtons();
+            }
+        }).bounds(rightX, btnY, 18, 20).build());
+
         spawnBtn = this.addRenderableWidget(Button.builder(Component.literal("Spawnear aquí"), b -> {
             if (selectedNpcId != null && minecraft != null && minecraft.player != null) {
                 NetworkHandler.CHANNEL.sendToServer(new AdminNpcActionPacket("SPAWN", selectedNpcId));
@@ -81,7 +91,7 @@ public class AdminNpcManagerScreen extends Screen {
                 });
                 updateButtons();
             }
-        }).bounds(rightX, btnY, 110, 20).build());
+        }).bounds(rightX + 20, btnY, 102, 20).build());
 
         moveBtn = this.addRenderableWidget(Button.builder(Component.literal("Mover a pos. actual"), b -> {
             if (selectedNpcId != null && minecraft != null && minecraft.player != null) {
@@ -91,7 +101,15 @@ public class AdminNpcManagerScreen extends Screen {
                 });
                 updateButtons();
             }
-        }).bounds(rightX + 116, btnY, 125, 20).build());
+        }).bounds(rightX + 124, btnY, 110, 20).build());
+
+        nextNpcBtn = this.addRenderableWidget(Button.builder(Component.literal(">"), b -> {
+            QuestChain selC = visibleChains.stream().filter(c -> c.rootId.equals(selectedChainId)).findFirst().orElse(null);
+            if (selC != null && selectedChainNpcIdx < selC.npcIds.size() - 1) {
+                selectedChainNpcIdx++;
+                updateButtons();
+            }
+        }).bounds(rightX + 236, btnY, 18, 20).build());
 
         rebuildNpcList();
     }
@@ -177,15 +195,17 @@ public class AdminNpcManagerScreen extends Screen {
         if (questView) {
             QuestChain selC = visibleChains.stream().filter(c -> c.rootId.equals(selectedChainId)).findFirst().orElse(null);
             if (selC != null && !selC.npcIds.isEmpty()) {
-                int targetIdx = 0;
-                for (int i = 0; i < selC.npcIds.size(); i++) {
-                    if (!QuestConfig.NPC_LOCATIONS.containsKey(selC.npcIds.get(i))) {
-                        targetIdx = i;
-                        break;
-                    }
+                selectedChainNpcIdx = Math.max(0, Math.min(selectedChainNpcIdx, selC.npcIds.size() - 1));
+                selectedNpcId = selC.npcIds.get(selectedChainNpcIdx);
+                int num = selectedChainNpcIdx + 1;
+                if (prevNpcBtn != null) {
+                    prevNpcBtn.visible = true;
+                    prevNpcBtn.active = selectedChainNpcIdx > 0;
                 }
-                selectedNpcId = selC.npcIds.get(targetIdx);
-                int num = targetIdx + 1;
+                if (nextNpcBtn != null) {
+                    nextNpcBtn.visible = true;
+                    nextNpcBtn.active = selectedChainNpcIdx < selC.npcIds.size() - 1;
+                }
                 if (spawnBtn != null) {
                     spawnBtn.active = true;
                     spawnBtn.setMessage(Component.literal("Spawnear #" + num + " NPC"));
@@ -197,6 +217,8 @@ public class AdminNpcManagerScreen extends Screen {
                 return;
             }
         }
+        if (prevNpcBtn != null) prevNpcBtn.visible = false;
+        if (nextNpcBtn != null) nextNpcBtn.visible = false;
         boolean hasSel = selectedNpcId != null;
         if (spawnBtn != null) {
             spawnBtn.active = hasSel;
@@ -224,6 +246,7 @@ public class AdminNpcManagerScreen extends Screen {
             if (idx >= 0 && idx < listSize && (idx - scrollOffset) < maxRows) {
                 if (questView) {
                     selectedChainId = visibleChains.get(idx).rootId;
+                    selectedChainNpcIdx = 0;
                 } else {
                     selectedNpcId = visibleNpcs.get(idx).npcId;
                 }
