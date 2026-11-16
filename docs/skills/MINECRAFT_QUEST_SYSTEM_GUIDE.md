@@ -54,6 +54,11 @@ Todas las cadenas usan **progresión secuencial por bloque de NPC** (completas t
 6. **Beasts of Legend (`cisco_beasts_`, 11 misiones):** `npc_main_beasts_1..2` (`Cazador de Bestias I..II`)
 7. **Champions of the Risen (`cisco_champions_`, 4 misiones):** `npc_main_champions_1` (`Campeón Alzado`)
 
+### NPCs Naturales en Aldeas (`village_npc_spawner.js` — 18 NPCs, 61 Misiones)
+- **Secundarios (`SECONDARY`):** `npc_sec_alquimista`, `npc_sec_armero`, `npc_sec_minero`, `npc_sec_bibliotecario`, `npc_sec_cartografo`, `npc_sec_herbolario`, `npc_sec_ingeniero` (4 variantes c/u en los 5 primeros, 3 en los 2 nuevos).
+- **Contratos (`CONTRACT`):** `npc_contract_cazador` (6), `npc_contract_tabernero` (4), `npc_contract_vigia` (4), `npc_contract_mercenario` (4), `npc_contract_inquisidor` (3), `npc_contract_explorador_marino` (3).
+- **Repetibles (`REPEATABLE`):** `npc_rep_panadero` (4), `npc_rep_pescador` (4), `npc_rep_cazador_nocturno` (4), `npc_rep_granjero` (3), `npc_rep_lenador` (3). Las misiones `REPEATABLE` no añaden `completedTag` al entregarse.
+
 ---
 
 ## 3. Reglas de Formato en `rpg_quests.json`
