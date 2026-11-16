@@ -26,9 +26,9 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 - `NpcDialogScreen.java` + `OpenNpcDialogPacket.java` + `NpcDialogActionPacket.java`: Pantalla RPG propia con botones dinámicos (`Aceptar Misión`, `Completar Misión`, `Cerrar`), lore completo, objetivo, separador y cuadritos con iconos reales de recompensas (`rewardXp`, `rewardXpLevels`, `rewardItems`, `randomRewards` con tooltip de posibilidades, `choiceRewards` clicable para elegir 1). Al completar, sincroniza también `ftbquests change_progress <player> complete <ftbQuestId>` si existe `ftbQuestId`.
 - `AdminNpcManagerScreen.java` + `AdminNpcActionPacket.java` + `OpenAdminUiPacket.java`: Gestor visual (`/rpgquest ui`) por campañas y NPCs, con `collectChain` hasta profundidad 250.
 - `QuestHudOverlay.java`: HUD flotante con progreso, brújula hacia zonas y nombre legible (`q.npc`) al regresar a entregar.
-- `QuestJournalScreen.java`: Diario completo en tecla `J`.
+- `QuestJournalScreen.java`: Diario en tecla `J` con diseño de 3 columnas estilo Witcher 3 (acordeones colapsables + emblema dorado `9x9` de seguimiento a la izquierda, objetivos y recompensas al centro, lore completo a la derecha).
 - `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`) usando `RenderType.textSeeThrough` para compatibilidad con `F3+T` y shaders.
-- `assets/xaerominimap/`: Icono azul de exclamación (`quest_exclamation.png`) y definiciones para `easy_npc/*` embebidos directamente en el `.jar` para el radar de Xaero's Minimap (sin requerir resource pack manual).
+- `resourcepacks/quest_radar_icons/` + `AddPackFindersEvent` (`Pack.Position.TOP`) + `ensureXaeroEasyNpcCategory()`: Icono azul de exclamación (`quest_exclamation.png`) y categoría `"Easy NPCs"` (`icons: 2.0`) inyectados automáticamente desde el `.jar` para todos los jugadores sin tocar `options.txt` ni activar resource packs manuales.
 - `QuestConfig.java`: Lectura/escritura UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json`.
 
 ### C. Flujo de Compilación y Despliegue (PowerShell)
