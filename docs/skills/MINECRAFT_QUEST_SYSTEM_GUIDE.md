@@ -42,6 +42,10 @@ Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-
 Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\config\rpg_quests.json" -Destination "D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\config\rpg_quests.json" -Force
 ```
 
+### D. Preparar Instancia para Otros Jugadores
+- **NO borrar `config/` completo** de la instancia del modpack Cisco.
+- Borrar únicamente `config/xaero/` y `config/easy_npc/` si existían de antes, luego copiar y sobrescribir `Minecraft-Ready/` (`mods/`, `config/`, `kubejs/`, `resourcepacks/`, `xaero/`) en la raíz de la instancia y reiniciar Minecraft.
+
 ---
 
 ## 2. Campañas Principales y NPCs (`MAIN` — 7 Cadenas, 25 NPCs, 236 Misiones)
