@@ -64,6 +64,7 @@ public class RPGQuestEngine {
 
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             modEventBus.addListener(KeyBindings::registerKeys);
+            modEventBus.addListener(RPGQuestEngine::addBuiltInPacks);
             MinecraftForge.EVENT_BUS.register(new QuestHudOverlay());
             MinecraftForge.EVENT_BUS.register(new QuestTitleBannerOverlay());
             MinecraftForge.EVENT_BUS.register(new ClientKeyEvents());
@@ -82,7 +83,77 @@ public class RPGQuestEngine {
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             QuestConfig.loadConfig();
+            ensureXaeroEasyNpcCategory();
         });
+    }
+
+    private static void addBuiltInPacks(net.minecraftforge.event.AddPackFindersEvent event) {
+        if (event.getPackType() != net.minecraft.server.packs.PackType.CLIENT_RESOURCES) return;
+        java.nio.file.Path resourcePath = net.minecraftforge.fml.ModList.get()
+                .getModFileById(MODID).getFile().findResource("resourcepacks/quest_radar_icons");
+        net.minecraft.server.packs.repository.Pack pack = net.minecraft.server.packs.repository.Pack.readMetaAndCreate(
+                MODID + ":quest_radar_icons",
+                Component.literal("Quest Radar Icons (RPG)"),
+                true,
+                id -> new net.minecraftforge.resource.PathPackResources(id, true, resourcePath),
+                net.minecraft.server.packs.PackType.CLIENT_RESOURCES,
+                net.minecraft.server.packs.repository.Pack.Position.TOP,
+                net.minecraft.server.packs.repository.PackSource.BUILT_IN
+        );
+        if (pack != null) {
+            event.addRepositorySource(consumer -> consumer.accept(pack));
+        }
+    }
+
+    private static void ensureXaeroEasyNpcCategory() {
+        try {
+            java.nio.file.Path cfgPath = java.nio.file.Paths.get("config", "xaero", "minimap", "default_radar_categories_client.json");
+            if (!java.nio.file.Files.exists(cfgPath)) return;
+            String raw = java.nio.file.Files.readString(cfgPath, java.nio.charset.StandardCharsets.UTF_8);
+            if (raw.contains("easy_npc:*")) return;
+
+            com.google.gson.JsonObject root = com.google.gson.JsonParser.parseString(raw).getAsJsonObject();
+            com.google.gson.JsonArray subs = root.getAsJsonArray("subCategories");
+            if (subs == null) return;
+            for (com.google.gson.JsonElement el : subs) {
+                com.google.gson.JsonObject obj = el.getAsJsonObject();
+                if ("gui.xaero_entity_category_living".equals(obj.has("name") ? obj.get("name").getAsString() : "")) {
+                    com.google.gson.JsonArray livingSubs = obj.getAsJsonArray("subCategories");
+                    if (livingSubs == null) {
+                        livingSubs = new com.google.gson.JsonArray();
+                        obj.add("subCategories", livingSubs);
+                    }
+                    com.google.gson.JsonObject easyNpcCat = new com.google.gson.JsonObject();
+                    easyNpcCat.addProperty("hardInclude", "nothing");
+                    com.google.gson.JsonArray inc = new com.google.gson.JsonArray();
+                    inc.add("easy_npc:*");
+                    easyNpcCat.add("includeList", inc);
+                    easyNpcCat.addProperty("includeListInSuperCategory", true);
+                    easyNpcCat.addProperty("excludeMode", "ONLY");
+                    easyNpcCat.add("excludeList", new com.google.gson.JsonArray());
+                    easyNpcCat.addProperty("name", "Easy NPCs");
+                    easyNpcCat.addProperty("protection", false);
+                    com.google.gson.JsonObject overrides = new com.google.gson.JsonObject();
+                    overrides.addProperty("displayed", true);
+                    overrides.addProperty("icons", 2.0);
+                    overrides.addProperty("iconScale", 1.0);
+                    easyNpcCat.add("settingOverrides", overrides);
+                    easyNpcCat.add("subCategories", new com.google.gson.JsonArray());
+
+                    com.google.gson.JsonArray newSubs = new com.google.gson.JsonArray();
+                    newSubs.add(easyNpcCat);
+                    for (com.google.gson.JsonElement oldEl : livingSubs) newSubs.add(oldEl);
+                    obj.add("subCategories", newSubs);
+
+                    String out = new com.google.gson.GsonBuilder().setPrettyPrinting().create().toJson(root);
+                    java.nio.file.Files.writeString(cfgPath, out, java.nio.charset.StandardCharsets.UTF_8);
+                    LOGGER.info("[RPGQuestEngine] Added Easy NPCs blue icon rule to Xaero minimap config.");
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.warn("[RPGQuestEngine] Could not auto-patch Xaero radar config: " + e.getMessage());
+        }
     }
 
     @SubscribeEvent
