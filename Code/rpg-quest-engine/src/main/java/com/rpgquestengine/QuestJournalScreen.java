@@ -259,7 +259,7 @@ public class QuestJournalScreen extends Screen {
             }
 
             if (tracked) {
-                g.drawString(this.font, "§6◈", x - 8, y + cardH / 2 - 4, 0xFFD4AF37);
+                drawTrackingEmblem(g, x - 6, y + cardH / 2);
             }
 
             g.renderItem(getQuestIcon(q), x + 4, y + 4);
@@ -309,15 +309,19 @@ public class QuestJournalScreen extends Screen {
                 int req = Math.max(1, st.amount);
                 boolean stageDone = isComp || isDone || cur >= req;
 
-                String icon = stageDone ? "§a[✔]" : "§6◈";
+                if (stageDone) {
+                    g.drawString(this.font, "§a[✔]", x + 4, cy, 0x55FF55);
+                } else {
+                    drawTrackingEmblem(g, x + 10, cy + 4);
+                }
                 String color = stageDone ? "§8" : "§f";
                 String prog = (!stageDone && req > 1) ? " §7(" + Math.min(cur, req) + "/" + req + ")" : "";
-                String lineTxt = icon + " " + color + st.description + prog;
+                String lineTxt = color + st.description + prog;
 
-                List<FormattedCharSequence> lines = this.font.split(Component.literal(lineTxt), w - 12);
+                List<FormattedCharSequence> lines = this.font.split(Component.literal(lineTxt), w - 24);
                 for (FormattedCharSequence l : lines) {
                     if (cy + 11 > bottomY - 54) break;
-                    g.drawString(this.font, l, x + 6, cy, 0xFFFFFF);
+                    g.drawString(this.font, l, x + 22, cy, 0xFFFFFF);
                     cy += 11;
                 }
                 cy += 4;
@@ -325,13 +329,17 @@ public class QuestJournalScreen extends Screen {
         }
 
         if (!isComp) {
-            String turnInIcon = isDone ? "§6◈" : "§8□";
+            if (isDone) {
+                drawTrackingEmblem(g, x + 10, cy + 4);
+            } else {
+                g.drawString(this.font, "§8□", x + 7, cy, 0x666666);
+            }
             String turnInColor = isDone ? "§e" : "§8";
-            String turnInTxt = turnInIcon + " " + turnInColor + "Regresa con " + sub + " para entregar.";
-            List<FormattedCharSequence> tLines = this.font.split(Component.literal(turnInTxt), w - 12);
+            String turnInTxt = turnInColor + "Regresa con " + sub + " para entregar.";
+            List<FormattedCharSequence> tLines = this.font.split(Component.literal(turnInTxt), w - 24);
             for (FormattedCharSequence l : tLines) {
                 if (cy + 11 > bottomY - 54) break;
-                g.drawString(this.font, l, x + 6, cy, 0xFFFFFF);
+                g.drawString(this.font, l, x + 22, cy, 0xFFFFFF);
                 cy += 11;
             }
         }
@@ -363,6 +371,14 @@ public class QuestJournalScreen extends Screen {
         if (selectedQuest.randomRewards != null && !selectedQuest.randomRewards.isEmpty() && sx + 20 <= x + w) {
             drawMiniSlot(g, new ItemStack(Items.CHEST), sx, sy, 0xFFAA55FF);
         }
+    }
+
+    private void drawTrackingEmblem(GuiGraphics g, int cx, int cy) {
+        // Anillo/rombo dorado estilo Witcher 3 de 9x9 px
+        g.fill(cx - 4, cy - 2, cx + 5, cy + 3, 0xFFD4AF37);
+        g.fill(cx - 2, cy - 4, cx + 3, cy + 5, 0xFFD4AF37);
+        g.fill(cx - 2, cy - 2, cx + 3, cy + 3, 0xFF1A1713);
+        g.fill(cx - 1, cy - 1, cx + 2, cy + 2, 0xFFFFE066);
     }
 
     private void drawMiniSlot(GuiGraphics g, ItemStack stack, int x, int y, int border) {
