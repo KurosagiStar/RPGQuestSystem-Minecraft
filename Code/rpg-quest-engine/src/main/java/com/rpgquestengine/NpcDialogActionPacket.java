@@ -71,7 +71,9 @@ public class NpcDialogActionPacket {
                 if (q.doneTag == null || !tags.contains(q.doneTag)) return;
                 if (q.activeTag != null) sp.removeTag(q.activeTag);
                 sp.removeTag(q.doneTag);
-                if (q.completedTag != null) sp.addTag(q.completedTag);
+                if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null) {
+                    sp.addTag(q.completedTag);
+                }
 
                 if (q.rewardXp > 0) sp.giveExperiencePoints(q.rewardXp);
                 if (q.rewardXpLevels > 0) sp.giveExperienceLevels(q.rewardXpLevels);

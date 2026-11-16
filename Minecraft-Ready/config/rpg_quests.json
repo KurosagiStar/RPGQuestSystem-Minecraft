@@ -8484,5 +8484,1489 @@
         "count": 4
       }
     ]
+  },
+  {
+    "id": "sec_alquimista_magma",
+    "category": "SECONDARY",
+    "title": "Esencia Ígnea",
+    "npc": "Alquimista",
+    "npcId": "npc_sec_alquimista",
+    "description": "Necesito crema de magma para destilaciones ignífugas. Caza cubos de magma en El Nether.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 120,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_alquimista_magma_act",
+    "doneTag": "sec_alquimista_magma_done",
+    "completedTag": "sec_alquimista_magma_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 6x Crema de magma",
+        "target": "minecraft:magma_cream",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": "sec_alquimista_verruga",
+    "category": "SECONDARY",
+    "title": "Cultivo del Inframundo",
+    "npc": "Alquimista",
+    "npcId": "npc_sec_alquimista",
+    "description": "Toda poción avanzada parte de la verruga del Nether. Busca en fortalezas del Nether.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 110,
+    "rewardItems": [
+      {
+        "id": "minecraft:blaze_powder",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_alquimista_verruga_act",
+    "doneTag": "sec_alquimista_verruga_done",
+    "completedTag": "sec_alquimista_verruga_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 12x Verruga del Nether",
+        "target": "minecraft:nether_wart",
+        "amount": 12
+      }
+    ]
+  },
+  {
+    "id": "sec_alquimista_ojo",
+    "category": "SECONDARY",
+    "title": "Ojos para Alquimia",
+    "npc": "Alquimista",
+    "npcId": "npc_sec_alquimista",
+    "description": "Reúne ojos de araña para preparar elixires nocturnos.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 95,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "sec_alquimista_ojo_act",
+    "doneTag": "sec_alquimista_ojo_done",
+    "completedTag": "sec_alquimista_ojo_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 8x Ojo de araña",
+        "target": "minecraft:spider_eye",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "id": "sec_armero_espadas",
+    "category": "SECONDARY",
+    "title": "Aceros para la Guardia",
+    "npc": "Armero",
+    "npcId": "npc_sec_armero",
+    "description": "La guarnición necesita armas de repuesto. Forja espadas de hierro en tu mesa de trabajo.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 110,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_armero_espadas_act",
+    "doneTag": "sec_armero_espadas_done",
+    "completedTag": "sec_armero_espadas_comp",
+    "stages": [
+      {
+        "type": "CRAFT",
+        "description": "Fabrica 3x Espada de hierro",
+        "target": "minecraft:iron_sword",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "sec_armero_escudos",
+    "category": "SECONDARY",
+    "title": "Muro de Escudos",
+    "npc": "Armero",
+    "npcId": "npc_sec_armero",
+    "description": "Ningún soldado debe patrullar sin defensa. Fabrica escudos resistentes.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 100,
+    "rewardItems": [
+      {
+        "id": "minecraft:iron_ingot",
+        "count": 6
+      }
+    ],
+    "activeTag": "sec_armero_escudos_act",
+    "doneTag": "sec_armero_escudos_done",
+    "completedTag": "sec_armero_escudos_comp",
+    "stages": [
+      {
+        "type": "CRAFT",
+        "description": "Fabrica 2x Escudo",
+        "target": "minecraft:shield",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "sec_armero_hierro",
+    "category": "SECONDARY",
+    "title": "Lingotes Fundidos",
+    "npc": "Armero",
+    "npcId": "npc_sec_armero",
+    "description": "Mantén las fraguas encendidas fundiendo mena de hierro en el horno.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 120,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "sec_armero_hierro_act",
+    "doneTag": "sec_armero_hierro_done",
+    "completedTag": "sec_armero_hierro_comp",
+    "stages": [
+      {
+        "type": "SMELT",
+        "description": "Funde 16x Lingote de hierro",
+        "target": "minecraft:iron_ingot",
+        "amount": 16
+      }
+    ]
+  },
+  {
+    "id": "sec_minero_carbon",
+    "category": "SECONDARY",
+    "title": "Carbón para las Antorchas",
+    "npc": "Minero",
+    "npcId": "npc_sec_minero",
+    "description": "Las galerías subterráneas están oscuras. Extrae mena de carbón bajo tierra.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 90,
+    "rewardItems": [
+      {
+        "id": "minecraft:torch",
+        "count": 24
+      }
+    ],
+    "activeTag": "sec_minero_carbon_act",
+    "doneTag": "sec_minero_carbon_done",
+    "completedTag": "sec_minero_carbon_comp",
+    "stages": [
+      {
+        "type": "MINE",
+        "description": "Mina 20x Mena de carbón",
+        "target": "minecraft:coal_ore",
+        "amount": 20
+      }
+    ]
+  },
+  {
+    "id": "sec_minero_oro",
+    "category": "SECONDARY",
+    "title": "Veta Dorada",
+    "npc": "Minero",
+    "npcId": "npc_sec_minero",
+    "description": "Desciende a niveles medios y profundos para extraer oro.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 130,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "sec_minero_oro_act",
+    "doneTag": "sec_minero_oro_done",
+    "completedTag": "sec_minero_oro_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 12x Oro en bruto",
+        "target": "minecraft:raw_gold",
+        "amount": 12
+      }
+    ]
+  },
+  {
+    "id": "sec_minero_obsidiana",
+    "category": "SECONDARY",
+    "title": "Piedra Volcánica",
+    "npc": "Minero",
+    "npcId": "npc_sec_minero",
+    "description": "Necesitamos obsidiana para reforzar la bóveda. Úsala con pico de diamante.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 160,
+    "rewardItems": [
+      {
+        "id": "minecraft:diamond",
+        "count": 2
+      }
+    ],
+    "activeTag": "sec_minero_obsidiana_act",
+    "doneTag": "sec_minero_obsidiana_done",
+    "completedTag": "sec_minero_obsidiana_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 6x Obsidiana",
+        "target": "minecraft:obsidian",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": "sec_biblio_papel",
+    "category": "SECONDARY",
+    "title": "Pergaminos en Blanco",
+    "npc": "Bibliotecario",
+    "npcId": "npc_sec_bibliotecario",
+    "description": "La biblioteca se quedó sin existencias. Reúne papel de caña de azúcar.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 90,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "sec_biblio_papel_act",
+    "doneTag": "sec_biblio_papel_done",
+    "completedTag": "sec_biblio_papel_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 24x Papel",
+        "target": "minecraft:paper",
+        "amount": 24
+      }
+    ]
+  },
+  {
+    "id": "sec_biblio_estanterias",
+    "category": "SECONDARY",
+    "title": "Ampliación del Archivo",
+    "npc": "Bibliotecario",
+    "npcId": "npc_sec_bibliotecario",
+    "description": "Fabrica estanterías para almacenar los nuevos códices.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 130,
+    "rewardItems": [
+      {
+        "id": "minecraft:experience_bottle",
+        "count": 5
+      }
+    ],
+    "activeTag": "sec_biblio_estanterias_act",
+    "doneTag": "sec_biblio_estanterias_done",
+    "completedTag": "sec_biblio_estanterias_comp",
+    "stages": [
+      {
+        "type": "CRAFT",
+        "description": "Fabrica 4x Estantería",
+        "target": "minecraft:bookshelf",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "sec_biblio_tinta",
+    "category": "SECONDARY",
+    "title": "Tinta de Calamar",
+    "npc": "Bibliotecario",
+    "npcId": "npc_sec_bibliotecario",
+    "description": "Necesitamos tinta fresca para copiar mapas antiguos. Busca calamares en ríos u océanos.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 100,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_biblio_tinta_act",
+    "doneTag": "sec_biblio_tinta_done",
+    "completedTag": "sec_biblio_tinta_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 10x Saco de tinta",
+        "target": "minecraft:ink_sac",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "sec_carto_brujulas",
+    "category": "SECONDARY",
+    "title": "Instrumentos de Rumbo",
+    "npc": "Cartógrafo",
+    "npcId": "npc_sec_cartografo",
+    "description": "Los exploradores pierden el norte. Fabrica brújulas con hierro y redstone.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 110,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_carto_brujulas_act",
+    "doneTag": "sec_carto_brujulas_done",
+    "completedTag": "sec_carto_brujulas_comp",
+    "stages": [
+      {
+        "type": "CRAFT",
+        "description": "Fabrica 2x Brújula",
+        "target": "minecraft:compass",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "sec_carto_desierto",
+    "category": "SECONDARY",
+    "title": "Cartografía de las Dunas",
+    "npc": "Cartógrafo",
+    "npcId": "npc_sec_cartografo",
+    "description": "Viaja hasta un bioma desértico para trazar sus rutas de caravanas.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 140,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "sec_carto_desierto_act",
+    "doneTag": "sec_carto_desierto_done",
+    "completedTag": "sec_carto_desierto_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora el bioma Desierto",
+        "target": "minecraft:desert",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "sec_carto_jungla",
+    "category": "SECONDARY",
+    "title": "Senderos de la Jungla",
+    "npc": "Cartógrafo",
+    "npcId": "npc_sec_cartografo",
+    "description": "Adéntrate en una jungla tropical y registra su ubicación.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 150,
+    "rewardItems": [
+      {
+        "id": "minecraft:diamond",
+        "count": 1
+      }
+    ],
+    "activeTag": "sec_carto_jungla_act",
+    "doneTag": "sec_carto_jungla_done",
+    "completedTag": "sec_carto_jungla_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora el bioma Jungla",
+        "target": "minecraft:jungle",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "contract_cazador_wither",
+    "category": "CONTRACT",
+    "title": "Contrato: Esqueletos Wither",
+    "npc": "Cazador",
+    "npcId": "npc_contract_cazador",
+    "description": "Las fortalezas del Nether están infestadas. Caza esqueletos Wither.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 220,
+    "rewardItems": [
+      {
+        "id": "minecraft:diamond",
+        "count": 2
+      }
+    ],
+    "activeTag": "contract_cazador_wither_act",
+    "doneTag": "contract_cazador_wither_done",
+    "completedTag": "contract_cazador_wither_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 5x Esqueleto Wither",
+        "target": "minecraft:wither_skeleton",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "contract_cazador_enderman",
+    "category": "CONTRACT",
+    "title": "Contrato: Acechadores del Vacío",
+    "npc": "Cazador",
+    "npcId": "npc_contract_cazador",
+    "description": "Los Endermen merodean de noche. Elimínalos y trae pruebas.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 190,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_cazador_enderman_act",
+    "doneTag": "contract_cazador_enderman_done",
+    "completedTag": "contract_cazador_enderman_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 6x Enderman",
+        "target": "minecraft:enderman",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": "contract_tabernero_aranas",
+    "category": "CONTRACT",
+    "title": "Contrato: Plaga en la Bodega",
+    "npc": "Tabernero",
+    "npcId": "npc_contract_tabernero",
+    "description": "Arañas de cueva rondan los túneles bajo la taberna. Acaba con ellas.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 140,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "contract_tabernero_aranas_act",
+    "doneTag": "contract_tabernero_aranas_done",
+    "completedTag": "contract_tabernero_aranas_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 8x Araña de cueva",
+        "target": "minecraft:cave_spider",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "id": "contract_tabernero_saqueadores",
+    "category": "CONTRACT",
+    "title": "Contrato: Bandidos del Camino",
+    "npc": "Tabernero",
+    "npcId": "npc_contract_tabernero",
+    "description": "Los saqueadores asaltan las carretas de suministros. Intercepta sus patrullas.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 160,
+    "rewardItems": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_tabernero_saqueadores_act",
+    "doneTag": "contract_tabernero_saqueadores_done",
+    "completedTag": "contract_tabernero_saqueadores_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 6x Saqueador",
+        "target": "minecraft:pillager",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": "contract_tabernero_carne",
+    "category": "CONTRACT",
+    "title": "Contrato: Despensa Llena",
+    "npc": "Tabernero",
+    "npcId": "npc_contract_tabernero",
+    "description": "Trae filetes cocinados para alimentar a los viajeros de la posada.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 110,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "contract_tabernero_carne_act",
+    "doneTag": "contract_tabernero_carne_done",
+    "completedTag": "contract_tabernero_carne_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 16x Filete cocinado",
+        "target": "minecraft:cooked_beef",
+        "amount": 16
+      }
+    ]
+  },
+  {
+    "id": "contract_vigia_creepers",
+    "category": "CONTRACT",
+    "title": "Contrato: Amenaza Explosiva",
+    "npc": "Vigía",
+    "npcId": "npc_contract_vigia",
+    "description": "Los creepers dañan las murallas de la aldea. Neutralízalos antes de que detonen.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 150,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "contract_vigia_creepers_act",
+    "doneTag": "contract_vigia_creepers_done",
+    "completedTag": "contract_vigia_creepers_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 8x Creeper",
+        "target": "minecraft:creeper",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "id": "contract_vigia_esqueletos",
+    "category": "CONTRACT",
+    "title": "Contrato: Tiradores Nocturnos",
+    "npc": "Vigía",
+    "npcId": "npc_contract_vigia",
+    "description": "Los arqueros no-muertos hostigan las torres de guardia.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 140,
+    "rewardItems": [
+      {
+        "id": "minecraft:arrow",
+        "count": 32
+      }
+    ],
+    "activeTag": "contract_vigia_esqueletos_act",
+    "doneTag": "contract_vigia_esqueletos_done",
+    "completedTag": "contract_vigia_esqueletos_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 12x Esqueleto",
+        "target": "minecraft:skeleton",
+        "amount": 12
+      }
+    ]
+  },
+  {
+    "id": "contract_vigia_vindicadores",
+    "category": "CONTRACT",
+    "title": "Contrato: Hacha de Guerra",
+    "npc": "Vigía",
+    "npcId": "npc_contract_vigia",
+    "description": "Vindicadores fueron avistados cerca de puestos avanzados.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 180,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_vigia_vindicadores_act",
+    "doneTag": "contract_vigia_vindicadores_done",
+    "completedTag": "contract_vigia_vindicadores_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Vindicador",
+        "target": "minecraft:vindicator",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "contract_mercenario_brujas",
+    "category": "CONTRACT",
+    "title": "Contrato: Aquelarre en el Pantano",
+    "npc": "Mercenario",
+    "npcId": "npc_contract_mercenario",
+    "description": "Caza brujas en pantanos o cabañas aisladas antes de que envenenen los pozos.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 170,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_mercenario_brujas_act",
+    "doneTag": "contract_mercenario_brujas_done",
+    "completedTag": "contract_mercenario_brujas_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Bruja",
+        "target": "minecraft:witch",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "contract_mercenario_blazes",
+    "category": "CONTRACT",
+    "title": "Contrato: Guardias de la Fortaleza",
+    "npc": "Mercenario",
+    "npcId": "npc_contract_mercenario",
+    "description": "Cruza al Nether y abate blazes en sus fortalezas.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 210,
+    "rewardItems": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 8
+      }
+    ],
+    "activeTag": "contract_mercenario_blazes_act",
+    "doneTag": "contract_mercenario_blazes_done",
+    "completedTag": "contract_mercenario_blazes_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 8x Blaze",
+        "target": "minecraft:blaze",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "id": "contract_mercenario_devastador",
+    "category": "CONTRACT",
+    "title": "Contrato: Bestia de Asedio",
+    "npc": "Mercenario",
+    "npcId": "npc_contract_mercenario",
+    "description": "Si enfrentas una invasión, acaba con el Devastador principal.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 260,
+    "rewardItems": [
+      {
+        "id": "minecraft:diamond",
+        "count": 3
+      }
+    ],
+    "activeTag": "contract_mercenario_devastador_act",
+    "doneTag": "contract_mercenario_devastador_done",
+    "completedTag": "contract_mercenario_devastador_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Devastador",
+        "target": "minecraft:ravager",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "rep_panadero_trigo",
+    "category": "REPEATABLE",
+    "title": "Cosecha de Trigo",
+    "npc": "Panadero",
+    "npcId": "npc_rep_panadero",
+    "description": "Necesito trigo fresco todos los días para los hornos de la aldea.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 60,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 2
+      }
+    ],
+    "activeTag": "rep_panadero_trigo_act",
+    "doneTag": "rep_panadero_trigo_done",
+    "completedTag": "rep_panadero_trigo_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 24x Trigo",
+        "target": "minecraft:wheat",
+        "amount": 24
+      }
+    ]
+  },
+  {
+    "id": "rep_panadero_manzanas",
+    "category": "REPEATABLE",
+    "title": "Tartas de Manzana",
+    "npc": "Panadero",
+    "npcId": "npc_rep_panadero",
+    "description": "Trae manzanas rojas de robles para preparar provisiones.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 75,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "rep_panadero_manzanas_act",
+    "doneTag": "rep_panadero_manzanas_done",
+    "completedTag": "rep_panadero_manzanas_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 8x Manzana",
+        "target": "minecraft:apple",
+        "amount": 8
+      }
+    ]
+  },
+  {
+    "id": "rep_panadero_azucar",
+    "category": "REPEATABLE",
+    "title": "Dulces de Viaje",
+    "npc": "Panadero",
+    "npcId": "npc_rep_panadero",
+    "description": "Reúne azúcar de caña para los pasteles de la guardia.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 65,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 2
+      }
+    ],
+    "activeTag": "rep_panadero_azucar_act",
+    "doneTag": "rep_panadero_azucar_done",
+    "completedTag": "rep_panadero_azucar_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 16x Azúcar",
+        "target": "minecraft:sugar",
+        "amount": 16
+      }
+    ]
+  },
+  {
+    "id": "rep_pescador_salmon",
+    "category": "REPEATABLE",
+    "title": "Temporada de Salmón",
+    "npc": "Pescador",
+    "npcId": "npc_rep_pescador",
+    "description": "El salmón fresco se paga bien en el puerto. Pesca en ríos o mares fríos.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 70,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "rep_pescador_salmon_act",
+    "doneTag": "rep_pescador_salmon_done",
+    "completedTag": "rep_pescador_salmon_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 6x Salmón crudo",
+        "target": "minecraft:salmon",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": "rep_pescador_globo",
+    "category": "REPEATABLE",
+    "title": "Captura Exótica",
+    "npc": "Pescador",
+    "npcId": "npc_rep_pescador",
+    "description": "Los alquimistas buscan pez globo. Ten cuidado al pescarlo.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 90,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "rep_pescador_globo_act",
+    "doneTag": "rep_pescador_globo_done",
+    "completedTag": "rep_pescador_globo_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 2x Pez globo",
+        "target": "minecraft:pufferfish",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "rep_pescador_bacalao",
+    "category": "REPEATABLE",
+    "title": "Red Llena",
+    "npc": "Pescador",
+    "npcId": "npc_rep_pescador",
+    "description": "Trae bacalao fresco para abastecer el mercado.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 65,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 2
+      }
+    ],
+    "activeTag": "rep_pescador_bacalao_act",
+    "doneTag": "rep_pescador_bacalao_done",
+    "completedTag": "rep_pescador_bacalao_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 10x Bacalao crudo",
+        "target": "minecraft:cod",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "rep_cazador_huesos",
+    "category": "REPEATABLE",
+    "title": "Trofeos Óseos",
+    "npc": "Cazador Nocturno",
+    "npcId": "npc_rep_cazador_nocturno",
+    "description": "Limpia los caminos de esqueletos y entrega sus huesos como prueba.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 70,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "rep_cazador_huesos_act",
+    "doneTag": "rep_cazador_huesos_done",
+    "completedTag": "rep_cazador_huesos_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 16x Hueso",
+        "target": "minecraft:bone",
+        "amount": 16
+      }
+    ]
+  },
+  {
+    "id": "rep_cazador_polvora",
+    "category": "REPEATABLE",
+    "title": "Pólvora de Emergencia",
+    "npc": "Cazador Nocturno",
+    "npcId": "npc_rep_cazador_nocturno",
+    "description": "Necesitamos pólvora de creepers para la defensa de la muralla.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 85,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "rep_cazador_polvora_act",
+    "doneTag": "rep_cazador_polvora_done",
+    "completedTag": "rep_cazador_polvora_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 10x Pólvora",
+        "target": "minecraft:gunpowder",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "rep_cazador_perlas",
+    "category": "REPEATABLE",
+    "title": "Reliquias del Fin",
+    "npc": "Cazador Nocturno",
+    "npcId": "npc_rep_cazador_nocturno",
+    "description": "Caza Endermen y entrega perlas de Ender al puesto de mando.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 110,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "rep_cazador_perlas_act",
+    "doneTag": "rep_cazador_perlas_done",
+    "completedTag": "rep_cazador_perlas_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 4x Perla de Ender",
+        "target": "minecraft:ender_pearl",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "sec_herbolario_miel",
+    "category": "SECONDARY",
+    "title": "Néctar Silvestre",
+    "npc": "Herbolario",
+    "npcId": "npc_sec_herbolario",
+    "description": "Busca colmenas en praderas o bosques florales y trae frascos de miel.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 100,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_herbolario_miel_act",
+    "doneTag": "sec_herbolario_miel_done",
+    "completedTag": "sec_herbolario_miel_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 4x Frasco de miel",
+        "target": "minecraft:honey_bottle",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "sec_herbolario_azalea",
+    "category": "SECONDARY",
+    "title": "Flora de Cuevas Frondosas",
+    "npc": "Herbolario",
+    "npcId": "npc_sec_herbolario",
+    "description": "Explora un bioma de Cuevas Frondosas (Lush Caves) bajo tierra.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 130,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "sec_herbolario_azalea_act",
+    "doneTag": "sec_herbolario_azalea_done",
+    "completedTag": "sec_herbolario_azalea_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Cuevas Frondosas",
+        "target": "minecraft:lush_caves",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "sec_herbolario_hongos",
+    "category": "SECONDARY",
+    "title": "Esporas de Pantano",
+    "npc": "Herbolario",
+    "npcId": "npc_sec_herbolario",
+    "description": "Reúne champiñones rojos en bosques oscuros o pantanos.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 90,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "sec_herbolario_hongos_act",
+    "doneTag": "sec_herbolario_hongos_done",
+    "completedTag": "sec_herbolario_hongos_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 12x Champiñón rojo",
+        "target": "minecraft:red_mushroom",
+        "amount": 12
+      }
+    ]
+  },
+  {
+    "id": "sec_ingeniero_redstone",
+    "category": "SECONDARY",
+    "title": "Circuito Básico",
+    "npc": "Ingeniero",
+    "npcId": "npc_sec_ingeniero",
+    "description": "Extrae polvo de redstone en las profundidades de la Superficie.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 110,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "sec_ingeniero_redstone_act",
+    "doneTag": "sec_ingeniero_redstone_done",
+    "completedTag": "sec_ingeniero_redstone_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 32x Polvo de redstone",
+        "target": "minecraft:redstone",
+        "amount": 32
+      }
+    ]
+  },
+  {
+    "id": "sec_ingeniero_pistones",
+    "category": "SECONDARY",
+    "title": "Maquinaria Pesada",
+    "npc": "Ingeniero",
+    "npcId": "npc_sec_ingeniero",
+    "description": "Fabrica pistones para automatizar las compuertas.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 125,
+    "rewardItems": [
+      {
+        "id": "minecraft:iron_ingot",
+        "count": 8
+      }
+    ],
+    "activeTag": "sec_ingeniero_pistones_act",
+    "doneTag": "sec_ingeniero_pistones_done",
+    "completedTag": "sec_ingeniero_pistones_comp",
+    "stages": [
+      {
+        "type": "CRAFT",
+        "description": "Fabrica 4x Pistón",
+        "target": "minecraft:piston",
+        "amount": 4
+      }
+    ]
+  },
+  {
+    "id": "sec_ingeniero_observador",
+    "category": "SECONDARY",
+    "title": "Ojos Mecánicos",
+    "npc": "Ingeniero",
+    "npcId": "npc_sec_ingeniero",
+    "description": "Usa cuarzo del Nether y redstone para fabricar observadores.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 145,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "sec_ingeniero_observador_act",
+    "doneTag": "sec_ingeniero_observador_done",
+    "completedTag": "sec_ingeniero_observador_comp",
+    "stages": [
+      {
+        "type": "CRAFT",
+        "description": "Fabrica 2x Observador",
+        "target": "minecraft:observer",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "contract_inquisidor_ahogados",
+    "category": "CONTRACT",
+    "title": "Contrato: Purga en las Aguas",
+    "npc": "Inquisidor",
+    "npcId": "npc_contract_inquisidor",
+    "description": "Los ahogados acechan ríos y ruinas sumergidas. Purifícalos.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 150,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 5
+      }
+    ],
+    "activeTag": "contract_inquisidor_ahogados_act",
+    "doneTag": "contract_inquisidor_ahogados_done",
+    "completedTag": "contract_inquisidor_ahogados_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 10x Ahogado",
+        "target": "minecraft:drowned",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "contract_inquisidor_fantasmas",
+    "category": "CONTRACT",
+    "title": "Contrato: Sombras del Cielo",
+    "npc": "Inquisidor",
+    "npcId": "npc_contract_inquisidor",
+    "description": "Espera la noche y derriba fantasmas nocturnos en el cielo abierto.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 180,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_inquisidor_fantasmas_act",
+    "doneTag": "contract_inquisidor_fantasmas_done",
+    "completedTag": "contract_inquisidor_fantasmas_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 5x Fantasma",
+        "target": "minecraft:phantom",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "contract_inquisidor_piglin",
+    "category": "CONTRACT",
+    "title": "Contrato: Bastión Corrupto",
+    "npc": "Inquisidor",
+    "npcId": "npc_contract_inquisidor",
+    "description": "Enfréntate a los Piglins Brutos dentro de los bastiones del Nether.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 240,
+    "rewardItems": [
+      {
+        "id": "minecraft:diamond",
+        "count": 2
+      }
+    ],
+    "activeTag": "contract_inquisidor_piglin_act",
+    "doneTag": "contract_inquisidor_piglin_done",
+    "completedTag": "contract_inquisidor_piglin_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 3x Piglin Bruto",
+        "target": "minecraft:piglin_brute",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "contract_marino_guardian",
+    "category": "CONTRACT",
+    "title": "Contrato: Centinelas del Templo",
+    "npc": "Capitán Marino",
+    "npcId": "npc_contract_explorador_marino",
+    "description": "Localiza un Monumento Oceánico y abate guardianes marinos.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 200,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_marino_guardian_act",
+    "doneTag": "contract_marino_guardian_done",
+    "completedTag": "contract_marino_guardian_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 6x Guardián",
+        "target": "minecraft:guardian",
+        "amount": 6
+      }
+    ]
+  },
+  {
+    "id": "contract_marino_prismarina",
+    "category": "CONTRACT",
+    "title": "Contrato: Fragmentos del Abismo",
+    "npc": "Capitán Marino",
+    "npcId": "npc_contract_explorador_marino",
+    "description": "Recupera fragmentos de prismarina de monumentos submarinos.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 170,
+    "rewardItems": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 6
+      }
+    ],
+    "activeTag": "contract_marino_prismarina_act",
+    "doneTag": "contract_marino_prismarina_done",
+    "completedTag": "contract_marino_prismarina_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 12x Fragmento de prismarina",
+        "target": "minecraft:prismarine_shard",
+        "amount": 12
+      }
+    ]
+  },
+  {
+    "id": "contract_marino_oceano",
+    "category": "CONTRACT",
+    "title": "Contrato: Aguas Profundas",
+    "npc": "Capitán Marino",
+    "npcId": "npc_contract_explorador_marino",
+    "description": "Navega hasta un bioma de Océano Profundo y registra la ruta.",
+    "suggestedLevel": 10,
+    "prerequisiteQuestId": "",
+    "rewardXp": 130,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 4
+      }
+    ],
+    "activeTag": "contract_marino_oceano_act",
+    "doneTag": "contract_marino_oceano_done",
+    "completedTag": "contract_marino_oceano_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Océano Profundo",
+        "target": "minecraft:deep_ocean",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "rep_granjero_zanahorias",
+    "category": "REPEATABLE",
+    "title": "Cosecha de Raíces",
+    "npc": "Granjero",
+    "npcId": "npc_rep_granjero",
+    "description": "Trae zanahorias frescas de tus cultivos para el granero.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 60,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 2
+      }
+    ],
+    "activeTag": "rep_granjero_zanahorias_act",
+    "doneTag": "rep_granjero_zanahorias_done",
+    "completedTag": "rep_granjero_zanahorias_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 20x Zanahoria",
+        "target": "minecraft:carrot",
+        "amount": 20
+      }
+    ]
+  },
+  {
+    "id": "rep_granjero_patatas",
+    "category": "REPEATABLE",
+    "title": "Sacos de Patatas",
+    "npc": "Granjero",
+    "npcId": "npc_rep_granjero",
+    "description": "Las tropas consumen muchas raciones. Entrega patatas frescas.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 60,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 2
+      }
+    ],
+    "activeTag": "rep_granjero_patatas_act",
+    "doneTag": "rep_granjero_patatas_done",
+    "completedTag": "rep_granjero_patatas_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 20x Patata",
+        "target": "minecraft:potato",
+        "amount": 20
+      }
+    ]
+  },
+  {
+    "id": "rep_granjero_cuero",
+    "category": "REPEATABLE",
+    "title": "Curtido de Pieles",
+    "npc": "Granjero",
+    "npcId": "npc_rep_granjero",
+    "description": "Necesitamos cuero para arneses y alforjas de carga.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 80,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "rep_granjero_cuero_act",
+    "doneTag": "rep_granjero_cuero_done",
+    "completedTag": "rep_granjero_cuero_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 10x Cuero",
+        "target": "minecraft:leather",
+        "amount": 10
+      }
+    ]
+  },
+  {
+    "id": "rep_lenador_roble",
+    "category": "REPEATABLE",
+    "title": "Madera de Construcción",
+    "npc": "Leñador",
+    "npcId": "npc_rep_lenador",
+    "description": "Tala robles y entrega troncos para reparar cercas y puentes.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 65,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 2
+      }
+    ],
+    "activeTag": "rep_lenador_roble_act",
+    "doneTag": "rep_lenador_roble_done",
+    "completedTag": "rep_lenador_roble_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 24x Tronco de roble",
+        "target": "minecraft:oak_log",
+        "amount": 24
+      }
+    ]
+  },
+  {
+    "id": "rep_lenador_abeto",
+    "category": "REPEATABLE",
+    "title": "Vigas de Abeto",
+    "npc": "Leñador",
+    "npcId": "npc_rep_lenador",
+    "description": "La madera de abeto es ideal para vigas largas. Trae troncos de taiga.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 70,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "rep_lenador_abeto_act",
+    "doneTag": "rep_lenador_abeto_done",
+    "completedTag": "rep_lenador_abeto_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 24x Tronco de abeto",
+        "target": "minecraft:spruce_log",
+        "amount": 24
+      }
+    ]
+  },
+  {
+    "id": "rep_lenador_carbon_veg",
+    "category": "REPEATABLE",
+    "title": "Carbón Vegetal",
+    "npc": "Leñador",
+    "npcId": "npc_rep_lenador",
+    "description": "Quema troncos en el horno para producir carbón vegetal para las fraguas.",
+    "suggestedLevel": 5,
+    "prerequisiteQuestId": "",
+    "rewardXp": 75,
+    "rewardItems": [
+      {
+        "id": "minecraft:emerald",
+        "count": 3
+      }
+    ],
+    "activeTag": "rep_lenador_carbon_veg_act",
+    "doneTag": "rep_lenador_carbon_veg_done",
+    "completedTag": "rep_lenador_carbon_veg_comp",
+    "stages": [
+      {
+        "type": "SMELT",
+        "description": "Funde 16x Carbón vegetal",
+        "target": "minecraft:charcoal",
+        "amount": 16
+      }
+    ]
   }
 ]

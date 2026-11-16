@@ -45,7 +45,13 @@ var NPC_SELECTION_TABLE = [
   { id: 'npc_sec_bibliotecario', name: 'Bibliotecario', rl: 'easy_npc:preset/villager/npc_sec_bibliotecario.npc.snbt', weight: 15, blocks: ['minecraft:lectern', 'minecraft:bookshelf'] },
   { id: 'npc_sec_cartografo', name: 'Cartografo', rl: 'easy_npc:preset/villager/npc_sec_cartografo.npc.snbt', weight: 15, blocks: ['minecraft:cartography_table'] },
   { id: 'npc_contract_mercenario', name: 'Mercenario', rl: 'easy_npc:preset/villager/npc_contract_mercenario.npc.snbt', weight: 12, blocks: ['minecraft:grindstone', 'minecraft:bell', 'minecraft:iron_bars'] },
-  { id: 'npc_rep_cazador_nocturno', name: 'Cazador Nocturno', rl: 'easy_npc:preset/villager/npc_rep_cazador_nocturno.npc.snbt', weight: 14, blocks: ['minecraft:campfire', 'minecraft:lantern'] }
+  { id: 'npc_rep_cazador_nocturno', name: 'Cazador Nocturno', rl: 'easy_npc:preset/villager/npc_rep_cazador_nocturno.npc.snbt', weight: 14, blocks: ['minecraft:campfire', 'minecraft:lantern'] },
+  { id: 'npc_sec_herbolario', name: 'Herbolario', rl: 'easy_npc:preset/villager/npc_sec_herbolario.npc.snbt', weight: 14, blocks: ['minecraft:composter', 'minecraft:flower_pot', 'minecraft:azalea_leaves'] },
+  { id: 'npc_sec_ingeniero', name: 'Ingeniero', rl: 'easy_npc:preset/villager/npc_sec_ingeniero.npc.snbt', weight: 14, blocks: ['minecraft:observer', 'minecraft:piston', 'minecraft:redstone_lamp'] },
+  { id: 'npc_contract_inquisidor', name: 'Inquisidor', rl: 'easy_npc:preset/villager/npc_contract_inquisidor.npc.snbt', weight: 12, blocks: ['minecraft:enchanting_table', 'minecraft:lectern', 'minecraft:soul_lantern'] },
+  { id: 'npc_contract_explorador_marino', name: 'Capitan Marino', rl: 'easy_npc:preset/villager/npc_contract_explorador_marino.npc.snbt', weight: 12, blocks: ['minecraft:barrel', 'minecraft:prismarine', 'minecraft:lantern'] },
+  { id: 'npc_rep_granjero', name: 'Granjero', rl: 'easy_npc:preset/villager/npc_rep_granjero.npc.snbt', weight: 16, blocks: ['minecraft:hay_block', 'minecraft:composter', 'minecraft:barrel'] },
+  { id: 'npc_rep_lenador', name: 'Lenador', rl: 'easy_npc:preset/villager/npc_rep_lenador.npc.snbt', weight: 16, blocks: ['minecraft:stonecutter', 'minecraft:campfire', 'minecraft:barrel'] }
 ]
 
 // Obtiene los identificadores de presets que ya existen en el radio para no repetirlos
