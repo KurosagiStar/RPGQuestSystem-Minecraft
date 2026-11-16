@@ -1,24 +1,24 @@
-# Instalación en la Instancia del Compañero
+# Instalación Lista para Copiar (`Minecraft-Ready`)
 
-## 1. Descargar el repositorio con Git LFS
-1. Instala **Git LFS** (https://git-lfs.com/) si no lo tienes.
-2. Abre PowerShell y ejecuta:
+Todo el contenido de `Minecraft-Ready/` replica directamente la raíz de la instancia (`.minecraft/` o `Cisco's Fantasy Medieval RPG [Dragonfyre]/`): `mods/`, `config/`, `kubejs/`, `resourcepacks/`, `xaero/` y `saves/`.
+
+## 1. Descargar o actualizar con Git LFS
 ```powershell
 git lfs install
 git clone https://github.com/KurosagiStar/RPGQuestSystem-Minecraft.git
 ```
-*(Si ya clonaste el repo antes, entra a la carpeta y ejecuta `git lfs pull` y `git pull origin main`.)*
+*(Si ya lo tienes clonado: `git pull origin main` y `git lfs pull`.)*
 
-## 2. Copiar archivos a tu instancia de Minecraft
-Ubica la carpeta raíz de tu instancia `Cisco's Fantasy Medieval RPG [Dragonfyre]` (donde están `mods`, `config`, `saves`) y copia el contenido de `Minecraft-Ready/`:
+## 2. Instalar en Cliente (Jugadores)
+1. Copia las carpetas **`mods/`**, **`config/`**, **`kubejs/`**, **`resourcepacks/`** y **`xaero/`** desde `Minecraft-Ready/` hacia la raíz de tu instancia (`Cisco's Fantasy Medieval RPG [Dragonfyre]/` o `.minecraft/`), **sobrescribiendo archivos existentes**.
+2. *(Opcional, solo si juegas en solitario con el mundo pre-armado)* Descomprime `Minecraft-Ready/saves/Cisco_Deau_World.zip` dentro de `saves/`.
+3. **Reinicia Minecraft.** El mod `rpgquestengine-1.0.0.jar` activa automáticamente los iconos azules en Xaero's Minimap sin tocar `options.txt`.
 
-1. **`Minecraft-Ready/mods/rpgquestengine-1.0.0.jar`** → pégalo dentro de `mods/` (reemplaza si existe).
-2. **`Minecraft-Ready/config/`** → copia y reemplaza dentro de `config/` (`rpg_quests.json`, `easy_npc/`, `xaero/`).
-3. **`Minecraft-Ready/xaero/`** → copia y reemplaza en la raíz de la instancia (waypoints y mapa).
-4. **`Minecraft-Ready/saves/Mundo_nuevo.zip`** → descomprímelo dentro de `saves/` para obtener la carpeta `saves/Mundo nuevo/`.
+## 3. Instalar en Servidor Dedicado
+1. Copia **`mods/`**, **`config/`** y **`kubejs/`** desde `Minecraft-Ready/` a la raíz del servidor.
+2. Si usas el mundo ya armado, descomprime `Minecraft-Ready/saves/Cisco_Deau_World.zip` como tu carpeta del mundo (`world/`).
 
-## 3. Al entrar al mundo
-Si algún NPC ya spawneado tiene diálogos viejos, ejecuta como OP:
-```text
-/rpgquest sync_npcs
-```
+## 4. Comandos Útiles (OP)
+- `/rpgquest ui` — Gestor visual para spawnear o mover los 25 NPCs principales.
+- `/rpgquest respawn_saved` — Re-spawnea o reubica los NPCs en sus coordenadas guardadas.
+- `/rpgquest reload` — Recarga `rpg_quests.json` en caliente.
