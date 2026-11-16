@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Inventory;
@@ -27,6 +29,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
@@ -48,8 +52,10 @@ import java.util.Set;
 public class RPGQuestEngine {
     public static final String MODID = "rpgquestengine";
     private static final Logger LOGGER = LogManager.getLogger();
+    public static RPGQuestEngine INSTANCE;
 
     public RPGQuestEngine() {
+        INSTANCE = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -824,7 +830,37 @@ public class RPGQuestEngine {
         }
     }
 
-    private int handleNpcTalk(ServerPlayer sp, String npcId) {
+    public static void syncPlayerAfterDialog(ServerPlayer sp) {
+        if (INSTANCE != null && sp != null) {
+            INSTANCE.checkAndSyncQuests(sp);
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public void onPlayerEntityInteract(PlayerInteractEvent.EntityInteract event) {
+        if (event.getLevel().isClientSide() || event.getHand() != InteractionHand.MAIN_HAND) return;
+        if (!(event.getEntity() instanceof ServerPlayer sp)) return;
+        if (sp.isShiftKeyDown()) return; // Shift + clic derecho deja pasar interacción admin/Easy NPC
+
+        Entity target = event.getTarget();
+        Set<String> targetTags = target.getTags();
+        if (targetTags.isEmpty()) return;
+
+        String matchedNpcId = null;
+        for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (q.npcId != null && !q.npcId.isEmpty() && targetTags.contains(q.npcId)) {
+                matchedNpcId = q.npcId;
+                break;
+            }
+        }
+        if (matchedNpcId == null) return;
+
+        event.setCanceled(true);
+        event.setCancellationResult(InteractionResult.SUCCESS);
+        openNpcDialog(sp, matchedNpcId, target.getName().getString());
+    }
+
+    private void openNpcDialog(ServerPlayer sp, String npcId, String npcName) {
         java.util.List<QuestDefinition> npcQuests = new java.util.ArrayList<>();
         for (QuestDefinition q : QuestConfig.QUESTS) {
             if (npcId.equals(q.npcId)) {
@@ -833,27 +869,30 @@ public class RPGQuestEngine {
         }
         if (npcQuests.isEmpty()) {
             sp.sendSystemMessage(Component.literal("§c[RPGQuestEngine] No hay misiones para " + npcId));
-            return 0;
+            return;
         }
-        java.util.Set<String> tags = sp.getTags();
+
+        checkAndSyncQuests(sp);
+        Set<String> tags = sp.getTags();
+
         for (QuestDefinition q : npcQuests) {
             if (q.doneTag != null && tags.contains(q.doneTag)) {
-                if (q.activeTag != null) sp.removeTag(q.activeTag);
-                sp.removeTag(q.doneTag);
-                if (q.completedTag != null) sp.addTag(q.completedTag);
-                if (q.rewardXp > 0) sp.giveExperiencePoints(q.rewardXp);
-                sp.sendSystemMessage(Component.literal("§a[Misión Completada] §f" + q.title + (q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "")));
-                checkAndSyncQuests(sp);
-                return 1;
+                String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                        new OpenNpcDialogPacket(npcId, npcName, "TURN_IN", q.id, q.title, desc, q.rewardXp));
+                return;
             }
         }
+
         for (QuestDefinition q : npcQuests) {
             if (q.activeTag != null && tags.contains(q.activeTag)) {
                 String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
-                sp.sendSystemMessage(Component.literal("§e[En Progreso] §f" + q.title + ": §7" + desc));
-                return 1;
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                        new OpenNpcDialogPacket(npcId, npcName, "IN_PROGRESS", q.id, q.title, desc, q.rewardXp));
+                return;
             }
         }
+
         QuestDefinition firstBlockedPrereq = null;
         for (QuestDefinition q : npcQuests) {
             if (q.completedTag != null && tags.contains(q.completedTag)) continue;
@@ -870,17 +909,24 @@ public class RPGQuestEngine {
                     continue;
                 }
             }
-            if (q.activeTag != null) sp.addTag(q.activeTag);
             String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
-            sp.sendSystemMessage(Component.literal("§6[Misión Aceptada] §f" + q.title + ": §e" + desc));
-            checkAndSyncQuests(sp);
-            return 1;
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                    new OpenNpcDialogPacket(npcId, npcName, "AVAILABLE", q.id, q.title, desc, q.rewardXp));
+            return;
         }
+
         if (firstBlockedPrereq != null) {
-            sp.sendSystemMessage(Component.literal("§c[Bloqueada] §fCompleta primero: §e" + firstBlockedPrereq.title));
-            return 1;
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id, firstBlockedPrereq.title, "", 0));
+            return;
         }
-        sp.sendSystemMessage(Component.literal("§a[NPC] §fYa completaste todas las misiones de este personaje."));
+
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                new OpenNpcDialogPacket(npcId, npcName, "COMPLETED_ALL", "", "", "", 0));
+    }
+
+    private int handleNpcTalk(ServerPlayer sp, String npcId) {
+        openNpcDialog(sp, npcId, npcId);
         return 1;
     }
 }

@@ -39,6 +39,14 @@ public class NetworkHandler {
                 OpenAdminUiPacket::encode,
                 OpenAdminUiPacket::decode,
                 OpenAdminUiPacket::handle);
+        CHANNEL.registerMessage(id++, OpenNpcDialogPacket.class,
+                OpenNpcDialogPacket::encode,
+                OpenNpcDialogPacket::decode,
+                OpenNpcDialogPacket::handle);
+        CHANNEL.registerMessage(id++, NpcDialogActionPacket.class,
+                NpcDialogActionPacket::encode,
+                NpcDialogActionPacket::decode,
+                NpcDialogActionPacket::handle);
     }
 }
 
