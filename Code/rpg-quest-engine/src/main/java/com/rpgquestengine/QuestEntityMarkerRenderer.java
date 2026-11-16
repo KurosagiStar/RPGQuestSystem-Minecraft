@@ -247,7 +247,7 @@ public class QuestEntityMarkerRenderer {
         // Dibujar icono moderno centrado arriba del texto
         if (iconFile != null) {
             ResourceLocation iconRl = new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/" + iconFile);
-            com.mojang.blaze3d.vertex.VertexConsumer vc = event.getMultiBufferSource().getBuffer(net.minecraft.client.renderer.RenderType.entityTranslucent(iconRl));
+            com.mojang.blaze3d.vertex.VertexConsumer vc = event.getMultiBufferSource().getBuffer(net.minecraft.client.renderer.RenderType.textSeeThrough(iconRl));
             float size = 14.0F;
             float x0 = -size / 2.0F;
             float x1 = size / 2.0F;
