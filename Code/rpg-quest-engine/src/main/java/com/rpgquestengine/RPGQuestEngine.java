@@ -166,26 +166,35 @@ public class RPGQuestEngine {
                         }
 
                         int synced = 0;
-                        var cmdSource = server.createCommandSourceStack().withSuppressedOutput().withPermission(4);
                         for (NpcTarget t : targets) {
                             double x = t.entity().getX();
                             double y = t.entity().getY();
                             double z = t.entity().getZ();
                             float yRot = t.entity().getYRot();
                             float xRot = t.entity().getXRot();
-                            String dim = t.level().dimension().location().toString();
+                            QuestConfig.setNpcLocation(t.tag(), x, y, z);
+
                             java.util.UUID oldUuid = t.entity().getUUID();
+                            var posSource = server.createCommandSourceStack()
+                                    .withSuppressedOutput()
+                                    .withPermission(4)
+                                    .withLevel(t.level())
+                                    .withPosition(new net.minecraft.world.phys.Vec3(x, y, z));
                             String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + t.tag() + ".npc.snbt";
-                            int res = server.getCommands().performPrefixedCommand(cmdSource, cmd);
+                            int res = server.getCommands().performPrefixedCommand(posSource, cmd);
                             if (res > 0) {
-                                t.entity().discard();
+                                net.minecraft.world.entity.Entity spawned = null;
                                 for (net.minecraft.world.entity.Entity e : t.level().getAllEntities()) {
                                     if (e.getTags().contains(t.tag()) && !e.getUUID().equals(oldUuid)) {
-                                        String tpCmd = String.format(java.util.Locale.ROOT, "tp %s %.3f %.3f %.3f", e.getStringUUID(), x, y, z);
-                                        server.getCommands().performPrefixedCommand(cmdSource, tpCmd);
+                                        spawned = e;
+                                        break;
                                     }
                                 }
-                                synced++;
+                                if (spawned != null) {
+                                    spawned.teleportTo(t.level(), x, y, z, java.util.Set.of(), yRot, xRot);
+                                    t.entity().discard();
+                                    synced++;
+                                }
                             }
                         }
 
@@ -231,6 +240,7 @@ public class RPGQuestEngine {
                         ServerPlayer sp = ctx.getSource().getPlayerOrException();
                         ServerLevel level = sp.serverLevel();
                         int respawned = 0;
+                        int moved = 0;
                         for (Map.Entry<String, double[]> entry : QuestConfig.NPC_LOCATIONS.entrySet()) {
                             String npcId = entry.getKey();
                             double[] pos = entry.getValue();
@@ -238,33 +248,37 @@ public class RPGQuestEngine {
                             level.getChunk(((int) Math.floor(pos[0])) >> 4, ((int) Math.floor(pos[2])) >> 4);
 
                             boolean exists = false;
-                            for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
-                                if (e.getTags().contains(npcId)) {
-                                    String tpCmd = String.format(java.util.Locale.ROOT, "tp %s %.3f %.3f %.3f", e.getStringUUID(), pos[0], pos[1], pos[2]);
-                                    sp.getServer().getCommands().performPrefixedCommand(
-                                        sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), tpCmd);
-                                    exists = true;
+                            for (ServerLevel lvl : sp.getServer().getAllLevels()) {
+                                for (net.minecraft.world.entity.Entity e : lvl.getAllEntities()) {
+                                    if (e.getTags().contains(npcId)) {
+                                        e.teleportTo(level, pos[0], pos[1], pos[2], java.util.Set.of(), e.getYRot(), e.getXRot());
+                                        exists = true;
+                                        moved++;
+                                    }
                                 }
                             }
                             if (!exists) {
+                                var posSource = sp.getServer().createCommandSourceStack()
+                                        .withSuppressedOutput()
+                                        .withPermission(4)
+                                        .withLevel(level)
+                                        .withPosition(new net.minecraft.world.phys.Vec3(pos[0], pos[1], pos[2]));
                                 String cmd = "easy_npc preset import custom easy_npc:preset/villager/" + npcId + ".npc.snbt";
-                                int res = sp.getServer().getCommands().performPrefixedCommand(
-                                    sp.createCommandSourceStack().withPermission(4), cmd);
+                                int res = sp.getServer().getCommands().performPrefixedCommand(posSource, cmd);
                                 if (res > 0) {
                                     for (net.minecraft.world.entity.Entity e : level.getAllEntities()) {
                                         if (e.getTags().contains(npcId)) {
-                                            String tpCmd = String.format(java.util.Locale.ROOT, "tp %s %.3f %.3f %.3f", e.getStringUUID(), pos[0], pos[1], pos[2]);
-                                            sp.getServer().getCommands().performPrefixedCommand(
-                                                sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4), tpCmd);
+                                            e.teleportTo(level, pos[0], pos[1], pos[2], java.util.Set.of(), e.getYRot(), e.getXRot());
                                         }
                                     }
                                     respawned++;
                                 }
                             }
                         }
-                        final int count = respawned;
-                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Re-spawneados " + count + " NPCs en sus coordenadas guardadas."), true);
-                        return count;
+                        final int rCount = respawned;
+                        final int mCount = moved;
+                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Re-spawneados: " + rCount + ", reposicionados: " + mCount + " NPCs."), true);
+                        return rCount + mCount;
                     })
                 )
         );
