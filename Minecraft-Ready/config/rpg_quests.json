@@ -6260,5 +6260,2229 @@
         "count": 5
       }
     ]
+  },
+  {
+    "id": "cisco_adventum_0741942a0cf808e5",
+    "category": "MAIN",
+    "title": "Consigue Cave tablet",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "",
+    "ftbQuestId": "0741942A0CF808E5",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_0741942a0cf808e5_act",
+    "doneTag": "cisco_adventum_0741942a0cf808e5_done",
+    "completedTag": "cisco_adventum_0741942a0cf808e5_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 1x Cave Book",
+        "target": "alexscaves:cave_book",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_137369684c76c395",
+    "category": "MAIN",
+    "title": "Encuentra Underground Cabin",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Desciende a cuevas profundas bajo tierra; lleva antorchas, pico y comida suficiente.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_0741942a0cf808e5",
+    "ftbQuestId": "137369684C76C395",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_137369684c76c395_act",
+    "doneTag": "cisco_adventum_137369684c76c395_done",
+    "completedTag": "cisco_adventum_137369684c76c395_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encuentra Underground Cabin. Desciende a cuevas profundas bajo tierra; lleva antorchas, pico y comida suficiente.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_0fd14512c4901d04",
+    "category": "MAIN",
+    "title": "Temporal Distortion",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_137369684c76c395",
+    "ftbQuestId": "0FD14512C4901D04",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_0fd14512c4901d04_act",
+    "doneTag": "cisco_adventum_0fd14512c4901d04_done",
+    "completedTag": "cisco_adventum_0fd14512c4901d04_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Temporal Distortion. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_07b085b983d1332d",
+    "category": "MAIN",
+    "title": "Fabrica Cave Map",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Desciende a cuevas profundas bajo tierra; lleva antorchas, pico y comida suficiente.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_0fd14512c4901d04",
+    "ftbQuestId": "07B085B983D1332D",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_07b085b983d1332d_act",
+    "doneTag": "cisco_adventum_07b085b983d1332d_done",
+    "completedTag": "cisco_adventum_07b085b983d1332d_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Fabrica Cave Map. Desciende a cuevas profundas bajo tierra; lleva antorchas, pico y comida suficiente.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_0008dbe99d0fa5fe",
+    "category": "MAIN",
+    "title": "Encuentra Spelunkery Table",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Desciende a cuevas profundas bajo tierra; lleva antorchas, pico y comida suficiente.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_07b085b983d1332d",
+    "ftbQuestId": "0008DBE99D0FA5FE",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_0008dbe99d0fa5fe_act",
+    "doneTag": "cisco_adventum_0008dbe99d0fa5fe_done",
+    "completedTag": "cisco_adventum_0008dbe99d0fa5fe_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encuentra Spelunkery Table. Desciende a cuevas profundas bajo tierra; lleva antorchas, pico y comida suficiente.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_1554c3b1c7193c51",
+    "category": "MAIN",
+    "title": "Visita Primordial Cave",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_0008dbe99d0fa5fe",
+    "ftbQuestId": "1554C3B1C7193C51",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_1554c3b1c7193c51_act",
+    "doneTag": "cisco_adventum_1554c3b1c7193c51_done",
+    "completedTag": "cisco_adventum_1554c3b1c7193c51_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Primordial Caves",
+        "target": "alexscaves:primordial_caves",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_2faed2e6f7b65282",
+    "category": "MAIN",
+    "title": "Consigue Amber Curiosity",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_1554c3b1c7193c51",
+    "ftbQuestId": "2FAED2E6F7B65282",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_2faed2e6f7b65282_act",
+    "doneTag": "cisco_adventum_2faed2e6f7b65282_done",
+    "completedTag": "cisco_adventum_2faed2e6f7b65282_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 1x Amber Curiosity",
+        "target": "alexscaves:amber_curiosity",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_6dd05439a53758c5",
+    "category": "MAIN",
+    "title": "Consigue Amber Monolith",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_2faed2e6f7b65282",
+    "ftbQuestId": "6DD05439A53758C5",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_6dd05439a53758c5_act",
+    "doneTag": "cisco_adventum_6dd05439a53758c5_done",
+    "completedTag": "cisco_adventum_6dd05439a53758c5_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 1x Amber Monolith",
+        "target": "alexscaves:amber_monolith",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_215703fc1615ac07",
+    "category": "MAIN",
+    "title": "Tame a Subterranodon",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_6dd05439a53758c5",
+    "ftbQuestId": "215703FC1615AC07",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_215703fc1615ac07_act",
+    "doneTag": "cisco_adventum_215703fc1615ac07_done",
+    "completedTag": "cisco_adventum_215703fc1615ac07_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Tame a Subterranodon. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_33de110d96bbf2e3",
+    "category": "MAIN",
+    "title": "Derrota a Tremorsaurus",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_215703fc1615ac07",
+    "ftbQuestId": "33DE110D96BBF2E3",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_33de110d96bbf2e3_act",
+    "doneTag": "cisco_adventum_33de110d96bbf2e3_done",
+    "completedTag": "cisco_adventum_33de110d96bbf2e3_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Tremorsaurus",
+        "target": "alexscaves:tremorsaurus",
+        "amount": 4
+      }
+    ],
+    "rewardXpLevels": 10,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_7c2b59d7623e6903",
+    "category": "MAIN",
+    "title": "Kill Relicheirus",
+    "npc": "Cronomante I",
+    "npcId": "npc_main_adventum_1",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_33de110d96bbf2e3",
+    "ftbQuestId": "7C2B59D7623E6903",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_7c2b59d7623e6903_act",
+    "doneTag": "cisco_adventum_7c2b59d7623e6903_done",
+    "completedTag": "cisco_adventum_7c2b59d7623e6903_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Relicheirus",
+        "target": "alexscaves:relicheirus",
+        "amount": 4
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "alexscaves:primordial_soup",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_2cd1643474611548",
+    "category": "MAIN",
+    "title": "Encuentra Magnetic Cave",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_7c2b59d7623e6903",
+    "ftbQuestId": "2CD1643474611548",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_2cd1643474611548_act",
+    "doneTag": "cisco_adventum_2cd1643474611548_done",
+    "completedTag": "cisco_adventum_2cd1643474611548_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Magnetic Caves",
+        "target": "alexscaves:magnetic_caves",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_50f7dc414439d885",
+    "category": "MAIN",
+    "title": "Kill Notor",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_2cd1643474611548",
+    "ftbQuestId": "50F7DC414439D885",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_50f7dc414439d885_act",
+    "doneTag": "cisco_adventum_50f7dc414439d885_done",
+    "completedTag": "cisco_adventum_50f7dc414439d885_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 7x Notor",
+        "target": "alexscaves:notor",
+        "amount": 7
+      }
+    ],
+    "rewardXpLevels": 10
+  },
+  {
+    "id": "cisco_adventum_5214f8437728a5fe",
+    "category": "MAIN",
+    "title": "Kill Teletors",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_50f7dc414439d885",
+    "ftbQuestId": "5214F8437728A5FE",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_5214f8437728a5fe_act",
+    "doneTag": "cisco_adventum_5214f8437728a5fe_done",
+    "completedTag": "cisco_adventum_5214f8437728a5fe_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 6x Teletor",
+        "target": "alexscaves:teletor",
+        "amount": 6
+      }
+    ],
+    "rewardXpLevels": 10,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_7f752fc1838b0eff",
+    "category": "MAIN",
+    "title": "Consigue Galena Gauntlet",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_5214f8437728a5fe",
+    "ftbQuestId": "7F752FC1838B0EFF",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_7f752fc1838b0eff_act",
+    "doneTag": "cisco_adventum_7f752fc1838b0eff_done",
+    "completedTag": "cisco_adventum_7f752fc1838b0eff_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 1x Galena Gauntlet",
+        "target": "alexscaves:galena_gauntlet",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_0600b6a16dc78f7c",
+    "category": "MAIN",
+    "title": "Derrota a Magnetron",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_7f752fc1838b0eff",
+    "ftbQuestId": "0600B6A16DC78F7C",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_0600b6a16dc78f7c_act",
+    "doneTag": "cisco_adventum_0600b6a16dc78f7c_done",
+    "completedTag": "cisco_adventum_0600b6a16dc78f7c_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 6x Magnetron",
+        "target": "alexscaves:magnetron",
+        "amount": 6
+      }
+    ],
+    "rewardXpLevels": 10
+  },
+  {
+    "id": "cisco_adventum_4f1b32ca37e2a101",
+    "category": "MAIN",
+    "title": "Visita Forlorn Hollow",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_0600b6a16dc78f7c",
+    "ftbQuestId": "4F1B32CA37E2A101",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_4f1b32ca37e2a101_act",
+    "doneTag": "cisco_adventum_4f1b32ca37e2a101_done",
+    "completedTag": "cisco_adventum_4f1b32ca37e2a101_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Forlorn Hollows",
+        "target": "alexscaves:forlorn_hollows",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_04c8ef0d5e1eb54b",
+    "category": "MAIN",
+    "title": "Derrota a Vespers",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_4f1b32ca37e2a101",
+    "ftbQuestId": "04C8EF0D5E1EB54B",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_04c8ef0d5e1eb54b_act",
+    "doneTag": "cisco_adventum_04c8ef0d5e1eb54b_done",
+    "completedTag": "cisco_adventum_04c8ef0d5e1eb54b_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 5x Vesper",
+        "target": "alexscaves:vesper",
+        "amount": 5
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_46d9ba6a18760ee7",
+    "category": "MAIN",
+    "title": "Witness the Black Ritual",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_04c8ef0d5e1eb54b",
+    "ftbQuestId": "46D9BA6A18760EE7",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_46d9ba6a18760ee7_act",
+    "doneTag": "cisco_adventum_46d9ba6a18760ee7_done",
+    "completedTag": "cisco_adventum_46d9ba6a18760ee7_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Witness the Black Ritual. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_406d833105080368",
+    "category": "MAIN",
+    "title": "Derrota a Watcher",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_46d9ba6a18760ee7",
+    "ftbQuestId": "406D833105080368",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_406d833105080368_act",
+    "doneTag": "cisco_adventum_406d833105080368_done",
+    "completedTag": "cisco_adventum_406d833105080368_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Watcher",
+        "target": "alexscaves:watcher",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_4dc4475f8bd09678",
+    "category": "MAIN",
+    "title": "Derrota a Forsaken",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_406d833105080368",
+    "ftbQuestId": "4DC4475F8BD09678",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_4dc4475f8bd09678_act",
+    "doneTag": "cisco_adventum_4dc4475f8bd09678_done",
+    "completedTag": "cisco_adventum_4dc4475f8bd09678_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Forsaken",
+        "target": "alexscaves:forsaken",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_745009c6401bc53f",
+    "category": "MAIN",
+    "title": "Consigue Dreadbow",
+    "npc": "Cronomante II",
+    "npcId": "npc_main_adventum_2",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_4dc4475f8bd09678",
+    "ftbQuestId": "745009C6401BC53F",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_745009c6401bc53f_act",
+    "doneTag": "cisco_adventum_745009c6401bc53f_done",
+    "completedTag": "cisco_adventum_745009c6401bc53f_comp",
+    "stages": [
+      {
+        "type": "ITEM",
+        "description": "Consigue 1x Dreadbow",
+        "target": "alexscaves:dreadbow",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_42f38d5ab8011318",
+    "category": "MAIN",
+    "title": "Derrota a Luctructosaurus",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_745009c6401bc53f",
+    "ftbQuestId": "42F38D5AB8011318",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_42f38d5ab8011318_act",
+    "doneTag": "cisco_adventum_42f38d5ab8011318_done",
+    "completedTag": "cisco_adventum_42f38d5ab8011318_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Luxtructosaurus",
+        "target": "alexscaves:luxtructosaurus",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_5e8be41e8fbd5cb8",
+    "category": "MAIN",
+    "title": "Visita Toxic Caves",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_42f38d5ab8011318",
+    "ftbQuestId": "5E8BE41E8FBD5CB8",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_5e8be41e8fbd5cb8_act",
+    "doneTag": "cisco_adventum_5e8be41e8fbd5cb8_done",
+    "completedTag": "cisco_adventum_5e8be41e8fbd5cb8_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Toxic Caves",
+        "target": "alexscaves:toxic_caves",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_027cbe32e8e02628",
+    "category": "MAIN",
+    "title": "Kill Braniacs",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_5e8be41e8fbd5cb8",
+    "ftbQuestId": "027CBE32E8E02628",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_027cbe32e8e02628_act",
+    "doneTag": "cisco_adventum_027cbe32e8e02628_done",
+    "completedTag": "cisco_adventum_027cbe32e8e02628_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Brainiac",
+        "target": "alexscaves:brainiac",
+        "amount": 4
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_79bdeee3a070ca62",
+    "category": "MAIN",
+    "title": "Kill Nucleepers",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_027cbe32e8e02628",
+    "ftbQuestId": "79BDEEE3A070CA62",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_79bdeee3a070ca62_act",
+    "doneTag": "cisco_adventum_79bdeee3a070ca62_done",
+    "completedTag": "cisco_adventum_79bdeee3a070ca62_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Nucleeper",
+        "target": "alexscaves:nucleeper",
+        "amount": 4
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_607259b9b14e9290",
+    "category": "MAIN",
+    "title": "Tame a Raycat",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_79bdeee3a070ca62",
+    "ftbQuestId": "607259B9B14E9290",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_607259b9b14e9290_act",
+    "doneTag": "cisco_adventum_607259b9b14e9290_done",
+    "completedTag": "cisco_adventum_607259b9b14e9290_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Tame a Raycat. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_5a4f2a37ce2d7bdd",
+    "category": "MAIN",
+    "title": "Encargo Especial",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_607259b9b14e9290",
+    "ftbQuestId": "5A4F2A37CE2D7BDD",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_5a4f2a37ce2d7bdd_act",
+    "doneTag": "cisco_adventum_5a4f2a37ce2d7bdd_done",
+    "completedTag": "cisco_adventum_5a4f2a37ce2d7bdd_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encargo Especial. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_1b951b417d8f664f",
+    "category": "MAIN",
+    "title": "Kill Gammaroach",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_5a4f2a37ce2d7bdd",
+    "ftbQuestId": "1B951B417D8F664F",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_1b951b417d8f664f_act",
+    "doneTag": "cisco_adventum_1b951b417d8f664f_done",
+    "completedTag": "cisco_adventum_1b951b417d8f664f_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 5x Gammaroach",
+        "target": "alexscaves:gammaroach",
+        "amount": 5
+      }
+    ],
+    "rewardXpLevels": 10
+  },
+  {
+    "id": "cisco_adventum_66928dc47375d3b5",
+    "category": "MAIN",
+    "title": "Visita Abysal Chasm",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_1b951b417d8f664f",
+    "ftbQuestId": "66928DC47375D3B5",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_66928dc47375d3b5_act",
+    "doneTag": "cisco_adventum_66928dc47375d3b5_done",
+    "completedTag": "cisco_adventum_66928dc47375d3b5_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Abyssal Chasm",
+        "target": "alexscaves:abyssal_chasm",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_3474e47eca6cbdc1",
+    "category": "MAIN",
+    "title": "Visita Candy Cavity",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_66928dc47375d3b5",
+    "ftbQuestId": "3474E47ECA6CBDC1",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_3474e47eca6cbdc1_act",
+    "doneTag": "cisco_adventum_3474e47eca6cbdc1_done",
+    "completedTag": "cisco_adventum_3474e47eca6cbdc1_comp",
+    "stages": [
+      {
+        "type": "BIOME",
+        "description": "Explora Candy Cavity",
+        "target": "alexscaves:candy_cavity",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_460e30869b32b76d",
+    "category": "MAIN",
+    "title": "Kill Caramel Cubes",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_3474e47eca6cbdc1",
+    "ftbQuestId": "460E30869B32B76D",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_460e30869b32b76d_act",
+    "doneTag": "cisco_adventum_460e30869b32b76d_done",
+    "completedTag": "cisco_adventum_460e30869b32b76d_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 10x Caramel Cube",
+        "target": "alexscaves:caramel_cube",
+        "amount": 10
+      }
+    ],
+    "rewardXpLevels": 20
+  },
+  {
+    "id": "cisco_adventum_5908cc1d7b2d95b3",
+    "category": "MAIN",
+    "title": "Kill Caniacs",
+    "npc": "Cronomante III",
+    "npcId": "npc_main_adventum_3",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_460e30869b32b76d",
+    "ftbQuestId": "5908CC1D7B2D95B3",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_5908cc1d7b2d95b3_act",
+    "doneTag": "cisco_adventum_5908cc1d7b2d95b3_done",
+    "completedTag": "cisco_adventum_5908cc1d7b2d95b3_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 7x Caniac",
+        "target": "alexscaves:caniac",
+        "amount": 7
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_6f4a9148ec4a6cee",
+    "category": "MAIN",
+    "title": "Kill Gumbeeper",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_5908cc1d7b2d95b3",
+    "ftbQuestId": "6F4A9148EC4A6CEE",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_6f4a9148ec4a6cee_act",
+    "doneTag": "cisco_adventum_6f4a9148ec4a6cee_done",
+    "completedTag": "cisco_adventum_6f4a9148ec4a6cee_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 7x Gumbeeper",
+        "target": "alexscaves:gumbeeper",
+        "amount": 7
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_23b6e22f179b7fdf",
+    "category": "MAIN",
+    "title": "Kill Licowitches",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_6f4a9148ec4a6cee",
+    "ftbQuestId": "23B6E22F179B7FDF",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_23b6e22f179b7fdf_act",
+    "doneTag": "cisco_adventum_23b6e22f179b7fdf_done",
+    "completedTag": "cisco_adventum_23b6e22f179b7fdf_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 7x Licowitch",
+        "target": "alexscaves:licowitch",
+        "amount": 7
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_2b058e98209caba5",
+    "category": "MAIN",
+    "title": "Encargo Especial",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_23b6e22f179b7fdf",
+    "ftbQuestId": "2B058E98209CABA5",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_2b058e98209caba5_act",
+    "doneTag": "cisco_adventum_2b058e98209caba5_done",
+    "completedTag": "cisco_adventum_2b058e98209caba5_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encargo Especial. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_3c52dbcf31a38053",
+    "category": "MAIN",
+    "title": "Encargo Especial",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_2b058e98209caba5",
+    "ftbQuestId": "3C52DBCF31A38053",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_3c52dbcf31a38053_act",
+    "doneTag": "cisco_adventum_3c52dbcf31a38053_done",
+    "completedTag": "cisco_adventum_3c52dbcf31a38053_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encargo Especial. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_5a2ceb9cdae648c1",
+    "category": "MAIN",
+    "title": "Encargo Especial",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_3c52dbcf31a38053",
+    "ftbQuestId": "5A2CEB9CDAE648C1",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_5a2ceb9cdae648c1_act",
+    "doneTag": "cisco_adventum_5a2ceb9cdae648c1_done",
+    "completedTag": "cisco_adventum_5a2ceb9cdae648c1_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encargo Especial. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_198c538de3a14408",
+    "category": "MAIN",
+    "title": "Kill Deep One Mages",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_5a2ceb9cdae648c1",
+    "ftbQuestId": "198C538DE3A14408",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_198c538de3a14408_act",
+    "doneTag": "cisco_adventum_198c538de3a14408_done",
+    "completedTag": "cisco_adventum_198c538de3a14408_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 7x Deep One Mage",
+        "target": "alexscaves:deep_one_mage",
+        "amount": 7
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_7a4c19d5d37baf89",
+    "category": "MAIN",
+    "title": "Kill Mineguardians",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_198c538de3a14408",
+    "ftbQuestId": "7A4C19D5D37BAF89",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_7a4c19d5d37baf89_act",
+    "doneTag": "cisco_adventum_7a4c19d5d37baf89_done",
+    "completedTag": "cisco_adventum_7a4c19d5d37baf89_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 3x Mine Guardian",
+        "target": "alexscaves:mine_guardian",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_70c4ba8d3cb4c093",
+    "category": "MAIN",
+    "title": "Kill Deep One Knights",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_7a4c19d5d37baf89",
+    "ftbQuestId": "70C4BA8D3CB4C093",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_70c4ba8d3cb4c093_act",
+    "doneTag": "cisco_adventum_70c4ba8d3cb4c093_done",
+    "completedTag": "cisco_adventum_70c4ba8d3cb4c093_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 7x Deep One Knight",
+        "target": "alexscaves:deep_one_knight",
+        "amount": 7
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_adventum_1eb80a737c0458ba",
+    "category": "MAIN",
+    "title": "Encargo Especial",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_70c4ba8d3cb4c093",
+    "ftbQuestId": "1EB80A737C0458BA",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_1eb80a737c0458ba_act",
+    "doneTag": "cisco_adventum_1eb80a737c0458ba_done",
+    "completedTag": "cisco_adventum_1eb80a737c0458ba_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Encargo Especial. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_adventum_3c7ca42afda8ec22",
+    "category": "MAIN",
+    "title": "Kill Deep Ones",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_1eb80a737c0458ba",
+    "ftbQuestId": "3C7CA42AFDA8EC22",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_3c7ca42afda8ec22_act",
+    "doneTag": "cisco_adventum_3c7ca42afda8ec22_done",
+    "completedTag": "cisco_adventum_3c7ca42afda8ec22_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 4x Deep One",
+        "target": "alexscaves:deep_one",
+        "amount": 4
+      }
+    ],
+    "rewardXpLevels": 5
+  },
+  {
+    "id": "cisco_adventum_5e66c47f3b7f5bcd",
+    "category": "MAIN",
+    "title": "Kill Hullbreakers",
+    "npc": "Cronomante IV",
+    "npcId": "npc_main_adventum_4",
+    "description": "Explora cuevas subterráneas hasta hallar una Underground Cabin; usa la Spelunkery Table y la Cave Tablet para crear un Cave Map hacia el bioma.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_adventum_3c7ca42afda8ec22",
+    "ftbQuestId": "5E66C47F3B7F5BCD",
+    "rewardXp": 150,
+    "activeTag": "cisco_adventum_5e66c47f3b7f5bcd_act",
+    "doneTag": "cisco_adventum_5e66c47f3b7f5bcd_done",
+    "completedTag": "cisco_adventum_5e66c47f3b7f5bcd_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 6x Hullbreaker",
+        "target": "alexscaves:hullbreaker",
+        "amount": 6
+      }
+    ],
+    "rewardXpLevels": 10
+  },
+  {
+    "id": "cisco_deus_1c30c21b739d5f98",
+    "category": "MAIN",
+    "title": "Derrota a Returning Knight",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "",
+    "ftbQuestId": "1C30C21B739D5F98",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_1c30c21b739d5f98_act",
+    "doneTag": "cisco_deus_1c30c21b739d5f98_done",
+    "completedTag": "cisco_deus_1c30c21b739d5f98_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Returning Knight",
+        "target": "soulsweapons:returning_knight",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_468fd1bc76caa38a",
+    "category": "MAIN",
+    "title": "Derrota a Netherite Monstrosity",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Habita en la Soul Black Smith dentro del Nether; busca la fragua con Eye of Monstrous.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_1c30c21b739d5f98",
+    "ftbQuestId": "468FD1BC76CAA38A",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_468fd1bc76caa38a_act",
+    "doneTag": "cisco_deus_468fd1bc76caa38a_done",
+    "completedTag": "cisco_deus_468fd1bc76caa38a_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Netherite Monstrosity",
+        "target": "cataclysm:netherite_monstrosity",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 25,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_3109450ac20bb4cf",
+    "category": "MAIN",
+    "title": "Derrota a Umvuthi",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Busca aldeas solares en biomas de sabana para enfrentarte a Umvuthi.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_468fd1bc76caa38a",
+    "ftbQuestId": "3109450AC20BB4CF",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_3109450ac20bb4cf_act",
+    "doneTag": "cisco_deus_3109450ac20bb4cf_done",
+    "completedTag": "cisco_deus_3109450ac20bb4cf_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Umvuthi",
+        "target": "mowziesmobs:umvuthi",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_33355cf6fe34d418",
+    "category": "MAIN",
+    "title": "Derrota a Ignis",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Encuéntralo en la Burning Arena del Nether; usa Eye of Flame para hallarla y coloca Burning Ashes en el Altar of Fire.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_3109450ac20bb4cf",
+    "ftbQuestId": "33355CF6FE34D418",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_33355cf6fe34d418_act",
+    "doneTag": "cisco_deus_33355cf6fe34d418_done",
+    "completedTag": "cisco_deus_33355cf6fe34d418_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Ignis",
+        "target": "cataclysm:ignis",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_7d57de098b9c58d2",
+    "category": "MAIN",
+    "title": "Derrota a Warden",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Reúne los materiales necesarios y fabrícalo en tu mesa de trabajo o estación correspondiente.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_33355cf6fe34d418",
+    "ftbQuestId": "7D57DE098B9C58D2",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_7d57de098b9c58d2_act",
+    "doneTag": "cisco_deus_7d57de098b9c58d2_done",
+    "completedTag": "cisco_deus_7d57de098b9c58d2_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Warden",
+        "target": "minecraft:warden",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 35,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_2879c3284a204b6e",
+    "category": "MAIN",
+    "title": "Derrota a Night Lich",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Encuentra su torre en biomas fríos usando Soul Stars para seguir su rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_7d57de098b9c58d2",
+    "ftbQuestId": "2879C3284A204B6E",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_2879c3284a204b6e_act",
+    "doneTag": "cisco_deus_2879c3284a204b6e_done",
+    "completedTag": "cisco_deus_2879c3284a204b6e_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Lich",
+        "target": "bosses_of_mass_destruction:lich",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 25,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_5ea56d4e49943492",
+    "category": "MAIN",
+    "title": "Derrota a Leviathan",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Encuéntralo en la Sunken City bajo océanos profundos; usa Eye of Abyss para localizarla y Altar of Abyss para invocarlo.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_2879c3284a204b6e",
+    "ftbQuestId": "5EA56D4E49943492",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_5ea56d4e49943492_act",
+    "doneTag": "cisco_deus_5ea56d4e49943492_done",
+    "completedTag": "cisco_deus_5ea56d4e49943492_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x The Leviathan",
+        "target": "cataclysm:the_leviathan",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_43dff70ccc78ee26",
+    "category": "MAIN",
+    "title": "Derrota a Captain Cornelia",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "Navega por el bioma Ice Maze (océano helado) y usa la Shell Horn junto al agua para invocarla.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_5ea56d4e49943492",
+    "ftbQuestId": "43DFF70CCC78EE26",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_43dff70ccc78ee26_act",
+    "doneTag": "cisco_deus_43dff70ccc78ee26_done",
+    "completedTag": "cisco_deus_43dff70ccc78ee26_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Captain Cornelia",
+        "target": "aquamirae:captain_cornelia",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_6e20a83067679c38",
+    "category": "MAIN",
+    "title": "Derrota a Void Worm",
+    "npc": "Verdugo de Dioses I",
+    "npcId": "npc_main_deus_1",
+    "description": "En El End, arroja un Mysterious Worm al vacío para invocar al Void Worm.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_43dff70ccc78ee26",
+    "ftbQuestId": "6E20A83067679C38",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_6e20a83067679c38_act",
+    "doneTag": "cisco_deus_6e20a83067679c38_done",
+    "completedTag": "cisco_deus_6e20a83067679c38_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Void Worm",
+        "target": "alexsmobs:void_worm",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 35,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 13
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_37becea9f6f83a3d",
+    "category": "MAIN",
+    "title": "Derrota a Harbinger",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Se oculta en la Ancient Factory bajo tierra (Overworld); usa Eye of Mech para localizarla y actívalo con una Nether Star.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_6e20a83067679c38",
+    "ftbQuestId": "37BECEA9F6F83A3D",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_37becea9f6f83a3d_act",
+    "doneTag": "cisco_deus_37becea9f6f83a3d_done",
+    "completedTag": "cisco_deus_37becea9f6f83a3d_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x The Harbinger",
+        "target": "cataclysm:the_harbinger",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_284cc876c5bf4841",
+    "category": "MAIN",
+    "title": "Derrota a Warped Mosco",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Viaja al Nether a través de un portal de obsidiana y explora sus fortalezas y biomas.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_37becea9f6f83a3d",
+    "ftbQuestId": "284CC876C5BF4841",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_284cc876c5bf4841_act",
+    "doneTag": "cisco_deus_284cc876c5bf4841_done",
+    "completedTag": "cisco_deus_284cc876c5bf4841_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Warped Mosco",
+        "target": "alexsmobs:warped_mosco",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_5c4c5ed10befcb22",
+    "category": "MAIN",
+    "title": "Derrota a Monarch of Chaos",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_284cc876c5bf4841",
+    "ftbQuestId": "5C4C5ED10BEFCB22",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_5c4c5ed10befcb22_act",
+    "doneTag": "cisco_deus_5c4c5ed10befcb22_done",
+    "completedTag": "cisco_deus_5c4c5ed10befcb22_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Chaos Monarch",
+        "target": "soulsweapons:chaos_monarch",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_6eedfaa5eccd6d69",
+    "category": "MAIN",
+    "title": "Derrota a Fallen Icon",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_5c4c5ed10befcb22",
+    "ftbQuestId": "6EEDFAA5ECCD6D69",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_6eedfaa5eccd6d69_act",
+    "doneTag": "cisco_deus_6eedfaa5eccd6d69_done",
+    "completedTag": "cisco_deus_6eedfaa5eccd6d69_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Moonknight",
+        "target": "soulsweapons:moonknight",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_55fc85a0aae7b542",
+    "category": "MAIN",
+    "title": "Derrota a Old Champion's Remains",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_6eedfaa5eccd6d69",
+    "ftbQuestId": "55FC85A0AAE7B542",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_55fc85a0aae7b542_act",
+    "doneTag": "cisco_deus_55fc85a0aae7b542_done",
+    "completedTag": "cisco_deus_55fc85a0aae7b542_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Draugr Boss",
+        "target": "soulsweapons:draugr_boss",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15
+  },
+  {
+    "id": "cisco_deus_368e9a4d5a17f2e4",
+    "category": "MAIN",
+    "title": "Derrota a Dead King",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Busca estructuras de hechiceros, bibliotecas o torres arcanas en la Superficie y el Nether.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_55fc85a0aae7b542",
+    "ftbQuestId": "368E9A4D5A17F2E4",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_368e9a4d5a17f2e4_act",
+    "doneTag": "cisco_deus_368e9a4d5a17f2e4_done",
+    "completedTag": "cisco_deus_368e9a4d5a17f2e4_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Dead King",
+        "target": "irons_spellbooks:dead_king",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_712f03f19de662f9",
+    "category": "MAIN",
+    "title": "Derrota a Obsidilith",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Viaja a las islas exteriores de El End y busca su altar de obsidiana.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_368e9a4d5a17f2e4",
+    "ftbQuestId": "712F03F19DE662F9",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_712f03f19de662f9_act",
+    "doneTag": "cisco_deus_712f03f19de662f9_done",
+    "completedTag": "cisco_deus_712f03f19de662f9_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Obsidilith",
+        "target": "bosses_of_mass_destruction:obsidilith",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 25,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_5c65e6dba9948523",
+    "category": "MAIN",
+    "title": "Derrota a Nether Gauntlet",
+    "npc": "Verdugo de Dioses II",
+    "npcId": "npc_main_deus_2",
+    "description": "Explora El Nether en busca de su arena flotante de obsidiana y ladrillos del Nether.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_712f03f19de662f9",
+    "ftbQuestId": "5C65E6DBA9948523",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_5c65e6dba9948523_act",
+    "doneTag": "cisco_deus_5c65e6dba9948523_done",
+    "completedTag": "cisco_deus_5c65e6dba9948523_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Gauntlet",
+        "target": "bosses_of_mass_destruction:gauntlet",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_11ae539045cff66d",
+    "category": "MAIN",
+    "title": "Derrota a Void Blossom",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Baja a las profundidades del Overworld (nivel de Deepslate) siguiendo esporas de Void Lily.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_5c65e6dba9948523",
+    "ftbQuestId": "11AE539045CFF66D",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_11ae539045cff66d_act",
+    "doneTag": "cisco_deus_11ae539045cff66d_done",
+    "completedTag": "cisco_deus_11ae539045cff66d_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Void Blossom",
+        "target": "bosses_of_mass_destruction:void_blossom",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_4df63948665c18b3",
+    "category": "MAIN",
+    "title": "Derrota a ancient Remnant",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Encuéntralo en la Cursed Pyramid del desierto; usa Eye of Desert y coloca Necklace of the Desert en el altar.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_11ae539045cff66d",
+    "ftbQuestId": "4DF63948665C18B3",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_4df63948665c18b3_act",
+    "doneTag": "cisco_deus_4df63948665c18b3_done",
+    "completedTag": "cisco_deus_4df63948665c18b3_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Ancient Remnant",
+        "target": "cataclysm:ancient_remnant",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 35,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 11
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_021e592772515e8c",
+    "category": "MAIN",
+    "title": "Derrota a Day Stalker",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_4df63948665c18b3",
+    "ftbQuestId": "021E592772515E8C",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_021e592772515e8c_act",
+    "doneTag": "cisco_deus_021e592772515e8c_done",
+    "completedTag": "cisco_deus_021e592772515e8c_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Day Stalker",
+        "target": "soulsweapons:day_stalker",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 50
+  },
+  {
+    "id": "cisco_deus_678a7fe4d87993d3",
+    "category": "MAIN",
+    "title": "Click to complete.",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_021e592772515e8c",
+    "ftbQuestId": "678A7FE4D87993D3",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_678a7fe4d87993d3_act",
+    "doneTag": "cisco_deus_678a7fe4d87993d3_done",
+    "completedTag": "cisco_deus_678a7fe4d87993d3_comp",
+    "stages": [
+      {
+        "type": "TALK",
+        "description": "Click to complete.. Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+        "target": "",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_0f73ee0dab5e37fd",
+    "category": "MAIN",
+    "title": "Derrota a Frostmaw",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Explora biomas nevados y taigas heladas en la Superficie.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_678a7fe4d87993d3",
+    "ftbQuestId": "0F73EE0DAB5E37FD",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_0f73ee0dab5e37fd_act",
+    "doneTag": "cisco_deus_0f73ee0dab5e37fd_done",
+    "completedTag": "cisco_deus_0f73ee0dab5e37fd_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Frostmaw",
+        "target": "mowziesmobs:frostmaw",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 15,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 7
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_0e673fbc14feda40",
+    "category": "MAIN",
+    "title": "Derrota a Ferrous Wroughtnaut",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Baja a cuevas profundas del Overworld hasta encontrar su cámara circular subterránea.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_0f73ee0dab5e37fd",
+    "ftbQuestId": "0E673FBC14FEDA40",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_0e673fbc14feda40_act",
+    "doneTag": "cisco_deus_0e673fbc14feda40_done",
+    "completedTag": "cisco_deus_0e673fbc14feda40_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Ferrous Wroughtnaut",
+        "target": "mowziesmobs:ferrous_wroughtnaut",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 25,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 9
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_4831b33ec2e02725",
+    "category": "MAIN",
+    "title": "Derrota a Decaying King",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Explora el mundo, prepara tu mejor equipo y consulta el diario si necesitas seguir el rastro.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_0e673fbc14feda40",
+    "ftbQuestId": "4831B33EC2E02725",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_4831b33ec2e02725_act",
+    "doneTag": "cisco_deus_4831b33ec2e02725_done",
+    "completedTag": "cisco_deus_4831b33ec2e02725_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Accursed Lord Boss",
+        "target": "soulsweapons:accursed_lord_boss",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "cisco_deus_4c3cac9897b0c4dd",
+    "category": "MAIN",
+    "title": "Derrota a Maledictus",
+    "npc": "Verdugo de Dioses III",
+    "npcId": "npc_main_deus_3",
+    "description": "Habita en la Frosted Prison en biomas nevados; usa Eye of Curse para localizarla.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_deus_4831b33ec2e02725",
+    "ftbQuestId": "4C3CAC9897B0C4DD",
+    "rewardXp": 150,
+    "activeTag": "cisco_deus_4c3cac9897b0c4dd_act",
+    "doneTag": "cisco_deus_4c3cac9897b0c4dd_done",
+    "completedTag": "cisco_deus_4c3cac9897b0c4dd_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Maledictus",
+        "target": "cataclysm:maledictus",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 40
+  },
+  {
+    "id": "cisco_beasts_1f42d7c3a2431c43",
+    "category": "MAIN",
+    "title": "Derrota a Skeletosaurus",
+    "npc": "Cazador de Bestias I",
+    "npcId": "npc_main_beasts_1",
+    "description": "Busca fósiles gigantes o ruinas desérticas/subterráneas en el Overworld para enfrentarlo.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "",
+    "ftbQuestId": "1F42D7C3A2431C43",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_1f42d7c3a2431c43_act",
+    "doneTag": "cisco_beasts_1f42d7c3a2431c43_done",
+    "completedTag": "cisco_beasts_1f42d7c3a2431c43_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Skeletosaurus",
+        "target": "legendary_monsters:skeletosaurus",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_22463a6f9764aa59",
+    "category": "MAIN",
+    "title": "Derrota a Warped Fungussus",
+    "npc": "Cazador de Bestias I",
+    "npcId": "npc_main_beasts_1",
+    "description": "Explora el Bosque Distorsionado (Warped Forest) en El Nether hasta encontrar este coloso fúngico.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_1f42d7c3a2431c43",
+    "ftbQuestId": "22463A6F9764AA59",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_22463a6f9764aa59_act",
+    "doneTag": "cisco_beasts_22463a6f9764aa59_done",
+    "completedTag": "cisco_beasts_22463a6f9764aa59_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Warped Fungussus",
+        "target": "legendary_monsters:warped_fungussus",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_101340a065e59cd4",
+    "category": "MAIN",
+    "title": "Derrota a Enderscent",
+    "npc": "Cazador de Bestias I",
+    "npcId": "npc_main_beasts_1",
+    "description": "Explora las islas exteriores de El End o torres del End para cazar al Enderscent.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_22463a6f9764aa59",
+    "ftbQuestId": "101340A065E59CD4",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_101340a065e59cd4_act",
+    "doneTag": "cisco_beasts_101340a065e59cd4_done",
+    "completedTag": "cisco_beasts_101340a065e59cd4_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Endersent",
+        "target": "legendary_monsters:endersent",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_4312dffb55318a5b",
+    "category": "MAIN",
+    "title": "Derrota a Shulker Mimic",
+    "npc": "Cazador de Bestias I",
+    "npcId": "npc_main_beasts_1",
+    "description": "Explora las End Cities en El End; ten cuidado al acercarte a cofres y shulkers.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_101340a065e59cd4",
+    "ftbQuestId": "4312DFFB55318A5B",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_4312dffb55318a5b_act",
+    "doneTag": "cisco_beasts_4312dffb55318a5b_done",
+    "completedTag": "cisco_beasts_4312dffb55318a5b_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Shulker Mimic",
+        "target": "legendary_monsters:shulker_mimic",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_2514003eb1314ceb",
+    "category": "MAIN",
+    "title": "Derrota a Frostbitten Golem",
+    "npc": "Cazador de Bestias I",
+    "npcId": "npc_main_beasts_1",
+    "description": "Recorre biomas helados y tundras nevadas en busca de sus ruinas congeladas.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_4312dffb55318a5b",
+    "ftbQuestId": "2514003EB1314CEB",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_2514003eb1314ceb_act",
+    "doneTag": "cisco_beasts_2514003eb1314ceb_done",
+    "completedTag": "cisco_beasts_2514003eb1314ceb_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Frostbitten Golem",
+        "target": "legendary_monsters:frostbitten_golem",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_27ba2dc0ad14fb6f",
+    "category": "MAIN",
+    "title": "Derrota a Overgrown Colossus",
+    "npc": "Cazador de Bestias I",
+    "npcId": "npc_main_beasts_1",
+    "description": "Explora biomas y estructuras salvajes acordes a la bestia en el Overworld, Nether o End.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_2514003eb1314ceb",
+    "ftbQuestId": "27BA2DC0AD14FB6F",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_27ba2dc0ad14fb6f_act",
+    "doneTag": "cisco_beasts_27ba2dc0ad14fb6f_done",
+    "completedTag": "cisco_beasts_27ba2dc0ad14fb6f_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Overgrown Colossus",
+        "target": "legendary_monsters:overgrown_colossus",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_30f96a6a3154988d",
+    "category": "MAIN",
+    "title": "Derrota a Withered Abomination",
+    "npc": "Cazador de Bestias II",
+    "npcId": "npc_main_beasts_2",
+    "description": "Explora biomas y estructuras salvajes acordes a la bestia en el Overworld, Nether o End.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_27ba2dc0ad14fb6f",
+    "ftbQuestId": "30F96A6A3154988D",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_30f96a6a3154988d_act",
+    "doneTag": "cisco_beasts_30f96a6a3154988d_done",
+    "completedTag": "cisco_beasts_30f96a6a3154988d_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Withered Abomination",
+        "target": "legendary_monsters:withered_abomination",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_4b4beed69bbf9e45",
+    "category": "MAIN",
+    "title": "Derrota a Cloud Golem",
+    "npc": "Cazador de Bestias II",
+    "npcId": "npc_main_beasts_2",
+    "description": "Explora biomas y estructuras salvajes acordes a la bestia en el Overworld, Nether o End.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_30f96a6a3154988d",
+    "ftbQuestId": "4B4BEED69BBF9E45",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_4b4beed69bbf9e45_act",
+    "doneTag": "cisco_beasts_4b4beed69bbf9e45_done",
+    "completedTag": "cisco_beasts_4b4beed69bbf9e45_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Cloud Golem",
+        "target": "legendary_monsters:cloud_golem",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_3edfde7629fdafcc",
+    "category": "MAIN",
+    "title": "Derrota a Ancient Guardian",
+    "npc": "Cazador de Bestias II",
+    "npcId": "npc_main_beasts_2",
+    "description": "Explora biomas y estructuras salvajes acordes a la bestia en el Overworld, Nether o End.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_4b4beed69bbf9e45",
+    "ftbQuestId": "3EDFDE7629FDAFCC",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_3edfde7629fdafcc_act",
+    "doneTag": "cisco_beasts_3edfde7629fdafcc_done",
+    "completedTag": "cisco_beasts_3edfde7629fdafcc_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Ancient Guardian",
+        "target": "legendary_monsters:ancient_guardian",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_39afcaf488c48022",
+    "category": "MAIN",
+    "title": "Derrota a Possessed Paladin",
+    "npc": "Cazador de Bestias II",
+    "npcId": "npc_main_beasts_2",
+    "description": "Explora biomas y estructuras salvajes acordes a la bestia en el Overworld, Nether o End.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_3edfde7629fdafcc",
+    "ftbQuestId": "39AFCAF488C48022",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_39afcaf488c48022_act",
+    "doneTag": "cisco_beasts_39afcaf488c48022_done",
+    "completedTag": "cisco_beasts_39afcaf488c48022_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Posessed Paladin",
+        "target": "legendary_monsters:posessed_paladin",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "cisco_beasts_39a082dc316df69a",
+    "category": "MAIN",
+    "title": "Derrota a Lava Eater",
+    "npc": "Cazador de Bestias II",
+    "npcId": "npc_main_beasts_2",
+    "description": "Explora biomas y estructuras salvajes acordes a la bestia en el Overworld, Nether o End.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_beasts_39afcaf488c48022",
+    "ftbQuestId": "39A082DC316DF69A",
+    "rewardXp": 150,
+    "activeTag": "cisco_beasts_39a082dc316df69a_act",
+    "doneTag": "cisco_beasts_39a082dc316df69a_done",
+    "completedTag": "cisco_beasts_39a082dc316df69a_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Lava Eater",
+        "target": "legendary_monsters:lava_eater",
+        "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "cisco_champions_65a32ba80044c9b7",
+    "category": "MAIN",
+    "title": "Derrota a Infernal Dragon",
+    "npc": "Campeón Alzado",
+    "npcId": "npc_main_champions_1",
+    "description": "Cruza al Nether y busca su nido en zonas volcánicas o fortalezas infernales.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "",
+    "ftbQuestId": "65A32BA80044C9B7",
+    "rewardXp": 150,
+    "activeTag": "cisco_champions_65a32ba80044c9b7_act",
+    "doneTag": "cisco_champions_65a32ba80044c9b7_done",
+    "completedTag": "cisco_champions_65a32ba80044c9b7_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Infernal Dragon",
+        "target": "block_factorys_bosses:infernal_dragon",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "cisco_champions_30bb2e026f6edf8a",
+    "category": "MAIN",
+    "title": "Derrota a Yeti",
+    "npc": "Campeón Alzado",
+    "npcId": "npc_main_champions_1",
+    "description": "Explora montañas nevadas y picos helados en la Superficie.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_champions_65a32ba80044c9b7",
+    "ftbQuestId": "30BB2E026F6EDF8A",
+    "rewardXp": 150,
+    "activeTag": "cisco_champions_30bb2e026f6edf8a_act",
+    "doneTag": "cisco_champions_30bb2e026f6edf8a_done",
+    "completedTag": "cisco_champions_30bb2e026f6edf8a_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Yeti",
+        "target": "block_factorys_bosses:yeti",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "cisco_champions_76035b2dd5d26a5f",
+    "category": "MAIN",
+    "title": "Derrota a Sandworm",
+    "npc": "Campeón Alzado",
+    "npcId": "npc_main_champions_1",
+    "description": "Recorre extensos desiertos en la Superficie; emerge desde la arena.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_champions_30bb2e026f6edf8a",
+    "ftbQuestId": "76035B2DD5D26A5F",
+    "rewardXp": 150,
+    "activeTag": "cisco_champions_76035b2dd5d26a5f_act",
+    "doneTag": "cisco_champions_76035b2dd5d26a5f_done",
+    "completedTag": "cisco_champions_76035b2dd5d26a5f_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Sandworm",
+        "target": "block_factorys_bosses:sandworm",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "id": "cisco_champions_32a358f85f91d046",
+    "category": "MAIN",
+    "title": "Derrota a Underworld Knight",
+    "npc": "Campeón Alzado",
+    "npcId": "npc_main_champions_1",
+    "description": "Explora fortalezas subterráneas profundas o el Nether para hallar al Caballero del Inframundo.",
+    "suggestedLevel": 15,
+    "prerequisiteQuestId": "cisco_champions_76035b2dd5d26a5f",
+    "ftbQuestId": "32A358F85F91D046",
+    "rewardXp": 150,
+    "activeTag": "cisco_champions_32a358f85f91d046_act",
+    "doneTag": "cisco_champions_32a358f85f91d046_done",
+    "completedTag": "cisco_champions_32a358f85f91d046_comp",
+    "stages": [
+      {
+        "type": "KILL",
+        "description": "Elimina 1x Underworld Knight",
+        "target": "block_factorys_bosses:underworld_knight",
+        "amount": 1
+      }
+    ],
+    "rewardXpLevels": 20,
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 4
+      }
+    ]
   }
 ]
