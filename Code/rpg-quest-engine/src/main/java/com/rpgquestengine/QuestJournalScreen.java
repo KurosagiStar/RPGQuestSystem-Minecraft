@@ -177,14 +177,21 @@ public class QuestJournalScreen extends Screen {
 
         int topY = 16;
         int bottomY = this.height - 36;
-        int colGap = 12;
-        int leftX = 18;
-        int usableW = this.width - 36;
-        int leftW = Math.max(155, (int) (usableW * 0.31));
-        int midW = Math.max(155, (int) (usableW * 0.34));
-        int rightW = usableW - leftW - midW - colGap * 2;
+        int colGap = 10;
+        int leftX = 16;
+        int usableW = this.width - 32;
+        int leftW = (int) (usableW * 0.31);
+        int midW = (int) (usableW * 0.34);
+        int rightW = Math.max(80, usableW - leftW - midW - colGap * 2);
         int midX = leftX + leftW + colGap;
         int rightX = midX + midW + colGap;
+
+        // Fondos de las 3 columnas para separación visual clara
+        g.fill(leftX - 2, topY - 2, leftX + leftW + 2, bottomY + 2, 0x66141210);
+        g.fill(midX - 2, topY - 2, midX + midW + 2, bottomY + 2, 0x55141210);
+        g.fill(rightX - 2, topY - 2, rightX + rightW + 2, bottomY + 2, 0x77141210);
+        g.fill(midX - 6, topY, midX - 5, bottomY, 0x33D4AF37);
+        g.fill(rightX - 6, topY, rightX - 5, bottomY, 0x44D4AF37);
 
         // Columna izquierda: acordeones de misiones
         clickables.clear();
@@ -200,14 +207,12 @@ public class QuestJournalScreen extends Screen {
         maxLeftScroll = Math.max(0, contentHeight - (bottomY - topY));
         leftScroll = Math.max(0, Math.min(leftScroll, maxLeftScroll));
 
-        // Separador vertical sutil entre centro y derecha
-        g.fill(rightX - 6, topY, rightX - 5, bottomY, 0x33D4AF37);
-
         if (selectedQuest != null) {
             renderCenterColumn(g, midX, topY, midW, bottomY);
             renderRightColumn(g, rightX, topY, rightW, bottomY);
         } else {
-            g.drawCenteredString(this.font, "§7No hay misiones activas. Habla con un NPC.", midX + (midW + rightW) / 2, topY + 60, 0xAAAAAA);
+            g.drawCenteredString(this.font, "§7No hay misiones activas.", midX + midW / 2, topY + 60, 0xAAAAAA);
+            g.drawCenteredString(this.font, "§8Habla con un NPC para comenzar.", midX + midW / 2, topY + 74, 0x777777);
         }
 
         super.render(g, mouseX, mouseY, partialTick);
@@ -409,8 +414,8 @@ public class QuestJournalScreen extends Screen {
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
-        int leftW = Math.max(155, (int) ((this.width - 36) * 0.31));
-        if (mouseX <= 18 + leftW + 10) {
+        int leftW = (int) ((this.width - 32) * 0.31);
+        if (mouseX <= 16 + leftW + 10) {
             leftScroll = Math.max(0, Math.min(maxLeftScroll, leftScroll - (int) (delta * 18)));
             return true;
         }
