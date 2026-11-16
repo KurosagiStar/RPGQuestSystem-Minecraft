@@ -20,6 +20,7 @@
   - Cambiado `QuestEntityMarkerRenderer` a `RenderType.textSeeThrough` para que los iconos 3D sobre los NPCs no se rompan al recargar recursos (`F3+T`) ni con shaders.
   - Rediseñado `QuestJournalScreen` (`J`) a layout de 3 columnas estilo Witcher 3 con acordeones colapsables, emblema dorado `9x9` de seguimiento y cuadritos de recompensas.
   - Registrado pack integrado obligatorio `quest_radar_icons` (`Pack.Position.TOP`) mediante `AddPackFindersEvent` y auto-parcheo de `default_radar_categories_client.json` (`Easy NPCs`, `icons: 2.0`) en `RPGQuestEngine.java`.
+  - Actualizado `ClientQuestData.java` para mostrar banner `MISIÓN ACTUALIZADA` al avanzar etapa o completar objetivos, con aviso de pulsar `V` para seguir si la misión no estaba en seguimiento.
 
 ## [1.3.1-update] - 2026-11-13
 - **HUD de Supervivencia (`SURVIVE`):** El aviso de enemigos restantes al finalizar el tiempo (`⚔ Elimina enemigos restantes [N]`) se muestra como segundo objetivo en el HUD (`QuestHudOverlay`) y marca con `Objetivo` sobre sus cabezas a los rezagados (`QuestEntityMarkerRenderer`).
