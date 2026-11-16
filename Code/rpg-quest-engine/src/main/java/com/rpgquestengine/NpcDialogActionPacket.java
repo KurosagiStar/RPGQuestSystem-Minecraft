@@ -2,8 +2,12 @@ package com.rpgquestengine;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkEvent;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Set;
 import java.util.function.Supplier;
@@ -47,6 +51,18 @@ public class NpcDialogActionPacket {
                 sp.removeTag(q.doneTag);
                 if (q.completedTag != null) sp.addTag(q.completedTag);
                 if (q.rewardXp > 0) sp.giveExperiencePoints(q.rewardXp);
+                if (q.rewardItems != null) {
+                    for (QuestDefinition.RewardItem ri : q.rewardItems) {
+                        if (ri == null || ri.id == null || ri.id.isEmpty()) continue;
+                        Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(ri.id));
+                        if (item != null) {
+                            ItemStack stack = new ItemStack(item, Math.max(1, ri.count));
+                            if (!sp.getInventory().add(stack)) {
+                                sp.drop(stack, false);
+                            }
+                        }
+                    }
+                }
                 sp.sendSystemMessage(Component.literal("§a[Misión Completada] §f" + q.title + (q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "")));
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             } else if ("ACCEPT".equalsIgnoreCase(msg.action)) {
@@ -71,3 +87,4 @@ public class NpcDialogActionPacket {
         ctx.get().setPacketHandled(true);
     }
 }
+

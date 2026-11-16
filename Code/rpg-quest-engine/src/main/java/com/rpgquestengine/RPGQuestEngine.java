@@ -891,18 +891,14 @@ public class RPGQuestEngine {
 
         for (QuestDefinition q : npcQuests) {
             if (q.doneTag != null && tags.contains(q.doneTag)) {
-                String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
-                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                        new OpenNpcDialogPacket(npcId, npcName, "TURN_IN", q.id, q.title, desc, q.rewardXp));
+                sendDialogPacket(sp, npcId, npcName, "TURN_IN", q);
                 return;
             }
         }
 
         for (QuestDefinition q : npcQuests) {
             if (q.activeTag != null && tags.contains(q.activeTag)) {
-                String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
-                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                        new OpenNpcDialogPacket(npcId, npcName, "IN_PROGRESS", q.id, q.title, desc, q.rewardXp));
+                sendDialogPacket(sp, npcId, npcName, "IN_PROGRESS", q);
                 return;
             }
         }
@@ -923,20 +919,33 @@ public class RPGQuestEngine {
                     continue;
                 }
             }
-            String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
-            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                    new OpenNpcDialogPacket(npcId, npcName, "AVAILABLE", q.id, q.title, desc, q.rewardXp));
+            sendDialogPacket(sp, npcId, npcName, "AVAILABLE", q);
             return;
         }
 
         if (firstBlockedPrereq != null) {
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id, firstBlockedPrereq.title, "", 0));
+                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id, firstBlockedPrereq.title, "", "", 0, null));
             return;
         }
 
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new OpenNpcDialogPacket(npcId, npcName, "COMPLETED_ALL", "", "", "", 0));
+                new OpenNpcDialogPacket(npcId, npcName, "COMPLETED_ALL", "", "", "", "", 0, null));
+    }
+
+    private void sendDialogPacket(ServerPlayer sp, String npcId, String npcName, String state, QuestDefinition q) {
+        String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
+        String lore = (q.description != null) ? q.description : "";
+        java.util.List<OpenNpcDialogPacket.RewardEntry> rItems = new java.util.ArrayList<>();
+        if (q.rewardItems != null) {
+            for (QuestDefinition.RewardItem ri : q.rewardItems) {
+                if (ri != null && ri.id != null && !ri.id.isEmpty()) {
+                    rItems.add(new OpenNpcDialogPacket.RewardEntry(ri.id, ri.count));
+                }
+            }
+        }
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                new OpenNpcDialogPacket(npcId, npcName, state, q.id, q.title, lore, desc, q.rewardXp, rItems));
     }
 
     private int handleNpcTalk(ServerPlayer sp, String npcId) {

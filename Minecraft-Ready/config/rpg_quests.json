@@ -869,7 +869,7 @@
     "title": "The Adventure Begins!",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): The Adventure Begins!",
+    "description": "Cisco sensed a familiar power within the champion. Believing they may be able to aid him in his quest to defeat the fell king he offered his guidance. Relive the champion's journey and ascent to legendary status.",
     "suggestedLevel": 10,
     "prerequisiteQuestId": "",
     "activeTag": "q_cisco_trials_6f010e22cd886969_act",
@@ -886,6 +886,40 @@
         "target": "minecraft:zombie",
         "amount": 5
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "immersive_armors:wooden_helmet",
+        "count": 1
+      },
+      {
+        "id": "immersive_armors:wooden_leggings",
+        "count": 1
+      },
+      {
+        "id": "immersive_armors:wooden_boots",
+        "count": 1
+      },
+      {
+        "id": "immersive_armors:wooden_chestplate",
+        "count": 1
+      },
+      {
+        "id": "minecraft:wooden_sword",
+        "count": 1
+      },
+      {
+        "id": "origins:orb_of_origin",
+        "count": 1
+      },
+      {
+        "id": "farmersdelight:ratatouille",
+        "count": 16
+      },
+      {
+        "id": "farmersdelight:bacon_and_eggs",
+        "count": 16
+      }
     ]
   },
   {
@@ -895,7 +929,7 @@
     "title": "The path of the warrior",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): The path of the warrior",
+    "description": "Up close and personal.",
     "suggestedLevel": 11,
     "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
     "activeTag": "q_cisco_trials_23864a4966441d61_act",
@@ -918,6 +952,20 @@
         "target": "minecraft:zombie",
         "required": 10
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "simplyswords:iron_longsword",
+        "count": 1
+      },
+      {
+        "id": "minecraft:shield",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -927,7 +975,7 @@
     "title": "Novice spell caster",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Novice spell caster",
+    "description": "Source can be manipulated in almost infinite ways limited only by your creativity and the glyphs available to you. To do this you will need to craft a spell book. It can later be dyed in your favourite color.",
     "suggestedLevel": 12,
     "prerequisiteQuestId": "cisco_trials_642c85e431896fb0",
     "activeTag": "q_cisco_trials_76e6e42a538c69fb_act",
@@ -944,6 +992,16 @@
         "target": "ars_nouveau:novice_spell_book",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "ars_nouveau:source_gem",
+        "count": 15
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 2
+      }
     ]
   },
   {
@@ -953,7 +1011,7 @@
     "title": "The path of the mage",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): The path of the mage",
+    "description": "It is time to begin your spell caster training. The are two main origins of magic in the world, one uses a resource called \"source\" and the other uses \"ambient mana\" present within the world and it's living creatures. Which path will you choose?",
     "suggestedLevel": 13,
     "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
     "activeTag": "q_cisco_trials_642c85e431896fb0_act",
@@ -970,6 +1028,16 @@
         "target": "minecraft:creeper",
         "amount": 5
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -979,7 +1047,7 @@
     "title": "Obtain iron",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Obtain iron",
+    "description": "Iron is a key component in many recipes and is vital early on in your adventure.",
     "suggestedLevel": 14,
     "prerequisiteQuestId": "cisco_trials_6f010e22cd886969",
     "activeTag": "q_cisco_trials_363d127c20eac8fc_act",
@@ -996,6 +1064,12 @@
         "target": "minecraft:iron_ingot",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1005,7 +1079,7 @@
     "title": "The relic of the ancients",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): The relic of the ancients",
+    "description": "There is a tale of a legendary relic which lies in the possesion of the villagers. Perhaps if you can gain their favor they may entrust it to you?",
     "suggestedLevel": 15,
     "prerequisiteQuestId": "cisco_trials_22b92de71f6f923d",
     "activeTag": "q_cisco_trials_7d47ca06f299bb0a_act",
@@ -1022,6 +1096,12 @@
         "target": "minecraft:pillager",
         "amount": 15
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "simplyswords:dormant_relic",
+        "count": 1
+      }
     ]
   },
   {
@@ -1031,7 +1111,7 @@
     "title": "Misión 068B6D",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Misión 068B6D",
+    "description": "Here is where you craft the glyphs used for spell casting. With each new glyph your maximum mana increases slightly.",
     "suggestedLevel": 16,
     "prerequisiteQuestId": "cisco_trials_76e6e42a538c69fb",
     "activeTag": "q_cisco_trials_068b6dc27bc66d89_act",
@@ -1048,6 +1128,44 @@
         "target": "ars_nouveau:scribes_table",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "ars_nouveau:source_gem",
+        "count": 10
+      },
+      {
+        "id": "ars_nouveau:abjuration_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_nouveau:conjuration_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_nouveau:air_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_nouveau:earth_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_nouveau:fire_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_nouveau:manipulation_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_nouveau:water_essence",
+        "count": 1
+      },
+      {
+        "id": "ars_elemental:anima_essence",
+        "count": 1
+      }
     ]
   },
   {
@@ -1057,7 +1175,7 @@
     "title": "Amplified Magics",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Amplified Magics",
+    "description": "This glyph increases the potency of many other glyphs when used in tandem in a spell.",
     "suggestedLevel": 17,
     "prerequisiteQuestId": "cisco_trials_5c15bccd252805dc",
     "activeTag": "q_cisco_trials_10b64a3d6500ac09_act",
@@ -1074,6 +1192,16 @@
         "target": "ars_nouveau:glyph_amplify",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "ars_nouveau:amulet_of_mana_boost",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1083,7 +1211,7 @@
     "title": "Aquire Obsidian",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Aquire Obsidian",
+    "description": "Aquire obsidian and craft a nether portal.",
     "suggestedLevel": 18,
     "prerequisiteQuestId": "cisco_trials_10b64a3d6500ac09",
     "activeTag": "q_cisco_trials_643a6bd7be518653_act",
@@ -1100,6 +1228,12 @@
         "target": "minecraft:obsidian",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:flint_and_steel",
+        "count": 1
+      }
     ]
   },
   {
@@ -1109,7 +1243,7 @@
     "title": "The depths of Hell",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): The depths of Hell",
+    "description": "The Nether is filled with large structures and powerful enemies, prepare carefully before entering.",
     "suggestedLevel": 19,
     "prerequisiteQuestId": "cisco_trials_643a6bd7be518653",
     "activeTag": "q_cisco_trials_7d59bd1308e6778f_act",
@@ -1126,6 +1260,12 @@
         "target": "minecraft:the_nether",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:blaze_rod",
+        "count": 2
+      }
     ]
   },
   {
@@ -1135,7 +1275,7 @@
     "title": "Acquire Quartz",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Acquire Quartz",
+    "description": "Quartz is needed for some important recipes like upgrading to a tier 2 spellbook.",
     "suggestedLevel": 20,
     "prerequisiteQuestId": "cisco_trials_7d59bd1308e6778f",
     "activeTag": "q_cisco_trials_3e13eb56ee51145f_act",
@@ -1152,6 +1292,12 @@
         "target": "minecraft:quartz",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -1161,7 +1307,7 @@
     "title": "Rank up your magic",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Rank up your magic",
+    "description": "Upgrading your spell book will allow you to cast more powerful spells.",
     "suggestedLevel": 21,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_5426802195e9dea6_act",
@@ -1178,6 +1324,16 @@
         "target": "ars_nouveau:apprentice_spell_book",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 2
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -1187,7 +1343,7 @@
     "title": "Find the an ancient runic tablet",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Find the an ancient runic tablet",
+    "description": "These can be found in dungeon chests.",
     "suggestedLevel": 22,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_279bc431d5d067a3_act",
@@ -1204,6 +1360,12 @@
         "target": "simplyswords:runic_tablet",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "simplyswords:runic_tablet",
+        "count": 2
+      }
     ]
   },
   {
@@ -1213,7 +1375,7 @@
     "title": "Aquire an enchanting table",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Misión oficial de Cisco (Trials): Aquire an enchanting table",
+    "description": "This will be your second main source of power. Master the apotheosis enchanting system and even weaker tier gear can become godly.",
     "suggestedLevel": 23,
     "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
     "activeTag": "q_cisco_trials_2a5a2b19fd4a1abe_act",
@@ -1230,6 +1392,28 @@
         "target": "minecraft:enchanting_table",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:bookshelf",
+        "count": 5
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      },
+      {
+        "id": "minecraft:potion",
+        "count": 1
+      },
+      {
+        "id": "minecraft:potion",
+        "count": 1
+      },
+      {
+        "id": "minecraft:potion",
+        "count": 1
+      }
     ]
   },
   {
@@ -1239,7 +1423,7 @@
     "title": "For Glory!",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): For Glory!",
+    "description": "Embrace the light.",
     "suggestedLevel": 24,
     "prerequisiteQuestId": "cisco_trials_279bc431d5d067a3",
     "activeTag": "q_cisco_trials_4472063587820df7_act",
@@ -1256,6 +1440,16 @@
         "target": "simplyswords:righteous_relic",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "simplyswords:runic_tablet",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1265,7 +1459,7 @@
     "title": "All shall kneel...",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): All shall kneel...",
+    "description": "Embrace the darkness.",
     "suggestedLevel": 25,
     "prerequisiteQuestId": "cisco_trials_279bc431d5d067a3",
     "activeTag": "q_cisco_trials_0d03a91a96743e87_act",
@@ -1282,6 +1476,12 @@
         "target": "simplyswords:tainted_relic",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1291,7 +1491,7 @@
     "title": "Misión 441A82",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Misión 441A82",
+    "description": "Netherite ingots are a crucial part of many complex item recipes and as such you will need a fair amount of it. Pickaxes with powerful enhantments or certain dungeon chests are great ways to get more of it.",
     "suggestedLevel": 26,
     "prerequisiteQuestId": "cisco_trials_0d03a91a96743e87",
     "activeTag": "q_cisco_trials_441a82ced3f13122_act",
@@ -1308,6 +1508,20 @@
         "target": "minecraft:netherite_ingot",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:ancient_debris",
+        "count": 3
+      },
+      {
+        "id": "minecraft:wither_skeleton_skull",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1317,7 +1531,7 @@
     "title": "Misión 5FFC0E",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Misión 5FFC0E",
+    "description": "The eye of flame can be used to locate the burning arena home to the Flame King Ignis.",
     "suggestedLevel": 27,
     "prerequisiteQuestId": "cisco_trials_441a82ced3f13122",
     "activeTag": "q_cisco_trials_5ffc0e01052944a7_act",
@@ -1334,6 +1548,16 @@
         "target": "cataclysm:flame_eye",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "apotheosis:potion_charm",
+        "count": 1
+      },
+      {
+        "id": "minecraft:netherite_scrap",
+        "count": 3
+      }
     ]
   },
   {
@@ -1343,7 +1567,7 @@
     "title": "Slay the terror of the nether",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Slay the terror of the nether",
+    "description": "Gatekeeper The nether star obtained from slaying the Wither is used in the crafting of very powerful items. The wither will grow in strength every time you defeat it.",
     "suggestedLevel": 28,
     "prerequisiteQuestId": "cisco_trials_441a82ced3f13122",
     "activeTag": "q_cisco_trials_64286a21fdb8288f_act",
@@ -1360,6 +1584,16 @@
         "target": "minecraft:wither",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
     ]
   },
   {
@@ -1369,7 +1603,7 @@
     "title": "Slay the flame king",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Slay the flame king",
+    "description": "Gatekeeper Acquire burning ashes from ignited revenants guarding the burning arena. Use the ashes on the altar in the center of the arena and extinguish The King of Flames.",
     "suggestedLevel": 29,
     "prerequisiteQuestId": "cisco_trials_5ffc0e01052944a7",
     "activeTag": "q_cisco_trials_2af361ba2a4fb5ef_act",
@@ -1386,6 +1620,12 @@
         "target": "cataclysm:ignis",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cataclysm:ignitium_ingot",
+        "count": 1
+      }
     ]
   },
   {
@@ -1395,7 +1635,7 @@
     "title": "Not gold but certainly glitters",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Not gold but certainly glitters",
+    "description": "Amethyst is another key ingredient in all things arcane and you may need quite alot of it. Thankfully you can automate its production using the Amethyst Golem familiars.",
     "suggestedLevel": 30,
     "prerequisiteQuestId": "cisco_trials_2a5a2b19fd4a1abe",
     "activeTag": "q_cisco_trials_1aa5dcefec43dca6_act",
@@ -1412,6 +1652,16 @@
         "target": "minecraft:amethyst_shard",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:budding_amethyst",
+        "count": 4
+      },
+      {
+        "id": "ars_nouveau:amethyst_golem_charm",
+        "count": 1
+      }
     ]
   },
   {
@@ -1421,7 +1671,7 @@
     "title": "Apothic Enchanting",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Apothic Enchanting",
+    "description": "Apotheosis allows you to enchant your gear far beyond what you are used to. It may take some configuration but eventually you will be able to fashion gear that makes you unstoppable.",
     "suggestedLevel": 31,
     "prerequisiteQuestId": "cisco_trials_2a5a2b19fd4a1abe",
     "activeTag": "q_cisco_trials_1413a1e7155ab369_act",
@@ -1438,6 +1688,12 @@
         "target": "apotheosis:seashelf",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1447,7 +1703,7 @@
     "title": "Collecting the 12 eyes",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Collecting the 12 eyes",
+    "description": "The 12 eyes needed to ignite the end portal can be found in dungeon chests all over the world , in the nether, as well a few of them needing to be crafted. These three are a good starting point.",
     "suggestedLevel": 32,
     "prerequisiteQuestId": "cisco_trials_64286a21fdb8288f",
     "activeTag": "q_cisco_trials_1ab06dc31fd237a6_act",
@@ -1464,6 +1720,12 @@
         "target": "endrem:rogue_eye",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
     ]
   },
   {
@@ -1473,7 +1735,7 @@
     "title": "Enter the End Dimension",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Enter the End Dimension",
+    "description": "It is now time to face the Dragon.",
     "suggestedLevel": 33,
     "prerequisiteQuestId": "cisco_trials_1ab06dc31fd237a6",
     "activeTag": "q_cisco_trials_53f1fb5ee35750dc_act",
@@ -1490,6 +1752,12 @@
         "target": "minecraft:the_end",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:ender_pearl",
+        "count": 3
+      }
     ]
   },
   {
@@ -1499,7 +1767,7 @@
     "title": "Slay the Ender Dragon",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Slay the Ender Dragon",
+    "description": "Gatekeeper Not even the Ender Dragon can stand before your might . Slay her and liberate the end dimension. Each time you battle her she will grow  in strength.",
     "suggestedLevel": 34,
     "prerequisiteQuestId": "cisco_trials_53f1fb5ee35750dc",
     "activeTag": "q_cisco_trials_2f764777b6e4d941_act",
@@ -1516,6 +1784,20 @@
         "target": "minecraft:ender_dragon",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:dragon_breath",
+        "count": 2
+      },
+      {
+        "id": "skilltree:amnesia_scroll",
+        "count": 1
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 8
+      }
     ]
   },
   {
@@ -1525,7 +1807,7 @@
     "title": "Misión 2504D1",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Misión 2504D1",
+    "description": "The eye of the void is used to locate the ruined citadel where the powerful Ender Guardian resides.",
     "suggestedLevel": 35,
     "prerequisiteQuestId": "cisco_trials_2f764777b6e4d941",
     "activeTag": "q_cisco_trials_2504d1884d6894fb_act",
@@ -1542,6 +1824,12 @@
         "target": "cataclysm:void_eye",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1551,7 +1839,7 @@
     "title": "Slay the Ender Guardian",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): Slay the Ender Guardian",
+    "description": "Gatekeeper Can you conquer this powerful foe?",
     "suggestedLevel": 36,
     "prerequisiteQuestId": "cisco_trials_2504d1884d6894fb",
     "activeTag": "q_cisco_trials_6880914ef91d2c85_act",
@@ -1568,6 +1856,12 @@
         "target": "cataclysm:ender_guardian",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 6
+      }
     ]
   },
   {
@@ -1577,7 +1871,7 @@
     "title": "The Greatest Magician",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Misión oficial de Cisco (Trials): The Greatest Magician",
+    "description": "Upgrage your spell book to the final tier by combining it with the rarest of materials.",
     "suggestedLevel": 37,
     "prerequisiteQuestId": "cisco_trials_2f764777b6e4d941",
     "activeTag": "q_cisco_trials_1b9997b20d2187c9_act",
@@ -1594,6 +1888,16 @@
         "target": "ars_nouveau:archmage_spell_book",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 2
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      }
     ]
   },
   {
@@ -1603,7 +1907,7 @@
     "title": "Misión 438D84",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 438D84",
+    "description": "Summon the Wilden Chimera and defeat him to obtain the wilden tribute. This can be done using the ritual brazer , a tablet of summon wilden and the 3 types of wilden drops.",
     "suggestedLevel": 38,
     "prerequisiteQuestId": "cisco_trials_5426802195e9dea6",
     "activeTag": "q_cisco_trials_438d84b0f7bfd2a0_act",
@@ -1620,6 +1924,16 @@
         "target": "ars_nouveau:wilden_tribute",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -1629,7 +1943,7 @@
     "title": "Misión 0F7160",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 0F7160",
+    "description": "The final form of the sword of justice .",
     "suggestedLevel": 39,
     "prerequisiteQuestId": "cisco_trials_4472063587820df7",
     "activeTag": "q_cisco_trials_0f7160fddb088526_act",
@@ -1646,6 +1960,12 @@
         "target": "simplyswords:sunfire",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1655,7 +1975,7 @@
     "title": "Misión 00CB68",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 00CB68",
+    "description": "The final form of the sword of darkness.",
     "suggestedLevel": 40,
     "prerequisiteQuestId": "cisco_trials_0d03a91a96743e87",
     "activeTag": "q_cisco_trials_00cb68da83f73719_act",
@@ -1672,6 +1992,12 @@
         "target": "simplyswords:harbinger",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1681,7 +2007,7 @@
     "title": "Misión 5A24E1",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 5A24E1",
+    "description": "Starbuncles are crucial to automating source production which is needed for all things ars nouveau . Interact with a wild starbuncle by feeding it gold nuggets and use the fragment to craft its charm.",
     "suggestedLevel": 41,
     "prerequisiteQuestId": "cisco_trials_068b6dc27bc66d89",
     "activeTag": "q_cisco_trials_5a24e1249722eea9_act",
@@ -1698,6 +2024,20 @@
         "target": "ars_nouveau:starbuncle_charm",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "ars_nouveau:starbuncle_charm",
+        "count": 1
+      },
+      {
+        "id": "ironchest:diamond_chest",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1707,7 +2047,7 @@
     "title": "Craft the Ignitium set",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Craft the Ignitium set",
+    "description": "Ignitium Armor is indestructible and provides various effects such as lava walking.",
     "suggestedLevel": 42,
     "prerequisiteQuestId": "cisco_trials_2af361ba2a4fb5ef",
     "activeTag": "q_cisco_trials_4c0b49a4548b6df4_act",
@@ -1733,7 +2073,7 @@
     "title": "Misión 74C563",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 74C563",
+    "description": "You can grind gems to gem dust here which is used to imbue your gear with special affixes via the reforging table.",
     "suggestedLevel": 43,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_74c563f2bb321af9_act",
@@ -1750,6 +2090,16 @@
         "target": "apotheosis:gem_cutting_table",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "apotheosis:gem_dust",
+        "count": 30
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1759,7 +2109,7 @@
     "title": "Misión 28B406",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 28B406",
+    "description": "This is where you reforge your gear. Reforging adds stats and sockets for gems to your equipment based on the quality of reforging materials used. Can be upgraged further.",
     "suggestedLevel": 44,
     "prerequisiteQuestId": "cisco_trials_74c563f2bb321af9",
     "activeTag": "q_cisco_trials_28b406cdb662aaf8_act",
@@ -1776,6 +2126,12 @@
         "target": "apotheosis:simple_reforging_table",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "apotheosis:epic_material",
+        "count": 12
+      }
     ]
   },
   {
@@ -1785,7 +2141,7 @@
     "title": "Misión 78C3CC",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 78C3CC",
+    "description": "This reforging table allows you reroll up to mythic tier affixes.",
     "suggestedLevel": 45,
     "prerequisiteQuestId": "cisco_trials_28b406cdb662aaf8",
     "activeTag": "q_cisco_trials_78c3cc2b67ed66b6_act",
@@ -1802,6 +2158,12 @@
         "target": "apotheosis:reforging_table",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "apotheosis:mythic_material",
+        "count": 6
+      }
     ]
   },
   {
@@ -1811,7 +2173,7 @@
     "title": "Misión 5319E4",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 5319E4",
+    "description": "You can store enchantments here for later use. Can be upgraded further.",
     "suggestedLevel": 46,
     "prerequisiteQuestId": "cisco_trials_74c563f2bb321af9",
     "activeTag": "q_cisco_trials_5319e400556cdc4d_act",
@@ -1837,7 +2199,7 @@
     "title": "Misión 1436BC",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 1436BC",
+    "description": "The ultimate enchantment library.",
     "suggestedLevel": 47,
     "prerequisiteQuestId": "cisco_trials_5319e400556cdc4d",
     "activeTag": "q_cisco_trials_1436bcc4578225db_act",
@@ -1854,6 +2216,12 @@
         "target": "apotheosis:ender_library",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1863,7 +2231,7 @@
     "title": "Misión 7519AF",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 7519AF",
+    "description": "Potion charms are very powerful items which can give you a potion effect permanently when in your inventory. By default they lose durability whilst active but you can make them unbreakable by enchanting them with a certain amount of quanta , eterna etc refer to your recipes.",
     "suggestedLevel": 48,
     "prerequisiteQuestId": "cisco_trials_5426802195e9dea6",
     "activeTag": "q_cisco_trials_7519af7b737cb8ab_act",
@@ -1880,6 +2248,12 @@
         "target": "apotheosis:potion_charm",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1889,7 +2263,7 @@
     "title": "View skill tree",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): View skill tree",
+    "description": "The skill tree will allow you customise your character and gain the strength required to face the challenges that await. Default key is (o). Click the checkmark to complete the quest.",
     "suggestedLevel": 49,
     "prerequisiteQuestId": "cisco_trials_6f010e22cd886969",
     "activeTag": "q_cisco_trials_569da7bbdc1f40fe_act",
@@ -1906,6 +2280,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 5
+      }
     ]
   },
   {
@@ -1915,7 +2295,7 @@
     "title": "Misión 7B1FA4",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Misión 7B1FA4",
+    "description": "A combination of metals and nonmetals enhanced with magic this resilient metal is used to craft many different weapons and armor.",
     "suggestedLevel": 50,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_7b1fa4c0929a40d9_act",
@@ -1932,6 +2312,12 @@
         "target": "cisco_mod:brightsteel_ingot",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -1941,7 +2327,7 @@
     "title": "Brightsteel Armor",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Misión oficial de Cisco (Trials): Brightsteel Armor",
+    "description": "Brightsteel Armor provides good protection and a small resistance buff when healthy.",
     "suggestedLevel": 51,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_7f28da2696d94242_act",
@@ -1958,6 +2344,12 @@
         "target": "cisco_mod:brightsteel_helmet",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -1967,7 +2359,7 @@
     "title": "Gilded Eagle",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Gilded Eagle",
+    "description": "The Gilded Eagle armor set provides medium protections but bonus and speed and the ability to breifly dodge incoming attacks.",
     "suggestedLevel": 52,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_25b412c443489bf9_act",
@@ -1984,6 +2376,12 @@
         "target": "cisco_mod:gilded_eagle_helmet",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      }
     ]
   },
   {
@@ -1993,7 +2391,7 @@
     "title": "Misión 6853D0",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Misión 6853D0",
+    "description": "This multitool fashioned with brightsteel will greatly aid in the acquisition of natural resources.",
     "suggestedLevel": 53,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_6853d0c9370fdc1f_act",
@@ -2010,6 +2408,12 @@
         "target": "cisco_mod:brightsteel_multi_tool",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2019,7 +2423,7 @@
     "title": "Slay Spiders",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Slay Spiders",
+    "description": "The spider population has grown out of hand, reduce thier numbers.",
     "suggestedLevel": 54,
     "prerequisiteQuestId": "cisco_trials_6853d0c9370fdc1f",
     "activeTag": "q_cisco_trials_7c0c571649f8e5aa_act",
@@ -2036,6 +2440,12 @@
         "target": "minecraft:spider",
         "amount": 10
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -2045,7 +2455,7 @@
     "title": "Misión 553D2E",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Misión 553D2E",
+    "description": "Used to store and retrieve experience levels.",
     "suggestedLevel": 55,
     "prerequisiteQuestId": "cisco_trials_7c0c571649f8e5aa",
     "activeTag": "q_cisco_trials_553d2e842160b922_act",
@@ -2071,7 +2481,7 @@
     "title": "Adventurers Garments",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Adventurers Garments",
+    "description": "Craft the Adventurer's Armor and continue your journey.",
     "suggestedLevel": 56,
     "prerequisiteQuestId": "cisco_trials_363d127c20eac8fc",
     "activeTag": "q_cisco_trials_159fd707980d3015_act",
@@ -2088,6 +2498,24 @@
         "target": "cisco_mod:adventurer_chestplate",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:adventurer_helmet",
+        "count": 1
+      },
+      {
+        "id": "cisco_mod:adventurer_leggings",
+        "count": 1
+      },
+      {
+        "id": "cisco_mod:adventurer_boots",
+        "count": 1
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -2097,7 +2525,7 @@
     "title": "Craft the brightsteel pickaxe",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Craft the brightsteel pickaxe",
+    "description": "This highly efficient pickaxe is second only to the darksteel variant.",
     "suggestedLevel": 57,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_163054d41143a0b9_act",
@@ -2114,6 +2542,12 @@
         "target": "cisco_mod:bright_pickaxe",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2123,7 +2557,7 @@
     "title": "Misión 5F0BBB",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Misión 5F0BBB",
+    "description": "The darksteel pickaxe uses ancient magic to enhance the users strikes increasing efficiency to unparralled levels.",
     "suggestedLevel": 58,
     "prerequisiteQuestId": "cisco_trials_163054d41143a0b9",
     "activeTag": "q_cisco_trials_5f0bbbf9a4360e45_act",
@@ -2140,6 +2574,12 @@
         "target": "cisco_mod:dark_pickaxe",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2149,7 +2589,7 @@
     "title": "Slayed Betrayed Guzzler",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Slayed Betrayed Guzzler",
+    "description": "Demons born of the seven deadly sins have found their way into our world. They pose a significant danger and must be dealt with quickly. Rumors are they only spawn at night.",
     "suggestedLevel": 59,
     "prerequisiteQuestId": "cisco_trials_5f0bbbf9a4360e45",
     "activeTag": "q_cisco_trials_30a0bc21027b02a6_act",
@@ -2166,6 +2606,12 @@
         "target": "sons_of_sins:betrayed_guzzler",
         "amount": 5
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -2175,7 +2621,7 @@
     "title": "Misión 7916F8",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Misión 7916F8",
+    "description": "To begin your study of ambient magic you will need to craft a spell book. More powerful spellbooks can be found in dungeon chests , aquired from slaying enemies or crafted with very rare materials.",
     "suggestedLevel": 60,
     "prerequisiteQuestId": "cisco_trials_642c85e431896fb0",
     "activeTag": "q_cisco_trials_7916f83211133602_act",
@@ -2192,6 +2638,12 @@
         "target": "irons_spellbooks:copper_spell_book",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2201,7 +2653,7 @@
     "title": "Acquiring Ink",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Acquiring Ink",
+    "description": "Before you are able to inscribe your spell into your spell book you will need ink. These can be found in chests at different rarities but easily found from mage towers and defeating the wizards within.",
     "suggestedLevel": 61,
     "prerequisiteQuestId": "cisco_trials_4f6408adeb30e0fb",
     "activeTag": "q_cisco_trials_12e6e8aa3ada8496_act",
@@ -2218,6 +2670,16 @@
         "target": "irons_spellbooks:common_ink",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "irons_spellbooks:uncommon_ink",
+        "count": 5
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2227,7 +2689,7 @@
     "title": "Misión 1713C0",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Misión 1713C0",
+    "description": "With the ink you have collected you will also require a table to do the inscription. The inscription table can be easily crafted or \"borrowed\" from a mage structure.",
     "suggestedLevel": 62,
     "prerequisiteQuestId": "cisco_trials_12e6e8aa3ada8496",
     "activeTag": "q_cisco_trials_1713c024e6505594_act",
@@ -2244,6 +2706,12 @@
         "target": "irons_spellbooks:inscription_table",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "irons_spellbooks:fireball",
+        "count": 1
+      }
     ]
   },
   {
@@ -2253,7 +2721,7 @@
     "title": "Use Gems to increase spell power",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Use Gems to increase spell power",
+    "description": "Gems which increase spell power when socketed in the correct pieces of gear can significantly boost your magic damage output. You may only socket one gem of the archmage into your chestplate so it is recommended to use one of the highest quality available. Multiple source jewels may be socketed in thier respective pieces of gear however , which can provide stacking increases to damage.",
     "suggestedLevel": 63,
     "prerequisiteQuestId": "cisco_trials_5a24e1249722eea9",
     "activeTag": "q_cisco_trials_5c15bccd252805dc_act",
@@ -2279,7 +2747,7 @@
     "title": "Socketing Gems",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Socketing Gems",
+    "description": "Socketing gems into your equipment will boost the respective power of that magical school. The main way to find these gems would be within dungeons throughout the world.",
     "suggestedLevel": 64,
     "prerequisiteQuestId": "cisco_trials_609257bfa1739c99",
     "activeTag": "q_cisco_trials_430e2d9a0d2d5c61_act",
@@ -2296,6 +2764,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "apotheosis:gem_dust",
+        "count": 15
+      }
     ]
   },
   {
@@ -2305,7 +2779,7 @@
     "title": "Misión 609257",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Misión oficial de Cisco (Trials): Misión 609257",
+    "description": "The arcane anvil has multiple uses with the main being the combination of two scrolls of the same rarity into higher tier versions of themselves.",
     "suggestedLevel": 65,
     "prerequisiteQuestId": "cisco_trials_1713c024e6505594",
     "activeTag": "q_cisco_trials_609257bfa1739c99_act",
@@ -2322,6 +2796,16 @@
         "target": "irons_spellbooks:arcane_anvil",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "irons_spellbooks:arcane_essence",
+        "count": 5
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2331,7 +2815,7 @@
     "title": "The ultimate Spell Book",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): The ultimate Spell Book",
+    "description": "The ancient codex is the most powerful spell book and can be crafted with very rare materials.",
     "suggestedLevel": 66,
     "prerequisiteQuestId": "cisco_trials_430e2d9a0d2d5c61",
     "activeTag": "q_cisco_trials_03e41c9a2a59791a_act",
@@ -2348,6 +2832,20 @@
         "target": "irons_spellbooks:netherite_spell_book",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      },
+      {
+        "id": "irons_spellbooks:firebolt",
+        "count": 1
+      },
+      {
+        "id": "irons_spellbooks:epic_ink",
+        "count": 5
+      }
     ]
   },
   {
@@ -2357,7 +2855,7 @@
     "title": "Click the the checkmark.",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Click the the checkmark.",
+    "description": "Spells can be found throughout the world in dungeons and mage towers in the form of scrolls. These scrolls are single use only but can and should be inscribed into a spellbook to use repeatedly.",
     "suggestedLevel": 67,
     "prerequisiteQuestId": "cisco_trials_7916f83211133602",
     "activeTag": "q_cisco_trials_4f6408adeb30e0fb_act",
@@ -2374,6 +2872,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "irons_spellbooks:firebolt",
+        "count": 1
+      }
     ]
   },
   {
@@ -2383,7 +2887,7 @@
     "title": "Misión 526D9E",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Misión 526D9E",
+    "description": "The darksteel variant of the brightsteel multitool unrivalled in speed an efficiency.",
     "suggestedLevel": 68,
     "prerequisiteQuestId": "cisco_trials_6853d0c9370fdc1f",
     "activeTag": "q_cisco_trials_526d9e48aed9ff47_act",
@@ -2400,6 +2904,12 @@
         "target": "cisco_mod:darksteel_multitool",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -2409,7 +2919,7 @@
     "title": "Visit Ocean Monument",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Visit Ocean Monument",
+    "description": "Ocean monuments can be found within ocean biomes.",
     "suggestedLevel": 69,
     "prerequisiteQuestId": "cisco_trials_64286a21fdb8288f",
     "activeTag": "q_cisco_trials_1e29bfdbab318bb6_act",
@@ -2426,6 +2936,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2435,7 +2951,7 @@
     "title": "Slay the Elder Guardian",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Slay the Elder Guardian",
+    "description": "Gatekeeper The Elder Guardian is a powerful creature which guards the ocean monument. You can obtain the guardian eye required for opening the end portal from killing it.",
     "suggestedLevel": 70,
     "prerequisiteQuestId": "cisco_trials_1e29bfdbab318bb6",
     "activeTag": "q_cisco_trials_58711e64c6f2abf5_act",
@@ -2452,6 +2968,16 @@
         "target": "minecraft:elder_guardian",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -2461,7 +2987,7 @@
     "title": "Darksteel Armor",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Darksteel Armor",
+    "description": "Darksteel Armor provides superior overall protection with added defence against especially lethal hits. It also grants a permanent resistance buff.",
     "suggestedLevel": 71,
     "prerequisiteQuestId": "cisco_trials_7f28da2696d94242",
     "activeTag": "q_cisco_trials_7db626b9f20baadc_act",
@@ -2478,6 +3004,12 @@
         "target": "cisco_mod:darksteel_armor_helmet",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      }
     ]
   },
   {
@@ -2487,7 +3019,7 @@
     "title": "Misión 3AF40C",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Misión 3AF40C",
+    "description": "This table uses sigils of enhancement to further increase the power of your reforged affixes.",
     "suggestedLevel": 72,
     "prerequisiteQuestId": "cisco_trials_78c3cc2b67ed66b6",
     "activeTag": "q_cisco_trials_3af40cdf74652218_act",
@@ -2513,7 +3045,7 @@
     "title": "Find a bounty board",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Find a bounty board",
+    "description": "The bounty board allows you  to accept and complete small tasks in exchange for rewards. They can usually be found in villages.",
     "suggestedLevel": 73,
     "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
     "activeTag": "q_cisco_trials_22b92de71f6f923d_act",
@@ -2539,7 +3071,7 @@
     "title": "Find a village",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Find a village",
+    "description": "The villagers may be able to aid you in your journey  providing resources in exchange for protection. Seek out a village.",
     "suggestedLevel": 74,
     "prerequisiteQuestId": "cisco_trials_23864a4966441d61",
     "activeTag": "q_cisco_trials_5e23b10d82dbb573_act",
@@ -2565,7 +3097,7 @@
     "title": "Misión 6C3BF7",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Misión 6C3BF7",
+    "description": "This reforging table allows you reroll up to esoteric tier affixes.",
     "suggestedLevel": 75,
     "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
     "activeTag": "q_cisco_trials_6c3bf7e0c3286ef7_act",
@@ -2591,7 +3123,7 @@
     "title": "Misión 0A9E8B",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Misión oficial de Cisco (Trials): Misión 0A9E8B",
+    "description": "This reforging table allows you reroll up to ancient tier affixes.",
     "suggestedLevel": 76,
     "prerequisiteQuestId": "cisco_trials_6c3bf7e0c3286ef7",
     "activeTag": "q_cisco_trials_0a9e8bacb6289283_act",
@@ -2617,7 +3149,7 @@
     "title": "Misión 7815C7",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Misión 7815C7",
+    "description": "This useful tool will help you find any biome you desire.",
     "suggestedLevel": 20,
     "prerequisiteQuestId": "",
     "activeTag": "q_cisco_traveller_7815c719227c80e6_act",
@@ -2634,6 +3166,12 @@
         "target": "naturescompass:naturescompass",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -2643,7 +3181,7 @@
     "title": "Visit the twilight forest",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Visit the twilight forest",
+    "description": "This portal can be crafted with flowers and dirt and will take you to the twilight forest.",
     "suggestedLevel": 21,
     "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
     "activeTag": "q_cisco_traveller_0409ee265b906649_act",
@@ -2669,7 +3207,7 @@
     "title": "Acquire Naga's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire Naga's Head",
+    "description": "Can be found in Naga's Courtyard.",
     "suggestedLevel": 22,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_3bd706c24344cd30_act",
@@ -2686,6 +3224,12 @@
         "target": "twilightforest:naga_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2695,7 +3239,7 @@
     "title": "Acquire Lich's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire Lich's Head",
+    "description": "Can be found in the lich's tower.",
     "suggestedLevel": 23,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_008b7e891a9c410e_act",
@@ -2712,6 +3256,12 @@
         "target": "twilightforest:lich_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2721,7 +3271,7 @@
     "title": "Acquire Minoshroom's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire Minoshroom's Head",
+    "description": "Can be found at the bottom of the Labyrinth.",
     "suggestedLevel": 24,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_5ba1ae423d7c3c4a_act",
@@ -2738,6 +3288,12 @@
         "target": "twilightforest:minoshroom_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2747,7 +3303,7 @@
     "title": "Acquire the Hydra's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire the Hydra's Head",
+    "description": "Can be found in it's lair in a fire swamp.",
     "suggestedLevel": 25,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_5a7f819bcfdb9cbf_act",
@@ -2764,6 +3320,12 @@
         "target": "twilightforest:hydra_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2773,7 +3335,7 @@
     "title": "Acquire Knight Phantom's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire Knight Phantom's Head",
+    "description": "Can be found in a large room inside of the Goblin Knight Stronghold.",
     "suggestedLevel": 26,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_215073b10639703f_act",
@@ -2790,6 +3352,12 @@
         "target": "twilightforest:knight_phantom_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2799,7 +3367,7 @@
     "title": "Acquire the Ur-Ghast's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire the Ur-Ghast's Head",
+    "description": "Can be found at the top of the Dark Tower.",
     "suggestedLevel": 27,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_50d2e142736f982f_act",
@@ -2816,6 +3384,12 @@
         "target": "twilightforest:ur_ghast_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2825,7 +3399,7 @@
     "title": "Acquire the Alpha Yeti's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire the Alpha Yeti's Head",
+    "description": "Can be found in it's lair in the snowy forest.",
     "suggestedLevel": 28,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_6799e933c08da23d_act",
@@ -2842,6 +3416,12 @@
         "target": "twilightforest:alpha_yeti_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2851,7 +3431,7 @@
     "title": "Acquire the Snow Queen's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Acquire the Snow Queen's Head",
+    "description": "Can be found at the top of the Aurora Palace.",
     "suggestedLevel": 29,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_1f2d9615ba7ce672_act",
@@ -2868,6 +3448,12 @@
         "target": "twilightforest:snow_queen_trophy",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -2877,7 +3463,7 @@
     "title": "Craft the explorer's compass",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Misión oficial de Cisco (Traveller): Craft the explorer's compass",
+    "description": "This item will help you locate structures in your world.",
     "suggestedLevel": 30,
     "prerequisiteQuestId": "cisco_traveller_1f2d9615ba7ce672",
     "activeTag": "q_cisco_traveller_0c7ef344c1930a6f_act",
@@ -2894,6 +3480,16 @@
         "target": "explorerscompass:explorerscompass",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:enchanted_golden_apple",
+        "count": 5
+      },
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -2903,7 +3499,7 @@
     "title": "Visit keep kayra",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Visit keep kayra",
+    "description": "Raid this massive keep and take it's treasures.",
     "suggestedLevel": 31,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_3c812f7976a9223d_act",
@@ -2920,6 +3516,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "l2complements:totem_of_the_sea",
+        "count": 1
+      }
     ]
   },
   {
@@ -2929,7 +3531,7 @@
     "title": "Raid Shiraz Palace",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Raid Shiraz Palace",
+    "description": "Clear out this massive palace structure filled with powerful enemies and loot.",
     "suggestedLevel": 32,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_6c2dce962ac28480_act",
@@ -2946,6 +3548,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "l2complements:totem_of_dream",
+        "count": 1
+      }
     ]
   },
   {
@@ -2955,7 +3563,7 @@
     "title": "Raid Bastille",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Raid Bastille",
+    "description": "Clear out this fortified pillager camp.",
     "suggestedLevel": 33,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_4b649072887655a1_act",
@@ -2972,6 +3580,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
     ]
   },
   {
@@ -2981,7 +3595,7 @@
     "title": "Raid the Dungeon Crawl Dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Raid the Dungeon Crawl Dungeon",
+    "description": "This massive dungeon may appear small on the surface but houses many floors which get harder but more rewarding as you descend.",
     "suggestedLevel": 34,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_0ac77373513b6cc9_act",
@@ -2998,6 +3612,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:enchanted_golden_apple",
+        "count": 5
+      }
     ]
   },
   {
@@ -3007,7 +3627,7 @@
     "title": "Visit the aether dimension",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Visit the aether dimension",
+    "description": "Visit the dimension in the sky.",
     "suggestedLevel": 35,
     "prerequisiteQuestId": "cisco_traveller_0ac77373513b6cc9",
     "activeTag": "q_cisco_traveller_22a1e4ba57d4a830_act",
@@ -3033,7 +3653,7 @@
     "title": "Find the bronze dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Find the bronze dungeon",
+    "description": "The first of the three dungeons in the aether.",
     "suggestedLevel": 36,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_3034fc307834e034_act",
@@ -3059,7 +3679,7 @@
     "title": "Find the silver dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Find the silver dungeon",
+    "description": "Find the the silver dungeon and slay valkyries to obtain victory medals.",
     "suggestedLevel": 37,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_4569ae5e16c87b01_act",
@@ -3085,7 +3705,7 @@
     "title": "Find the gold dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Find the gold dungeon",
+    "description": "The last of the dungeons within the aether .",
     "suggestedLevel": 38,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_3576d8407e23183e_act",
@@ -3111,7 +3731,7 @@
     "title": "Defeat the slider",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Defeat the slider",
+    "description": "This boss can be found in the bronze dungeon. Must be defeated using pickaxes or shovels.",
     "suggestedLevel": 39,
     "prerequisiteQuestId": "cisco_traveller_3034fc307834e034",
     "activeTag": "q_cisco_traveller_1fa1b5af726f368e_act",
@@ -3128,6 +3748,12 @@
         "target": "aether:slider",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -3137,7 +3763,7 @@
     "title": "Slay the Valkyrie Queen",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Slay the Valkyrie Queen",
+    "description": "After obtaining 10 victory medals you may challenge the valkyrie queen.",
     "suggestedLevel": 40,
     "prerequisiteQuestId": "cisco_traveller_4569ae5e16c87b01",
     "activeTag": "q_cisco_traveller_2e5bf8d65a759fff_act",
@@ -3154,6 +3780,12 @@
         "target": "aether:valkyrie_queen",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -3163,7 +3795,7 @@
     "title": "Slay the Sun Spirit",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Misión oficial de Cisco (Traveller): Slay the Sun Spirit",
+    "description": "The sun spirit resides in the gold dungeon once slain the aether will no longer be in a a state of perputual daytime.",
     "suggestedLevel": 41,
     "prerequisiteQuestId": "cisco_traveller_3576d8407e23183e",
     "activeTag": "q_cisco_traveller_2dd7b0278eacd633_act",
@@ -3180,6 +3812,12 @@
         "target": "aether:sun_spirit",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -3189,7 +3827,7 @@
     "title": "Craft a backpack",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Craft a backpack",
+    "description": "The backpack is an item that holds items and can be carried with the player. It has numerous utility upgrades and can be expanded all the way from standard to netherite tier for even more extra storage.",
     "suggestedLevel": 42,
     "prerequisiteQuestId": "cisco_traveller_2dd7b0278eacd633",
     "activeTag": "q_cisco_traveller_5f2456e5bf06098c_act",
@@ -3206,6 +3844,16 @@
         "target": "sophisticatedbackpacks:backpack",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 5
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3215,7 +3863,7 @@
     "title": "Misión 39ADA7",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 39ADA7",
+    "description": "This utility upgrade allows the user to store stacks of items in the same slot. Can be upgraded from 2 stacks all the way to 16.",
     "suggestedLevel": 43,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_39ada7b5ed04f4c1_act",
@@ -3232,6 +3880,12 @@
         "target": "sophisticatedbackpacks:stack_upgrade_tier_1",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3241,7 +3895,7 @@
     "title": "Misión 22388F",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 22388F",
+    "description": "This utility upgrade allows the backpack to to become indestructible.",
     "suggestedLevel": 44,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_22388f2d91480e82_act",
@@ -3258,6 +3912,12 @@
         "target": "sophisticatedbackpacks:everlasting_upgrade",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3267,7 +3927,7 @@
     "title": "Misión 1972EE",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 1972EE",
+    "description": "This ultility upgrade allows for smelting within the backpack. This function can be upgraded further.",
     "suggestedLevel": 45,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_1972ee649fc972e7_act",
@@ -3284,6 +3944,12 @@
         "target": "sophisticatedbackpacks:smelting_upgrade",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3293,7 +3959,7 @@
     "title": "Misión 2DCCC1",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 2DCCC1",
+    "description": "This utility upgrade allows for crafting within the backpack.",
     "suggestedLevel": 46,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_2dccc1e1567de875_act",
@@ -3310,6 +3976,12 @@
         "target": "sophisticatedbackpacks:crafting_upgrade",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3319,7 +3991,7 @@
     "title": "Misión 513C6A",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 513C6A",
+    "description": "This utility upgrade allows the backpack to automatically feed the player with items from thier inventory.",
     "suggestedLevel": 47,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_513c6a72927972c9_act",
@@ -3336,6 +4008,12 @@
         "target": "sophisticatedbackpacks:feeding_upgrade",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3345,7 +4023,7 @@
     "title": "Craft the iron furnace",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Craft the iron furnace",
+    "description": "Furnaces can be upgrade by combining them with rare metals.",
     "suggestedLevel": 48,
     "prerequisiteQuestId": "cisco_traveller_513c6a72927972c9",
     "activeTag": "q_cisco_traveller_4faecf44cfbe7eec_act",
@@ -3362,6 +4040,16 @@
         "target": "ironfurnaces:iron_furnace",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "count": 3
+      }
     ]
   },
   {
@@ -3371,7 +4059,7 @@
     "title": "Craft the golden furnace",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Craft the golden furnace",
+    "description": "The gold furnace boasts faster cook speed than the iron and can be upgraded even further .",
     "suggestedLevel": 49,
     "prerequisiteQuestId": "cisco_traveller_4faecf44cfbe7eec",
     "activeTag": "q_cisco_traveller_02d166e4ffb3baf6_act",
@@ -3388,6 +4076,16 @@
         "target": "ironfurnaces:gold_furnace",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 3
+      }
     ]
   },
   {
@@ -3397,7 +4095,7 @@
     "title": "Misión 2754C9",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 2754C9",
+    "description": "This station will act as stone cutter for wood allowing you to obtain many different variants.",
     "suggestedLevel": 50,
     "prerequisiteQuestId": "cisco_traveller_02d166e4ffb3baf6",
     "activeTag": "q_cisco_traveller_2754c959bc321288_act",
@@ -3423,7 +4121,7 @@
     "title": "Stone Wand",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Stone Wand",
+    "description": "Building wands will allow you to build large structures quickly and effieciently.",
     "suggestedLevel": 51,
     "prerequisiteQuestId": "cisco_traveller_2754c959bc321288",
     "activeTag": "q_cisco_traveller_736e4b5e45e37f9c_act",
@@ -3440,6 +4138,12 @@
         "target": "constructionwand:stone_wand",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3449,7 +4153,7 @@
     "title": "Misión 452481",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Misión oficial de Cisco (Traveller): Misión 452481",
+    "description": "Building wands can be upgrade from stone tier to infinity tier. Cores may also be combined with wands to increase functionality.",
     "suggestedLevel": 52,
     "prerequisiteQuestId": "cisco_traveller_736e4b5e45e37f9c",
     "activeTag": "q_cisco_traveller_4524817476a2b36d_act",
@@ -3466,6 +4170,12 @@
         "target": "constructionwand:iron_wand",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 1
+      }
     ]
   },
   {
@@ -3475,7 +4185,7 @@
     "title": "Easy Villagers Auto Trader",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Auto Trader",
+    "description": "You may place a villager with an occupation into the autotrader selecting the items you wish to trade. The auto trader will then automate that trade.",
     "suggestedLevel": 53,
     "prerequisiteQuestId": "cisco_traveller_4524817476a2b36d",
     "activeTag": "q_cisco_traveller_5e30054f5210d394_act",
@@ -3492,6 +4202,12 @@
         "target": "easy_villagers:auto_trader",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3501,7 +4217,7 @@
     "title": "Easy Villagers Trading",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Trading",
+    "description": "You may place a villager with an occupation within the trader to gain easy access to thier trades whenever you require.",
     "suggestedLevel": 54,
     "prerequisiteQuestId": "cisco_traveller_5e30054f5210d394",
     "activeTag": "q_cisco_traveller_2d15560c7952aff6_act",
@@ -3518,6 +4234,12 @@
         "target": "easy_villagers:trader",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3527,7 +4249,7 @@
     "title": "Easy Villagers Iron Farm",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Iron Farm",
+    "description": "You may place a villager into the iron farm to begin automatically farming iron.",
     "suggestedLevel": 55,
     "prerequisiteQuestId": "cisco_traveller_2d15560c7952aff6",
     "activeTag": "q_cisco_traveller_2ff19466e4710c4d_act",
@@ -3544,6 +4266,12 @@
         "target": "easy_villagers:iron_farm",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3553,7 +4281,7 @@
     "title": "Easy Villagers Farmer",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Farmer",
+    "description": "You may place a farmer villager and seeds within the farmer to automate crop farming.",
     "suggestedLevel": 56,
     "prerequisiteQuestId": "cisco_traveller_2ff19466e4710c4d",
     "activeTag": "q_cisco_traveller_514e2cb906303e01_act",
@@ -3570,6 +4298,12 @@
         "target": "easy_villagers:farmer",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3579,7 +4313,7 @@
     "title": "Easy Villagers Converting",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Converting",
+    "description": "The converter automatically converts villagers to zombie villagers then back into regular villagers. This process decreases their trade prices and requires you to input a villager , golden apple and any potion of weakness.",
     "suggestedLevel": 57,
     "prerequisiteQuestId": "cisco_traveller_514e2cb906303e01",
     "activeTag": "q_cisco_traveller_2ec1bd31a2a70282_act",
@@ -3596,6 +4330,12 @@
         "target": "easy_villagers:converter",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3605,7 +4345,7 @@
     "title": "Easy Villagers Breeding",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Breeding",
+    "description": "The breeder requires you two input two villagers and a food item to then produce baby villagers.",
     "suggestedLevel": 58,
     "prerequisiteQuestId": "cisco_traveller_2ec1bd31a2a70282",
     "activeTag": "q_cisco_traveller_61164317e99bf787_act",
@@ -3622,6 +4362,12 @@
         "target": "easy_villagers:breeder",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3631,7 +4377,7 @@
     "title": "Easy Villagers Incubator",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Easy Villagers Incubator",
+    "description": "The Incubator increases the growth rate of baby villagers.",
     "suggestedLevel": 59,
     "prerequisiteQuestId": "cisco_traveller_61164317e99bf787",
     "activeTag": "q_cisco_traveller_0342dba7699ae3d0_act",
@@ -3648,6 +4394,12 @@
         "target": "easy_villagers:incubator",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -3657,7 +4409,7 @@
     "title": "Find the Olympic Citadel",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Find the Olympic Citadel",
+    "description": "The olympic Citadel was once believed to be the home of gods now abadoned after they were almost completely wiped out by Fell King Arthas and the fell forces.",
     "suggestedLevel": 60,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_54ec21b27a5a31ad_act",
@@ -3674,6 +4426,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -3683,7 +4441,7 @@
     "title": "Visit the Nether",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Nether",
+    "description": "The Nether dimension has been enhanced now featuring a more varied and atmospheric version with new landscapes and challenges.",
     "suggestedLevel": 61,
     "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
     "activeTag": "q_cisco_traveller_099e53ee758f1f2c_act",
@@ -3709,7 +4467,7 @@
     "title": "Travel to the End",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Travel to the End",
+    "description": "The End dimension has undergone a massive transformation, turning it into a vibrant, more diverse, and visually stunning world.",
     "suggestedLevel": 62,
     "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
     "activeTag": "q_cisco_traveller_0037e919a5da26df_act",
@@ -3735,7 +4493,7 @@
     "title": "Visit the Soul Plain",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Soul Plain",
+    "description": "The Soul Plain  is a desolate, eerie landscape filled with dark, ghostly elements. It features a twisted, haunting environment with a purple-gray palette, and is often inhabited by hostile mobs like Soul Eaters.",
     "suggestedLevel": 63,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_3b36c3ef12b4ff3c_act",
@@ -3761,7 +4519,7 @@
     "title": "Find the Platinum dungeon",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Find the Platinum dungeon",
+    "description": "Find the platinum dungeon, within lies your final foe the aerwhale king.",
     "suggestedLevel": 64,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_2fc3c0ef214ed424_act",
@@ -3787,7 +4545,7 @@
     "title": "Defeat the Aerwhale King",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Defeat the Aerwhale King",
+    "description": "Residing atop the platinum dungeon the aerwhale king is a formiddable foe. Defeat him and claim the platinum key.",
     "suggestedLevel": 65,
     "prerequisiteQuestId": "cisco_traveller_2fc3c0ef214ed424",
     "activeTag": "q_cisco_traveller_63007c16471db9e3_act",
@@ -3813,7 +4571,7 @@
     "title": "Visit the Bone Reef",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Bone Reef",
+    "description": "The Bone Reef underwater-like environment found within the Nether. It features large, bleached bone structures that resemble a vast coral reef, with bones and skeletons scattered throughout. The biome has a haunting aesthetic, often filled with hostile mobs like Bone Sharks and other skeleton-themed creatures.",
     "suggestedLevel": 66,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_7d909ecb706f1882_act",
@@ -3839,7 +4597,7 @@
     "title": "Visit the crimson glowing woods",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the crimson glowing woods",
+    "description": "The Crimson Glowing Woods is a vibrant and eerie area filled with towering crimson trees that emit a soft, glowing light. The landscape is dominated by dense forests of these glowing trees, with the ground covered in crimson-colored grass and fungi.",
     "suggestedLevel": 67,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_74fbea79142079d2_act",
@@ -3865,7 +4623,7 @@
     "title": "Visit the dead upside down forest",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the dead upside down forest",
+    "description": "The Upside Down Forest is a surreal landscape where the trees grow inverted, with their roots reaching toward the sky. The forest is filled with dead, twisted trees and a haunting atmosphere, as the ground is covered in withered foliage and dark vegetation.",
     "suggestedLevel": 68,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_71d9b5a1692b2449_act",
@@ -3891,7 +4649,7 @@
     "title": "Visit the flooded deltas",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the flooded deltas",
+    "description": "The Flooded Deltas is a murky, waterlogged area within the Nether. The terrain is covered in pools of dark, stagnant water and is filled with jagged, often submerged rocks and volcanic features. The biome's atmosphere is gloomy and treacherous, with hostile mobs like Sludges and other water-adapted creatures lurking in the depths.",
     "suggestedLevel": 69,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_7ab3a2feb07e0d8f_act",
@@ -3917,7 +4675,7 @@
     "title": "Visit the Amber Land ",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Amber Land ",
+    "description": "The Amber Land biome  is one of the more visually striking and immersive areas within the revamped End dimension. It’s a rich, warm colored biome that feels like stepping into a completely different realm within the End, full of both beauty and mystery.",
     "suggestedLevel": 70,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_715f9e89062b1f30_act",
@@ -3943,7 +4701,7 @@
     "title": "Visit the Blossoming Spires",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Blossoming Spires",
+    "description": "The Blossoming Spires biome is a stunning and ethereal landscape characterized by towering spires of glowing, crystalline structures and vibrant, floating flora. The biome is filled with Blossoming Trees that have delicate, colorful petals, and the ground is covered in lush, flower-filled grass.",
     "suggestedLevel": 71,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_22d351c8d4c06690_act",
@@ -3969,7 +4727,7 @@
     "title": "Visit the Chorus Forest",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Chorus Forest",
+    "description": "The Chorus Forest biome is a mystical and vibrant landscape, featuring towering Chorus Trees that grow in dense clusters, their twisted branches covered in glowing Chorus Flowers. The biome is filled with a variety of Chorus-like vegetation, giving it a surreal, otherworldly appearance.",
     "suggestedLevel": 72,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_6c6310591cf4d15f_act",
@@ -3995,7 +4753,7 @@
     "title": "Visit the Crystal Mountains",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Crystal Mountains",
+    "description": "The Crystal Mountains biome  is a breathtaking, jagged landscape dominated by towering, glittering Crystal Spires and massive, crystalline formations. The ground is dotted with Crystal Shards and rich veins of Endstone Ore, glowing with various colors that reflect off the crystals scattered throughout the area.",
     "suggestedLevel": 73,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_1cd2bf55b58e0dc0_act",
@@ -4021,7 +4779,7 @@
     "title": "Visit the Dragon Graveyards",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Misión oficial de Cisco (Traveller): Visit the Dragon Graveyards",
+    "description": "The Dragon Graveyards biome is a haunting, eerie area filled with the remains of ancient dragons. The biome is characterized by vast, desolate landscapes littered with Dragon Bones, massive Skeletons, and crumbled dragon skulls that serve as eerie reminders of a forgotten time.",
     "suggestedLevel": 74,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_0e8170950eede373_act",
@@ -4047,7 +4805,7 @@
     "title": "Misión 4B4BF1",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Misión oficial de Cisco (Dragons): Misión 4B4BF1",
+    "description": "Knowlwedge keeps you alive. A Bestiary contains information about most of the magical creatures you may encounter possibly granting you a combat advantage. The manuscripts you will need can be found within chests in caves , dragon roosts or graveyards.",
     "suggestedLevel": 35,
     "prerequisiteQuestId": "cisco_dragons_0d904a47c1eda7de",
     "activeTag": "q_cisco_dragons_4b4bf1ff89c31aca_act",
@@ -4064,6 +4822,12 @@
         "target": "iceandfire:bestiary",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -4073,7 +4837,7 @@
     "title": "Misión 2FB157",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Misión oficial de Cisco (Dragons): Misión 2FB157",
+    "description": "The Bestiary Lecturn will allow you add chapters to your bestiary by combining it with manuscripts.",
     "suggestedLevel": 36,
     "prerequisiteQuestId": "cisco_dragons_4b4bf1ff89c31aca",
     "activeTag": "q_cisco_dragons_2fb1578ebe95b902_act",
@@ -4090,6 +4854,12 @@
         "target": "iceandfire:lectern",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -4099,7 +4869,7 @@
     "title": "Misión 57F0E5",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Misión oficial de Cisco (Dragons): Misión 57F0E5",
+    "description": "Silver is a metal that can be found on the same level as gold and can be used to create tools and armor which are especially effective against undead.",
     "suggestedLevel": 37,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_57f0e543419b8d21_act",
@@ -4116,6 +4886,12 @@
         "target": "iceandfire:silver_ingot",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      }
     ]
   },
   {
@@ -4125,7 +4901,7 @@
     "title": "Misión 779907",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Misión oficial de Cisco (Dragons): Misión 779907",
+    "description": "The Ice dragon summoning crystal is an item that can teleport a ice dragon to you. To do so, use on a dragon to bind it and after, use when bound to teleport the dragon . After usage, the crystal will be unbound to the dragon and therefore you must use on the dragon again to rebind the crystal. Crystals are bound to a dragon when a black dragon silhouette appears on the crystal.",
     "suggestedLevel": 38,
     "prerequisiteQuestId": "cisco_dragons_42821297260c128f",
     "activeTag": "q_cisco_dragons_7799076a92b03ca8_act",
@@ -4151,7 +4927,7 @@
     "title": "Misión 4E213C",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Misión oficial de Cisco (Dragons): Misión 4E213C",
+    "description": "The lightning dragon summoning crystal is an item that can teleport a lightning dragon to you. To do so, use on a dragon to bind it and after, use when bound to teleport the dragon . After usage, the crystal will be unbound to the dragon and therefore you must use on the dragon again to rebind the crystal. Crystals are bound to a dragon when a black dragon silhouette appears on the crystal.",
     "suggestedLevel": 39,
     "prerequisiteQuestId": "cisco_dragons_32e7d93bb699594e",
     "activeTag": "q_cisco_dragons_4e213c9d6719a0e0_act",
@@ -4177,7 +4953,7 @@
     "title": "Befriend a pixie",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Misión oficial de Cisco (Dragons): Befriend a pixie",
+    "description": "Pixies are small magical creatures that glow in the dark and may attempt to steal your items. They are found in pixie villages and can be captured  with a jar or befriended with cake. They also give special buffs respective to thier colour.",
     "suggestedLevel": 40,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_49b6952745916f6a_act",
@@ -4194,6 +4970,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -4203,7 +4985,7 @@
     "title": "Tame a Hippocampus",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Misión oficial de Cisco (Dragons): Tame a Hippocampus",
+    "description": "Hippocampi are aquatic creatures with the head of a horse and the body of a fish which can be found swimming within the ocean and deep ocean biomes. They can be tamed with kelp and bred with prismarine crystals.",
     "suggestedLevel": 41,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_42115cd2d6becadc_act",
@@ -4220,6 +5002,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      }
     ]
   },
   {
@@ -4229,7 +5017,7 @@
     "title": "Tame a Hippogryth",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Misión oficial de Cisco (Dragons): Tame a Hippogryth",
+    "description": "Hippogryphs are half eagle half horse hybrids that usually live on mountains. They can be tamed with 8 rabbit feet and bred with rabbit stew.",
     "suggestedLevel": 42,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_1a46cb18c1eba3cc_act",
@@ -4246,6 +5034,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
     ]
   },
   {
@@ -4255,7 +5049,7 @@
     "title": "Kill a Dread Lich",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Misión oficial de Cisco (Dragons): Kill a Dread Lich",
+    "description": "There is a dark fortress lurking within cold biomes that houses great rewards but equally powerful foes. In order to gain entry you will need to obtain the gravemasters key  which drops from dread liches. Dread liches can also be found within cold biomes.",
     "suggestedLevel": 43,
     "prerequisiteQuestId": "cisco_dragons_7799076a92b03ca8",
     "activeTag": "q_cisco_dragons_08f7cb6dc5642787_act",
@@ -4272,6 +5066,12 @@
         "target": "iceandfire:dread_lich",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
     ]
   },
   {
@@ -4281,7 +5081,7 @@
     "title": "Find the Mausoleum",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Misión oficial de Cisco (Dragons): Find the Mausoleum",
+    "description": "This impenetrable fortress must be accessed with the gravemasters key. Deep within you will find a partially incomplete ice dragon forge which can be repaired and used to make dragonsteel.",
     "suggestedLevel": 44,
     "prerequisiteQuestId": "cisco_dragons_08f7cb6dc5642787",
     "activeTag": "q_cisco_dragons_739e8acf6d6cb5f2_act",
@@ -4298,6 +5098,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 8
+      }
     ]
   },
   {
@@ -4307,7 +5113,7 @@
     "title": "Slay Fire Dragons",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Misión oficial de Cisco (Dragons): Slay Fire Dragons",
+    "description": "Fire dragons can be recognised by thier colours which range from fiery red , emerald green , bold yellow or smoky black. Fire dragons usally linger around any biome above -0.5 degrees in temperature except jungles, savannahs and badlands. Stages 1-3 prefer roosts on the surface , whilst stages 4-5 lurk in caverns underground.",
     "suggestedLevel": 45,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_3581698345b96e17_act",
@@ -4324,6 +5130,12 @@
         "target": "iceandfire:fire_dragon",
         "amount": 3
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 35
+      }
     ]
   },
   {
@@ -4333,7 +5145,7 @@
     "title": "Slay Lightning Dragons",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Misión oficial de Cisco (Dragons): Slay Lightning Dragons",
+    "description": "Lightning dragons can be recognised by their colours which range from amethyst purple, dark black copper brown or electric blue. Lightning dragons can only be found in jungle , savannah and badlands biomes and are nocturnal creatures. Stage 1-3 lightning dragons are usually found in roosts on the surface whilst stage 4-5 are found underground in caverns.",
     "suggestedLevel": 46,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_5fdfc696623e2bda_act",
@@ -4350,6 +5162,12 @@
         "target": "iceandfire:lightning_dragon",
         "amount": 3
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 45
+      }
     ]
   },
   {
@@ -4359,7 +5177,7 @@
     "title": "Slay Ice Dragons",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Misión oficial de Cisco (Dragons): Slay Ice Dragons",
+    "description": "Ice dragons can be recognised by thier colours which range from icy blue , gem blue , silver white or snowy white. Ice dragons can usually be found in cold biomes ranging from -0.5 degrees in temperature and below. Stage 1-3 dragons prefer roosts on the surface , whilst stage 4-5 dragons lurk in subterrean caverns .",
     "suggestedLevel": 47,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_76ea98db3c884c58_act",
@@ -4376,6 +5194,12 @@
         "target": "iceandfire:ice_dragon",
         "amount": 3
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 40
+      }
     ]
   },
   {
@@ -4385,7 +5209,7 @@
     "title": "Misión 6B949C",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Misión oficial de Cisco (Dragons): Misión 6B949C",
+    "description": "The fire dragon summoning crystal is an item that can teleport a fire dragon to you. To do so, use on a dragon to bind it and after, use when bound to teleport the dragon . After usage, the crystal will be unbound to the dragon and therefore you must use on the dragon again to rebind the crystal. Crystals are bound to a dragon when a black dragon silhouette appears on the crystal.",
     "suggestedLevel": 48,
     "prerequisiteQuestId": "cisco_dragons_50d03004776882cb",
     "activeTag": "q_cisco_dragons_6b949cdb464620fc_act",
@@ -4411,7 +5235,7 @@
     "title": "The Cyclops",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Misión oficial de Cisco (Dragons): The Cyclops",
+    "description": "The cyclops is a giant humanoid creature that can usually be found in the cyclops cove and savannah biomes. It's eye can be damaged with projectiles to make the fight easier.",
     "suggestedLevel": 49,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_415040716e8b4edb_act",
@@ -4428,6 +5252,12 @@
         "target": "iceandfire:cyclops",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 4
+      }
     ]
   },
   {
@@ -4437,7 +5267,7 @@
     "title": "The Gorgon",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Misión oficial de Cisco (Dragons): The Gorgon",
+    "description": "The Gorgon is a half human half serpent creature capable of petrifying it's victims with it's gaze. It will also attempt to poison and weaken you. Should you fight it,  an equipped blindfold will greatly aid you.",
     "suggestedLevel": 50,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_17cca12d76f9f396_act",
@@ -4454,6 +5284,12 @@
         "target": "iceandfire:gorgon",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
     ]
   },
   {
@@ -4463,7 +5299,7 @@
     "title": "The Hydra",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Misión oficial de Cisco (Dragons): The Hydra",
+    "description": "The Hydra is a powerful multiheaded serpent which can be found in the hydra lair exclusive to swamp biomes. It is recommended to fight it with fire damage to avoid it regenerating and growing new heads.",
     "suggestedLevel": 51,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_0116c409c773f4a2_act",
@@ -4480,6 +5316,12 @@
         "target": "iceandfire:hydra",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 6
+      }
     ]
   },
   {
@@ -4489,7 +5331,7 @@
     "title": "Tame a Dragon",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Misión oficial de Cisco (Dragons): Tame a Dragon",
+    "description": "Wild dragons cannot be tamed. However upon slaying one you may obtain an egg that you can hatch to tame one for yourself. Fire dragon eggs must be hatched in fire or lava. Ice dragon eggs must be hatched in water surrounded by ice. Lightning dragon eggs must be hatched exposed to rain.",
     "suggestedLevel": 52,
     "prerequisiteQuestId": "cisco_dragons_76ea98db3c884c58",
     "activeTag": "q_cisco_dragons_2b2cfa2d079b5332_act",
@@ -4506,6 +5348,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "iceandfire:dragon_meal",
+        "count": 5
+      }
     ]
   },
   {
@@ -4515,7 +5363,7 @@
     "title": "Fallen Heroes",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Misión oficial de Cisco (Dragons): Fallen Heroes",
+    "description": "Long after the deaths of Cisco and the mysterious hero who helped him defeat Fell King Arthas, the  conflict continued between the descendants of Arthas and Cisco. The conflict lasted for hundreds of years before Cisco's descendant Arthur made a bold move in marrying Arthas' descendant Sylvi combining their bloodlines to end the conflict.",
     "suggestedLevel": 53,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_290d9d572a5d6c04_act",
@@ -4532,6 +5380,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -4541,7 +5395,7 @@
     "title": "Alexander",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Misión oficial de Cisco (Dragons): Alexander",
+    "description": "Arthur and Sylvi's son would inherit a power so great that he could warp reality and bend time itself. He would use his power to unite all the known realms under his fair and just rule. He lived for hundreds of years de-aging himself when he got too old increasing the chaotic temporal energy within himself.. This however would impact anyone who got too close to him stealing thier \"time\" and causing them to rapidly age eventually into dust. This made him severly lonely and one day leaving instructions on how to rule to his heir he flew up into the sky and released all the temporal energy back into the world ending his own life in the process.",
     "suggestedLevel": 54,
     "prerequisiteQuestId": "cisco_dragons_290d9d572a5d6c04",
     "activeTag": "q_cisco_dragons_292408bf95dc3f81_act",
@@ -4558,6 +5412,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -4567,7 +5427,7 @@
     "title": "Draconic Era",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Misión oficial de Cisco (Dragons): Draconic Era",
+    "description": "The released temporal energy would have disastrous effects on the world empowering once docile magical creatures , resurrecting ancient beasts, empowering existing hostile creatures and creating pockets underground where time would behave differently. One such magical beast was the Dragon. Once passive docile creatures they became aggresive and began to hunt humans attacking thier settlements. With the power in the blood of humans diluted and weakened through the ages none could stand against the threat they posed. Until..",
     "suggestedLevel": 55,
     "prerequisiteQuestId": "cisco_dragons_292408bf95dc3f81",
     "activeTag": "q_cisco_dragons_0d904a47c1eda7de_act",
@@ -4584,6 +5444,12 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "skilltree:wisdom_scroll",
+        "count": 1
+      }
     ]
   },
   {
@@ -4593,7 +5459,7 @@
     "title": "Misión 32E7D9",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Misión oficial de Cisco (Dragons): Misión 32E7D9",
+    "description": "The eye of the lightning dragon can be crafted using lightning  dragon blood and ender pearls and used to locate lightning dragons in the same way you would locate a stronghold.",
     "suggestedLevel": 56,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_32e7d93bb699594e_act",
@@ -4610,6 +5476,16 @@
         "target": "eyesoficeandfire:eye_of_lightning_dragon",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      },
+      {
+        "id": "minecraft:ender_pearl",
+        "count": 2
+      }
     ]
   },
   {
@@ -4619,7 +5495,7 @@
     "title": "Misión 50D030",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Misión oficial de Cisco (Dragons): Misión 50D030",
+    "description": "The eye of the fire dragon can be crafted using fire  dragon blood and ender pearls and used to locate fire dragons in the same way you would locate a stronghold.",
     "suggestedLevel": 57,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_50d03004776882cb_act",
@@ -4636,6 +5512,16 @@
         "target": "eyesoficeandfire:eye_of_fire_dragon",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      },
+      {
+        "id": "minecraft:ender_pearl",
+        "count": 2
+      }
     ]
   },
   {
@@ -4645,7 +5531,7 @@
     "title": "Misión 428212",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Misión oficial de Cisco (Dragons): Misión 428212",
+    "description": "The eye of the ice dragon can be crafted using ice  dragon blood and ender pearls and used to locate ice dragons in the same way you would locate a stronghold.",
     "suggestedLevel": 58,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_42821297260c128f_act",
@@ -4662,6 +5548,16 @@
         "target": "eyesoficeandfire:eye_of_ice_dragon",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 2
+      },
+      {
+        "id": "minecraft:ender_pearl",
+        "count": 2
+      }
     ]
   },
   {
@@ -4671,7 +5567,7 @@
     "title": "Misión 630C84",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Misión oficial de Cisco (Dragons): Misión 630C84",
+    "description": "This relic can be used to command tamed dragons to wander stay or follow you. It can also be set a home for tamed dragons.",
     "suggestedLevel": 59,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_630c84a0fd01dd37_act",
@@ -4688,6 +5584,16 @@
         "target": "iceandfire:dragon_stick",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "iceandfire:dragon_meal",
+        "count": 3
+      },
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 3
+      }
     ]
   },
   {
@@ -4697,7 +5603,7 @@
     "title": "Craft Dragonsteel",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Misión oficial de Cisco (Dragons): Craft Dragonsteel",
+    "description": "Once you have completed a dragonforge you may begin crafting dragonsteel by placing dragon blood within the forge and having a stage 3 - 5 dragon use thier breath attack on it. Dragonsteel can be used to craft powerful tools and armor that will aid you in slaying even more powerful dragons.",
     "suggestedLevel": 60,
     "prerequisiteQuestId": "cisco_dragons_739e8acf6d6cb5f2",
     "activeTag": "q_cisco_dragons_65747b80333e3613_act",
@@ -4714,6 +5620,20 @@
         "target": "",
         "required": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "iceandfire:dragonsteel_fire_ingot",
+        "count": 1
+      },
+      {
+        "id": "iceandfire:dragonsteel_ice_ingot",
+        "count": 1
+      },
+      {
+        "id": "iceandfire:dragonsteel_lightning_ingot",
+        "count": 1
+      }
     ]
   },
   {
@@ -4723,7 +5643,7 @@
     "title": "Craft dreadsteel",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Misión oficial de Cisco (Dragons): Craft dreadsteel",
+    "description": "Dreadsteel is the most powerful material that can be forged to combat dragons. Armor forged with dreadsteel provide incredible defense and resistances whilst weapons forged in dreadsteel are unmatched in lethality.",
     "suggestedLevel": 61,
     "prerequisiteQuestId": "cisco_dragons_65747b80333e3613",
     "activeTag": "q_cisco_dragons_2e78225f6244bf7a_act",
@@ -4740,6 +5660,12 @@
         "target": "dreadsteel:dreadsteel_ingot",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "dreadsteel:dreadsteel_ingot",
+        "count": 1
+      }
     ]
   },
   {
@@ -4749,7 +5675,7 @@
     "title": "Craft Dreadsteel Armor",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Misión oficial de Cisco (Dragons): Craft Dreadsteel Armor",
+    "description": "Dreadsteel Armor provides immunity to damage from fire ,lightning and spikes making it especially good against dragons.",
     "suggestedLevel": 62,
     "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
     "activeTag": "q_cisco_dragons_5129a01a2dc55bb4_act",
@@ -4766,6 +5692,20 @@
         "target": "dreadsteel:dreadsteel_helmet",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "dreadsteel:kit_white",
+        "count": 1
+      },
+      {
+        "id": "dreadsteel:kit_black",
+        "count": 1
+      },
+      {
+        "id": "dreadsteel:kit_bronze",
+        "count": 1
+      }
     ]
   },
   {
@@ -4775,7 +5715,7 @@
     "title": "Misión 031859",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Misión oficial de Cisco (Dragons): Misión 031859",
+    "description": "This weapon is capable of firing armor piercing projectiles which can easily keep up with dragons flying and high speeds.",
     "suggestedLevel": 63,
     "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
     "activeTag": "q_cisco_dragons_031859030d60c602_act",
@@ -4792,6 +5732,12 @@
         "target": "dreadsteel:dreadsteel_scythe",
         "amount": 1
       }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
+      }
     ]
   },
   {
@@ -4801,7 +5747,7 @@
     "title": "Misión 635DD0",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Misión oficial de Cisco (Dragons): Misión 635DD0",
+    "description": "This shield incinerates incoming projectiles and burns melee attacks when blocking.",
     "suggestedLevel": 64,
     "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
     "activeTag": "q_cisco_dragons_635dd0dac9cf17d5_act",
@@ -4817,6 +5763,12 @@
         "description": "Consigue 1x Dreadsteel Shield",
         "target": "dreadsteel:dreadsteel_shield",
         "amount": 1
+      }
+    ],
+    "rewardItems": [
+      {
+        "id": "cisco_mod:champion_coin",
+        "count": 5
       }
     ]
   }
