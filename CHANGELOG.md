@@ -17,6 +17,7 @@
   - Corregida la entrega de misiones `REPEATABLE` para que no marquen `completedTag` y puedan repetirse.
   - Sincronizado `rpg_npc_locations.json` y `Cisco_Deau_World.zip` en `Minecraft-Ready/`.
   - Embebidos los iconos azules de NPC para Xaero's Minimap (`assets/xaerominimap/`) directamente dentro de `rpgquestengine-1.0.0.jar` (sin requerir resource pack manual).
+  - Cambiado `QuestEntityMarkerRenderer` a `RenderType.textSeeThrough` para que los iconos 3D sobre los NPCs no se rompan al recargar recursos (`F3+T`) ni con shaders.
 
 ## [1.3.1-update] - 2026-11-13
 - **HUD de Supervivencia (`SURVIVE`):** El aviso de enemigos restantes al finalizar el tiempo (`⚔ Elimina enemigos restantes [N]`) se muestra como segundo objetivo en el HUD (`QuestHudOverlay`) y marca con `Objetivo` sobre sus cabezas a los rezagados (`QuestEntityMarkerRenderer`).

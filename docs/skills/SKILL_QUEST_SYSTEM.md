@@ -27,7 +27,7 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 - `AdminNpcManagerScreen.java` + `AdminNpcActionPacket.java` + `OpenAdminUiPacket.java`: Gestor visual (`/rpgquest ui`) por campañas y NPCs, con `collectChain` hasta profundidad 250.
 - `QuestHudOverlay.java`: HUD flotante con progreso, brújula hacia zonas y nombre legible (`q.npc`) al regresar a entregar.
 - `QuestJournalScreen.java`: Diario completo en tecla `J`.
-- `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`).
+- `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`) usando `RenderType.textSeeThrough` para compatibilidad con `F3+T` y shaders.
 - `assets/xaerominimap/`: Icono azul de exclamación (`quest_exclamation.png`) y definiciones para `easy_npc/*` embebidos directamente en el `.jar` para el radar de Xaero's Minimap (sin requerir resource pack manual).
 - `QuestConfig.java`: Lectura/escritura UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json`.
 
