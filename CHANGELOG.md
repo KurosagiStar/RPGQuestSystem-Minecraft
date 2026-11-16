@@ -1,5 +1,18 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
+## [1.4.0-update] - 2026-11-16
+- **UI de Diálogo Propia (`NpcDialogScreen`, `OpenNpcDialogPacket`, `NpcDialogActionPacket`):**
+  - Reemplazada la pantalla de diálogo rota de Easy NPC al hacer clic derecho normal en cualquier NPC con tag `npc_*` (`Shift + clic derecho` conserva acceso a Easy NPC).
+  - Botones dinámicos según estado real (`Aceptar Misión`, `Completar Misión`, `Cerrar`), lore completo en español neutro, objetivo, separador y cuadritos con iconos reales de recompensas (`rewardXp`, `rewardXpLevels`, `rewardItems`, `randomRewards` con tooltip, y `choiceRewards` clicable).
+  - Aviso claro de bloqueo por NPC requerido (`Completa primero las misiones de <NPC>`).
+  - Sincronización automática con FTB Quests (`ftbquests change_progress ... complete <ftbQuestId>`) al entregar en el NPC.
+- **7 Campañas Principales de Cisco (236 Misiones, 25 NPCs):**
+  - Añadidas `Adventum Per Tempus` (`npc_main_adventum_1..4`), `Deus Interfectorem` (`npc_main_deus_1..3`), `Beasts of Legend` (`npc_main_beasts_1..2`) y `Champions of the Risen` (`npc_main_champions_1`) junto a `The Champion's Trials`, `Traveller's Journey` y `Age of Dragons`.
+  - Progresión secuencial por bloques de NPC (`NPC 1 → NPC 2 → ...`) sin idas y vueltas, con instrucciones de ubicación/invocación y nombres legibles en HUD/radar (`q.npc`).
+- **Estabilidad de Spawn y Gestor Admin:**
+  - Corregidos `sync_npcs` y `respawn_saved` en `RPGQuestEngine.java` para spawnear/teletransportar en las coordenadas guardadas sin borrar NPCs existentes.
+  - Actualizado `AdminNpcManagerScreen.java` con los nombres de las 7 campañas y límite de profundidad `250` en `collectChain`.
+
 ## [1.3.1-update] - 2026-11-13
 - **HUD de Supervivencia (`SURVIVE`):** El aviso de enemigos restantes al finalizar el tiempo (`⚔ Elimina enemigos restantes [N]`) se muestra como segundo objetivo en el HUD (`QuestHudOverlay`) y marca con `Objetivo` sobre sus cabezas a los rezagados (`QuestEntityMarkerRenderer`).
 - **Corrección de Oleadas y Spawneo:**

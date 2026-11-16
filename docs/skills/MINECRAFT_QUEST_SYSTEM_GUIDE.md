@@ -1,113 +1,75 @@
 ---
 name: minecraft-quest-system
-description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using custom Witcher 3 HUD/Journal engine (NPC RPG Quest System) and Easy NPC 7.18.0. Zero FTB Quests dependencies. Fully portable and extensible.
+description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using custom Witcher 3 HUD/Journal engine (NPC RPG Quest System) and Easy NPC 7.18.0 entities with custom RPG Dialog UI.
 ---
 
 # Minecraft MMORPG Quest & NPC System Guide (1.20.1 Forge)
 
 > [!IMPORTANT]
-> **REGLA DE ORO PARA CUALQUIER AGENTE:**
-> **NUNCA** reintroducir dependencias con `FTB Quests` o `UIQuest`. Ambos mods fueron descartados por problemas de sincronización de paquetes, pérdida de auto-tracking y rigidez en comandos.
-> Este sistema es **100% autónomo** y funciona sobre dos pilares desacoplados:
-> 1. **`rpgquestengine` (Mod Forge custom en Java)**: Diario (`J`), HUD flotante Witcher 3, QuestToast estilo logros vanilla, marcadores flotantes sobre entidades y NPCs (`QuestEntityMarkerRenderer`), brújula con distancia hacia zonas amplias o NPCs de regreso, validación de eventos, estructuras, dimensiones, biomas, soporte NBT, resolución de kills indirectos, y sincronización de red Servidor <-> Cliente.
-> 2. **`easy_npc` (v7.18.0+)**: Gestiona modelos de NPCs y árboles de diálogo mediante condiciones `PLAYER_TAG` y jerarquía de `Priority`.
+> **REGLAS CRÍTICAS PARA CUALQUIER AGENTE:**
+> 1. **UI de Diálogo Propia (`NpcDialogScreen`):** Easy NPC 7.18.0 **ignora** `Conditions` en botones/diálogos y rompe su UI con >4 botones. Por eso `RPGQuestEngine.onPlayerEntityInteract` intercepta el clic derecho normal (sin Shift) sobre cualquier entidad con tag `npc_*` y abre `NpcDialogScreen` directamente. `Shift + clic derecho` deja pasar la interacción nativa de Easy NPC para edición admin.
+> 2. **No escribir árboles de diálogo complejos en `.npc.snbt`:** Easy NPC solo provee entidad, modelo/skin y posición. Toda la lógica de misiones, prerrequisitos, lore, objetivos y recompensas vive en `rpg_quests.json` + Java (`rpgquestengine`).
+> 3. **Despliegue obligatorio tras cada cambio:** Copiar `.jar`, `rpg_quests.json` y `.npc.snbt` tanto a `Minecraft-Ready/` como a `D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\` usando **`Copy-Item -LiteralPath`** en PowerShell (por los corchetes `[Dragonfyre]`), y hacer `git push origin main`.
 
 ---
 
 ## 1. Arquitectura y Ubicación de Archivos
 
-### A. Repositorio Oficial en GitHub y Local
+### A. Repositorio y Paquete
 - **GitHub:** `https://github.com/KurosagiStar/RPGQuestSystem-Minecraft.git` (rama `main`)
-- **Directorio de desarrollo local:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\`
-- **ModID:** `rpgquestengine`
-- **Nombre en Forge:** `NPC RPG Quest System`
-- **Paquete Java:** `com.rpgquestengine`
+- **Código fuente:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\`
+- **Config y presets listos:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\`
+- **ModID:** `rpgquestengine` (`com.rpgquestengine`)
 
-### B. Clases Críticas del Mod
-- `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler de validación en servidor cada 10 ticks (0.5s), verificación de metas (`DIMENSION`, `STRUCTURE`, `BIOME`, `ITEM`, `TAG`, `SCORE`), soporte NBT para ítems/gemas (`nbtKey`, `nbtValue`), aislamiento por índice (`getInternalScoreKey(questId, stageIndex, type)`) y sincronización de red.
-- `QuestToast.java`: Notificaciones animadas nativas de Minecraft usando la UI de logros / avances (`ToastComponent`, `textures/gui/toasts.png`).
-- `QuestEntityMarkerRenderer.java`: Renderiza iconos modernos 3D (`textures/gui/icons/*.png`) y texto a altura `+1.35F` sobre entidades en un radio de 32 bloques, diferenciados por categoría (`MAIN` amarillo, `SECONDARY` azul, `CONTRACT` rojo, `REPEATABLE` verde), `quest_in_progress.png` (celeste), `quest_completed.png` (dorado) y `quest_objective.png` (rojo).
-- `QuestHudOverlay.java`: HUD flotante moderno con badge de categoría, títulos limpios en negrita temática, divisores, progreso por objetivos, y brújula cardinal hacia objetivos y hacia el NPC de entrega (`§e▲ Capitán (45m)`).
-- `QuestJournalScreen.java`: Menú completo en tecla `J` con pestaña inicial `Activas`, agrupación por categoría, word-wrap de 2 líneas y botón dinámico `Seguir` / `Dejar de seguir`.
-- `QuestEventListener.java`: Listener Forge nativo para `KILL`, `MINE`, `CRAFT`, `FISH`, `SMELT`, `TALK`, `DELIVER`. Incluye resolución avanzada de kills de bosses/magia/proyectiles/mascotas (`resolvePlayerKiller`), replicación en `StartTracking` de tags y sonidos de oficio para aldeanos con cooldown de 1.4s.
-- `QuestConfig.java`: Carga y guardado UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json` tanto en cliente como en servidor (`commonSetup`).
-- `AdminNpcManagerScreen.java`, `AdminNpcActionPacket.java` & `OpenAdminUiPacket.java`: UI administrativa (`/rpgquest ui`) con Vista de Cadenas y Vista de NPCs, selector `<` `>`, botones de spawnear, mover y re-spawnear en coordenadas guardadas.
-- `NetworkHandler.java`, `SyncPlayerQuestsPacket.java` & `SyncEntityTagsPacket.java`: Replicación bidireccional cliente-servidor de progreso y sincronización de scoreboard tags de entidades hacia el cliente para coincidencia estricta por `npcId`.
+### B. Clases Clave del Mod
+- `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler cada 10 ticks, validación (`ITEM`, `KILL`, `DIMENSION`, `BIOME`, `STRUCTURE`, `SURVIVE`, `TAG`, `SCORE`), interceptación de clic derecho en NPCs (`onPlayerEntityInteract`), comandos (`/rpgquest reload`, `reset`, `talk`, `ui`, `sync_npcs`, `respawn_saved`, `spawn_npc`, `set_npc_pos`).
+- `NpcDialogScreen.java` + `OpenNpcDialogPacket.java` + `NpcDialogActionPacket.java`: Pantalla RPG propia con botones dinámicos (`Aceptar Misión`, `Completar Misión`, `Cerrar`), lore completo, objetivo, separador y cuadritos con iconos reales de recompensas (`rewardXp`, `rewardXpLevels`, `rewardItems`, `randomRewards` con tooltip de posibilidades, `choiceRewards` clicable para elegir 1). Al completar, sincroniza también `ftbquests change_progress <player> complete <ftbQuestId>` si existe `ftbQuestId`.
+- `AdminNpcManagerScreen.java` + `AdminNpcActionPacket.java` + `OpenAdminUiPacket.java`: Gestor visual (`/rpgquest ui`) por campañas y NPCs, con `collectChain` hasta profundidad 250.
+- `QuestHudOverlay.java`: HUD flotante con progreso, brújula hacia zonas y nombre legible (`q.npc`) al regresar a entregar.
+- `QuestJournalScreen.java`: Diario completo en tecla `J`.
+- `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`).
+- `QuestConfig.java`: Lectura/escritura UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json`.
 
-### C. Rutas de Despliegue en el Sistema
-Al compilar con `cd Code/rpg-quest-engine; .\gradlew.bat build --no-daemon`, el archivo `build/libs/rpgquestengine-1.0.0.jar` se sincroniza en:
-1. Repositorio: `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Mods\rpgquestengine-1.0.0.jar`
-2. Instancia jugable: `D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
-3. Cliente de respaldo: `C:\Users\Kuromi\Desktop\cisco\Client\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`
-4. Servidor dedicado: `C:\Users\Kuromi\Desktop\cisco\Server\mods\`
+### C. Flujo de Compilación y Despliegue (PowerShell)
+```powershell
+cd C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine
+.\gradlew.bat build --no-daemon
 
-### D. Comandos de Administración (`/rpgquest`)
-Todos los subcomandos de `/rpgquest` requieren permiso OP nivel 2 (`hasPermission(2)`):
-- `/rpgquest reset`: Resetea tags (`q_*`, `rqe_*`) y scores internos de todas las misiones del jugador ejecutor.
-- `/rpgquest reload`: Recarga `config/rpg_quests.json` en caliente y sincroniza al ejecutor.
-- `/rpgquest sync_npcs`: Busca NPCs en chunks cargados con tag `npc_*`, guarda posición/rotación, reimporta el preset con `easy_npc preset import custom easy_npc:preset/villager/<tag>.npc.snbt` y solo elimina el viejo si tiene éxito.
-- `/rpgquest spawn_npc <npc_id>`: Spawnea el preset `villager/<npc_id>` en tu posición y guarda sus coordenadas en `config/rpg_npc_locations.json`.
-- `/rpgquest set_npc_pos <npc_id>`: Guarda tu posición actual para un `<npc_id>` en `config/rpg_npc_locations.json`.
-- `/rpgquest ui`: Abre `AdminNpcManagerScreen` para gestionar cadenas de misiones, spawnear/mover NPCs en orden (`#1`, `#2`...) y re-spawnear todos.
-- `/rpgquest respawn_saved`: Re-spawnea o teleporta todos los NPCs de `rpg_npc_locations.json` a sus coordenadas guardadas.
-- **Aldeanos vanilla sin conversión:** Spawnear con tag `no_quest_npc` (`/summon minecraft:villager ~ ~ ~ {Tags:["no_quest_npc"]}`) para que `village_npc_spawner.js` los ignore.
+Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\build\libs\rpgquestengine-1.0.0.jar" -Destination "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\mods\rpgquestengine-1.0.0.jar" -Force
+Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\build\libs\rpgquestengine-1.0.0.jar" -Destination "D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\rpgquestengine-1.0.0.jar" -Force
+Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\config\rpg_quests.json" -Destination "D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\config\rpg_quests.json" -Force
+```
 
 ---
 
-## 2. Bases de Datos de Misiones Separadas
+## 2. Campañas Principales y NPCs (`MAIN` — 7 Cadenas, 25 NPCs, 236 Misiones)
 
-1. **Base Vanilla (`Addons/RPG Quest Engine (Base)/.minecraft/config/rpg_quests.json`):**
-   - 100% compatible con Minecraft Vanilla y mods genéricos.
-   - Libre de dependencias externas.
-2. **Implementación Cisco (`Addons/Cisco Implementation/.minecraft/config/rpg_quests.json`):**
-   - Incluye contratos exclusivos: *Fell King Boss* (`cisco_mod:fellkingboss`), *Ignis* (`cataclysm:ignis`), *Netherite Monstrosity* (`cataclysm:netherite_monstrosity`), *The Harbinger* (`cataclysm:the_harbinger`), *Night Lich* (`bosses_of_mass_destruction:lich`), *Frostmaw* (`mowziesmobs:frostmaw`).
-   - Dimensiones: *The Aether* (`aether:the_aether`), *Twilight Forest* (`twilightforest:twilight_forest`).
-   - Gemas engarzables de *Apotheosis* (`apotheosis:gem` con `affix_data.gem`).
+Todas las cadenas usan **progresión secuencial por bloque de NPC** (completas todas las misiones del NPC 1 antes de pasar al NPC 2, sin idas y vueltas) y texto en español neutro con instrucciones de dónde ir o cómo invocar:
 
----
-
-## 3. Presets Oficiales de Easy NPC
-
-> **Archivo histórico:** Los 19 presets de prueba anteriores están archivados en `preset/ejemplos/`.
-
-### A. NPCs Principales (`MAIN` — colocación manual en historia/spawn):
-- `npc_main_comandante`: Comandante (*El Camino del Guerrero* `trial_warrior`)
-- `npc_main_explorador`: Explorador (*La Reliquia de los Ancestros* `trial_relic`, *El Puesto de Observación* `explorar_torre`, *El Aether* `dimension_aether_expedition`)
-- `npc_main_ocultista`: Ocultista (*El Portal al Inframundo* `viaje_nether`)
-
-### B. NPCs de Spawn Natural (`preset/villager/` — 12 en `village_npc_spawner.js`):
-- **Secundarios (5):** `npc_sec_alquimista`, `npc_sec_armero`, `npc_sec_minero`, `npc_sec_bibliotecario`, `npc_sec_cartografo`
-- **Contratos (4):** `npc_contract_cazador`, `npc_contract_tabernero`, `npc_contract_vigia`, `npc_contract_mercenario`
-- **Repetibles (3):** `npc_rep_panadero`, `npc_rep_pescador`, `npc_rep_cazador_nocturno`
-
-### C. Presets de Misiones Encadenadas (archivados en `preset/ejemplos/`):
-Comando: `/easy_npc preset custom import villager/<nombre>`
-Cada preset incluye su scoreboard tag único (`Tags: ["<nombre>"]`) sincronizado automáticamente con el cliente (`SyncEntityTagsPacket`) para emparejamiento estricto por `npcId` sin colisiones por nombre visible:
-- `chain_muralla_1_comandante`: Paso 1 - Defiende muralla y entrega la orden sellada de relevo (`q_relevo_activa`).
-- `chain_muralla_2_centinela`: Paso 2 - Recibe la orden de relevo (`TALK` con `target: "chain_muralla_2_centinela"`) y encarga purgar los riscos de caballeros caídos (`q_fell_knights_activa`).
-- `chain_muralla_3_cazador`: Paso 3 - Desbloqueado tras limpiar los riscos; encarga destruir el nido de arañas (`q_cazador_activa`) y otorga recompensa final.
+1. **The Champion's Trials (`cisco_trials_`, 67 misiones):** `npc_main_comandante`, `npc_main_trials_2..5`
+2. **Traveller's Journey (`cisco_traveller_`, 55 misiones):** `npc_main_explorador`, `npc_main_traveller_2..5`
+3. **Age of Dragons (`cisco_dragons_`, 30 misiones):** `npc_main_ocultista`, `npc_main_dragons_2..5`
+4. **Adventum Per Tempus (`cisco_adventum_`, 44 misiones):** `npc_main_adventum_1..4` (`Cronomante I..IV`)
+5. **Deus Interfectorem (`cisco_deus_`, 25 misiones):** `npc_main_deus_1..3` (`Verdugo de Dioses I..III`)
+6. **Beasts of Legend (`cisco_beasts_`, 11 misiones):** `npc_main_beasts_1..2` (`Cazador de Bestias I..II`)
+7. **Champions of the Risen (`cisco_champions_`, 4 misiones):** `npc_main_champions_1` (`Campeón Alzado`)
 
 ---
 
-## 4. Tipos de Etapa (`type`) Soportados
+## 3. Reglas de Formato en `rpg_quests.json`
 
-- `KILL`: IDs de entidades (soporta proyectiles, magia, summons domesticados y multipartes).
-- `KILL_BOW`: Bajas con cualquier arco o ballesta (incluye arcos de Cisco/modded).
-- `SURVIVE`: Supervivencia cronometrada con oleadas dinámicas de enemigos (`mobToSpawn` soporta lista separada por comas, `ambushTitle` para alerta) y limpieza final de rezagados.
-- `ITEM`: Conteo en inventario. Admite `nbtKey` anidado (ej. `affix_data.gem`) y `nbtValue`.
-- `TALK`: Interactuar con un NPC específico (`target: "villager_centinela"` o tag de entidad).
-- `DELIVER`: Entregar órdenes o reportes interactuando con el NPC de destino.
-- `MINE`: Minería de bloques por id.
-- `CRAFT`: Crafteo en mesa de trabajo o inventario.
-- `FISH`: Pesca de ítems.
-- `SMELT`: Fundición en horno.
-- `BIOME`: Localización en bioma.
-- `STRUCTURE`: Localización en mazmorra o estructura.
-- `DIMENSION`: Cruce a otra dimensión.
-- `SCORE`: Scoreboards dummy de vanilla.
-- `TAG`: Tags vanilla de entidad.
+- **Campo `amount`:** `QuestHudOverlay` y el motor leen `stage.amount` (NO `required`).
+- **Campo `npc` vs `npcId`:** `npcId` es la tag técnica de la entidad (ej. `npc_main_comandante`); `npc` es el nombre legible mostrado en HUD/radar/mensajes (ej. `Comandante`).
+- **Recompensas soportadas:** `rewardXp`, `rewardXpLevels`, `rewardItems` (`[{id, count}]`), `randomRewards` (`[{id, count}]`), `choiceRewards` (`[{id, count}]`).
+- **Prerrequisitos bloqueados:** si un NPC está bloqueado por otro NPC, `RPGQuestEngine.openNpcDialog` envía el nombre del NPC requerido en `questLore` para que `NpcDialogScreen` muestre `Completa primero las misiones de <NPC> (<Título>)`.
 
 ---
 
-## 5. Documentación Completa de Misiones
-Consulta `PLANTILLA_MISIONES.md` en esta misma carpeta para ejemplos JSON completos de configuración.
+## 4. Comandos In-Game Útiles
+
+- `/rpgquest reload`: Recarga `rpg_quests.json` en caliente sin reiniciar Minecraft.
+- `/rpgquest reset`: Limpia tags y progreso del jugador para probar desde cero.
+- `/rpgquest ui`: Abre `AdminNpcManagerScreen` para spawnear, mover o re-spawnear NPCs por campaña.
+- `/rpgquest spawn_npc <npc_id>`: Spawnea un preset `.npc.snbt` en la posición actual y guarda sus coordenadas.
+- `/rpgquest respawn_saved`: Teletransporta o re-spawnea todos los NPCs guardados en `rpg_npc_locations.json` en sus coordenadas exactas.
+- `/rpgquest sync_npcs`: Re-importa presets de NPCs cargados preservando coordenadas (no borra la entidad vieja si el spawn falla).
