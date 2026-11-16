@@ -149,6 +149,10 @@ public class AdminNpcManagerScreen extends Screen {
             if (root.id.startsWith("cisco_trials_")) chain.title = "The Champion's Trials";
             else if (root.id.startsWith("cisco_traveller_")) chain.title = "Traveller's Journey";
             else if (root.id.startsWith("cisco_dragons_")) chain.title = "Age of Dragons";
+            else if (root.id.startsWith("cisco_adventum_")) chain.title = "Adventum Per Tempus";
+            else if (root.id.startsWith("cisco_deus_")) chain.title = "Deus Interfectorem";
+            else if (root.id.startsWith("cisco_beasts_")) chain.title = "Beasts of Legend";
+            else if (root.id.startsWith("cisco_champions_")) chain.title = "Champions of the Risen";
             else chain.title = root.title != null ? root.title : root.id;
             collectChain(root, catQuests, chain, 0);
             visibleChains.add(chain);
@@ -177,7 +181,7 @@ public class AdminNpcManagerScreen extends Screen {
     }
 
     private void collectChain(QuestDefinition current, List<QuestDefinition> pool, QuestChain chain, int guard) {
-        if (guard > 15 || chain.quests.contains(current)) return;
+        if (guard > 250 || chain.quests.contains(current)) return;
         chain.quests.add(current);
         if (current.npcId != null && !current.npcId.isEmpty() && !chain.npcIds.contains(current.npcId)) {
             chain.npcIds.add(current.npcId);
@@ -190,7 +194,7 @@ public class AdminNpcManagerScreen extends Screen {
     }
 
     private int getChainDepth(QuestDefinition q, int guard) {
-        if (q == null || guard > 15 || q.prerequisiteQuestId == null || q.prerequisiteQuestId.isEmpty()) return 1;
+        if (q == null || guard > 250 || q.prerequisiteQuestId == null || q.prerequisiteQuestId.isEmpty()) return 1;
         QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
         return prereq == null ? 1 : 1 + getChainDepth(prereq, guard + 1);
     }
