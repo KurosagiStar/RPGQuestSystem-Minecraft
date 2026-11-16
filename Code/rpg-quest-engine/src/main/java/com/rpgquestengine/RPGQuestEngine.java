@@ -924,8 +924,11 @@ public class RPGQuestEngine {
         }
 
         if (firstBlockedPrereq != null) {
+            String reqNpc = (firstBlockedPrereq.npc != null && !firstBlockedPrereq.npc.isEmpty())
+                    ? firstBlockedPrereq.npc : firstBlockedPrereq.npcId;
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id, firstBlockedPrereq.title, "", "", 0, 0, null, null, null));
+                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id,
+                            firstBlockedPrereq.title, reqNpc != null ? reqNpc : "", "", 0, 0, null, null, null));
             return;
         }
 

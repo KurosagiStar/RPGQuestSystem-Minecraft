@@ -123,7 +123,11 @@ public class NpcDialogScreen extends Screen {
             case "LOCKED" -> {
                 headline = "§cEncargo Bloqueado";
                 lore = "Aún no estás preparado para los desafíos que tengo para ti.";
-                objective = "§cCompleta primero: §e" + data.questTitle;
+                if (!data.questLore.isEmpty()) {
+                    objective = "§cCompleta primero las misiones de §e" + data.questLore + " §7(" + data.questTitle + ")";
+                } else {
+                    objective = "§cCompleta primero: §e" + data.questTitle;
+                }
             }
             default -> {
                 headline = "§aTodos los encargos completados";
