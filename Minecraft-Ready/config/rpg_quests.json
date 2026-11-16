@@ -866,10 +866,10 @@
     "id": "cisco_trials_6f010e22cd886969",
     "ftbQuestId": "6F010E22CD886969",
     "category": "MAIN",
-    "title": "The Adventure Begins!",
+    "title": "¡La aventura comienza!",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Cisco sensed a familiar power within the champion. Believing they may be able to aid him in his quest to defeat the fell king he offered his guidance. Relive the champion's journey and ascent to legendary status.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 5 zombies en los alrededores y demuestra que mereces el acero.",
     "suggestedLevel": 10,
     "prerequisiteQuestId": "",
     "activeTag": "q_cisco_trials_6f010e22cd886969_act",
@@ -926,10 +926,10 @@
     "id": "cisco_trials_23864a4966441d61",
     "ftbQuestId": "23864A4966441D61",
     "category": "MAIN",
-    "title": "The path of the warrior",
+    "title": "El camino del guerrero",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Up close and personal.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 5x Esqueleto y demuestra que mereces el acero.",
     "suggestedLevel": 11,
     "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
     "activeTag": "q_cisco_trials_23864a4966441d61_act",
@@ -948,7 +948,7 @@
       },
       {
         "type": "KILL",
-        "description": "Derrotar 10x zombie",
+        "description": "Derrotar 10x Zombi",
         "target": "minecraft:zombie",
         "required": 10
       }
@@ -972,10 +972,10 @@
     "id": "cisco_trials_76e6e42a538c69fb",
     "ftbQuestId": "76E6E42A538C69FB",
     "category": "MAIN",
-    "title": "Novice spell caster",
+    "title": "Lanzador de hechizos novato",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Source can be manipulated in almost infinite ways limited only by your creativity and the glyphs available to you. To do this you will need to craft a spell book. It can later be dyed in your favourite color.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Libro de hechizos novato para avanzar en tu entrenamiento.",
     "suggestedLevel": 12,
     "prerequisiteQuestId": "cisco_trials_642c85e431896fb0",
     "activeTag": "q_cisco_trials_76e6e42a538c69fb_act",
@@ -988,7 +988,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Novice Spell Book",
+        "description": "Consigue 1x Libro de hechizos novato",
         "target": "ars_nouveau:novice_spell_book",
         "amount": 1
       }
@@ -1008,10 +1008,10 @@
     "id": "cisco_trials_642c85e431896fb0",
     "ftbQuestId": "642C85E431896FB0",
     "category": "MAIN",
-    "title": "The path of the mage",
+    "title": "El camino del mago",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "It is time to begin your spell caster training. The are two main origins of magic in the world, one uses a resource called \"source\" and the other uses \"ambient mana\" present within the world and it's living creatures. Which path will you choose?",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 5x Creeper y demuestra que mereces el acero.",
     "suggestedLevel": 13,
     "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
     "activeTag": "q_cisco_trials_642c85e431896fb0_act",
@@ -1044,10 +1044,10 @@
     "id": "cisco_trials_363d127c20eac8fc",
     "ftbQuestId": "363D127C20EAC8FC",
     "category": "MAIN",
-    "title": "Obtain iron",
+    "title": "Obtén hierro",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Iron is a key component in many recipes and is vital early on in your adventure.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Lingote de hierro para avanzar en tu entrenamiento.",
     "suggestedLevel": 14,
     "prerequisiteQuestId": "cisco_trials_6f010e22cd886969",
     "activeTag": "q_cisco_trials_363d127c20eac8fc_act",
@@ -1076,10 +1076,10 @@
     "id": "cisco_trials_7d47ca06f299bb0a",
     "ftbQuestId": "7D47CA06F299BB0A",
     "category": "MAIN",
-    "title": "The relic of the ancients",
+    "title": "La reliquia de los antiguos",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "There is a tale of a legendary relic which lies in the possesion of the villagers. Perhaps if you can gain their favor they may entrust it to you?",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 15x Pillager y demuestra que mereces el acero.",
     "suggestedLevel": 15,
     "prerequisiteQuestId": "cisco_trials_22b92de71f6f923d",
     "activeTag": "q_cisco_trials_7d47ca06f299bb0a_act",
@@ -1108,10 +1108,10 @@
     "id": "cisco_trials_068b6dc27bc66d89",
     "ftbQuestId": "068B6DC27BC66D89",
     "category": "MAIN",
-    "title": "Misión 068B6D",
+    "title": "Consigue 1x Mesa de escriba",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Here is where you craft the glyphs used for spell casting. With each new glyph your maximum mana increases slightly.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Mesa de escriba para avanzar en tu entrenamiento.",
     "suggestedLevel": 16,
     "prerequisiteQuestId": "cisco_trials_76e6e42a538c69fb",
     "activeTag": "q_cisco_trials_068b6dc27bc66d89_act",
@@ -1124,7 +1124,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Scribes Table",
+        "description": "Consigue 1x Mesa de escriba",
         "target": "ars_nouveau:scribes_table",
         "amount": 1
       }
@@ -1172,10 +1172,10 @@
     "id": "cisco_trials_10b64a3d6500ac09",
     "ftbQuestId": "10B64A3D6500AC09",
     "category": "MAIN",
-    "title": "Amplified Magics",
+    "title": "Magias amplificadas",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "This glyph increases the potency of many other glyphs when used in tandem in a spell.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Glyph Amplify para avanzar en tu entrenamiento.",
     "suggestedLevel": 17,
     "prerequisiteQuestId": "cisco_trials_5c15bccd252805dc",
     "activeTag": "q_cisco_trials_10b64a3d6500ac09_act",
@@ -1208,10 +1208,10 @@
     "id": "cisco_trials_643a6bd7be518653",
     "ftbQuestId": "643A6BD7BE518653",
     "category": "MAIN",
-    "title": "Aquire Obsidian",
+    "title": "Consigue obsidiana",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Aquire obsidian and craft a nether portal.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Obsidiana para avanzar en tu entrenamiento.",
     "suggestedLevel": 18,
     "prerequisiteQuestId": "cisco_trials_10b64a3d6500ac09",
     "activeTag": "q_cisco_trials_643a6bd7be518653_act",
@@ -1240,10 +1240,10 @@
     "id": "cisco_trials_7d59bd1308e6778f",
     "ftbQuestId": "7D59BD1308E6778F",
     "category": "MAIN",
-    "title": "The depths of Hell",
+    "title": "Las profundidades del Infierno",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "The Nether is filled with large structures and powerful enemies, prepare carefully before entering.",
+    "description": "Un verdadero campeón no teme cruzar el umbral hacia otros reinos. Viaja a El Nether y regresa con vida.",
     "suggestedLevel": 19,
     "prerequisiteQuestId": "cisco_trials_643a6bd7be518653",
     "activeTag": "q_cisco_trials_7d59bd1308e6778f_act",
@@ -1272,10 +1272,10 @@
     "id": "cisco_trials_3e13eb56ee51145f",
     "ftbQuestId": "3E13EB56EE51145F",
     "category": "MAIN",
-    "title": "Acquire Quartz",
+    "title": "Consigue cuarzo",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Quartz is needed for some important recipes like upgrading to a tier 2 spellbook.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Cuarzo del Nether para avanzar en tu entrenamiento.",
     "suggestedLevel": 20,
     "prerequisiteQuestId": "cisco_trials_7d59bd1308e6778f",
     "activeTag": "q_cisco_trials_3e13eb56ee51145f_act",
@@ -1304,10 +1304,10 @@
     "id": "cisco_trials_5426802195e9dea6",
     "ftbQuestId": "5426802195E9DEA6",
     "category": "MAIN",
-    "title": "Rank up your magic",
+    "title": "Mejora tu rango mágico",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "Upgrading your spell book will allow you to cast more powerful spells.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Libro de hechizos aprendiz para avanzar en tu entrenamiento.",
     "suggestedLevel": 21,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_5426802195e9dea6_act",
@@ -1320,7 +1320,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Apprentice Spell Book",
+        "description": "Consigue 1x Libro de hechizos aprendiz",
         "target": "ars_nouveau:apprentice_spell_book",
         "amount": 1
       }
@@ -1340,10 +1340,10 @@
     "id": "cisco_trials_279bc431d5d067a3",
     "ftbQuestId": "279BC431D5D067A3",
     "category": "MAIN",
-    "title": "Find the an ancient runic tablet",
+    "title": "Encuentra una tablilla rúnica antigua",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "These can be found in dungeon chests.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Tablilla rúnica para avanzar en tu entrenamiento.",
     "suggestedLevel": 22,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_279bc431d5d067a3_act",
@@ -1356,7 +1356,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Runic Tablet",
+        "description": "Consigue 1x Tablilla rúnica",
         "target": "simplyswords:runic_tablet",
         "amount": 1
       }
@@ -1372,10 +1372,10 @@
     "id": "cisco_trials_2a5a2b19fd4a1abe",
     "ftbQuestId": "2A5A2B19FD4A1ABE",
     "category": "MAIN",
-    "title": "Aquire an enchanting table",
+    "title": "Consigue una mesa de encantamientos",
     "npc": "Capitán de la Guardia",
     "npcId": "npc_main_comandante",
-    "description": "This will be your second main source of power. Master the apotheosis enchanting system and even weaker tier gear can become godly.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Mesa de encantamientos para avanzar en tu entrenamiento.",
     "suggestedLevel": 23,
     "prerequisiteQuestId": "cisco_trials_159fd707980d3015",
     "activeTag": "q_cisco_trials_2a5a2b19fd4a1abe_act",
@@ -1420,10 +1420,10 @@
     "id": "cisco_trials_4472063587820df7",
     "ftbQuestId": "4472063587820DF7",
     "category": "MAIN",
-    "title": "For Glory!",
+    "title": "¡Por la gloria!",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Embrace the light.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Righteous Reliquia para avanzar en tu entrenamiento.",
     "suggestedLevel": 24,
     "prerequisiteQuestId": "cisco_trials_279bc431d5d067a3",
     "activeTag": "q_cisco_trials_4472063587820df7_act",
@@ -1436,7 +1436,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Righteous Relic",
+        "description": "Consigue 1x Righteous Reliquia",
         "target": "simplyswords:righteous_relic",
         "amount": 1
       }
@@ -1456,10 +1456,10 @@
     "id": "cisco_trials_0d03a91a96743e87",
     "ftbQuestId": "0D03A91A96743E87",
     "category": "MAIN",
-    "title": "All shall kneel...",
+    "title": "Todos se arrodillarán...",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Embrace the darkness.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Tainted Reliquia para avanzar en tu entrenamiento.",
     "suggestedLevel": 25,
     "prerequisiteQuestId": "cisco_trials_279bc431d5d067a3",
     "activeTag": "q_cisco_trials_0d03a91a96743e87_act",
@@ -1472,7 +1472,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Tainted Relic",
+        "description": "Consigue 1x Tainted Reliquia",
         "target": "simplyswords:tainted_relic",
         "amount": 1
       }
@@ -1488,10 +1488,10 @@
     "id": "cisco_trials_441a82ced3f13122",
     "ftbQuestId": "441A82CED3F13122",
     "category": "MAIN",
-    "title": "Misión 441A82",
+    "title": "Consigue 1x Lingote de Netherita",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Netherite ingots are a crucial part of many complex item recipes and as such you will need a fair amount of it. Pickaxes with powerful enhantments or certain dungeon chests are great ways to get more of it.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Lingote de Netherita para avanzar en tu entrenamiento.",
     "suggestedLevel": 26,
     "prerequisiteQuestId": "cisco_trials_0d03a91a96743e87",
     "activeTag": "q_cisco_trials_441a82ced3f13122_act",
@@ -1528,10 +1528,10 @@
     "id": "cisco_trials_5ffc0e01052944a7",
     "ftbQuestId": "5FFC0E01052944A7",
     "category": "MAIN",
-    "title": "Misión 5FFC0E",
+    "title": "Consigue 1x Flame Eye",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "The eye of flame can be used to locate the burning arena home to the Flame King Ignis.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Flame Eye para avanzar en tu entrenamiento.",
     "suggestedLevel": 27,
     "prerequisiteQuestId": "cisco_trials_441a82ced3f13122",
     "activeTag": "q_cisco_trials_5ffc0e01052944a7_act",
@@ -1564,10 +1564,10 @@
     "id": "cisco_trials_64286a21fdb8288f",
     "ftbQuestId": "64286A21FDB8288F",
     "category": "MAIN",
-    "title": "Slay the terror of the nether",
+    "title": "Slay the terror of El Nether",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Gatekeeper The nether star obtained from slaying the Wither is used in the crafting of very powerful items. The wither will grow in strength every time you defeat it.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 1x Wither y demuestra que mereces el acero.",
     "suggestedLevel": 28,
     "prerequisiteQuestId": "cisco_trials_441a82ced3f13122",
     "activeTag": "q_cisco_trials_64286a21fdb8288f_act",
@@ -1603,7 +1603,7 @@
     "title": "Slay the flame king",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Gatekeeper Acquire burning ashes from ignited revenants guarding the burning arena. Use the ashes on the altar in the center of the arena and extinguish The King of Flames.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 1x Ignis y demuestra que mereces el acero.",
     "suggestedLevel": 29,
     "prerequisiteQuestId": "cisco_trials_5ffc0e01052944a7",
     "activeTag": "q_cisco_trials_2af361ba2a4fb5ef_act",
@@ -1632,10 +1632,10 @@
     "id": "cisco_trials_1aa5dcefec43dca6",
     "ftbQuestId": "1AA5DCEFEC43DCA6",
     "category": "MAIN",
-    "title": "Not gold but certainly glitters",
+    "title": "No es oro, pero sin duda brilla",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Amethyst is another key ingredient in all things arcane and you may need quite alot of it. Thankfully you can automate its production using the Amethyst Golem familiars.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Amethyst Fragmento para avanzar en tu entrenamiento.",
     "suggestedLevel": 30,
     "prerequisiteQuestId": "cisco_trials_2a5a2b19fd4a1abe",
     "activeTag": "q_cisco_trials_1aa5dcefec43dca6_act",
@@ -1648,7 +1648,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Amethyst Shard",
+        "description": "Consigue 1x Amethyst Fragmento",
         "target": "minecraft:amethyst_shard",
         "amount": 1
       }
@@ -1671,7 +1671,7 @@
     "title": "Apothic Enchanting",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Apotheosis allows you to enchant your gear far beyond what you are used to. It may take some configuration but eventually you will be able to fashion gear that makes you unstoppable.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Seashelf para avanzar en tu entrenamiento.",
     "suggestedLevel": 31,
     "prerequisiteQuestId": "cisco_trials_2a5a2b19fd4a1abe",
     "activeTag": "q_cisco_trials_1413a1e7155ab369_act",
@@ -1703,7 +1703,7 @@
     "title": "Collecting the 12 eyes",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "The 12 eyes needed to ignite the end portal can be found in dungeon chests all over the world , in the nether, as well a few of them needing to be crafted. These three are a good starting point.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Rogue Eye para avanzar en tu entrenamiento.",
     "suggestedLevel": 32,
     "prerequisiteQuestId": "cisco_trials_64286a21fdb8288f",
     "activeTag": "q_cisco_trials_1ab06dc31fd237a6_act",
@@ -1732,10 +1732,10 @@
     "id": "cisco_trials_53f1fb5ee35750dc",
     "ftbQuestId": "53F1FB5EE35750DC",
     "category": "MAIN",
-    "title": "Enter the End Dimension",
+    "title": "Enter El End Dimension",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "It is now time to face the Dragon.",
+    "description": "Un verdadero campeón no teme cruzar el umbral hacia otros reinos. Viaja a El End y regresa con vida.",
     "suggestedLevel": 33,
     "prerequisiteQuestId": "cisco_trials_1ab06dc31fd237a6",
     "activeTag": "q_cisco_trials_53f1fb5ee35750dc_act",
@@ -1764,10 +1764,10 @@
     "id": "cisco_trials_2f764777b6e4d941",
     "ftbQuestId": "2F764777B6E4D941",
     "category": "MAIN",
-    "title": "Slay the Ender Dragon",
+    "title": "Slay the Ender Dragón",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Gatekeeper Not even the Ender Dragon can stand before your might . Slay her and liberate the end dimension. Each time you battle her she will grow  in strength.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 1x Dragón del End y demuestra que mereces el acero.",
     "suggestedLevel": 34,
     "prerequisiteQuestId": "cisco_trials_53f1fb5ee35750dc",
     "activeTag": "q_cisco_trials_2f764777b6e4d941_act",
@@ -1804,10 +1804,10 @@
     "id": "cisco_trials_2504d1884d6894fb",
     "ftbQuestId": "2504D1884D6894FB",
     "category": "MAIN",
-    "title": "Misión 2504D1",
+    "title": "Consigue 1x Void Eye",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "The eye of the void is used to locate the ruined citadel where the powerful Ender Guardian resides.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Void Eye para avanzar en tu entrenamiento.",
     "suggestedLevel": 35,
     "prerequisiteQuestId": "cisco_trials_2f764777b6e4d941",
     "activeTag": "q_cisco_trials_2504d1884d6894fb_act",
@@ -1839,7 +1839,7 @@
     "title": "Slay the Ender Guardian",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Gatekeeper Can you conquer this powerful foe?",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 1x Ender Guardian y demuestra que mereces el acero.",
     "suggestedLevel": 36,
     "prerequisiteQuestId": "cisco_trials_2504d1884d6894fb",
     "activeTag": "q_cisco_trials_6880914ef91d2c85_act",
@@ -1871,7 +1871,7 @@
     "title": "The Greatest Magician",
     "npc": "Instructor de Armas",
     "npcId": "npc_main_trials_2",
-    "description": "Upgrage your spell book to the final tier by combining it with the rarest of materials.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Libro de hechizos archimago para avanzar en tu entrenamiento.",
     "suggestedLevel": 37,
     "prerequisiteQuestId": "cisco_trials_2f764777b6e4d941",
     "activeTag": "q_cisco_trials_1b9997b20d2187c9_act",
@@ -1884,7 +1884,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Archmage Spell Book",
+        "description": "Consigue 1x Libro de hechizos archimago",
         "target": "ars_nouveau:archmage_spell_book",
         "amount": 1
       }
@@ -1904,10 +1904,10 @@
     "id": "cisco_trials_438d84b0f7bfd2a0",
     "ftbQuestId": "438D84B0F7BFD2A0",
     "category": "MAIN",
-    "title": "Misión 438D84",
+    "title": "Consigue 1x Wilden Tribute",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Summon the Wilden Chimera and defeat him to obtain the wilden tribute. This can be done using the ritual brazer , a tablet of summon wilden and the 3 types of wilden drops.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Wilden Tribute para avanzar en tu entrenamiento.",
     "suggestedLevel": 38,
     "prerequisiteQuestId": "cisco_trials_5426802195e9dea6",
     "activeTag": "q_cisco_trials_438d84b0f7bfd2a0_act",
@@ -1940,10 +1940,10 @@
     "id": "cisco_trials_0f7160fddb088526",
     "ftbQuestId": "0F7160FDDB088526",
     "category": "MAIN",
-    "title": "Misión 0F7160",
+    "title": "Consigue 1x Sunfire",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "The final form of the sword of justice .",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Sunfire para avanzar en tu entrenamiento.",
     "suggestedLevel": 39,
     "prerequisiteQuestId": "cisco_trials_4472063587820df7",
     "activeTag": "q_cisco_trials_0f7160fddb088526_act",
@@ -1972,10 +1972,10 @@
     "id": "cisco_trials_00cb68da83f73719",
     "ftbQuestId": "00CB68DA83F73719",
     "category": "MAIN",
-    "title": "Misión 00CB68",
+    "title": "Consigue 1x Harbinger",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "The final form of the sword of darkness.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Harbinger para avanzar en tu entrenamiento.",
     "suggestedLevel": 40,
     "prerequisiteQuestId": "cisco_trials_0d03a91a96743e87",
     "activeTag": "q_cisco_trials_00cb68da83f73719_act",
@@ -2004,10 +2004,10 @@
     "id": "cisco_trials_5a24e1249722eea9",
     "ftbQuestId": "5A24E1249722EEA9",
     "category": "MAIN",
-    "title": "Misión 5A24E1",
+    "title": "Consigue 1x Starbuncle Charm",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Starbuncles are crucial to automating source production which is needed for all things ars nouveau . Interact with a wild starbuncle by feeding it gold nuggets and use the fragment to craft its charm.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Starbuncle Charm para avanzar en tu entrenamiento.",
     "suggestedLevel": 41,
     "prerequisiteQuestId": "cisco_trials_068b6dc27bc66d89",
     "activeTag": "q_cisco_trials_5a24e1249722eea9_act",
@@ -2047,7 +2047,7 @@
     "title": "Craft the Ignitium set",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Ignitium Armor is indestructible and provides various effects such as lava walking.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Ignitium Pechera para avanzar en tu entrenamiento.",
     "suggestedLevel": 42,
     "prerequisiteQuestId": "cisco_trials_2af361ba2a4fb5ef",
     "activeTag": "q_cisco_trials_4c0b49a4548b6df4_act",
@@ -2060,7 +2060,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Ignitium Chestplate",
+        "description": "Consigue 1x Ignitium Pechera",
         "target": "cataclysm:ignitium_chestplate",
         "amount": 1
       }
@@ -2070,10 +2070,10 @@
     "id": "cisco_trials_74c563f2bb321af9",
     "ftbQuestId": "74C563F2BB321AF9",
     "category": "MAIN",
-    "title": "Misión 74C563",
+    "title": "Consigue 1x Gema Cutting Table",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "You can grind gems to gem dust here which is used to imbue your gear with special affixes via the reforging table.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Gema Cutting Table para avanzar en tu entrenamiento.",
     "suggestedLevel": 43,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_74c563f2bb321af9_act",
@@ -2086,7 +2086,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Gem Cutting Table",
+        "description": "Consigue 1x Gema Cutting Table",
         "target": "apotheosis:gem_cutting_table",
         "amount": 1
       }
@@ -2106,10 +2106,10 @@
     "id": "cisco_trials_28b406cdb662aaf8",
     "ftbQuestId": "28B406CDB662AAF8",
     "category": "MAIN",
-    "title": "Misión 28B406",
+    "title": "Consigue 1x Simple Reforging Table",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "This is where you reforge your gear. Reforging adds stats and sockets for gems to your equipment based on the quality of reforging materials used. Can be upgraged further.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Simple Reforging Table para avanzar en tu entrenamiento.",
     "suggestedLevel": 44,
     "prerequisiteQuestId": "cisco_trials_74c563f2bb321af9",
     "activeTag": "q_cisco_trials_28b406cdb662aaf8_act",
@@ -2138,10 +2138,10 @@
     "id": "cisco_trials_78c3cc2b67ed66b6",
     "ftbQuestId": "78C3CC2B67ED66B6",
     "category": "MAIN",
-    "title": "Misión 78C3CC",
+    "title": "Consigue 1x Reforging Table",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "This reforging table allows you reroll up to mythic tier affixes.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Reforging Table para avanzar en tu entrenamiento.",
     "suggestedLevel": 45,
     "prerequisiteQuestId": "cisco_trials_28b406cdb662aaf8",
     "activeTag": "q_cisco_trials_78c3cc2b67ed66b6_act",
@@ -2170,10 +2170,10 @@
     "id": "cisco_trials_5319e400556cdc4d",
     "ftbQuestId": "5319E400556CDC4D",
     "category": "MAIN",
-    "title": "Misión 5319E4",
+    "title": "Consigue 1x Library",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "You can store enchantments here for later use. Can be upgraded further.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Library para avanzar en tu entrenamiento.",
     "suggestedLevel": 46,
     "prerequisiteQuestId": "cisco_trials_74c563f2bb321af9",
     "activeTag": "q_cisco_trials_5319e400556cdc4d_act",
@@ -2196,10 +2196,10 @@
     "id": "cisco_trials_1436bcc4578225db",
     "ftbQuestId": "1436BCC4578225DB",
     "category": "MAIN",
-    "title": "Misión 1436BC",
+    "title": "Consigue 1x Ender Library",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "The ultimate enchantment library.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Ender Library para avanzar en tu entrenamiento.",
     "suggestedLevel": 47,
     "prerequisiteQuestId": "cisco_trials_5319e400556cdc4d",
     "activeTag": "q_cisco_trials_1436bcc4578225db_act",
@@ -2228,10 +2228,10 @@
     "id": "cisco_trials_7519af7b737cb8ab",
     "ftbQuestId": "7519AF7B737CB8AB",
     "category": "MAIN",
-    "title": "Misión 7519AF",
+    "title": "Consigue 1x Poción Charm",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Potion charms are very powerful items which can give you a potion effect permanently when in your inventory. By default they lose durability whilst active but you can make them unbreakable by enchanting them with a certain amount of quanta , eterna etc refer to your recipes.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Poción Charm para avanzar en tu entrenamiento.",
     "suggestedLevel": 48,
     "prerequisiteQuestId": "cisco_trials_5426802195e9dea6",
     "activeTag": "q_cisco_trials_7519af7b737cb8ab_act",
@@ -2244,7 +2244,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Potion Charm",
+        "description": "Consigue 1x Poción Charm",
         "target": "apotheosis:potion_charm",
         "amount": 1
       }
@@ -2260,10 +2260,10 @@
     "id": "cisco_trials_569da7bbdc1f40fe",
     "ftbQuestId": "569DA7BBDC1F40FE",
     "category": "MAIN",
-    "title": "View skill tree",
+    "title": "Consulta el árbol de habilidades",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "The skill tree will allow you customise your character and gain the strength required to face the challenges that await. Default key is (o). Click the checkmark to complete the quest.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: View skill tree para avanzar en tu entrenamiento.",
     "suggestedLevel": 49,
     "prerequisiteQuestId": "cisco_trials_6f010e22cd886969",
     "activeTag": "q_cisco_trials_569da7bbdc1f40fe_act",
@@ -2276,7 +2276,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar View skill tree",
+        "description": "Habla con el encargado para completar: View skill tree",
         "target": "",
         "required": 1
       }
@@ -2292,10 +2292,10 @@
     "id": "cisco_trials_7b1fa4c0929a40d9",
     "ftbQuestId": "7B1FA4C0929A40D9",
     "category": "MAIN",
-    "title": "Misión 7B1FA4",
+    "title": "Consigue 1x Brightsteel Lingote",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "A combination of metals and nonmetals enhanced with magic this resilient metal is used to craft many different weapons and armor.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Brightsteel Lingote para avanzar en tu entrenamiento.",
     "suggestedLevel": 50,
     "prerequisiteQuestId": "cisco_trials_3e13eb56ee51145f",
     "activeTag": "q_cisco_trials_7b1fa4c0929a40d9_act",
@@ -2308,7 +2308,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Brightsteel Ingot",
+        "description": "Consigue 1x Brightsteel Lingote",
         "target": "cisco_mod:brightsteel_ingot",
         "amount": 1
       }
@@ -2324,10 +2324,10 @@
     "id": "cisco_trials_7f28da2696d94242",
     "ftbQuestId": "7F28DA2696D94242",
     "category": "MAIN",
-    "title": "Brightsteel Armor",
+    "title": "Brightsteel Armadura",
     "npc": "Maestro de Combate",
     "npcId": "npc_main_trials_3",
-    "description": "Brightsteel Armor provides good protection and a small resistance buff when healthy.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Brightsteel Helmet para avanzar en tu entrenamiento.",
     "suggestedLevel": 51,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_7f28da2696d94242_act",
@@ -2359,7 +2359,7 @@
     "title": "Gilded Eagle",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "The Gilded Eagle armor set provides medium protections but bonus and speed and the ability to breifly dodge incoming attacks.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Gilded Eagle Helmet para avanzar en tu entrenamiento.",
     "suggestedLevel": 52,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_25b412c443489bf9_act",
@@ -2388,10 +2388,10 @@
     "id": "cisco_trials_6853d0c9370fdc1f",
     "ftbQuestId": "6853D0C9370FDC1F",
     "category": "MAIN",
-    "title": "Misión 6853D0",
+    "title": "Consigue 1x Brightsteel Multi Tool",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "This multitool fashioned with brightsteel will greatly aid in the acquisition of natural resources.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Brightsteel Multi Tool para avanzar en tu entrenamiento.",
     "suggestedLevel": 53,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_6853d0c9370fdc1f_act",
@@ -2423,7 +2423,7 @@
     "title": "Slay Spiders",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "The spider population has grown out of hand, reduce thier numbers.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 10x Araña y demuestra que mereces el acero.",
     "suggestedLevel": 54,
     "prerequisiteQuestId": "cisco_trials_6853d0c9370fdc1f",
     "activeTag": "q_cisco_trials_7c0c571649f8e5aa_act",
@@ -2455,7 +2455,7 @@
     "title": "Misión 553D2E",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Used to store and retrieve experience levels.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Misión 553D2E para avanzar en tu entrenamiento.",
     "suggestedLevel": 55,
     "prerequisiteQuestId": "cisco_trials_7c0c571649f8e5aa",
     "activeTag": "q_cisco_trials_553d2e842160b922_act",
@@ -2468,7 +2468,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Misión 553D2E",
+        "description": "Habla con el encargado para completar: Misión 553D2E",
         "target": "",
         "required": 1
       }
@@ -2481,7 +2481,7 @@
     "title": "Adventurers Garments",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Craft the Adventurer's Armor and continue your journey.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Adventurer Pechera para avanzar en tu entrenamiento.",
     "suggestedLevel": 56,
     "prerequisiteQuestId": "cisco_trials_363d127c20eac8fc",
     "activeTag": "q_cisco_trials_159fd707980d3015_act",
@@ -2494,7 +2494,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Adventurer Chestplate",
+        "description": "Consigue 1x Adventurer Pechera",
         "target": "cisco_mod:adventurer_chestplate",
         "amount": 1
       }
@@ -2525,7 +2525,7 @@
     "title": "Craft the brightsteel pickaxe",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "This highly efficient pickaxe is second only to the darksteel variant.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Bright Pickaxe para avanzar en tu entrenamiento.",
     "suggestedLevel": 57,
     "prerequisiteQuestId": "cisco_trials_7b1fa4c0929a40d9",
     "activeTag": "q_cisco_trials_163054d41143a0b9_act",
@@ -2554,10 +2554,10 @@
     "id": "cisco_trials_5f0bbbf9a4360e45",
     "ftbQuestId": "5F0BBBF9A4360E45",
     "category": "MAIN",
-    "title": "Misión 5F0BBB",
+    "title": "Consigue 1x Dark Pickaxe",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "The darksteel pickaxe uses ancient magic to enhance the users strikes increasing efficiency to unparralled levels.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Dark Pickaxe para avanzar en tu entrenamiento.",
     "suggestedLevel": 58,
     "prerequisiteQuestId": "cisco_trials_163054d41143a0b9",
     "activeTag": "q_cisco_trials_5f0bbbf9a4360e45_act",
@@ -2589,7 +2589,7 @@
     "title": "Slayed Betrayed Guzzler",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Demons born of the seven deadly sins have found their way into our world. They pose a significant danger and must be dealt with quickly. Rumors are they only spawn at night.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 5x Betrayed Guzzler y demuestra que mereces el acero.",
     "suggestedLevel": 59,
     "prerequisiteQuestId": "cisco_trials_5f0bbbf9a4360e45",
     "activeTag": "q_cisco_trials_30a0bc21027b02a6_act",
@@ -2618,10 +2618,10 @@
     "id": "cisco_trials_7916f83211133602",
     "ftbQuestId": "7916F83211133602",
     "category": "MAIN",
-    "title": "Misión 7916F8",
+    "title": "Consigue 1x Copper Hechizo Libro",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "To begin your study of ambient magic you will need to craft a spell book. More powerful spellbooks can be found in dungeon chests , aquired from slaying enemies or crafted with very rare materials.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Copper Hechizo Libro para avanzar en tu entrenamiento.",
     "suggestedLevel": 60,
     "prerequisiteQuestId": "cisco_trials_642c85e431896fb0",
     "activeTag": "q_cisco_trials_7916f83211133602_act",
@@ -2634,7 +2634,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Copper Spell Book",
+        "description": "Consigue 1x Copper Hechizo Libro",
         "target": "irons_spellbooks:copper_spell_book",
         "amount": 1
       }
@@ -2653,7 +2653,7 @@
     "title": "Acquiring Ink",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Before you are able to inscribe your spell into your spell book you will need ink. These can be found in chests at different rarities but easily found from mage towers and defeating the wizards within.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Common Ink para avanzar en tu entrenamiento.",
     "suggestedLevel": 61,
     "prerequisiteQuestId": "cisco_trials_4f6408adeb30e0fb",
     "activeTag": "q_cisco_trials_12e6e8aa3ada8496_act",
@@ -2686,10 +2686,10 @@
     "id": "cisco_trials_1713c024e6505594",
     "ftbQuestId": "1713C024E6505594",
     "category": "MAIN",
-    "title": "Misión 1713C0",
+    "title": "Consigue 1x Inscription Table",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "With the ink you have collected you will also require a table to do the inscription. The inscription table can be easily crafted or \"borrowed\" from a mage structure.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Inscription Table para avanzar en tu entrenamiento.",
     "suggestedLevel": 62,
     "prerequisiteQuestId": "cisco_trials_12e6e8aa3ada8496",
     "activeTag": "q_cisco_trials_1713c024e6505594_act",
@@ -2718,10 +2718,10 @@
     "id": "cisco_trials_5c15bccd252805dc",
     "ftbQuestId": "5C15BCCD252805DC",
     "category": "MAIN",
-    "title": "Use Gems to increase spell power",
+    "title": "Usa gemas para aumentar tu poder mágico",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Gems which increase spell power when socketed in the correct pieces of gear can significantly boost your magic damage output. You may only socket one gem of the archmage into your chestplate so it is recommended to use one of the highest quality available. Multiple source jewels may be socketed in thier respective pieces of gear however , which can provide stacking increases to damage.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Use Gemas to increase Hechizo power para avanzar en tu entrenamiento.",
     "suggestedLevel": 63,
     "prerequisiteQuestId": "cisco_trials_5a24e1249722eea9",
     "activeTag": "q_cisco_trials_5c15bccd252805dc_act",
@@ -2734,7 +2734,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Use Gems to increase spell power",
+        "description": "Habla con el encargado para completar: Use Gemas to increase Hechizo power",
         "target": "",
         "required": 1
       }
@@ -2744,10 +2744,10 @@
     "id": "cisco_trials_430e2d9a0d2d5c61",
     "ftbQuestId": "430E2D9A0D2D5C61",
     "category": "MAIN",
-    "title": "Socketing Gems",
+    "title": "Engarzar gemas",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "Socketing gems into your equipment will boost the respective power of that magical school. The main way to find these gems would be within dungeons throughout the world.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Socketing Gemas para avanzar en tu entrenamiento.",
     "suggestedLevel": 64,
     "prerequisiteQuestId": "cisco_trials_609257bfa1739c99",
     "activeTag": "q_cisco_trials_430e2d9a0d2d5c61_act",
@@ -2760,7 +2760,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Socketing Gems",
+        "description": "Habla con el encargado para completar: Socketing Gemas",
         "target": "",
         "required": 1
       }
@@ -2776,10 +2776,10 @@
     "id": "cisco_trials_609257bfa1739c99",
     "ftbQuestId": "609257BFA1739C99",
     "category": "MAIN",
-    "title": "Misión 609257",
+    "title": "Consigue 1x Arcane Anvil",
     "npc": "Caballero Veterano",
     "npcId": "npc_main_trials_4",
-    "description": "The arcane anvil has multiple uses with the main being the combination of two scrolls of the same rarity into higher tier versions of themselves.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Arcane Anvil para avanzar en tu entrenamiento.",
     "suggestedLevel": 65,
     "prerequisiteQuestId": "cisco_trials_1713c024e6505594",
     "activeTag": "q_cisco_trials_609257bfa1739c99_act",
@@ -2812,10 +2812,10 @@
     "id": "cisco_trials_03e41c9a2a59791a",
     "ftbQuestId": "03E41C9A2A59791A",
     "category": "MAIN",
-    "title": "The ultimate Spell Book",
+    "title": "The ultimate Hechizo Libro",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "The ancient codex is the most powerful spell book and can be crafted with very rare materials.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Netherite Hechizo Libro para avanzar en tu entrenamiento.",
     "suggestedLevel": 66,
     "prerequisiteQuestId": "cisco_trials_430e2d9a0d2d5c61",
     "activeTag": "q_cisco_trials_03e41c9a2a59791a_act",
@@ -2828,7 +2828,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Netherite Spell Book",
+        "description": "Consigue 1x Netherite Hechizo Libro",
         "target": "irons_spellbooks:netherite_spell_book",
         "amount": 1
       }
@@ -2852,10 +2852,10 @@
     "id": "cisco_trials_4f6408adeb30e0fb",
     "ftbQuestId": "4F6408ADEB30E0FB",
     "category": "MAIN",
-    "title": "Click the the checkmark.",
+    "title": "Confirma tu progreso",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Spells can be found throughout the world in dungeons and mage towers in the form of scrolls. These scrolls are single use only but can and should be inscribed into a spellbook to use repeatedly.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Click the the checkmark. para avanzar en tu entrenamiento.",
     "suggestedLevel": 67,
     "prerequisiteQuestId": "cisco_trials_7916f83211133602",
     "activeTag": "q_cisco_trials_4f6408adeb30e0fb_act",
@@ -2868,7 +2868,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Click the the checkmark.",
+        "description": "Habla con el encargado para completar: Click the the checkmark.",
         "target": "",
         "required": 1
       }
@@ -2884,10 +2884,10 @@
     "id": "cisco_trials_526d9e48aed9ff47",
     "ftbQuestId": "526D9E48AED9FF47",
     "category": "MAIN",
-    "title": "Misión 526D9E",
+    "title": "Consigue 1x Darksteel Multitool",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "The darksteel variant of the brightsteel multitool unrivalled in speed an efficiency.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Darksteel Multitool para avanzar en tu entrenamiento.",
     "suggestedLevel": 68,
     "prerequisiteQuestId": "cisco_trials_6853d0c9370fdc1f",
     "activeTag": "q_cisco_trials_526d9e48aed9ff47_act",
@@ -2916,10 +2916,10 @@
     "id": "cisco_trials_1e29bfdbab318bb6",
     "ftbQuestId": "1E29BFDBAB318BB6",
     "category": "MAIN",
-    "title": "Visit Ocean Monument",
+    "title": "Visita un Monumento Oceánico",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Ocean monuments can be found within ocean biomes.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Visit Ocean Monument para avanzar en tu entrenamiento.",
     "suggestedLevel": 69,
     "prerequisiteQuestId": "cisco_trials_64286a21fdb8288f",
     "activeTag": "q_cisco_trials_1e29bfdbab318bb6_act",
@@ -2932,7 +2932,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Visit Ocean Monument",
+        "description": "Habla con el encargado para completar: Visit Ocean Monument",
         "target": "",
         "required": 1
       }
@@ -2951,7 +2951,7 @@
     "title": "Slay the Elder Guardian",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Gatekeeper The Elder Guardian is a powerful creature which guards the ocean monument. You can obtain the guardian eye required for opening the end portal from killing it.",
+    "description": "Las pruebas del escudero exigen temple en combate. Elimina 1x Elder Guardian y demuestra que mereces el acero.",
     "suggestedLevel": 70,
     "prerequisiteQuestId": "cisco_trials_1e29bfdbab318bb6",
     "activeTag": "q_cisco_trials_58711e64c6f2abf5_act",
@@ -2984,10 +2984,10 @@
     "id": "cisco_trials_7db626b9f20baadc",
     "ftbQuestId": "7DB626B9F20BAADC",
     "category": "MAIN",
-    "title": "Darksteel Armor",
+    "title": "Darksteel Armadura",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "Darksteel Armor provides superior overall protection with added defence against especially lethal hits. It also grants a permanent resistance buff.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Consigue 1x Darksteel Armadura Helmet para avanzar en tu entrenamiento.",
     "suggestedLevel": 71,
     "prerequisiteQuestId": "cisco_trials_7f28da2696d94242",
     "activeTag": "q_cisco_trials_7db626b9f20baadc_act",
@@ -3000,7 +3000,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Darksteel Armor Helmet",
+        "description": "Consigue 1x Darksteel Armadura Helmet",
         "target": "cisco_mod:darksteel_armor_helmet",
         "amount": 1
       }
@@ -3019,7 +3019,7 @@
     "title": "Misión 3AF40C",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "This table uses sigils of enhancement to further increase the power of your reforged affixes.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Misión 3AF40C para avanzar en tu entrenamiento.",
     "suggestedLevel": 72,
     "prerequisiteQuestId": "cisco_trials_78c3cc2b67ed66b6",
     "activeTag": "q_cisco_trials_3af40cdf74652218_act",
@@ -3032,7 +3032,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Misión 3AF40C",
+        "description": "Habla con el encargado para completar: Misión 3AF40C",
         "target": "",
         "required": 1
       }
@@ -3042,10 +3042,10 @@
     "id": "cisco_trials_22b92de71f6f923d",
     "ftbQuestId": "22B92DE71F6F923D",
     "category": "MAIN",
-    "title": "Find a bounty board",
+    "title": "Encuentra un tablón de recompensas",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "The bounty board allows you  to accept and complete small tasks in exchange for rewards. They can usually be found in villages.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Find a bounty board para avanzar en tu entrenamiento.",
     "suggestedLevel": 73,
     "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
     "activeTag": "q_cisco_trials_22b92de71f6f923d_act",
@@ -3058,7 +3058,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find a bounty board",
+        "description": "Habla con el encargado para completar: Find a bounty board",
         "target": "",
         "required": 1
       }
@@ -3068,10 +3068,10 @@
     "id": "cisco_trials_5e23b10d82dbb573",
     "ftbQuestId": "5E23B10D82DBB573",
     "category": "MAIN",
-    "title": "Find a village",
+    "title": "Encuentra una aldea",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "The villagers may be able to aid you in your journey  providing resources in exchange for protection. Seek out a village.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Find a village para avanzar en tu entrenamiento.",
     "suggestedLevel": 74,
     "prerequisiteQuestId": "cisco_trials_23864a4966441d61",
     "activeTag": "q_cisco_trials_5e23b10d82dbb573_act",
@@ -3084,7 +3084,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find a village",
+        "description": "Habla con el encargado para completar: Find a village",
         "target": "",
         "required": 1
       }
@@ -3097,7 +3097,7 @@
     "title": "Misión 6C3BF7",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "This reforging table allows you reroll up to esoteric tier affixes.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Misión 6C3BF7 para avanzar en tu entrenamiento.",
     "suggestedLevel": 75,
     "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
     "activeTag": "q_cisco_trials_6c3bf7e0c3286ef7_act",
@@ -3110,7 +3110,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Misión 6C3BF7",
+        "description": "Habla con el encargado para completar: Misión 6C3BF7",
         "target": "",
         "required": 1
       }
@@ -3123,7 +3123,7 @@
     "title": "Misión 0A9E8B",
     "npc": "Campeón del Reino",
     "npcId": "npc_main_trials_5",
-    "description": "This reforging table allows you reroll up to ancient tier affixes.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Misión 0A9E8B para avanzar en tu entrenamiento.",
     "suggestedLevel": 76,
     "prerequisiteQuestId": "cisco_trials_6c3bf7e0c3286ef7",
     "activeTag": "q_cisco_trials_0a9e8bacb6289283_act",
@@ -3136,7 +3136,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Misión 0A9E8B",
+        "description": "Habla con el encargado para completar: Misión 0A9E8B",
         "target": "",
         "required": 1
       }
@@ -3146,10 +3146,10 @@
     "id": "cisco_traveller_7815c719227c80e6",
     "ftbQuestId": "7815C719227C80E6",
     "category": "MAIN",
-    "title": "Misión 7815C7",
+    "title": "Consigue 1x Naturescompass",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "This useful tool will help you find any biome you desire.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Naturescompass y vuelve cuando lo consigas.",
     "suggestedLevel": 20,
     "prerequisiteQuestId": "",
     "activeTag": "q_cisco_traveller_7815c719227c80e6_act",
@@ -3181,7 +3181,7 @@
     "title": "Visit the twilight forest",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "This portal can be crafted with flowers and dirt and will take you to the twilight forest.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Viaja a Twilight Forest para continuar tu travesía.",
     "suggestedLevel": 21,
     "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
     "activeTag": "q_cisco_traveller_0409ee265b906649_act",
@@ -3207,7 +3207,7 @@
     "title": "Acquire Naga's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found in Naga's Courtyard.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Naga Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 22,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_3bd706c24344cd30_act",
@@ -3239,7 +3239,7 @@
     "title": "Acquire Lich's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found in the lich's tower.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Lich Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 23,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_008b7e891a9c410e_act",
@@ -3271,7 +3271,7 @@
     "title": "Acquire Minoshroom's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found at the bottom of the Labyrinth.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Minoshroom Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 24,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_5ba1ae423d7c3c4a_act",
@@ -3303,7 +3303,7 @@
     "title": "Acquire the Hydra's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found in it's lair in a fire swamp.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Hydra Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 25,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_5a7f819bcfdb9cbf_act",
@@ -3332,10 +3332,10 @@
     "id": "cisco_traveller_215073b10639703f",
     "ftbQuestId": "215073B10639703F",
     "category": "MAIN",
-    "title": "Acquire Knight Phantom's Head",
+    "title": "Acquire Caballero Phantom's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found in a large room inside of the Goblin Knight Stronghold.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Caballero Phantom Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 26,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_215073b10639703f_act",
@@ -3348,7 +3348,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Knight Phantom Trophy",
+        "description": "Consigue 1x Caballero Phantom Trophy",
         "target": "twilightforest:knight_phantom_trophy",
         "amount": 1
       }
@@ -3367,7 +3367,7 @@
     "title": "Acquire the Ur-Ghast's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found at the top of the Dark Tower.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Ur Ghast Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 27,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_50d2e142736f982f_act",
@@ -3399,7 +3399,7 @@
     "title": "Acquire the Alpha Yeti's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found in it's lair in the snowy forest.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Alpha Yeti Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 28,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_6799e933c08da23d_act",
@@ -3431,7 +3431,7 @@
     "title": "Acquire the Snow Queen's Head",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "Can be found at the top of the Aurora Palace.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Snow Queen Trophy y vuelve cuando lo consigas.",
     "suggestedLevel": 29,
     "prerequisiteQuestId": "cisco_traveller_0409ee265b906649",
     "activeTag": "q_cisco_traveller_1f2d9615ba7ce672_act",
@@ -3460,10 +3460,10 @@
     "id": "cisco_traveller_0c7ef344c1930a6f",
     "ftbQuestId": "0C7EF344C1930A6F",
     "category": "MAIN",
-    "title": "Craft the explorer's compass",
+    "title": "Craft the explorer's Brújula",
     "npc": "Explorador Real",
     "npcId": "npc_main_explorador",
-    "description": "This item will help you locate structures in your world.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Explorerscompass y vuelve cuando lo consigas.",
     "suggestedLevel": 30,
     "prerequisiteQuestId": "cisco_traveller_1f2d9615ba7ce672",
     "activeTag": "q_cisco_traveller_0c7ef344c1930a6f_act",
@@ -3499,7 +3499,7 @@
     "title": "Visit keep kayra",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Raid this massive keep and take it's treasures.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Visit keep kayra y vuelve cuando lo consigas.",
     "suggestedLevel": 31,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_3c812f7976a9223d_act",
@@ -3512,7 +3512,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Visit keep kayra",
+        "description": "Habla con el encargado para completar: Visit keep kayra",
         "target": "",
         "required": 1
       }
@@ -3531,7 +3531,7 @@
     "title": "Raid Shiraz Palace",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Clear out this massive palace structure filled with powerful enemies and loot.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Raid Shiraz Palace y vuelve cuando lo consigas.",
     "suggestedLevel": 32,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_6c2dce962ac28480_act",
@@ -3544,7 +3544,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Raid Shiraz Palace",
+        "description": "Habla con el encargado para completar: Raid Shiraz Palace",
         "target": "",
         "required": 1
       }
@@ -3563,7 +3563,7 @@
     "title": "Raid Bastille",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Clear out this fortified pillager camp.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Raid Bastille y vuelve cuando lo consigas.",
     "suggestedLevel": 33,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_4b649072887655a1_act",
@@ -3576,7 +3576,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Raid Bastille",
+        "description": "Habla con el encargado para completar: Raid Bastille",
         "target": "",
         "required": 1
       }
@@ -3595,7 +3595,7 @@
     "title": "Raid the Dungeon Crawl Dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "This massive dungeon may appear small on the surface but houses many floors which get harder but more rewarding as you descend.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Raid the Dungeon Crawl Dungeon y vuelve cuando lo consigas.",
     "suggestedLevel": 34,
     "prerequisiteQuestId": "cisco_traveller_0c7ef344c1930a6f",
     "activeTag": "q_cisco_traveller_0ac77373513b6cc9_act",
@@ -3608,7 +3608,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Raid the Dungeon Crawl Dungeon",
+        "description": "Habla con el encargado para completar: Raid the Dungeon Crawl Dungeon",
         "target": "",
         "required": 1
       }
@@ -3627,7 +3627,7 @@
     "title": "Visit the aether dimension",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Visit the dimension in the sky.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Viaja a The Aether para continuar tu travesía.",
     "suggestedLevel": 35,
     "prerequisiteQuestId": "cisco_traveller_0ac77373513b6cc9",
     "activeTag": "q_cisco_traveller_22a1e4ba57d4a830_act",
@@ -3653,7 +3653,7 @@
     "title": "Find the bronze dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "The first of the three dungeons in the aether.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Find the bronze dungeon y vuelve cuando lo consigas.",
     "suggestedLevel": 36,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_3034fc307834e034_act",
@@ -3666,7 +3666,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find the bronze dungeon",
+        "description": "Habla con el encargado para completar: Find the bronze dungeon",
         "target": "",
         "required": 1
       }
@@ -3679,7 +3679,7 @@
     "title": "Find the silver dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "Find the the silver dungeon and slay valkyries to obtain victory medals.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Find the silver dungeon y vuelve cuando lo consigas.",
     "suggestedLevel": 37,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_4569ae5e16c87b01_act",
@@ -3692,7 +3692,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find the silver dungeon",
+        "description": "Habla con el encargado para completar: Find the silver dungeon",
         "target": "",
         "required": 1
       }
@@ -3705,7 +3705,7 @@
     "title": "Find the gold dungeon",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "The last of the dungeons within the aether .",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Find the gold dungeon y vuelve cuando lo consigas.",
     "suggestedLevel": 38,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_3576d8407e23183e_act",
@@ -3718,7 +3718,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find the gold dungeon",
+        "description": "Habla con el encargado para completar: Find the gold dungeon",
         "target": "",
         "required": 1
       }
@@ -3731,7 +3731,7 @@
     "title": "Defeat the slider",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "This boss can be found in the bronze dungeon. Must be defeated using pickaxes or shovels.",
+    "description": "Más allá de las tierras seguras acechan bestias implacables. Elimina 1x Slider y despeja el camino.",
     "suggestedLevel": 39,
     "prerequisiteQuestId": "cisco_traveller_3034fc307834e034",
     "activeTag": "q_cisco_traveller_1fa1b5af726f368e_act",
@@ -3763,7 +3763,7 @@
     "title": "Slay the Valkyrie Queen",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "After obtaining 10 victory medals you may challenge the valkyrie queen.",
+    "description": "Más allá de las tierras seguras acechan bestias implacables. Elimina 1x Valkyrie Queen y despeja el camino.",
     "suggestedLevel": 40,
     "prerequisiteQuestId": "cisco_traveller_4569ae5e16c87b01",
     "activeTag": "q_cisco_traveller_2e5bf8d65a759fff_act",
@@ -3795,7 +3795,7 @@
     "title": "Slay the Sun Spirit",
     "npc": "Cartógrafo Errante",
     "npcId": "npc_main_traveller_2",
-    "description": "The sun spirit resides in the gold dungeon once slain the aether will no longer be in a a state of perputual daytime.",
+    "description": "Más allá de las tierras seguras acechan bestias implacables. Elimina 1x Sun Spirit y despeja el camino.",
     "suggestedLevel": 41,
     "prerequisiteQuestId": "cisco_traveller_3576d8407e23183e",
     "activeTag": "q_cisco_traveller_2dd7b0278eacd633_act",
@@ -3827,7 +3827,7 @@
     "title": "Craft a backpack",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "The backpack is an item that holds items and can be carried with the player. It has numerous utility upgrades and can be expanded all the way from standard to netherite tier for even more extra storage.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Backpack y vuelve cuando lo consigas.",
     "suggestedLevel": 42,
     "prerequisiteQuestId": "cisco_traveller_2dd7b0278eacd633",
     "activeTag": "q_cisco_traveller_5f2456e5bf06098c_act",
@@ -3860,10 +3860,10 @@
     "id": "cisco_traveller_39ada7b5ed04f4c1",
     "ftbQuestId": "39ADA7B5ED04F4C1",
     "category": "MAIN",
-    "title": "Misión 39ADA7",
+    "title": "Consigue 1x Stack Upgrade Tier 1",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "This utility upgrade allows the user to store stacks of items in the same slot. Can be upgraded from 2 stacks all the way to 16.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Stack Upgrade Tier 1 y vuelve cuando lo consigas.",
     "suggestedLevel": 43,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_39ada7b5ed04f4c1_act",
@@ -3892,10 +3892,10 @@
     "id": "cisco_traveller_22388f2d91480e82",
     "ftbQuestId": "22388F2D91480E82",
     "category": "MAIN",
-    "title": "Misión 22388F",
+    "title": "Consigue 1x Everlasting Upgrade",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "This utility upgrade allows the backpack to to become indestructible.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Everlasting Upgrade y vuelve cuando lo consigas.",
     "suggestedLevel": 44,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_22388f2d91480e82_act",
@@ -3924,10 +3924,10 @@
     "id": "cisco_traveller_1972ee649fc972e7",
     "ftbQuestId": "1972EE649FC972E7",
     "category": "MAIN",
-    "title": "Misión 1972EE",
+    "title": "Consigue 1x Smelting Upgrade",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "This ultility upgrade allows for smelting within the backpack. This function can be upgraded further.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Smelting Upgrade y vuelve cuando lo consigas.",
     "suggestedLevel": 45,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_1972ee649fc972e7_act",
@@ -3956,10 +3956,10 @@
     "id": "cisco_traveller_2dccc1e1567de875",
     "ftbQuestId": "2DCCC1E1567DE875",
     "category": "MAIN",
-    "title": "Misión 2DCCC1",
+    "title": "Consigue 1x Crafting Upgrade",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "This utility upgrade allows for crafting within the backpack.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Crafting Upgrade y vuelve cuando lo consigas.",
     "suggestedLevel": 46,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_2dccc1e1567de875_act",
@@ -3988,10 +3988,10 @@
     "id": "cisco_traveller_513c6a72927972c9",
     "ftbQuestId": "513C6A72927972C9",
     "category": "MAIN",
-    "title": "Misión 513C6A",
+    "title": "Consigue 1x Feeding Upgrade",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "This utility upgrade allows the backpack to automatically feed the player with items from thier inventory.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Feeding Upgrade y vuelve cuando lo consigas.",
     "suggestedLevel": 47,
     "prerequisiteQuestId": "cisco_traveller_5f2456e5bf06098c",
     "activeTag": "q_cisco_traveller_513c6a72927972c9_act",
@@ -4023,7 +4023,7 @@
     "title": "Craft the iron furnace",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Furnaces can be upgrade by combining them with rare metals.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Iron Furnace y vuelve cuando lo consigas.",
     "suggestedLevel": 48,
     "prerequisiteQuestId": "cisco_traveller_513c6a72927972c9",
     "activeTag": "q_cisco_traveller_4faecf44cfbe7eec_act",
@@ -4059,7 +4059,7 @@
     "title": "Craft the golden furnace",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "The gold furnace boasts faster cook speed than the iron and can be upgraded even further .",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Gold Furnace y vuelve cuando lo consigas.",
     "suggestedLevel": 49,
     "prerequisiteQuestId": "cisco_traveller_4faecf44cfbe7eec",
     "activeTag": "q_cisco_traveller_02d166e4ffb3baf6_act",
@@ -4092,10 +4092,10 @@
     "id": "cisco_traveller_2754c959bc321288",
     "ftbQuestId": "2754C959BC321288",
     "category": "MAIN",
-    "title": "Misión 2754C9",
+    "title": "Consigue 1x Sawmill",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "This station will act as stone cutter for wood allowing you to obtain many different variants.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Sawmill y vuelve cuando lo consigas.",
     "suggestedLevel": 50,
     "prerequisiteQuestId": "cisco_traveller_02d166e4ffb3baf6",
     "activeTag": "q_cisco_traveller_2754c959bc321288_act",
@@ -4118,10 +4118,10 @@
     "id": "cisco_traveller_736e4b5e45e37f9c",
     "ftbQuestId": "736E4B5E45E37F9C",
     "category": "MAIN",
-    "title": "Stone Wand",
+    "title": "Stone Varita",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Building wands will allow you to build large structures quickly and effieciently.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Stone Varita y vuelve cuando lo consigas.",
     "suggestedLevel": 51,
     "prerequisiteQuestId": "cisco_traveller_2754c959bc321288",
     "activeTag": "q_cisco_traveller_736e4b5e45e37f9c_act",
@@ -4134,7 +4134,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Stone Wand",
+        "description": "Consigue 1x Stone Varita",
         "target": "constructionwand:stone_wand",
         "amount": 1
       }
@@ -4150,10 +4150,10 @@
     "id": "cisco_traveller_4524817476a2b36d",
     "ftbQuestId": "4524817476A2B36D",
     "category": "MAIN",
-    "title": "Misión 452481",
+    "title": "Consigue 1x Iron Varita",
     "npc": "Guía de Frontera",
     "npcId": "npc_main_traveller_3",
-    "description": "Building wands can be upgrade from stone tier to infinity tier. Cores may also be combined with wands to increase functionality.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Iron Varita y vuelve cuando lo consigas.",
     "suggestedLevel": 52,
     "prerequisiteQuestId": "cisco_traveller_736e4b5e45e37f9c",
     "activeTag": "q_cisco_traveller_4524817476a2b36d_act",
@@ -4166,7 +4166,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Iron Wand",
+        "description": "Consigue 1x Iron Varita",
         "target": "constructionwand:iron_wand",
         "amount": 1
       }
@@ -4185,7 +4185,7 @@
     "title": "Easy Villagers Auto Trader",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "You may place a villager with an occupation into the autotrader selecting the items you wish to trade. The auto trader will then automate that trade.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Auto Trader y vuelve cuando lo consigas.",
     "suggestedLevel": 53,
     "prerequisiteQuestId": "cisco_traveller_4524817476a2b36d",
     "activeTag": "q_cisco_traveller_5e30054f5210d394_act",
@@ -4217,7 +4217,7 @@
     "title": "Easy Villagers Trading",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "You may place a villager with an occupation within the trader to gain easy access to thier trades whenever you require.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Trader y vuelve cuando lo consigas.",
     "suggestedLevel": 54,
     "prerequisiteQuestId": "cisco_traveller_5e30054f5210d394",
     "activeTag": "q_cisco_traveller_2d15560c7952aff6_act",
@@ -4249,7 +4249,7 @@
     "title": "Easy Villagers Iron Farm",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "You may place a villager into the iron farm to begin automatically farming iron.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Iron Farm y vuelve cuando lo consigas.",
     "suggestedLevel": 55,
     "prerequisiteQuestId": "cisco_traveller_2d15560c7952aff6",
     "activeTag": "q_cisco_traveller_2ff19466e4710c4d_act",
@@ -4281,7 +4281,7 @@
     "title": "Easy Villagers Farmer",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "You may place a farmer villager and seeds within the farmer to automate crop farming.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Farmer y vuelve cuando lo consigas.",
     "suggestedLevel": 56,
     "prerequisiteQuestId": "cisco_traveller_2ff19466e4710c4d",
     "activeTag": "q_cisco_traveller_514e2cb906303e01_act",
@@ -4313,7 +4313,7 @@
     "title": "Easy Villagers Converting",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The converter automatically converts villagers to zombie villagers then back into regular villagers. This process decreases their trade prices and requires you to input a villager , golden apple and any potion of weakness.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Converter y vuelve cuando lo consigas.",
     "suggestedLevel": 57,
     "prerequisiteQuestId": "cisco_traveller_514e2cb906303e01",
     "activeTag": "q_cisco_traveller_2ec1bd31a2a70282_act",
@@ -4345,7 +4345,7 @@
     "title": "Easy Villagers Breeding",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The breeder requires you two input two villagers and a food item to then produce baby villagers.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Breeder y vuelve cuando lo consigas.",
     "suggestedLevel": 58,
     "prerequisiteQuestId": "cisco_traveller_2ec1bd31a2a70282",
     "activeTag": "q_cisco_traveller_61164317e99bf787_act",
@@ -4377,7 +4377,7 @@
     "title": "Easy Villagers Incubator",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The Incubator increases the growth rate of baby villagers.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Consigue 1x Incubator y vuelve cuando lo consigas.",
     "suggestedLevel": 59,
     "prerequisiteQuestId": "cisco_traveller_61164317e99bf787",
     "activeTag": "q_cisco_traveller_0342dba7699ae3d0_act",
@@ -4409,7 +4409,7 @@
     "title": "Find the Olympic Citadel",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The olympic Citadel was once believed to be the home of gods now abadoned after they were almost completely wiped out by Fell King Arthas and the fell forces.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Find the Olympic Citadel y vuelve cuando lo consigas.",
     "suggestedLevel": 60,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_54ec21b27a5a31ad_act",
@@ -4422,7 +4422,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find the Olympic Citadel",
+        "description": "Habla con el encargado para completar: Find the Olympic Citadel",
         "target": "",
         "required": 1
       }
@@ -4438,10 +4438,10 @@
     "id": "cisco_traveller_099e53ee758f1f2c",
     "ftbQuestId": "099E53EE758F1F2C",
     "category": "MAIN",
-    "title": "Visit the Nether",
+    "title": "Visit El Nether",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The Nether dimension has been enhanced now featuring a more varied and atmospheric version with new landscapes and challenges.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Viaja a El Nether para continuar tu travesía.",
     "suggestedLevel": 61,
     "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
     "activeTag": "q_cisco_traveller_099e53ee758f1f2c_act",
@@ -4464,10 +4464,10 @@
     "id": "cisco_traveller_0037e919a5da26df",
     "ftbQuestId": "0037E919A5DA26DF",
     "category": "MAIN",
-    "title": "Travel to the End",
+    "title": "Travel to El End",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The End dimension has undergone a massive transformation, turning it into a vibrant, more diverse, and visually stunning world.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Viaja a El End para continuar tu travesía.",
     "suggestedLevel": 62,
     "prerequisiteQuestId": "cisco_traveller_7815c719227c80e6",
     "activeTag": "q_cisco_traveller_0037e919a5da26df_act",
@@ -4493,7 +4493,7 @@
     "title": "Visit the Soul Plain",
     "npc": "Navegante del Norte",
     "npcId": "npc_main_traveller_4",
-    "description": "The Soul Plain  is a desolate, eerie landscape filled with dark, ghostly elements. It features a twisted, haunting environment with a purple-gray palette, and is often inhabited by hostile mobs like Soul Eaters.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Soul Plain para continuar tu travesía.",
     "suggestedLevel": 63,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_3b36c3ef12b4ff3c_act",
@@ -4519,7 +4519,7 @@
     "title": "Find the Platinum dungeon",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Find the platinum dungeon, within lies your final foe the aerwhale king.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Find the Platinum dungeon y vuelve cuando lo consigas.",
     "suggestedLevel": 64,
     "prerequisiteQuestId": "cisco_traveller_22a1e4ba57d4a830",
     "activeTag": "q_cisco_traveller_2fc3c0ef214ed424_act",
@@ -4532,7 +4532,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find the Platinum dungeon",
+        "description": "Habla con el encargado para completar: Find the Platinum dungeon",
         "target": "",
         "required": 1
       }
@@ -4545,7 +4545,7 @@
     "title": "Defeat the Aerwhale King",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "Residing atop the platinum dungeon the aerwhale king is a formiddable foe. Defeat him and claim the platinum key.",
+    "description": "Más allá de las tierras seguras acechan bestias implacables. Elimina 1x Aerwhale King y despeja el camino.",
     "suggestedLevel": 65,
     "prerequisiteQuestId": "cisco_traveller_2fc3c0ef214ed424",
     "activeTag": "q_cisco_traveller_63007c16471db9e3_act",
@@ -4568,10 +4568,10 @@
     "id": "cisco_traveller_7d909ecb706f1882",
     "ftbQuestId": "7D909ECB706F1882",
     "category": "MAIN",
-    "title": "Visit the Bone Reef",
+    "title": "Visit the Hueso Reef",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Bone Reef underwater-like environment found within the Nether. It features large, bleached bone structures that resemble a vast coral reef, with bones and skeletons scattered throughout. The biome has a haunting aesthetic, often filled with hostile mobs like Bone Sharks and other skeleton-themed creatures.",
+    "description": "Los viajeros experimentados siempre se preparan antes de partir. Habla con el encargado para completar: Visit the Hueso Reef y vuelve cuando lo consigas.",
     "suggestedLevel": 66,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_7d909ecb706f1882_act",
@@ -4584,7 +4584,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Visit the Bone Reef",
+        "description": "Habla con el encargado para completar: Visit the Hueso Reef",
         "target": "",
         "required": 1
       }
@@ -4597,7 +4597,7 @@
     "title": "Visit the crimson glowing woods",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Crimson Glowing Woods is a vibrant and eerie area filled with towering crimson trees that emit a soft, glowing light. The landscape is dominated by dense forests of these glowing trees, with the ground covered in crimson-colored grass and fungi.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Crimson Glowing Woods para continuar tu travesía.",
     "suggestedLevel": 67,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_74fbea79142079d2_act",
@@ -4623,7 +4623,7 @@
     "title": "Visit the dead upside down forest",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Upside Down Forest is a surreal landscape where the trees grow inverted, with their roots reaching toward the sky. The forest is filled with dead, twisted trees and a haunting atmosphere, as the ground is covered in withered foliage and dark vegetation.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Upside Down Forest para continuar tu travesía.",
     "suggestedLevel": 68,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_71d9b5a1692b2449_act",
@@ -4649,7 +4649,7 @@
     "title": "Visit the flooded deltas",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Flooded Deltas is a murky, waterlogged area within the Nether. The terrain is covered in pools of dark, stagnant water and is filled with jagged, often submerged rocks and volcanic features. The biome's atmosphere is gloomy and treacherous, with hostile mobs like Sludges and other water-adapted creatures lurking in the depths.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Flooded Deltas para continuar tu travesía.",
     "suggestedLevel": 69,
     "prerequisiteQuestId": "cisco_traveller_099e53ee758f1f2c",
     "activeTag": "q_cisco_traveller_7ab3a2feb07e0d8f_act",
@@ -4675,7 +4675,7 @@
     "title": "Visit the Amber Land ",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Amber Land biome  is one of the more visually striking and immersive areas within the revamped End dimension. It’s a rich, warm colored biome that feels like stepping into a completely different realm within the End, full of both beauty and mystery.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Amber Land para continuar tu travesía.",
     "suggestedLevel": 70,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_715f9e89062b1f30_act",
@@ -4701,7 +4701,7 @@
     "title": "Visit the Blossoming Spires",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Blossoming Spires biome is a stunning and ethereal landscape characterized by towering spires of glowing, crystalline structures and vibrant, floating flora. The biome is filled with Blossoming Trees that have delicate, colorful petals, and the ground is covered in lush, flower-filled grass.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Blossoming Spires para continuar tu travesía.",
     "suggestedLevel": 71,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_22d351c8d4c06690_act",
@@ -4727,7 +4727,7 @@
     "title": "Visit the Chorus Forest",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Chorus Forest biome is a mystical and vibrant landscape, featuring towering Chorus Trees that grow in dense clusters, their twisted branches covered in glowing Chorus Flowers. The biome is filled with a variety of Chorus-like vegetation, giving it a surreal, otherworldly appearance.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Chorus Forest para continuar tu travesía.",
     "suggestedLevel": 72,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_6c6310591cf4d15f_act",
@@ -4750,10 +4750,10 @@
     "id": "cisco_traveller_1cd2bf55b58e0dc0",
     "ftbQuestId": "1CD2BF55B58E0DC0",
     "category": "MAIN",
-    "title": "Visit the Crystal Mountains",
+    "title": "Visit the Cristal Mountains",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Crystal Mountains biome  is a breathtaking, jagged landscape dominated by towering, glittering Crystal Spires and massive, crystalline formations. The ground is dotted with Crystal Shards and rich veins of Endstone Ore, glowing with various colors that reflect off the crystals scattered throughout the area.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Cristal Mountains para continuar tu travesía.",
     "suggestedLevel": 73,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_1cd2bf55b58e0dc0_act",
@@ -4766,7 +4766,7 @@
     "stages": [
       {
         "type": "BIOME",
-        "description": "Explora Crystal Mountains",
+        "description": "Explora Cristal Mountains",
         "target": "betterend:crystal_mountains",
         "amount": 1
       }
@@ -4776,10 +4776,10 @@
     "id": "cisco_traveller_0e8170950eede373",
     "ftbQuestId": "0E8170950EEDE373",
     "category": "MAIN",
-    "title": "Visit the Dragon Graveyards",
+    "title": "Visit the Dragón Graveyards",
     "npc": "Cronista de Mundos",
     "npcId": "npc_main_traveller_5",
-    "description": "The Dragon Graveyards biome is a haunting, eerie area filled with the remains of ancient dragons. The biome is characterized by vast, desolate landscapes littered with Dragon Bones, massive Skeletons, and crumbled dragon skulls that serve as eerie reminders of a forgotten time.",
+    "description": "El mundo es vasto y guarda secretos olvidados. Explora Dragón Graveyards para continuar tu travesía.",
     "suggestedLevel": 74,
     "prerequisiteQuestId": "cisco_traveller_0037e919a5da26df",
     "activeTag": "q_cisco_traveller_0e8170950eede373_act",
@@ -4792,7 +4792,7 @@
     "stages": [
       {
         "type": "BIOME",
-        "description": "Explora Dragon Graveyards",
+        "description": "Explora Dragón Graveyards",
         "target": "betterend:dragon_graveyards",
         "amount": 1
       }
@@ -4802,10 +4802,10 @@
     "id": "cisco_dragons_4b4bf1ff89c31aca",
     "ftbQuestId": "4B4BF1FF89C31ACA",
     "category": "MAIN",
-    "title": "Misión 4B4BF1",
+    "title": "Consigue 1x Bestiary",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Knowlwedge keeps you alive. A Bestiary contains information about most of the magical creatures you may encounter possibly granting you a combat advantage. The manuscripts you will need can be found within chests in caves , dragon roosts or graveyards.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Bestiary para prepararte ante la batalla final.",
     "suggestedLevel": 35,
     "prerequisiteQuestId": "cisco_dragons_0d904a47c1eda7de",
     "activeTag": "q_cisco_dragons_4b4bf1ff89c31aca_act",
@@ -4834,10 +4834,10 @@
     "id": "cisco_dragons_2fb1578ebe95b902",
     "ftbQuestId": "2FB1578EBE95B902",
     "category": "MAIN",
-    "title": "Misión 2FB157",
+    "title": "Consigue 1x Lectern",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "The Bestiary Lecturn will allow you add chapters to your bestiary by combining it with manuscripts.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Lectern para prepararte ante la batalla final.",
     "suggestedLevel": 36,
     "prerequisiteQuestId": "cisco_dragons_4b4bf1ff89c31aca",
     "activeTag": "q_cisco_dragons_2fb1578ebe95b902_act",
@@ -4866,10 +4866,10 @@
     "id": "cisco_dragons_57f0e543419b8d21",
     "ftbQuestId": "57F0E543419B8D21",
     "category": "MAIN",
-    "title": "Misión 57F0E5",
+    "title": "Consigue 1x Silver Lingote",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Silver is a metal that can be found on the same level as gold and can be used to create tools and armor which are especially effective against undead.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Silver Lingote para prepararte ante la batalla final.",
     "suggestedLevel": 37,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_57f0e543419b8d21_act",
@@ -4882,7 +4882,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Silver Ingot",
+        "description": "Consigue 1x Silver Lingote",
         "target": "iceandfire:silver_ingot",
         "amount": 1
       }
@@ -4898,10 +4898,10 @@
     "id": "cisco_dragons_7799076a92b03ca8",
     "ftbQuestId": "7799076A92B03CA8",
     "category": "MAIN",
-    "title": "Misión 779907",
+    "title": "Consigue 1x Summoning Cristal Ice",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "The Ice dragon summoning crystal is an item that can teleport a ice dragon to you. To do so, use on a dragon to bind it and after, use when bound to teleport the dragon . After usage, the crystal will be unbound to the dragon and therefore you must use on the dragon again to rebind the crystal. Crystals are bound to a dragon when a black dragon silhouette appears on the crystal.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Summoning Cristal Ice para prepararte ante la batalla final.",
     "suggestedLevel": 38,
     "prerequisiteQuestId": "cisco_dragons_42821297260c128f",
     "activeTag": "q_cisco_dragons_7799076a92b03ca8_act",
@@ -4914,7 +4914,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Summoning Crystal Ice",
+        "description": "Consigue 1x Summoning Cristal Ice",
         "target": "iceandfire:summoning_crystal_ice",
         "amount": 1
       }
@@ -4924,10 +4924,10 @@
     "id": "cisco_dragons_4e213c9d6719a0e0",
     "ftbQuestId": "4E213C9D6719A0E0",
     "category": "MAIN",
-    "title": "Misión 4E213C",
+    "title": "Consigue 1x Summoning Cristal Lightning",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "The lightning dragon summoning crystal is an item that can teleport a lightning dragon to you. To do so, use on a dragon to bind it and after, use when bound to teleport the dragon . After usage, the crystal will be unbound to the dragon and therefore you must use on the dragon again to rebind the crystal. Crystals are bound to a dragon when a black dragon silhouette appears on the crystal.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Summoning Cristal Lightning para prepararte ante la batalla final.",
     "suggestedLevel": 39,
     "prerequisiteQuestId": "cisco_dragons_32e7d93bb699594e",
     "activeTag": "q_cisco_dragons_4e213c9d6719a0e0_act",
@@ -4940,7 +4940,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Summoning Crystal Lightning",
+        "description": "Consigue 1x Summoning Cristal Lightning",
         "target": "iceandfire:summoning_crystal_lightning",
         "amount": 1
       }
@@ -4953,7 +4953,7 @@
     "title": "Befriend a pixie",
     "npc": "Ocultista del Vacío",
     "npcId": "npc_main_ocultista",
-    "description": "Pixies are small magical creatures that glow in the dark and may attempt to steal your items. They are found in pixie villages and can be captured  with a jar or befriended with cake. They also give special buffs respective to thier colour.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Befriend a pixie para prepararte ante la batalla final.",
     "suggestedLevel": 40,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_49b6952745916f6a_act",
@@ -4966,7 +4966,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Befriend a pixie",
+        "description": "Habla con el encargado para completar: Befriend a pixie",
         "target": "",
         "required": 1
       }
@@ -4985,7 +4985,7 @@
     "title": "Tame a Hippocampus",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Hippocampi are aquatic creatures with the head of a horse and the body of a fish which can be found swimming within the ocean and deep ocean biomes. They can be tamed with kelp and bred with prismarine crystals.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Tame a Hippocampus para prepararte ante la batalla final.",
     "suggestedLevel": 41,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_42115cd2d6becadc_act",
@@ -4998,7 +4998,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Tame a Hippocampus",
+        "description": "Habla con el encargado para completar: Tame a Hippocampus",
         "target": "",
         "required": 1
       }
@@ -5017,7 +5017,7 @@
     "title": "Tame a Hippogryth",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Hippogryphs are half eagle half horse hybrids that usually live on mountains. They can be tamed with 8 rabbit feet and bred with rabbit stew.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Tame a Hippogryth para prepararte ante la batalla final.",
     "suggestedLevel": 42,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_1a46cb18c1eba3cc_act",
@@ -5030,7 +5030,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Tame a Hippogryth",
+        "description": "Habla con el encargado para completar: Tame a Hippogryth",
         "target": "",
         "required": 1
       }
@@ -5049,7 +5049,7 @@
     "title": "Kill a Dread Lich",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "There is a dark fortress lurking within cold biomes that houses great rewards but equally powerful foes. In order to gain entry you will need to obtain the gravemasters key  which drops from dread liches. Dread liches can also be found within cold biomes.",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 1x Dread Lich y reclama tu victoria.",
     "suggestedLevel": 43,
     "prerequisiteQuestId": "cisco_dragons_7799076a92b03ca8",
     "activeTag": "q_cisco_dragons_08f7cb6dc5642787_act",
@@ -5081,7 +5081,7 @@
     "title": "Find the Mausoleum",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "This impenetrable fortress must be accessed with the gravemasters key. Deep within you will find a partially incomplete ice dragon forge which can be repaired and used to make dragonsteel.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Find the Mausoleum para prepararte ante la batalla final.",
     "suggestedLevel": 44,
     "prerequisiteQuestId": "cisco_dragons_08f7cb6dc5642787",
     "activeTag": "q_cisco_dragons_739e8acf6d6cb5f2_act",
@@ -5094,7 +5094,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Find the Mausoleum",
+        "description": "Habla con el encargado para completar: Find the Mausoleum",
         "target": "",
         "required": 1
       }
@@ -5113,7 +5113,7 @@
     "title": "Slay Fire Dragons",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Fire dragons can be recognised by thier colours which range from fiery red , emerald green , bold yellow or smoky black. Fire dragons usally linger around any biome above -0.5 degrees in temperature except jungles, savannahs and badlands. Stages 1-3 prefer roosts on the surface , whilst stages 4-5 lurk in caverns underground.",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 3x Fire Dragón y reclama tu victoria.",
     "suggestedLevel": 45,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_3581698345b96e17_act",
@@ -5126,7 +5126,7 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 3x Fire Dragon",
+        "description": "Elimina 3x Fire Dragón",
         "target": "iceandfire:fire_dragon",
         "amount": 3
       }
@@ -5145,7 +5145,7 @@
     "title": "Slay Lightning Dragons",
     "npc": "Cazadragones",
     "npcId": "npc_main_dragons_2",
-    "description": "Lightning dragons can be recognised by their colours which range from amethyst purple, dark black copper brown or electric blue. Lightning dragons can only be found in jungle , savannah and badlands biomes and are nocturnal creatures. Stage 1-3 lightning dragons are usually found in roosts on the surface whilst stage 4-5 are found underground in caverns.",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 3x Lightning Dragón y reclama tu victoria.",
     "suggestedLevel": 46,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_5fdfc696623e2bda_act",
@@ -5158,7 +5158,7 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 3x Lightning Dragon",
+        "description": "Elimina 3x Lightning Dragón",
         "target": "iceandfire:lightning_dragon",
         "amount": 3
       }
@@ -5177,7 +5177,7 @@
     "title": "Slay Ice Dragons",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Ice dragons can be recognised by thier colours which range from icy blue , gem blue , silver white or snowy white. Ice dragons can usually be found in cold biomes ranging from -0.5 degrees in temperature and below. Stage 1-3 dragons prefer roosts on the surface , whilst stage 4-5 dragons lurk in subterrean caverns .",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 3x Ice Dragón y reclama tu victoria.",
     "suggestedLevel": 47,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_76ea98db3c884c58_act",
@@ -5190,7 +5190,7 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 3x Ice Dragon",
+        "description": "Elimina 3x Ice Dragón",
         "target": "iceandfire:ice_dragon",
         "amount": 3
       }
@@ -5206,10 +5206,10 @@
     "id": "cisco_dragons_6b949cdb464620fc",
     "ftbQuestId": "6B949CDB464620FC",
     "category": "MAIN",
-    "title": "Misión 6B949C",
+    "title": "Consigue 1x Summoning Cristal Fire",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "The fire dragon summoning crystal is an item that can teleport a fire dragon to you. To do so, use on a dragon to bind it and after, use when bound to teleport the dragon . After usage, the crystal will be unbound to the dragon and therefore you must use on the dragon again to rebind the crystal. Crystals are bound to a dragon when a black dragon silhouette appears on the crystal.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Summoning Cristal Fire para prepararte ante la batalla final.",
     "suggestedLevel": 48,
     "prerequisiteQuestId": "cisco_dragons_50d03004776882cb",
     "activeTag": "q_cisco_dragons_6b949cdb464620fc_act",
@@ -5222,7 +5222,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Summoning Crystal Fire",
+        "description": "Consigue 1x Summoning Cristal Fire",
         "target": "iceandfire:summoning_crystal_fire",
         "amount": 1
       }
@@ -5235,7 +5235,7 @@
     "title": "The Cyclops",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "The cyclops is a giant humanoid creature that can usually be found in the cyclops cove and savannah biomes. It's eye can be damaged with projectiles to make the fight easier.",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 1x Cyclops y reclama tu victoria.",
     "suggestedLevel": 49,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_415040716e8b4edb_act",
@@ -5267,7 +5267,7 @@
     "title": "The Gorgon",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "The Gorgon is a half human half serpent creature capable of petrifying it's victims with it's gaze. It will also attempt to poison and weaken you. Should you fight it,  an equipped blindfold will greatly aid you.",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 1x Gorgon y reclama tu victoria.",
     "suggestedLevel": 50,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_17cca12d76f9f396_act",
@@ -5299,7 +5299,7 @@
     "title": "The Hydra",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "The Hydra is a powerful multiheaded serpent which can be found in the hydra lair exclusive to swamp biomes. It is recommended to fight it with fire damage to avoid it regenerating and growing new heads.",
+    "description": "La era de los dragones exige héroes capaces de enfrentar al fuego mismo. Elimina 1x Hydra y reclama tu victoria.",
     "suggestedLevel": 51,
     "prerequisiteQuestId": "cisco_dragons_2fb1578ebe95b902",
     "activeTag": "q_cisco_dragons_0116c409c773f4a2_act",
@@ -5328,10 +5328,10 @@
     "id": "cisco_dragons_2b2cfa2d079b5332",
     "ftbQuestId": "2B2CFA2D079B5332",
     "category": "MAIN",
-    "title": "Tame a Dragon",
+    "title": "Tame a Dragón",
     "npc": "Forjador Dracónico",
     "npcId": "npc_main_dragons_3",
-    "description": "Wild dragons cannot be tamed. However upon slaying one you may obtain an egg that you can hatch to tame one for yourself. Fire dragon eggs must be hatched in fire or lava. Ice dragon eggs must be hatched in water surrounded by ice. Lightning dragon eggs must be hatched exposed to rain.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Tame a Dragón para prepararte ante la batalla final.",
     "suggestedLevel": 52,
     "prerequisiteQuestId": "cisco_dragons_76ea98db3c884c58",
     "activeTag": "q_cisco_dragons_2b2cfa2d079b5332_act",
@@ -5344,7 +5344,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Tame a Dragon",
+        "description": "Habla con el encargado para completar: Tame a Dragón",
         "target": "",
         "required": 1
       }
@@ -5363,7 +5363,7 @@
     "title": "Fallen Heroes",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Long after the deaths of Cisco and the mysterious hero who helped him defeat Fell King Arthas, the  conflict continued between the descendants of Arthas and Cisco. The conflict lasted for hundreds of years before Cisco's descendant Arthur made a bold move in marrying Arthas' descendant Sylvi combining their bloodlines to end the conflict.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Fallen Heroes para prepararte ante la batalla final.",
     "suggestedLevel": 53,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_290d9d572a5d6c04_act",
@@ -5376,7 +5376,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Fallen Heroes",
+        "description": "Habla con el encargado para completar: Fallen Heroes",
         "target": "",
         "required": 1
       }
@@ -5395,7 +5395,7 @@
     "title": "Alexander",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "Arthur and Sylvi's son would inherit a power so great that he could warp reality and bend time itself. He would use his power to unite all the known realms under his fair and just rule. He lived for hundreds of years de-aging himself when he got too old increasing the chaotic temporal energy within himself.. This however would impact anyone who got too close to him stealing thier \"time\" and causing them to rapidly age eventually into dust. This made him severly lonely and one day leaving instructions on how to rule to his heir he flew up into the sky and released all the temporal energy back into the world ending his own life in the process.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Alexander para prepararte ante la batalla final.",
     "suggestedLevel": 54,
     "prerequisiteQuestId": "cisco_dragons_290d9d572a5d6c04",
     "activeTag": "q_cisco_dragons_292408bf95dc3f81_act",
@@ -5408,7 +5408,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Alexander",
+        "description": "Habla con el encargado para completar: Alexander",
         "target": "",
         "required": 1
       }
@@ -5427,7 +5427,7 @@
     "title": "Draconic Era",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "The released temporal energy would have disastrous effects on the world empowering once docile magical creatures , resurrecting ancient beasts, empowering existing hostile creatures and creating pockets underground where time would behave differently. One such magical beast was the Dragon. Once passive docile creatures they became aggresive and began to hunt humans attacking thier settlements. With the power in the blood of humans diluted and weakened through the ages none could stand against the threat they posed. Until..",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Draconic Era para prepararte ante la batalla final.",
     "suggestedLevel": 55,
     "prerequisiteQuestId": "cisco_dragons_292408bf95dc3f81",
     "activeTag": "q_cisco_dragons_0d904a47c1eda7de_act",
@@ -5440,7 +5440,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Draconic Era",
+        "description": "Habla con el encargado para completar: Draconic Era",
         "target": "",
         "required": 1
       }
@@ -5456,10 +5456,10 @@
     "id": "cisco_dragons_32e7d93bb699594e",
     "ftbQuestId": "32E7D93BB699594E",
     "category": "MAIN",
-    "title": "Misión 32E7D9",
+    "title": "Consigue 1x Eye Of Lightning Dragón",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "The eye of the lightning dragon can be crafted using lightning  dragon blood and ender pearls and used to locate lightning dragons in the same way you would locate a stronghold.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Eye Of Lightning Dragón para prepararte ante la batalla final.",
     "suggestedLevel": 56,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_32e7d93bb699594e_act",
@@ -5472,7 +5472,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Eye Of Lightning Dragon",
+        "description": "Consigue 1x Eye Of Lightning Dragón",
         "target": "eyesoficeandfire:eye_of_lightning_dragon",
         "amount": 1
       }
@@ -5492,10 +5492,10 @@
     "id": "cisco_dragons_50d03004776882cb",
     "ftbQuestId": "50D03004776882CB",
     "category": "MAIN",
-    "title": "Misión 50D030",
+    "title": "Consigue 1x Eye Of Fire Dragón",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "The eye of the fire dragon can be crafted using fire  dragon blood and ender pearls and used to locate fire dragons in the same way you would locate a stronghold.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Eye Of Fire Dragón para prepararte ante la batalla final.",
     "suggestedLevel": 57,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_50d03004776882cb_act",
@@ -5508,7 +5508,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Eye Of Fire Dragon",
+        "description": "Consigue 1x Eye Of Fire Dragón",
         "target": "eyesoficeandfire:eye_of_fire_dragon",
         "amount": 1
       }
@@ -5528,10 +5528,10 @@
     "id": "cisco_dragons_42821297260c128f",
     "ftbQuestId": "42821297260C128F",
     "category": "MAIN",
-    "title": "Misión 428212",
+    "title": "Consigue 1x Eye Of Ice Dragón",
     "npc": "Sabio de Escamas",
     "npcId": "npc_main_dragons_4",
-    "description": "The eye of the ice dragon can be crafted using ice  dragon blood and ender pearls and used to locate ice dragons in the same way you would locate a stronghold.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Eye Of Ice Dragón para prepararte ante la batalla final.",
     "suggestedLevel": 58,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_42821297260c128f_act",
@@ -5544,7 +5544,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Eye Of Ice Dragon",
+        "description": "Consigue 1x Eye Of Ice Dragón",
         "target": "eyesoficeandfire:eye_of_ice_dragon",
         "amount": 1
       }
@@ -5564,10 +5564,10 @@
     "id": "cisco_dragons_630c84a0fd01dd37",
     "ftbQuestId": "630C84A0FD01DD37",
     "category": "MAIN",
-    "title": "Misión 630C84",
+    "title": "Consigue 1x Dragón Stick",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "This relic can be used to command tamed dragons to wander stay or follow you. It can also be set a home for tamed dragons.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Dragón Stick para prepararte ante la batalla final.",
     "suggestedLevel": 59,
     "prerequisiteQuestId": "cisco_dragons_2b2cfa2d079b5332",
     "activeTag": "q_cisco_dragons_630c84a0fd01dd37_act",
@@ -5580,7 +5580,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Dragon Stick",
+        "description": "Consigue 1x Dragón Stick",
         "target": "iceandfire:dragon_stick",
         "amount": 1
       }
@@ -5603,7 +5603,7 @@
     "title": "Craft Dragonsteel",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Once you have completed a dragonforge you may begin crafting dragonsteel by placing dragon blood within the forge and having a stage 3 - 5 dragon use thier breath attack on it. Dragonsteel can be used to craft powerful tools and armor that will aid you in slaying even more powerful dragons.",
+    "description": "El poder dracónico despierta en Dragonfyre. Habla con el encargado para completar: Craft Dragonsteel para prepararte ante la batalla final.",
     "suggestedLevel": 60,
     "prerequisiteQuestId": "cisco_dragons_739e8acf6d6cb5f2",
     "activeTag": "q_cisco_dragons_65747b80333e3613_act",
@@ -5616,7 +5616,7 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla para completar Craft Dragonsteel",
+        "description": "Habla con el encargado para completar: Craft Dragonsteel",
         "target": "",
         "required": 1
       }
@@ -5643,7 +5643,7 @@
     "title": "Craft dreadsteel",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Dreadsteel is the most powerful material that can be forged to combat dragons. Armor forged with dreadsteel provide incredible defense and resistances whilst weapons forged in dreadsteel are unmatched in lethality.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Dreadsteel Lingote para prepararte ante la batalla final.",
     "suggestedLevel": 61,
     "prerequisiteQuestId": "cisco_dragons_65747b80333e3613",
     "activeTag": "q_cisco_dragons_2e78225f6244bf7a_act",
@@ -5656,7 +5656,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Dreadsteel Ingot",
+        "description": "Consigue 1x Dreadsteel Lingote",
         "target": "dreadsteel:dreadsteel_ingot",
         "amount": 1
       }
@@ -5672,10 +5672,10 @@
     "id": "cisco_dragons_5129a01a2dc55bb4",
     "ftbQuestId": "5129A01A2DC55BB4",
     "category": "MAIN",
-    "title": "Craft Dreadsteel Armor",
+    "title": "Craft Dreadsteel Armadura",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "Dreadsteel Armor provides immunity to damage from fire ,lightning and spikes making it especially good against dragons.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Dreadsteel Helmet para prepararte ante la batalla final.",
     "suggestedLevel": 62,
     "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
     "activeTag": "q_cisco_dragons_5129a01a2dc55bb4_act",
@@ -5712,10 +5712,10 @@
     "id": "cisco_dragons_031859030d60c602",
     "ftbQuestId": "031859030D60C602",
     "category": "MAIN",
-    "title": "Misión 031859",
+    "title": "Consigue 1x Dreadsteel Scythe",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "This weapon is capable of firing armor piercing projectiles which can easily keep up with dragons flying and high speeds.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Dreadsteel Scythe para prepararte ante la batalla final.",
     "suggestedLevel": 63,
     "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
     "activeTag": "q_cisco_dragons_031859030d60c602_act",
@@ -5744,10 +5744,10 @@
     "id": "cisco_dragons_635dd0dac9cf17d5",
     "ftbQuestId": "635DD0DAC9CF17D5",
     "category": "MAIN",
-    "title": "Misión 635DD0",
+    "title": "Consigue 1x Dreadsteel Escudo",
     "npc": "Señor de la Llama",
     "npcId": "npc_main_dragons_5",
-    "description": "This shield incinerates incoming projectiles and burns melee attacks when blocking.",
+    "description": "El poder dracónico despierta en Dragonfyre. Consigue 1x Dreadsteel Escudo para prepararte ante la batalla final.",
     "suggestedLevel": 64,
     "prerequisiteQuestId": "cisco_dragons_2e78225f6244bf7a",
     "activeTag": "q_cisco_dragons_635dd0dac9cf17d5_act",
@@ -5760,7 +5760,7 @@
     "stages": [
       {
         "type": "ITEM",
-        "description": "Consigue 1x Dreadsteel Shield",
+        "description": "Consigue 1x Dreadsteel Escudo",
         "target": "dreadsteel:dreadsteel_shield",
         "amount": 1
       }
