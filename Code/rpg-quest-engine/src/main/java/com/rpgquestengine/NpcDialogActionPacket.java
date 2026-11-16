@@ -93,6 +93,12 @@ public class NpcDialogActionPacket {
                     grantRewardItem(sp, q.choiceRewards.get(idx));
                 }
 
+                if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty() && sp.getServer() != null) {
+                    sp.getServer().getCommands().performPrefixedCommand(
+                            sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4),
+                            "ftbquests change_progress " + sp.getScoreboardName() + " complete " + q.ftbQuestId);
+                }
+
                 String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
                 String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
                 sp.sendSystemMessage(Component.literal("§a[Misión Completada] §f" + q.title + xpTxt + lvlTxt));
