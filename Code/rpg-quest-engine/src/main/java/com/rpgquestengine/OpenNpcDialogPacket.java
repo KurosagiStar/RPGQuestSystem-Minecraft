@@ -29,11 +29,17 @@ public class OpenNpcDialogPacket {
     public final String questLore;
     public final String questDesc;
     public final int rewardXp;
+    public final int rewardXpLevels;
     public final List<RewardEntry> rewardItems;
+    public final List<RewardEntry> randomRewards;
+    public final List<RewardEntry> choiceRewards;
 
     public OpenNpcDialogPacket(String npcId, String npcName, String state,
                                String questId, String questTitle, String questLore,
-                               String questDesc, int rewardXp, List<RewardEntry> rewardItems) {
+                               String questDesc, int rewardXp, int rewardXpLevels,
+                               List<RewardEntry> rewardItems,
+                               List<RewardEntry> randomRewards,
+                               List<RewardEntry> choiceRewards) {
         this.npcId = npcId != null ? npcId : "";
         this.npcName = npcName != null ? npcName : "";
         this.state = state != null ? state : "COMPLETED_ALL";
@@ -42,7 +48,27 @@ public class OpenNpcDialogPacket {
         this.questLore = questLore != null ? questLore : "";
         this.questDesc = questDesc != null ? questDesc : "";
         this.rewardXp = rewardXp;
+        this.rewardXpLevels = rewardXpLevels;
         this.rewardItems = rewardItems != null ? rewardItems : new ArrayList<>();
+        this.randomRewards = randomRewards != null ? randomRewards : new ArrayList<>();
+        this.choiceRewards = choiceRewards != null ? choiceRewards : new ArrayList<>();
+    }
+
+    private static void encodeList(FriendlyByteBuf buf, List<RewardEntry> list) {
+        buf.writeInt(list.size());
+        for (RewardEntry r : list) {
+            buf.writeUtf(r.itemId);
+            buf.writeInt(r.count);
+        }
+    }
+
+    private static List<RewardEntry> decodeList(FriendlyByteBuf buf) {
+        int count = buf.readInt();
+        List<RewardEntry> items = new ArrayList<>();
+        for (int i = 0; i < count; i++) {
+            items.add(new RewardEntry(buf.readUtf(), buf.readInt()));
+        }
+        return items;
     }
 
     public static void encode(OpenNpcDialogPacket msg, FriendlyByteBuf buf) {
@@ -54,11 +80,10 @@ public class OpenNpcDialogPacket {
         buf.writeUtf(msg.questLore);
         buf.writeUtf(msg.questDesc);
         buf.writeInt(msg.rewardXp);
-        buf.writeInt(msg.rewardItems.size());
-        for (RewardEntry r : msg.rewardItems) {
-            buf.writeUtf(r.itemId);
-            buf.writeInt(r.count);
-        }
+        buf.writeInt(msg.rewardXpLevels);
+        encodeList(buf, msg.rewardItems);
+        encodeList(buf, msg.randomRewards);
+        encodeList(buf, msg.choiceRewards);
     }
 
     public static OpenNpcDialogPacket decode(FriendlyByteBuf buf) {
@@ -70,12 +95,12 @@ public class OpenNpcDialogPacket {
         String questLore = buf.readUtf();
         String questDesc = buf.readUtf();
         int rewardXp = buf.readInt();
-        int count = buf.readInt();
-        List<RewardEntry> items = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            items.add(new RewardEntry(buf.readUtf(), buf.readInt()));
-        }
-        return new OpenNpcDialogPacket(npcId, npcName, state, questId, questTitle, questLore, questDesc, rewardXp, items);
+        int rewardXpLevels = buf.readInt();
+        List<RewardEntry> rewardItems = decodeList(buf);
+        List<RewardEntry> randomRewards = decodeList(buf);
+        List<RewardEntry> choiceRewards = decodeList(buf);
+        return new OpenNpcDialogPacket(npcId, npcName, state, questId, questTitle, questLore, questDesc,
+                rewardXp, rewardXpLevels, rewardItems, randomRewards, choiceRewards);
     }
 
     public static void handle(OpenNpcDialogPacket msg, Supplier<NetworkEvent.Context> ctx) {

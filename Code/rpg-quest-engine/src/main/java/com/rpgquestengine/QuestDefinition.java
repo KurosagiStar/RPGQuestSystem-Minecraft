@@ -24,7 +24,10 @@ public class QuestDefinition {
 
     // Recompensas automáticas otorgadas por el motor al completarse
     public int rewardXp = 0;
+    public int rewardXpLevels = 0;
     public List<RewardItem> rewardItems = new ArrayList<>();
+    public List<RewardItem> randomRewards = new ArrayList<>();
+    public List<RewardItem> choiceRewards = new ArrayList<>();
 
     public static class RewardItem {
         public String id = "minecraft:emerald";

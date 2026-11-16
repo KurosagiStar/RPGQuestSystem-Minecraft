@@ -966,7 +966,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_76e6e42a538c69fb",
@@ -1002,7 +1003,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_642c85e431896fb0",
@@ -1038,7 +1040,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_363d127c20eac8fc",
@@ -1069,6 +1072,17 @@
       {
         "id": "skilltree:wisdom_scroll",
         "count": 1
+      }
+    ],
+    "rewardXpLevels": 5,
+    "choiceRewards": [
+      {
+        "id": "minecraft:cooked_beef",
+        "count": 40
+      },
+      {
+        "id": "minecraft:golden_apple",
+        "count": 20
       }
     ]
   },
@@ -1102,7 +1116,8 @@
         "id": "simplyswords:dormant_relic",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_068b6dc27bc66d89",
@@ -1166,7 +1181,8 @@
         "id": "ars_elemental:anima_essence",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_10b64a3d6500ac09",
@@ -1234,7 +1250,8 @@
         "id": "minecraft:flint_and_steel",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_7d59bd1308e6778f",
@@ -1266,7 +1283,8 @@
         "id": "minecraft:blaze_rod",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_3e13eb56ee51145f",
@@ -1366,7 +1384,8 @@
         "id": "simplyswords:runic_tablet",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_2a5a2b19fd4a1abe",
@@ -1450,7 +1469,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_0d03a91a96743e87",
@@ -1482,7 +1502,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_441a82ced3f13122",
@@ -1558,7 +1579,8 @@
         "id": "minecraft:netherite_scrap",
         "count": 3
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_64286a21fdb8288f",
@@ -1594,7 +1616,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 5
       }
-    ]
+    ],
+    "rewardXpLevels": 25
   },
   {
     "id": "cisco_trials_2af361ba2a4fb5ef",
@@ -1626,7 +1649,8 @@
         "id": "cataclysm:ignitium_ingot",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_1aa5dcefec43dca6",
@@ -1694,6 +1718,20 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
+    ],
+    "choiceRewards": [
+      {
+        "id": "apotheosis:glowing_hellshelf",
+        "count": 3
+      },
+      {
+        "id": "apotheosis:crystal_seashelf",
+        "count": 3
+      },
+      {
+        "id": "apotheosis:deepshelf",
+        "count": 3
+      }
     ]
   },
   {
@@ -1758,7 +1796,8 @@
         "id": "minecraft:ender_pearl",
         "count": 3
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_2f764777b6e4d941",
@@ -1798,7 +1837,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 8
       }
-    ]
+    ],
+    "rewardXpLevels": 35
   },
   {
     "id": "cisco_trials_2504d1884d6894fb",
@@ -1862,7 +1902,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 6
       }
-    ]
+    ],
+    "rewardXpLevels": 20
   },
   {
     "id": "cisco_trials_1b9997b20d2187c9",
@@ -1966,7 +2007,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_00cb68da83f73719",
@@ -1998,7 +2040,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_5a24e1249722eea9",
@@ -2190,7 +2233,8 @@
         "target": "apotheosis:library",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 30
   },
   {
     "id": "cisco_trials_1436bcc4578225db",
@@ -2222,7 +2266,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 20
   },
   {
     "id": "cisco_trials_7519af7b737cb8ab",
@@ -2254,7 +2299,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_569da7bbdc1f40fe",
@@ -2286,7 +2332,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 5
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_7b1fa4c0929a40d9",
@@ -2318,7 +2365,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_7f28da2696d94242",
@@ -2414,7 +2462,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_7c0c571649f8e5aa",
@@ -2446,7 +2495,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_553d2e842160b922",
@@ -2472,7 +2522,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 30
   },
   {
     "id": "cisco_trials_159fd707980d3015",
@@ -2612,7 +2663,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_trials_7916f83211133602",
@@ -2644,7 +2696,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_12e6e8aa3ada8496",
@@ -2680,7 +2733,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_1713c024e6505594",
@@ -2712,7 +2766,8 @@
         "id": "irons_spellbooks:fireball",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_5c15bccd252805dc",
@@ -2738,7 +2793,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_430e2d9a0d2d5c61",
@@ -2770,7 +2826,8 @@
         "id": "apotheosis:gem_dust",
         "count": 15
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_609257bfa1739c99",
@@ -2806,7 +2863,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_03e41c9a2a59791a",
@@ -2910,7 +2968,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 3
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_trials_1e29bfdbab318bb6",
@@ -2942,7 +3001,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_58711e64c6f2abf5",
@@ -2978,7 +3038,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 25
   },
   {
     "id": "cisco_trials_7db626b9f20baadc",
@@ -3036,7 +3097,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_trials_22b92de71f6f923d",
@@ -3062,7 +3124,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_5e23b10d82dbb573",
@@ -3088,7 +3151,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_trials_6c3bf7e0c3286ef7",
@@ -3172,7 +3236,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_0409ee265b906649",
@@ -3198,7 +3263,8 @@
         "target": "twilightforest:twilight_forest",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_3bd706c24344cd30",
@@ -3229,6 +3295,53 @@
       {
         "id": "cisco_mod:champion_coin",
         "count": 2
+      }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
       }
     ]
   },
@@ -3262,6 +3375,53 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
+      }
     ]
   },
   {
@@ -3293,6 +3453,53 @@
       {
         "id": "cisco_mod:champion_coin",
         "count": 2
+      }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
       }
     ]
   },
@@ -3326,6 +3533,53 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
+      }
     ]
   },
   {
@@ -3357,6 +3611,53 @@
       {
         "id": "cisco_mod:champion_coin",
         "count": 2
+      }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
       }
     ]
   },
@@ -3390,6 +3691,53 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
+      }
     ]
   },
   {
@@ -3422,6 +3770,53 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
+      }
     ]
   },
   {
@@ -3453,6 +3848,53 @@
       {
         "id": "cisco_mod:champion_coin",
         "count": 2
+      }
+    ],
+    "rewardXpLevels": 15,
+    "randomRewards": [
+      {
+        "id": "twilightforest:fiery_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ironwood_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 3
+      },
+      {
+        "id": "twilightforest:ore_magnet",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:seeker_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ice_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:ender_bow",
+        "count": 1
+      },
+      {
+        "id": "twilightforest:transformation_powder",
+        "count": 2
+      },
+      {
+        "id": "minecraft:diamond",
+        "count": 5
+      },
+      {
+        "id": "xp_levels:20",
+        "count": 1
       }
     ]
   },
@@ -3490,7 +3932,8 @@
         "id": "skilltree:wisdom_scroll",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_3c812f7976a9223d",
@@ -3522,7 +3965,8 @@
         "id": "l2complements:totem_of_the_sea",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_6c2dce962ac28480",
@@ -3554,7 +3998,8 @@
         "id": "l2complements:totem_of_dream",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_4b649072887655a1",
@@ -3586,7 +4031,8 @@
         "id": "minecraft:totem_of_undying",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_0ac77373513b6cc9",
@@ -3618,7 +4064,8 @@
         "id": "minecraft:enchanted_golden_apple",
         "count": 5
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_22a1e4ba57d4a830",
@@ -3644,7 +4091,8 @@
         "target": "aether:the_aether",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_3034fc307834e034",
@@ -3670,7 +4118,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_4569ae5e16c87b01",
@@ -3696,7 +4145,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_3576d8407e23183e",
@@ -3722,7 +4172,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_1fa1b5af726f368e",
@@ -3886,7 +4337,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_22388f2d91480e82",
@@ -3918,7 +4370,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_1972ee649fc972e7",
@@ -3950,7 +4403,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_2dccc1e1567de875",
@@ -3982,7 +4436,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_513c6a72927972c9",
@@ -4014,7 +4469,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_4faecf44cfbe7eec",
@@ -4112,7 +4568,8 @@
         "target": "woodworks:sawmill",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_736e4b5e45e37f9c",
@@ -4176,7 +4633,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_5e30054f5210d394",
@@ -4208,7 +4666,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_2d15560c7952aff6",
@@ -4240,7 +4699,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_2ff19466e4710c4d",
@@ -4272,7 +4732,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_514e2cb906303e01",
@@ -4304,7 +4765,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_2ec1bd31a2a70282",
@@ -4336,7 +4798,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_61164317e99bf787",
@@ -4368,7 +4831,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_0342dba7699ae3d0",
@@ -4400,7 +4864,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_54ec21b27a5a31ad",
@@ -4458,7 +4923,8 @@
         "target": "minecraft:the_nether",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_traveller_0037e919a5da26df",
@@ -4510,7 +4976,8 @@
         "target": "betternether:soul_plain",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_2fc3c0ef214ed424",
@@ -4536,7 +5003,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_63007c16471db9e3",
@@ -4588,7 +5056,8 @@
         "target": "",
         "required": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_74fbea79142079d2",
@@ -4614,7 +5083,8 @@
         "target": "betternether:crimson_glowing_woods",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_71d9b5a1692b2449",
@@ -4640,7 +5110,8 @@
         "target": "betternether:upside_down_forest",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_7ab3a2feb07e0d8f",
@@ -4666,7 +5137,8 @@
         "target": "betternether:flooded_deltas",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_traveller_715f9e89062b1f30",
@@ -4692,7 +5164,8 @@
         "target": "betterend:amber_land",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_22d351c8d4c06690",
@@ -4718,7 +5191,8 @@
         "target": "betterend:blossoming_spires",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_6c6310591cf4d15f",
@@ -4744,7 +5218,8 @@
         "target": "betterend:chorus_forest",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_1cd2bf55b58e0dc0",
@@ -4770,7 +5245,8 @@
         "target": "betterend:crystal_mountains",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_traveller_0e8170950eede373",
@@ -4796,7 +5272,8 @@
         "target": "betterend:dragon_graveyards",
         "amount": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_dragons_4b4bf1ff89c31aca",
@@ -4828,7 +5305,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 3
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_dragons_2fb1578ebe95b902",
@@ -4860,7 +5338,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 2
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_dragons_57f0e543419b8d21",
@@ -5072,7 +5551,8 @@
         "id": "minecraft:totem_of_undying",
         "count": 1
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_dragons_739e8acf6d6cb5f2",
@@ -5104,7 +5584,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 8
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_dragons_3581698345b96e17",
@@ -5136,7 +5617,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 35
       }
-    ]
+    ],
+    "rewardXpLevels": 35
   },
   {
     "id": "cisco_dragons_5fdfc696623e2bda",
@@ -5168,7 +5650,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 45
       }
-    ]
+    ],
+    "rewardXpLevels": 45
   },
   {
     "id": "cisco_dragons_76ea98db3c884c58",
@@ -5200,7 +5683,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 40
       }
-    ]
+    ],
+    "rewardXpLevels": 40
   },
   {
     "id": "cisco_dragons_6b949cdb464620fc",
@@ -5258,7 +5742,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 4
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_dragons_17cca12d76f9f396",
@@ -5290,7 +5775,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 5
       }
-    ]
+    ],
+    "rewardXpLevels": 15
   },
   {
     "id": "cisco_dragons_0116c409c773f4a2",
@@ -5322,7 +5808,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 6
       }
-    ]
+    ],
+    "rewardXpLevels": 20
   },
   {
     "id": "cisco_dragons_2b2cfa2d079b5332",
@@ -5354,7 +5841,8 @@
         "id": "iceandfire:dragon_meal",
         "count": 5
       }
-    ]
+    ],
+    "rewardXpLevels": 10
   },
   {
     "id": "cisco_dragons_290d9d572a5d6c04",
@@ -5594,7 +6082,8 @@
         "id": "cisco_mod:champion_coin",
         "count": 3
       }
-    ]
+    ],
+    "rewardXpLevels": 5
   },
   {
     "id": "cisco_dragons_65747b80333e3613",

@@ -925,27 +925,35 @@ public class RPGQuestEngine {
 
         if (firstBlockedPrereq != null) {
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id, firstBlockedPrereq.title, "", "", 0, null));
+                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id, firstBlockedPrereq.title, "", "", 0, 0, null, null, null));
             return;
         }
 
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new OpenNpcDialogPacket(npcId, npcName, "COMPLETED_ALL", "", "", "", "", 0, null));
+                new OpenNpcDialogPacket(npcId, npcName, "COMPLETED_ALL", "", "", "", "", 0, 0, null, null, null));
+    }
+
+    private static java.util.List<OpenNpcDialogPacket.RewardEntry> toRewardEntries(java.util.List<QuestDefinition.RewardItem> src) {
+        java.util.List<OpenNpcDialogPacket.RewardEntry> out = new java.util.ArrayList<>();
+        if (src != null) {
+            for (QuestDefinition.RewardItem ri : src) {
+                if (ri != null && ri.id != null && !ri.id.isEmpty()) {
+                    out.add(new OpenNpcDialogPacket.RewardEntry(ri.id, ri.count));
+                }
+            }
+        }
+        return out;
     }
 
     private void sendDialogPacket(ServerPlayer sp, String npcId, String npcName, String state, QuestDefinition q) {
         String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
         String lore = (q.description != null) ? q.description : "";
-        java.util.List<OpenNpcDialogPacket.RewardEntry> rItems = new java.util.ArrayList<>();
-        if (q.rewardItems != null) {
-            for (QuestDefinition.RewardItem ri : q.rewardItems) {
-                if (ri != null && ri.id != null && !ri.id.isEmpty()) {
-                    rItems.add(new OpenNpcDialogPacket.RewardEntry(ri.id, ri.count));
-                }
-            }
-        }
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new OpenNpcDialogPacket(npcId, npcName, state, q.id, q.title, lore, desc, q.rewardXp, rItems));
+                new OpenNpcDialogPacket(npcId, npcName, state, q.id, q.title, lore, desc,
+                        q.rewardXp, q.rewardXpLevels,
+                        toRewardEntries(q.rewardItems),
+                        toRewardEntries(q.randomRewards),
+                        toRewardEntries(q.choiceRewards)));
     }
 
     private int handleNpcTalk(ServerPlayer sp, String npcId) {
