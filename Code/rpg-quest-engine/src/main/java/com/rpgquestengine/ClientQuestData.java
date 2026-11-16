@@ -121,12 +121,38 @@ public class ClientQuestData {
                 }
             }
 
-            // Objetivos Cumplidos -> Banner verde en el centro superior
+            // Objetivos Cumplidos -> Banner "MISIÓN ACTUALIZADA" (con prompt V si no está en seguimiento)
             for (QuestDefinition q : QuestConfig.QUESTS) {
                 if (newTags.contains(q.doneTag) && !PLAYER_TAGS.contains(q.doneTag)) {
                     playClientSound(3);
-                    QuestTitleBannerOverlay.showBanner("OBJETIVOS CUMPLIDOS", q.title, new ItemStack(Items.WRITABLE_BOOK), 0xFF55FF55, "");
+                    String promptId = q.id.equals(QuestConfig.trackedQuestId) ? "" : q.id;
+                    QuestTitleBannerOverlay.showBanner("MISIÓN ACTUALIZADA", q.title, new ItemStack(Items.WRITABLE_BOOK), 0xFF55FF55, promptId);
                     break;
+                }
+            }
+
+            // Etapa intermedia completada en misión activa -> Banner "MISIÓN ACTUALIZADA"
+            if (newScores != null) {
+                for (QuestDefinition q : QuestConfig.QUESTS) {
+                    if (!newTags.contains(q.activeTag) || newTags.contains(q.doneTag) || newTags.contains(q.completedTag)) continue;
+                    if (q.stages == null) continue;
+                    boolean stageJustFinished = false;
+                    for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                        QuestDefinition.QuestStage st = q.stages.get(sIdx);
+                        String key = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, st.type);
+                        int oldVal = PLAYER_SCORES.getOrDefault(key, 0);
+                        int newVal = newScores.getOrDefault(key, 0);
+                        if (oldVal < st.amount && newVal >= st.amount) {
+                            stageJustFinished = true;
+                            break;
+                        }
+                    }
+                    if (stageJustFinished) {
+                        playClientSound(1);
+                        String promptId = q.id.equals(QuestConfig.trackedQuestId) ? "" : q.id;
+                        QuestTitleBannerOverlay.showBanner("MISIÓN ACTUALIZADA", q.title, getCategoryIcon(q.category), 0xFFFFAA00, promptId);
+                        break;
+                    }
                 }
             }
 
