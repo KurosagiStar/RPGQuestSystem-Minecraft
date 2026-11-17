@@ -46,6 +46,11 @@ public class NpcDialogActionPacket {
         Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(ri.id));
         if (item != null) {
             ItemStack stack = new ItemStack(item, Math.max(1, ri.count));
+            if (ri.nbt != null && !ri.nbt.isEmpty()) {
+                try {
+                    stack.setTag(net.minecraft.nbt.TagParser.parseTag(ri.nbt));
+                } catch (Exception ignored) {}
+            }
             if (!sp.getInventory().add(stack)) {
                 sp.drop(stack, false);
             }

@@ -1012,7 +1012,7 @@ public class RPGQuestEngine {
         if (src != null) {
             for (QuestDefinition.RewardItem ri : src) {
                 if (ri != null && ri.id != null && !ri.id.isEmpty()) {
-                    out.add(new OpenNpcDialogPacket.RewardEntry(ri.id, ri.count));
+                    out.add(new OpenNpcDialogPacket.RewardEntry(ri.id, ri.count, ri.nbt));
                 }
             }
         }

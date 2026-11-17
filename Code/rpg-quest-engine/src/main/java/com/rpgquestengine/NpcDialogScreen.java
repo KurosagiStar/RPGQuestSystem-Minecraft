@@ -80,7 +80,13 @@ public class NpcDialogScreen extends Screen {
         }
         Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(re.itemId));
         if (item == null || item == Items.AIR) return ItemStack.EMPTY;
-        return new ItemStack(item, re.count);
+        ItemStack stack = new ItemStack(item, re.count);
+        if (re.nbt != null && !re.nbt.isEmpty()) {
+            try {
+                stack.setTag(net.minecraft.nbt.TagParser.parseTag(re.nbt));
+            } catch (Exception ignored) {}
+        }
+        return stack;
     }
 
     @Override

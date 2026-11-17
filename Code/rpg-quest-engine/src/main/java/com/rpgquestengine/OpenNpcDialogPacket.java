@@ -14,10 +14,12 @@ public class OpenNpcDialogPacket {
     public static class RewardEntry {
         public final String itemId;
         public final int count;
+        public final String nbt;
 
-        public RewardEntry(String itemId, int count) {
+        public RewardEntry(String itemId, int count, String nbt) {
             this.itemId = itemId != null ? itemId : "minecraft:emerald";
             this.count = Math.max(1, count);
+            this.nbt = nbt != null ? nbt : "";
         }
     }
 
@@ -59,6 +61,7 @@ public class OpenNpcDialogPacket {
         for (RewardEntry r : list) {
             buf.writeUtf(r.itemId);
             buf.writeInt(r.count);
+            buf.writeUtf(r.nbt);
         }
     }
 
@@ -66,7 +69,7 @@ public class OpenNpcDialogPacket {
         int count = buf.readInt();
         List<RewardEntry> items = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            items.add(new RewardEntry(buf.readUtf(), buf.readInt()));
+            items.add(new RewardEntry(buf.readUtf(), buf.readInt(), buf.readUtf()));
         }
         return items;
     }

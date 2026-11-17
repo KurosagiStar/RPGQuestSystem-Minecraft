@@ -32,6 +32,7 @@ public class QuestDefinition {
     public static class RewardItem {
         public String id = "minecraft:emerald";
         public int count = 1;
+        public String nbt = "";
     }
 
     public String activeTag;
