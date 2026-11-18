@@ -163,6 +163,9 @@ public class RPGQuestEngine {
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);
             PartyManager.syncToPlayer(sp);
+            if (PartyManager.getParty(sp.getUUID()) != null) {
+                PartyManager.syncMainQuestsWithParty(sp);
+            }
         }
     }
 

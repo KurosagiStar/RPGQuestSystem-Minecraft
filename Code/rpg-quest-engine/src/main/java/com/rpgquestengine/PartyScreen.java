@@ -11,6 +11,7 @@ import java.util.List;
 public class PartyScreen extends Screen {
     private record ClickBtn(int x, int y, int w, int h, int action, String arg) {}
     private final List<ClickBtn> clickBtns = new ArrayList<>();
+    private boolean confirmLeave = false;
 
     public PartyScreen() {
         super(Component.literal("Grupo de Aventura"));
@@ -80,8 +81,7 @@ public class PartyScreen extends Screen {
                 my += 21;
             }
             int btnY = contentY + colH - 26;
-            drawActionBtn(g, leftX + 8, btnY, Math.min(130, colW / 2), 20, "§bSincronizar MAIN", 0xFF233A4E, 6, "");
-            drawActionBtn(g, leftX + colW - 88, btnY, 80, 20, "§cSalir", 0xFF4E2E2E, 5, "");
+            drawActionBtn(g, leftX + 8, btnY, colW - 16, 20, "§cAbandonar Grupo", 0xFF4E2E2E, -2, "");
         }
 
         // Columna derecha: Arriba Jugadores Conectados, Abajo Recompensas Sin Reclamar
@@ -132,6 +132,20 @@ public class PartyScreen extends Screen {
         }
 
         super.render(g, mouseX, mouseY, partialTick);
+
+        if (confirmLeave) {
+            g.fill(0, 0, this.width, this.height, 0x99000000);
+            int pw = 230;
+            int ph = 84;
+            int px = (this.width - pw) / 2;
+            int py = (this.height - ph) / 2;
+            g.fill(px - 1, py - 1, px + pw + 1, py + ph + 1, 0xFFD4AF37);
+            g.fill(px, py, px + pw, py + ph, 0xEE181613);
+            g.drawCenteredString(this.font, "§e¿Seguro que deseas", px + pw / 2, py + 14, 0xFFFFFF);
+            g.drawCenteredString(this.font, "§eabandonar el grupo?", px + pw / 2, py + 26, 0xFFFFFF);
+            drawActionBtn(g, px + 14, py + ph - 28, 96, 18, "§cSí, abandonar", 0xFF5A2626, 5, "");
+            drawActionBtn(g, px + pw - 110, py + ph - 28, 96, 18, "§7Cancelar", 0xFF2B2823, -3, "");
+        }
     }
 
     private void drawActionBtn(GuiGraphics g, int x, int y, int w, int h, String label, int bg, int action, String arg) {
@@ -144,8 +158,26 @@ public class PartyScreen extends Screen {
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (button == 0) {
+            if (confirmLeave) {
+                for (int i = clickBtns.size() - 1; i >= 0; i--) {
+                    ClickBtn b = clickBtns.get(i);
+                    if (b.action() != 5 && b.action() != -3) continue;
+                    if (mouseX >= b.x() && mouseX <= b.x() + b.w() && mouseY >= b.y() && mouseY <= b.y() + b.h()) {
+                        confirmLeave = false;
+                        if (b.action() == 5) {
+                            NetworkHandler.CHANNEL.sendToServer(new PartyActionPacket(5, ""));
+                        }
+                        return true;
+                    }
+                }
+                return true;
+            }
             for (ClickBtn b : clickBtns) {
                 if (mouseX >= b.x() && mouseX <= b.x() + b.w() && mouseY >= b.y() && mouseY <= b.y() + b.h()) {
+                    if (b.action() == -2) {
+                        confirmLeave = true;
+                        return true;
+                    }
                     NetworkHandler.CHANNEL.sendToServer(new PartyActionPacket(b.action(), b.arg()));
                     return true;
                 }
