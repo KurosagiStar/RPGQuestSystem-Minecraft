@@ -168,6 +168,7 @@ public class PartyManager {
                 if (q.doneTag != null) m.removeTag(q.doneTag);
                 if (q.completedTag != null && !tags.contains(q.completedTag)) {
                     m.addTag(q.completedTag);
+                    addPendingReward(m, q.id);
                 }
             }
             for (String qid : allActiveMain) {
@@ -179,8 +180,71 @@ public class PartyManager {
                 }
             }
             RPGQuestEngine.syncPlayerAfterDialog(m);
+            syncToPlayer(m);
             m.sendSystemMessage(Component.literal("§b[Grupo] §fMisiones principales y NPCs sincronizados."));
         }
+    }
+
+    public static List<String> getPendingRewards(ServerPlayer sp) {
+        List<String> out = new ArrayList<>();
+        if (sp == null) return out;
+        var list = sp.getPersistentData().getList("rqe_pending_rewards", 8);
+        for (int i = 0; i < list.size(); i++) {
+            String s = list.getString(i);
+            if (!s.isEmpty() && !out.contains(s)) out.add(s);
+        }
+        return out;
+    }
+
+    private static void savePendingRewards(ServerPlayer sp, List<String> ids) {
+        net.minecraft.nbt.ListTag list = new net.minecraft.nbt.ListTag();
+        for (String id : ids) {
+            list.add(net.minecraft.nbt.StringTag.valueOf(id));
+        }
+        sp.getPersistentData().put("rqe_pending_rewards", list);
+    }
+
+    public static void addPendingReward(ServerPlayer sp, String questId) {
+        if (sp == null || questId == null || questId.isEmpty()) return;
+        List<String> list = getPendingRewards(sp);
+        if (!list.contains(questId)) {
+            list.add(questId);
+            savePendingRewards(sp, list);
+        }
+    }
+
+    public static void claimPendingReward(ServerPlayer sp, String questId) {
+        if (sp == null || questId == null || questId.isEmpty()) return;
+        List<String> list = getPendingRewards(sp);
+        if (!list.remove(questId)) return;
+        savePendingRewards(sp, list);
+        QuestDefinition q = QuestConfig.getQuestById(questId);
+        if (q != null) {
+            NpcDialogActionPacket.grantAllQuestRewards(sp, q, 0);
+            sp.sendSystemMessage(Component.literal("§a[Recompensa de Grupo] §fReclamaste: §e" + q.title));
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
+        }
+        syncToPlayer(sp);
+    }
+
+    public static void claimAllPendingRewards(ServerPlayer sp) {
+        if (sp == null) return;
+        List<String> list = getPendingRewards(sp);
+        if (list.isEmpty()) return;
+        savePendingRewards(sp, new ArrayList<>());
+        int count = 0;
+        for (String qid : list) {
+            QuestDefinition q = QuestConfig.getQuestById(qid);
+            if (q != null) {
+                NpcDialogActionPacket.grantAllQuestRewards(sp, q, 0);
+                count++;
+            }
+        }
+        if (count > 0) {
+            sp.sendSystemMessage(Component.literal("§a[Recompensas de Grupo] §fReclamadas §e" + count + " §frecompensas acumuladas."));
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
+        }
+        syncToPlayer(sp);
     }
 
     public static void onNpcQuestAccepted(ServerPlayer actor, QuestDefinition q) {
@@ -205,8 +269,10 @@ public class PartyManager {
             if (q.doneTag != null) m.removeTag(q.doneTag);
             if (q.completedTag != null && !m.getTags().contains(q.completedTag)) {
                 m.addTag(q.completedTag);
-                m.sendSystemMessage(Component.literal("§a[Grupo] §e" + actor.getScoreboardName() + " §fcompletó: §e" + q.title));
+                addPendingReward(m, q.id);
+                m.sendSystemMessage(Component.literal("§a[Grupo] §e" + actor.getScoreboardName() + " §fcompletó: §e" + q.title + " §7(Recompensa en G)"));
                 RPGQuestEngine.syncPlayerAfterDialog(m);
+                syncToPlayer(m);
             }
         }
     }
@@ -250,6 +316,6 @@ public class PartyManager {
         }
 
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new SyncPartyPacket(inParty, isLeader, inviteFrom, members, onlineOthers));
+                new SyncPartyPacket(inParty, isLeader, inviteFrom, members, onlineOthers, getPendingRewards(sp)));
     }
 }

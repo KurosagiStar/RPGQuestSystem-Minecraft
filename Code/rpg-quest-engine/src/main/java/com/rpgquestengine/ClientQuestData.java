@@ -35,6 +35,7 @@ public class ClientQuestData {
     public static String PARTY_INVITE_FROM = "";
     public static final List<SyncPartyPacket.MemberEntry> PARTY_MEMBERS = new java.util.ArrayList<>();
     public static final List<String> PARTY_INVITABLE = new java.util.ArrayList<>();
+    public static final List<String> PARTY_PENDING_REWARDS = new java.util.ArrayList<>();
 
     public static synchronized void updateEntityTags(int entityId, List<String> tags) {
         if (tags == null || tags.isEmpty()) {

@@ -37,6 +37,8 @@ public class PartyActionPacket {
                 case 5 -> PartyManager.leaveParty(sp);
                 case 6 -> PartyManager.syncMainQuestsWithParty(sp);
                 case 7 -> PartyManager.kickMember(sp, msg.arg);
+                case 8 -> PartyManager.claimPendingReward(sp, msg.arg);
+                case 9 -> PartyManager.claimAllPendingRewards(sp);
                 default -> PartyManager.syncToPlayer(sp);
             }
         });

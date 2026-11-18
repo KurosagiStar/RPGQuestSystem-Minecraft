@@ -29,14 +29,17 @@ public class SyncPartyPacket {
     public final String pendingInviteFrom;
     public final List<MemberEntry> members;
     public final List<String> invitablePlayers;
+    public final List<String> pendingRewardQuestIds;
 
     public SyncPartyPacket(boolean inParty, boolean isLeader, String pendingInviteFrom,
-                           List<MemberEntry> members, List<String> invitablePlayers) {
+                           List<MemberEntry> members, List<String> invitablePlayers,
+                           List<String> pendingRewardQuestIds) {
         this.inParty = inParty;
         this.isLeader = isLeader;
         this.pendingInviteFrom = pendingInviteFrom != null ? pendingInviteFrom : "";
         this.members = members != null ? members : new ArrayList<>();
         this.invitablePlayers = invitablePlayers != null ? invitablePlayers : new ArrayList<>();
+        this.pendingRewardQuestIds = pendingRewardQuestIds != null ? pendingRewardQuestIds : new ArrayList<>();
     }
 
     public static void encode(SyncPartyPacket msg, FriendlyByteBuf buf) {
@@ -54,6 +57,10 @@ public class SyncPartyPacket {
         for (String p : msg.invitablePlayers) {
             buf.writeUtf(p);
         }
+        buf.writeInt(msg.pendingRewardQuestIds.size());
+        for (String qid : msg.pendingRewardQuestIds) {
+            buf.writeUtf(qid);
+        }
     }
 
     public static SyncPartyPacket decode(FriendlyByteBuf buf) {
@@ -70,7 +77,12 @@ public class SyncPartyPacket {
         for (int i = 0; i < pCount; i++) {
             players.add(buf.readUtf());
         }
-        return new SyncPartyPacket(inParty, isLeader, inviteFrom, members, players);
+        int rCount = buf.readInt();
+        List<String> pending = new ArrayList<>(rCount);
+        for (int i = 0; i < rCount; i++) {
+            pending.add(buf.readUtf());
+        }
+        return new SyncPartyPacket(inParty, isLeader, inviteFrom, members, players, pending);
     }
 
     public static void handle(SyncPartyPacket msg, Supplier<NetworkEvent.Context> ctx) {
@@ -82,6 +94,8 @@ public class SyncPartyPacket {
             ClientQuestData.PARTY_MEMBERS.addAll(msg.members);
             ClientQuestData.PARTY_INVITABLE.clear();
             ClientQuestData.PARTY_INVITABLE.addAll(msg.invitablePlayers);
+            ClientQuestData.PARTY_PENDING_REWARDS.clear();
+            ClientQuestData.PARTY_PENDING_REWARDS.addAll(msg.pendingRewardQuestIds);
         }));
         ctx.get().setPacketHandled(true);
     }

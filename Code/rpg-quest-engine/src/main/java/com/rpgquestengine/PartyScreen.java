@@ -84,24 +84,51 @@ public class PartyScreen extends Screen {
             drawActionBtn(g, leftX + colW - 88, btnY, 80, 20, "§cSalir", 0xFF4E2E2E, 5, "");
         }
 
-        // Columna derecha: Jugadores conectados
-        g.fill(rightX, contentY, rightX + colW, contentY + colH, 0xAA191714);
+        // Columna derecha: Arriba Jugadores Conectados, Abajo Recompensas Sin Reclamar
+        int topRightH = Math.max(80, colH / 2 - 4);
+        int botRightY = contentY + topRightH + 8;
+        int botRightH = colH - topRightH - 8;
+
+        g.fill(rightX, contentY, rightX + colW, contentY + topRightH, 0xAA191714);
         g.drawString(this.font, "§eJUGADORES CONECTADOS", rightX + 8, contentY + 8, 0xFFD4AF37);
 
         if (ClientQuestData.PARTY_INVITABLE.isEmpty()) {
-            g.drawString(this.font, "§7No hay otros jugadores disponibles.", rightX + 8, contentY + 28, 0x888888);
+            g.drawString(this.font, "§7No hay otros jugadores disponibles.", rightX + 8, contentY + 26, 0x888888);
         } else {
-            int py = contentY + 26;
+            int py = contentY + 24;
             boolean canInvite = !ClientQuestData.PARTY_IN_PARTY || ClientQuestData.PARTY_IS_LEADER;
             for (String pName : ClientQuestData.PARTY_INVITABLE) {
-                if (py + 20 > contentY + colH - 10) break;
+                if (py + 20 > contentY + topRightH - 6) break;
                 g.fill(rightX + 6, py, rightX + colW - 6, py + 18, 0x8822201C);
                 g.drawString(this.font, "§f" + pName, rightX + 10, py + 5, 0xFFFFFF);
                 if (canInvite) {
                     drawActionBtn(g, rightX + colW - 66, py + 1, 56, 16, "§aInvitar", 0xFF2E4E2E, 2, pName);
                 }
-                py += 21;
+                py += 20;
             }
+        }
+
+        // Recompensas acumuladas sin reclamar
+        int rewCnt = ClientQuestData.PARTY_PENDING_REWARDS.size();
+        g.fill(rightX, botRightY, rightX + colW, botRightY + botRightH, 0xAA191714);
+        g.drawString(this.font, "§6RECOMPENSAS SIN RECLAMAR §7(" + rewCnt + ")", rightX + 8, botRightY + 8, 0xFFD4AF37);
+
+        if (rewCnt == 0) {
+            g.drawString(this.font, "§8No tienes recompensas pendientes.", rightX + 8, botRightY + 28, 0x777777);
+        } else {
+            int ry = botRightY + 24;
+            for (String qid : ClientQuestData.PARTY_PENDING_REWARDS) {
+                if (ry + 20 > botRightY + botRightH - 26) break;
+                QuestDefinition q = QuestConfig.getQuestById(qid);
+                String qTitle = q != null ? q.title : qid;
+                g.fill(rightX + 6, ry, rightX + colW - 6, ry + 18, 0x8822201C);
+                String trimmed = this.font.plainSubstrByWidth(qTitle, colW - 82);
+                g.drawString(this.font, "§e" + trimmed, rightX + 10, ry + 5, 0xFFFFFF);
+                drawActionBtn(g, rightX + colW - 66, ry + 1, 56, 16, "§aReclamar", 0xFF2E4E2E, 8, qid);
+                ry += 20;
+            }
+            drawActionBtn(g, rightX + 8, botRightY + botRightH - 24, colW - 16, 18,
+                    "§a§lReclamar Todo (" + rewCnt + ")", 0xFF2E4E2E, 9, "");
         }
 
         super.render(g, mouseX, mouseY, partialTick);

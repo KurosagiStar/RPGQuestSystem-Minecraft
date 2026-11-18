@@ -57,6 +57,35 @@ public class NpcDialogActionPacket {
         }
     }
 
+    public static void grantAllQuestRewards(ServerPlayer sp, QuestDefinition q, int choiceIndex) {
+        if (sp == null || q == null) return;
+        if (q.rewardXp > 0) sp.giveExperiencePoints(q.rewardXp);
+        if (q.rewardXpLevels > 0) sp.giveExperienceLevels(q.rewardXpLevels);
+
+        if (q.rewardItems != null) {
+            for (QuestDefinition.RewardItem ri : q.rewardItems) {
+                grantRewardItem(sp, ri);
+            }
+        }
+
+        if (q.randomRewards != null && !q.randomRewards.isEmpty()) {
+            QuestDefinition.RewardItem picked = q.randomRewards.get(sp.getRandom().nextInt(q.randomRewards.size()));
+            grantRewardItem(sp, picked);
+            sp.sendSystemMessage(Component.literal("§d[Recompensa Aleatoria] §fRecibiste: §e" + picked.count + "x " + picked.id));
+        }
+
+        if (q.choiceRewards != null && !q.choiceRewards.isEmpty()) {
+            int idx = (choiceIndex >= 0 && choiceIndex < q.choiceRewards.size()) ? choiceIndex : 0;
+            grantRewardItem(sp, q.choiceRewards.get(idx));
+        }
+
+        if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty() && sp.getServer() != null) {
+            sp.getServer().getCommands().performPrefixedCommand(
+                    sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4),
+                    "ftbquests change_progress " + sp.getScoreboardName() + " complete " + q.ftbQuestId);
+        }
+    }
+
     public static void handle(NpcDialogActionPacket msg, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             ServerPlayer sp = ctx.get().getSender();
@@ -80,31 +109,7 @@ public class NpcDialogActionPacket {
                     sp.addTag(q.completedTag);
                 }
 
-                if (q.rewardXp > 0) sp.giveExperiencePoints(q.rewardXp);
-                if (q.rewardXpLevels > 0) sp.giveExperienceLevels(q.rewardXpLevels);
-
-                if (q.rewardItems != null) {
-                    for (QuestDefinition.RewardItem ri : q.rewardItems) {
-                        grantRewardItem(sp, ri);
-                    }
-                }
-
-                if (q.randomRewards != null && !q.randomRewards.isEmpty()) {
-                    QuestDefinition.RewardItem picked = q.randomRewards.get(sp.getRandom().nextInt(q.randomRewards.size()));
-                    grantRewardItem(sp, picked);
-                    sp.sendSystemMessage(Component.literal("§d[Recompensa Aleatoria] §fRecibiste: §e" + picked.count + "x " + picked.id));
-                }
-
-                if (q.choiceRewards != null && !q.choiceRewards.isEmpty()) {
-                    int idx = (msg.choiceIndex >= 0 && msg.choiceIndex < q.choiceRewards.size()) ? msg.choiceIndex : 0;
-                    grantRewardItem(sp, q.choiceRewards.get(idx));
-                }
-
-                if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty() && sp.getServer() != null) {
-                    sp.getServer().getCommands().performPrefixedCommand(
-                            sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4),
-                            "ftbquests change_progress " + sp.getScoreboardName() + " complete " + q.ftbQuestId);
-                }
+                grantAllQuestRewards(sp, q, msg.choiceIndex);
 
                 String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
                 String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
