@@ -110,6 +110,8 @@ public class NpcDialogActionPacket {
                 String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
                 sp.sendSystemMessage(Component.literal("§a[Misión Completada] §f" + q.title + xpTxt + lvlTxt));
                 DailyQuestManager.onTaskProgress(sp, "NPC_TURNIN", 1);
+                NetworkHandler.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp),
+                        new PlayQuestSoundPacket(4));
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             } else if ("ACCEPT".equalsIgnoreCase(msg.action)) {
                 if (q.completedTag != null && tags.contains(q.completedTag)) return;

@@ -119,14 +119,18 @@ public class DailyQuestManager {
 
         // Auto-desbloquear y entregar hitos alcanzados (100, 200, 300, 400)
         int msMask = daily.getInt("milestones");
+        boolean milestoneHit = false;
         for (int m = 0; m < 4; m++) {
             int threshold = (m + 1) * 100;
             if (newPoints >= threshold && (msMask & (1 << m)) == 0) {
                 msMask |= (1 << m);
                 grantMilestoneReward(sp, m);
+                milestoneHit = true;
             }
         }
         daily.putInt("milestones", msMask);
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
+                new PlayQuestSoundPacket(milestoneHit ? 4 : 3));
         syncToPlayer(sp);
     }
 
