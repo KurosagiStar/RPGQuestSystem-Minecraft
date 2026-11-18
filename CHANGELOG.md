@@ -1,5 +1,20 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
+## [1.5.0-update] - 2026-11-17
+- **Recompensas de Mundo y Soporte NBT (`RewardItem.nbt`):**
+  - Balanceadas 77 misiones `SECONDARY`, `CONTRACT` y `REPEATABLE` con `cisco_mod:champion_coin`, materiales de Apotheosis, `apotheosis:sigil_of_socketing` y gemas con NBT real (`TagParser.parseTag`).
+- **Misiones Diarias y Desafíos en Menú `J` (`QuestJournalScreen`):**
+  - **Pestaña `Misiones Diarias` (`DailyQuestManager`):** 4 tarjetas rotativas diarias, barra de progreso `0..400` con iconos de recompensa debajo de cada hito, reinicio a medianoche real y SFX.
+  - **Pestaña `Desafíos` (`ChallengeManager`):** desafío de Jefe Mundial (`El Wither`) cada 6 horas reales invocándolo por cuenta propia.
+- **Sistema de Grupo en Tecla `G` (`PartyManager`, `PartyScreen`):**
+  - Crear grupo, invitar jugadores conectados con 1 clic, aceptar/rechazar, expulsar/salir y sincronizar misiones `MAIN` y NPCs desbloqueados.
+  - Progreso compartido en bajas (`KILL`, `KILL_BOW`, `MINE`, `CRAFT`, `FISH` en `MAIN`/`CONTRACT`) y desafío del Wither.
+  - Cola persistente de `Recompensas Sin Reclamar` (`rqe_pending_rewards`) con `Reclamar` / `Reclamar Todo` y banner animado `<Jugador> COMPLETÓ UNA MISIÓN` + `[Presiona G para reclamar recompensas pendientes]`.
+- **Cámara Cinematográfica, Audio y Optimización:**
+  - `NpcDialogScreen` se posiciona a la izquierda y rota suavemente la cámara `-18°` para encuadrar al NPC a la derecha.
+  - Corregido `@SubscribeEvent(receiveCanceled = true)` en `QuestEventListener.onEntityInteract` para mantener voz de NPC y etapas `TALK`/`DELIVER`.
+  - Optimizaciones O(1) (`QUESTS_BY_ID`, `QUESTS_BY_NPC`) en `QuestConfig` y caché `ICON_CACHE` en `QuestEntityMarkerRenderer`.
+
 ## [1.4.0-update] - 2026-11-16
 - **UI de Diálogo Propia (`NpcDialogScreen`, `OpenNpcDialogPacket`, `NpcDialogActionPacket`):**
   - Reemplazada la pantalla de diálogo rota de Easy NPC al hacer clic derecho normal en cualquier NPC con tag `npc_*` (`Shift + clic derecho` conserva acceso a Easy NPC).

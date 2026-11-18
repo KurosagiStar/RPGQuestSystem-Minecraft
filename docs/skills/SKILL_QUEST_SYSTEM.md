@@ -23,14 +23,16 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 
 ### B. Clases Clave del Mod
 - `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler cada 10 ticks, validación (`ITEM`, `KILL`, `DIMENSION`, `BIOME`, `STRUCTURE`, `SURVIVE`, `TAG`, `SCORE`), interceptación de clic derecho en NPCs (`onPlayerEntityInteract`), comandos (`/rpgquest reload`, `reset`, `talk`, `ui`, `sync_npcs`, `respawn_saved`, `spawn_npc`, `set_npc_pos`).
-- `NpcDialogScreen.java` + `OpenNpcDialogPacket.java` + `NpcDialogActionPacket.java`: Pantalla RPG propia con botones dinámicos (`Aceptar Misión`, `Completar Misión`, `Cerrar`), lore completo, objetivo, separador y cuadritos con iconos reales de recompensas (`rewardXp`, `rewardXpLevels`, `rewardItems`, `randomRewards` con tooltip de posibilidades, `choiceRewards` clicable para elegir 1). Al completar, sincroniza también `ftbquests change_progress <player> complete <ftbQuestId>` si existe `ftbQuestId`.
+- `NpcDialogScreen.java` + `OpenNpcDialogPacket.java` + `NpcDialogActionPacket.java`: Pantalla RPG propia a la izquierda con rotación suave de cámara (`-18°`) para encuadrar al NPC a la derecha, botones dinámicos (`Aceptar Misión`, `Completar Misión`, `Cerrar`), lore completo, objetivo, separador y cuadritos con iconos reales de recompensas (`rewardXp`, `rewardXpLevels`, `rewardItems` con soporte `nbt`, `randomRewards` con tooltip de posibilidades, `choiceRewards` clicable). Al completar, sincroniza también `ftbquests change_progress <player> complete <ftbQuestId>` si existe `ftbQuestId`.
+- `DailyQuestManager.java` + `ChallengeManager.java`: Misiones diarias (4 tarjetas, hitos `100..400`, reinicio real a medianoche) y Desafío del Wither cada 6 horas reales, accesibles desde pestañas en `J`.
+- `PartyManager.java` + `PartyScreen.java` (Tecla `G`): Sistema de grupo propio con invitación 1-clic, sincronización de misiones `MAIN` y NPCs, progreso compartido, cola persistente de recompensas sin reclamar (`Reclamar Todo`) y banner `<Jugador> COMPLETÓ UNA MISIÓN`.
 - `AdminNpcManagerScreen.java` + `AdminNpcActionPacket.java` + `OpenAdminUiPacket.java`: Gestor visual (`/rpgquest ui`) por campañas y NPCs, con `collectChain` hasta profundidad 250.
 - `QuestHudOverlay.java`: HUD flotante con progreso, brújula hacia zonas y nombre legible (`q.npc`) al regresar a entregar.
-- `QuestJournalScreen.java`: Diario en tecla `J` con diseño de 3 columnas estilo Witcher 3 (acordeones colapsables + emblema dorado `9x9` de seguimiento a la izquierda, objetivos y recompensas al centro, lore completo a la derecha).
-- `ClientQuestData.java` + `QuestTitleBannerOverlay.java`: Banner animado `MISIÓN ACTUALIZADA` al completar etapa u objetivos (`doneTag`), mostrando prompt de tecla `V` para seguir si la misión no estaba en seguimiento.
-- `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`) usando `RenderType.textSeeThrough` para compatibilidad con `F3+T` y shaders.
+- `QuestJournalScreen.java`: Diario en tecla `J` con 3 pestañas (`Diario de Misiones` estilo Witcher 3 de 3 columnas + emblema dorado `9x9`, `Misiones Diarias`, `Desafíos`).
+- `ClientQuestData.java` + `QuestTitleBannerOverlay.java`: Banner animado `MISIÓN ACTUALIZADA` (prompt `V`) y banner de grupo `<Jugador> COMPLETÓ UNA MISIÓN` (prompt `G`).
+- `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`) usando `RenderType.textSeeThrough` e `ICON_CACHE`.
 - `resourcepacks/quest_radar_icons/` + `AddPackFindersEvent` (`Pack.Position.TOP`) + `ensureXaeroEasyNpcCategory()`: Icono azul de exclamación (`quest_exclamation.png`) y categoría `"Easy NPCs"` (`icons: 2.0`) inyectados automáticamente desde el `.jar` para todos los jugadores sin tocar `options.txt` ni activar resource packs manuales.
-- `QuestConfig.java`: Lectura/escritura UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json`.
+- `QuestConfig.java`: Lectura/escritura UTF-8 de `config/rpg_quests.json` y `config/rpg_npc_locations.json`, con índices O(1) (`QUESTS_BY_ID`, `QUESTS_BY_NPC`).
 
 ### C. Flujo de Compilación y Despliegue (PowerShell)
 ```powershell
