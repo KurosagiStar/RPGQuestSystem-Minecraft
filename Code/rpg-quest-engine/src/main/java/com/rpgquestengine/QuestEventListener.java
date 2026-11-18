@@ -276,19 +276,24 @@ public class QuestEventListener {
 
     private static void incrementQuestTarget(ServerPlayer sp, String type, String target, int amount) {
         for (QuestDefinition q : QuestConfig.QUESTS) {
-            if (sp.getTags().contains(q.activeTag) && !sp.getTags().contains(q.completedTag)) {
-                for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
-                    QuestDefinition.QuestStage stage = q.stages.get(sIdx);
-                    if (type.equalsIgnoreCase(stage.type)) {
-                        if ("any".equalsIgnoreCase(stage.target) || target.equalsIgnoreCase(stage.target)) {
-                            String internalScoreKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
-                            var sb = sp.getServer().getScoreboard();
-                            var obj = sb.getObjective(internalScoreKey);
-                            if (obj == null) {
-                                obj = sb.addObjective(internalScoreKey, net.minecraft.world.scores.criteria.ObjectiveCriteria.DUMMY, net.minecraft.network.chat.Component.literal(internalScoreKey), net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType.INTEGER);
+            boolean shareWithParty = "MAIN".equalsIgnoreCase(q.category) || "CONTRACT".equalsIgnoreCase(q.category);
+            java.util.List<ServerPlayer> recipients = shareWithParty ? PartyManager.getOnlineMembers(sp) : java.util.Collections.singletonList(sp);
+            for (ServerPlayer targetPlayer : recipients) {
+                if (targetPlayer != sp && !targetPlayer.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
+                if (targetPlayer.getTags().contains(q.activeTag) && !targetPlayer.getTags().contains(q.completedTag)) {
+                    for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                        QuestDefinition.QuestStage stage = q.stages.get(sIdx);
+                        if (type.equalsIgnoreCase(stage.type)) {
+                            if ("any".equalsIgnoreCase(stage.target) || target.equalsIgnoreCase(stage.target)) {
+                                String internalScoreKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
+                                var sb = targetPlayer.getServer().getScoreboard();
+                                var obj = sb.getObjective(internalScoreKey);
+                                if (obj == null) {
+                                    obj = sb.addObjective(internalScoreKey, net.minecraft.world.scores.criteria.ObjectiveCriteria.DUMMY, net.minecraft.network.chat.Component.literal(internalScoreKey), net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType.INTEGER);
+                                }
+                                var score = sb.getOrCreatePlayerScore(targetPlayer.getScoreboardName(), obj);
+                                score.add(amount);
                             }
-                            var score = sb.getOrCreatePlayerScore(sp.getScoreboardName(), obj);
-                            score.add(amount);
                         }
                     }
                 }

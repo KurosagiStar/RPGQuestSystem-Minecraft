@@ -63,6 +63,14 @@ public class NetworkHandler {
                 ChallengeActionPacket::encode,
                 ChallengeActionPacket::decode,
                 ChallengeActionPacket::handle);
+        CHANNEL.registerMessage(id++, SyncPartyPacket.class,
+                SyncPartyPacket::encode,
+                SyncPartyPacket::decode,
+                SyncPartyPacket::handle);
+        CHANNEL.registerMessage(id++, PartyActionPacket.class,
+                PartyActionPacket::encode,
+                PartyActionPacket::decode,
+                PartyActionPacket::handle);
     }
 }
 

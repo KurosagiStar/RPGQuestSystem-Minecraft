@@ -162,6 +162,7 @@ public class RPGQuestEngine {
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);
+            PartyManager.syncToPlayer(sp);
         }
     }
 
@@ -898,6 +899,13 @@ public class RPGQuestEngine {
                 if (mc.screen == null) {
                     QuestConfig.loadConfig();
                     mc.setScreen(new QuestJournalScreen());
+                }
+            }
+
+            if (KeyBindings.OPEN_PARTY_KEY.consumeClick()) {
+                Minecraft mc = Minecraft.getInstance();
+                if (mc.screen == null) {
+                    mc.setScreen(new PartyScreen());
                 }
             }
 

@@ -30,6 +30,12 @@ public class ClientQuestData {
     public static int CHALLENGE_WITHER_CD_SEC = 0;
     public static long CHALLENGE_SYNCED_AT_MS = 0;
 
+    public static boolean PARTY_IN_PARTY = false;
+    public static boolean PARTY_IS_LEADER = false;
+    public static String PARTY_INVITE_FROM = "";
+    public static final List<SyncPartyPacket.MemberEntry> PARTY_MEMBERS = new java.util.ArrayList<>();
+    public static final List<String> PARTY_INVITABLE = new java.util.ArrayList<>();
+
     public static synchronized void updateEntityTags(int entityId, List<String> tags) {
         if (tags == null || tags.isEmpty()) {
             ENTITY_TAGS.remove(entityId);

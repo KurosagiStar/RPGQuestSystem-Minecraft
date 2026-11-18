@@ -28,15 +28,18 @@ public class ChallengeManager {
 
     public static void onWitherKilled(ServerPlayer sp) {
         if (sp == null) return;
-        CompoundTag ch = getData(sp);
-        if (ch.getLong("wither_next_ms") > System.currentTimeMillis()) return; // En cooldown
-        if (ch.getBoolean("wither_done")) return; // Ya listo para reclamar
+        for (ServerPlayer member : PartyManager.getOnlineMembers(sp)) {
+            if (member != sp && !member.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
+            CompoundTag ch = getData(member);
+            if (ch.getLong("wither_next_ms") > System.currentTimeMillis()) continue;
+            if (ch.getBoolean("wither_done")) continue;
 
-        ch.putBoolean("wither_done", true);
-        sp.getPersistentData().put("rqe_challenges", ch);
-        sp.sendSystemMessage(Component.literal("§6[Desafío Completado] §f¡Derrotaste al Wither! Reclama tu recompensa en §eJ → Desafíos§f."));
-        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(3));
-        syncToPlayer(sp);
+            ch.putBoolean("wither_done", true);
+            member.getPersistentData().put("rqe_challenges", ch);
+            member.sendSystemMessage(Component.literal("§6[Desafío Completado] §f¡Derrotaste al Wither! Reclama tu recompensa en §eJ → Desafíos§f."));
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> member), new PlayQuestSoundPacket(3));
+            syncToPlayer(member);
+        }
     }
 
     public static void claimWither(ServerPlayer sp) {

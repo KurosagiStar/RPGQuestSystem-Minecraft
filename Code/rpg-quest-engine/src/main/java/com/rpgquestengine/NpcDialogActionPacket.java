@@ -112,6 +112,7 @@ public class NpcDialogActionPacket {
                 DailyQuestManager.onTaskProgress(sp, "NPC_TURNIN", 1);
                 NetworkHandler.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp),
                         new PlayQuestSoundPacket(4));
+                PartyManager.onNpcQuestCompleted(sp, q);
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             } else if ("ACCEPT".equalsIgnoreCase(msg.action)) {
                 if (q.completedTag != null && tags.contains(q.completedTag)) return;
@@ -129,6 +130,7 @@ public class NpcDialogActionPacket {
                 if (q.activeTag != null) sp.addTag(q.activeTag);
                 String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
                 sp.sendSystemMessage(Component.literal("§6[Misión Aceptada] §f" + q.title + ": §e" + desc));
+                PartyManager.onNpcQuestAccepted(sp, q);
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             }
         });
