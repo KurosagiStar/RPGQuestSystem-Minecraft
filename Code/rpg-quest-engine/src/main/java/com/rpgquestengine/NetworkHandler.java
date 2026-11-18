@@ -71,6 +71,10 @@ public class NetworkHandler {
                 PartyActionPacket::encode,
                 PartyActionPacket::decode,
                 PartyActionPacket::handle);
+        CHANNEL.registerMessage(id++, ShowBannerPacket.class,
+                ShowBannerPacket::encode,
+                ShowBannerPacket::decode,
+                ShowBannerPacket::handle);
     }
 }
 

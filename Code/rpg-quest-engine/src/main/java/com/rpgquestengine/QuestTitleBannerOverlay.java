@@ -14,19 +14,37 @@ public class QuestTitleBannerOverlay {
     private static String bannerTitle = "";
     private static int bannerColor = 0xFFFFAA00;
     private static String promptQuestId = "";
+    private static String customPromptText = "";
     private static ItemStack bannerIcon = ItemStack.EMPTY;
     private static long showUntilTime = 0;
+    private static long partyBannerUntilTime = 0;
     private static final long DISPLAY_DURATION = 5000; // 5 segundos
 
     private static final ResourceLocation TOAST_TEXTURE = new ResourceLocation("textures/gui/toasts.png");
 
     public static void showBanner(String header, String title, ItemStack icon, int color, String questIdForPrompt) {
+        if (System.currentTimeMillis() < partyBannerUntilTime && "MISIÓN COMPLETADA".equals(header)) {
+            return; // No pisar el banner de grupo con el genérico
+        }
         bannerHeader = header;
         bannerTitle = title;
         bannerIcon = icon != null ? icon : ItemStack.EMPTY;
         bannerColor = color;
         promptQuestId = questIdForPrompt != null ? questIdForPrompt : "";
+        customPromptText = "";
         showUntilTime = System.currentTimeMillis() + DISPLAY_DURATION;
+    }
+
+    public static void showPartyBanner(String header, String title, ItemStack icon, int color, String customPrompt) {
+        bannerHeader = header;
+        bannerTitle = title;
+        bannerIcon = icon != null ? icon : ItemStack.EMPTY;
+        bannerColor = color;
+        promptQuestId = "";
+        customPromptText = customPrompt != null ? customPrompt : "";
+        long now = System.currentTimeMillis();
+        showUntilTime = now + DISPLAY_DURATION;
+        partyBannerUntilTime = now + 1500;
     }
 
     public static boolean hasActivePrompt() {
@@ -71,7 +89,7 @@ public class QuestTitleBannerOverlay {
         int centerX = screenWidth / 2;
         int startY = 25; // Centro arriba
 
-        boolean hasPrompt = !promptQuestId.isEmpty();
+        boolean hasPrompt = !promptQuestId.isEmpty() || !customPromptText.isEmpty();
         int boxW = 280;
         int boxH = hasPrompt ? 46 : 38;
         int boxX = centerX - (boxW / 2);
@@ -102,7 +120,8 @@ public class QuestTitleBannerOverlay {
 
         if (hasPrompt) {
             int promptColor = (alphaInt << 24) | 0x00AAAAAA;
-            graphics.drawString(font, "§e[Presiona V para seguir]", textStartX, startY + 32, promptColor, false);
+            String pTxt = !customPromptText.isEmpty() ? customPromptText : "§e[Presiona V para seguir]";
+            graphics.drawString(font, pTxt, textStartX, startY + 32, promptColor, false);
         }
     }
 }

@@ -270,7 +270,13 @@ public class PartyManager {
             if (q.completedTag != null && !m.getTags().contains(q.completedTag)) {
                 m.addTag(q.completedTag);
                 addPendingReward(m, q.id);
-                m.sendSystemMessage(Component.literal("§a[Grupo] §e" + actor.getScoreboardName() + " §fcompletó: §e" + q.title + " §7(Recompensa en G)"));
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m),
+                        new ShowBannerPacket(
+                                actor.getScoreboardName() + " COMPLETÓ UNA MISIÓN",
+                                q.title,
+                                "§a[Presiona G para reclamar recompensas pendientes]",
+                                0xFFFFCC00));
+                m.sendSystemMessage(Component.literal("§a[Grupo] §e" + actor.getScoreboardName() + " §fcompletó: §e" + q.title + " §7(Pulsa G para reclamar)"));
                 RPGQuestEngine.syncPlayerAfterDialog(m);
                 syncToPlayer(m);
             }
