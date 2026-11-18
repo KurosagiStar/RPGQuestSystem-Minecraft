@@ -134,17 +134,20 @@ public class PartyScreen extends Screen {
         super.render(g, mouseX, mouseY, partialTick);
 
         if (confirmLeave) {
-            g.fill(0, 0, this.width, this.height, 0x99000000);
+            g.pose().pushPose();
+            g.pose().translate(0.0F, 0.0F, 300.0F);
+            g.fill(0, 0, this.width, this.height, 0xCC0A0A0D);
             int pw = 230;
             int ph = 84;
             int px = (this.width - pw) / 2;
             int py = (this.height - ph) / 2;
             g.fill(px - 1, py - 1, px + pw + 1, py + ph + 1, 0xFFD4AF37);
-            g.fill(px, py, px + pw, py + ph, 0xEE181613);
+            g.fill(px, py, px + pw, py + ph, 0xFF181613);
             g.drawCenteredString(this.font, "§e¿Seguro que deseas", px + pw / 2, py + 14, 0xFFFFFF);
             g.drawCenteredString(this.font, "§eabandonar el grupo?", px + pw / 2, py + 26, 0xFFFFFF);
             drawActionBtn(g, px + 14, py + ph - 28, 96, 18, "§cSí, abandonar", 0xFF5A2626, 5, "");
             drawActionBtn(g, px + pw - 110, py + ph - 28, 96, 18, "§7Cancelar", 0xFF2B2823, -3, "");
+            g.pose().popPose();
         }
     }
 
