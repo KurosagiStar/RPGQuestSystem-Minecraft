@@ -24,6 +24,8 @@ public class QuestConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static List<QuestDefinition> QUESTS = new ArrayList<>();
+    public static final java.util.Map<String, QuestDefinition> QUESTS_BY_ID = new java.util.HashMap<>();
+    public static final java.util.Map<String, List<QuestDefinition>> QUESTS_BY_NPC = new java.util.HashMap<>();
     public static java.util.Map<String, double[]> NPC_LOCATIONS = new java.util.HashMap<>();
 
     public static int hudPosX = 10;
@@ -31,12 +33,32 @@ public class QuestConfig {
     public static boolean hudEnabled = true;
     public static String trackedQuestId = "";
 
+    public static void rebuildIndices() {
+        QUESTS_BY_ID.clear();
+        QUESTS_BY_NPC.clear();
+        for (QuestDefinition q : QUESTS) {
+            if (q.id != null && !q.id.isEmpty()) {
+                QUESTS_BY_ID.put(q.id, q);
+            }
+            if (q.npcId != null && !q.npcId.isEmpty()) {
+                QUESTS_BY_NPC.computeIfAbsent(q.npcId, k -> new ArrayList<>()).add(q);
+            }
+        }
+    }
+
     public static QuestDefinition getQuestById(String id) {
         if (id == null || id.isEmpty()) return null;
-        for (QuestDefinition q : QUESTS) {
-            if (id.equals(q.id)) return q;
+        QuestDefinition q = QUESTS_BY_ID.get(id);
+        if (q != null) return q;
+        for (QuestDefinition cand : QUESTS) {
+            if (id.equals(cand.id)) return cand;
         }
         return null;
+    }
+
+    public static List<QuestDefinition> getQuestsForNpc(String npcId) {
+        if (npcId == null || npcId.isEmpty()) return java.util.Collections.emptyList();
+        return QUESTS_BY_NPC.getOrDefault(npcId, java.util.Collections.emptyList());
     }
 
     public static void setNpcLocation(String npcId, double x, double y, double z) {
@@ -68,6 +90,7 @@ public class QuestConfig {
                 Type listType = new TypeToken<List<QuestDefinition>>() {}.getType();
                 List<QuestDefinition> loaded = GSON.fromJson(reader, listType);
                 if (loaded != null) QUESTS = loaded;
+                rebuildIndices();
                 LOGGER.info("[RPGQuestEngine] Loaded {} quests from rpg_quests.json", QUESTS.size());
             } catch (Exception e) {
                 LOGGER.error("[RPGQuestEngine] Error loading rpg_quests.json", e);

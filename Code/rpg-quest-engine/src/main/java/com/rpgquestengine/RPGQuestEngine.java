@@ -947,12 +947,7 @@ public class RPGQuestEngine {
     }
 
     private void openNpcDialog(ServerPlayer sp, String npcId, String npcName) {
-        java.util.List<QuestDefinition> npcQuests = new java.util.ArrayList<>();
-        for (QuestDefinition q : QuestConfig.QUESTS) {
-            if (npcId.equals(q.npcId)) {
-                npcQuests.add(q);
-            }
-        }
+        java.util.List<QuestDefinition> npcQuests = QuestConfig.getQuestsForNpc(npcId);
         if (npcQuests.isEmpty()) {
             sp.sendSystemMessage(Component.literal("§c[RPGQuestEngine] No hay misiones para " + npcId));
             return;
@@ -979,13 +974,7 @@ public class RPGQuestEngine {
         for (QuestDefinition q : npcQuests) {
             if (q.completedTag != null && tags.contains(q.completedTag)) continue;
             if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
-                QuestDefinition prereq = null;
-                for (QuestDefinition cand : QuestConfig.QUESTS) {
-                    if (q.prerequisiteQuestId.equals(cand.id)) {
-                        prereq = cand;
-                        break;
-                    }
-                }
+                QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
                 if (prereq != null && (prereq.completedTag == null || !tags.contains(prereq.completedTag))) {
                     if (firstBlockedPrereq == null) firstBlockedPrereq = prereq;
                     continue;

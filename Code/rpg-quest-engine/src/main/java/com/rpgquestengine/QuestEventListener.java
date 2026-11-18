@@ -310,7 +310,7 @@ public class QuestEventListener {
         String combo = name + " " + custom;
 
         net.minecraft.sounds.SoundEvent sound = net.minecraft.sounds.SoundEvents.VILLAGER_AMBIENT;
-        float pitch = 0.95F + (new java.util.Random().nextFloat() * 0.15F);
+        float pitch = 0.95F + (living.getRandom().nextFloat() * 0.15F);
 
         if (combo.contains("alquimi") || combo.contains("cleric") || combo.contains("elena") || combo.contains("ocultista")) {
             sound = net.minecraft.sounds.SoundEvents.VILLAGER_WORK_CLERIC;

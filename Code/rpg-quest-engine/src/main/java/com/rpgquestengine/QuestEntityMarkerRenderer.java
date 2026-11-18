@@ -18,6 +18,7 @@ import org.joml.Matrix4f;
 
 @Mod.EventBusSubscriber(modid = RPGQuestEngine.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class QuestEntityMarkerRenderer {
+    private static final java.util.Map<String, ResourceLocation> ICON_CACHE = new java.util.HashMap<>();
 
     @SubscribeEvent
     public static void onRenderNameTag(RenderNameTagEvent event) {
@@ -246,7 +247,8 @@ public class QuestEntityMarkerRenderer {
 
         // Dibujar icono moderno centrado arriba del texto
         if (iconFile != null) {
-            ResourceLocation iconRl = new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/" + iconFile);
+            ResourceLocation iconRl = ICON_CACHE.computeIfAbsent(iconFile,
+                    k -> new ResourceLocation(RPGQuestEngine.MODID, "textures/gui/icons/" + k));
             com.mojang.blaze3d.vertex.VertexConsumer vc = event.getMultiBufferSource().getBuffer(net.minecraft.client.renderer.RenderType.textSeeThrough(iconRl));
             float size = 14.0F;
             float x0 = -size / 2.0F;
