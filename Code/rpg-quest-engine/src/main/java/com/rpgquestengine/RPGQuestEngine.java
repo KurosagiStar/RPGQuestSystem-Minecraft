@@ -161,6 +161,7 @@ public class RPGQuestEngine {
         if (event.getEntity() instanceof ServerPlayer sp) {
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
+            ChallengeManager.syncToPlayer(sp);
         }
     }
 

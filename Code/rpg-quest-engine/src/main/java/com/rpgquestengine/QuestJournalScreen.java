@@ -59,6 +59,12 @@ public class QuestJournalScreen extends Screen {
             updateActionButtons();
         }).bounds(152, 8, 130, 18).build());
 
+        this.addRenderableWidget(Button.builder(Component.literal("§cDesafíos"), b -> {
+            activeMainTab = 2;
+            NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(0));
+            updateActionButtons();
+        }).bounds(288, 8, 110, 18).build());
+
         this.addRenderableWidget(Button.builder(Component.literal("⚙ Ajustar HUD"), b -> {
             if (this.minecraft != null) {
                 this.minecraft.setScreen(new HudPositionScreen(this));
@@ -188,8 +194,9 @@ public class QuestJournalScreen extends Screen {
         // Fondo oscuro estilo Witcher 3
         g.fill(0, 0, this.width, this.height, 0xEE0A0A0D);
         // Indicador dorado debajo de la pestaña activa
-        int tabLineX = activeMainTab == 0 ? 16 : 152;
-        g.fill(tabLineX, 27, tabLineX + 130, 29, 0xFFD4AF37);
+        int tabLineX = activeMainTab == 0 ? 16 : (activeMainTab == 1 ? 152 : 288);
+        int tabLineW = activeMainTab == 2 ? 110 : 130;
+        g.fill(tabLineX, 27, tabLineX + tabLineW, 29, 0xFFD4AF37);
 
         clickables.clear();
         int topY = 34;
@@ -197,6 +204,11 @@ public class QuestJournalScreen extends Screen {
 
         if (activeMainTab == 1) {
             renderDailyTab(g, 16, topY, this.width - 32, bottomY, mouseX, mouseY);
+            super.render(g, mouseX, mouseY, partialTick);
+            return;
+        }
+        if (activeMainTab == 2) {
+            renderChallengesTab(g, 16, topY, this.width - 32, bottomY, mouseX, mouseY);
             super.render(g, mouseX, mouseY, partialTick);
             return;
         }
@@ -551,12 +563,101 @@ public class QuestJournalScreen extends Screen {
         }
     }
 
+    private void renderChallengesTab(GuiGraphics g, int x, int y, int w, int bottomY, int mouseX, int mouseY) {
+        g.fill(x - 1, y - 1, x + w + 1, bottomY + 1, 0xFFD4AF37);
+        g.fill(x, y, x + w, bottomY, 0xEE141311);
+
+        g.drawString(this.font, "§cDESAFÍOS DE JEFE §7(Reinicio cada 6 horas reales)", x + 14, y + 12, 0xFFFFFF);
+        g.fill(x + 14, y + 25, x + w - 14, y + 26, 0x66D4AF37);
+
+        long elapsedSec = Math.max(0, (System.currentTimeMillis() - ClientQuestData.CHALLENGE_SYNCED_AT_MS) / 1000L);
+        long remCd = Math.max(0, ClientQuestData.CHALLENGE_WITHER_CD_SEC - elapsedSec);
+        boolean onCooldown = remCd > 0;
+        boolean done = ClientQuestData.CHALLENGE_WITHER_DONE && !onCooldown;
+
+        int cx = x + 16;
+        int cy = y + 36;
+        int cw = Math.min(360, w - 32);
+        int ch = Math.min(165, bottomY - cy - 14);
+
+        int border = done ? 0xFFD4AF37 : (onCooldown ? 0xFF3E6B48 : 0xFF883333);
+        g.fill(cx, cy, cx + cw, cy + ch, border);
+        g.fill(cx + 1, cy + 1, cx + cw - 1, cy + ch - 1, 0xEE181514);
+
+        // Cabecera
+        g.fill(cx + 1, cy + 1, cx + cw - 1, cy + 26, 0xCC241B1B);
+        g.renderItem(new ItemStack(Items.NETHER_STAR), cx + 6, cy + 5);
+        g.drawString(this.font, "§c§lJefe Mundial: El Wither", cx + 28, cy + 5, 0xFF5555);
+        String progTxt = onCooldown ? "§7Completado" : (done ? "§aProgreso: 1/1" : "§eProgreso: 0/1");
+        g.drawString(this.font, progTxt, cx + 28, cy + 15, 0xFFFFFF);
+
+        // Instrucción
+        List<FormattedCharSequence> descLines = this.font.split(
+                Component.literal("§7Invoca y derrota a un Wither por tu cuenta (4 Arena de Almas + 3 Calaveras Wither)."),
+                cw - 20);
+        int ty = cy + 34;
+        for (FormattedCharSequence line : descLines) {
+            g.drawString(this.font, line, cx + 10, ty, 0xCCCCCC);
+            ty += 11;
+        }
+
+        // Recompensas
+        int rewY = cy + ch - 62;
+        g.fill(cx + 10, rewY - 5, cx + cw - 10, rewY - 4, 0x55D4AF37);
+        g.drawString(this.font, "§6Recompensas:", cx + 10, rewY, 0xFFD4AF37);
+
+        String[] rIds = {"cisco_mod:champion_coin", "apotheosis:sigil_of_socketing", "apotheosis:epic_material", "minecraft:experience_bottle"};
+        int[] rCnt = {3, 1, 2, 1};
+        String[] rTips = {"3x Moneda de Campeón", "1x Sigil of Socketing", "2x Epic Material (+1 Gema Épica)", "+300 XP"};
+        int hoverR = -1;
+        int sx = cx + 10;
+        int sy = rewY + 12;
+        for (int i = 0; i < rIds.length; i++) {
+            Item it = ForgeRegistries.ITEMS.getValue(new ResourceLocation(rIds[i]));
+            ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, rCnt[i]) : new ItemStack(Items.EMERALD, rCnt[i]);
+            drawMiniSlot(g, st, sx, sy, 0xFF5A4E36);
+            if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20) {
+                hoverR = i;
+            }
+            sx += 26;
+        }
+
+        // Botón Reclamar / Cooldown
+        int btnW = 135;
+        int btnH = 20;
+        int btnX = cx + cw - btnW - 10;
+        int btnY = sy;
+        if (onCooldown) {
+            long hrs = remCd / 3600;
+            long mins = (remCd % 3600) / 60;
+            long secs = remCd % 60;
+            String cdTxt = String.format("§7En %dh %02dm %02ds", hrs, mins, secs);
+            g.fill(btnX, btnY, btnX + btnW, btnY + btnH, 0xFF253528);
+            g.drawCenteredString(this.font, cdTxt, btnX + btnW / 2, btnY + 6, 0xAAAAAA);
+        } else if (done) {
+            g.fill(btnX, btnY, btnX + btnW, btnY + btnH, 0xFFD4AF37);
+            g.fill(btnX + 1, btnY + 1, btnX + btnW - 1, btnY + btnH - 1, 0xFF2E4E2E);
+            g.drawCenteredString(this.font, "§a§lReclamar", btnX + btnW / 2, btnY + 6, 0xFFFFFF);
+            clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
+        } else {
+            g.fill(btnX, btnY, btnX + btnW, btnY + btnH, 0xFF252320);
+            g.drawCenteredString(this.font, "§eDerrota al Wither", btnX + btnW / 2, btnY + 6, 0xAAAAAA);
+        }
+
+        if (hoverR >= 0) {
+            g.renderTooltip(this.font, Component.literal("§e" + rTips[hoverR]), mouseX, mouseY);
+        }
+    }
+
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (button == 0) {
             for (ClickableRegion r : clickables) {
                 if (mouseX >= r.x() && mouseX <= r.x() + r.w() && mouseY >= r.y() && mouseY <= r.y() + r.h()) {
-                    if (r.dailyClaimIdx() >= 0) {
+                    if (r.dailyClaimIdx() == 100) {
+                        NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(1));
+                        return true;
+                    } else if (r.dailyClaimIdx() >= 0) {
                         NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(r.dailyClaimIdx()));
                         return true;
                     } else if (r.toggleCat() >= 0) {

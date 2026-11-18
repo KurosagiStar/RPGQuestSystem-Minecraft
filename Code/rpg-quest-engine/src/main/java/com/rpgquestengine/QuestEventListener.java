@@ -72,6 +72,9 @@ public class QuestEventListener {
             if (victim instanceof net.minecraft.world.entity.monster.Enemy) {
                 DailyQuestManager.onTaskProgress(sp, "KILL_HOSTILE", 1);
             }
+            if (victim.getType() == net.minecraft.world.entity.EntityType.WITHER) {
+                ChallengeManager.onWitherKilled(sp);
+            }
             ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(victim.getType());
             if (entityId != null) {
                 incrementQuestTarget(sp, "KILL", entityId.toString());

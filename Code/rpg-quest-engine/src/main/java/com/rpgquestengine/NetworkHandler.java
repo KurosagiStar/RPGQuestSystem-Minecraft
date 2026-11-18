@@ -55,6 +55,14 @@ public class NetworkHandler {
                 DailyQuestActionPacket::encode,
                 DailyQuestActionPacket::decode,
                 DailyQuestActionPacket::handle);
+        CHANNEL.registerMessage(id++, SyncChallengesPacket.class,
+                SyncChallengesPacket::encode,
+                SyncChallengesPacket::decode,
+                SyncChallengesPacket::handle);
+        CHANNEL.registerMessage(id++, ChallengeActionPacket.class,
+                ChallengeActionPacket::encode,
+                ChallengeActionPacket::decode,
+                ChallengeActionPacket::handle);
     }
 }
 

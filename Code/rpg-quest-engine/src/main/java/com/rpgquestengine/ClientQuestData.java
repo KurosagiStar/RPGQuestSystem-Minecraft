@@ -26,6 +26,10 @@ public class ClientQuestData {
     public static long DAILY_SYNCED_AT_MS = 0;
     public static final List<SyncDailyQuestsPacket.DailyEntry> DAILY_ENTRIES = new java.util.ArrayList<>();
 
+    public static boolean CHALLENGE_WITHER_DONE = false;
+    public static int CHALLENGE_WITHER_CD_SEC = 0;
+    public static long CHALLENGE_SYNCED_AT_MS = 0;
+
     public static synchronized void updateEntityTags(int entityId, List<String> tags) {
         if (tags == null || tags.isEmpty()) {
             ENTITY_TAGS.remove(entityId);
