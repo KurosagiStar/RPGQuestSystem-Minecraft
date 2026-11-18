@@ -23,6 +23,9 @@ public class NpcDialogScreen extends Screen {
     private static final int SLOT_GAP = 6;
 
     private int selectedChoice = 0;
+    private float savedYaw = 0f;
+    private float savedPitch = 0f;
+    private boolean hasSavedRot = false;
 
     private record RewardSlot(ItemStack stack, List<Component> customTooltip, int x, int y, int choiceIdx) {}
     private final List<RewardSlot> rewardSlots = new ArrayList<>();
@@ -32,9 +35,24 @@ public class NpcDialogScreen extends Screen {
         this.data = data;
     }
 
+    private int getBoxW() {
+        return Math.min(BOX_W, Math.max(240, (int) (this.width * 0.54f)));
+    }
+
+    private int getBoxLeft() {
+        int bw = getBoxW();
+        return this.width >= bw + 120 ? 22 : (this.width - bw) / 2;
+    }
+
     @Override
     protected void init() {
-        int left = (this.width - BOX_W) / 2;
+        if (!hasSavedRot && this.minecraft != null && this.minecraft.player != null) {
+            savedYaw = this.minecraft.player.getYRot();
+            savedPitch = this.minecraft.player.getXRot();
+            hasSavedRot = true;
+        }
+        int bw = getBoxW();
+        int left = getBoxLeft();
         int top = (this.height - BOX_H) / 2;
         int btnY = top + BOX_H - 28;
 
@@ -45,7 +63,7 @@ public class NpcDialogScreen extends Screen {
             }).bounds(left + 20, btnY, 135, 20).build());
 
             this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                    .bounds(left + BOX_W - 110, btnY, 90, 20).build());
+                    .bounds(left + bw - 110, btnY, 90, 20).build());
         } else if ("TURN_IN".equals(data.state)) {
             this.addRenderableWidget(Button.builder(Component.literal("§6Completar Misión"), b -> {
                 NetworkHandler.CHANNEL.sendToServer(new NpcDialogActionPacket("COMPLETE", data.questId, selectedChoice));
@@ -53,11 +71,45 @@ public class NpcDialogScreen extends Screen {
             }).bounds(left + 20, btnY, 145, 20).build());
 
             this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                    .bounds(left + BOX_W - 110, btnY, 90, 20).build());
+                    .bounds(left + bw - 110, btnY, 90, 20).build());
         } else {
             this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                    .bounds(left + (BOX_W - 100) / 2, btnY, 100, 20).build());
+                    .bounds(left + (bw - 100) / 2, btnY, 100, 20).build());
         }
+    }
+
+    @Override
+    public void removed() {
+        super.removed();
+        if (hasSavedRot && this.minecraft != null && this.minecraft.player != null) {
+            this.minecraft.player.setYRot(savedYaw);
+            this.minecraft.player.setXRot(savedPitch);
+        }
+    }
+
+    private void updateCameraFraming() {
+        if (data.npcEntityId < 0 || this.minecraft == null || this.minecraft.player == null || this.minecraft.level == null) return;
+        net.minecraft.world.entity.Entity target = this.minecraft.level.getEntity(data.npcEntityId);
+        if (target == null) return;
+
+        var p = this.minecraft.player;
+        double dx = target.getX() - p.getX();
+        double dy = target.getEyeY() - p.getEyeY();
+        double dz = target.getZ() - p.getZ();
+        double horiz = Math.sqrt(dx * dx + dz * dz);
+        if (horiz < 0.1) return;
+
+        float exactYaw = (float) (Math.toDegrees(Math.atan2(dz, dx)) - 90.0);
+        float exactPitch = (float) (-Math.toDegrees(Math.atan2(dy, horiz)));
+
+        // Girar ligeramente a la izquierda (-18°) para encuadrar al NPC en el lado derecho
+        float desiredYaw = exactYaw - 18.0f;
+        float desiredPitch = net.minecraft.util.Mth.clamp(exactPitch, -25.0f, 25.0f);
+
+        float curYaw = p.getYRot();
+        float deltaYaw = net.minecraft.util.Mth.wrapDegrees(desiredYaw - curYaw);
+        p.setYRot(curYaw + deltaYaw * 0.22f);
+        p.setXRot(p.getXRot() + (desiredPitch - p.getXRot()) * 0.22f);
     }
 
     @Override
@@ -91,20 +143,22 @@ public class NpcDialogScreen extends Screen {
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(g);
+        updateCameraFraming();
+        g.fill(0, 0, this.width, this.height, 0x28000000);
         rewardSlots.clear();
 
-        int left = (this.width - BOX_W) / 2;
+        int bw = getBoxW();
+        int left = getBoxLeft();
         int top = (this.height - BOX_H) / 2;
 
-        g.fill(left - 2, top - 2, left + BOX_W + 2, top + BOX_H + 2, 0xFFD4AF37);
-        g.fill(left, top, left + BOX_W, top + BOX_H, 0xEE141418);
-        g.fill(left, top + 24, left + BOX_W, top + 25, 0x88D4AF37);
+        g.fill(left - 2, top - 2, left + bw + 2, top + BOX_H + 2, 0xFFD4AF37);
+        g.fill(left, top, left + bw, top + BOX_H, 0xEE141418);
+        g.fill(left, top + 24, left + bw, top + 25, 0x88D4AF37);
 
         g.drawString(this.font, "§6" + data.npcName, left + 14, top + 9, 0xFFFFFF);
 
         int textY = top + 33;
-        int maxTextW = BOX_W - 28;
+        int maxTextW = bw - 28;
 
         String headline;
         String lore = data.questLore;
@@ -164,7 +218,7 @@ public class NpcDialogScreen extends Screen {
 
         if (hasAnyReward) {
             int sepY = top + BOX_H - 96;
-            g.fill(left + 14, sepY, left + BOX_W - 14, sepY + 1, 0x88D4AF37);
+            g.fill(left + 14, sepY, left + bw - 14, sepY + 1, 0x88D4AF37);
             g.drawString(this.font, "§6Recompensas", left + 14, sepY + 6, 0xFFD4AF37);
 
             int slotX = left + 14;
@@ -185,7 +239,7 @@ public class NpcDialogScreen extends Screen {
             }
 
             for (OpenNpcDialogPacket.RewardEntry re : data.rewardItems) {
-                if (slotX + SLOT_SIZE > left + BOX_W - 14) break;
+                if (slotX + SLOT_SIZE > left + bw - 14) break;
                 ItemStack stack = resolveRewardStack(re);
                 if (stack.isEmpty()) continue;
                 drawSlot(g, stack, slotX, slotY, 0xFF5A4E36);
@@ -193,7 +247,7 @@ public class NpcDialogScreen extends Screen {
                 slotX += SLOT_SIZE + SLOT_GAP;
             }
 
-            if (!data.randomRewards.isEmpty() && slotX + SLOT_SIZE <= left + BOX_W - 14) {
+            if (!data.randomRewards.isEmpty() && slotX + SLOT_SIZE <= left + bw - 14) {
                 ItemStack chestStack = new ItemStack(Items.CHEST, 1);
                 drawSlot(g, chestStack, slotX, slotY, 0xFFAA55FF);
                 List<Component> tip = new ArrayList<>();
@@ -217,7 +271,7 @@ public class NpcDialogScreen extends Screen {
                 g.drawString(this.font, label, left + 14, choiceY + 6, 0xFFFFFF);
                 int cx = left + 14 + this.font.width(label) + 8;
                 for (int i = 0; i < data.choiceRewards.size(); i++) {
-                    if (cx + SLOT_SIZE > left + BOX_W - 14) break;
+                    if (cx + SLOT_SIZE > left + bw - 14) break;
                     ItemStack stack = resolveRewardStack(data.choiceRewards.get(i));
                     if (stack.isEmpty()) continue;
                     int border = (i == selectedChoice && "TURN_IN".equals(data.state)) ? 0xFF55FF55 : 0xFF3E6B48;

@@ -943,10 +943,10 @@ public class RPGQuestEngine {
 
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
-        openNpcDialog(sp, matchedNpcId, target.getName().getString());
+        openNpcDialog(sp, matchedNpcId, target.getName().getString(), target.getId());
     }
 
-    private void openNpcDialog(ServerPlayer sp, String npcId, String npcName) {
+    private void openNpcDialog(ServerPlayer sp, String npcId, String npcName, int npcEntityId) {
         java.util.List<QuestDefinition> npcQuests = QuestConfig.getQuestsForNpc(npcId);
         if (npcQuests.isEmpty()) {
             sp.sendSystemMessage(Component.literal("§c[RPGQuestEngine] No hay misiones para " + npcId));
@@ -958,14 +958,14 @@ public class RPGQuestEngine {
 
         for (QuestDefinition q : npcQuests) {
             if (q.doneTag != null && tags.contains(q.doneTag)) {
-                sendDialogPacket(sp, npcId, npcName, "TURN_IN", q);
+                sendDialogPacket(sp, npcId, npcName, npcEntityId, "TURN_IN", q);
                 return;
             }
         }
 
         for (QuestDefinition q : npcQuests) {
             if (q.activeTag != null && tags.contains(q.activeTag)) {
-                sendDialogPacket(sp, npcId, npcName, "IN_PROGRESS", q);
+                sendDialogPacket(sp, npcId, npcName, npcEntityId, "IN_PROGRESS", q);
                 return;
             }
         }
@@ -980,7 +980,7 @@ public class RPGQuestEngine {
                     continue;
                 }
             }
-            sendDialogPacket(sp, npcId, npcName, "AVAILABLE", q);
+            sendDialogPacket(sp, npcId, npcName, npcEntityId, "AVAILABLE", q);
             return;
         }
 
@@ -988,13 +988,13 @@ public class RPGQuestEngine {
             String reqNpc = (firstBlockedPrereq.npc != null && !firstBlockedPrereq.npc.isEmpty())
                     ? firstBlockedPrereq.npc : firstBlockedPrereq.npcId;
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                    new OpenNpcDialogPacket(npcId, npcName, "LOCKED", firstBlockedPrereq.id,
+                    new OpenNpcDialogPacket(npcId, npcName, npcEntityId, "LOCKED", firstBlockedPrereq.id,
                             firstBlockedPrereq.title, reqNpc != null ? reqNpc : "", "", 0, 0, null, null, null));
             return;
         }
 
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new OpenNpcDialogPacket(npcId, npcName, "COMPLETED_ALL", "", "", "", "", 0, 0, null, null, null));
+                new OpenNpcDialogPacket(npcId, npcName, npcEntityId, "COMPLETED_ALL", "", "", "", "", 0, 0, null, null, null));
     }
 
     private static java.util.List<OpenNpcDialogPacket.RewardEntry> toRewardEntries(java.util.List<QuestDefinition.RewardItem> src) {
@@ -1009,11 +1009,11 @@ public class RPGQuestEngine {
         return out;
     }
 
-    private void sendDialogPacket(ServerPlayer sp, String npcId, String npcName, String state, QuestDefinition q) {
+    private void sendDialogPacket(ServerPlayer sp, String npcId, String npcName, int npcEntityId, String state, QuestDefinition q) {
         String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
         String lore = (q.description != null) ? q.description : "";
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new OpenNpcDialogPacket(npcId, npcName, state, q.id, q.title, lore, desc,
+                new OpenNpcDialogPacket(npcId, npcName, npcEntityId, state, q.id, q.title, lore, desc,
                         q.rewardXp, q.rewardXpLevels,
                         toRewardEntries(q.rewardItems),
                         toRewardEntries(q.randomRewards),
@@ -1021,7 +1021,7 @@ public class RPGQuestEngine {
     }
 
     private int handleNpcTalk(ServerPlayer sp, String npcId) {
-        openNpcDialog(sp, npcId, npcId);
+        openNpcDialog(sp, npcId, npcId, -1);
         return 1;
     }
 }

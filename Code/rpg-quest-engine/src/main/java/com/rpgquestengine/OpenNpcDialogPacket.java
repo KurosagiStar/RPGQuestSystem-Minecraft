@@ -25,6 +25,7 @@ public class OpenNpcDialogPacket {
 
     public final String npcId;
     public final String npcName;
+    public final int npcEntityId;
     public final String state; // TURN_IN, IN_PROGRESS, AVAILABLE, LOCKED, COMPLETED_ALL
     public final String questId;
     public final String questTitle;
@@ -36,7 +37,7 @@ public class OpenNpcDialogPacket {
     public final List<RewardEntry> randomRewards;
     public final List<RewardEntry> choiceRewards;
 
-    public OpenNpcDialogPacket(String npcId, String npcName, String state,
+    public OpenNpcDialogPacket(String npcId, String npcName, int npcEntityId, String state,
                                String questId, String questTitle, String questLore,
                                String questDesc, int rewardXp, int rewardXpLevels,
                                List<RewardEntry> rewardItems,
@@ -44,6 +45,7 @@ public class OpenNpcDialogPacket {
                                List<RewardEntry> choiceRewards) {
         this.npcId = npcId != null ? npcId : "";
         this.npcName = npcName != null ? npcName : "";
+        this.npcEntityId = npcEntityId;
         this.state = state != null ? state : "COMPLETED_ALL";
         this.questId = questId != null ? questId : "";
         this.questTitle = questTitle != null ? questTitle : "";
@@ -77,6 +79,7 @@ public class OpenNpcDialogPacket {
     public static void encode(OpenNpcDialogPacket msg, FriendlyByteBuf buf) {
         buf.writeUtf(msg.npcId);
         buf.writeUtf(msg.npcName);
+        buf.writeInt(msg.npcEntityId);
         buf.writeUtf(msg.state);
         buf.writeUtf(msg.questId);
         buf.writeUtf(msg.questTitle);
@@ -92,6 +95,7 @@ public class OpenNpcDialogPacket {
     public static OpenNpcDialogPacket decode(FriendlyByteBuf buf) {
         String npcId = buf.readUtf();
         String npcName = buf.readUtf();
+        int npcEntityId = buf.readInt();
         String state = buf.readUtf();
         String questId = buf.readUtf();
         String questTitle = buf.readUtf();
@@ -102,7 +106,7 @@ public class OpenNpcDialogPacket {
         List<RewardEntry> rewardItems = decodeList(buf);
         List<RewardEntry> randomRewards = decodeList(buf);
         List<RewardEntry> choiceRewards = decodeList(buf);
-        return new OpenNpcDialogPacket(npcId, npcName, state, questId, questTitle, questLore, questDesc,
+        return new OpenNpcDialogPacket(npcId, npcName, npcEntityId, state, questId, questTitle, questLore, questDesc,
                 rewardXp, rewardXpLevels, rewardItems, randomRewards, choiceRewards);
     }
 
