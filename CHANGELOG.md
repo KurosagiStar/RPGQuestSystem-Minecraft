@@ -7,7 +7,8 @@
   - **Pestaña `Misiones Diarias` (`DailyQuestManager`):** 4 tarjetas rotativas diarias, barra de progreso `0..400` con iconos de recompensa debajo de cada hito, reinicio a medianoche real y SFX.
   - **Pestaña `Desafíos` (`ChallengeManager`):** desafío de Jefe Mundial (`El Wither`) cada 6 horas reales invocándolo por cuenta propia.
 - **Sistema de Grupo en Tecla `G` (`PartyManager`, `PartyScreen`):**
-  - Crear grupo, invitar jugadores conectados con 1 clic, aceptar/rechazar, expulsar/salir y sincronizar misiones `MAIN` y NPCs desbloqueados.
+  - Crear grupo, invitar jugadores conectados con 1 clic, aceptar/rechazar, expulsar y botón `Abandonar Grupo` con popup de confirmación (`z+300`).
+  - Sincronización automática de misiones `MAIN` y NPCs desbloqueados al unirse, aceptar, entregar y reconectarse (`onPlayerLoggedIn`).
   - Progreso compartido en bajas (`KILL`, `KILL_BOW`, `MINE`, `CRAFT`, `FISH` en `MAIN`/`CONTRACT`) y desafío del Wither.
   - Cola persistente de `Recompensas Sin Reclamar` (`rqe_pending_rewards`) con `Reclamar` / `Reclamar Todo` y banner animado `<Jugador> COMPLETÓ UNA MISIÓN` + `[Presiona G para reclamar recompensas pendientes]`.
 - **Cámara Cinematográfica, Audio y Optimización:**
