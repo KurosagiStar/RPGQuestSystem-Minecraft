@@ -433,21 +433,23 @@ public class QuestJournalScreen extends Screen {
         g.fill(x, y, x + w, bottomY, 0xEE141311);
 
         // Barra superior de Progreso Diario (0..400)
-        int barBoxH = 44;
+        int barBoxH = 64;
         g.fill(x + 10, y + 8, x + w - 10, y + 8 + barBoxH, 0xCC1B1916);
         g.drawString(this.font, "§6PROGRESO DIARIO", x + 18, y + 14, 0xFFD4AF37);
         g.drawString(this.font, "§e" + ClientQuestData.DAILY_POINTS + " §7/ 400", x + 18, y + 28, 0xFFFFFF);
 
         int trackX = x + 130;
         int trackW = w - 155;
-        int trackY = y + 26;
+        int trackY = y + 21;
         g.fill(trackX, trackY, trackX + trackW, trackY + 6, 0xFF2B2823);
         int fillW = (int) (trackW * Math.min(1.0f, ClientQuestData.DAILY_POINTS / 400.0f));
         if (fillW > 0) {
             g.fill(trackX, trackY, trackX + fillW, trackY + 6, 0xFF45C945);
         }
 
-        String[] msRewards = {"1x Moneda + XP", "Gem Dust + Mat.", "2x Monedas + Mat.", "Sigil of Socketing"};
+        String[] msRewards = {"1x Moneda de Campeón + 100 XP", "2x Gem Dust + 1x Common Material", "2x Monedas + 2x Uncommon Material", "1x Sigil of Socketing + 250 XP"};
+        String[] msItemIds = {"cisco_mod:champion_coin", "apotheosis:gem_dust", "cisco_mod:champion_coin", "apotheosis:sigil_of_socketing"};
+        int[] msItemCounts = {1, 2, 2, 1};
         int hoverMs = -1;
         for (int m = 0; m < 4; m++) {
             int nx = trackX + (trackW * (m + 1)) / 4 - 8;
@@ -455,14 +457,23 @@ public class QuestJournalScreen extends Screen {
             boolean reached = ClientQuestData.DAILY_POINTS >= (m + 1) * 100;
             g.fill(nx, ny, nx + 16, ny + 16, reached ? 0xFF45C945 : 0xFF5A4E36);
             g.fill(nx + 1, ny + 1, nx + 15, ny + 15, 0xFF171512);
-            String mark = reached ? "§a✔" : "§7" + ((m + 1) * 100);
             if (reached) {
-                g.drawCenteredString(this.font, mark, nx + 8, ny + 4, 0x55FF55);
+                g.drawCenteredString(this.font, "§a✔", nx + 8, ny + 4, 0x55FF55);
             } else {
-                g.drawCenteredString(this.font, "§7•", nx + 8, ny + 4, 0x888888);
+                g.drawCenteredString(this.font, "§7" + ((m + 1) * 100), nx + 8, ny + 4, 0xAAAAAA);
             }
-            g.drawCenteredString(this.font, reached ? "§a" + ((m + 1) * 100) : "§7" + ((m + 1) * 100), nx + 8, ny + 18, 0xCCCCCC);
-            if (mouseX >= nx && mouseX <= nx + 16 && mouseY >= ny && mouseY <= ny + 16) {
+
+            // Cuadrito con icono real de la recompensa debajo del nodo
+            int slotX = nx - 2;
+            int slotY = ny + 20;
+            Item rItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(msItemIds[m]));
+            ItemStack rStack = (rItem != null && rItem != Items.AIR)
+                    ? new ItemStack(rItem, msItemCounts[m])
+                    : new ItemStack(Items.EXPERIENCE_BOTTLE, msItemCounts[m]);
+            drawMiniSlot(g, rStack, slotX, slotY, reached ? 0xFF45C945 : 0xFF5A4E36);
+
+            if ((mouseX >= nx && mouseX <= nx + 16 && mouseY >= ny && mouseY <= ny + 16)
+                    || (mouseX >= slotX && mouseX <= slotX + 20 && mouseY >= slotY && mouseY <= slotY + 20)) {
                 hoverMs = m;
             }
         }
