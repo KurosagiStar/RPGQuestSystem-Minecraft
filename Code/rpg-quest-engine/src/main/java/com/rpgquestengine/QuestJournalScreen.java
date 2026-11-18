@@ -28,13 +28,14 @@ public class QuestJournalScreen extends Screen {
     private boolean openContract = true;
     private boolean openCompleted = false;
 
+    private int activeMainTab = 0; // 0 = Diario de Misiones, 1 = Misiones Diarias
     private int leftScroll = 0;
     private int maxLeftScroll = 0;
 
     private Button trackButton = null;
     private Button abandonButton = null;
 
-    private record ClickableRegion(int x, int y, int w, int h, QuestDefinition quest, int toggleCat) {}
+    private record ClickableRegion(int x, int y, int w, int h, QuestDefinition quest, int toggleCat, int dailyClaimIdx) {}
     private final List<ClickableRegion> clickables = new ArrayList<>();
 
     public QuestJournalScreen() {
@@ -45,6 +46,18 @@ public class QuestJournalScreen extends Screen {
     protected void init() {
         super.init();
         refreshQuestLists();
+        NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(-1));
+
+        this.addRenderableWidget(Button.builder(Component.literal("§6Diario de Misiones"), b -> {
+            activeMainTab = 0;
+            updateActionButtons();
+        }).bounds(16, 8, 130, 18).build());
+
+        this.addRenderableWidget(Button.builder(Component.literal("§eMisiones Diarias"), b -> {
+            activeMainTab = 1;
+            NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(-1));
+            updateActionButtons();
+        }).bounds(152, 8, 130, 18).build());
 
         this.addRenderableWidget(Button.builder(Component.literal("⚙ Ajustar HUD"), b -> {
             if (this.minecraft != null) {
@@ -108,7 +121,7 @@ public class QuestJournalScreen extends Screen {
 
     private void updateActionButtons() {
         if (this.trackButton != null) {
-            boolean canTrack = selectedQuest != null && !ClientQuestData.hasTag(selectedQuest.completedTag);
+            boolean canTrack = activeMainTab == 0 && selectedQuest != null && !ClientQuestData.hasTag(selectedQuest.completedTag);
             this.trackButton.visible = canTrack;
             if (canTrack) {
                 this.trackButton.setMessage(Component.literal(
@@ -116,7 +129,7 @@ public class QuestJournalScreen extends Screen {
             }
         }
         if (this.abandonButton != null) {
-            this.abandonButton.visible = (selectedQuest != null
+            this.abandonButton.visible = (activeMainTab == 0 && selectedQuest != null
                     && !"MAIN".equalsIgnoreCase(selectedQuest.category)
                     && ClientQuestData.hasTag(selectedQuest.activeTag)
                     && !ClientQuestData.hasTag(selectedQuest.completedTag));
@@ -174,9 +187,20 @@ public class QuestJournalScreen extends Screen {
     public void render(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
         // Fondo oscuro estilo Witcher 3
         g.fill(0, 0, this.width, this.height, 0xEE0A0A0D);
+        // Indicador dorado debajo de la pestaña activa
+        int tabLineX = activeMainTab == 0 ? 16 : 152;
+        g.fill(tabLineX, 27, tabLineX + 130, 29, 0xFFD4AF37);
 
-        int topY = 16;
+        clickables.clear();
+        int topY = 34;
         int bottomY = this.height - 36;
+
+        if (activeMainTab == 1) {
+            renderDailyTab(g, 16, topY, this.width - 32, bottomY, mouseX, mouseY);
+            super.render(g, mouseX, mouseY, partialTick);
+            return;
+        }
+
         int colGap = 10;
         int leftX = 16;
         int usableW = this.width - 32;
@@ -194,7 +218,6 @@ public class QuestJournalScreen extends Screen {
         g.fill(rightX - 6, topY, rightX - 5, bottomY, 0x44D4AF37);
 
         // Columna izquierda: acordeones de misiones
-        clickables.clear();
         g.enableScissor(leftX - 8, topY, leftX + leftW + 4, bottomY);
         int curY = topY - leftScroll;
         curY = renderAccordion(g, 0, "MISIONES PRINCIPALES", openMain, mainQuests, leftX, curY, leftW, topY, bottomY);
@@ -231,7 +254,7 @@ public class QuestJournalScreen extends Screen {
         g.drawString(this.font, arrow, x + w - 12, y + 6, 0xAAAAAA);
 
         if (y + hdrH >= clipTop && y <= clipBottom) {
-            clickables.add(new ClickableRegion(x, y, w, hdrH, null, catIdx));
+            clickables.add(new ClickableRegion(x, y, w, hdrH, null, catIdx, -1));
         }
         y += hdrH + 3;
 
@@ -277,7 +300,7 @@ public class QuestJournalScreen extends Screen {
             g.drawString(this.font, "§8" + sub, textX, y + cardH - 11, 0x888888);
 
             if (y + cardH >= clipTop && y <= clipBottom) {
-                clickables.add(new ClickableRegion(x, y, w, cardH, q, -1));
+                clickables.add(new ClickableRegion(x, y, w, cardH, q, -1, -1));
             }
             y += cardH + 3;
         }
@@ -404,12 +427,128 @@ public class QuestJournalScreen extends Screen {
         g.drawString(this.font, "§8Nivel sugerido: §7" + Math.max(1, selectedQuest.suggestedLevel), x + 4, bottomY - 14, 0x888888);
     }
 
+    private void renderDailyTab(GuiGraphics g, int x, int y, int w, int bottomY, int mouseX, int mouseY) {
+        // Marco principal oscuro + borde dorado
+        g.fill(x - 1, y - 1, x + w + 1, bottomY + 1, 0xFFD4AF37);
+        g.fill(x, y, x + w, bottomY, 0xEE141311);
+
+        // Barra superior de Progreso Diario (0..400)
+        int barBoxH = 44;
+        g.fill(x + 10, y + 8, x + w - 10, y + 8 + barBoxH, 0xCC1B1916);
+        g.drawString(this.font, "§6PROGRESO DIARIO", x + 18, y + 14, 0xFFD4AF37);
+        g.drawString(this.font, "§e" + ClientQuestData.DAILY_POINTS + " §7/ 400", x + 18, y + 28, 0xFFFFFF);
+
+        int trackX = x + 130;
+        int trackW = w - 155;
+        int trackY = y + 26;
+        g.fill(trackX, trackY, trackX + trackW, trackY + 6, 0xFF2B2823);
+        int fillW = (int) (trackW * Math.min(1.0f, ClientQuestData.DAILY_POINTS / 400.0f));
+        if (fillW > 0) {
+            g.fill(trackX, trackY, trackX + fillW, trackY + 6, 0xFF45C945);
+        }
+
+        String[] msRewards = {"1x Moneda + XP", "Gem Dust + Mat.", "2x Monedas + Mat.", "Sigil of Socketing"};
+        int hoverMs = -1;
+        for (int m = 0; m < 4; m++) {
+            int nx = trackX + (trackW * (m + 1)) / 4 - 8;
+            int ny = trackY - 5;
+            boolean reached = ClientQuestData.DAILY_POINTS >= (m + 1) * 100;
+            g.fill(nx, ny, nx + 16, ny + 16, reached ? 0xFF45C945 : 0xFF5A4E36);
+            g.fill(nx + 1, ny + 1, nx + 15, ny + 15, 0xFF171512);
+            String mark = reached ? "§a✔" : "§7" + ((m + 1) * 100);
+            if (reached) {
+                g.drawCenteredString(this.font, mark, nx + 8, ny + 4, 0x55FF55);
+            } else {
+                g.drawCenteredString(this.font, "§7•", nx + 8, ny + 4, 0x888888);
+            }
+            g.drawCenteredString(this.font, reached ? "§a" + ((m + 1) * 100) : "§7" + ((m + 1) * 100), nx + 8, ny + 18, 0xCCCCCC);
+            if (mouseX >= nx && mouseX <= nx + 16 && mouseY >= ny && mouseY <= ny + 16) {
+                hoverMs = m;
+            }
+        }
+
+        // 4 Tarjetas de Misiones Diarias
+        int cardsTop = y + barBoxH + 18;
+        int cardsBottom = bottomY - 22;
+        int gap = 8;
+        int cardW = (w - 20 - gap * 3) / 4;
+        List<SyncDailyQuestsPacket.DailyEntry> entries = ClientQuestData.DAILY_ENTRIES;
+
+        for (int i = 0; i < 4; i++) {
+            int cx = x + 10 + i * (cardW + gap);
+            int cy = cardsTop;
+            int ch = cardsBottom - cardsTop;
+
+            SyncDailyQuestsPacket.DailyEntry entry = i < entries.size() ? entries.get(i) : null;
+            boolean done = entry != null && entry.progress >= entry.target;
+            boolean claimed = entry != null && entry.claimed;
+
+            int border = (done && !claimed) ? 0xFFD4AF37 : (claimed ? 0xFF3E6B48 : 0xFF444038);
+            g.fill(cx, cy, cx + cardW, cy + ch, border);
+            g.fill(cx + 1, cy + 1, cx + cardW - 1, cy + ch - 1, 0xEE181613);
+
+            if (entry == null) {
+                g.drawCenteredString(this.font, "§7Cargando...", cx + cardW / 2, cy + ch / 2, 0x888888);
+                continue;
+            }
+
+            // Header progreso
+            g.fill(cx + 1, cy + 1, cx + cardW - 1, cy + 18, 0xCC221F1A);
+            String progTxt = (done ? "§a" : "§e") + "Progreso: " + entry.progress + "/" + entry.target;
+            g.drawString(this.font, progTxt, cx + 6, cy + 5, 0xFFFFFF);
+
+            // Título de tarea envuelto
+            List<FormattedCharSequence> lines = this.font.split(Component.literal("§f" + entry.title), cardW - 12);
+            int ty = cy + 28;
+            for (int l = 0; l < Math.min(4, lines.size()); l++) {
+                g.drawString(this.font, lines.get(l), cx + 6, ty, 0xEFEFEF);
+                ty += 11;
+            }
+
+            // Puntos
+            g.drawCenteredString(this.font, "§6+100 Pts", cx + cardW / 2, cy + ch - 42, 0xFFD4AF37);
+
+            // Botón Reclamar / Estado
+            int btnX = cx + 8;
+            int btnY = cy + ch - 26;
+            int btnW = cardW - 16;
+            int btnH = 18;
+            if (claimed) {
+                g.fill(btnX, btnY, btnX + btnW, btnY + btnH, 0xFF253528);
+                g.drawCenteredString(this.font, "§aReclamado ✔", btnX + btnW / 2, btnY + 5, 0x55FF55);
+            } else if (done) {
+                g.fill(btnX, btnY, btnX + btnW, btnY + btnH, 0xFFD4AF37);
+                g.fill(btnX + 1, btnY + 1, btnX + btnW - 1, btnY + btnH - 1, 0xFF2E4E2E);
+                g.drawCenteredString(this.font, "§a§lReclamar", btnX + btnW / 2, btnY + 5, 0xFFFFFF);
+                clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, i));
+            } else {
+                g.fill(btnX, btnY, btnX + btnW, btnY + btnH, 0xFF252320);
+                g.drawCenteredString(this.font, "§7En progreso", btnX + btnW / 2, btnY + 5, 0x888888);
+            }
+        }
+
+        // Temporizador de reinicio diario
+        long elapsedSec = Math.max(0, (System.currentTimeMillis() - ClientQuestData.DAILY_SYNCED_AT_MS) / 1000L);
+        long remSec = Math.max(60, ClientQuestData.DAILY_RESET_SECONDS - elapsedSec);
+        long hrs = remSec / 3600;
+        long mins = (remSec % 3600) / 60;
+        String resetTxt = String.format("§7Se reinicia en §e%dh %02dm", hrs, mins);
+        g.drawString(this.font, resetTxt, x + w - this.font.width(resetTxt) - 12, bottomY - 14, 0xAAAAAA);
+
+        if (hoverMs >= 0) {
+            g.renderTooltip(this.font, Component.literal("§6Hito " + ((hoverMs + 1) * 100) + ": §f" + msRewards[hoverMs]), mouseX, mouseY);
+        }
+    }
+
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         if (button == 0) {
             for (ClickableRegion r : clickables) {
                 if (mouseX >= r.x() && mouseX <= r.x() + r.w() && mouseY >= r.y() && mouseY <= r.y() + r.h()) {
-                    if (r.toggleCat() >= 0) {
+                    if (r.dailyClaimIdx() >= 0) {
+                        NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(r.dailyClaimIdx()));
+                        return true;
+                    } else if (r.toggleCat() >= 0) {
                         switch (r.toggleCat()) {
                             case 0 -> openMain = !openMain;
                             case 1 -> openSecondary = !openSecondary;

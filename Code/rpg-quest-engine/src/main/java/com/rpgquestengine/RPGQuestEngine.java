@@ -160,6 +160,7 @@ public class RPGQuestEngine {
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer sp) {
             checkAndSyncQuests(sp);
+            DailyQuestManager.syncToPlayer(sp);
         }
     }
 

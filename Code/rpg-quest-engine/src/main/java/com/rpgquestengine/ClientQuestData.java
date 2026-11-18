@@ -20,6 +20,12 @@ public class ClientQuestData {
     private static final Map<Integer, Set<String>> ENTITY_TAGS = new HashMap<>(); // entityId -> tags sincronizados
     private static boolean initialized = false;
 
+    public static int DAILY_POINTS = 0;
+    public static int DAILY_MILESTONES_MASK = 0;
+    public static int DAILY_RESET_SECONDS = 0;
+    public static long DAILY_SYNCED_AT_MS = 0;
+    public static final List<SyncDailyQuestsPacket.DailyEntry> DAILY_ENTRIES = new java.util.ArrayList<>();
+
     public static synchronized void updateEntityTags(int entityId, List<String> tags) {
         if (tags == null || tags.isEmpty()) {
             ENTITY_TAGS.remove(entityId);

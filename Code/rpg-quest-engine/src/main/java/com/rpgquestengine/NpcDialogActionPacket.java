@@ -109,6 +109,7 @@ public class NpcDialogActionPacket {
                 String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
                 String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
                 sp.sendSystemMessage(Component.literal("§a[Misión Completada] §f" + q.title + xpTxt + lvlTxt));
+                DailyQuestManager.onTaskProgress(sp, "NPC_TURNIN", 1);
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             } else if ("ACCEPT".equalsIgnoreCase(msg.action)) {
                 if (q.completedTag != null && tags.contains(q.completedTag)) return;

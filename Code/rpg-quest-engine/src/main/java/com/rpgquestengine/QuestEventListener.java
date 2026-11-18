@@ -26,6 +26,7 @@ public class QuestEventListener {
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
         if (player instanceof ServerPlayer sp && !player.isCreative()) {
+            DailyQuestManager.onTaskProgress(sp, "MINE_BLOCK", 1);
             ResourceLocation blockId = ForgeRegistries.BLOCKS.getKey(event.getState().getBlock());
             if (blockId != null) {
                 incrementQuestTarget(sp, "MINE", blockId.toString());
@@ -39,6 +40,7 @@ public class QuestEventListener {
         if (player instanceof ServerPlayer sp) {
             ItemStack stack = event.getCrafting();
             if (!stack.isEmpty()) {
+                DailyQuestManager.onTaskProgress(sp, "CRAFT_ITEM", stack.getCount());
                 ResourceLocation itemId = ForgeRegistries.ITEMS.getKey(stack.getItem());
                 if (itemId != null) {
                     incrementQuestTarget(sp, "CRAFT", itemId.toString(), stack.getCount());
@@ -67,6 +69,9 @@ public class QuestEventListener {
         ServerPlayer sp = resolvePlayerKiller(event.getSource(), event.getEntity());
         if (sp != null) {
             LivingEntity victim = event.getEntity();
+            if (victim instanceof net.minecraft.world.entity.monster.Enemy) {
+                DailyQuestManager.onTaskProgress(sp, "KILL_HOSTILE", 1);
+            }
             ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(victim.getType());
             if (entityId != null) {
                 incrementQuestTarget(sp, "KILL", entityId.toString());

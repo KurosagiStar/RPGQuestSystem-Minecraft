@@ -47,6 +47,14 @@ public class NetworkHandler {
                 NpcDialogActionPacket::encode,
                 NpcDialogActionPacket::decode,
                 NpcDialogActionPacket::handle);
+        CHANNEL.registerMessage(id++, SyncDailyQuestsPacket.class,
+                SyncDailyQuestsPacket::encode,
+                SyncDailyQuestsPacket::decode,
+                SyncDailyQuestsPacket::handle);
+        CHANNEL.registerMessage(id++, DailyQuestActionPacket.class,
+                DailyQuestActionPacket::encode,
+                DailyQuestActionPacket::decode,
+                DailyQuestActionPacket::handle);
     }
 }
 
