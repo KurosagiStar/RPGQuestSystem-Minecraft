@@ -593,9 +593,9 @@ public class QuestJournalScreen extends Screen {
         g.fill(cx + 10, rewY - 5, cx + cw - 10, rewY - 4, 0x55D4AF37);
         g.drawString(this.font, "§6Recompensas:", cx + 10, rewY, 0xFFD4AF37);
 
-        String[] rIds = {"cisco_mod:champion_coin", "apotheosis:sigil_of_socketing", "apotheosis:epic_material", "minecraft:experience_bottle"};
-        int[] rCnt = {3, 1, 2, 1};
-        String[] rTips = {"3x Moneda de Campeón", "1x Sigil of Socketing", "2x Epic Material (+1 Gema Épica)", "+300 XP"};
+        String[] rIds = {"cisco_mod:champion_coin", "apotheosis:mythic_material", "apotheosis:epic_material", "apotheosis:sigil_of_socketing", "minecraft:experience_bottle"};
+        int[] rCnt = {15, 3, 7, 1, 1};
+        String[] rTips = {"15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)", "1x Sigil of Socketing", "+300 XP"};
         int hoverR = -1;
         int sx = cx + 10;
         int sy = rewY + 12;

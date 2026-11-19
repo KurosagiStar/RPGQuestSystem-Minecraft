@@ -52,13 +52,14 @@ public class ChallengeManager {
         ch.putLong("wither_next_ms", System.currentTimeMillis() + WITHER_COOLDOWN_MS);
         sp.getPersistentData().put("rqe_challenges", ch);
 
-        giveItem(sp, "cisco_mod:champion_coin", 3, "");
+        giveItem(sp, "cisco_mod:champion_coin", 15, "");
+        giveItem(sp, "apotheosis:mythic_material", 3, "");
+        giveItem(sp, "apotheosis:epic_material", 7, "");
         giveItem(sp, "apotheosis:sigil_of_socketing", 1, "");
-        giveItem(sp, "apotheosis:epic_material", 2, "");
         giveItem(sp, "apotheosis:gem", 1, "{affix_data:{rarity:\"apotheosis:epic\"},gem:\"apotheosis:core/warlord\"}");
         sp.giveExperiencePoints(300);
 
-        sp.sendSystemMessage(Component.literal("§a[Desafío Wither Reclamado] §e+3 Monedas, Sigil of Socketing, Epic Material, Gema Épica y 300 XP."));
+        sp.sendSystemMessage(Component.literal("§a[Desafío Wither Reclamado] §e+15 Monedas, 3x Godforged Pearl, 7x Epic Material, Sigil of Socketing, Gema Épica y 300 XP."));
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
         syncToPlayer(sp);
     }
