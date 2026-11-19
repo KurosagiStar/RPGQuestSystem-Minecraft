@@ -223,9 +223,9 @@ public class QuestJournalScreen extends Screen {
         int rightX = midX + midW + colGap;
 
         // Fondos redondeados modernos de las 3 columnas
-        UiStyle.drawRoundedCard(g, leftX - 4, topY - 4, leftW + 8, bottomY - topY + 8, 6, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
-        UiStyle.drawRoundedCard(g, midX - 4, topY - 4, midW + 8, bottomY - topY + 8, 6, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
-        UiStyle.drawRoundedCard(g, rightX - 4, topY - 4, rightW + 8, bottomY - topY + 8, 6, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
+        UiStyle.drawRoundedCard(g, leftX - 4, topY - 4, leftW + 8, bottomY - topY + 8, 6, UiStyle.BG_PANEL, 0, false);
+        UiStyle.drawRoundedCard(g, midX - 4, topY - 4, midW + 8, bottomY - topY + 8, 6, UiStyle.BG_PANEL, 0, false);
+        UiStyle.drawRoundedCard(g, rightX - 4, topY - 4, rightW + 8, bottomY - topY + 8, 6, UiStyle.BG_PANEL, 0, false);
 
         // Columna izquierda: acordeones de misiones
         g.enableScissor(leftX - 8, topY, leftX + leftW + 4, bottomY);
@@ -254,7 +254,7 @@ public class QuestJournalScreen extends Screen {
     private int renderAccordion(GuiGraphics g, int catIdx, String title, boolean isOpen, List<QuestDefinition> list,
                                 int x, int y, int w, int clipTop, int clipBottom) {
         int hdrH = 20;
-        UiStyle.drawRoundedCard(g, x, y, w, hdrH, 4, UiStyle.BG_HEADER, UiStyle.BORDER_PANEL, false);
+        UiStyle.drawRoundedCard(g, x, y, w, hdrH, 4, UiStyle.BG_HEADER, 0, false);
 
         String arrow = isOpen ? "▲" : "▼";
         String hdrText = (isOpen ? "§e" : "§7") + title + " §8(" + list.size() + ")";
@@ -284,7 +284,7 @@ public class QuestJournalScreen extends Screen {
             if (sel) {
                 UiStyle.drawRoundedCard(g, x, y, w, cardH, 4, 0xEE232832, UiStyle.ACCENT_GREEN, false);
             } else {
-                UiStyle.drawRoundedCard(g, x, y, w, cardH, 4, UiStyle.BG_CARD, UiStyle.BORDER_SUBTLE, false);
+                UiStyle.drawRoundedCard(g, x, y, w, cardH, 4, UiStyle.BG_CARD, 0, false);
             }
 
             if (tracked) {
@@ -437,7 +437,7 @@ public class QuestJournalScreen extends Screen {
 
         // Barra superior de Progreso Diario (0..400)
         int barBoxH = 64;
-        UiStyle.drawRoundedCard(g, x + 10, y + 8, w - 20, barBoxH, 5, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
+        UiStyle.drawRoundedCard(g, x + 10, y + 8, w - 20, barBoxH, 5, UiStyle.BG_PANEL, 0, false);
         g.drawString(this.font, "§6PROGRESO DIARIO", x + 18, y + 14, 0xFFD4AF37);
         g.drawString(this.font, "§e" + ClientQuestData.DAILY_POINTS + " §7/ 400", x + 18, y + 28, 0xFFFFFF);
 
@@ -527,7 +527,7 @@ public class QuestJournalScreen extends Screen {
                 g.drawCenteredString(this.font, "§aReclamado ✔", btnX + btnW / 2, btnY + 5, 0x55FF55);
             } else if (done) {
                 boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§a§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, UiStyle.ACCENT_GREEN, hov);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, i));
             } else {
                 UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF242730, UiStyle.BORDER_SUBTLE, false);
@@ -619,7 +619,7 @@ public class QuestJournalScreen extends Screen {
             g.drawCenteredString(this.font, cdTxt, btnX + btnW / 2, btnY + 6, 0xAAAAAA);
         } else if (done) {
             boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§a§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, UiStyle.ACCENT_GREEN, hov);
+            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
             clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
         } else {
             UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF242730, UiStyle.BORDER_SUBTLE, false);

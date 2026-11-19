@@ -47,8 +47,8 @@ public class PartyScreen extends Screen {
             int invH = 26;
             UiStyle.drawRoundedCard(g, boxX + 14, contentY, boxW - 28, invH, 5, 0xCC1E2C22, UiStyle.ACCENT_GREEN, false);
             g.drawString(this.font, "§aInvitación de: §e" + ClientQuestData.PARTY_INVITE_FROM, boxX + 22, contentY + 9, 0xFFFFFF);
-            drawActionBtn(g, mouseX, mouseY, boxX + boxW - 170, contentY + 4, 70, 18, "§aAceptar", UiStyle.ACCENT_GREEN_DARK, 3, "");
-            drawActionBtn(g, mouseX, mouseY, boxX + boxW - 94, contentY + 4, 70, 18, "§cRechazar", UiStyle.ACCENT_RED_DARK, 4, "");
+            drawActionBtn(g, mouseX, mouseY, boxX + boxW - 170, contentY + 4, 70, 18, "§fAceptar", UiStyle.ACCENT_GREEN_DARK, 3, "");
+            drawActionBtn(g, mouseX, mouseY, boxX + boxW - 94, contentY + 4, 70, 18, "§fRechazar", UiStyle.ACCENT_RED_DARK, 4, "");
             contentY += invH + 10;
         }
 
@@ -58,14 +58,14 @@ public class PartyScreen extends Screen {
         int colH = boxY + boxH - contentY - 14;
 
         // Columna izquierda: Tu Grupo
-        UiStyle.drawRoundedCard(g, leftX, contentY, colW, colH, 6, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
+        UiStyle.drawRoundedCard(g, leftX, contentY, colW, colH, 6, UiStyle.BG_PANEL, 0, false);
         g.drawString(this.font, "§eMIEMBROS DEL GRUPO", leftX + 10, contentY + 8, 0xFFD4AF37);
 
         if (!ClientQuestData.PARTY_IN_PARTY) {
             g.drawString(this.font, "§7No estás en ningún grupo.", leftX + 10, contentY + 28, 0xAAAAAA);
             g.drawString(this.font, "§8Sincroniza misiones MAIN, NPCs y", leftX + 10, contentY + 42, 0x888888);
             g.drawString(this.font, "§8comparte bajas/Wither en vivo.", leftX + 10, contentY + 53, 0x888888);
-            drawActionBtn(g, mouseX, mouseY, leftX + 10, contentY + 72, 130, 20, "§aCrear Grupo", UiStyle.ACCENT_GREEN_DARK, 1, "");
+            drawActionBtn(g, mouseX, mouseY, leftX + 10, contentY + 72, 130, 20, "§f§lCrear Grupo", UiStyle.ACCENT_GREEN_DARK, 1, "");
         } else {
             int my = contentY + 26;
             for (SyncPartyPacket.MemberEntry m : ClientQuestData.PARTY_MEMBERS) {
@@ -88,7 +88,7 @@ public class PartyScreen extends Screen {
         int botRightY = contentY + topRightH + 8;
         int botRightH = colH - topRightH - 8;
 
-        UiStyle.drawRoundedCard(g, rightX, contentY, colW, topRightH, 6, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
+        UiStyle.drawRoundedCard(g, rightX, contentY, colW, topRightH, 6, UiStyle.BG_PANEL, 0, false);
         g.drawString(this.font, "§eJUGADORES CONECTADOS", rightX + 10, contentY + 8, 0xFFD4AF37);
 
         if (ClientQuestData.PARTY_INVITABLE.isEmpty()) {
@@ -101,7 +101,7 @@ public class PartyScreen extends Screen {
                 UiStyle.drawRoundedRect(g, rightX + 6, py, colW - 12, 18, 4, UiStyle.BG_CARD);
                 g.drawString(this.font, "§f" + pName, rightX + 12, py + 5, 0xFFFFFF);
                 if (canInvite) {
-                    drawActionBtn(g, mouseX, mouseY, rightX + colW - 66, py + 1, 56, 16, "§aInvitar", UiStyle.ACCENT_GREEN_DARK, 2, pName);
+                    drawActionBtn(g, mouseX, mouseY, rightX + colW - 66, py + 1, 56, 16, "§fInvitar", UiStyle.ACCENT_GREEN_DARK, 2, pName);
                 }
                 py += 20;
             }
@@ -109,7 +109,7 @@ public class PartyScreen extends Screen {
 
         // Recompensas acumuladas sin reclamar
         int rewCnt = ClientQuestData.PARTY_PENDING_REWARDS.size();
-        UiStyle.drawRoundedCard(g, rightX, botRightY, colW, botRightH, 6, UiStyle.BG_PANEL, UiStyle.BORDER_SUBTLE, false);
+        UiStyle.drawRoundedCard(g, rightX, botRightY, colW, botRightH, 6, UiStyle.BG_PANEL, 0, false);
         g.drawString(this.font, "§6RECOMPENSAS SIN RECLAMAR §7(" + rewCnt + ")", rightX + 10, botRightY + 8, 0xFFD4AF37);
 
         if (rewCnt == 0) {
@@ -123,11 +123,11 @@ public class PartyScreen extends Screen {
                 UiStyle.drawRoundedRect(g, rightX + 6, ry, colW - 12, 18, 4, UiStyle.BG_CARD);
                 String trimmed = this.font.plainSubstrByWidth(qTitle, colW - 82);
                 g.drawString(this.font, "§e" + trimmed, rightX + 12, ry + 5, 0xFFFFFF);
-                drawActionBtn(g, mouseX, mouseY, rightX + colW - 66, ry + 1, 56, 16, "§aReclamar", UiStyle.ACCENT_GREEN_DARK, 8, qid);
+                drawActionBtn(g, mouseX, mouseY, rightX + colW - 66, ry + 1, 56, 16, "§fReclamar", UiStyle.ACCENT_GREEN_DARK, 8, qid);
                 ry += 20;
             }
             drawActionBtn(g, mouseX, mouseY, rightX + 8, botRightY + botRightH - 24, colW - 16, 18,
-                    "§a§lReclamar Todo (" + rewCnt + ")", UiStyle.ACCENT_GREEN_DARK, 9, "");
+                    "§f§lReclamar Todo (" + rewCnt + ")", UiStyle.ACCENT_GREEN_DARK, 9, "");
         }
 
         super.render(g, mouseX, mouseY, partialTick);
@@ -151,7 +151,8 @@ public class PartyScreen extends Screen {
 
     private void drawActionBtn(GuiGraphics g, int mouseX, int mouseY, int x, int y, int w, int h, String label, int bg, int action, String arg) {
         boolean hovered = mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h;
-        UiStyle.drawPillButton(g, this.font, x, y, w, h, label, bg, bg + 0x00151515, UiStyle.BORDER_SUBTLE, hovered);
+        int hoverBg = (bg == UiStyle.ACCENT_GREEN_DARK) ? UiStyle.ACCENT_GREEN : bg + 0x00151515;
+        UiStyle.drawPillButton(g, this.font, x, y, w, h, label, bg, hoverBg, 0, hovered);
         clickBtns.add(new ClickBtn(x, y, w, h, action, arg));
     }
 

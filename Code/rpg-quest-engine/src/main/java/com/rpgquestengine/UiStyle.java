@@ -17,11 +17,11 @@ public class UiStyle {
     public static final int BG_PANEL = 0xEC1B1D23;
     public static final int BG_CARD = 0xE823262E;
     public static final int BG_HEADER = 0xF5282C35;
-    public static final int BORDER_PANEL = 0xFF30343E;
+    public static final int BORDER_PANEL = 0xFF282C35;
     public static final int BORDER_GOLD = 0xFFE5BE53;
-    public static final int BORDER_SUBTLE = 0x38FFFFFF;
+    public static final int BORDER_SUBTLE = 0x14FFFFFF;
     public static final int ACCENT_GREEN = 0xFF2ECC71;
-    public static final int ACCENT_GREEN_DARK = 0xFF229954;
+    public static final int ACCENT_GREEN_DARK = 0xFF27AE60;
     public static final int ACCENT_RED_DARK = 0xFF8B2635;
     public static final int ACCENT_BLUE_DARK = 0xFF2563EB;
     public static final int ACCENT_SLATE = 0xFF2E323C;
@@ -228,23 +228,24 @@ public class UiStyle {
         int topBg = lighten(bgColor, 0.03f);
         int botBg = darken(bgColor, 0.08f);
         drawSmoothRoundedRect(g, x, y, w, h, radius, topBg, botBg);
-        drawSmoothOutline(g, x, y, w, h, radius, 1.35f, borderColor);
+        if (borderColor != 0) {
+            drawSmoothOutline(g, x, y, w, h, radius, 1.15f, borderColor);
+        }
     }
 
     /**
-     * Dibuja un botón moderno tipo píldora con degradado, sombra sutil y estado hover suave.
+     * Dibuja un botón moderno tipo píldora sin contorno recargado, con sombra suave y hover limpio.
      */
     public static void drawPillButton(GuiGraphics g, Font font, int x, int y, int w, int h,
                                       String label, int bg, int hoverBg, int border, boolean hovered) {
         float r = Math.min(6f, h * 0.45f);
         int base = hovered ? hoverBg : bg;
-        int topBg = lighten(base, hovered ? 0.08f : 0.04f);
-        int botBg = darken(base, 0.12f);
+        int topBg = lighten(base, hovered ? 0.08f : 0.03f);
+        int botBg = darken(base, 0.08f);
         if (hovered) {
             drawSoftShadow(g, x, y, w, h, r);
         }
         drawSmoothRoundedRect(g, x, y, w, h, r, topBg, botBg);
-        drawSmoothOutline(g, x, y, w, h, r, hovered ? 1.5f : 1.15f, hovered ? lighten(border, 0.25f) : border);
         g.drawCenteredString(font, label, x + w / 2, y + (h - 8) / 2, 0xFFFFFF);
     }
 
