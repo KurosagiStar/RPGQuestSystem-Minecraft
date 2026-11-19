@@ -151,9 +151,9 @@ public class NpcDialogScreen extends Screen {
         int left = getBoxLeft();
         int top = (this.height - BOX_H) / 2;
 
-        g.fill(left - 2, top - 2, left + bw + 2, top + BOX_H + 2, 0xFFD4AF37);
-        g.fill(left, top, left + bw, top + BOX_H, 0xEE141418);
-        g.fill(left, top + 24, left + bw, top + 25, 0x88D4AF37);
+        UiStyle.drawRoundedCard(g, left - 2, top - 2, bw + 4, BOX_H + 4, 7, UiStyle.BG_DARK, UiStyle.BORDER_GOLD, true);
+        UiStyle.drawRoundedRect(g, left + 2, top + 2, bw - 4, 22, 4, UiStyle.BG_HEADER);
+        g.fill(left + 10, top + 25, left + bw - 10, top + 26, 0x66E0B84C);
 
         g.drawString(this.font, "§6" + data.npcName, left + 14, top + 9, 0xFFFFFF);
 
@@ -297,8 +297,7 @@ public class NpcDialogScreen extends Screen {
     }
 
     private void drawSlot(GuiGraphics g, ItemStack stack, int x, int y, int borderColor) {
-        g.fill(x, y, x + SLOT_SIZE, y + SLOT_SIZE, borderColor);
-        g.fill(x + 1, y + 1, x + SLOT_SIZE - 1, y + SLOT_SIZE - 1, 0xFF1E1E24);
+        UiStyle.drawRoundedCard(g, x, y, SLOT_SIZE, SLOT_SIZE, 4, 0xFF1F232C, borderColor, false);
         g.renderItem(stack, x + 2, y + 2);
         g.renderItemDecorations(this.font, stack, x + 2, y + 2);
     }
