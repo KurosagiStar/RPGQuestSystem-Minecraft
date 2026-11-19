@@ -35,7 +35,7 @@ public class PartyScreen extends Screen {
         int boxW = this.width - 48;
         int boxH = this.height - 56;
 
-        UiStyle.drawRoundedCard(g, boxX - 1, boxY - 1, boxW + 2, boxH + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_GOLD, true);
+        UiStyle.drawRoundedCard(g, boxX - 1, boxY - 1, boxW + 2, boxH + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
         UiStyle.drawRoundedRect(g, boxX + 2, boxY + 2, boxW - 4, 22, 5, UiStyle.BG_HEADER);
         g.drawString(this.font, "§6§lGRUPO DE AVENTURA §7(Tecla G)", boxX + 14, boxY + 9, 0xFFD4AF37);
         g.fill(boxX + 12, boxY + 25, boxX + boxW - 12, boxY + 26, 0x55E0B84C);
@@ -140,7 +140,7 @@ public class PartyScreen extends Screen {
             int ph = 88;
             int px = (this.width - pw) / 2;
             int py = (this.height - ph) / 2;
-            UiStyle.drawRoundedCard(g, px, py, pw, ph, 7, 0xFF1A1C23, UiStyle.BORDER_GOLD, true);
+            UiStyle.drawRoundedCard(g, px, py, pw, ph, 7, UiStyle.BG_PANEL, UiStyle.BORDER_PANEL, true);
             g.drawCenteredString(this.font, "§e¿Seguro que deseas", px + pw / 2, py + 15, 0xFFFFFF);
             g.drawCenteredString(this.font, "§eabandonar el grupo?", px + pw / 2, py + 27, 0xFFFFFF);
             drawActionBtn(g, mouseX, mouseY, px + 14, py + ph - 28, 98, 18, "§cSí, abandonar", UiStyle.ACCENT_RED_DARK, 5, "");
@@ -151,7 +151,7 @@ public class PartyScreen extends Screen {
 
     private void drawActionBtn(GuiGraphics g, int mouseX, int mouseY, int x, int y, int w, int h, String label, int bg, int action, String arg) {
         boolean hovered = mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + h;
-        UiStyle.drawPillButton(g, this.font, x, y, w, h, label, bg, bg + 0x00151515, UiStyle.BORDER_GOLD, hovered);
+        UiStyle.drawPillButton(g, this.font, x, y, w, h, label, bg, bg + 0x00151515, UiStyle.BORDER_SUBTLE, hovered);
         clickBtns.add(new ClickBtn(x, y, w, h, action, arg));
     }
 

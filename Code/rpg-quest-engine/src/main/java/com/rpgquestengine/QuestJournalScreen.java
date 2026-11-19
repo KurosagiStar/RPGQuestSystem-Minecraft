@@ -254,7 +254,7 @@ public class QuestJournalScreen extends Screen {
     private int renderAccordion(GuiGraphics g, int catIdx, String title, boolean isOpen, List<QuestDefinition> list,
                                 int x, int y, int w, int clipTop, int clipBottom) {
         int hdrH = 20;
-        UiStyle.drawRoundedCard(g, x, y, w, hdrH, 4, UiStyle.BG_HEADER, 0x888C734B, false);
+        UiStyle.drawRoundedCard(g, x, y, w, hdrH, 4, UiStyle.BG_HEADER, UiStyle.BORDER_PANEL, false);
 
         String arrow = isOpen ? "▲" : "▼";
         String hdrText = (isOpen ? "§e" : "§7") + title + " §8(" + list.size() + ")";
@@ -282,7 +282,7 @@ public class QuestJournalScreen extends Screen {
             int cardH = Math.max(28, 12 + tLines.size() * 10 + 4);
 
             if (sel) {
-                UiStyle.drawRoundedCard(g, x, y, w, cardH, 4, 0xEE23252F, UiStyle.BORDER_GOLD, false);
+                UiStyle.drawRoundedCard(g, x, y, w, cardH, 4, 0xEE232832, UiStyle.ACCENT_GREEN, false);
             } else {
                 UiStyle.drawRoundedCard(g, x, y, w, cardH, 4, UiStyle.BG_CARD, UiStyle.BORDER_SUBTLE, false);
             }
@@ -315,7 +315,7 @@ public class QuestJournalScreen extends Screen {
 
     private void renderCenterColumn(GuiGraphics g, int x, int y, int w, int bottomY) {
         int hdrH = 34;
-        UiStyle.drawRoundedCard(g, x, y, w, hdrH, 5, UiStyle.BG_HEADER, UiStyle.BORDER_GOLD, false);
+        UiStyle.drawRoundedCard(g, x, y, w, hdrH, 5, UiStyle.BG_HEADER, UiStyle.BORDER_PANEL, false);
 
         g.renderItem(getQuestIcon(selectedQuest), x + 7, y + 9);
         List<FormattedCharSequence> titleLines = this.font.split(
@@ -433,7 +433,7 @@ public class QuestJournalScreen extends Screen {
 
     private void renderDailyTab(GuiGraphics g, int x, int y, int w, int bottomY, int mouseX, int mouseY) {
         // Marco principal redondeado con sombra
-        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_GOLD, true);
+        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
 
         // Barra superior de Progreso Diario (0..400)
         int barBoxH = 64;
@@ -527,7 +527,7 @@ public class QuestJournalScreen extends Screen {
                 g.drawCenteredString(this.font, "§aReclamado ✔", btnX + btnW / 2, btnY + 5, 0x55FF55);
             } else if (done) {
                 boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§a§lReclamar", UiStyle.ACCENT_GREEN_DARK, 0xFF2E6B36, UiStyle.BORDER_GOLD, hov);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§a§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, UiStyle.ACCENT_GREEN, hov);
                 clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, i));
             } else {
                 UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF242730, UiStyle.BORDER_SUBTLE, false);
@@ -549,7 +549,7 @@ public class QuestJournalScreen extends Screen {
     }
 
     private void renderChallengesTab(GuiGraphics g, int x, int y, int w, int bottomY, int mouseX, int mouseY) {
-        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_GOLD, true);
+        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
 
         g.drawString(this.font, "§cDESAFÍOS DE JEFE §7(Reinicio cada 6 horas reales)", x + 14, y + 12, 0xFFFFFF);
         g.fill(x + 14, y + 25, x + w - 14, y + 26, 0x55E0B84C);
@@ -568,7 +568,7 @@ public class QuestJournalScreen extends Screen {
         UiStyle.drawRoundedCard(g, cx, cy, cw, ch, 6, UiStyle.BG_CARD, border, true);
 
         // Cabecera
-        UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cw - 4, 24, 4, 0xCC2A1E22);
+        UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cw - 4, 24, 4, UiStyle.BG_HEADER);
         g.renderItem(new ItemStack(Items.NETHER_STAR), cx + 6, cy + 5);
         g.drawString(this.font, "§c§lJefe Mundial: El Wither", cx + 28, cy + 5, 0xFF5555);
         String progTxt = onCooldown ? "§7Completado" : (done ? "§aProgreso: 1/1" : "§eProgreso: 0/1");
@@ -619,7 +619,7 @@ public class QuestJournalScreen extends Screen {
             g.drawCenteredString(this.font, cdTxt, btnX + btnW / 2, btnY + 6, 0xAAAAAA);
         } else if (done) {
             boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§a§lReclamar", UiStyle.ACCENT_GREEN_DARK, 0xFF2E6B36, UiStyle.BORDER_GOLD, hov);
+            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§a§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, UiStyle.ACCENT_GREEN, hov);
             clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
         } else {
             UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF242730, UiStyle.BORDER_SUBTLE, false);

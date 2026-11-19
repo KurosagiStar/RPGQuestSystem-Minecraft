@@ -151,7 +151,7 @@ public class NpcDialogScreen extends Screen {
         int left = getBoxLeft();
         int top = (this.height - BOX_H) / 2;
 
-        UiStyle.drawRoundedCard(g, left - 2, top - 2, bw + 4, BOX_H + 4, 7, UiStyle.BG_DARK, UiStyle.BORDER_GOLD, true);
+        UiStyle.drawRoundedCard(g, left - 2, top - 2, bw + 4, BOX_H + 4, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
         UiStyle.drawRoundedRect(g, left + 2, top + 2, bw - 4, 22, 4, UiStyle.BG_HEADER);
         g.fill(left + 10, top + 25, left + bw - 10, top + 26, 0x66E0B84C);
 

@@ -13,16 +13,18 @@ import net.minecraft.client.renderer.GameRenderer;
 import org.joml.Matrix4f;
 
 public class UiStyle {
-    public static final int BG_DARK = 0xF012141A;
-    public static final int BG_PANEL = 0xE6181B23;
-    public static final int BG_CARD = 0xE020242E;
-    public static final int BG_HEADER = 0xF2252A36;
+    public static final int BG_DARK = 0xF4141519;
+    public static final int BG_PANEL = 0xEC1B1D23;
+    public static final int BG_CARD = 0xE823262E;
+    public static final int BG_HEADER = 0xF5282C35;
+    public static final int BORDER_PANEL = 0xFF30343E;
     public static final int BORDER_GOLD = 0xFFE5BE53;
-    public static final int BORDER_SUBTLE = 0x66FFFFFF;
-    public static final int ACCENT_GREEN = 0xFF39B54A;
-    public static final int ACCENT_GREEN_DARK = 0xFF234D2A;
-    public static final int ACCENT_RED_DARK = 0xFF542529;
-    public static final int ACCENT_BLUE_DARK = 0xFF223B54;
+    public static final int BORDER_SUBTLE = 0x38FFFFFF;
+    public static final int ACCENT_GREEN = 0xFF2ECC71;
+    public static final int ACCENT_GREEN_DARK = 0xFF229954;
+    public static final int ACCENT_RED_DARK = 0xFF8B2635;
+    public static final int ACCENT_BLUE_DARK = 0xFF2563EB;
+    public static final int ACCENT_SLATE = 0xFF2E323C;
 
     private static final int ARC_SEGMENTS = 14;
 
@@ -236,7 +238,7 @@ public class UiStyle {
             drawSoftShadow(g, x, y, w, h, r);
         }
         drawSmoothRoundedRect(g, x, y, w, h, r, topBg, botBg);
-        drawSmoothOutline(g, x, y, w, h, r, hovered ? 1.6f : 1.2f, hovered ? 0xFFFFE082 : border);
+        drawSmoothOutline(g, x, y, w, h, r, hovered ? 1.5f : 1.15f, hovered ? lighten(border, 0.25f) : border);
         g.drawCenteredString(font, label, x + w / 2, y + (h - 8) / 2, 0xFFFFFF);
     }
 
