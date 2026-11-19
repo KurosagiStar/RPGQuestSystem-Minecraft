@@ -48,30 +48,35 @@ public class QuestJournalScreen extends Screen {
         refreshQuestLists();
         NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(-1));
 
-        this.addRenderableWidget(Button.builder(Component.literal("§6Diario de Misiones"), b -> {
+        this.addRenderableWidget(new UiStyle.OreButton(16, 8, 130, 18,
+                Component.literal("§fDiario de Misiones"), b -> {
             activeMainTab = 0;
             updateActionButtons();
-        }).bounds(16, 8, 130, 18).build());
+        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 0));
 
-        this.addRenderableWidget(Button.builder(Component.literal("§eMisiones Diarias"), b -> {
+        this.addRenderableWidget(new UiStyle.OreButton(152, 8, 130, 18,
+                Component.literal("§fMisiones Diarias"), b -> {
             activeMainTab = 1;
             NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(-1));
             updateActionButtons();
-        }).bounds(152, 8, 130, 18).build());
+        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 1));
 
-        this.addRenderableWidget(Button.builder(Component.literal("§cDesafíos"), b -> {
+        this.addRenderableWidget(new UiStyle.OreButton(288, 8, 110, 18,
+                Component.literal("§fDesafíos"), b -> {
             activeMainTab = 2;
             NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(0));
             updateActionButtons();
-        }).bounds(288, 8, 110, 18).build());
+        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 2));
 
-        this.addRenderableWidget(Button.builder(Component.literal("⚙ Ajustar HUD"), b -> {
+        this.addRenderableWidget(new UiStyle.OreButton(16, this.height - 28, 100, 20,
+                Component.literal("§f⚙ Ajustar HUD"), b -> {
             if (this.minecraft != null) {
                 this.minecraft.setScreen(new HudPositionScreen(this));
             }
-        }).bounds(16, this.height - 28, 100, 20).build());
+        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
 
-        this.trackButton = Button.builder(Component.literal("Seguir"), b -> {
+        this.trackButton = new UiStyle.OreButton(this.width - 146, this.height - 28, 130, 20,
+                Component.literal("§fSeguir"), b -> {
             if (selectedQuest != null) {
                 if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
                     QuestConfig.trackedQuestId = "none";
@@ -81,10 +86,11 @@ public class QuestJournalScreen extends Screen {
                 QuestConfig.saveSettings();
                 updateActionButtons();
             }
-        }).bounds(this.width - 146, this.height - 28, 130, 20).build();
+        }, UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN);
         this.addRenderableWidget(this.trackButton);
 
-        this.abandonButton = Button.builder(Component.literal("§cAbandonar"), b -> {
+        this.abandonButton = new UiStyle.OreButton(this.width - 252, this.height - 28, 100, 20,
+                Component.literal("§fAbandonar"), b -> {
             if (selectedQuest != null && !"MAIN".equalsIgnoreCase(selectedQuest.category)) {
                 NetworkHandler.CHANNEL.sendToServer(new AbandonQuestPacket(selectedQuest.id));
                 ClientQuestData.removeTag(selectedQuest.activeTag);
@@ -99,7 +105,7 @@ public class QuestJournalScreen extends Screen {
                 refreshQuestLists();
                 autoSelectQuest();
             }
-        }).bounds(this.width - 252, this.height - 28, 100, 20).build();
+        }, UiStyle.ACCENT_RED_DARK, 0xFFB83542);
         this.addRenderableWidget(this.abandonButton);
 
         autoSelectQuest();

@@ -21,8 +21,9 @@ public class PartyScreen extends Screen {
     protected void init() {
         super.init();
         NetworkHandler.CHANNEL.sendToServer(new PartyActionPacket(0, ""));
-        this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                .bounds(this.width - 106, this.height - 28, 90, 20).build());
+        this.addRenderableWidget(new UiStyle.OreButton(this.width - 106, this.height - 28, 90, 20,
+                Component.literal("§fCerrar"), b -> this.onClose(),
+                UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
     }
 
     @Override

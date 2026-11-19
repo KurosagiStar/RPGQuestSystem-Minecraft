@@ -9,8 +9,11 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.network.chat.Component;
 import org.joml.Matrix4f;
+import java.util.function.Supplier;
 
 public class UiStyle {
     public static final int BG_DARK = 0xF4141519;
@@ -265,6 +268,43 @@ public class UiStyle {
         if (fillW > 1.5f) {
             float fr = Math.min(r, fillW * 0.5f);
             drawSmoothRoundedRect(g, x, y, fillW, h, fr, lighten(fillColor, 0.12f), darken(fillColor, 0.10f));
+        }
+    }
+
+    /**
+     * Botón interactivo de Minecraft Ore UI compatible con Screen.addRenderableWidget().
+     */
+    public static class OreButton extends Button {
+        private final int bg;
+        private final int hoverBg;
+        private final Supplier<Boolean> activeTab;
+
+        public OreButton(int x, int y, int w, int h, Component message, OnPress onPress, int bg, int hoverBg) {
+            this(x, y, w, h, message, onPress, bg, hoverBg, null);
+        }
+
+        public OreButton(int x, int y, int w, int h, Component message, OnPress onPress,
+                         int bg, int hoverBg, Supplier<Boolean> activeTab) {
+            super(x, y, w, h, message, onPress, DEFAULT_NARRATION);
+            this.bg = bg;
+            this.hoverBg = hoverBg;
+            this.activeTab = activeTab;
+        }
+
+        @Override
+        public void renderWidget(GuiGraphics g, int mouseX, int mouseY, float partialTick) {
+            Font font = Minecraft.getInstance().font;
+            boolean isTabSelected = activeTab != null && activeTab.get();
+            int base = !this.active ? 0xFF20232A : (isTabSelected ? ACCENT_GREEN_DARK : bg);
+            int hov = !this.active ? 0xFF20232A : (isTabSelected ? ACCENT_GREEN : hoverBg);
+            boolean showHover = this.active && this.isHoveredOrFocused();
+            drawPillButton(g, font, getX(), getY(), getWidth(), getHeight(),
+                    getMessage().getString(), base, hov, 0, showHover);
+            if (isTabSelected) {
+                int barW = Math.min(28, getWidth() / 3);
+                drawSmoothRoundedRect(g, getX() + (getWidth() - barW) * 0.5f, getY() + getHeight() - 3.5f,
+                        barW, 1.5f, 0.75f, 0xFFE6E6E6, 0xFFE6E6E6);
+            }
         }
     }
 }

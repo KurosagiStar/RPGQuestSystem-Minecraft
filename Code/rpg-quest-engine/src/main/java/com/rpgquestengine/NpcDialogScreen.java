@@ -57,24 +57,29 @@ public class NpcDialogScreen extends Screen {
         int btnY = top + BOX_H - 28;
 
         if ("AVAILABLE".equals(data.state)) {
-            this.addRenderableWidget(Button.builder(Component.literal("§aAceptar Misión"), b -> {
+            this.addRenderableWidget(new UiStyle.OreButton(left + 20, btnY, 135, 20,
+                    Component.literal("§f§lAceptar Misión"), b -> {
                 NetworkHandler.CHANNEL.sendToServer(new NpcDialogActionPacket("ACCEPT", data.questId, -1));
                 this.onClose();
-            }).bounds(left + 20, btnY, 135, 20).build());
+            }, UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN));
 
-            this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                    .bounds(left + bw - 110, btnY, 90, 20).build());
+            this.addRenderableWidget(new UiStyle.OreButton(left + bw - 110, btnY, 90, 20,
+                    Component.literal("§fCerrar"), b -> this.onClose(),
+                    UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
         } else if ("TURN_IN".equals(data.state)) {
-            this.addRenderableWidget(Button.builder(Component.literal("§6Completar Misión"), b -> {
+            this.addRenderableWidget(new UiStyle.OreButton(left + 20, btnY, 145, 20,
+                    Component.literal("§f§lCompletar Misión"), b -> {
                 NetworkHandler.CHANNEL.sendToServer(new NpcDialogActionPacket("COMPLETE", data.questId, selectedChoice));
                 this.onClose();
-            }).bounds(left + 20, btnY, 145, 20).build());
+            }, UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN));
 
-            this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                    .bounds(left + bw - 110, btnY, 90, 20).build());
+            this.addRenderableWidget(new UiStyle.OreButton(left + bw - 110, btnY, 90, 20,
+                    Component.literal("§fCerrar"), b -> this.onClose(),
+                    UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
         } else {
-            this.addRenderableWidget(Button.builder(Component.literal("Cerrar"), b -> this.onClose())
-                    .bounds(left + (bw - 100) / 2, btnY, 100, 20).build());
+            this.addRenderableWidget(new UiStyle.OreButton(left + (bw - 100) / 2, btnY, 100, 20,
+                    Component.literal("§fCerrar"), b -> this.onClose(),
+                    UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
         }
     }
 
