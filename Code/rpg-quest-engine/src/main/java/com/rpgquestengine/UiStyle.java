@@ -20,9 +20,9 @@ public class UiStyle {
     public static final int BORDER_PANEL = 0xFF282C35;
     public static final int BORDER_GOLD = 0xFFE5BE53;
     public static final int BORDER_SUBTLE = 0x14FFFFFF;
-    public static final int ACCENT_GREEN = 0xFF2ECC71;
-    public static final int ACCENT_GREEN_DARK = 0xFF27AE60;
-    public static final int ACCENT_RED_DARK = 0xFF8B2635;
+    public static final int ACCENT_GREEN = 0xFF4BB83D;
+    public static final int ACCENT_GREEN_DARK = 0xFF3C9D30;
+    public static final int ACCENT_RED_DARK = 0xFF9E2B36;
     public static final int ACCENT_BLUE_DARK = 0xFF2563EB;
     public static final int ACCENT_SLATE = 0xFF2E323C;
 
@@ -234,19 +234,24 @@ public class UiStyle {
     }
 
     /**
-     * Dibuja un botón moderno tipo píldora sin contorno recargado, con sombra suave y hover limpio.
+     * Dibuja un botón estilo Minecraft Ore UI: cara elevada, borde inferior 3D y brillo sutil superior.
      */
     public static void drawPillButton(GuiGraphics g, Font font, int x, int y, int w, int h,
                                       String label, int bg, int hoverBg, int border, boolean hovered) {
-        float r = Math.min(6f, h * 0.45f);
-        int base = hovered ? hoverBg : bg;
-        int topBg = lighten(base, hovered ? 0.08f : 0.03f);
-        int botBg = darken(base, 0.08f);
+        float r = Math.min(4f, h * 0.3f);
+        int face = hovered ? hoverBg : bg;
+        int lipColor = darken(face, 0.45f);
+        float lip = Math.min(3.0f, Math.max(2.0f, h * 0.14f));
         if (hovered) {
             drawSoftShadow(g, x, y, w, h, r);
         }
-        drawSmoothRoundedRect(g, x, y, w, h, r, topBg, botBg);
-        g.drawCenteredString(font, label, x + w / 2, y + (h - 8) / 2, 0xFFFFFF);
+        // Base 3D inferior
+        drawSmoothRoundedRect(g, x, y, w, h, r, lipColor, lipColor);
+        // Cara superior elevada
+        drawSmoothRoundedRect(g, x, y, w, h - lip, r, lighten(face, 0.06f), darken(face, 0.05f));
+        // Brillo interior fino estilo Ore UI
+        drawSmoothOutline(g, x + 0.4f, y + 0.4f, w - 0.8f, h - lip - 0.8f, Math.max(1f, r - 0.4f), 1.0f, 0x26FFFFFF);
+        g.drawCenteredString(font, label, x + w / 2, y + (int) ((h - lip - 8) / 2), 0xFFFFFF);
     }
 
     /**

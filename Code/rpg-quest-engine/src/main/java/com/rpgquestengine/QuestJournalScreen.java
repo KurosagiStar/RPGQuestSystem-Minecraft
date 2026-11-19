@@ -493,7 +493,7 @@ public class QuestJournalScreen extends Screen {
             boolean done = entry != null && entry.progress >= entry.target;
             boolean claimed = entry != null && entry.claimed;
 
-            int border = (done && !claimed) ? UiStyle.BORDER_GOLD : (claimed ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_SUBTLE);
+            int border = (done && !claimed) ? UiStyle.ACCENT_GREEN : 0;
             UiStyle.drawRoundedCard(g, cx, cy, cardW, ch, 6, UiStyle.BG_CARD, border, true);
 
             if (entry == null) {
@@ -523,15 +523,13 @@ public class QuestJournalScreen extends Screen {
             int btnW = cardW - 16;
             int btnH = 18;
             if (claimed) {
-                UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF203324, UiStyle.ACCENT_GREEN, false);
-                g.drawCenteredString(this.font, "§aReclamado ✔", btnX + btnW / 2, btnY + 5, 0x55FF55);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§aReclamado ✔", 0xFF1E3324, 0xFF1E3324, 0, false);
             } else if (done) {
                 boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
                 UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, i));
             } else {
-                UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF242730, UiStyle.BORDER_SUBTLE, false);
-                g.drawCenteredString(this.font, "§7En progreso", btnX + btnW / 2, btnY + 5, 0x888888);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7En progreso", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
             }
         }
 
@@ -564,7 +562,7 @@ public class QuestJournalScreen extends Screen {
         int cw = Math.min(360, w - 32);
         int ch = Math.min(165, bottomY - cy - 14);
 
-        int border = done ? UiStyle.BORDER_GOLD : (onCooldown ? UiStyle.ACCENT_GREEN : 0xFF993B3B);
+        int border = done ? UiStyle.ACCENT_GREEN : 0;
         UiStyle.drawRoundedCard(g, cx, cy, cw, ch, 6, UiStyle.BG_CARD, border, true);
 
         // Cabecera
@@ -615,15 +613,13 @@ public class QuestJournalScreen extends Screen {
             long mins = (remCd % 3600) / 60;
             long secs = remCd % 60;
             String cdTxt = String.format("§7En %dh %02dm %02ds", hrs, mins, secs);
-            UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF203324, UiStyle.ACCENT_GREEN, false);
-            g.drawCenteredString(this.font, cdTxt, btnX + btnW / 2, btnY + 6, 0xAAAAAA);
+            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, cdTxt, 0xFF1E3324, 0xFF1E3324, 0, false);
         } else if (done) {
             boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
             UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
             clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
         } else {
-            UiStyle.drawRoundedCard(g, btnX, btnY, btnW, btnH, 4, 0xFF242730, UiStyle.BORDER_SUBTLE, false);
-            g.drawCenteredString(this.font, "§eDerrota al Wither", btnX + btnW / 2, btnY + 6, 0xAAAAAA);
+            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7Derrota al Wither", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
         }
 
         if (hoverR >= 0) {
