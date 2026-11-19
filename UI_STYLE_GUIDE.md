@@ -1,15 +1,18 @@
 # Guía de Estilo UI — RPG Quest Engine
 
-Estándar visual para todas las pantallas 2D del mod (`com.rpgquestengine.UiStyle`). Combina superficies oscuras mate estilo **Darkomizer** con botones táctiles 3D estilo **Minecraft Bedrock Ore UI**, renderizados con geometría vectorial OpenGL (`Tesselator`) y anti-aliasing nativo de pantalla.
+Estándar visual para todas las pantallas 2D del mod (`com.rpgquestengine.UiStyle`). Combina paneles oscuros con bisel pixel-art estilo **Darkomizer** (outline negro `#0B0B0D`, carbón `#2B2B2E`, cajas hundidas `#1C1C1F`) y botones táctiles 3D estilo **Minecraft Bedrock Ore UI**.
 
 ---
 
 ## 1. Reglas Fundamentales
 
-1. **Prohibido `GuiGraphics.fill()` para tarjetas o botones:** `fill()` se ajusta al `guiScale` y produce esquinas escalonadas. Usar siempre `UiStyle.drawSmoothRoundedRect`, `UiStyle.drawRoundedCard`, `UiStyle.drawPillButton` o `UiStyle.OreButton`.
+1. **Usar siempre `UiStyle` para paneles y botones:** Usar `UiStyle.drawRoundedCard`, `UiStyle.drawRoundedRect`, `UiStyle.drawPillButton`, `UiStyle.drawProgressBar` y `UiStyle.OreButton`.
 2. **Prohibido `Button.builder(...)` de Vanilla:** Los botones nativos son reemplazados por resourcepacks externos (como Cisco). Usar siempre `UiStyle.OreButton` para widgets de `Screen.addRenderableWidget()`.
-3. **Separación por elevación, no por outlines:** Las tarjetas internas y paneles secundarios usan contraste de fondo (`BG_PANEL`, `BG_CARD`, `BG_HEADER`) con `borderColor = 0`. Reservar bordes visibles solo para el marco principal (`BORDER_PANEL`) o estado activo/reclamable (`ACCENT_GREEN`).
-4. **Verde esmeralda como acento único principal:** Botones de acción positiva, pestaña activa, selección y barras de progreso usan la paleta Ore UI verde. Evitar bordes dorados/amarillos (`BORDER_GOLD`) en botones o contenedores generales.
+3. **Paneles elevados vs cajas hundidas:**
+   - Ventana raíz: `borderColor = BORDER_PANEL` (outline negro, bisel interior 3D elevado).
+   - Paneles/slots internos: `borderColor = 0` (caja hundida estilo inventario Darkomizer: sombra arriba/izq, brillo abajo/der).
+   - Tarjeta seleccionada/reclamable: `borderColor = ACCENT_GREEN`.
+4. **Verde esmeralda como acento único principal:** Botones de acción positiva, pestaña activa, selección y barras de progreso usan la paleta Ore UI verde.
 
 ---
 
@@ -17,16 +20,16 @@ Estándar visual para todas las pantallas 2D del mod (`com.rpgquestengine.UiStyl
 
 | Constante | Valor ARGB | Uso |
 |---|---|---|
-| `BG_DARK` | `0xF4141519` | Contenedor raíz / fondo principal de ventana |
-| `BG_PANEL` | `0xEC1B1D23` | Columnas y paneles secundarios |
-| `BG_CARD` | `0xE823262E` | Tarjetas internas, filas de lista y misiones |
-| `BG_HEADER` | `0xF5282C35` | Cabeceras de ventana y encabezados de categoría |
-| `BORDER_PANEL` | `0xFF282C35` | Borde fino exclusivo del marco exterior |
-| `BORDER_SUBTLE` | `0x14FFFFFF` | Línea divisoria mínima (8% blanco) |
+| `BG_DARK` | `0xFF2B2B2E` | Ventana raíz gris carbón mate (estilo Darkomizer) |
+| `BG_PANEL` | `0xFF222225` | Columnas y sub-paneles hundidos |
+| `BG_CARD` | `0xFF1C1C1F` | Tarjetas internas, slots y filas de lista |
+| `BG_HEADER` | `0xFF333337` | Cabeceras de ventana y encabezados de categoría |
+| `BORDER_PANEL` | `0xFF0B0B0D` | Outline negro exterior + bisel 3D elevado |
+| `BORDER_SUBTLE` | `0xFF3E3E42` | Brillo sutil de bisel gris |
 | `ACCENT_GREEN_DARK` | `0xFF3C9D30` | Botón primario / pestaña activa (reposo) |
 | `ACCENT_GREEN` | `0xFF4BB83D` | Hover de botón primario, barra de progreso y borde activo |
 | `ACCENT_RED_DARK` | `0xFF9E2B36` | Acciones destructivas (`Abandonar`, `Sacar`, `Rechazar`) |
-| `ACCENT_SLATE` | `0xFF2E323C` | Botones neutros / secundarios (`Cerrar`, `Ajustar HUD`, pestaña inactiva) |
+| `ACCENT_SLATE` | `0xFF38383D` | Botones neutros / secundarios (`Cerrar`, `Ajustar HUD`, pestaña inactiva) |
 | `ACCENT_BLUE_DARK` | `0xFF2563EB` | Acento informativo opcional |
 | `BORDER_GOLD` | `0xFFE5BE53` | Solo detalles puntuales de texto/slots especiales (no en botones) |
 
@@ -86,10 +89,9 @@ UiStyle.drawProgressBar(g, x, y, w, 6, ratio, 0xFF2B2E38, UiStyle.ACCENT_GREEN);
 
 ---
 
-## 4. Notas Técnicas OpenGL (`UiStyle`)
-- `UiStyle` llama a `g.flush()` antes de emitir triángulos con `Tesselator` para respetar el orden de capas de `GuiGraphics`.
-- Usa `RenderSystem.disableCull()` y vértices en orden anti-horario (CCW) para evitar que `GL_CULL_FACE` oculte los triángulos.
-- El anti-aliasing se calcula dinámicamente con `1.0 / guiScale` (`getPhysicalPixel()`) para mantener bordes suaves en cualquier resolución o escala de interfaz.
+## 4. Notas de Implementación (`UiStyle`)
+- Las esquinas biseladas de `1px` en `GuiGraphics.fill()` mantienen nitidez pixel-art alineada al `guiScale` de Minecraft, igual que los packs de UI oscura tipo Darkomizer.
+- `OreButton` sobrescribe `renderWidget()` para dibujar outline negro exterior, labio inferior 3D y bisel superior sin depender de texturas vanilla ni resourcepacks.
 
 ---
 
