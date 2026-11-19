@@ -416,7 +416,8 @@ public class QuestJournalScreen extends Screen {
     }
 
     private void drawMiniSlot(GuiGraphics g, ItemStack stack, int x, int y, int border) {
-        UiStyle.drawRoundedCard(g, x, y, 20, 20, 4, 0xFF1F232C, border, false);
+        int b = (border == 0xFF5A4E36) ? 0 : border;
+        UiStyle.drawRoundedCard(g, x, y, 20, 20, 1, UiStyle.BG_CARD, b, false);
         g.renderItem(stack, x + 2, y + 2);
         g.renderItemDecorations(this.font, stack, x + 2, y + 2);
     }
@@ -460,8 +461,8 @@ public class QuestJournalScreen extends Screen {
             int nx = trackX + (trackW * (m + 1)) / 4 - 8;
             int ny = trackY - 5;
             boolean reached = ClientQuestData.DAILY_POINTS >= (m + 1) * 100;
-            g.fill(nx, ny, nx + 16, ny + 16, reached ? 0xFF45C945 : 0xFF5A4E36);
-            g.fill(nx + 1, ny + 1, nx + 15, ny + 15, 0xFF171512);
+            g.fill(nx, ny, nx + 16, ny + 16, reached ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL);
+            g.fill(nx + 1, ny + 1, nx + 15, ny + 15, UiStyle.BG_CARD);
             if (reached) {
                 g.drawCenteredString(this.font, "§a✔", nx + 8, ny + 4, 0x55FF55);
             } else {
@@ -475,7 +476,7 @@ public class QuestJournalScreen extends Screen {
             ItemStack rStack = (rItem != null && rItem != Items.AIR)
                     ? new ItemStack(rItem, msItemCounts[m])
                     : new ItemStack(Items.EXPERIENCE_BOTTLE, msItemCounts[m]);
-            drawMiniSlot(g, rStack, slotX, slotY, reached ? 0xFF45C945 : 0xFF5A4E36);
+            drawMiniSlot(g, rStack, slotX, slotY, reached ? UiStyle.ACCENT_GREEN : 0);
 
             if ((mouseX >= nx && mouseX <= nx + 16 && mouseY >= ny && mouseY <= ny + 16)
                     || (mouseX >= slotX && mouseX <= slotX + 20 && mouseY >= slotY && mouseY <= slotY + 20)) {
@@ -499,8 +500,8 @@ public class QuestJournalScreen extends Screen {
             boolean done = entry != null && entry.progress >= entry.target;
             boolean claimed = entry != null && entry.claimed;
 
-            int border = (done && !claimed) ? UiStyle.ACCENT_GREEN : 0;
-            UiStyle.drawRoundedCard(g, cx, cy, cardW, ch, 6, UiStyle.BG_CARD, border, true);
+            int border = (done && !claimed) ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL;
+            UiStyle.drawRoundedCard(g, cx, cy, cardW, ch, 4, UiStyle.BG_CARD, border, true);
 
             if (entry == null) {
                 g.drawCenteredString(this.font, "§7Cargando...", cx + cardW / 2, cy + ch / 2, 0x888888);
@@ -508,7 +509,7 @@ public class QuestJournalScreen extends Screen {
             }
 
             // Header progreso
-            UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cardW - 4, 17, 4, UiStyle.BG_HEADER);
+            UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cardW - 4, 17, 0, UiStyle.BG_HEADER);
             String progTxt = (done ? "§a" : "§e") + "Progreso: " + entry.progress + "/" + entry.target;
             g.drawString(this.font, progTxt, cx + 8, cy + 6, 0xFFFFFF);
 
@@ -568,11 +569,11 @@ public class QuestJournalScreen extends Screen {
         int cw = Math.min(360, w - 32);
         int ch = Math.min(165, bottomY - cy - 14);
 
-        int border = done ? UiStyle.ACCENT_GREEN : 0;
-        UiStyle.drawRoundedCard(g, cx, cy, cw, ch, 6, UiStyle.BG_CARD, border, true);
+        int border = done ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL;
+        UiStyle.drawRoundedCard(g, cx, cy, cw, ch, 4, UiStyle.BG_CARD, border, true);
 
         // Cabecera
-        UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cw - 4, 24, 4, UiStyle.BG_HEADER);
+        UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cw - 4, 24, 0, UiStyle.BG_HEADER);
         g.renderItem(new ItemStack(Items.NETHER_STAR), cx + 6, cy + 5);
         g.drawString(this.font, "§c§lJefe Mundial: El Wither", cx + 28, cy + 5, 0xFF5555);
         String progTxt = onCooldown ? "§7Completado" : (done ? "§aProgreso: 1/1" : "§eProgreso: 0/1");

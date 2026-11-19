@@ -70,8 +70,8 @@ public class UiStyle {
             g.fill(x, y, x + w - 1, y + 1, 0xFF131315);
             g.fill(x, y, x + 1, y + h - 1, 0xFF131315);
             // Brillo sutil abajo y derecha
-            g.fill(x + 1, y + h - 1, x + w, y + h, 0xFF3A3A3F);
-            g.fill(x + w - 1, y + 1, x + w, y + h, 0xFF3A3A3F);
+            g.fill(x + 1, y + h - 1, x + w, y + h, 0xFF2F2F33);
+            g.fill(x + w - 1, y + 1, x + w, y + h, 0xFF2F2F33);
         } else {
             // Marco principal elevado con outline negro/oscuro y bisel 3D
             int outer = (borderColor == BORDER_PANEL) ? 0xFF0B0B0D : borderColor;
