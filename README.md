@@ -21,6 +21,7 @@ RPGQuestSystem-Minecraft/
 │   └── easy_npc/preset/villager/     <-- Presets SNBT de Easy NPC
 ├── docs/                             <-- Guías técnicas y skills
 │   └── skills/
+├── UI_STYLE_GUIDE.md                 <-- Guía de estilo UI (Darkomizer + Ore UI)
 └── README.md
 ```
 
