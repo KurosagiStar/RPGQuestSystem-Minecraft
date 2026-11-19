@@ -87,8 +87,8 @@ public class UiStyle {
                                 float x2, float y2, int c2,
                                 float x3, float y3, int c3) {
         buf.vertex(mat, x1, y1, 0f).color((c1 >> 16) & 0xFF, (c1 >> 8) & 0xFF, c1 & 0xFF, (c1 >>> 24) & 0xFF).endVertex();
-        buf.vertex(mat, x2, y2, 0f).color((c2 >> 16) & 0xFF, (c2 >> 8) & 0xFF, c2 & 0xFF, (c2 >>> 24) & 0xFF).endVertex();
         buf.vertex(mat, x3, y3, 0f).color((c3 >> 16) & 0xFF, (c3 >> 8) & 0xFF, c3 & 0xFF, (c3 >>> 24) & 0xFF).endVertex();
+        buf.vertex(mat, x2, y2, 0f).color((c2 >> 16) & 0xFF, (c2 >> 8) & 0xFF, c2 & 0xFF, (c2 >>> 24) & 0xFF).endVertex();
     }
 
     /**
@@ -116,6 +116,8 @@ public class UiStyle {
 
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
+        RenderSystem.disableCull();
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
 
         Matrix4f mat = g.pose().last().pose();
@@ -137,6 +139,7 @@ public class UiStyle {
         }
 
         BufferUploader.drawWithShader(buf.end());
+        RenderSystem.enableCull();
         RenderSystem.disableBlend();
     }
 
@@ -171,6 +174,8 @@ public class UiStyle {
 
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
+        RenderSystem.disableCull();
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
 
         Matrix4f mat = g.pose().last().pose();
@@ -191,6 +196,7 @@ public class UiStyle {
         }
 
         BufferUploader.drawWithShader(buf.end());
+        RenderSystem.enableCull();
         RenderSystem.disableBlend();
     }
 
