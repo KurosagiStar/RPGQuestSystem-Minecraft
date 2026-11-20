@@ -57,9 +57,9 @@ public class ChallengeManager {
         giveItem(sp, "apotheosis:epic_material", 7, "");
         giveItem(sp, "apotheosis:sigil_of_socketing", 1, "");
         giveItem(sp, "apotheosis:gem", 1, "{affix_data:{rarity:\"apotheosis:epic\"},gem:\"apotheosis:core/warlord\"}");
-        sp.giveExperiencePoints(300);
+        sp.giveExperienceLevels(15);
 
-        sp.sendSystemMessage(Component.literal("§a[Desafío Wither Reclamado] §e+15 Monedas, 3x Godforged Pearl, 7x Epic Material, Sigil of Socketing, Gema Épica y 300 XP."));
+        sp.sendSystemMessage(Component.literal("§a[Desafío Wither Reclamado] §e+15 Monedas, 3x Godforged Pearl, 7x Epic Material, Sigil of Socketing, Gema Épica y 15 Niveles."));
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
         syncToPlayer(sp);
     }

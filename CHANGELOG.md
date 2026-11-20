@@ -7,7 +7,7 @@
   - Corregida la pestaña `Misiones Diarias` y `Desafíos` para alinear cabeceras, nodos de hitos (`100–400`) y mini-slots con la nueva paleta oscura.
   - Documentado el estándar completo en `UI_STYLE_GUIDE.md`.
 - **Balance de Desafío Wither (`ChallengeManager`, `QuestJournalScreen`):**
-  - Mejorada la recompensa de `El Wither` a **15x Moneda de Campeón (`cisco_mod:champion_coin`)**, **3x Godforged Pearl (`apotheosis:mythic_material`)**, **7x Epic Material (`apotheosis:epic_material`)**, **1x Sigil of Socketing**, **1x Gema Épica** y **300 XP**.
+  - Mejorada la recompensa de `El Wither` a **15x Moneda de Campeón (`cisco_mod:champion_coin`)**, **3x Godforged Pearl (`apotheosis:mythic_material`)**, **7x Epic Material (`apotheosis:epic_material`)**, **1x Sigil of Socketing**, **1x Gema Épica** y **15 Niveles**.
 
 ## [1.5.0-update] - 2026-11-17
 - **Recompensas de Mundo y Soporte NBT (`RewardItem.nbt`):**

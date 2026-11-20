@@ -596,7 +596,7 @@ public class QuestJournalScreen extends Screen {
 
         String[] rIds = {"cisco_mod:champion_coin", "apotheosis:mythic_material", "apotheosis:epic_material", "apotheosis:sigil_of_socketing", "minecraft:experience_bottle"};
         int[] rCnt = {15, 3, 7, 1, 1};
-        String[] rTips = {"15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)", "1x Sigil of Socketing", "+300 XP"};
+        String[] rTips = {"15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)", "1x Sigil of Socketing", "+15 Niveles"};
         int hoverR = -1;
         int sx = cx + 10;
         int sy = rewY + 12;
