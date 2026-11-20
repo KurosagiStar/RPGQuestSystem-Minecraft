@@ -1,0 +1,1101 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Ocultista - Mision de Viajar al Nether",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Ocultista del Vacio",
+    variantType: "SWAMP_CLERIC",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#AA00AA","bold":true,"text":"Ocultista del Vacio"}',
+    UUID: [I; -25291814, -878871507, -916030930, -350152805],
+    Tags: ["npc_main_ocultista"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_4b4bf1ff89c31aca_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_4b4bf1ff89c31aca_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_4b4bf1ff89c31aca_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 4B4BF1\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_0",
+              Name: "Entregar: Misión 4B4BF1"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4b4bf1ff89c31aca_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_lista",
+          Name: "Entregar Misión 4B4BF1",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 4B4BF1'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4b4bf1ff89c31aca_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: Misión 4B4BF1",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 4B4BF1': Habla para completar Misión 4B4BF1"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4b4bf1ff89c31aca_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: Misión 4B4BF1",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 4B4BF1'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_4b4bf1ff89c31aca_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 4B4BF1: Habla para completar Misión 4B4BF1\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_0",
+              Name: "Aceptar: Misión 4B4BF1"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0d904a47c1eda7de_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: Misión 4B4BF1",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 4B4BF1\\n\\nObjetivo: Habla para completar Misión 4B4BF1"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Bloqueada: Misión 4B4BF1",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 4B4BF1'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_2fb1578ebe95b902_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_2fb1578ebe95b902_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_2fb1578ebe95b902_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 2FB157\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Misión 2FB157"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Misión 2FB157",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 2FB157'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Misión 2FB157",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 2FB157': Habla para completar Misión 2FB157"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Misión 2FB157",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 2FB157'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_2fb1578ebe95b902_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 2FB157: Habla para completar Misión 2FB157\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Misión 2FB157"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4b4bf1ff89c31aca_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Misión 2FB157",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 2FB157\\n\\nObjetivo: Habla para completar Misión 2FB157"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Misión 2FB157",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 2FB157'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_57f0e543419b8d21_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_57f0e543419b8d21_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_57f0e543419b8d21_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 57F0E5\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: Misión 57F0E5"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_57f0e543419b8d21_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar Misión 57F0E5",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 57F0E5'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_57f0e543419b8d21_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_progreso",
+          Name: "En Progreso: Misión 57F0E5",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 57F0E5': Habla para completar Misión 57F0E5"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_57f0e543419b8d21_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: Misión 57F0E5",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 57F0E5'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_57f0e543419b8d21_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 57F0E5: Habla para completar Misión 57F0E5\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_2",
+              Name: "Aceptar: Misión 57F0E5"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: Misión 57F0E5",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 57F0E5\\n\\nObjetivo: Habla para completar Misión 57F0E5"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: Misión 57F0E5",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 57F0E5'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_7799076a92b03ca8_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_7799076a92b03ca8_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_7799076a92b03ca8_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 779907\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: Misión 779907"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_7799076a92b03ca8_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar Misión 779907",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 779907'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_7799076a92b03ca8_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: Misión 779907",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 779907': Habla para completar Misión 779907"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_7799076a92b03ca8_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: Misión 779907",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 779907'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_7799076a92b03ca8_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 779907: Habla para completar Misión 779907\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: Misión 779907"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_42821297260c128f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: Misión 779907",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 779907\\n\\nObjetivo: Habla para completar Misión 779907"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: Misión 779907",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 779907'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_4e213c9d6719a0e0_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_4e213c9d6719a0e0_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_4e213c9d6719a0e0_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 4E213C\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: Misión 4E213C"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4e213c9d6719a0e0_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar Misión 4E213C",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 4E213C'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4e213c9d6719a0e0_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: Misión 4E213C",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 4E213C': Habla para completar Misión 4E213C"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_4e213c9d6719a0e0_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: Misión 4E213C",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 4E213C'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_4e213c9d6719a0e0_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 4E213C: Habla para completar Misión 4E213C\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: Misión 4E213C"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_32e7d93bb699594e_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: Misión 4E213C",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 4E213C\\n\\nObjetivo: Habla para completar Misión 4E213C"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: Misión 4E213C",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 4E213C'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_49b6952745916f6a_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_49b6952745916f6a_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_49b6952745916f6a_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Befriend a pixie\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Befriend a pixie"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_49b6952745916f6a_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Befriend a pixie",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Befriend a pixie'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_49b6952745916f6a_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Befriend a pixie",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Befriend a pixie': Habla para completar Befriend a pixie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_49b6952745916f6a_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Befriend a pixie",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Befriend a pixie'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_49b6952745916f6a_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Befriend a pixie: Habla para completar Befriend a pixie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Befriend a pixie"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Befriend a pixie",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Befriend a pixie\\n\\nObjetivo: Habla para completar Befriend a pixie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Befriend a pixie",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Befriend a pixie'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/execute as @initiator run rpgquest talk npc_main_ocultista",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "btn_mision",
+              Name: "Misión"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "Saludos, aventurero. Tengo 6 misiones asignadas para ti. Elige una en orden:"
+            }
+          ]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:obsidian" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "CLERIC",
+    VariantType: "SWAMP_CLERIC",
+    VillagerData: { profession: "minecraft:cleric", type: "minecraft:swamp" },
+    id: "easy_npc:villager"
+  }
+}
+

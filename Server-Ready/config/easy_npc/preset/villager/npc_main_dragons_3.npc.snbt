@@ -1,0 +1,1101 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Ocultista - Mision de Viajar al Nether",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Forjador Dracónico",
+    variantType: "SWAMP_CLERIC",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#AA00AA","bold":true,"text":"Forjador Dracónico"}',
+    UUID: [I; 1704435644, 1600403392, -1295714399, 94653086],
+    Tags: ["npc_main_dragons_3"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_76ea98db3c884c58_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_76ea98db3c884c58_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_76ea98db3c884c58_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Slay Ice Dragons\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_0",
+              Name: "Entregar: Slay Ice Dragons"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_76ea98db3c884c58_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_lista",
+          Name: "Entregar Slay Ice Dragons",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Slay Ice Dragons'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_76ea98db3c884c58_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: Slay Ice Dragons",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Slay Ice Dragons': Derrotar 3x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_76ea98db3c884c58_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: Slay Ice Dragons",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Slay Ice Dragons'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_76ea98db3c884c58_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Slay Ice Dragons: Derrotar 3x zombie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_0",
+              Name: "Aceptar: Slay Ice Dragons"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: Slay Ice Dragons",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Slay Ice Dragons\\n\\nObjetivo: Derrotar 3x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Bloqueada: Slay Ice Dragons",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Slay Ice Dragons'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_6b949cdb464620fc_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_6b949cdb464620fc_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_6b949cdb464620fc_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Misión 6B949C\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Misión 6B949C"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_6b949cdb464620fc_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Misión 6B949C",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Misión 6B949C'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_6b949cdb464620fc_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Misión 6B949C",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Misión 6B949C': Habla para completar Misión 6B949C"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_6b949cdb464620fc_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Misión 6B949C",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Misión 6B949C'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_6b949cdb464620fc_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Misión 6B949C: Habla para completar Misión 6B949C\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Misión 6B949C"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_50d03004776882cb_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Misión 6B949C",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Misión 6B949C\\n\\nObjetivo: Habla para completar Misión 6B949C"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Misión 6B949C",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Misión 6B949C'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_415040716e8b4edb_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_415040716e8b4edb_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_415040716e8b4edb_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"The Cyclops\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: The Cyclops"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_415040716e8b4edb_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar The Cyclops",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'The Cyclops'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_415040716e8b4edb_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_progreso",
+          Name: "En Progreso: The Cyclops",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'The Cyclops': Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_415040716e8b4edb_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: The Cyclops",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'The Cyclops'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_415040716e8b4edb_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"The Cyclops: Derrotar 1x zombie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_2",
+              Name: "Aceptar: The Cyclops"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: The Cyclops",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: The Cyclops\\n\\nObjetivo: Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: The Cyclops",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'The Cyclops'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_17cca12d76f9f396_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_17cca12d76f9f396_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_17cca12d76f9f396_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"The Gorgon\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: The Gorgon"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_17cca12d76f9f396_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar The Gorgon",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'The Gorgon'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_17cca12d76f9f396_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: The Gorgon",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'The Gorgon': Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_17cca12d76f9f396_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: The Gorgon",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'The Gorgon'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_17cca12d76f9f396_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"The Gorgon: Derrotar 1x zombie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: The Gorgon"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: The Gorgon",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: The Gorgon\\n\\nObjetivo: Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: The Gorgon",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'The Gorgon'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_0116c409c773f4a2_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_0116c409c773f4a2_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_0116c409c773f4a2_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"The Hydra\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: The Hydra"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0116c409c773f4a2_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar The Hydra",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'The Hydra'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0116c409c773f4a2_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: The Hydra",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'The Hydra': Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_0116c409c773f4a2_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: The Hydra",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'The Hydra'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_0116c409c773f4a2_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"The Hydra: Derrotar 1x zombie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: The Hydra"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2fb1578ebe95b902_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: The Hydra",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: The Hydra\\n\\nObjetivo: Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: The Hydra",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'The Hydra'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_2b2cfa2d079b5332_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_dragons_2b2cfa2d079b5332_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_2b2cfa2d079b5332_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Tame a Dragon\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Tame a Dragon"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Tame a Dragon",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Tame a Dragon'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Tame a Dragon",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Tame a Dragon': Habla para completar Tame a Dragon"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_2b2cfa2d079b5332_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Tame a Dragon",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Tame a Dragon'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_dragons_2b2cfa2d079b5332_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Tame a Dragon: Habla para completar Tame a Dragon\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Tame a Dragon"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_dragons_76ea98db3c884c58_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Tame a Dragon",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Tame a Dragon\\n\\nObjetivo: Habla para completar Tame a Dragon"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Tame a Dragon",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Tame a Dragon'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/execute as @initiator run rpgquest talk npc_main_dragons_3",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "btn_mision",
+              Name: "Misión"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "Saludos, aventurero. Tengo 6 misiones asignadas para ti. Elige una en orden:"
+            }
+          ]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:obsidian" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "CLERIC",
+    VariantType: "SWAMP_CLERIC",
+    VillagerData: { profession: "minecraft:cleric", type: "minecraft:swamp" },
+    id: "easy_npc:villager"
+  }
+}
+

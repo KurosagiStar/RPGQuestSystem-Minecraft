@@ -1,0 +1,1950 @@
+{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794353213551L,
+    description: "Explorador del Sendero - Zona Amplia y Brújula",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794353213551L,
+    name: "Explorador del Sendero",
+    variantType: "SAVANNA_CARTOGRAPHER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#55FFFF","bold":true,"text":"Explorador del Sendero"}',
+    UUID: [I; -384525040, 592688547, -874242190, 1832274638],
+    Tags: ["npc_main_traveller_5"],
+    DialogData: {
+      DialogDataSet: [
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_2fc3c0ef214ed424_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_2fc3c0ef214ed424_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_2fc3c0ef214ed424_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Find the Platinum dungeon\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_0",
+              Name: "Entregar: Find the Platinum dungeon"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2fc3c0ef214ed424_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_lista",
+          Name: "Entregar Find the Platinum dungeon",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Find the Platinum dungeon'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2fc3c0ef214ed424_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0_progreso",
+          Name: "En Progreso: Find the Platinum dungeon",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Find the Platinum dungeon': Habla para completar Find the Platinum dungeon"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2fc3c0ef214ed424_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Completada: Find the Platinum dungeon",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Find the Platinum dungeon'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_2fc3c0ef214ed424_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Find the Platinum dungeon: Habla para completar Find the Platinum dungeon\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_0",
+              Name: "Aceptar: Find the Platinum dungeon"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22a1e4ba57d4a830_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Mision: Find the Platinum dungeon",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Find the Platinum dungeon\\n\\nObjetivo: Habla para completar Find the Platinum dungeon"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_0",
+          Name: "Bloqueada: Find the Platinum dungeon",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Find the Platinum dungeon'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_63007c16471db9e3_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_63007c16471db9e3_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_63007c16471db9e3_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Defeat the Aerwhale King\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_1",
+              Name: "Entregar: Defeat the Aerwhale King"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_63007c16471db9e3_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_lista",
+          Name: "Entregar Defeat the Aerwhale King",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Defeat the Aerwhale King'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_63007c16471db9e3_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1_progreso",
+          Name: "En Progreso: Defeat the Aerwhale King",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Defeat the Aerwhale King': Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_63007c16471db9e3_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Completada: Defeat the Aerwhale King",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Defeat the Aerwhale King'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_63007c16471db9e3_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Defeat the Aerwhale King: Derrotar 1x zombie\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_1",
+              Name: "Aceptar: Defeat the Aerwhale King"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_2fc3c0ef214ed424_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Mision: Defeat the Aerwhale King",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Defeat the Aerwhale King\\n\\nObjetivo: Derrotar 1x zombie"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_1",
+          Name: "Bloqueada: Defeat the Aerwhale King",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Defeat the Aerwhale King'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_7d909ecb706f1882_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_7d909ecb706f1882_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_7d909ecb706f1882_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the Bone Reef\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_2",
+              Name: "Entregar: Visit the Bone Reef"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7d909ecb706f1882_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_lista",
+          Name: "Entregar Visit the Bone Reef",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the Bone Reef'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7d909ecb706f1882_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2_progreso",
+          Name: "En Progreso: Visit the Bone Reef",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the Bone Reef': Habla para completar Visit the Bone Reef"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7d909ecb706f1882_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Completada: Visit the Bone Reef",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the Bone Reef'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_7d909ecb706f1882_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the Bone Reef: Habla para completar Visit the Bone Reef\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_2",
+              Name: "Aceptar: Visit the Bone Reef"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_099e53ee758f1f2c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Mision: Visit the Bone Reef",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the Bone Reef\\n\\nObjetivo: Habla para completar Visit the Bone Reef"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_2",
+          Name: "Bloqueada: Visit the Bone Reef",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the Bone Reef'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_74fbea79142079d2_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_74fbea79142079d2_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_74fbea79142079d2_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the crimson glowing woods\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_3",
+              Name: "Entregar: Visit the crimson glowing woods"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_74fbea79142079d2_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_lista",
+          Name: "Entregar Visit the crimson glowing woods",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the crimson glowing woods'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_74fbea79142079d2_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3_progreso",
+          Name: "En Progreso: Visit the crimson glowing woods",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the crimson glowing woods': Habla para completar Visit the crimson glowing woods"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_74fbea79142079d2_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Completada: Visit the crimson glowing woods",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the crimson glowing woods'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_74fbea79142079d2_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the crimson glowing woods: Habla para completar Visit the crimson glowing woods\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_3",
+              Name: "Aceptar: Visit the crimson glowing woods"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_099e53ee758f1f2c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Mision: Visit the crimson glowing woods",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the crimson glowing woods\\n\\nObjetivo: Habla para completar Visit the crimson glowing woods"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_3",
+          Name: "Bloqueada: Visit the crimson glowing woods",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the crimson glowing woods'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_71d9b5a1692b2449_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_71d9b5a1692b2449_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_71d9b5a1692b2449_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the dead upside down forest\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_4",
+              Name: "Entregar: Visit the dead upside down forest"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_71d9b5a1692b2449_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_lista",
+          Name: "Entregar Visit the dead upside down forest",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the dead upside down forest'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_71d9b5a1692b2449_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4_progreso",
+          Name: "En Progreso: Visit the dead upside down forest",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the dead upside down forest': Habla para completar Visit the dead upside down forest"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_71d9b5a1692b2449_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Completada: Visit the dead upside down forest",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the dead upside down forest'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_71d9b5a1692b2449_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the dead upside down forest: Habla para completar Visit the dead upside down forest\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_4",
+              Name: "Aceptar: Visit the dead upside down forest"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_099e53ee758f1f2c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Mision: Visit the dead upside down forest",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the dead upside down forest\\n\\nObjetivo: Habla para completar Visit the dead upside down forest"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_4",
+          Name: "Bloqueada: Visit the dead upside down forest",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the dead upside down forest'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_7ab3a2feb07e0d8f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_7ab3a2feb07e0d8f_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_7ab3a2feb07e0d8f_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the flooded deltas\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_5",
+              Name: "Entregar: Visit the flooded deltas"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7ab3a2feb07e0d8f_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_lista",
+          Name: "Entregar Visit the flooded deltas",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the flooded deltas'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7ab3a2feb07e0d8f_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5_progreso",
+          Name: "En Progreso: Visit the flooded deltas",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the flooded deltas': Habla para completar Visit the flooded deltas"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_7ab3a2feb07e0d8f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Completada: Visit the flooded deltas",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the flooded deltas'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_7ab3a2feb07e0d8f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the flooded deltas: Habla para completar Visit the flooded deltas\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_5",
+              Name: "Aceptar: Visit the flooded deltas"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_099e53ee758f1f2c_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Mision: Visit the flooded deltas",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the flooded deltas\\n\\nObjetivo: Habla para completar Visit the flooded deltas"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_5",
+          Name: "Bloqueada: Visit the flooded deltas",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the flooded deltas'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_715f9e89062b1f30_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_715f9e89062b1f30_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_715f9e89062b1f30_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the Amber Land \",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_6",
+              Name: "Entregar: Visit the Amber Land "
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_715f9e89062b1f30_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_lista",
+          Name: "Entregar Visit the Amber Land ",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the Amber Land '! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_715f9e89062b1f30_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6_progreso",
+          Name: "En Progreso: Visit the Amber Land ",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the Amber Land ': Habla para completar Visit the Amber Land "
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_715f9e89062b1f30_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Completada: Visit the Amber Land ",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the Amber Land '. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_715f9e89062b1f30_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the Amber Land : Habla para completar Visit the Amber Land \",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_6",
+              Name: "Aceptar: Visit the Amber Land "
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0037e919a5da26df_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Mision: Visit the Amber Land ",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the Amber Land \\n\\nObjetivo: Habla para completar Visit the Amber Land "
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_6",
+          Name: "Bloqueada: Visit the Amber Land ",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the Amber Land '. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_22d351c8d4c06690_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_22d351c8d4c06690_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_22d351c8d4c06690_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the Blossoming Spires\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_7",
+              Name: "Entregar: Visit the Blossoming Spires"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22d351c8d4c06690_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_lista",
+          Name: "Entregar Visit the Blossoming Spires",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the Blossoming Spires'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22d351c8d4c06690_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7_progreso",
+          Name: "En Progreso: Visit the Blossoming Spires",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the Blossoming Spires': Habla para completar Visit the Blossoming Spires"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_22d351c8d4c06690_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Completada: Visit the Blossoming Spires",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the Blossoming Spires'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_22d351c8d4c06690_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the Blossoming Spires: Habla para completar Visit the Blossoming Spires\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_7",
+              Name: "Aceptar: Visit the Blossoming Spires"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0037e919a5da26df_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Mision: Visit the Blossoming Spires",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the Blossoming Spires\\n\\nObjetivo: Habla para completar Visit the Blossoming Spires"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_7",
+          Name: "Bloqueada: Visit the Blossoming Spires",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the Blossoming Spires'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_6c6310591cf4d15f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_6c6310591cf4d15f_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_6c6310591cf4d15f_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the Chorus Forest\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_8",
+              Name: "Entregar: Visit the Chorus Forest"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_6c6310591cf4d15f_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_lista",
+          Name: "Entregar Visit the Chorus Forest",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the Chorus Forest'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_6c6310591cf4d15f_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8_progreso",
+          Name: "En Progreso: Visit the Chorus Forest",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the Chorus Forest': Habla para completar Visit the Chorus Forest"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_6c6310591cf4d15f_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Completada: Visit the Chorus Forest",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the Chorus Forest'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_6c6310591cf4d15f_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the Chorus Forest: Habla para completar Visit the Chorus Forest\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_8",
+              Name: "Aceptar: Visit the Chorus Forest"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0037e919a5da26df_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Mision: Visit the Chorus Forest",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the Chorus Forest\\n\\nObjetivo: Habla para completar Visit the Chorus Forest"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_8",
+          Name: "Bloqueada: Visit the Chorus Forest",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the Chorus Forest'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_1cd2bf55b58e0dc0_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_1cd2bf55b58e0dc0_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_1cd2bf55b58e0dc0_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the Crystal Mountains\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_9",
+              Name: "Entregar: Visit the Crystal Mountains"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1cd2bf55b58e0dc0_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_lista",
+          Name: "Entregar Visit the Crystal Mountains",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the Crystal Mountains'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1cd2bf55b58e0dc0_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9_progreso",
+          Name: "En Progreso: Visit the Crystal Mountains",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the Crystal Mountains': Habla para completar Visit the Crystal Mountains"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_1cd2bf55b58e0dc0_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Completada: Visit the Crystal Mountains",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the Crystal Mountains'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_1cd2bf55b58e0dc0_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the Crystal Mountains: Habla para completar Visit the Crystal Mountains\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_9",
+              Name: "Aceptar: Visit the Crystal Mountains"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0037e919a5da26df_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Mision: Visit the Crystal Mountains",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the Crystal Mountains\\n\\nObjetivo: Habla para completar Visit the Crystal Mountains"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_9",
+          Name: "Bloqueada: Visit the Crystal Mountains",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the Crystal Mountains'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_0e8170950eede373_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator remove q_cisco_traveller_0e8170950eede373_done",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_0e8170950eede373_comp",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Completada] \",\"color\":\"green\",\"bold\":true},{\"text\":\"Visit the Dragon Graveyards\",\"color\":\"white\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "entregar_10",
+              Name: "Entregar: Visit the Dragon Graveyards"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0e8170950eede373_done",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_lista",
+          Name: "Entregar Visit the Dragon Graveyards",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "¡Excelente trabajo con 'Visit the Dragon Graveyards'! Aquí tienes tu recompensa."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Seguir en ello"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0e8170950eede373_act",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10_progreso",
+          Name: "En Progreso: Visit the Dragon Graveyards",
+          Priority: -2,
+          Texts: [
+            {
+              Text: "Aún tienes pendiente 'Visit the Dragon Graveyards': Habla para completar Visit the Dragon Graveyards"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0e8170950eede373_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Completada: Visit the Dragon Graveyards",
+          Priority: -3,
+          Texts: [
+            {
+              Text: "Ya completaste 'Visit the Dragon Graveyards'. ¡Buen trabajo!"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/tag @initiator add q_cisco_traveller_0e8170950eede373_act",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Cmd: "/tellraw @initiator [{\"text\":\"[Misión Aceptada] \",\"color\":\"gold\",\"bold\":true},{\"text\":\"Visit the Dragon Graveyards: Habla para completar Visit the Dragon Graveyards\",\"color\":\"yellow\"}]",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "aceptar_10",
+              Name: "Aceptar: Visit the Dragon Graveyards"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Conditions: [
+            {
+              Name: "q_cisco_traveller_0037e919a5da26df_comp",
+              Type: "SCOREBOARD_TAG"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Mision: Visit the Dragon Graveyards",
+          Priority: -1,
+          Texts: [
+            {
+              Text: "Misión: Visit the Dragon Graveyards\\n\\nObjetivo: Habla para completar Visit the Dragon Graveyards"
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Type: "OPEN_DEFAULT_DIALOG"
+                }
+              ],
+              Name: "Volver"
+            }
+          ],
+          Label: "mision_10",
+          Name: "Bloqueada: Visit the Dragon Graveyards",
+          Priority: -10,
+          Texts: [
+            {
+              Text: "Aún no estás listo para 'Visit the Dragon Graveyards'. Completa la misión anterior primero."
+            }
+          ]
+        },
+        {
+          Buttons: [
+            {
+              Actions: [
+                {
+                  Cmd: "/execute as @initiator run rpgquest talk npc_main_traveller_5",
+                  ExecAsUser: 0b,
+                  PermLevel: 2,
+                  Type: "COMMAND"
+                },
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Label: "btn_mision",
+              Name: "Misión"
+            },
+            {
+              Actions: [
+                {
+                  Type: "OPEN_TRADING"
+                }
+              ],
+              Name: "Comercio"
+            },
+            {
+              Actions: [
+                {
+                  Type: "CLOSE_DIALOG"
+                }
+              ],
+              Name: "Despedirse"
+            }
+          ],
+          Label: "default",
+          Name: "Welcome",
+          Priority: 0,
+          Texts: [
+            {
+              Text: "Saludos, aventurero. Tengo 11 misiones asignadas para ti. Elige una en orden:"
+            }
+          ]
+        }
+      ],
+      Type: "CUSTOM"
+    },
+    EasyNPCVersion: 3,
+    HandItems: [
+      { Count: 1b, id: "minecraft:spyglass" },
+      { Count: -1b, id: "minecraft:air" }
+    ],
+    Profession: "CARTOGRAPHER",
+    VariantType: "SAVANNA_CARTOGRAPHER",
+    VillagerData: { profession: "minecraft:cartographer", type: "minecraft:savanna" },
+    id: "easy_npc:villager"
+  }
+}
