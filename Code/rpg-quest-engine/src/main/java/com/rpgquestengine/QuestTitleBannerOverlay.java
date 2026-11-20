@@ -94,16 +94,18 @@ public class QuestTitleBannerOverlay {
         int boxH = hasPrompt ? 46 : 38;
         int boxX = centerX - (boxW / 2);
 
-        // Fondo oscuro RPG con desvanecimiento
-        int bgColor = (alphaInt << 24) | 0x121215;
-        graphics.fill(boxX, startY, boxX + boxW, startY + boxH, bgColor);
+        // Panel Darkomizer con desvanecimiento suave
+        int outerColor = (alphaInt << 24) | 0x0B0B0D;
+        int bgColor = (alphaInt << 24) | 0x2B2B2E;
+        int hiBevel = (Math.min(255, alphaInt) << 24) | 0x3D3D42;
+        int loBevel = (Math.min(255, alphaInt) << 24) | 0x171719;
+        int accentColor = (alphaInt << 24) | (bannerColor & 0x00FFFFFF);
 
-        // Bordes dorados temáticos con desvanecimiento
-        int borderColor = (alphaInt << 24) | (bannerColor & 0x00FFFFFF);
-        graphics.fill(boxX, startY, boxX + boxW, startY + 1, borderColor);
-        graphics.fill(boxX, startY + boxH - 1, boxX + boxW, startY + boxH, borderColor);
-        graphics.fill(boxX, startY, boxX + 1, startY + boxH, borderColor);
-        graphics.fill(boxX + boxW - 1, startY, boxX + boxW, startY + boxH, borderColor);
+        UiStyle.drawRoundedRect(graphics, boxX, startY, boxW, boxH, 3, outerColor);
+        UiStyle.drawRoundedRect(graphics, boxX + 1, startY + 1, boxW - 2, boxH - 2, 2, bgColor);
+        graphics.fill(boxX + 2, startY + 1, boxX + boxW - 2, startY + 2, hiBevel);
+        graphics.fill(boxX + 2, startY + boxH - 2, boxX + boxW - 2, startY + boxH - 1, loBevel);
+        graphics.fill(boxX + 2, startY + 3, boxX + 4, startY + boxH - 3, accentColor);
 
         // Icono a la izquierda
         int textStartX = boxX + 12;

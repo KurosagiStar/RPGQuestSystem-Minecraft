@@ -168,9 +168,9 @@ public class QuestHudOverlay {
             int extraH = !npcCompassInfo.isEmpty() ? 12 : 0;
             int totalH = 8 + badgeBoxH + 4 + (titleLines.size() * 11) + 4 + 1 + 6 + (returnLines.size() * 11) + extraH + 6;
 
-            // Fondo translúcido degradado
-            graphics.fill(x - 4, y - 4, x + cardWidth + 4, y + totalH, 0xCC101012);
-            graphics.fill(x - 5, y - 4, x - 4, y + totalH, 0xFF55FF55);
+            // Tarjeta Darkomizer flotante
+            UiStyle.drawRoundedCard(graphics, x - 6, y - 5, cardWidth + 12, totalH + 6, 4, 0xE62B2B2E, UiStyle.BORDER_PANEL, true);
+            graphics.fill(x - 4, y - 2, x - 2, y + totalH - 2, UiStyle.ACCENT_GREEN);
 
             int drawY = y;
             drawBadge(graphics, font, catName, x, drawY, badgeBoxW, badgeBoxH, badgeBgColor, badgeBorderColor);
@@ -286,10 +286,10 @@ public class QuestHudOverlay {
 
         calculatedHeight += 6;
 
-        // Fondo oscuro RPG moderno
-        graphics.fill(x - 4, y - 4, x + cardWidth + 4, y + calculatedHeight, 0xCC101012);
-        // Barra lateral con degradado visual
-        graphics.fill(x - 5, y - 4, x - 4, y + calculatedHeight, badgeBorderColor);
+        // Tarjeta Darkomizer flotante
+        UiStyle.drawRoundedCard(graphics, x - 6, y - 5, cardWidth + 12, calculatedHeight + 6, 4, 0xE62B2B2E, UiStyle.BORDER_PANEL, true);
+        // Barra lateral de acento por categoría
+        graphics.fill(x - 4, y - 2, x - 2, y + calculatedHeight - 2, badgeBorderColor);
 
         int drawY = y;
 
@@ -319,13 +319,9 @@ public class QuestHudOverlay {
             if (item.showBar) {
                 int barW = cardWidth - 10;
                 int barY = drawY + 1;
-                // Fondo de la barra con esquinas oscuras
-                graphics.fill(x + 2, barY, x + 2 + barW, barY + 3, 0xFF222225);
-                int fillW = (int) (barW * ((float) item.cur / (float) item.max));
-                if (fillW > 0) {
-                    graphics.fill(x + 2, barY, x + 2 + fillW, barY + 3, badgeBorderColor);
-                }
-                drawY += 7;
+                float ratio = (item.max > 0) ? ((float) item.cur / (float) item.max) : 0f;
+                UiStyle.drawProgressBar(graphics, x + 2, barY, barW, 4, ratio, UiStyle.BG_CARD, UiStyle.ACCENT_GREEN);
+                drawY += 8;
             }
 
             if (!item.compassInfo.isEmpty()) {
@@ -350,12 +346,7 @@ public class QuestHudOverlay {
     }
 
     private void drawBadge(GuiGraphics graphics, Font font, String text, int x, int y, int w, int h, int bgColor, int borderColor) {
-        graphics.fill(x, y, x + w, y + h, bgColor);
-        graphics.fill(x, y, x + w, y + 1, borderColor);
-        graphics.fill(x, y + h - 1, x + w, y + h, borderColor);
-        graphics.fill(x, y, x + 1, y + h, borderColor);
-        graphics.fill(x + w - 1, y, x + w, y + h, borderColor);
-
+        UiStyle.drawRoundedCard(graphics, x, y, w, h, 1, bgColor, 0xFF0B0B0D, false);
         graphics.drawString(font, text, x + 4, y + 1, 0xFFFFFF);
     }
 

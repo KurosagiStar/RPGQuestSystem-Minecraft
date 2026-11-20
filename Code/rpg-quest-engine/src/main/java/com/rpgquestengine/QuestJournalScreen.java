@@ -99,8 +99,7 @@ public class QuestJournalScreen extends Screen {
                     QuestConfig.trackedQuestId = "none";
                     QuestConfig.saveSettings();
                 }
-                Minecraft.getInstance().getToasts().addToast(
-                        new QuestToast("Misión Abandonada", selectedQuest.title, ItemStack.EMPTY, 0xFF5555));
+                QuestTitleBannerOverlay.showBanner("MISIÓN ABANDONADA", selectedQuest.title, ItemStack.EMPTY, 0xFFFF5555, "");
                 selectedQuest = null;
                 refreshQuestLists();
                 autoSelectQuest();

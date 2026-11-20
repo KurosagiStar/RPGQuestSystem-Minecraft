@@ -28,8 +28,9 @@ public class QuestToast implements Toast {
 
     @Override
     public Visibility render(GuiGraphics graphics, ToastComponent toastComponent, long timeSinceLastVisible) {
-        // Textura oficial nativa de logros / avances (160x32)
-        graphics.blit(TEXTURE, 0, 0, 0, 0, this.width(), this.height());
+        // Tarjeta estilo Darkomizer con borde negro y acento lateral
+        UiStyle.drawRoundedCard(graphics, 0, 0, this.width(), this.height(), 3, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, false);
+        graphics.fill(2, 3, 4, this.height() - 3, 0xFF000000 | (this.headerColor & 0x00FFFFFF));
 
         Font font = toastComponent.getMinecraft().font;
 
