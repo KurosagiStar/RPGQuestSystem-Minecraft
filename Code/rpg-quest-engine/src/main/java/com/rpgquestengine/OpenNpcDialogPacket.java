@@ -1,6 +1,5 @@
 package com.rpgquestengine;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
@@ -111,9 +110,7 @@ public class OpenNpcDialogPacket {
     }
 
     public static void handle(OpenNpcDialogPacket msg, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            Minecraft.getInstance().setScreen(new NpcDialogScreen(msg));
-        }));
+        ctx.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.openNpcDialog(msg)));
         ctx.get().setPacketHandled(true);
     }
 }

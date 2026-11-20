@@ -1,6 +1,5 @@
 package com.rpgquestengine;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
@@ -16,9 +15,8 @@ public class OpenAdminUiPacket {
     }
 
     public static void handle(OpenAdminUiPacket msg, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            Minecraft.getInstance().setScreen(new AdminNpcManagerScreen());
-        }));
+        ctx.get().enqueueWork(() -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientPacketHandler::openAdminUi));
         ctx.get().setPacketHandled(true);
     }
 }
+

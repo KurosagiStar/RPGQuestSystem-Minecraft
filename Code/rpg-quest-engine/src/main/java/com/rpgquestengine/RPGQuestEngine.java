@@ -1,6 +1,5 @@
 package com.rpgquestengine;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -58,17 +57,10 @@ public class RPGQuestEngine {
         INSTANCE = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::clientSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-            modEventBus.addListener(KeyBindings::registerKeys);
-            modEventBus.addListener(RPGQuestEngine::addBuiltInPacks);
-            MinecraftForge.EVENT_BUS.register(new QuestHudOverlay());
-            MinecraftForge.EVENT_BUS.register(new QuestTitleBannerOverlay());
-            MinecraftForge.EVENT_BUS.register(new ClientKeyEvents());
-        });
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> ClientPacketHandler.initClient(modEventBus));
 
         LOGGER.info("[RPGQuestEngine] Universal MMORPG Quest Engine Initialized");
     }
@@ -80,14 +72,7 @@ public class RPGQuestEngine {
         });
     }
 
-    private void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            QuestConfig.loadConfig();
-            ensureXaeroEasyNpcCategory();
-        });
-    }
-
-    private static void addBuiltInPacks(net.minecraftforge.event.AddPackFindersEvent event) {
+    public static void addBuiltInPacks(net.minecraftforge.event.AddPackFindersEvent event) {
         if (event.getPackType() != net.minecraft.server.packs.PackType.CLIENT_RESOURCES) return;
         java.nio.file.Path resourcePath = net.minecraftforge.fml.ModList.get()
                 .getModFileById(MODID).getFile().findResource("resourcepacks/quest_radar_icons");
@@ -105,7 +90,7 @@ public class RPGQuestEngine {
         }
     }
 
-    private static void ensureXaeroEasyNpcCategory() {
+    public static void ensureXaeroEasyNpcCategory() {
         try {
             java.nio.file.Path cfgPath = java.nio.file.Paths.get("config", "xaero", "minimap", "default_radar_categories_client.json");
             if (!java.nio.file.Files.exists(cfgPath)) return;
@@ -892,40 +877,6 @@ public class RPGQuestEngine {
             }
         }
         return count;
-    }
-
-    public static class ClientKeyEvents {
-        @SubscribeEvent
-        public void onKeyInput(InputEvent.Key event) {
-            if (KeyBindings.OPEN_JOURNAL_KEY.consumeClick()) {
-                Minecraft mc = Minecraft.getInstance();
-                if (mc.screen == null) {
-                    QuestConfig.loadConfig();
-                    mc.setScreen(new QuestJournalScreen());
-                }
-            }
-
-            if (KeyBindings.OPEN_PARTY_KEY.consumeClick()) {
-                Minecraft mc = Minecraft.getInstance();
-                if (mc.screen == null) {
-                    mc.setScreen(new PartyScreen());
-                }
-            }
-
-            if (KeyBindings.TRACK_PROMPT_KEY.consumeClick()) {
-                if (QuestTitleBannerOverlay.hasActivePrompt()) {
-                    String qId = QuestTitleBannerOverlay.getActivePromptQuestId();
-                    QuestConfig.trackedQuestId = qId;
-                    QuestConfig.saveSettings();
-                    QuestTitleBannerOverlay.clearPrompt();
-                    ClientQuestData.playClientSound(1);
-                    Minecraft mc = Minecraft.getInstance();
-                    if (mc.player != null) {
-                        mc.player.displayClientMessage(Component.literal("§a[RPGQuestEngine] Siguiendo misión actual."), true);
-                    }
-                }
-            }
-        }
     }
 
     public static void syncPlayerAfterDialog(ServerPlayer sp) {
