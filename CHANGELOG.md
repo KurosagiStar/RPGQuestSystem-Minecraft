@@ -5,6 +5,7 @@
   - Nueva clase `UiStyle` para unificar la interfaz 2D de `NpcDialogScreen`, `PartyScreen` y `QuestJournalScreen`: paneles gris carbón (`#2B2B2E`) con outline negro (`#0B0B0D`), bisel 3D elevado en ventanas y cajas hundidas (`#1C1C1F`) en sub-paneles y slots.
   - Nuevo widget `UiStyle.OreButton` que reemplaza todos los botones y pestañas vanilla (`Button.builder`) con diseño táctil 3D estilo Minecraft Bedrock Ore UI (labio inferior oscuro, bisel superior, acento verde esmeralda y barra blanca inferior en pestaña activa), evitando que resourcepacks externos sobrescriban la UI.
   - Corregida la pestaña `Misiones Diarias` y `Desafíos` para alinear cabeceras, nodos de hitos (`100–400`) y mini-slots con la nueva paleta oscura.
+  - Extendido el diseño Darkomizer al HUD flotante (`QuestHudOverlay`), avisos centrados (`QuestTitleBannerOverlay`) y toasts (`QuestToast`), reemplazando el toast de `Abandonar` por banner unificado.
   - Documentado el estándar completo en `UI_STYLE_GUIDE.md`.
 - **Balance de Desafío Wither (`ChallengeManager`, `QuestJournalScreen`):**
   - Mejorada la recompensa de `El Wither` a **15x Moneda de Campeón (`cisco_mod:champion_coin`)**, **3x Godforged Pearl (`apotheosis:mythic_material`)**, **7x Epic Material (`apotheosis:epic_material`)**, **1x Sigil of Socketing**, **1x Gema Épica** y **15 Niveles**.

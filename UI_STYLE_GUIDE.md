@@ -95,8 +95,11 @@ UiStyle.drawProgressBar(g, x, y, w, 6, ratio, 0xFF2B2E38, UiStyle.ACCENT_GREEN);
 
 ---
 
-## 5. Pantallas Actualizadas
+## 5. Pantallas y Overlays Actualizados
 - [UiStyle.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/UiStyle.java)
 - [NpcDialogScreen.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/NpcDialogScreen.java)
 - [PartyScreen.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/PartyScreen.java)
 - [QuestJournalScreen.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/QuestJournalScreen.java)
+- [QuestHudOverlay.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/QuestHudOverlay.java)
+- [QuestTitleBannerOverlay.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/QuestTitleBannerOverlay.java)
+- [QuestToast.java](Code/rpg-quest-engine/src/main/java/com/rpgquestengine/QuestToast.java)
