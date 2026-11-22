@@ -192,7 +192,8 @@ public class GearRoadmapScreen extends Screen {
                     ItemStack stack = resolveStack(entry.itemId());
                     g.renderItem(stack, cardX + 6, y + 12);
 
-                    String nameTrim = this.font.plainSubstrByWidth(entry.name(), cardW - 30);
+                    String displayName = resolveDisplayName(stack, entry);
+                    String nameTrim = this.font.plainSubstrByWidth(displayName, cardW - 30);
                     String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 30);
                     g.drawString(this.font, "§f" + nameTrim, cardX + 26, y + 12, 0xFFFFFF);
                     g.drawString(this.font, "§7" + srcTrim, cardX + 26, y + 24, 0xAAAAAA);
@@ -211,14 +212,24 @@ public class GearRoadmapScreen extends Screen {
         super.render(g, mouseX, mouseY, partialTick);
 
         if (hoveredEntry != null && hoveredTier != null) {
+            ItemStack hStack = resolveStack(hoveredEntry.itemId());
+            String hName = resolveDisplayName(hStack, hoveredEntry);
             List<Component> tip = List.of(
-                    Component.literal("§l" + hoveredEntry.name()),
+                    Component.literal("§l" + hName),
                     Component.literal("§7Tier: §f" + hoveredTier.title()),
                     Component.literal("§eOrigen: §f" + hoveredEntry.source()),
                     Component.literal("§aRecomendación: §7" + hoveredEntry.tip())
             );
             g.renderComponentTooltip(this.font, tip, mouseX, mouseY);
         }
+    }
+
+    private static String resolveDisplayName(ItemStack stack, GearEntry entry) {
+        if ("apotheosis:mythic_material".equals(entry.itemId()) || "apotheosis:sigil_of_socketing".equals(entry.itemId())) {
+            return entry.name();
+        }
+        String raw = stack.getHoverName().getString().replaceAll("§.", "").trim();
+        return raw.isEmpty() ? entry.name() : raw;
     }
 
     private static ItemStack resolveStack(String id) {
