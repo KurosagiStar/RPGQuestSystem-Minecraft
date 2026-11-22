@@ -356,19 +356,14 @@ public class QuestHudOverlay {
 
     private void renderZenlessQuickBar(GuiGraphics g, Minecraft mc) {
         Font font = mc.font;
-        String[] keys = { "F1", "J", "G", "O" };
-        String[] labels = { "Roadmap", "Misiones", "Grupo", "Árbol" };
+        String plain = "[F1] Roadmap";
+        String styled = "§e[F1] §fRoadmap";
 
-        float scale = 0.78f;
-        int padX = 5;
-        int gap = 4;
-        int innerW = 0;
-        for (int i = 0; i < keys.length; i++) {
-            innerW += font.width("[" + keys[i] + "] " + labels[i]) + padX * 2;
-            if (i < keys.length - 1) innerW += gap;
-        }
-        int barH = 14;
-        int scaledW = Math.round(innerW * scale);
+        float scale = 0.80f;
+        int padX = 6;
+        int boxW = font.width(plain) + padX * 2;
+        int boxH = 14;
+        int scaledW = Math.round(boxW * scale);
         int screenW = mc.getWindow().getGuiScaledWidth();
         int startX = screenW - scaledW - 8;
         int startY = 6;
@@ -377,15 +372,8 @@ public class QuestHudOverlay {
         g.pose().translate(startX, startY, 0);
         g.pose().scale(scale, scale, 1.0f);
 
-        UiStyle.drawRoundedCard(g, -3, -2, innerW + 6, barH + 4, 2, 0xCC222225, UiStyle.BORDER_PANEL, false);
-        int cx = 0;
-        for (int i = 0; i < keys.length; i++) {
-            String txt = "§e[" + keys[i] + "] §f" + labels[i];
-            int itemW = font.width("[" + keys[i] + "] " + labels[i]) + padX * 2;
-            UiStyle.drawRoundedCard(g, cx, 0, itemW, barH, 1, 0xDD1C1C1F, 0, false);
-            g.drawString(font, txt, cx + padX, 3, 0xFFFFFF, false);
-            cx += itemW + gap;
-        }
+        UiStyle.drawRoundedCard(g, 0, 0, boxW, boxH, 2, 0xCC222225, UiStyle.BORDER_PANEL, false);
+        g.drawString(font, styled, padX, 3, 0xFFFFFF, false);
 
         g.pose().popPose();
     }
