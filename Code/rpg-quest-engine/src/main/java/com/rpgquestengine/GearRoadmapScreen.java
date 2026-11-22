@@ -104,16 +104,18 @@ public class GearRoadmapScreen extends Screen {
                             "Espada ígnea pesada con gran habilidad en área."),
                     new GearEntry("cataclysm:soul_render", "Soul Render", "Maledictus (Cataclysm)",
                             "Alabarda de altísimo DPS contra jefes y grupos."),
+                    new GearEntry("cisco_mod:nightfall", "Nightfall", "Equilibrium + Dark Core",
+                            "Rama corrupta de Equilibrium con daño verdadero/Fell; paso previo a Supreme Nightfall."),
                     new GearEntry("cisco_mod:hellbrand", "Hellbrand (Cuidado)", "Endgame Cisco",
                             "Daño bruto enorme, pero OJO: jefes con Reflect pueden matarte de 1 golpe.")
             )),
             new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
                     new GearEntry("cisco_mod:frostfang", "Frostfang (META)", "Endgame Cisco",
                             "Top #1 Reddit: hace daño por % de HP (derrite a Fell King) y limita daño recibido a ~2.5 corazones."),
+                    new GearEntry("cisco_mod:supreme_nightfall", "Supreme Nightfall", "Descended Cisco",
+                            "Versión definitiva de Nightfall: daño por %HP/Fell y modo Aegis aliado (ojo al friendly-fire)."),
                     new GearEntry("cataclysm:gauntlet_of_maelstrom", "Guantelete Maelstrom", "Scylla (Cataclysm)",
-                            "Excelente control de masas y daño explosivo secundario."),
-                    new GearEntry("apotheosis:mythic_material", "Reforja Mítica", "Desafío Wither / Jefes",
-                            "Reforja tu arma Tier A/S a Mítica y añade zócalos + gemas en la pestaña Fortalecimiento.", true)
+                            "Excelente control de masas y daño explosivo secundario.")
             ))
     );
 
