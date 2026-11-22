@@ -306,7 +306,8 @@ public class GearRoadmapScreen extends Screen {
                         ItemStack stack = resolveStack(entry, activeTab);
                         if (activeTab == 0 && entry.itemId().endsWith("_chestplate")) {
                             List<ItemStack> setStacks = resolveArmorSet(entry.itemId());
-                            String nameTrim = this.font.plainSubstrByWidth(entry.name(), cardW - 12);
+                            String setName = resolveArmorSetName(stack, entry);
+                            String nameTrim = this.font.plainSubstrByWidth(setName, cardW - 12);
                             String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 12);
                             g.drawString(this.font, "§f" + nameTrim, cardX + 6, y + 8, 0xFFFFFF);
                             g.drawString(this.font, "§7" + srcTrim, cardX + 6, y + 18, 0xAAAAAA);
@@ -355,7 +356,7 @@ public class GearRoadmapScreen extends Screen {
         if (hoveredEntry != null && hoveredTier != null) {
             ItemStack hStack = resolveStack(hoveredEntry, activeTab);
             String hName = (activeTab == 0 && hoveredEntry.itemId().endsWith("_chestplate"))
-                    ? hoveredEntry.name()
+                    ? "Set " + resolveArmorSetName(hStack, hoveredEntry)
                     : resolveDisplayName(hStack, hoveredEntry);
             List<Component> tip = List.of(
                     Component.literal("§l" + hName),
@@ -365,6 +366,29 @@ public class GearRoadmapScreen extends Screen {
             );
             g.renderComponentTooltip(this.font, tip, mouseX, mouseY);
         }
+    }
+
+    private static String resolveArmorSetName(ItemStack stack, GearEntry entry) {
+        String raw = resolveDisplayName(stack, entry);
+        String[] prefixes = {
+                "Pechera de ", "Pectoral de ", "Peto del ", "Peto de ", "Peto ",
+                "Túnicas de ", "Túnica de ", "Coraza de "
+        };
+        for (String p : prefixes) {
+            if (raw.regionMatches(true, 0, p, 0, p.length())) {
+                raw = raw.substring(p.length()).trim();
+                break;
+            }
+        }
+        String[] suffixes = { " Chestplate", " Robes" };
+        for (String s : suffixes) {
+            if (raw.length() > s.length() && raw.regionMatches(true, raw.length() - s.length(), s, 0, s.length())) {
+                raw = raw.substring(0, raw.length() - s.length()).trim();
+                break;
+            }
+        }
+        if (raw.isEmpty()) return entry.name();
+        return Character.toUpperCase(raw.charAt(0)) + raw.substring(1);
     }
 
     private static List<ItemStack> resolveArmorSet(String chestplateId) {
