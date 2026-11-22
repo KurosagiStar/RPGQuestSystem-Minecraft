@@ -14,6 +14,7 @@ import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
@@ -31,6 +32,19 @@ public class QuestEventListener {
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
         ensureCarryOnBlacklist();
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onEntityInteractPre(PlayerInteractEvent.EntityInteract event) {
+        ensureCarryOnBlacklist();
+        if (event.getTarget() instanceof LivingEntity living && event.getEntity() != null) {
+            ResourceLocation typeId = ForgeRegistries.ENTITY_TYPES.getKey(living.getType());
+            boolean isEasyNpc = typeId != null && "easy_npc".equals(typeId.getNamespace());
+            boolean hasNpcTag = living.getTags().stream().anyMatch(t -> t.startsWith("npc_"));
+            if ((isEasyNpc || hasNpcTag) && event.getEntity().isShiftKeyDown() && !event.getEntity().isCreative()) {
+                event.setCanceled(true);
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
