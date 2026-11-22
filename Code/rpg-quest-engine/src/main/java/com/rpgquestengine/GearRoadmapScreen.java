@@ -2,6 +2,7 @@ package com.rpgquestengine;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.nbt.TagParser;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -12,11 +13,18 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.List;
 
 public class GearRoadmapScreen extends Screen {
-    private int activeTab = 0; // 0 = Armaduras, 1 = Armas
+    private int activeTab = 0; // 0 = Armaduras, 1 = Armas, 2 = Fortalecimiento
     private int scrollOffset = 0;
     private int maxScroll = 0;
 
-    private record GearEntry(String itemId, String name, String source, String tip) {}
+    private record GearEntry(String itemId, String nbt, String name, String source, String tip, boolean keepTitle) {
+        GearEntry(String itemId, String name, String source, String tip) {
+            this(itemId, "", name, source, tip, false);
+        }
+        GearEntry(String itemId, String name, String source, String tip, boolean keepTitle) {
+            this(itemId, "", name, source, tip, keepTitle);
+        }
+    }
     private record TierRow(String badge, String title, int color, List<GearEntry> entries) {}
 
     private static final List<TierRow> ARMOR_TIERS = List.of(
@@ -102,10 +110,53 @@ public class GearRoadmapScreen extends Screen {
             new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
                     new GearEntry("cisco_mod:frostfang", "Frostfang (META)", "Endgame Cisco",
                             "Top #1 Reddit: hace daño por % de HP (derrite a Fell King) y limita daño recibido a ~2.5 corazones."),
-                    new GearEntry("apotheosis:mythic_material", "Reforja Godforged", "Desafío Wither / Jefes",
-                            "Reforja tu equipo a Mítico y busca afijos de Vida Máx % y Reducción de daño."),
-                    new GearEntry("apotheosis:sigil_of_socketing", "Gemas + Librería", "Wither / Apotheosis",
-                            "En Dragonfyre la supervivencia depende de Gemas Perfectas, Vida Máx % y Library of Alexandria.")
+                    new GearEntry("cataclysm:gauntlet_of_maelstrom", "Guantelete Maelstrom", "Scylla (Cataclysm)",
+                            "Excelente control de masas y daño explosivo secundario."),
+                    new GearEntry("apotheosis:mythic_material", "Reforja Mítica", "Desafío Wither / Jefes",
+                            "Reforja tu arma Tier A/S a Mítica y añade zócalos + gemas en la pestaña Fortalecimiento.", true)
+            ))
+    );
+
+    private static final List<TierRow> UPGRADE_TIERS = List.of(
+            new TierRow("1", "ZÓCALOS (SLOTS)", 0xFF38BDF8, List.of(
+                    new GearEntry("apotheosis:sigil_of_socketing", "Sigil of Socketing", "Desafío Wither / Craft",
+                            "Úsalo en Mesa de Herrería junto a tu arma/armadura para añadir +1 zócalo vacío (hasta 3-4)."),
+                    new GearEntry("apotheosis:sigil_of_withdrawal", "Sigil of Withdrawal", "Apotheosis",
+                            "Extrae todas las gemas de una pieza en Mesa de Herrería sin romper el objeto ni perder las gemas."),
+                    new GearEntry("apotheosis:gem_dust", "Gem Dust (Polvo)", "Triturar gemas",
+                            "Aplasta gemas repetidas con un yunque que cae encima para obtener Gem Dust para reforjar.")
+            )),
+            new TierRow("2", "REFORGAMIENTO", 0xFFA855F7, List.of(
+                    new GearEntry("apotheosis:simple_reforging_table", "Mesa Reforja Simple", "Early / Mid Game",
+                            "Reforja hasta rareza Épica usando Epic Material + Gem Dust. Ideal para Darksteel/Brightsteel."),
+                    new GearEntry("apotheosis:reforging_table", "Mesa Reforja Avanzada", "Late / Endgame",
+                            "Desbloquea rareza Mítica (Naranja) usando Godforged Pearl. Busca Vida Máx % y Reducción de daño."),
+                    new GearEntry("apotheosis:mythic_material", "Godforged Pearl", "Wither / Jefes / Desafíos",
+                            "Material clave para reforjar a Mítico; también se obtiene desarmando equipo Mítico en Salvaging Table.")
+            )),
+            new TierRow("S", "GEMAS META (TOP)", 0xFFEF4444, List.of(
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:ancient\"},gem:\"apotheosis:the_end/endersurge\"}",
+                            "Endersurge (Tier S)", "The End / Jefes",
+                            "Aumenta niveles de TODOS los encantamientos de esa pieza. Obligatoria en casco y pechera.", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:overworld/royalty\"}",
+                            "Royal Family (Tier S)", "Overworld / Jefes",
+                            "Sube TODOS los stats en porcentaje (Vida Máx, Daño, Armadura y Suerte).", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/combatant\"}",
+                            "Combatant (Tier S)", "Global / Jefes",
+                            "Daño cuerpo a cuerpo o Reducción de daño físico según la pieza equipada.", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/warlord\"}",
+                            "Warlord (Tier S)", "Global / Misiones",
+                            "Aumenta Daño Crítico y Daño base; la mejor gema ofensiva pura para armas.", true)
+            )),
+            new TierRow("A", "GEMAS + LIBRERÍA", 0xFFF59E0B, List.of(
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/tyrannical\"}",
+                            "Tyrannical (Tier A)", "Global",
+                            "Gran bono de Vida Máx % y Armadura; fundamental para aguantar golpes en Dragonfyre.", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:the_nether/blood_lord\"}",
+                            "Blood Lord (Tier A)", "The Nether",
+                            "Robo de vida (Lifesteal) + daño; muy útil en armas rápidas.", true),
+                    new GearEntry("apotheosis:ender_library", "Library of Alexandria", "Apotheosis (The End)",
+                            "Guarda miles de encantamientos en libros y extrae Protección/Filo máximo sin perder niveles.")
             ))
     );
 
@@ -120,17 +171,23 @@ public class GearRoadmapScreen extends Screen {
 
         int boxX = 24;
         int boxY = 32;
-        this.addRenderableWidget(new UiStyle.OreButton(boxX + 12, boxY + 28, 100, 18,
+        this.addRenderableWidget(new UiStyle.OreButton(boxX + 12, boxY + 28, 92, 18,
                 Component.literal("§fArmaduras"), b -> {
             activeTab = 0;
             scrollOffset = 0;
         }, UiStyle.ACCENT_SLATE, 0xFF47474D, () -> activeTab == 0));
 
-        this.addRenderableWidget(new UiStyle.OreButton(boxX + 118, boxY + 28, 100, 18,
+        this.addRenderableWidget(new UiStyle.OreButton(boxX + 110, boxY + 28, 84, 18,
                 Component.literal("§fArmas"), b -> {
             activeTab = 1;
             scrollOffset = 0;
         }, UiStyle.ACCENT_SLATE, 0xFF47474D, () -> activeTab == 1));
+
+        this.addRenderableWidget(new UiStyle.OreButton(boxX + 200, boxY + 28, 120, 18,
+                Component.literal("§fFortalecimiento"), b -> {
+            activeTab = 2;
+            scrollOffset = 0;
+        }, UiStyle.ACCENT_SLATE, 0xFF47474D, () -> activeTab == 2));
 
         this.addRenderableWidget(new UiStyle.OreButton(this.width - 106, this.height - 28, 90, 20,
                 Component.literal("§fCerrar"), b -> this.onClose(),
@@ -148,16 +205,20 @@ public class GearRoadmapScreen extends Screen {
 
         UiStyle.drawRoundedCard(g, boxX - 1, boxY - 1, boxW + 2, boxH + 2, 4, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
         UiStyle.drawRoundedRect(g, boxX + 2, boxY + 2, boxW - 4, 22, 0, UiStyle.BG_HEADER);
-        g.drawString(this.font, "§6§lROADMAP DE PROGRESIÓN §7— Meta Dragonfyre (Armaduras y Armas)", boxX + 12, boxY + 9, 0xFFD4AF37);
+        g.drawString(this.font, "§6§lROADMAP DE PROGRESIÓN §7— Meta Dragonfyre (Armaduras, Armas y Fortalecimiento)", boxX + 12, boxY + 9, 0xFFD4AF37);
 
-        String metaTip = "§eTip Meta: §7En Late Game prioriza §fVida Máx %§7, §fGemas§7 y §fDaño %HP §7sobre armadura plana.";
-        g.drawString(this.font, metaTip, boxX + 228, boxY + 33, 0xCCCCCC);
+        String metaTip = activeTab == 2
+                ? "§eOrden ideal: §fReforjar Mítico → Añadir Zócalos → Insertar Gemas → Encantar"
+                : "§eTip Meta: §7Prioriza §fVida Máx %§7, §fGemas§7 y §fDaño %HP §7sobre armadura plana.";
+        if (boxW > 520) {
+            g.drawString(this.font, metaTip, boxX + 330, boxY + 33, 0xCCCCCC);
+        }
 
         int listTop = boxY + 52;
         int listBottom = boxY + boxH - 8;
         int listH = listBottom - listTop;
 
-        List<TierRow> rows = (activeTab == 0) ? ARMOR_TIERS : WEAPON_TIERS;
+        List<TierRow> rows = (activeTab == 0) ? ARMOR_TIERS : (activeTab == 1 ? WEAPON_TIERS : UPGRADE_TIERS);
         int rowH = 56;
         int gap = 6;
         int totalContentH = rows.size() * (rowH + gap);
@@ -174,9 +235,10 @@ public class GearRoadmapScreen extends Screen {
             if (y + rowH >= listTop && y <= listBottom) {
                 UiStyle.drawRoundedCard(g, boxX + 10, y, boxW - 20, rowH, 2, UiStyle.BG_PANEL, 0, false);
 
-                int tierW = 92;
+                int tierW = 96;
                 UiStyle.drawRoundedCard(g, boxX + 14, y + 6, tierW, rowH - 12, 2, UiStyle.BG_CARD, row.color(), false);
-                g.drawCenteredString(this.font, "§lTIER " + row.badge(), boxX + 14 + tierW / 2, y + 14, row.color());
+                String badgePrefix = (activeTab == 2 && (row.badge().equals("1") || row.badge().equals("2"))) ? "PASO " : "TIER ";
+                g.drawCenteredString(this.font, "§l" + badgePrefix + row.badge(), boxX + 14 + tierW / 2, y + 14, row.color());
                 String shortLbl = row.title().contains("(") ? row.title().substring(0, row.title().indexOf('(')).trim() : row.title();
                 g.drawCenteredString(this.font, "§7" + shortLbl, boxX + 14 + tierW / 2, y + 28, 0xCCCCCC);
 
@@ -193,7 +255,7 @@ public class GearRoadmapScreen extends Screen {
                     UiStyle.drawRoundedCard(g, cardX, y + 5, cardW, rowH - 10, 2,
                             hov ? 0xFF2B2B30 : UiStyle.BG_CARD, hov ? row.color() : 0, false);
 
-                    ItemStack stack = resolveStack(entry.itemId());
+                    ItemStack stack = resolveStack(entry, activeTab);
                     g.renderItem(stack, cardX + 6, y + 12);
 
                     String displayName = resolveDisplayName(stack, entry);
@@ -216,12 +278,12 @@ public class GearRoadmapScreen extends Screen {
         super.render(g, mouseX, mouseY, partialTick);
 
         if (hoveredEntry != null && hoveredTier != null) {
-            ItemStack hStack = resolveStack(hoveredEntry.itemId());
+            ItemStack hStack = resolveStack(hoveredEntry, activeTab);
             String hName = resolveDisplayName(hStack, hoveredEntry);
             List<Component> tip = List.of(
                     Component.literal("§l" + hName),
-                    Component.literal("§7Tier: §f" + hoveredTier.title()),
-                    Component.literal("§eOrigen: §f" + hoveredEntry.source()),
+                    Component.literal("§7Sección: §f" + hoveredTier.title()),
+                    Component.literal("§eOrigen / Uso: §f" + hoveredEntry.source()),
                     Component.literal("§aRecomendación: §7" + hoveredEntry.tip())
             );
             g.renderComponentTooltip(this.font, tip, mouseX, mouseY);
@@ -229,16 +291,25 @@ public class GearRoadmapScreen extends Screen {
     }
 
     private static String resolveDisplayName(ItemStack stack, GearEntry entry) {
-        if ("apotheosis:mythic_material".equals(entry.itemId()) || "apotheosis:sigil_of_socketing".equals(entry.itemId())) {
+        if (entry.keepTitle()) {
             return entry.name();
         }
         String raw = stack.getHoverName().getString().replaceAll("§.", "").trim();
         return raw.isEmpty() ? entry.name() : raw;
     }
 
-    private static ItemStack resolveStack(String id) {
-        Item it = ForgeRegistries.ITEMS.getValue(new ResourceLocation(id));
-        return (it != null && it != Items.AIR) ? new ItemStack(it) : new ItemStack(Items.NETHERITE_CHESTPLATE);
+    private static ItemStack resolveStack(GearEntry entry, int tab) {
+        Item it = ForgeRegistries.ITEMS.getValue(new ResourceLocation(entry.itemId()));
+        if (it == null || it == Items.AIR) {
+            it = (tab == 1) ? Items.NETHERITE_SWORD : (tab == 2 ? Items.EMERALD : Items.NETHERITE_CHESTPLATE);
+        }
+        ItemStack st = new ItemStack(it);
+        if (entry.nbt() != null && !entry.nbt().isEmpty()) {
+            try {
+                st.setTag(TagParser.parseTag(entry.nbt()));
+            } catch (Exception ignored) {}
+        }
+        return st;
     }
 
     @Override
