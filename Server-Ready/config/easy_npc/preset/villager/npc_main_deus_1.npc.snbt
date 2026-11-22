@@ -6,7 +6,7 @@
     description: "Capitán de la Guardia - Sistema Autónomo",
     entityTypeId: "easy_npc:villager",
     modified: 1794353213551L,
-    name: "Capitan de la Guardia",
+    name: "Verdugo de Dioses I",
     variantType: "PLAINS_ARMORER",
     version: "1.0.0"
   },
@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitan de la Guardia"}',
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Verdugo de Dioses I"}',
     UUID: [I; 2102047587, -262598241, -1833169859, -2133727438],
     Tags: ["npc_main_deus_1"],
     DialogData: {

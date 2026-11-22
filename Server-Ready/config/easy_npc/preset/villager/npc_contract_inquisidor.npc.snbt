@@ -6,7 +6,7 @@
     description: "Capitán de la Guardia - Sistema Autónomo",
     entityTypeId: "easy_npc:villager",
     modified: 1794353213551L,
-    name: "Capitan de la Guardia",
+    name: "Inquisidor",
     variantType: "PLAINS_ARMORER",
     version: "1.0.0"
   },
@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitan de la Guardia"}',
+    CustomName: '{"color":"#FFAA00","bold":true,"text":"Inquisidor"}',
     UUID: [I; 1644777920, -235134675, 959421125, 529040384],
     Tags: ["npc_contract_inquisidor"],
     DialogData: {
