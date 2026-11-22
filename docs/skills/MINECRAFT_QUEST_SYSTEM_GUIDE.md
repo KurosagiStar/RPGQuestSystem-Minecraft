@@ -9,7 +9,9 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 > **REGLAS CRÍTICAS PARA CUALQUIER AGENTE:**
 > 1. **UI de Diálogo Propia (`NpcDialogScreen`):** Easy NPC 7.18.0 **ignora** `Conditions` en botones/diálogos y rompe su UI con >4 botones. Por eso `RPGQuestEngine.onPlayerEntityInteract` intercepta el clic derecho normal (sin Shift) sobre cualquier entidad con tag `npc_*` y abre `NpcDialogScreen` directamente. `Shift + clic derecho` deja pasar la interacción nativa de Easy NPC para edición admin.
 > 2. **No escribir árboles de diálogo complejos en `.npc.snbt`:** Easy NPC solo provee entidad, modelo/skin y posición. Toda la lógica de misiones, prerrequisitos, lore, objetivos y recompensas vive en `rpg_quests.json` + Java (`rpgquestengine`).
-> 3. **Despliegue obligatorio tras cada cambio:** Copiar `.jar`, `rpg_quests.json` y `.npc.snbt` tanto a `Minecraft-Ready/` como a `D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\` usando **`Copy-Item -LiteralPath`** en PowerShell (por los corchetes `[Dragonfyre]`), y hacer `git push origin main`.
+> 3. **Despliegue obligatorio tras cada cambio:** Compilar en `C:\Users\Kuromi\Desktop\cisco\Codigo\NPC-RPG-Quest-System\Code\rpg-quest-engine` y copiar `.jar` a `D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\`, `C:\Users\Kuromi\Desktop\cisco\Client\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\` y `C:\Users\Kuromi\Desktop\cisco\Server\mods\` usando **`Copy-Item -LiteralPath`** en PowerShell (por los corchetes `[Dragonfyre]`), y hacer `git push origin main`.
+> 4. **Regla de publicación remota:** Probar primero en local. Subir a **Hugging Face (`JudyStar/cisco-mod-sync` + `manifest.json`)** y al **servidor Godlike** solo cuando el usuario lo indique tras testear.
+> 5. **Protección Carry On (`QuestEventListener`):** `onEntityInteractPre` (`EventPriority.HIGHEST`) inyecta todos los `easy_npc:*` en `FORBIDDEN_ENTITIES` y `FORBIDDEN_STACKING` de Carry On y cancela `Shift + clic derecho` en supervivencia sobre `easy_npc` / `npc_*` (creativo conserva `Shift + clic derecho` para editar).
 
 ---
 
@@ -17,18 +19,21 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 
 ### A. Repositorio y Paquete
 - **GitHub:** `https://github.com/KurosagiStar/RPGQuestSystem-Minecraft.git` (rama `main`)
-- **Código fuente:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\`
-- **Config y presets listos:** `C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\`
+- **Código fuente:** `C:\Users\Kuromi\Desktop\cisco\Codigo\NPC-RPG-Quest-System\Code\rpg-quest-engine\`
+- **Traducciones (`ciscolanges-1.0.0.jar`):** `C:\Users\Kuromi\Desktop\cisco\Codigo\cisco-lang-es\` (mantener `Dreadsteel` sin traducir)
 - **ModID:** `rpgquestengine` (`com.rpgquestengine`)
 
 ### B. Clases Clave del Mod
 - `RPGQuestEngine.java`: Inicializador `@Mod`, scheduler cada 10 ticks, validación (`ITEM`, `KILL`, `DIMENSION`, `BIOME`, `STRUCTURE`, `SURVIVE`, `TAG`, `SCORE`), interceptación de clic derecho en NPCs (`onPlayerEntityInteract`), comandos (`/rpgquest reload`, `reset`, `talk`, `ui`, `sync_npcs`, `respawn_saved`, `spawn_npc`, `set_npc_pos`).
+- `UiStyle.java`: Estándar visual Darkomizer + Bedrock Ore UI (`OreButton`, paneles biselados, `addZenlessNavBar` con `[F1] Guía RPG`, `[J] Misiones`, `[G] Grupo`, `[O] Habilidades`).
+- `GearRoadmapScreen.java` (Tecla `F1`): **Guía RPG de Progresión** con 3 pestañas: *Armaduras* (tira de piezas del set + nombre localizado desde EMI/Minecraft), *Armas* (meta Dragonfyre) y *Fortalecimiento* (3 secciones con scrollbar: Pasos, Gemas activas filtradas y 6 Materiales Apotheosis).
 - `NpcDialogScreen.java` + `OpenNpcDialogPacket.java` + `NpcDialogActionPacket.java`: Pantalla RPG propia a la izquierda con rotación suave de cámara (`-18°`) para encuadrar al NPC a la derecha, botones dinámicos (`Aceptar Misión`, `Completar Misión`, `Cerrar`), lore completo, objetivo, separador y cuadritos con iconos reales de recompensas (`rewardXp`, `rewardXpLevels`, `rewardItems` con soporte `nbt`, `randomRewards` con tooltip de posibilidades, `choiceRewards` clicable). Al completar, sincroniza también `ftbquests change_progress <player> complete <ftbQuestId>` si existe `ftbQuestId`.
 - `DailyQuestManager.java` + `ChallengeManager.java`: Misiones diarias (4 tarjetas, hitos `100..400`, reinicio real a medianoche) y Desafío del Wither cada 6 horas reales, accesibles desde pestañas en `J`.
 - `PartyManager.java` + `PartyScreen.java` (Tecla `G`): Sistema de grupo propio con invitación 1-clic, `Abandonar Grupo` con popup de confirmación (`z+300`), sincronización automática de misiones `MAIN` y NPCs (al unirse, aceptar, entregar y reconectar), progreso compartido, cola persistente de recompensas sin reclamar (`Reclamar Todo`) y banner `<Jugador> COMPLETÓ UNA MISIÓN`.
 - `AdminNpcManagerScreen.java` + `AdminNpcActionPacket.java` + `OpenAdminUiPacket.java`: Gestor visual (`/rpgquest ui`) por campañas y NPCs, con `collectChain` hasta profundidad 250.
-- `QuestHudOverlay.java`: HUD flotante con progreso, brújula hacia zonas y nombre legible (`q.npc`) al regresar a entregar.
+- `QuestHudOverlay.java`: HUD flotante con progreso, brújula hacia zonas, nombre legible (`q.npc`) al regresar a entregar y pill compacto `[F1] Guía RPG` siempre visible en la esquina superior derecha.
 - `QuestJournalScreen.java`: Diario en tecla `J` con 3 pestañas (`Diario de Misiones` estilo Witcher 3 de 3 columnas + emblema dorado `9x9`, `Misiones Diarias`, `Desafíos`).
+- `QuestEventListener.java` + `data/carryon/tags/entity_types/entity_blacklist.json`: Eventos de progreso, voz NPC y bloqueo anti-Carry On para `easy_npc` / `npc_*`.
 - `ClientQuestData.java` + `QuestTitleBannerOverlay.java`: Banner animado `MISIÓN ACTUALIZADA` (prompt `V`) y banner de grupo `<Jugador> COMPLETÓ UNA MISIÓN` (prompt `G`).
 - `QuestEntityMarkerRenderer.java`: Marcadores 3D sobre entidades (`quest_available`, `quest_in_progress`, `quest_completed`, `quest_objective`) usando `RenderType.textSeeThrough` e `ICON_CACHE`.
 - `resourcepacks/quest_radar_icons/` + `AddPackFindersEvent` (`Pack.Position.TOP`) + `ensureXaeroEasyNpcCategory()`: Icono azul de exclamación (`quest_exclamation.png`) y categoría `"Easy NPCs"` (`icons: 2.0`) inyectados automáticamente desde el `.jar` para todos los jugadores sin tocar `options.txt` ni activar resource packs manuales.
@@ -36,12 +41,13 @@ description: Complete MMORPG Quest & NPC System for Minecraft 1.20.1 Forge using
 
 ### C. Flujo de Compilación y Despliegue (PowerShell)
 ```powershell
-cd C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine
-.\gradlew.bat build --no-daemon
+cd "C:\Users\Kuromi\Desktop\cisco\Codigo\NPC-RPG-Quest-System\Code\rpg-quest-engine"
+.\gradlew.bat build
 
-Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\build\libs\rpgquestengine-1.0.0.jar" -Destination "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\mods\rpgquestengine-1.0.0.jar" -Force
-Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Code\rpg-quest-engine\build\libs\rpgquestengine-1.0.0.jar" -Destination "D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\rpgquestengine-1.0.0.jar" -Force
-Copy-Item -LiteralPath "C:\Users\Kuromi\dev\NPC-RPG-Quest-System\Minecraft-Ready\config\rpg_quests.json" -Destination "D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\config\rpg_quests.json" -Force
+$jar = "C:\Users\Kuromi\Desktop\cisco\Codigo\NPC-RPG-Quest-System\Code\rpg-quest-engine\build\libs\rpgquestengine-1.0.0.jar"
+Copy-Item -LiteralPath $jar -Destination "D:\Games\Minecraft\Instances\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\rpgquestengine-1.0.0.jar" -Force
+Copy-Item -LiteralPath $jar -Destination "C:\Users\Kuromi\Desktop\cisco\Client\Cisco's Fantasy Medieval RPG [Dragonfyre]\mods\rpgquestengine-1.0.0.jar" -Force
+Copy-Item -LiteralPath $jar -Destination "C:\Users\Kuromi\Desktop\cisco\Server\mods\rpgquestengine-1.0.0.jar" -Force
 ```
 
 ### D. Preparar Instancia para Otros Jugadores
