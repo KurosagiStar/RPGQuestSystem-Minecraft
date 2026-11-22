@@ -118,7 +118,16 @@ public class GearRoadmapScreen extends Screen {
     );
 
     private static final List<TierRow> UPGRADE_TIERS = List.of(
-            new TierRow("1", "ZÓCALOS (SLOTS)", 0xFF38BDF8, List.of(
+            new TierRow("SEC", "1. PASOS DE FORTALECIMIENTO (ORDEN RECOMENDADO)", 0xFF38BDF8, List.of()),
+            new TierRow("1", "REFORGAMIENTO", 0xFFA855F7, List.of(
+                    new GearEntry("apotheosis:simple_reforging_table", "Mesa Reforja Simple", "Early / Mid Game",
+                            "Reforja hasta rareza Épica usando Epic Material + Gem Dust. Ideal para Darksteel/Brightsteel."),
+                    new GearEntry("apotheosis:reforging_table", "Mesa Reforja Avanzada", "Late / Endgame",
+                            "Desbloquea rareza Mítica (Naranja) usando Godforged Pearl. Busca Vida Máx % y Reducción de daño."),
+                    new GearEntry("apotheosis:salvaging_table", "Salvaging Table", "Reciclaje",
+                            "Desarma equipo Apotheosis sobrante para conseguir Materiales de Rareza sin desperdiciar botín.")
+            )),
+            new TierRow("2", "ZÓCALOS (SLOTS)", 0xFF38BDF8, List.of(
                     new GearEntry("apotheosis:sigil_of_socketing", "Sigil of Socketing", "Desafío Wither / Craft",
                             "Úsalo en Mesa de Herrería junto a tu arma/armadura para añadir +1 zócalo vacío (hasta 3-4)."),
                     new GearEntry("apotheosis:sigil_of_withdrawal", "Sigil of Withdrawal", "Apotheosis",
@@ -126,14 +135,11 @@ public class GearRoadmapScreen extends Screen {
                     new GearEntry("apotheosis:gem_dust", "Gem Dust (Polvo)", "Triturar gemas",
                             "Aplasta gemas repetidas con un yunque que cae encima para obtener Gem Dust para reforjar.")
             )),
-            new TierRow("2", "REFORGAMIENTO", 0xFFA855F7, List.of(
-                    new GearEntry("apotheosis:simple_reforging_table", "Mesa Reforja Simple", "Early / Mid Game",
-                            "Reforja hasta rareza Épica usando Epic Material + Gem Dust. Ideal para Darksteel/Brightsteel."),
-                    new GearEntry("apotheosis:reforging_table", "Mesa Reforja Avanzada", "Late / Endgame",
-                            "Desbloquea rareza Mítica (Naranja) usando Godforged Pearl. Busca Vida Máx % y Reducción de daño."),
-                    new GearEntry("apotheosis:mythic_material", "Godforged Pearl", "Wither / Jefes / Desafíos",
-                            "Material clave para reforjar a Mítico; también se obtiene desarmando equipo Mítico en Salvaging Table.")
+            new TierRow("3", "ENCANTAMIENTO", 0xFF60A5FA, List.of(
+                    new GearEntry("apotheosis:ender_library", "Library of Alexandria", "Apotheosis (The End)",
+                            "Guarda miles de encantamientos en libros y extrae Protección/Filo máximo sin perder niveles.")
             )),
+            new TierRow("SEC", "2. TIERLIST DE GEMAS APOTHEOSIS (ACTIVAS EN CISCO)", 0xFFEF4444, List.of()),
             new TierRow("S", "GEMAS META (TOP)", 0xFFEF4444, List.of(
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:ancient\"},gem:\"apotheosis:the_end/endersurge\"}",
                             "Endersurge (Tier S)", "The End / Jefes",
@@ -148,7 +154,7 @@ public class GearRoadmapScreen extends Screen {
                             "Brawler's (Tier S)", "Global",
                             "+8 Vida Máx en armadura, +25% Vida Máx en escudo y +35% Vel. Ataque en arma ligera.", true)
             )),
-            new TierRow("A", "GEMAS + LIBRERÍA", 0xFFF59E0B, List.of(
+            new TierRow("A", "GEMAS FUERTES", 0xFFF59E0B, List.of(
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:the_nether/blood_lord\"}",
                             "Blood Lord (Tier A)", "The Nether",
                             "Robo de vida (Lifesteal) + daño; muy útil en armas rápidas y contra jefes.", true),
@@ -157,11 +163,10 @@ public class GearRoadmapScreen extends Screen {
                             "+25% Prob. Crítica en arma pesada, +45% velocidad en armadura baja y +5% esquiva en escudo.", true),
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/guardian\"}",
                             "Guardian (Tier A)", "Global",
-                            "+6 Armadura en casco/peto, +30% Armadura en escudo y +6% Lifesteal en arma ligera.", true),
-                    new GearEntry("apotheosis:ender_library", "Library of Alexandria", "Apotheosis (The End)",
-                            "Guarda miles de encantamientos en libros y extrae Protección/Filo máximo sin perder niveles.")
+                            "+6 Armadura en casco/peto, +30% Armadura en escudo y +6% Lifesteal en arma ligera.", true)
             )),
-            new TierRow("M", "MATERIALES APOTHEOSIS", 0xFF10B981, List.of(
+            new TierRow("SEC", "3. MATERIALES DE RAREZA APOTHEOSIS", 0xFF10B981, List.of()),
+            new TierRow("MAT", "EARLY / MID", 0xFF10B981, List.of(
                     new GearEntry("apotheosis:common_material", "Común (Gris)", "Desarmar equipo común",
                             "Material base obtenido en Salvaging Table al reciclar equipo común."),
                     new GearEntry("apotheosis:uncommon_material", "Poco Común (Verde)", "Desarmar equipo verde",
@@ -169,7 +174,9 @@ public class GearRoadmapScreen extends Screen {
                     new GearEntry("apotheosis:rare_material", "Raro (Azul)", "Desarmar equipo azul",
                             "Necesario para reforjar afijos azules en Mesa de Reforja Simple."),
                     new GearEntry("apotheosis:epic_material", "Épico (Morado)", "Desarmar equipo morado",
-                            "Clave en Mid Game para reforzar armadura Darksteel/Brightsteel a Épico."),
+                            "Clave en Mid Game para reforzar armadura Darksteel/Brightsteel a Épico.")
+            )),
+            new TierRow("MAT", "LATE / ENDGAME", 0xFFF59E0B, List.of(
                     new GearEntry("apotheosis:mythic_material", "Mítico (Naranja)", "Desarmar Míticos / Wither",
                             "Godforged Pearl: material principal para reforjar equipo Endgame a Mítico."),
                     new GearEntry("apotheosis:ancient_material", "Ancestral (Arcoíris)", "Jefes / Endgame extremo",
@@ -237,8 +244,12 @@ public class GearRoadmapScreen extends Screen {
 
         List<TierRow> rows = (activeTab == 0) ? ARMOR_TIERS : (activeTab == 1 ? WEAPON_TIERS : UPGRADE_TIERS);
         int rowH = 56;
+        int secH = 22;
         int gap = 6;
-        int totalContentH = rows.size() * (rowH + gap);
+        int totalContentH = 0;
+        for (TierRow r : rows) {
+            totalContentH += (r.entries().isEmpty() ? secH : rowH) + gap;
+        }
         maxScroll = Math.max(0, totalContentH - listH);
         if (scrollOffset > maxScroll) scrollOffset = maxScroll;
 
@@ -249,13 +260,29 @@ public class GearRoadmapScreen extends Screen {
 
         int y = listTop - scrollOffset;
         for (TierRow row : rows) {
-            if (y + rowH >= listTop && y <= listBottom) {
+            boolean isSection = row.entries().isEmpty();
+            int curH = isSection ? secH : rowH;
+            if (y + curH >= listTop && y <= listBottom) {
+                if (isSection) {
+                    UiStyle.drawRoundedRect(g, boxX + 10, y + 2, boxW - 20, secH - 2, 2, UiStyle.BG_HEADER);
+                    g.fill(boxX + 10, y + 2, boxX + 14, y + secH, row.color());
+                    g.drawString(this.font, "§l" + row.title(), boxX + 20, y + 7, row.color());
+                    y += curH + gap;
+                    continue;
+                }
                 UiStyle.drawRoundedCard(g, boxX + 10, y, boxW - 20, rowH, 2, UiStyle.BG_PANEL, 0, false);
 
                 int tierW = 96;
                 UiStyle.drawRoundedCard(g, boxX + 14, y + 6, tierW, rowH - 12, 2, UiStyle.BG_CARD, row.color(), false);
-                String badgePrefix = (activeTab == 2 && (row.badge().equals("1") || row.badge().equals("2"))) ? "PASO " : "TIER ";
-                g.drawCenteredString(this.font, "§l" + badgePrefix + row.badge(), boxX + 14 + tierW / 2, y + 14, row.color());
+                String badgeText;
+                if (row.badge().equals("1") || row.badge().equals("2") || row.badge().equals("3")) {
+                    badgeText = "PASO " + row.badge();
+                } else if (row.badge().equals("MAT")) {
+                    badgeText = "MATERIALES";
+                } else {
+                    badgeText = "TIER " + row.badge();
+                }
+                g.drawCenteredString(this.font, "§l" + badgeText, boxX + 14 + tierW / 2, y + 14, row.color());
                 String shortLbl = row.title().contains("(") ? row.title().substring(0, row.title().indexOf('(')).trim() : row.title();
                 g.drawCenteredString(this.font, "§7" + shortLbl, boxX + 14 + tierW / 2, y + 28, 0xCCCCCC);
 
