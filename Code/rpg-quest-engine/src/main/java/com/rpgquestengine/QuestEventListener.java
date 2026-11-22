@@ -57,13 +57,20 @@ public class QuestEventListener {
             var fEnt = lh.getDeclaredField("FORBIDDEN_ENTITIES");
             fEnt.setAccessible(true);
             java.util.Set<String> forbidden = (java.util.Set<String>) fEnt.get(null);
-            if (forbidden != null) {
+
+            var fStack = lh.getDeclaredField("FORBIDDEN_STACKING");
+            fStack.setAccessible(true);
+            java.util.Set<String> forbiddenStack = (java.util.Set<String>) fStack.get(null);
+
+            if (forbidden != null || forbiddenStack != null) {
                 for (ResourceLocation key : ForgeRegistries.ENTITY_TYPES.getKeys()) {
                     if ("easy_npc".equals(key.getNamespace())) {
-                        forbidden.add(key.toString());
+                        String id = key.toString();
+                        if (forbidden != null) forbidden.add(id);
+                        if (forbiddenStack != null) forbiddenStack.add(id);
                     }
                 }
-                carryOnForbiddenEntities = forbidden;
+                if (forbidden != null) carryOnForbiddenEntities = forbidden;
             }
             var fTags = lh.getDeclaredField("FORBIDDEN_ENTITIES_TAGS");
             fTags.setAccessible(true);
