@@ -56,6 +56,14 @@ public class ClientPacketHandler {
                 }
             }
 
+            if (KeyBindings.OPEN_ROADMAP_KEY.consumeClick()) {
+                Minecraft mc = Minecraft.getInstance();
+                mc.options.hideGui = false;
+                if (mc.screen == null) {
+                    mc.setScreen(new GearRoadmapScreen());
+                }
+            }
+
             if (KeyBindings.TRACK_PROMPT_KEY.consumeClick()) {
                 if (QuestTitleBannerOverlay.hasActivePrompt()) {
                     String qId = QuestTitleBannerOverlay.getActivePromptQuestId();

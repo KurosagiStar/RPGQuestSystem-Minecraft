@@ -11,6 +11,7 @@ public class KeyBindings {
     public static final String KEY_OPEN_JOURNAL = "key.rpgquestengine.open_journal";
     public static final String KEY_TRACK_PROMPT = "key.rpgquestengine.track_prompt";
     public static final String KEY_OPEN_PARTY = "key.rpgquestengine.open_party";
+    public static final String KEY_OPEN_ROADMAP = "key.rpgquestengine.open_roadmap";
 
     public static KeyMapping OPEN_JOURNAL_KEY = new KeyMapping(
             KEY_OPEN_JOURNAL,
@@ -33,11 +34,19 @@ public class KeyBindings {
             KEY_CATEGORY_QUESTS
     );
 
+    public static KeyMapping OPEN_ROADMAP_KEY = new KeyMapping(
+            KEY_OPEN_ROADMAP,
+            InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_F1,
+            KEY_CATEGORY_QUESTS
+    );
+
     @SubscribeEvent
     public static void registerKeys(RegisterKeyMappingsEvent event) {
         event.register(OPEN_JOURNAL_KEY);
         event.register(TRACK_PROMPT_KEY);
         event.register(OPEN_PARTY_KEY);
+        event.register(OPEN_ROADMAP_KEY);
     }
 }
 

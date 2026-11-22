@@ -68,6 +68,16 @@ public class QuestJournalScreen extends Screen {
             updateActionButtons();
         }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 2));
 
+        this.addRenderableWidget(new UiStyle.OreButton(this.width - 204, 8, 98, 18,
+                Component.literal("§e[F1] §fRoadmap"), b -> {
+            if (this.minecraft != null) this.minecraft.setScreen(new GearRoadmapScreen());
+        }, UiStyle.ACCENT_SLATE, 0xFF47474D));
+
+        this.addRenderableWidget(new UiStyle.OreButton(this.width - 100, 8, 84, 18,
+                Component.literal("§e[G] §fGrupo"), b -> {
+            if (this.minecraft != null) this.minecraft.setScreen(new PartyScreen());
+        }, UiStyle.ACCENT_SLATE, 0xFF47474D));
+
         this.addRenderableWidget(new UiStyle.OreButton(16, this.height - 28, 100, 20,
                 Component.literal("§f⚙ Ajustar HUD"), b -> {
             if (this.minecraft != null) {

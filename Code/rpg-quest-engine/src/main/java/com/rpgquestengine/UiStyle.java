@@ -5,6 +5,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.network.chat.Component;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class UiStyle {
@@ -163,6 +164,46 @@ public class UiStyle {
                 int by = getY() + getHeight() - 3;
                 g.fill(bx, by, bx + barW, by + 1, 0xFFEAEAEA);
             }
+        }
+    }
+
+    /**
+     * Barra horizontal superior estilo Zenless con secciones RPG y su tecla de acceso.
+     * activeIdx: 0 = Roadmap [F1], 1 = Misiones [J], 2 = Grupo [G], 3 = Habilidades [O]
+     */
+    public static void addZenlessNavBar(int screenWidth, int y, int activeIdx, Consumer<OreButton> adder) {
+        String[] labels = {
+                "§e[F1] §fRoadmap",
+                "§e[J] §fMisiones",
+                "§e[G] §fGrupo",
+                "§e[O] §fHabilidades"
+        };
+        int[] widths = { 104, 102, 86, 118 };
+        int gap = 6;
+        int totalW = 0;
+        for (int w : widths) totalW += w;
+        totalW += gap * (labels.length - 1);
+
+        int x = Math.max(12, (screenWidth - totalW) / 2);
+        for (int i = 0; i < labels.length; i++) {
+            final int idx = i;
+            adder.accept(new OreButton(x, y, widths[i], 20, Component.literal(labels[i]), b -> {
+                Minecraft mc = Minecraft.getInstance();
+                if (idx == 0 && activeIdx != 0) {
+                    mc.setScreen(new GearRoadmapScreen());
+                } else if (idx == 1 && activeIdx != 1) {
+                    QuestConfig.loadConfig();
+                    mc.setScreen(new QuestJournalScreen());
+                } else if (idx == 2 && activeIdx != 2) {
+                    mc.setScreen(new PartyScreen());
+                } else if (idx == 3) {
+                    mc.setScreen(null);
+                    if (mc.player != null) {
+                        mc.player.displayClientMessage(Component.literal("§a[RPG] Pulsa §e[O] §apara abrir el Árbol de Habilidades."), true);
+                    }
+                }
+            }, ACCENT_SLATE, 0xFF47474D, () -> activeIdx == idx));
+            x += widths[i] + gap;
         }
     }
 }

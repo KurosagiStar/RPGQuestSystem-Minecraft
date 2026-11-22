@@ -21,6 +21,7 @@ public class PartyScreen extends Screen {
     protected void init() {
         super.init();
         NetworkHandler.CHANNEL.sendToServer(new PartyActionPacket(0, ""));
+        UiStyle.addZenlessNavBar(this.width, 6, 2, this::addRenderableWidget);
         this.addRenderableWidget(new UiStyle.OreButton(this.width - 106, this.height - 28, 90, 20,
                 Component.literal("§fCerrar"), b -> this.onClose(),
                 UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
@@ -32,9 +33,9 @@ public class PartyScreen extends Screen {
         clickBtns.clear();
 
         int boxX = 24;
-        int boxY = 20;
+        int boxY = 32;
         int boxW = this.width - 48;
-        int boxH = this.height - 56;
+        int boxH = this.height - 68;
 
         UiStyle.drawRoundedCard(g, boxX - 1, boxY - 1, boxW + 2, boxH + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
         UiStyle.drawRoundedRect(g, boxX + 2, boxY + 2, boxW - 4, 22, 5, UiStyle.BG_HEADER);
