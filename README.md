@@ -40,7 +40,10 @@ RPGQuestSystem-Minecraft/
 
 ## 🎮 Controles y Teclas
 
-- **`J`**: Abre el **Diario de Misiones** (pestañas: *Activas*, *Principales*, *Secundarias*, *Contratos*, *Completadas*).
+- **`F1`**: Abre la **Guía RPG de Progresión** (tierlist de *Armaduras* por set completo, *Armas* y guía de *Fortalecimiento* de Apotheosis).
+- **`J`**: Abre el **Diario de Misiones** (pestañas: *Activas*, *Principales*, *Secundarias*, *Contratos*, *Completadas*, *Misiones Diarias* y *Desafíos*).
+- **`G`**: Abre la interfaz de **Grupo / Party** (invitaciones, progreso compartido y recompensas pendientes).
+- **`V`**: Fija o alterna rápidamente el seguimiento de la misión recién actualizada en el HUD.
 - **`H`**: Abre la pantalla de **reposicionamiento del HUD flotante** (arrastra el cuadro con el ratón).
 - **Botón Seguir / Dejar de seguir**: Fija o quita la misión seleccionada del HUD flotante.
 

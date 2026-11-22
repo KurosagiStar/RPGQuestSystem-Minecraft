@@ -1,5 +1,18 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
+## [1.6.0-update] - 2026-11-22
+- **Guía RPG de Progresión (`F1` — `GearRoadmapScreen`, `UiStyle`, `QuestHudOverlay`):**
+  - Nueva pantalla `[F1] Guía RPG` con 3 pestañas: **Armaduras**, **Armas** y **Fortalecimiento**.
+  - **Barra horizontal superior estilo Zenless (`UiStyle.addZenlessNavBar`):** navegación rápida entre `[F1] Guía RPG`, `[J] Misiones`, `[G] Grupo` y `[O] Habilidades` dentro de las pantallas del mod, más pill compacto `[F1] Guía RPG` siempre visible en la esquina superior derecha del HUD (`QuestHudOverlay`).
+  - **Pestaña `Armaduras`:** muestra en cada tarjeta el nombre del set, origen y sus piezas reales (`casco`, `peto`, `grebas`, `botas`; o 2 piezas en `Bone Reptile`), cubriendo progresión desde `Hierro`/`Adventurer` hasta meta endgame (`Sylvi's`, `Fell King`, `Sovereign Ascendant`, `Descended Hero`) con notas de Wiki/Reddit (`Vida Máx %`, reducción de daño).
+  - **Pestaña `Armas`:** tierlist `D–S` adaptada a Dragonfyre (`Equilibrium`, `Dreadsteel Scythe`, `The Incinerator`, `Soul Render`, `Nightfall`, `Hellbrand`, `Frostfang`, `Rainfall Serenity`, `Supreme Nightfall`, `Absolute Equillibrium`, `Fell Ragnarok`).
+  - **Pestaña `Fortalecimiento`:** dividida en 3 secciones con encabezados y scrollbar lateral:
+    1. *Pasos de Fortalecimiento:* `Reforgamiento` (`Simple` / `Avanzada` / `Salvaging Table`), `Zócalos` (`Sigil of Socketing`, `Sigil of Withdrawal`, `Gem Dust`) y `Encantamiento` (`Library of Alexandria`).
+    2. *Tierlist de Gemas Apotheosis:* filtrada contra los datapacks de Cisco (excluidas gemas bloqueadas como `royalty` y `tyrannical`), mostrando activas verificadas (`Endersurge`, `Combatant`, `Warlord`, `Brawler's`, `Blood Lord`, `Samurai`, `Guardian`).
+    3. *Materiales de Rareza Apotheosis:* los 6 materiales de `Común` a `Ancestral`.
+- **Traducción (`cisco-lang-es`):**
+  - Conservado el término `Dreadsteel` sin traducir en `ciscolanges-1.0.0.jar` (`Lingote de Dreadsteel`, `Casco de Dreadsteel`, `Peto de Dreadsteel`, `Grebas de Dreadsteel`, `Botas de Dreadsteel`, `Guadaña de Dreadsteel`, `Escudo de Dreadsteel`).
+
 ## [1.5.1-update] - 2026-11-19
 - **Rediseño Visual Darkomizer + Bedrock Ore UI (`UiStyle`, `UI_STYLE_GUIDE.md`):**
   - Nueva clase `UiStyle` para unificar la interfaz 2D de `NpcDialogScreen`, `PartyScreen` y `QuestJournalScreen`: paneles gris carbón (`#2B2B2E`) con outline negro (`#0B0B0D`), bisel 3D elevado en ventanas y cajas hundidas (`#1C1C1F`) en sub-paneles y slots.
