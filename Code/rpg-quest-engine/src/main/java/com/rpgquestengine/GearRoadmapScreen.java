@@ -304,13 +304,31 @@ public class GearRoadmapScreen extends Screen {
                                 hov ? 0xFF2B2B30 : UiStyle.BG_CARD, hov ? row.color() : 0, false);
 
                         ItemStack stack = resolveStack(entry, activeTab);
-                        g.renderItem(stack, cardX + 6, y + 12);
+                        if (activeTab == 0 && entry.itemId().endsWith("_chestplate")) {
+                            List<ItemStack> setStacks = resolveArmorSet(entry.itemId());
+                            String nameTrim = this.font.plainSubstrByWidth(entry.name(), cardW - 12);
+                            String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 12);
+                            g.drawString(this.font, "§f" + nameTrim, cardX + 6, y + 8, 0xFFFFFF);
+                            g.drawString(this.font, "§7" + srcTrim, cardX + 6, y + 18, 0xAAAAAA);
 
-                        String displayName = resolveDisplayName(stack, entry);
-                        String nameTrim = this.font.plainSubstrByWidth(displayName, cardW - 30);
-                        String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 30);
-                        g.drawString(this.font, "§f" + nameTrim, cardX + 26, y + 12, 0xFFFFFF);
-                        g.drawString(this.font, "§7" + srcTrim, cardX + 26, y + 24, 0xAAAAAA);
+                            int iconX = cardX + 6;
+                            for (ItemStack piece : setStacks) {
+                                g.pose().pushPose();
+                                g.pose().translate(iconX, y + 30, 0);
+                                g.pose().scale(0.85f, 0.85f, 1.0f);
+                                g.renderItem(piece, 0, 0);
+                                g.pose().popPose();
+                                iconX += 16;
+                            }
+                        } else {
+                            g.renderItem(stack, cardX + 6, y + 12);
+
+                            String displayName = resolveDisplayName(stack, entry);
+                            String nameTrim = this.font.plainSubstrByWidth(displayName, cardW - 30);
+                            String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 30);
+                            g.drawString(this.font, "§f" + nameTrim, cardX + 26, y + 12, 0xFFFFFF);
+                            g.drawString(this.font, "§7" + srcTrim, cardX + 26, y + 24, 0xAAAAAA);
+                        }
 
                         if (hov) {
                             hoveredEntry = entry;
@@ -336,7 +354,9 @@ public class GearRoadmapScreen extends Screen {
 
         if (hoveredEntry != null && hoveredTier != null) {
             ItemStack hStack = resolveStack(hoveredEntry, activeTab);
-            String hName = resolveDisplayName(hStack, hoveredEntry);
+            String hName = (activeTab == 0 && hoveredEntry.itemId().endsWith("_chestplate"))
+                    ? hoveredEntry.name()
+                    : resolveDisplayName(hStack, hoveredEntry);
             List<Component> tip = List.of(
                     Component.literal("§l" + hName),
                     Component.literal("§7Sección: §f" + hoveredTier.title()),
@@ -345,6 +365,22 @@ public class GearRoadmapScreen extends Screen {
             );
             g.renderComponentTooltip(this.font, tip, mouseX, mouseY);
         }
+    }
+
+    private static List<ItemStack> resolveArmorSet(String chestplateId) {
+        String base = chestplateId.substring(0, chestplateId.length() - "_chestplate".length());
+        String[] suffixes = { "_helmet", "_chestplate", "_leggings", "_boots" };
+        java.util.ArrayList<ItemStack> list = new java.util.ArrayList<>(4);
+        for (String suf : suffixes) {
+            Item it = ForgeRegistries.ITEMS.getValue(new ResourceLocation(base + suf));
+            if (it != null && it != Items.AIR) {
+                list.add(new ItemStack(it));
+            }
+        }
+        if (list.isEmpty()) {
+            list.add(new ItemStack(Items.NETHERITE_CHESTPLATE));
+        }
+        return list;
     }
 
     private static String resolveDisplayName(ItemStack stack, GearEntry entry) {
