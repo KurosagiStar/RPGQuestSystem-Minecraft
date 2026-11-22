@@ -49,8 +49,8 @@ public class GearRoadmapScreen extends Screen {
                             "Transición oficial a Late Game. Imprescindible reforjarla con Apotheosis."),
                     new GearEntry("cisco_mod:gilded_eagle_chestplate", "Gilded Eagle", "Crafteo Cisco",
                             "Orientada a magia/movilidad; combínala con gemas de Vida Máx %."),
-                    new GearEntry("twilightforest:fiery_chestplate", "Fiery / Twilight", "Jefes Twilight Forest",
-                            "Buena utilidad intermedia mientras preparas equipo de Cataclysm.")
+                    new GearEntry("dreadsteel:dreadsteel_chestplate", "Dreadsteel (Ojo)", "Ice and Fire / Dreadsteel",
+                            "Aviso Reddit: cuesta demasiado farmeo de dragón; muchos jugadores la saltan directo a Fell King o Sylvi.")
             )),
             new TierRow("A", "JEFES (Tier 4)", 0xFFF59E0B, List.of(
                     new GearEntry("cataclysm:ignitium_chestplate", "Ignitium", "Ignis (Cataclysm)",
@@ -64,13 +64,13 @@ public class GearRoadmapScreen extends Screen {
             )),
             new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
                     new GearEntry("cisco_mod:sylvi_chestplate", "Sylvi's Armor (META)", "Endgame Cisco",
-                            "Top #1 según comunidad/Wiki: -20% daño recibido, +10% Vida Máx y escala ataque con tu HP."),
+                            "Top #1 Wiki/Reddit: -20% daño recibido, +10% Vida Máx y suma 7% de tu Vida Máx como Ataque."),
                     new GearEntry("cisco_mod:fell_king_armor_chestplate", "Fell King", "The Fell King",
-                            "Tanque endgame muy fuerte si se reforja con Protección y gemas perfectas."),
-                    new GearEntry("cisco_mod:fallen_hero_armor_chestplate", "Fallen Hero", "Endgame Cisco",
-                            "Set ofensivo oscuro de alto daño; muy costoso de farmear frente a Sylvi's."),
-                    new GearEntry("cisco_mod:ascended_hero_chestplate", "Ascendant (Ojo)", "Grindeo Endgame Cisco",
-                            "Aviso Reddit: exige mucho farmeo; sin gemas/Vida Máx % rinde menos que Sylvi's.")
+                            "Tanque endgame muy sólido para jefes L2 Hostility si se reforja con Vida Máx % y gemas."),
+                    new GearEntry("cisco_mod:sovereign_ascendant_chestplate", "Sovereign Ascendant", "Endgame Ascendente",
+                            "Evolución máxima de la rama Ascendant; viable en endgame con buenas gemas."),
+                    new GearEntry("cisco_mod:descended_hero_chestplate", "Descended Hero", "Descended Cisco",
+                            "Set endgame de la rama Descended junto a Fallen Hero.")
             ))
     );
 
@@ -86,18 +86,18 @@ public class GearRoadmapScreen extends Screen {
             new TierRow("C", "MEDIO (Tier 2)", 0xFF38BDF8, List.of(
                     new GearEntry("minecraft:netherite_sword", "Espada Netherita", "Mesa de Herrería",
                             "Base confiable para empezar a insertar gemas de Apotheosis."),
-                    new GearEntry("simplyswords:netherite_glaive", "Glaive Netherita", "Simply Swords",
-                            "Gran alcance y barrido para limpiar oleadas de misiones."),
+                    new GearEntry("cisco_mod:equillibrium", "Equilibrium", "Cadena Cisco",
+                            "Arma base de la ruta Cisco; evoluciona a Nightfall (oscura) o Absolute Equilibrium (sagrada)."),
                     new GearEntry("cataclysm:black_steel_sword", "Black Steel", "Cataclysm",
                             "Buen escalado físico antes de ir por jefes de Cataclysm.")
             )),
             new TierRow("B", "AVANZADO (Tier 3)", 0xFFA855F7, List.of(
-                    new GearEntry("simplyswords:runic_rapier", "Runic Rapier", "Dungeons / Botín",
-                            "Escala muy bien con runas y afijos críticos de Apotheosis."),
                     new GearEntry("simplyswords:frostfall", "Frostfall", "Simply Swords (Única)",
                             "Congela enemigos y te vuelve inmune brevemente con regeneración."),
                     new GearEntry("simplyswords:dreadtide", "Dreadtide", "Simply Swords (Única)",
-                            "Aumenta velocidad y reduce daño recibido con acumulaciones de Voidcloak.")
+                            "Aumenta velocidad y reduce daño recibido con acumulaciones de Voidcloak."),
+                    new GearEntry("dreadsteel:dreadsteel_scythe", "Dreadsteel Scythe", "Dreadsteel",
+                            "Muy usada en Reddit para limpiar grupos en mid-late antes de las armas Cisco finales.")
             )),
             new TierRow("A", "JEFES (Tier 4)", 0xFFF59E0B, List.of(
                     new GearEntry("cataclysm:the_incinerator", "The Incinerator", "Ignis (Cataclysm)",
@@ -111,11 +111,15 @@ public class GearRoadmapScreen extends Screen {
             )),
             new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
                     new GearEntry("cisco_mod:frostfang", "Frostfang (META)", "Endgame Cisco",
-                            "Top #1 Reddit: hace daño por % de HP (derrite a Fell King) y limita daño recibido a ~2.5 corazones."),
+                            "Top #1 Reddit Melee: daño por % de HP (derrite a Fell King) y limita daño recibido a ~2.5 corazones."),
+                    new GearEntry("celestisynth:rainfall_serenity", "Rainfall Serenity (META)", "Celestisynth (Arco)",
+                            "Top #1 Reddit Rango: arco láser roto con Infinidad + gema Combatant y build de Crítico."),
                     new GearEntry("cisco_mod:supreme_nightfall", "Supreme Nightfall", "Descended Cisco",
                             "Versión definitiva de Nightfall: daño por %HP/Fell y modo Aegis aliado (ojo al friendly-fire)."),
-                    new GearEntry("cataclysm:gauntlet_of_maelstrom", "Guantelete Maelstrom", "Scylla (Cataclysm)",
-                            "Excelente control de masas y daño explosivo secundario.")
+                    new GearEntry("cisco_mod:absolute_equillibrium", "Absolute Equilibrium", "Rama Sagrada Cisco",
+                            "Alternativa sagrada endgame de la cadena Equilibrium con gran escalado elemental."),
+                    new GearEntry("cisco_mod:fell_ragnarok", "Fell Ragnarok", "Endgame Fell",
+                            "Arma endgame de altísimo daño Fell para builds de 1000% Prob. Crítica.")
             ))
     );
 
