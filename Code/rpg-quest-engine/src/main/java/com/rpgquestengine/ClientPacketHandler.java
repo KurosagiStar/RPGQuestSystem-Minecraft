@@ -26,8 +26,12 @@ public class ClientPacketHandler {
         });
     }
 
-    public static void openAdminUi() {
-        Minecraft.getInstance().setScreen(new AdminNpcManagerScreen());
+    public static void openAdminUi(OpenAdminUiPacket msg) {
+        QuestConfig.NPC_LOCATIONS.clear();
+        QuestConfig.NPC_LOCATIONS.putAll(msg.locations);
+        if (msg.openScreen) {
+            Minecraft.getInstance().setScreen(new AdminNpcManagerScreen());
+        }
     }
 
     public static void openNpcDialog(OpenNpcDialogPacket msg) {

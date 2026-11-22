@@ -271,6 +271,7 @@ public class RPGQuestEngine {
                             ServerPlayer sp = ctx.getSource().getPlayerOrException();
                             String npcId = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "npc_id");
                             QuestConfig.setNpcLocation(npcId, sp.getX(), sp.getY(), sp.getZ());
+                            OpenAdminUiPacket.broadcastLocationsToOps(sp.getServer());
                             ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Posición guardada para " + npcId + " (" + (int)sp.getX() + ", " + (int)sp.getY() + ", " + (int)sp.getZ() + ")."), true);
                             return 1;
                         })
@@ -285,6 +286,7 @@ public class RPGQuestEngine {
                             sp.getServer().getCommands().performPrefixedCommand(
                                 sp.createCommandSourceStack().withPermission(4), cmd);
                             QuestConfig.setNpcLocation(npcId, sp.getX(), sp.getY(), sp.getZ());
+                            OpenAdminUiPacket.broadcastLocationsToOps(sp.getServer());
                             ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] NPC " + npcId + " spawneado y posición guardada."), true);
                             return 1;
                         })
@@ -293,7 +295,8 @@ public class RPGQuestEngine {
                 .then(Commands.literal("ui")
                     .executes(ctx -> {
                         ServerPlayer sp = ctx.getSource().getPlayerOrException();
-                        NetworkHandler.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp), new OpenAdminUiPacket());
+                        NetworkHandler.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp),
+                                new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, true));
                         return 1;
                     })
                 )

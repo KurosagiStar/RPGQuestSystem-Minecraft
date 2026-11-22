@@ -44,6 +44,7 @@ public class AdminNpcActionPacket {
                 sp.getServer().getCommands().performPrefixedCommand(
                     sp.createCommandSourceStack().withPermission(4), cmd);
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
+                OpenAdminUiPacket.broadcastLocationsToOps(sp.getServer());
                 sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] NPC " + msg.npcId + " spawneado y guardado."));
             } else if ("RESPAWN_ALL".equals(msg.action)) {
                 sp.getServer().getCommands().performPrefixedCommand(
@@ -63,6 +64,7 @@ public class AdminNpcActionPacket {
                     }
                 }
                 QuestConfig.setNpcLocation(msg.npcId, x, y, z);
+                OpenAdminUiPacket.broadcastLocationsToOps(sp.getServer());
                 if (moved > 0) {
                     sp.sendSystemMessage(Component.literal("§a[RPGQuestEngine] Movido " + msg.npcId + " (" + moved + ") a tu posición."));
                 } else {
