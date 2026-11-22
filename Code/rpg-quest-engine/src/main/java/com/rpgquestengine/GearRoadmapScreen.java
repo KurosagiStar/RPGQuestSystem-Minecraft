@@ -246,7 +246,7 @@ public class GearRoadmapScreen extends Screen {
         int rowH = 56;
         int secH = 22;
         int gap = 6;
-        int totalContentH = 0;
+        int totalContentH = 4;
         for (TierRow r : rows) {
             totalContentH += (r.entries().isEmpty() ? secH : rowH) + gap;
         }
@@ -264,61 +264,68 @@ public class GearRoadmapScreen extends Screen {
             int curH = isSection ? secH : rowH;
             if (y + curH >= listTop && y <= listBottom) {
                 if (isSection) {
-                    UiStyle.drawRoundedRect(g, boxX + 10, y + 2, boxW - 20, secH - 2, 2, UiStyle.BG_HEADER);
+                    UiStyle.drawRoundedRect(g, boxX + 10, y + 2, boxW - 22, secH - 2, 2, UiStyle.BG_HEADER);
                     g.fill(boxX + 10, y + 2, boxX + 14, y + secH, row.color());
                     g.drawString(this.font, "§l" + row.title(), boxX + 20, y + 7, row.color());
-                    y += curH + gap;
-                    continue;
-                }
-                UiStyle.drawRoundedCard(g, boxX + 10, y, boxW - 20, rowH, 2, UiStyle.BG_PANEL, 0, false);
-
-                int tierW = 96;
-                UiStyle.drawRoundedCard(g, boxX + 14, y + 6, tierW, rowH - 12, 2, UiStyle.BG_CARD, row.color(), false);
-                String badgeText;
-                if (row.badge().equals("1") || row.badge().equals("2") || row.badge().equals("3")) {
-                    badgeText = "PASO " + row.badge();
-                } else if (row.badge().equals("MAT")) {
-                    badgeText = "MATERIALES";
                 } else {
-                    badgeText = "TIER " + row.badge();
-                }
-                g.drawCenteredString(this.font, "§l" + badgeText, boxX + 14 + tierW / 2, y + 14, row.color());
-                String shortLbl = row.title().contains("(") ? row.title().substring(0, row.title().indexOf('(')).trim() : row.title();
-                g.drawCenteredString(this.font, "§7" + shortLbl, boxX + 14 + tierW / 2, y + 28, 0xCCCCCC);
+                    UiStyle.drawRoundedCard(g, boxX + 10, y, boxW - 22, rowH, 2, UiStyle.BG_PANEL, 0, false);
 
-                int cardX = boxX + 14 + tierW + 8;
-                int availW = (boxX + boxW - 14) - cardX;
-                int count = row.entries().size();
-                int cardW = Math.min(180, Math.max(115, (availW - (count - 1) * 6) / Math.max(1, count)));
-
-                for (GearEntry entry : row.entries()) {
-                    if (cardX + cardW > boxX + boxW - 10) break;
-                    boolean hov = mouseX >= cardX && mouseX <= cardX + cardW
-                            && mouseY >= Math.max(listTop, y + 5) && mouseY <= Math.min(listBottom, y + rowH - 5);
-
-                    UiStyle.drawRoundedCard(g, cardX, y + 5, cardW, rowH - 10, 2,
-                            hov ? 0xFF2B2B30 : UiStyle.BG_CARD, hov ? row.color() : 0, false);
-
-                    ItemStack stack = resolveStack(entry, activeTab);
-                    g.renderItem(stack, cardX + 6, y + 12);
-
-                    String displayName = resolveDisplayName(stack, entry);
-                    String nameTrim = this.font.plainSubstrByWidth(displayName, cardW - 30);
-                    String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 30);
-                    g.drawString(this.font, "§f" + nameTrim, cardX + 26, y + 12, 0xFFFFFF);
-                    g.drawString(this.font, "§7" + srcTrim, cardX + 26, y + 24, 0xAAAAAA);
-
-                    if (hov) {
-                        hoveredEntry = entry;
-                        hoveredTier = row;
+                    int tierW = 96;
+                    UiStyle.drawRoundedCard(g, boxX + 14, y + 6, tierW, rowH - 12, 2, UiStyle.BG_CARD, row.color(), false);
+                    String badgeText;
+                    if (row.badge().equals("1") || row.badge().equals("2") || row.badge().equals("3")) {
+                        badgeText = "PASO " + row.badge();
+                    } else if (row.badge().equals("MAT")) {
+                        badgeText = "MATERIALES";
+                    } else {
+                        badgeText = "TIER " + row.badge();
                     }
-                    cardX += cardW + 6;
+                    g.drawCenteredString(this.font, "§l" + badgeText, boxX + 14 + tierW / 2, y + 14, row.color());
+                    String shortLbl = row.title().contains("(") ? row.title().substring(0, row.title().indexOf('(')).trim() : row.title();
+                    g.drawCenteredString(this.font, "§7" + shortLbl, boxX + 14 + tierW / 2, y + 28, 0xCCCCCC);
+
+                    int cardX = boxX + 14 + tierW + 8;
+                    int availW = (boxX + boxW - 18) - cardX;
+                    int count = row.entries().size();
+                    int cardW = Math.min(180, Math.max(115, (availW - (count - 1) * 6) / Math.max(1, count)));
+
+                    for (GearEntry entry : row.entries()) {
+                        if (cardX + cardW > boxX + boxW - 14) break;
+                        boolean hov = mouseX >= cardX && mouseX <= cardX + cardW
+                                && mouseY >= Math.max(listTop, y + 5) && mouseY <= Math.min(listBottom, y + rowH - 5);
+
+                        UiStyle.drawRoundedCard(g, cardX, y + 5, cardW, rowH - 10, 2,
+                                hov ? 0xFF2B2B30 : UiStyle.BG_CARD, hov ? row.color() : 0, false);
+
+                        ItemStack stack = resolveStack(entry, activeTab);
+                        g.renderItem(stack, cardX + 6, y + 12);
+
+                        String displayName = resolveDisplayName(stack, entry);
+                        String nameTrim = this.font.plainSubstrByWidth(displayName, cardW - 30);
+                        String srcTrim = this.font.plainSubstrByWidth(entry.source(), cardW - 30);
+                        g.drawString(this.font, "§f" + nameTrim, cardX + 26, y + 12, 0xFFFFFF);
+                        g.drawString(this.font, "§7" + srcTrim, cardX + 26, y + 24, 0xAAAAAA);
+
+                        if (hov) {
+                            hoveredEntry = entry;
+                            hoveredTier = row;
+                        }
+                        cardX += cardW + 6;
+                    }
                 }
             }
-            y += rowH + gap;
+            y += curH + gap;
         }
 
         g.disableScissor();
+
+        if (maxScroll > 0) {
+            int trackX = boxX + boxW - 8;
+            g.fill(trackX, listTop, trackX + 3, listBottom, 0x55222228);
+            int thumbH = Math.max(20, (int) ((listH * (double) listH) / totalContentH));
+            int thumbY = listTop + (int) (((listH - thumbH) * (double) scrollOffset) / maxScroll);
+            g.fill(trackX, thumbY, trackX + 3, thumbY + thumbH, 0xFFD4AF37);
+        }
         super.render(g, mouseX, mouseY, partialTick);
 
         if (hoveredEntry != null && hoveredTier != null) {
