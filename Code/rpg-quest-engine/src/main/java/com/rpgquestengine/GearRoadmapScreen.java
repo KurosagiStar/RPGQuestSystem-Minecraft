@@ -50,13 +50,17 @@ public class GearRoadmapScreen extends Screen {
                     new GearEntry("cataclysm:cursium_chestplate", "Cursium", "Maledictus (Cataclysm)",
                             "Revive tras golpe mortal + probabilidad de esquiva."),
                     new GearEntry("cisco_mod:bjorn_chestplate", "Bjorn's Armor", "Jefes / Progresión Cisco",
-                            "Excelente set intermedio antes de farmear Fell King o Sylvi.")
+                            "Excelente set intermedio antes de farmear Fell King o Sylvi."),
+                    new GearEntry("cisco_mod:ciscos_armor_chestplate", "Cisco's Armor", "Crafteo / Jefe Cisco",
+                            "Set icónico de Cisco; requiere gemas y Vida Máx % porque la armadura plana no basta en late.")
             )),
             new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
                     new GearEntry("cisco_mod:sylvi_chestplate", "Sylvi's Armor (META)", "Endgame Cisco",
                             "Top #1 según comunidad/Wiki: -20% daño recibido, +10% Vida Máx y escala ataque con tu HP."),
                     new GearEntry("cisco_mod:fell_king_armor_chestplate", "Fell King", "The Fell King",
                             "Tanque endgame muy fuerte si se reforja con Protección y gemas perfectas."),
+                    new GearEntry("cisco_mod:fallen_hero_armor_chestplate", "Fallen Hero", "Endgame Cisco",
+                            "Set ofensivo oscuro de alto daño; muy costoso de farmear frente a Sylvi's."),
                     new GearEntry("cisco_mod:ascended_hero_chestplate", "Ascendant (Ojo)", "Grindeo Endgame Cisco",
                             "Aviso Reddit: exige mucho farmeo; sin gemas/Vida Máx % rinde menos que Sylvi's.")
             ))
