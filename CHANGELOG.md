@@ -4,12 +4,16 @@
 - **Guía RPG de Progresión (`F1` — `GearRoadmapScreen`, `UiStyle`, `QuestHudOverlay`):**
   - Nueva pantalla `[F1] Guía RPG` con 3 pestañas: **Armaduras**, **Armas** y **Fortalecimiento**.
   - **Barra horizontal superior estilo Zenless (`UiStyle.addZenlessNavBar`):** navegación rápida entre `[F1] Guía RPG`, `[J] Misiones`, `[G] Grupo` y `[O] Habilidades` dentro de las pantallas del mod, más pill compacto `[F1] Guía RPG` siempre visible en la esquina superior derecha del HUD (`QuestHudOverlay`).
-  - **Pestaña `Armaduras`:** muestra en cada tarjeta el nombre del set, origen y sus piezas reales (`casco`, `peto`, `grebas`, `botas`; o 2 piezas en `Bone Reptile`), cubriendo progresión desde `Hierro`/`Adventurer` hasta meta endgame (`Sylvi's`, `Fell King`, `Sovereign Ascendant`, `Descended Hero`) con notas de Wiki/Reddit (`Vida Máx %`, reducción de daño).
+  - **Pestaña `Armaduras`:** muestra en cada tarjeta el nombre del set localizado desde EMI/Minecraft (`resolveArmorSetName`), origen y sus piezas reales (`casco`, `peto`, `grebas`, `botas`; o 2 piezas en `Bone Reptile`), cubriendo progresión desde `Hierro`/`Adventurer` hasta meta endgame (`Sylvi's`, `Fell King`, `Sovereign Ascendant`, `Descended Hero`) con notas de Wiki/Reddit (`Vida Máx %`, reducción de daño).
   - **Pestaña `Armas`:** tierlist `D–S` adaptada a Dragonfyre (`Equilibrium`, `Dreadsteel Scythe`, `The Incinerator`, `Soul Render`, `Nightfall`, `Hellbrand`, `Frostfang`, `Rainfall Serenity`, `Supreme Nightfall`, `Absolute Equillibrium`, `Fell Ragnarok`).
   - **Pestaña `Fortalecimiento`:** dividida en 3 secciones con encabezados y scrollbar lateral:
     1. *Pasos de Fortalecimiento:* `Reforgamiento` (`Simple` / `Avanzada` / `Salvaging Table`), `Zócalos` (`Sigil of Socketing`, `Sigil of Withdrawal`, `Gem Dust`) y `Encantamiento` (`Library of Alexandria`).
     2. *Tierlist de Gemas Apotheosis:* filtrada contra los datapacks de Cisco (excluidas gemas bloqueadas como `royalty` y `tyrannical`), mostrando activas verificadas (`Endersurge`, `Combatant`, `Warlord`, `Brawler's`, `Blood Lord`, `Samurai`, `Guardian`).
     3. *Materiales de Rareza Apotheosis:* los 6 materiales de `Común` a `Ancestral`.
+- **Protección de NPCs contra Carry On (`QuestEventListener`, `carryon:entity_blacklist`):**
+  - Añadido tag `data/carryon/tags/entity_types/entity_blacklist.json` con los 67 tipos de entidad `easy_npc:*`.
+  - Inyección automática en tiempo de ejecución dentro de `ListHandler.FORBIDDEN_ENTITIES`, `FORBIDDEN_STACKING` y `FORBIDDEN_ENTITIES_TAGS` al iniciar el servidor y al interactuar.
+  - Interceptado `PlayerInteractEvent.EntityInteract` con `EventPriority.HIGHEST` (`onEntityInteractPre`) para cancelar `Shift + clic derecho` en supervivencia sobre entidades `easy_npc` o con tag `npc_*` (manteniendo acceso a la edición de Easy NPC en creativo).
 - **Traducción (`cisco-lang-es`):**
   - Conservado el término `Dreadsteel` sin traducir en `ciscolanges-1.0.0.jar` (`Lingote de Dreadsteel`, `Casco de Dreadsteel`, `Peto de Dreadsteel`, `Grebas de Dreadsteel`, `Botas de Dreadsteel`, `Guadaña de Dreadsteel`, `Escudo de Dreadsteel`).
 
