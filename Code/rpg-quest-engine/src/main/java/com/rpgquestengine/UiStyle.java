@@ -173,12 +173,12 @@ public class UiStyle {
      */
     public static void addZenlessNavBar(int screenWidth, int y, int activeIdx, Consumer<OreButton> adder) {
         String[] labels = {
-                "§e[F1] §fRoadmap",
+                "§e[F1] §fGuía RPG",
                 "§e[J] §fMisiones",
                 "§e[G] §fGrupo",
                 "§e[O] §fHabilidades"
         };
-        int[] widths = { 104, 102, 86, 118 };
+        int[] widths = { 106, 102, 86, 118 };
         int gap = 6;
         int totalW = 0;
         for (int w : widths) totalW += w;

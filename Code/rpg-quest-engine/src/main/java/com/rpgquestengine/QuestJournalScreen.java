@@ -69,7 +69,7 @@ public class QuestJournalScreen extends Screen {
         }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 2));
 
         this.addRenderableWidget(new UiStyle.OreButton(this.width - 204, 8, 98, 18,
-                Component.literal("§e[F1] §fRoadmap"), b -> {
+                Component.literal("§e[F1] §fGuía RPG"), b -> {
             if (this.minecraft != null) this.minecraft.setScreen(new GearRoadmapScreen());
         }, UiStyle.ACCENT_SLATE, 0xFF47474D));
 

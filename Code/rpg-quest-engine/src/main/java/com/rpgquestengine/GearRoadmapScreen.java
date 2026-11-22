@@ -138,30 +138,47 @@ public class GearRoadmapScreen extends Screen {
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:ancient\"},gem:\"apotheosis:the_end/endersurge\"}",
                             "Endersurge (Tier S)", "The End / Jefes",
                             "Aumenta niveles de TODOS los encantamientos de esa pieza. Obligatoria en casco y pechera.", true),
-                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:overworld/royalty\"}",
-                            "Royal Family (Tier S)", "Overworld / Jefes",
-                            "Sube TODOS los stats en porcentaje (Vida Máx, Daño, Armadura y Suerte).", true),
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/combatant\"}",
                             "Combatant (Tier S)", "Global / Jefes",
-                            "Daño cuerpo a cuerpo o Reducción de daño físico según la pieza equipada.", true),
+                            "Reduce hasta 22.5% el daño recibido en armadura y mejora daño a distancia.", true),
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/warlord\"}",
                             "Warlord (Tier S)", "Global / Misiones",
-                            "Aumenta Daño Crítico y Daño base; la mejor gema ofensiva pura para armas.", true)
+                            "+25% Vida Máx en peto, +17.5% Daño en casco y Daño Crítico en armas.", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/brawlers\"}",
+                            "Brawler's (Tier S)", "Global",
+                            "+8 Vida Máx en armadura, +25% Vida Máx en escudo y +35% Vel. Ataque en arma ligera.", true)
             )),
             new TierRow("A", "GEMAS + LIBRERÍA", 0xFFF59E0B, List.of(
-                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/tyrannical\"}",
-                            "Tyrannical (Tier A)", "Global",
-                            "Gran bono de Vida Máx % y Armadura; fundamental para aguantar golpes en Dragonfyre.", true),
                     new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:the_nether/blood_lord\"}",
                             "Blood Lord (Tier A)", "The Nether",
-                            "Robo de vida (Lifesteal) + daño; muy útil en armas rápidas.", true),
+                            "Robo de vida (Lifesteal) + daño; muy útil en armas rápidas y contra jefes.", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/samurai\"}",
+                            "Samurai (Tier A)", "Global",
+                            "+25% Prob. Crítica en arma pesada, +45% velocidad en armadura baja y +5% esquiva en escudo.", true),
+                    new GearEntry("apotheosis:gem", "{affix_data:{rarity:\"apotheosis:mythic\"},gem:\"apotheosis:core/guardian\"}",
+                            "Guardian (Tier A)", "Global",
+                            "+6 Armadura en casco/peto, +30% Armadura en escudo y +6% Lifesteal en arma ligera.", true),
                     new GearEntry("apotheosis:ender_library", "Library of Alexandria", "Apotheosis (The End)",
                             "Guarda miles de encantamientos en libros y extrae Protección/Filo máximo sin perder niveles.")
+            )),
+            new TierRow("M", "MATERIALES APOTHEOSIS", 0xFF10B981, List.of(
+                    new GearEntry("apotheosis:common_material", "Común (Gris)", "Desarmar equipo común",
+                            "Material base obtenido en Salvaging Table al reciclar equipo común."),
+                    new GearEntry("apotheosis:uncommon_material", "Poco Común (Verde)", "Desarmar equipo verde",
+                            "Sirve para reforjas iniciales y fabricar materiales de rareza superior."),
+                    new GearEntry("apotheosis:rare_material", "Raro (Azul)", "Desarmar equipo azul",
+                            "Necesario para reforjar afijos azules en Mesa de Reforja Simple."),
+                    new GearEntry("apotheosis:epic_material", "Épico (Morado)", "Desarmar equipo morado",
+                            "Clave en Mid Game para reforzar armadura Darksteel/Brightsteel a Épico."),
+                    new GearEntry("apotheosis:mythic_material", "Mítico (Naranja)", "Desarmar Míticos / Wither",
+                            "Godforged Pearl: material principal para reforjar equipo Endgame a Mítico."),
+                    new GearEntry("apotheosis:ancient_material", "Ancestral (Arcoíris)", "Jefes / Endgame extremo",
+                            "Rareza máxima de Apotheosis para obtener los afijos más altos del modpack.")
             ))
     );
 
     public GearRoadmapScreen() {
-        super(Component.literal("Roadmap de Equipamiento"));
+        super(Component.literal("Guía RPG de Progresión"));
     }
 
     @Override
@@ -205,7 +222,7 @@ public class GearRoadmapScreen extends Screen {
 
         UiStyle.drawRoundedCard(g, boxX - 1, boxY - 1, boxW + 2, boxH + 2, 4, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
         UiStyle.drawRoundedRect(g, boxX + 2, boxY + 2, boxW - 4, 22, 0, UiStyle.BG_HEADER);
-        g.drawString(this.font, "§6§lROADMAP DE PROGRESIÓN §7— Meta Dragonfyre (Armaduras, Armas y Fortalecimiento)", boxX + 12, boxY + 9, 0xFFD4AF37);
+        g.drawString(this.font, "§6§lGUÍA RPG DE PROGRESIÓN §7— Meta Dragonfyre (Armaduras, Armas y Fortalecimiento)", boxX + 12, boxY + 9, 0xFFD4AF37);
 
         String metaTip = activeTab == 2
                 ? "§eOrden ideal: §fReforjar Mítico → Añadir Zócalos → Insertar Gemas → Encantar"

@@ -356,8 +356,8 @@ public class QuestHudOverlay {
 
     private void renderZenlessQuickBar(GuiGraphics g, Minecraft mc) {
         Font font = mc.font;
-        String plain = "[F1] Roadmap";
-        String styled = "§e[F1] §fRoadmap";
+        String plain = "[F1] Guía RPG";
+        String styled = "§e[F1] §fGuía RPG";
 
         float scale = 0.80f;
         int padX = 6;
