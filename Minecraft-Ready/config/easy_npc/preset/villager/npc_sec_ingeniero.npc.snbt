@@ -27,7 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitan de la Guardia"}',
-    UUID: [I; 706044293, -591694224, 1003426140, -1450056725],
+    UUID: [I; 1352987734, 429644783, 1397934465, -1198773318],
     Tags: ["npc_sec_ingeniero"],
     DialogData: {
       DialogDataSet: [

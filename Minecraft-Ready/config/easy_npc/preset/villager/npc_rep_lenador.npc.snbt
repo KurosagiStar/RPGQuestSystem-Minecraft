@@ -27,7 +27,7 @@
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
     CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitan de la Guardia"}',
-    UUID: [I; 706044293, -591694224, 1003426140, -1450056725],
+    UUID: [I; -1309334413, 407080693, -1244938528, 984725530],
     Tags: ["npc_rep_lenador"],
     DialogData: {
       DialogDataSet: [
