@@ -9,7 +9,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GearRoadmapScreen extends Screen {
@@ -22,58 +21,87 @@ public class GearRoadmapScreen extends Screen {
 
     private static final List<TierRow> ARMOR_TIERS = List.of(
             new TierRow("D", "INICIO (Tier 1)", 0xFF9CA3AF, List.of(
-                    new GearEntry("minecraft:iron_chestplate", "Hierro", "Mineo básico", "Primer set sólido para aldeas y cuevas."),
-                    new GearEntry("minecraft:diamond_chestplate", "Diamante", "Cuevas / Aldeanos", "Base para mejorar a Netherita o sets iniciales."),
-                    new GearEntry("cisco_mod:adventurer_chestplate", "Adventurer", "Crafteo / Botín Cisco", "Set de aventurero con bonos tempranos de movilidad.")
+                    new GearEntry("minecraft:iron_chestplate", "Hierro", "Mineo inicial",
+                            "Set básico para explorar aldeas y primeras cuevas."),
+                    new GearEntry("minecraft:diamond_chestplate", "Diamante", "Cuevas / Aldeanos",
+                            "Encántala pronto; la armadura plana por sí sola cae rápido en late."),
+                    new GearEntry("cisco_mod:adventurer_chestplate", "Adventurer", "Crafteo / Botín Cisco",
+                            "Mejor primer set RPG (Early Game) por su movilidad y stats iniciales.")
             )),
             new TierRow("C", "MEDIO (Tier 2)", 0xFF38BDF8, List.of(
-                    new GearEntry("minecraft:netherite_chestplate", "Netherita", "Nether + Plantilla", "Resistencia base para el Nether y jefes tempranos."),
-                    new GearEntry("cataclysm:bone_reptile_chestplate", "Bone Reptile", "Cataclysm (Koboleton)", "Excelente defensa media contra daño físico."),
-                    new GearEntry("cisco_mod:gilded_eagle_chestplate", "Gilded Eagle", "Crafteo Cisco", "Orientado a hechizos / agilidad intermedia.")
+                    new GearEntry("cisco_mod:brightsteel_chestplate", "Brightsteel", "Aleación Brightsteel",
+                            "Set recomendado Pre-Wither (Mid Game) antes de jefes duros."),
+                    new GearEntry("minecraft:netherite_chestplate", "Netherita", "Nether + Plantilla",
+                            "Sólida para el Nether; prioriza enchants de Protección y Vida Máx."),
+                    new GearEntry("cataclysm:bone_reptile_chestplate", "Bone Reptile", "Cataclysm (Koboleton)",
+                            "Buena resistencia física media para mazmorras.")
             )),
             new TierRow("B", "AVANZADO (Tier 3)", 0xFFA855F7, List.of(
-                    new GearEntry("cisco_mod:brightsteel_chestplate", "Brightsteel", "Aleación Brightsteel", "Gran salto de stats + afinidad mágica/crítico."),
-                    new GearEntry("cisco_mod:darksteel_armor_chestplate", "Darksteel", "Dark Core + Lingotes", "Armadura pesada clave antes de jefes mayores."),
-                    new GearEntry("twilightforest:fiery_chestplate", "Fiery / Twilight", "Jefes Twilight Forest", "Quema atacantes y prepara para Cataclysm.")
+                    new GearEntry("cisco_mod:darksteel_armor_chestplate", "Darksteel", "Dark Core + Lingotes",
+                            "Transición oficial a Late Game. Imprescindible reforjarla con Apotheosis."),
+                    new GearEntry("cisco_mod:gilded_eagle_chestplate", "Gilded Eagle", "Crafteo Cisco",
+                            "Orientada a magia/movilidad; combínala con gemas de Vida Máx %."),
+                    new GearEntry("twilightforest:fiery_chestplate", "Fiery / Twilight", "Jefes Twilight Forest",
+                            "Buena utilidad intermedia mientras preparas equipo de Cataclysm.")
             )),
             new TierRow("A", "JEFES (Tier 4)", 0xFFF59E0B, List.of(
-                    new GearEntry("cataclysm:ignitium_chestplate", "Ignitium", "Ignis (Cataclysm)", "Alta armadura, inmune a lava y combinable con Élitros."),
-                    new GearEntry("cataclysm:cursium_chestplate", "Cursium", "Maledictus (Cataclysm)", "Revive tras golpe mortal y otorga esquiva."),
-                    new GearEntry("cisco_mod:descended_hero_chestplate", "Descended Hero", "Progresión Hero Cisco", "Puente directo hacia armaduras Ascendant.")
+                    new GearEntry("cataclysm:ignitium_chestplate", "Ignitium", "Ignis (Cataclysm)",
+                            "Inmune a lava, gran defensa y combinable con Élitros."),
+                    new GearEntry("cataclysm:cursium_chestplate", "Cursium", "Maledictus (Cataclysm)",
+                            "Revive tras golpe mortal + probabilidad de esquiva."),
+                    new GearEntry("cisco_mod:bjorn_chestplate", "Bjorn's Armor", "Jefes / Progresión Cisco",
+                            "Excelente set intermedio antes de farmear Fell King o Sylvi.")
             )),
-            new TierRow("S", "ENDGAME (Tier 5)", 0xFFEF4444, List.of(
-                    new GearEntry("cisco_mod:ascended_hero_chestplate", "Ascendant Azure", "Endgame Cisco", "Set mítico de héroe ascendido con stats máximos."),
-                    new GearEntry("cisco_mod:fallen_hero_armor_chestplate", "Fallen Hero", "Jefes / Endgame Cisco", "Variante ofensiva oscura de alto daño."),
-                    new GearEntry("cisco_mod:fell_king_armor_chestplate", "Fell King", "The Fell King", "Armadura del Rey Caído para contenido máximo."),
-                    new GearEntry("cisco_mod:sovereign_ascendant_chestplate", "Sovereign Ascendant", "Crafteo Final Cisco", "Tope absoluto de defensa y poder en Dragonfyre.")
+            new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
+                    new GearEntry("cisco_mod:sylvi_chestplate", "Sylvi's Armor (META)", "Endgame Cisco",
+                            "Top #1 según comunidad/Wiki: -20% daño recibido, +10% Vida Máx y escala ataque con tu HP."),
+                    new GearEntry("cisco_mod:fell_king_armor_chestplate", "Fell King", "The Fell King",
+                            "Tanque endgame muy fuerte si se reforja con Protección y gemas perfectas."),
+                    new GearEntry("cisco_mod:ascended_hero_chestplate", "Ascendant (Ojo)", "Grindeo Endgame Cisco",
+                            "Aviso Reddit: exige mucho farmeo; sin gemas/Vida Máx % rinde menos que Sylvi's.")
             ))
     );
 
     private static final List<TierRow> WEAPON_TIERS = List.of(
             new TierRow("D", "INICIO (Tier 1)", 0xFF9CA3AF, List.of(
-                    new GearEntry("minecraft:iron_sword", "Espada de Hierro", "Crafteo inicial", "Arma básica para primeras misiones."),
-                    new GearEntry("minecraft:diamond_sword", "Espada de Diamante", "Cuevas / Comercio", "Recomendada encantar con Apotheosis."),
-                    new GearEntry("simplyswords:diamond_katana", "Katana Diamante", "Simply Swords", "Ataques rápidos con buen DPS temprano.")
+                    new GearEntry("minecraft:iron_sword", "Espada de Hierro", "Crafteo inicial",
+                            "Solo para empezar misiones de aldea."),
+                    new GearEntry("minecraft:diamond_sword", "Espada Diamante", "Cuevas / Comercio",
+                            "Súbela con encantamientos básicos en mesa/librería."),
+                    new GearEntry("simplyswords:diamond_katana", "Katana Diamante", "Simply Swords",
+                            "Ataque muy rápido ideal para aplicar efectos temprano.")
             )),
             new TierRow("C", "MEDIO (Tier 2)", 0xFF38BDF8, List.of(
-                    new GearEntry("minecraft:netherite_sword", "Espada Netherita", "Mesa de Herrería", "Base confiable para imbuir gemas."),
-                    new GearEntry("simplyswords:netherite_glaive", "Glaive Netherita", "Simply Swords", "Mayor alcance y barrido para oleadas."),
-                    new GearEntry("cataclysm:black_steel_sword", "Black Steel", "Cataclysm", "Buen daño físico antes de armas de jefes.")
+                    new GearEntry("minecraft:netherite_sword", "Espada Netherita", "Mesa de Herrería",
+                            "Base confiable para empezar a insertar gemas de Apotheosis."),
+                    new GearEntry("simplyswords:netherite_glaive", "Glaive Netherita", "Simply Swords",
+                            "Gran alcance y barrido para limpiar oleadas de misiones."),
+                    new GearEntry("cataclysm:black_steel_sword", "Black Steel", "Cataclysm",
+                            "Buen escalado físico antes de ir por jefes de Cataclysm.")
             )),
             new TierRow("B", "AVANZADO (Tier 3)", 0xFFA855F7, List.of(
-                    new GearEntry("simplyswords:runic_rapier", "Runic Rapier", "Botín / Dungeons", "Arma rúnica escalable con runas y afijos."),
-                    new GearEntry("cataclysm:coral_spear", "Coral Spear", "Leviathan / Sunken", "Gran alcance y daño elemental."),
-                    new GearEntry("irons_spellbooks:amethyst_rapier", "Amethyst Rapier", "Iron's Spellbooks", "Híbrida cuerpo a cuerpo + poder mágico.")
+                    new GearEntry("simplyswords:runic_rapier", "Runic Rapier", "Dungeons / Botín",
+                            "Escala muy bien con runas y afijos críticos de Apotheosis."),
+                    new GearEntry("simplyswords:frostfall", "Frostfall", "Simply Swords (Única)",
+                            "Congela enemigos y te vuelve inmune brevemente con regeneración."),
+                    new GearEntry("simplyswords:dreadtide", "Dreadtide", "Simply Swords (Única)",
+                            "Aumenta velocidad y reduce daño recibido con acumulaciones de Voidcloak.")
             )),
             new TierRow("A", "JEFES (Tier 4)", 0xFFF59E0B, List.of(
-                    new GearEntry("cataclysm:the_incinerator", "The Incinerator", "Ignis (Cataclysm)", "Espada ígnea pesada con habilidad de área."),
-                    new GearEntry("cataclysm:soul_render", "Soul Render", "Maledictus (Cataclysm)", "Alabarda espiritual de altísimo DPS."),
-                    new GearEntry("cataclysm:gauntlet_of_maelstrom", "Guantelete Maelstrom", "Scylla (Cataclysm)", "Control de masas y daño explosivo.")
+                    new GearEntry("cataclysm:the_incinerator", "The Incinerator", "Ignis (Cataclysm)",
+                            "Espada ígnea pesada con gran habilidad en área."),
+                    new GearEntry("cataclysm:soul_render", "Soul Render", "Maledictus (Cataclysm)",
+                            "Alabarda de altísimo DPS contra jefes y grupos."),
+                    new GearEntry("cisco_mod:hellbrand", "Hellbrand (Cuidado)", "Endgame Cisco",
+                            "Daño bruto enorme, pero OJO: jefes con Reflect pueden matarte de 1 golpe.")
             )),
-            new TierRow("S", "ENDGAME (Tier 5)", 0xFFEF4444, List.of(
-                    new GearEntry("cisco_mod:bjorn_helmet", "Equipo de Campeones", "Jefes Cisco / Tienda", "Combina armas con afijos Godforged + Gemas."),
-                    new GearEntry("apotheosis:mythic_material", "Reforja Godforged", "Desafío Wither / Jefes", "Mejora tu arma Tier A/S a rareza Mítica en Apotheosis."),
-                    new GearEntry("apotheosis:sigil_of_socketing", "Zócalos y Gemas", "Wither / Misiones", "Añade hasta 3-4 gemas perfectas a tu arma final.")
+            new TierRow("S", "META ENDGAME (Tier 5)", 0xFFEF4444, List.of(
+                    new GearEntry("cisco_mod:frostfang", "Frostfang (META)", "Endgame Cisco",
+                            "Top #1 Reddit: hace daño por % de HP (derrite a Fell King) y limita daño recibido a ~2.5 corazones."),
+                    new GearEntry("apotheosis:mythic_material", "Reforja Godforged", "Desafío Wither / Jefes",
+                            "Reforja tu equipo a Mítico y busca afijos de Vida Máx % y Reducción de daño."),
+                    new GearEntry("apotheosis:sigil_of_socketing", "Gemas + Librería", "Wither / Apotheosis",
+                            "En Dragonfyre la supervivencia depende de Gemas Perfectas, Vida Máx % y Library of Alexandria.")
             ))
     );
 
@@ -116,10 +144,10 @@ public class GearRoadmapScreen extends Screen {
 
         UiStyle.drawRoundedCard(g, boxX - 1, boxY - 1, boxW + 2, boxH + 2, 4, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
         UiStyle.drawRoundedRect(g, boxX + 2, boxY + 2, boxW - 4, 22, 0, UiStyle.BG_HEADER);
-        g.drawString(this.font, "§6§lROADMAP DE PROGRESIÓN §7— Tierlist Armaduras y Armas", boxX + 12, boxY + 9, 0xFFD4AF37);
+        g.drawString(this.font, "§6§lROADMAP DE PROGRESIÓN §7— Meta Dragonfyre (Armaduras y Armas)", boxX + 12, boxY + 9, 0xFFD4AF37);
 
-        String subHint = "§7Pasa el cursor sobre cada objeto para ver dónde conseguirlo. §8(Rueda del ratón para bajar)";
-        g.drawString(this.font, subHint, boxX + 230, boxY + 33, 0xAAAAAA);
+        String metaTip = "§eTip Meta: §7En Late Game prioriza §fVida Máx %§7, §fGemas§7 y §fDaño %HP §7sobre armadura plana.";
+        g.drawString(this.font, metaTip, boxX + 228, boxY + 33, 0xCCCCCC);
 
         int listTop = boxY + 52;
         int listBottom = boxY + boxH - 8;
@@ -142,18 +170,16 @@ public class GearRoadmapScreen extends Screen {
             if (y + rowH >= listTop && y <= listBottom) {
                 UiStyle.drawRoundedCard(g, boxX + 10, y, boxW - 20, rowH, 2, UiStyle.BG_PANEL, 0, false);
 
-                // Badge Tier a la izquierda
                 int tierW = 92;
                 UiStyle.drawRoundedCard(g, boxX + 14, y + 6, tierW, rowH - 12, 2, UiStyle.BG_CARD, row.color(), false);
                 g.drawCenteredString(this.font, "§lTIER " + row.badge(), boxX + 14 + tierW / 2, y + 14, row.color());
                 String shortLbl = row.title().contains("(") ? row.title().substring(0, row.title().indexOf('(')).trim() : row.title();
                 g.drawCenteredString(this.font, "§7" + shortLbl, boxX + 14 + tierW / 2, y + 28, 0xCCCCCC);
 
-                // Tarjetas de items
                 int cardX = boxX + 14 + tierW + 8;
                 int availW = (boxX + boxW - 14) - cardX;
                 int count = row.entries().size();
-                int cardW = Math.min(165, Math.max(110, (availW - (count - 1) * 6) / Math.max(1, count)));
+                int cardW = Math.min(180, Math.max(115, (availW - (count - 1) * 6) / Math.max(1, count)));
 
                 for (GearEntry entry : row.entries()) {
                     if (cardX + cardW > boxX + boxW - 10) break;
@@ -189,7 +215,7 @@ public class GearRoadmapScreen extends Screen {
                     Component.literal("§l" + hoveredEntry.name()),
                     Component.literal("§7Tier: §f" + hoveredTier.title()),
                     Component.literal("§eOrigen: §f" + hoveredEntry.source()),
-                    Component.literal("§aConsejo: §7" + hoveredEntry.tip())
+                    Component.literal("§aRecomendación: §7" + hoveredEntry.tip())
             );
             g.renderComponentTooltip(this.font, tip, mouseX, mouseY);
         }

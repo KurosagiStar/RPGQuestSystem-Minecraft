@@ -27,15 +27,19 @@ public class QuestHudOverlay {
             return;
         }
 
+        Minecraft mc = Minecraft.getInstance();
+        LocalPlayer player = mc.player;
+        if (player == null || mc.level == null || mc.options.hideGui) return;
+
+        if (mc.screen == null) {
+            renderZenlessQuickBar(event.getGuiGraphics(), mc);
+        }
+
         if (!QuestConfig.hudEnabled) return;
 
         if ("none".equalsIgnoreCase(QuestConfig.trackedQuestId)) {
             return;
         }
-
-        Minecraft mc = Minecraft.getInstance();
-        LocalPlayer player = mc.player;
-        if (player == null || mc.level == null || mc.options.hideGui) return;
 
         QuestDefinition questToTrack = null;
 
@@ -348,6 +352,42 @@ public class QuestHudOverlay {
     private void drawBadge(GuiGraphics graphics, Font font, String text, int x, int y, int w, int h, int bgColor, int borderColor) {
         UiStyle.drawRoundedCard(graphics, x, y, w, h, 1, bgColor, 0xFF0B0B0D, false);
         graphics.drawString(font, text, x + 4, y + 1, 0xFFFFFF);
+    }
+
+    private void renderZenlessQuickBar(GuiGraphics g, Minecraft mc) {
+        Font font = mc.font;
+        String[] keys = { "F1", "J", "G", "O" };
+        String[] labels = { "Roadmap", "Misiones", "Grupo", "Árbol" };
+
+        float scale = 0.78f;
+        int padX = 5;
+        int gap = 4;
+        int innerW = 0;
+        for (int i = 0; i < keys.length; i++) {
+            innerW += font.width("[" + keys[i] + "] " + labels[i]) + padX * 2;
+            if (i < keys.length - 1) innerW += gap;
+        }
+        int barH = 14;
+        int scaledW = Math.round(innerW * scale);
+        int screenW = mc.getWindow().getGuiScaledWidth();
+        int startX = screenW - scaledW - 8;
+        int startY = 6;
+
+        g.pose().pushPose();
+        g.pose().translate(startX, startY, 0);
+        g.pose().scale(scale, scale, 1.0f);
+
+        UiStyle.drawRoundedCard(g, -3, -2, innerW + 6, barH + 4, 2, 0xCC222225, UiStyle.BORDER_PANEL, false);
+        int cx = 0;
+        for (int i = 0; i < keys.length; i++) {
+            String txt = "§e[" + keys[i] + "] §f" + labels[i];
+            int itemW = font.width("[" + keys[i] + "] " + labels[i]) + padX * 2;
+            UiStyle.drawRoundedCard(g, cx, 0, itemW, barH, 1, 0xDD1C1C1F, 0, false);
+            g.drawString(font, txt, cx + padX, 3, 0xFFFFFF, false);
+            cx += itemW + gap;
+        }
+
+        g.pose().popPose();
     }
 
     private String calculateDirectionArrow(float playerYaw, double dx, double dz) {
