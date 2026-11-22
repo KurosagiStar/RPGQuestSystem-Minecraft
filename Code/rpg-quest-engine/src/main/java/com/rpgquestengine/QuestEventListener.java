@@ -1,7 +1,10 @@
 package com.rpgquestengine;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -10,6 +13,7 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
@@ -21,6 +25,42 @@ import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = RPGQuestEngine.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class QuestEventListener {
+
+    private static java.util.Set<String> carryOnForbiddenEntities;
+
+    @SubscribeEvent
+    public static void onServerStarted(ServerStartedEvent event) {
+        ensureCarryOnBlacklist();
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void ensureCarryOnBlacklist() {
+        try {
+            if (carryOnForbiddenEntities != null && carryOnForbiddenEntities.contains("easy_npc:humanoid")) {
+                return;
+            }
+            Class<?> lh = Class.forName("tschipp.carryon.common.config.ListHandler");
+            var fEnt = lh.getDeclaredField("FORBIDDEN_ENTITIES");
+            fEnt.setAccessible(true);
+            java.util.Set<String> forbidden = (java.util.Set<String>) fEnt.get(null);
+            if (forbidden != null) {
+                for (ResourceLocation key : ForgeRegistries.ENTITY_TYPES.getKeys()) {
+                    if ("easy_npc".equals(key.getNamespace())) {
+                        forbidden.add(key.toString());
+                    }
+                }
+                carryOnForbiddenEntities = forbidden;
+            }
+            var fTags = lh.getDeclaredField("FORBIDDEN_ENTITIES_TAGS");
+            fTags.setAccessible(true);
+            List<TagKey<EntityType<?>>> tags = (List<TagKey<EntityType<?>>>) fTags.get(null);
+            TagKey<EntityType<?>> blacklistTag = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("carryon", "entity_blacklist"));
+            if (tags != null && !tags.contains(blacklistTag)) {
+                tags.add(blacklistTag);
+            }
+        } catch (Throwable ignored) {
+        }
+    }
 
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
@@ -153,6 +193,7 @@ public class QuestEventListener {
 
     @SubscribeEvent(receiveCanceled = true)
     public static void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
+        ensureCarryOnBlacklist();
         if (event.getTarget() instanceof LivingEntity living) {
             if (event.getLevel().isClientSide()) {
                 String name = living.getName().getString();
