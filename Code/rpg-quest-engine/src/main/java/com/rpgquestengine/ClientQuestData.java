@@ -28,6 +28,8 @@ public class ClientQuestData {
 
     public static boolean CHALLENGE_WITHER_DONE = false;
     public static int CHALLENGE_WITHER_CD_SEC = 0;
+    public static int CHALLENGE_ENDER_KILLS = 0;
+    public static boolean CHALLENGE_ENDER_CLAIMED = false;
     public static long CHALLENGE_SYNCED_AT_MS = 0;
 
     public static boolean PARTY_IN_PARTY = false;

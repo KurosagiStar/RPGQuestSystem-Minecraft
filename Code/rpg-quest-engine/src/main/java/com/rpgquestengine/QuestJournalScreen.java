@@ -641,6 +641,58 @@ public class QuestJournalScreen extends Screen {
         if (hoverR >= 0) {
             g.renderTooltip(this.font, Component.literal("§e" + rTips[hoverR]), mouseX, mouseY);
         }
+
+        // Segunda tarjeta: Desafío Enderman (5 Endermans -> Ring of Hungerless)
+        int ex = (w >= 750) ? (cx + cw + 14) : cx;
+        int ey = (w >= 750) ? cy : (cy + ch + 10);
+        int ew = cw;
+        int eh = ch;
+        if (ey + eh <= bottomY - 4) {
+            int eKills = Math.min(5, ClientQuestData.CHALLENGE_ENDER_KILLS);
+            boolean eClaimed = ClientQuestData.CHALLENGE_ENDER_CLAIMED;
+            boolean eDone = eKills >= 5 && !eClaimed;
+
+            UiStyle.drawRoundedCard(g, ex, ey, ew, eh, 4, UiStyle.BG_CARD, eDone ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL, true);
+            UiStyle.drawRoundedRect(g, ex + 2, ey + 2, ew - 4, 24, 0, UiStyle.BG_HEADER);
+            g.renderItem(new ItemStack(Items.ENDER_PEARL), ex + 6, ey + 5);
+            g.drawString(this.font, "§d§lCazador del Vacío", ex + 28, ey + 5, 0xDDA0FF);
+            String eProg = eClaimed ? "§7Reclamado" : (eDone ? "§aProgreso: 5/5" : "§eProgreso: " + eKills + "/5");
+            g.drawString(this.font, eProg, ex + 28, ey + 15, 0xFFFFFF);
+
+            List<FormattedCharSequence> eDesc = this.font.split(
+                    Component.literal("§7Elimina 5 Endermans para obtener el Anillo de Saturación (Ring of Hungerless)."),
+                    ew - 20);
+            int ety = ey + 34;
+            for (FormattedCharSequence line : eDesc) {
+                g.drawString(this.font, line, ex + 10, ety, 0xCCCCCC);
+                ety += 11;
+            }
+
+            int erewY = ey + eh - 62;
+            g.fill(ex + 10, erewY - 5, ex + ew - 10, erewY - 4, 0x55D4AF37);
+            g.drawString(this.font, "§6Recompensa:", ex + 10, erewY, 0xFFD4AF37);
+
+            Item ringIt = ForgeRegistries.ITEMS.getValue(new ResourceLocation("ringsofascension:ring_hungerless"));
+            ItemStack ringSt = (ringIt != null && ringIt != Items.AIR) ? new ItemStack(ringIt, 1) : new ItemStack(Items.GOLDEN_APPLE, 1);
+            int esx = ex + 10;
+            int esy = erewY + 12;
+            drawMiniSlot(g, ringSt, esx, esy, 0xFF5A4E36);
+            boolean hoverRing = mouseX >= esx && mouseX <= esx + 20 && mouseY >= esy && mouseY <= esy + 20;
+
+            int ebtnX = ex + ew - btnW - 10;
+            if (eClaimed) {
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Completado", 0xFF1E3324, 0xFF1E3324, 0, false);
+            } else if (eDone) {
+                boolean hov = mouseX >= ebtnX && mouseX <= ebtnX + btnW && mouseY >= esy && mouseY <= esy + btnH;
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                clickables.add(new ClickableRegion(ebtnX, esy, btnW, btnH, null, -1, 101));
+            } else {
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Mata 5 Endermans", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+            }
+            if (hoverRing) {
+                g.renderTooltip(this.font, Component.literal("§e1x Ring of Hungerless (Saturación)"), mouseX, mouseY);
+            }
+        }
     }
 
     @Override
@@ -650,6 +702,9 @@ public class QuestJournalScreen extends Screen {
                 if (mouseX >= r.x() && mouseX <= r.x() + r.w() && mouseY >= r.y() && mouseY <= r.y() + r.h()) {
                     if (r.dailyClaimIdx() == 100) {
                         NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(1));
+                        return true;
+                    } else if (r.dailyClaimIdx() == 101) {
+                        NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(2));
                         return true;
                     } else if (r.dailyClaimIdx() >= 0) {
                         NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(r.dailyClaimIdx()));

@@ -42,6 +42,40 @@ public class ChallengeManager {
         }
     }
 
+    public static void onEndermanKilled(ServerPlayer sp) {
+        if (sp == null) return;
+        for (ServerPlayer member : PartyManager.getOnlineMembers(sp)) {
+            if (member != sp && !member.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
+            CompoundTag ch = getData(member);
+            if (ch.getBoolean("ender_claimed")) continue;
+            int kills = ch.getInt("ender_kills");
+            if (kills >= 5) continue;
+
+            kills++;
+            ch.putInt("ender_kills", kills);
+            member.getPersistentData().put("rqe_challenges", ch);
+            if (kills >= 5) {
+                member.sendSystemMessage(Component.literal("§6[Desafío Completado] §f¡Derrotaste 5 Endermans! Reclama tu §aRing of Hungerless §fen §eJ → Desafíos§f."));
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> member), new PlayQuestSoundPacket(3));
+            }
+            syncToPlayer(member);
+        }
+    }
+
+    public static void claimEnderman(ServerPlayer sp) {
+        if (sp == null) return;
+        CompoundTag ch = getData(sp);
+        if (ch.getBoolean("ender_claimed") || ch.getInt("ender_kills") < 5) return;
+
+        ch.putBoolean("ender_claimed", true);
+        sp.getPersistentData().put("rqe_challenges", ch);
+
+        giveItem(sp, "ringsofascension:ring_hungerless", 1, "");
+        sp.sendSystemMessage(Component.literal("§a[Desafío Enderman Reclamado] §eRecibiste 1x Ring of Hungerless."));
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
+        syncToPlayer(sp);
+    }
+
     public static void claimWither(ServerPlayer sp) {
         if (sp == null) return;
         CompoundTag ch = getData(sp);
@@ -87,7 +121,9 @@ public class ChallengeManager {
         int remSec = nextMs > System.currentTimeMillis()
                 ? (int) ((nextMs - System.currentTimeMillis()) / 1000L)
                 : 0;
+        int enderKills = ch.getInt("ender_kills");
+        boolean enderClaimed = ch.getBoolean("ender_claimed");
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new SyncChallengesPacket(done, remSec));
+                new SyncChallengesPacket(done, remSec, enderKills, enderClaimed));
     }
 }
