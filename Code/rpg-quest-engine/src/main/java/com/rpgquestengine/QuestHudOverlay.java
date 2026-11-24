@@ -76,10 +76,19 @@ public class QuestHudOverlay {
     }
 
     private void renderTrackedQuest(GuiGraphics graphics, Font font, LocalPlayer player, QuestDefinition q) {
-        int x = QuestConfig.hudPosX;
-        int y = QuestConfig.hudPosY;
-        int maxTextWidth = 194;
-        int cardWidth = 210;
+        Minecraft mcWin = Minecraft.getInstance();
+        int screenW = mcWin.getWindow().getGuiScaledWidth();
+        int screenH = mcWin.getWindow().getGuiScaledHeight();
+        int x = Math.max(4, Math.min(Math.max(4, screenW - 150), QuestConfig.hudPosX));
+        int y = Math.max(4, Math.min(Math.max(4, screenH - 40), QuestConfig.hudPosY));
+        int maxTextWidth = 152;
+        int cardWidth = 166;
+
+        graphics.pose().pushPose();
+        graphics.pose().translate(x, y, 0);
+        graphics.pose().scale(0.85f, 0.85f, 1.0f);
+        graphics.pose().translate(-x, -y, 0);
+        try {
 
         boolean isDone = ClientQuestData.hasTag(q.doneTag);
 
@@ -334,6 +343,9 @@ public class QuestHudOverlay {
             }
 
             drawY += 2;
+        }
+        } finally {
+            graphics.pose().popPose();
         }
     }
 

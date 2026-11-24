@@ -155,6 +155,33 @@ public class RPGQuestEngine {
     }
 
     @SubscribeEvent
+    public void onPlayerClone(PlayerEvent.Clone event) {
+        if (event.getOriginal() instanceof ServerPlayer oldSp && event.getEntity() instanceof ServerPlayer newSp) {
+            var oldData = oldSp.getPersistentData();
+            var newData = newSp.getPersistentData();
+            for (String key : oldData.getAllKeys()) {
+                if (key.startsWith("rqe_") || key.startsWith("rpgquest") || key.equals(net.minecraft.world.entity.player.Player.PERSISTED_NBT_TAG)) {
+                    var tag = oldData.get(key);
+                    if (tag != null) newData.put(key, tag.copy());
+                }
+            }
+            for (String tag : oldSp.getTags()) {
+                newSp.addTag(tag);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
+        if (event.getEntity() instanceof ServerPlayer sp) {
+            checkAndSyncQuests(sp);
+            DailyQuestManager.syncToPlayer(sp);
+            ChallengeManager.syncToPlayer(sp);
+            PartyManager.syncToPlayer(sp);
+        }
+    }
+
+    @SubscribeEvent
     public void onRegisterCommands(RegisterCommandsEvent event) {
         event.getDispatcher().register(
             Commands.literal("rpgquest")
