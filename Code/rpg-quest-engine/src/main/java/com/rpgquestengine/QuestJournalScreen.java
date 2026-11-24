@@ -655,8 +655,8 @@ public class QuestJournalScreen extends Screen {
             UiStyle.drawRoundedCard(g, ex, ey, ew, eh, 4, UiStyle.BG_CARD, eDone ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL, true);
             UiStyle.drawRoundedRect(g, ex + 2, ey + 2, ew - 4, 24, 0, UiStyle.BG_HEADER);
             g.renderItem(new ItemStack(Items.ENDER_PEARL), ex + 6, ey + 5);
-            g.drawString(this.font, "§d§lCazador del Vacío", ex + 28, ey + 5, 0xDDA0FF);
-            String eProg = eClaimed ? "§7Reclamado" : (eDone ? "§aProgreso: 5/5" : "§eProgreso: " + eKills + "/5");
+            g.drawString(this.font, "§d§lCazador del Vacío §7(Único)", ex + 28, ey + 5, 0xDDA0FF);
+            String eProg = eClaimed ? "§7Reclamado (No repetible)" : (eDone ? "§aProgreso: 5/5" : "§eProgreso: " + eKills + "/5 §8• No repetible");
             g.drawString(this.font, eProg, ex + 28, ey + 15, 0xFFFFFF);
 
             List<FormattedCharSequence> eDesc = this.font.split(
