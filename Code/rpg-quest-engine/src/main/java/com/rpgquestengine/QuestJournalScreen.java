@@ -648,19 +648,19 @@ public class QuestJournalScreen extends Screen {
         int ew = cw;
         int eh = ch;
         if (ey + eh <= bottomY - 4) {
-            int eKills = Math.min(5, ClientQuestData.CHALLENGE_ENDER_KILLS);
+            int eKills = Math.min(10, ClientQuestData.CHALLENGE_ENDER_KILLS);
             boolean eClaimed = ClientQuestData.CHALLENGE_ENDER_CLAIMED;
-            boolean eDone = eKills >= 5 && !eClaimed;
+            boolean eDone = eKills >= 10 && !eClaimed;
 
             UiStyle.drawRoundedCard(g, ex, ey, ew, eh, 4, UiStyle.BG_CARD, eDone ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL, true);
             UiStyle.drawRoundedRect(g, ex + 2, ey + 2, ew - 4, 24, 0, UiStyle.BG_HEADER);
-            g.renderItem(new ItemStack(Items.ENDER_PEARL), ex + 6, ey + 5);
-            g.drawString(this.font, "§d§lCazador del Vacío §7(Único)", ex + 28, ey + 5, 0xDDA0FF);
-            String eProg = eClaimed ? "§7Reclamado (No repetible)" : (eDone ? "§aProgreso: 5/5" : "§eProgreso: " + eKills + "/5 §8• No repetible");
+            g.renderItem(new ItemStack(Items.ROTTEN_FLESH), ex + 6, ey + 5);
+            g.drawString(this.font, "§a§lCazador de Zombis §7(Único)", ex + 28, ey + 5, 0x77DD77);
+            String eProg = eClaimed ? "§7Reclamado (No repetible)" : (eDone ? "§aProgreso: 10/10" : "§eProgreso: " + eKills + "/10 §8• No repetible");
             g.drawString(this.font, eProg, ex + 28, ey + 15, 0xFFFFFF);
 
             List<FormattedCharSequence> eDesc = this.font.split(
-                    Component.literal("§7Elimina 5 Endermans para obtener el Anillo de Saturación (Ring of Hungerless)."),
+                    Component.literal("§7Elimina 10 Zombis para obtener el Anillo de Saturación (Ring of Hungerless)."),
                     ew - 20);
             int ety = ey + 34;
             for (FormattedCharSequence line : eDesc) {
@@ -687,7 +687,7 @@ public class QuestJournalScreen extends Screen {
                 UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(ebtnX, esy, btnW, btnH, null, -1, 101));
             } else {
-                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Mata 5 Endermans", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Mata 10 Zombis", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
             }
             if (hoverRing) {
                 g.renderTooltip(this.font, Component.literal("§e1x Ring of Hungerless (Saturación)"), mouseX, mouseY);

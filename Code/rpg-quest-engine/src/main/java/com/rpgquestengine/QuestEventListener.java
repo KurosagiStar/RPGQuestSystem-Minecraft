@@ -136,7 +136,7 @@ public class QuestEventListener {
             if (victim.getType() == net.minecraft.world.entity.EntityType.WITHER) {
                 ChallengeManager.onWitherKilled(sp);
             }
-            if (victim.getType() == net.minecraft.world.entity.EntityType.ENDERMAN) {
+            if (victim.getType() == net.minecraft.world.entity.EntityType.ZOMBIE) {
                 ChallengeManager.onEndermanKilled(sp);
             }
             ResourceLocation entityId = ForgeRegistries.ENTITY_TYPES.getKey(victim.getType());
