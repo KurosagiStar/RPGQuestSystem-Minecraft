@@ -74,10 +74,17 @@ public class HudPositionScreen extends Screen {
 
     @Override
     public boolean mouseReleased(double mouseX, double mouseY, int button) {
-        if (button == 0) {
+        if (button == 0 && this.dragging) {
             this.dragging = false;
+            QuestConfig.saveSettings();
         }
         return super.mouseReleased(mouseX, mouseY, button);
+    }
+
+    @Override
+    public void onClose() {
+        QuestConfig.saveSettings();
+        super.onClose();
     }
 }
 
