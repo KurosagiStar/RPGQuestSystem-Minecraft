@@ -105,6 +105,9 @@ public class QuestEventListener {
                 ResourceLocation itemId = ForgeRegistries.ITEMS.getKey(stack.getItem());
                 if (itemId != null) {
                     incrementQuestTarget(sp, "CRAFT", itemId.toString(), stack.getCount());
+                    if ("minecraft:bread".equals(itemId.toString())) {
+                        incrementQuestTarget(sp, "SMELT", "minecraft:bread", stack.getCount());
+                    }
                 }
             }
         }
@@ -328,9 +331,14 @@ public class QuestEventListener {
     public static void onItemSmelted(PlayerEvent.ItemSmeltedEvent event) {
         Player player = event.getEntity();
         if (player instanceof ServerPlayer sp) {
-            ResourceLocation itemId = ForgeRegistries.ITEMS.getKey(event.getSmelting().getItem());
+            ItemStack stack = event.getSmelting();
+            ResourceLocation itemId = ForgeRegistries.ITEMS.getKey(stack.getItem());
             if (itemId != null) {
-                incrementQuestTarget(sp, "SMELT", itemId.toString(), event.getSmelting().getCount());
+                incrementQuestTarget(sp, "SMELT", itemId.toString(), stack.getCount());
+                incrementQuestTarget(sp, "SMELT", "any", stack.getCount());
+                if (stack.getItem().isEdible()) {
+                    incrementQuestTarget(sp, "SMELT", "minecraft:bread", stack.getCount());
+                }
             }
         }
     }
