@@ -29,7 +29,6 @@ public class ChallengeManager {
     public static void onWitherKilled(ServerPlayer sp) {
         if (sp == null) return;
         for (ServerPlayer member : PartyManager.getOnlineMembers(sp)) {
-            if (member != sp && !member.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
             CompoundTag ch = getData(member);
             if (ch.getLong("wither_next_ms") > System.currentTimeMillis()) continue;
             if (ch.getBoolean("wither_done")) continue;
@@ -45,7 +44,6 @@ public class ChallengeManager {
     public static void onEndermanKilled(ServerPlayer sp) {
         if (sp == null) return;
         for (ServerPlayer member : PartyManager.getOnlineMembers(sp)) {
-            if (member != sp && !member.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
             CompoundTag ch = getData(member);
             if (ch.getBoolean("ender_claimed")) continue;
             int kills = ch.getInt("ender_kills");
