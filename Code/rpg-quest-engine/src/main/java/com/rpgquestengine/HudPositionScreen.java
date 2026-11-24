@@ -33,14 +33,22 @@ public class HudPositionScreen extends Screen {
 
         graphics.drawCenteredString(this.font, "§e§lArrastra la caja del HUD con el ratón a la posición deseada", this.width / 2, 15, 0xFFFFFF);
 
-        int boxX = QuestConfig.hudPosX;
-        int boxY = QuestConfig.hudPosY;
-        int boxW = 205;
-        int boxH = 55;
+        int boxW = 154;
+        int boxH = 48;
+        int boxX = QuestConfig.hudPosXRatio >= 0
+                ? (int) Math.round(QuestConfig.hudPosXRatio * Math.max(1, this.width - boxW))
+                : Math.max(0, Math.min(this.width - boxW, QuestConfig.hudPosX));
+        int boxY = QuestConfig.hudPosYRatio >= 0
+                ? (int) Math.round(QuestConfig.hudPosYRatio * Math.max(1, this.height - boxH))
+                : Math.max(0, Math.min(this.height - boxH, QuestConfig.hudPosY));
 
         if (dragging) {
-            QuestConfig.hudPosX = Math.max(0, Math.min(this.width - boxW, mouseX - dragOffsetX));
-            QuestConfig.hudPosY = Math.max(0, Math.min(this.height - boxH, mouseY - dragOffsetY));
+            boxX = Math.max(0, Math.min(this.width - boxW, mouseX - dragOffsetX));
+            boxY = Math.max(0, Math.min(this.height - boxH, mouseY - dragOffsetY));
+            QuestConfig.hudPosX = boxX;
+            QuestConfig.hudPosY = boxY;
+            QuestConfig.hudPosXRatio = (double) boxX / Math.max(1, this.width - boxW);
+            QuestConfig.hudPosYRatio = (double) boxY / Math.max(1, this.height - boxH);
         }
 
         graphics.fill(boxX - 2, boxY - 2, boxX + boxW + 2, boxY + boxH + 2, 0xCC111111);
@@ -58,10 +66,14 @@ public class HudPositionScreen extends Screen {
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        int boxX = QuestConfig.hudPosX;
-        int boxY = QuestConfig.hudPosY;
-        int boxW = 205;
-        int boxH = 55;
+        int boxW = 154;
+        int boxH = 48;
+        int boxX = QuestConfig.hudPosXRatio >= 0
+                ? (int) Math.round(QuestConfig.hudPosXRatio * Math.max(1, this.width - boxW))
+                : Math.max(0, Math.min(this.width - boxW, QuestConfig.hudPosX));
+        int boxY = QuestConfig.hudPosYRatio >= 0
+                ? (int) Math.round(QuestConfig.hudPosYRatio * Math.max(1, this.height - boxH))
+                : Math.max(0, Math.min(this.height - boxH, QuestConfig.hudPosY));
 
         if (button == 0 && mouseX >= boxX && mouseX <= boxX + boxW && mouseY >= boxY && mouseY <= boxY + boxH) {
             this.dragging = true;

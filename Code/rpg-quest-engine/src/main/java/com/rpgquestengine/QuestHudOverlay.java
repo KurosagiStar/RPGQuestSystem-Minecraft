@@ -79,8 +79,14 @@ public class QuestHudOverlay {
         Minecraft mcWin = Minecraft.getInstance();
         int screenW = mcWin.getWindow().getGuiScaledWidth();
         int screenH = mcWin.getWindow().getGuiScaledHeight();
-        int x = Math.max(4, Math.min(Math.max(4, screenW - 150), QuestConfig.hudPosX));
-        int y = Math.max(4, Math.min(Math.max(4, screenH - 40), QuestConfig.hudPosY));
+        int rawX = QuestConfig.hudPosXRatio >= 0
+                ? (int) Math.round(QuestConfig.hudPosXRatio * Math.max(1, screenW - 154))
+                : QuestConfig.hudPosX;
+        int rawY = QuestConfig.hudPosYRatio >= 0
+                ? (int) Math.round(QuestConfig.hudPosYRatio * Math.max(1, screenH - 48))
+                : QuestConfig.hudPosY;
+        int x = Math.max(4, Math.min(Math.max(4, screenW - 154), rawX));
+        int y = Math.max(4, Math.min(Math.max(4, screenH - 48), rawY));
         int maxTextWidth = 152;
         int cardWidth = 166;
 

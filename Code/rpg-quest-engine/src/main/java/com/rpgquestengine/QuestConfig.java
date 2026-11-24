@@ -30,6 +30,8 @@ public class QuestConfig {
 
     public static int hudPosX = 10;
     public static int hudPosY = 15;
+    public static double hudPosXRatio = -1.0;
+    public static double hudPosYRatio = -1.0;
     public static boolean hudEnabled = true;
     public static String trackedQuestId = "";
 
@@ -114,6 +116,8 @@ public class QuestConfig {
                 if (obj != null) {
                     if (obj.has("hudPosX")) hudPosX = obj.get("hudPosX").getAsInt();
                     if (obj.has("hudPosY")) hudPosY = obj.get("hudPosY").getAsInt();
+                    if (obj.has("hudPosXRatio")) hudPosXRatio = obj.get("hudPosXRatio").getAsDouble();
+                    if (obj.has("hudPosYRatio")) hudPosYRatio = obj.get("hudPosYRatio").getAsDouble();
                     if (obj.has("hudEnabled")) hudEnabled = obj.get("hudEnabled").getAsBoolean();
                     if (obj.has("trackedQuestId")) trackedQuestId = obj.get("trackedQuestId").getAsString();
                 }
@@ -130,6 +134,8 @@ public class QuestConfig {
             JsonObject obj = new JsonObject();
             obj.addProperty("hudPosX", hudPosX);
             obj.addProperty("hudPosY", hudPosY);
+            obj.addProperty("hudPosXRatio", hudPosXRatio);
+            obj.addProperty("hudPosYRatio", hudPosYRatio);
             obj.addProperty("hudEnabled", hudEnabled);
             obj.addProperty("trackedQuestId", trackedQuestId);
             GSON.toJson(obj, writer);
