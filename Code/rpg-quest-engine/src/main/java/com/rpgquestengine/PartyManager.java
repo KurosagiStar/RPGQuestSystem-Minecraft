@@ -179,6 +179,7 @@ public class PartyManager {
                     m.addTag(q.activeTag);
                 }
             }
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
             RPGQuestEngine.syncPlayerAfterDialog(m);
             syncToPlayer(m);
             m.sendSystemMessage(Component.literal("§b[Grupo] §fMisiones principales y NPCs sincronizados."));
@@ -256,6 +257,7 @@ public class PartyManager {
             if (q.activeTag != null && !m.getTags().contains(q.activeTag)) {
                 m.addTag(q.activeTag);
                 m.sendSystemMessage(Component.literal("§6[Grupo] §e" + actor.getScoreboardName() + " §faceptó: §e" + q.title));
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
                 RPGQuestEngine.syncPlayerAfterDialog(m);
             }
         }
