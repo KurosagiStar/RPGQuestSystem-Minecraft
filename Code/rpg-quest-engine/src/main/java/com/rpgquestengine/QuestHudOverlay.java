@@ -52,7 +52,7 @@ public class QuestHudOverlay {
             }
         }
 
-        if (questToTrack == null && QuestConfig.trackedQuestId.isEmpty()) {
+        if (questToTrack == null) {
             for (QuestDefinition q : QuestConfig.QUESTS) {
                 if ("MAIN".equalsIgnoreCase(q.category) && ClientQuestData.hasTag(q.activeTag) && !ClientQuestData.hasTag(q.completedTag)) {
                     questToTrack = q;
@@ -61,7 +61,7 @@ public class QuestHudOverlay {
             }
         }
 
-        if (questToTrack == null && QuestConfig.trackedQuestId.isEmpty()) {
+        if (questToTrack == null) {
             for (QuestDefinition q : QuestConfig.QUESTS) {
                 if (ClientQuestData.hasTag(q.activeTag) && !ClientQuestData.hasTag(q.completedTag)) {
                     questToTrack = q;

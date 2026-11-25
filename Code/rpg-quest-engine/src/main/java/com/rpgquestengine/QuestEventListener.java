@@ -304,7 +304,8 @@ public class QuestEventListener {
                         String qNorm = java.text.Normalizer.normalize(q.npc, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
                         String eNorm = java.text.Normalizer.normalize(entityName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
                         String cNorm = java.text.Normalizer.normalize(customName, java.text.Normalizer.Form.NFD).replaceAll("\\p{M}", "").toLowerCase();
-                        if (eNorm.contains(qNorm) || qNorm.contains(eNorm) || cNorm.contains(qNorm) || qNorm.contains(cNorm)) {
+                        if ((!eNorm.isEmpty() && (eNorm.contains(qNorm) || qNorm.contains(eNorm)))
+                                || (!cNorm.isEmpty() && (cNorm.contains(qNorm) || qNorm.contains(cNorm)))) {
                             matches = true;
                         }
                     }

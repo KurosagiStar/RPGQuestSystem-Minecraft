@@ -1266,5 +1266,31 @@ public class RPGQuestEngine {
             sp.getPersistentData().remove("rqe_pending_rewards");
             sp.getPersistentData().putBoolean("rqe_restored_2511", true);
         }
+
+        if (("Richard_HM".equalsIgnoreCase(pName) || "SebaMc26".equalsIgnoreCase(pName))
+                && !sp.getPersistentData().getBoolean("rqe_restored_active_2511")) {
+            String[] sharedActiveTags = new String[]{
+                    "cisco_beasts_1f42d7c3a2431c43_act",
+                    "cisco_champions_65a32ba80044c9b7_act",
+                    "cisco_deus_1c30c21b739d5f98_act",
+                    "q_cisco_dragons_2fb1578ebe95b902_act",
+                    "contract_inquisidor_ahogados_act",
+                    "contract_marino_guardian_act"
+            };
+            for (String at : sharedActiveTags) {
+                QuestDefinition q = null;
+                for (QuestDefinition cand : QuestConfig.QUESTS) {
+                    if (at.equals(cand.activeTag)) { q = cand; break; }
+                }
+                if (q == null || q.completedTag == null || !hasQuestTag(sp, q.completedTag)) {
+                    addQuestTag(sp, at);
+                }
+            }
+            if ("SebaMc26".equalsIgnoreCase(pName)) {
+                if (!hasQuestTag(sp, "contract_tabernero_aranas_comp")) addQuestTag(sp, "contract_tabernero_aranas_act");
+                if (!hasQuestTag(sp, "q_craftear_entregada")) addQuestTag(sp, "q_craftear_activa");
+            }
+            sp.getPersistentData().putBoolean("rqe_restored_active_2511", true);
+        }
     }
 }
