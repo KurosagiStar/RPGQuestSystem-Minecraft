@@ -78,12 +78,6 @@ public class NpcDialogActionPacket {
             int idx = (choiceIndex >= 0 && choiceIndex < q.choiceRewards.size()) ? choiceIndex : 0;
             grantRewardItem(sp, q.choiceRewards.get(idx));
         }
-
-        if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty() && sp.getServer() != null) {
-            sp.getServer().getCommands().performPrefixedCommand(
-                    sp.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(4),
-                    "ftbquests change_progress " + sp.getScoreboardName() + " complete " + q.ftbQuestId);
-        }
     }
 
     public static void handle(NpcDialogActionPacket msg, Supplier<NetworkEvent.Context> ctx) {
