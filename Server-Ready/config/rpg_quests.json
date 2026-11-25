@@ -3492,7 +3492,7 @@
     "stages": [
       {
         "type": "CRAFT",
-        "description": "Craftea 1x Tablón de Recompensas (bountiful:bountyboard)",
+        "description": "Craftea 1x Tablon de Recompensas",
         "target": "bountiful:bountyboard",
         "amount": 1
       }
