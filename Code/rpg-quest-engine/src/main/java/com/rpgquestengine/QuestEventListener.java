@@ -32,6 +32,7 @@ public class QuestEventListener {
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
         ensureCarryOnBlacklist();
+        PartyManager.loadParties();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)

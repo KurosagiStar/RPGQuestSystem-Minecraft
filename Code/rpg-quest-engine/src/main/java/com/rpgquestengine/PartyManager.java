@@ -25,6 +25,48 @@ public class PartyManager {
         return PLAYER_TO_PARTY.get(playerUuid);
     }
 
+    public static void saveParties() {
+        try {
+            java.io.File file = net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get().resolve("rpg_parties.json").toFile();
+            com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
+            Set<Party> seen = new HashSet<>();
+            for (Party p : PLAYER_TO_PARTY.values()) {
+                if (!seen.add(p) || p.members.isEmpty()) continue;
+                com.google.gson.JsonObject obj = new com.google.gson.JsonObject();
+                obj.addProperty("leader", p.leader.toString());
+                com.google.gson.JsonArray mems = new com.google.gson.JsonArray();
+                for (UUID m : p.members) mems.add(m.toString());
+                obj.add("members", mems);
+                arr.add(obj);
+            }
+            try (java.io.OutputStreamWriter w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(file), java.nio.charset.StandardCharsets.UTF_8)) {
+                new com.google.gson.GsonBuilder().setPrettyPrinting().create().toJson(arr, w);
+            }
+        } catch (Exception ignored) {}
+    }
+
+    public static void loadParties() {
+        try {
+            java.io.File file = net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get().resolve("rpg_parties.json").toFile();
+            if (!file.exists()) return;
+            PLAYER_TO_PARTY.clear();
+            try (java.io.InputStreamReader r = new java.io.InputStreamReader(new java.io.FileInputStream(file), java.nio.charset.StandardCharsets.UTF_8)) {
+                com.google.gson.JsonArray arr = com.google.gson.JsonParser.parseReader(r).getAsJsonArray();
+                for (com.google.gson.JsonElement el : arr) {
+                    com.google.gson.JsonObject obj = el.getAsJsonObject();
+                    UUID leader = UUID.fromString(obj.get("leader").getAsString());
+                    Party p = new Party(leader);
+                    p.members.clear();
+                    for (com.google.gson.JsonElement mEl : obj.getAsJsonArray("members")) {
+                        UUID m = UUID.fromString(mEl.getAsString());
+                        p.members.add(m);
+                        PLAYER_TO_PARTY.put(m, p);
+                    }
+                }
+            }
+        } catch (Exception ignored) {}
+    }
+
     public static List<ServerPlayer> getOnlineMembers(ServerPlayer sp) {
         if (sp == null || sp.getServer() == null) return Collections.emptyList();
         Party p = PLAYER_TO_PARTY.get(sp.getUUID());
@@ -41,6 +83,7 @@ public class PartyManager {
         if (sp == null || PLAYER_TO_PARTY.containsKey(sp.getUUID())) return;
         Party p = new Party(sp.getUUID());
         PLAYER_TO_PARTY.put(sp.getUUID(), p);
+        saveParties();
         sp.sendSystemMessage(Component.literal("§6[Grupo] §fHas creado un grupo. Pulsa §eG §fpara invitar amigos."));
         syncParty(p, sp.getServer());
     }
@@ -86,6 +129,7 @@ public class PartyManager {
         }
         p.members.add(sp.getUUID());
         PLAYER_TO_PARTY.put(sp.getUUID(), p);
+        saveParties();
         for (ServerPlayer m : getOnlineMembers(sp)) {
             m.sendSystemMessage(Component.literal("§a[Grupo] §e" + sp.getScoreboardName() + " §fse unió al grupo."));
         }
@@ -106,12 +150,14 @@ public class PartyManager {
         p.members.remove(sp.getUUID());
         sp.sendSystemMessage(Component.literal("§e[Grupo] §fSaliste del grupo."));
         if (p.members.isEmpty()) {
+            saveParties();
             syncToPlayer(sp);
             return;
         }
         if (p.leader.equals(sp.getUUID())) {
             p.leader = p.members.get(0);
         }
+        saveParties();
         for (UUID uid : p.members) {
             ServerPlayer m = sp.getServer().getPlayerList().getPlayer(uid);
             if (m != null) {
