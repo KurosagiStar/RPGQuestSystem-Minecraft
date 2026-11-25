@@ -25,6 +25,15 @@ public class PartyManager {
         return PLAYER_TO_PARTY.get(playerUuid);
     }
 
+    private static void runFtbTeamCmd(ServerPlayer actor, String cmd) {
+        if (actor == null || actor.getServer() == null) return;
+        try {
+            actor.getServer().getCommands().performPrefixedCommand(
+                    actor.createCommandSourceStack().withPermission(4).withSuppressedOutput(),
+                    cmd);
+        } catch (Exception ignored) {}
+    }
+
     public static void saveParties() {
         try {
             java.io.File file = net.minecraftforge.fml.loading.FMLPaths.CONFIGDIR.get().resolve("rpg_parties.json").toFile();
@@ -84,6 +93,7 @@ public class PartyManager {
         Party p = new Party(sp.getUUID());
         PLAYER_TO_PARTY.put(sp.getUUID(), p);
         saveParties();
+        runFtbTeamCmd(sp, "ftbteams party create \"Grupo\"");
         sp.sendSystemMessage(Component.literal("§6[Grupo] §fHas creado un grupo. Pulsa §eG §fpara invitar amigos."));
         syncParty(p, sp.getServer());
     }
@@ -130,6 +140,11 @@ public class PartyManager {
         p.members.add(sp.getUUID());
         PLAYER_TO_PARTY.put(sp.getUUID(), p);
         saveParties();
+        ServerPlayer leader = sp.getServer() != null ? sp.getServer().getPlayerList().getPlayer(leaderId) : null;
+        if (leader != null) {
+            runFtbTeamCmd(leader, "ftbteams party invite " + sp.getScoreboardName());
+            runFtbTeamCmd(sp, "ftbteams party join " + leader.getScoreboardName());
+        }
         for (ServerPlayer m : getOnlineMembers(sp)) {
             m.sendSystemMessage(Component.literal("§a[Grupo] §e" + sp.getScoreboardName() + " §fse unió al grupo."));
         }
@@ -151,6 +166,7 @@ public class PartyManager {
         sp.sendSystemMessage(Component.literal("§e[Grupo] §fSaliste del grupo."));
         if (p.members.isEmpty()) {
             saveParties();
+            runFtbTeamCmd(sp, "ftbteams party leave");
             syncToPlayer(sp);
             return;
         }
@@ -158,6 +174,7 @@ public class PartyManager {
             p.leader = p.members.get(0);
         }
         saveParties();
+        runFtbTeamCmd(sp, "ftbteams party leave");
         for (UUID uid : p.members) {
             ServerPlayer m = sp.getServer().getPlayerList().getPlayer(uid);
             if (m != null) {
