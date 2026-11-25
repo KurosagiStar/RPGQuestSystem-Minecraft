@@ -132,6 +132,12 @@ public class NpcDialogActionPacket {
                         }
                     }
                 }
+                if ("REPEATABLE".equalsIgnoreCase(q.category) && q.stages != null) {
+                    for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                        QuestDefinition.QuestStage st = q.stages.get(sIdx);
+                        RPGQuestEngine.setInternalScore(sp, RPGQuestEngine.getInternalScoreKey(q.id, sIdx, st.type), 0);
+                    }
+                }
                 if (q.activeTag != null) sp.addTag(q.activeTag);
                 String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
                 sp.sendSystemMessage(Component.literal("§6[Misión Aceptada] §f" + q.title + ": §e" + desc));
