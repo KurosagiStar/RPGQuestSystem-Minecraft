@@ -399,7 +399,12 @@ public class RPGQuestEngine {
         Map<String, Integer> scores = new HashMap<>();
 
         for (QuestDefinition q : QuestConfig.QUESTS) {
-            if (playerTags.contains(q.activeTag) && !playerTags.contains(q.completedTag)) {
+            boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+            if (isRep && q.completedTag != null && playerTags.contains(q.completedTag)) {
+                removeQuestTag(sp, q.completedTag);
+                playerTags.remove(q.completedTag);
+            }
+            if (playerTags.contains(q.activeTag) && (isRep || !playerTags.contains(q.completedTag))) {
                 // 1. Validar Prerrequisito si tiene uno configurado
                 if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
                     QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
@@ -1011,7 +1016,7 @@ public class RPGQuestEngine {
         QuestDefinition firstBlockedPrereq = null;
         java.util.List<QuestDefinition> available = new java.util.ArrayList<>();
         for (QuestDefinition q : npcQuests) {
-            if (q.completedTag != null && tags.contains(q.completedTag)) continue;
+            if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null && tags.contains(q.completedTag)) continue;
             if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
                 QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
                 if (prereq != null && (prereq.completedTag == null || !tags.contains(prereq.completedTag))) {

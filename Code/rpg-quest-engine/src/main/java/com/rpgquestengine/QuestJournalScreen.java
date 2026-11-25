@@ -170,7 +170,8 @@ public class QuestJournalScreen extends Screen {
                     continue;
                 }
             }
-            if (ClientQuestData.hasTag(q.completedTag)) {
+            boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+            if (!isRep && ClientQuestData.hasTag(q.completedTag)) {
                 completedQuests.add(q);
             } else if (ClientQuestData.hasTag(q.activeTag)) {
                 String cat = q.category != null ? q.category.toUpperCase() : "SECONDARY";

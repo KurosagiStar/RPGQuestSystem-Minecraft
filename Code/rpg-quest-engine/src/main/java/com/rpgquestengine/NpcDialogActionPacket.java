@@ -178,7 +178,7 @@ public class NpcDialogActionPacket {
                 PartyManager.syncUnlockedActiveMainQuests(sp);
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             } else if ("ACCEPT".equalsIgnoreCase(msg.action)) {
-                if (q.completedTag != null && tags.contains(q.completedTag)) return;
+                if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null && tags.contains(q.completedTag)) return;
                 if (q.activeTag != null && tags.contains(q.activeTag)) return;
                 if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
                     for (QuestDefinition cand : QuestConfig.QUESTS) {

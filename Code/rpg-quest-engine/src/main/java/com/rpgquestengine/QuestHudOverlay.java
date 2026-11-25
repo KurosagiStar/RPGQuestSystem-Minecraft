@@ -45,7 +45,8 @@ public class QuestHudOverlay {
 
         if (!QuestConfig.trackedQuestId.isEmpty()) {
             for (QuestDefinition q : QuestConfig.QUESTS) {
-                if (q.id.equals(QuestConfig.trackedQuestId) && ClientQuestData.hasTag(q.activeTag) && !ClientQuestData.hasTag(q.completedTag)) {
+                boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+                if (q.id.equals(QuestConfig.trackedQuestId) && ClientQuestData.hasTag(q.activeTag) && (isRep || !ClientQuestData.hasTag(q.completedTag))) {
                     questToTrack = q;
                     break;
                 }
@@ -63,7 +64,8 @@ public class QuestHudOverlay {
 
         if (questToTrack == null) {
             for (QuestDefinition q : QuestConfig.QUESTS) {
-                if (ClientQuestData.hasTag(q.activeTag) && !ClientQuestData.hasTag(q.completedTag)) {
+                boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+                if (ClientQuestData.hasTag(q.activeTag) && (isRep || !ClientQuestData.hasTag(q.completedTag))) {
                     questToTrack = q;
                     break;
                 }

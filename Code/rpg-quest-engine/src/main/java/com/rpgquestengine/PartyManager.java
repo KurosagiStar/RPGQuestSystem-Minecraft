@@ -11,6 +11,9 @@ public class PartyManager {
     public static class Party {
         public UUID leader;
         public final List<UUID> members = new ArrayList<>();
+        public final Set<String> completedMainIds = new HashSet<>();
+        public final Set<String> activeMainIds = new HashSet<>();
+        public final Map<UUID, List<String>> offlinePendingRewards = new HashMap<>();
 
         public Party(UUID leader) {
             this.leader = leader;
@@ -46,6 +49,23 @@ public class PartyManager {
                 com.google.gson.JsonArray mems = new com.google.gson.JsonArray();
                 for (UUID m : p.members) mems.add(m.toString());
                 obj.add("members", mems);
+
+                com.google.gson.JsonArray compArr = new com.google.gson.JsonArray();
+                for (String cid : p.completedMainIds) compArr.add(cid);
+                obj.add("completedMain", compArr);
+
+                com.google.gson.JsonArray actArr = new com.google.gson.JsonArray();
+                for (String aid : p.activeMainIds) actArr.add(aid);
+                obj.add("activeMain", actArr);
+
+                com.google.gson.JsonObject offObj = new com.google.gson.JsonObject();
+                for (Map.Entry<UUID, List<String>> en : p.offlinePendingRewards.entrySet()) {
+                    if (en.getValue() == null || en.getValue().isEmpty()) continue;
+                    com.google.gson.JsonArray qArr = new com.google.gson.JsonArray();
+                    for (String qid : en.getValue()) qArr.add(qid);
+                    offObj.add(en.getKey().toString(), qArr);
+                }
+                obj.add("offlinePending", offObj);
                 arr.add(obj);
             }
             try (java.io.OutputStreamWriter w = new java.io.OutputStreamWriter(new java.io.FileOutputStream(file), java.nio.charset.StandardCharsets.UTF_8)) {
@@ -70,6 +90,30 @@ public class PartyManager {
                         UUID m = UUID.fromString(mEl.getAsString());
                         p.members.add(m);
                         PLAYER_TO_PARTY.put(m, p);
+                    }
+                    if (obj.has("completedMain") && obj.get("completedMain").isJsonArray()) {
+                        for (com.google.gson.JsonElement cEl : obj.getAsJsonArray("completedMain")) {
+                            p.completedMainIds.add(cEl.getAsString());
+                        }
+                    }
+                    if (obj.has("activeMain") && obj.get("activeMain").isJsonArray()) {
+                        for (com.google.gson.JsonElement aEl : obj.getAsJsonArray("activeMain")) {
+                            p.activeMainIds.add(aEl.getAsString());
+                        }
+                    }
+                    if (obj.has("offlinePending") && obj.get("offlinePending").isJsonObject()) {
+                        com.google.gson.JsonObject offObj = obj.getAsJsonObject("offlinePending");
+                        for (String uidKey : offObj.keySet()) {
+                            try {
+                                UUID uid = UUID.fromString(uidKey);
+                                List<String> qList = new ArrayList<>();
+                                for (com.google.gson.JsonElement qEl : offObj.getAsJsonArray(uidKey)) {
+                                    String qid = qEl.getAsString();
+                                    if (!qid.isEmpty() && !qList.contains(qid)) qList.add(qid);
+                                }
+                                if (!qList.isEmpty()) p.offlinePendingRewards.put(uid, qList);
+                            } catch (Exception ignored) {}
+                        }
                     }
                 }
             }
@@ -204,22 +248,61 @@ public class PartyManager {
     }
 
     public static void syncMainQuestsWithParty(ServerPlayer triggerPlayer) {
-        List<ServerPlayer> members = getOnlineMembers(triggerPlayer);
-        if (members.size() <= 1) return;
+        if (triggerPlayer == null) return;
+        Party p = PLAYER_TO_PARTY.get(triggerPlayer.getUUID());
+        if (p == null) return;
 
-        Set<String> allCompletedMain = new HashSet<>();
-        Set<String> allActiveMain = new HashSet<>();
+        List<ServerPlayer> members = getOnlineMembers(triggerPlayer);
+        boolean dirtyParty = false;
+
+        // Entregar a la cola de 'G' (PendingRewards) los Contratos/recompensas acumulados mientras estuvo desconectado
+        List<String> offlineQueued = p.offlinePendingRewards.remove(triggerPlayer.getUUID());
+        if (offlineQueued != null && !offlineQueued.isEmpty()) {
+            dirtyParty = true;
+            int queuedCount = 0;
+            for (String qid : offlineQueued) {
+                QuestDefinition q = QuestConfig.getQuestById(qid);
+                if (q == null) continue;
+                if (q.completedTag != null && RPGQuestEngine.hasQuestTag(triggerPlayer, q.completedTag)) continue;
+                if (q.activeTag != null) RPGQuestEngine.removeQuestTag(triggerPlayer, q.activeTag);
+                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(triggerPlayer, q.doneTag);
+                RPGQuestEngine.removeQuestTag(triggerPlayer, "rqe_party_obj_done_" + q.id);
+                if (q.completedTag != null) {
+                    RPGQuestEngine.addQuestTag(triggerPlayer, q.completedTag);
+                    RPGQuestEngine.addQuestTag(triggerPlayer, "rqe_rewarded_" + q.id);
+                }
+                addPendingReward(triggerPlayer, q.id);
+                queuedCount++;
+            }
+            if (queuedCount > 0) {
+                triggerPlayer.sendSystemMessage(Component.literal("§a[Grupo] §fTienes §e" + queuedCount
+                        + " §frecompensa(s) completadas en tu ausencia. Pulsa §eG §fpara cobrarlas."));
+            }
+        }
+
+        Set<String> allCompletedMain = new HashSet<>(p.completedMainIds);
+        Set<String> allActiveMain = new HashSet<>(p.activeMainIds);
 
         for (QuestDefinition q : QuestConfig.QUESTS) {
             if (!"MAIN".equalsIgnoreCase(q.category)) continue;
             for (ServerPlayer m : members) {
                 Set<String> tags = RPGQuestEngine.getAllQuestTags(m);
                 if (q.completedTag != null && tags.contains(q.completedTag)) {
+                    if (p.completedMainIds.add(q.id)) dirtyParty = true;
+                    if (p.activeMainIds.remove(q.id)) dirtyParty = true;
                     allCompletedMain.add(q.id);
                 } else if (q.activeTag != null && tags.contains(q.activeTag)) {
+                    if (!p.completedMainIds.contains(q.id) && p.activeMainIds.add(q.id)) dirtyParty = true;
                     allActiveMain.add(q.id);
                 }
             }
+        }
+        allActiveMain.removeAll(allCompletedMain);
+        if (dirtyParty) saveParties();
+
+        if (allCompletedMain.isEmpty() && allActiveMain.isEmpty() && members.size() <= 1) {
+            syncToPlayer(triggerPlayer);
+            return;
         }
 
         Set<String> prereqOfCompleted = new HashSet<>();
@@ -337,6 +420,10 @@ public class PartyManager {
     public static void onNpcQuestAccepted(ServerPlayer actor, QuestDefinition q) {
         if (actor == null || q == null) return;
         if (!"MAIN".equalsIgnoreCase(q.category) && !"CONTRACT".equalsIgnoreCase(q.category)) return;
+        Party p = PLAYER_TO_PARTY.get(actor.getUUID());
+        if (p != null && "MAIN".equalsIgnoreCase(q.category) && !p.completedMainIds.contains(q.id)) {
+            if (p.activeMainIds.add(q.id)) saveParties();
+        }
         for (ServerPlayer m : getOnlineMembers(actor)) {
             if (m == actor) continue;
             if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
@@ -387,38 +474,54 @@ public class PartyManager {
     }
 
     public static void onNpcQuestCompleted(ServerPlayer actor, QuestDefinition q, int choiceIndex) {
-        if (actor == null || q == null) return;
+        if (actor == null || q == null || actor.getServer() == null) return;
+        Party p = PLAYER_TO_PARTY.get(actor.getUUID());
+        if (p == null) return;
 
         if ("CONTRACT".equalsIgnoreCase(q.category)) {
-            for (ServerPlayer m : getOnlineMembers(actor)) {
-                if (m == actor) continue;
-                if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
-                if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
-                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
-                RPGQuestEngine.removeQuestTag(m, "rqe_party_obj_done_" + q.id);
-                if (q.completedTag != null) {
-                    RPGQuestEngine.addQuestTag(m, q.completedTag);
-                    RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
+            boolean queuedOffline = false;
+            for (UUID uid : p.members) {
+                if (uid.equals(actor.getUUID())) continue;
+                ServerPlayer m = actor.getServer().getPlayerList().getPlayer(uid);
+                if (m != null) {
+                    if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+                    if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
+                    if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
+                    RPGQuestEngine.removeQuestTag(m, "rqe_party_obj_done_" + q.id);
+                    if (q.completedTag != null) {
+                        RPGQuestEngine.addQuestTag(m, q.completedTag);
+                        RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
+                    }
+
+                    NpcDialogActionPacket.grantAllQuestRewards(m, q, choiceIndex);
+                    m.getInventory().setChanged();
+                    m.inventoryMenu.broadcastChanges();
+                    m.containerMenu.broadcastChanges();
+                    m.inventoryMenu.sendAllDataToRemote();
+
+                    String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
+                    String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
+                    m.sendSystemMessage(Component.literal("§a[Grupo - Contrato Completado] §e" + actor.getScoreboardName()
+                            + " §fentregó §e" + q.title + "§f: recibiste tu recompensa" + xpTxt + lvlTxt));
+                    DailyQuestManager.onTaskProgress(m, "NPC_TURNIN", 1);
+                    NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new PlayQuestSoundPacket(4));
+                    RPGQuestEngine.syncPlayerAfterDialog(m);
+                } else {
+                    List<String> offList = p.offlinePendingRewards.computeIfAbsent(uid, k -> new ArrayList<>());
+                    if (!offList.contains(q.id)) {
+                        offList.add(q.id);
+                        queuedOffline = true;
+                    }
                 }
-
-                NpcDialogActionPacket.grantAllQuestRewards(m, q, choiceIndex);
-                m.getInventory().setChanged();
-                m.inventoryMenu.broadcastChanges();
-                m.containerMenu.broadcastChanges();
-                m.inventoryMenu.sendAllDataToRemote();
-
-                String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
-                String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
-                m.sendSystemMessage(Component.literal("§a[Grupo - Contrato Completado] §e" + actor.getScoreboardName()
-                        + " §fentregó §e" + q.title + "§f: recibiste tu recompensa" + xpTxt + lvlTxt));
-                DailyQuestManager.onTaskProgress(m, "NPC_TURNIN", 1);
-                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new PlayQuestSoundPacket(4));
-                RPGQuestEngine.syncPlayerAfterDialog(m);
             }
+            if (queuedOffline) saveParties();
             return;
         }
 
         if ("MAIN".equalsIgnoreCase(q.category)) {
+            p.activeMainIds.remove(q.id);
+            p.completedMainIds.add(q.id);
+            saveParties();
             for (ServerPlayer m : getOnlineMembers(actor)) {
                 if (m == actor) continue;
                 if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
