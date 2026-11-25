@@ -1,17 +1,20 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
 ## [1.6.1-wip] - 2026-11-25
-### Subido a Godlike (`7c4edd78`)
+### Subido a Godlike (`7c4edd78`) y Hugging Face (`JudyStar/cisco-mod-sync`)
 - `config/rpg_quests.json`: corregidas 1415 instancias de `"required"` -> `"amount"`, `enderman` (`1`), repetibles (`6-8`), `minar_hierro`, `craftear_arcos` y descripciones de bosses (ej. `Returning Knight`).
 - `kubejs/server_scripts/village_npc_spawner.js` y `182` presets `*_ext_*.npc.snbt` en `config/easy_npc/preset/villager`.
-- `mods/rpgquestengine-1.0.0.jar`: `/rpgquest reload` ahora envía `SyncQuestConfigPacket` a todos los jugadores conectados (`PacketDistributor.ALL.noArg()`) y ejecuta `checkAndSyncQuests` para cada uno.
+- `World_Season2/serverconfig/xptome-server.toml`: `max_xp = 2147483647`.
+- `mods/rpgquestengine-1.0.0.jar` (`254,037` bytes, commit `56332e0`):
+  - `97601cf`: `/rpgquest reload` ahora envía `SyncQuestConfigPacket` a todos los jugadores conectados (`PacketDistributor.ALL.noArg()`) y ejecuta `checkAndSyncQuests` para cada uno.
+  - `40b10fc`: consumo de ítems en etapas `ITEM` y reset de scores en `REPEATABLE` (`NpcDialogActionPacket.java`).
+  - `656805e`: migración de quest tags del jugador de `sp.getTags()` (límite vanilla 1024) a `PersistentData` (`rqe_quest_tags`) con `migrateVanillaQuestTags` al entrar (`RPGQuestEngine.java`, `NpcDialogActionPacket.java`, `PartyManager.java`, `QuestEventListener.java`, `AbandonQuestPacket.java`).
+  - `56332e0`: `sp.getInventory().setChanged()` y `sp.containerMenu.broadcastChanges()` tras `shrink(take)` en `NpcDialogActionPacket.java`.
 
-### Pendiente de arreglar (para revisar entre ambos)
-1. **Quests repetibles infinitas y autocompletado desde la 2.ª vez:**
-   - Al completar una quest repetible y volver a hablar con el NPC, permite completarla infinitamente sin reiniciar el progreso/objetivo.
-   - Revisar `NpcDialogActionPacket.java` y `QuestEventListener.java` (limpieza de `doneTag` / `activeTag` / scoreboard y validación de cooldown).
-2. **Descripciones viejas en NPCs ya spawneados / clientes:**
-   - `SyncQuestConfigPacket` (`RPGQuestEngine.onPlayerLoggedIn`) sincroniza `rpg_quests.json` al Diario (`J`) y HUD, pero **Easy NPC** guarda el diálogo dentro del NBT de cada entidad ya spawneada en el mundo (los presets nuevos solo aplican a NPCs nuevos).
+### Pendiente de verificar / comparar en juego
+1. **Leñador (`rep_lenador_roble`):** confirmar tras el próximo reinicio de Godlike con `56332e0` que descuenta los 8 `minecraft:oak_log` al entregar.
+2. **Compañero no puede aceptar repetibles:** en `NpcDialogActionPacket.java` (`ACCEPT`), se añade `q.activeTag` a `PersistentData`, envía `[Misión Aceptada]` al chat y llama `RPGQuestEngine.syncPlayerAfterDialog(sp)`, pero su cliente reporta que no queda aceptada. Revisar si `SyncPlayerQuestsPacket` / `ClientQuestData` en su cliente está aplicando `getAllQuestTags(sp)`.
+3. **Descripciones viejas en NPCs ya spawneados:** Easy NPC guarda el diálogo dentro del NBT de cada entidad ya spawneada en el mundo (los presets nuevos solo aplican a NPCs nuevos; el Diario `J` usa `rpg_quests.json`).
 
 ## [1.6.0-update] - 2026-11-22
 - **Guía RPG de Progresión (`F1` — `GearRoadmapScreen`, `UiStyle`, `QuestHudOverlay`):**
