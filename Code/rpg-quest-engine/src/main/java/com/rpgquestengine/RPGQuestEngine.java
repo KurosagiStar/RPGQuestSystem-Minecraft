@@ -559,6 +559,23 @@ public class RPGQuestEngine {
                             break;
                         }
 
+                        case "ADVANCEMENT": {
+                            String internalKey = getInternalScoreKey(q.id, sIdx, stage.type);
+                            ResourceLocation advId = ResourceLocation.tryParse(stage.target);
+                            net.minecraft.advancements.Advancement adv = (advId != null && sp.getServer() != null)
+                                    ? sp.getServer().getAdvancements().getAdvancement(advId)
+                                    : null;
+                            if (adv != null && sp.getAdvancements().getOrStartProgress(adv).isDone()) {
+                                setInternalScore(sp, internalKey, 1);
+                                current = 1;
+                            } else {
+                                current = getInternalScore(sp, internalKey);
+                            }
+                            scores.put(internalKey, current);
+                            required = 1;
+                            break;
+                        }
+
                         default: {
                             String internalKey = getInternalScoreKey(q.id, sIdx, stage.type);
                             current = getInternalScore(sp, internalKey);

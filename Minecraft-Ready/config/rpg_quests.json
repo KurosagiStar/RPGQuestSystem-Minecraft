@@ -3518,9 +3518,9 @@
     "rewardXp": 1700,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla con el Comandante",
-        "target": "npc_main_comandante",
+        "type": "ADVANCEMENT",
+        "description": "Visita una aldea y consigue el logro ¡Qué ganga! (comercia con un aldeano)",
+        "target": "minecraft:adventure/trade",
         "amount": 1
       }
     ],
