@@ -153,13 +153,9 @@ public class NpcDialogActionPacket {
                 RPGQuestEngine.removeQuestTag(sp, q.doneTag);
                 if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null) {
                     RPGQuestEngine.addQuestTag(sp, q.completedTag);
+                    RPGQuestEngine.addQuestTag(sp, "rqe_rewarded_" + q.id);
                 } else if ("REPEATABLE".equalsIgnoreCase(q.category)) {
-                    if (q.stages != null) {
-                        for (int i = 0; i < q.stages.size(); i++) {
-                            QuestDefinition.QuestStage st = q.stages.get(i);
-                            RPGQuestEngine.setInternalScore(sp, RPGQuestEngine.getInternalScoreKey(q.id, i, st.type), 0);
-                        }
-                    }
+                    RPGQuestEngine.resetQuestStageScores(sp, q);
                     RPGQuestEngine.onRepeatableCompleted(sp, q);
                 }
 
@@ -190,12 +186,8 @@ public class NpcDialogActionPacket {
                         }
                     }
                 }
-                if ("REPEATABLE".equalsIgnoreCase(q.category) && q.stages != null) {
-                    for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
-                        QuestDefinition.QuestStage st = q.stages.get(sIdx);
-                        RPGQuestEngine.setInternalScore(sp, RPGQuestEngine.getInternalScoreKey(q.id, sIdx, st.type), 0);
-                    }
-                }
+                RPGQuestEngine.resetQuestStageScores(sp, q);
+                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(sp, q.doneTag);
                 if (q.activeTag != null) RPGQuestEngine.addQuestTag(sp, q.activeTag);
                 String desc = (q.stages != null && !q.stages.isEmpty()) ? q.stages.get(0).description : q.title;
                 sp.sendSystemMessage(Component.literal("§6[Misión Aceptada] §f" + q.title + ": §e" + desc));

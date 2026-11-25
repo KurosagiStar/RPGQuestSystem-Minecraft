@@ -231,6 +231,7 @@ public class PartyManager {
                 if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
                 if (q.completedTag != null && !tags.contains(q.completedTag)) {
                     RPGQuestEngine.addQuestTag(m, q.completedTag);
+                    RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
                     addPendingReward(m, q.id);
                 }
             }
@@ -318,6 +319,8 @@ public class PartyManager {
             if (m == actor) continue;
             if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
             if (q.activeTag != null && !RPGQuestEngine.hasQuestTag(m, q.activeTag)) {
+                RPGQuestEngine.resetQuestStageScores(m, q);
+                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
                 RPGQuestEngine.addQuestTag(m, q.activeTag);
                 m.sendSystemMessage(Component.literal("§6[Grupo] §e" + actor.getScoreboardName() + " §faceptó: §e" + q.title));
                 NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
@@ -334,6 +337,7 @@ public class PartyManager {
             if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
             if (q.completedTag != null && !RPGQuestEngine.hasQuestTag(m, q.completedTag)) {
                 RPGQuestEngine.addQuestTag(m, q.completedTag);
+                RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
                 addPendingReward(m, q.id);
                 NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m),
                         new ShowBannerPacket(

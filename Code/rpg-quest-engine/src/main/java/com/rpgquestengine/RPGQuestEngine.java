@@ -145,6 +145,7 @@ public class RPGQuestEngine {
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer sp) {
             migrateVanillaQuestTags(sp);
+            recoverQuestProgress(sp);
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
@@ -229,6 +230,8 @@ public class RPGQuestEngine {
                         QuestConfig.loadConfig();
                         NetworkHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
                         for (ServerPlayer p : ctx.getSource().getServer().getPlayerList().getPlayers()) {
+                            migrateVanillaQuestTags(p);
+                            recoverQuestProgress(p);
                             checkAndSyncQuests(p);
                         }
                         ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Configuración rpg_quests.json recargada y sincronizada (" + QuestConfig.QUESTS.size() + " misiones)."), false);
@@ -1152,6 +1155,14 @@ public class RPGQuestEngine {
         return out;
     }
 
+    public static void resetQuestStageScores(ServerPlayer sp, QuestDefinition q) {
+        if (sp == null || q == null || q.stages == null) return;
+        for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+            QuestDefinition.QuestStage st = q.stages.get(sIdx);
+            setInternalScore(sp, getInternalScoreKey(q.id, sIdx, st.type), 0);
+        }
+    }
+
     public static void migrateVanillaQuestTags(ServerPlayer sp) {
         if (sp == null) return;
         List<String> toMigrate = new java.util.ArrayList<>();
@@ -1159,13 +1170,101 @@ public class RPGQuestEngine {
             if (t.startsWith("q_") || t.startsWith("cisco_") || t.startsWith("rqe_")
                     || t.endsWith("_act") || t.endsWith("_done") || t.endsWith("_comp")
                     || t.endsWith("_activa") || t.endsWith("_lista") || t.endsWith("_entregada")
-                    || t.endsWith("_rewarded")) {
+                    || t.endsWith("_fin") || t.endsWith("_rewarded")) {
                 toMigrate.add(t);
             }
         }
         for (String t : toMigrate) {
             addQuestTag(sp, t);
-            removeQuestTag(sp, t);
+            sp.removeTag(t);
+        }
+        Set<String> allTags = getAllQuestTags(sp);
+        for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (q.completedTag != null && allTags.contains(q.completedTag)) {
+                addQuestTag(sp, "rqe_rewarded_" + q.id);
+            }
+        }
+    }
+
+    public static void recoverQuestProgress(ServerPlayer sp) {
+        if (sp == null || sp.getServer() == null) return;
+        try {
+            java.nio.file.Path ftbPath = sp.getServer()
+                    .getWorldPath(net.minecraft.world.level.storage.LevelResource.ROOT)
+                    .resolve("ftbquests")
+                    .resolve(sp.getUUID().toString() + ".snbt");
+            if (java.nio.file.Files.exists(ftbPath)) {
+                String snbt = java.nio.file.Files.readString(ftbPath, java.nio.charset.StandardCharsets.UTF_8);
+                int compIdx = snbt.indexOf("completed:");
+                if (compIdx >= 0) {
+                    int openBrace = snbt.indexOf('{', compIdx);
+                    int closeBrace = openBrace >= 0 ? snbt.indexOf('}', openBrace) : -1;
+                    if (openBrace >= 0 && closeBrace > openBrace) {
+                        String compBody = snbt.substring(openBrace + 1, closeBrace);
+                        java.util.Set<String> doneFtb = new java.util.HashSet<>();
+                        java.util.regex.Matcher m = java.util.regex.Pattern.compile("([0-9A-Fa-f]{16})\\s*:").matcher(compBody);
+                        while (m.find()) {
+                            doneFtb.add(m.group(1).toUpperCase());
+                        }
+                        if (!doneFtb.isEmpty()) {
+                            for (QuestDefinition q : QuestConfig.QUESTS) {
+                                if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty()
+                                        && doneFtb.contains(q.ftbQuestId.toUpperCase())
+                                        && !"REPEATABLE".equalsIgnoreCase(q.category)
+                                        && q.completedTag != null && !q.completedTag.isEmpty()) {
+                                    if (!hasQuestTag(sp, q.completedTag)) {
+                                        if (q.activeTag != null) removeQuestTag(sp, q.activeTag);
+                                        if (q.doneTag != null) removeQuestTag(sp, q.doneTag);
+                                        addQuestTag(sp, q.completedTag);
+                                    }
+                                    addQuestTag(sp, "rqe_rewarded_" + q.id);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.warn("[RPGQuestEngine] Could not read FTB Quests progress for {}: {}", sp.getScoreboardName(), e.getMessage());
+        }
+
+        // Restauración puntual para los 2 jugadores afectados por la migración previa (25/11)
+        String pName = sp.getScoreboardName();
+        if (("Richard_HM".equalsIgnoreCase(pName) || "SebaMc26".equalsIgnoreCase(pName))
+                && !sp.getPersistentData().getBoolean("rqe_restored_2511")) {
+            String[] partyMainIds = new String[]{
+                    "cisco_trials_6f010e22cd886969",
+                    "cisco_trials_159fd707980d3015",
+                    "cisco_trials_23864a4966441d61",
+                    "cisco_trials_76e6e42a538c69fb",
+                    "cisco_trials_642c85e431896fb0",
+                    "cisco_trials_7c0c571649f8e5aa",
+                    "cisco_trials_5e23b10d82dbb573",
+                    "cisco_trials_363d127c20eac8fc",
+                    "cisco_trials_643a6bd7be518653",
+                    "cisco_trials_7d59bd1308e6778f",
+                    "cisco_traveller_5f2456e5bf06098c",
+                    "cisco_traveller_2dccc1e1567de875",
+                    "cisco_traveller_4faecf44cfbe7eec",
+                    "cisco_traveller_2ff19466e4710c4d",
+                    "contrato_taberna_emboscada",
+                    "minar_hierro"
+            };
+            for (String qid : partyMainIds) {
+                QuestDefinition q = QuestConfig.getQuestById(qid);
+                if (q != null && q.completedTag != null) {
+                    if (q.activeTag != null) removeQuestTag(sp, q.activeTag);
+                    if (q.doneTag != null) removeQuestTag(sp, q.doneTag);
+                    addQuestTag(sp, q.completedTag);
+                    addQuestTag(sp, "rqe_rewarded_" + q.id);
+                }
+            }
+            QuestDefinition ahogados = QuestConfig.getQuestById("contract_inquisidor_ahogados");
+            if (ahogados != null && ahogados.activeTag != null && !hasQuestTag(sp, ahogados.completedTag)) {
+                addQuestTag(sp, ahogados.activeTag);
+            }
+            sp.getPersistentData().remove("rqe_pending_rewards");
+            sp.getPersistentData().putBoolean("rqe_restored_2511", true);
         }
     }
 }
