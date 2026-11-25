@@ -3506,7 +3506,7 @@
     "title": "Encuentra una aldea",
     "npc": "Comandante",
     "npcId": "npc_main_comandante",
-    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Find a village para avanzar en tu entrenamiento.",
+    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el Comandante para completar tu entrenamiento.",
     "suggestedLevel": 74,
     "prerequisiteQuestId": "cisco_trials_76e6e42a538c69fb",
     "activeTag": "q_cisco_trials_5e23b10d82dbb573_act",
@@ -3519,8 +3519,8 @@
     "stages": [
       {
         "type": "TALK",
-        "description": "Habla con el encargado para completar: Find a village",
-        "target": "",
+        "description": "Habla con el Comandante",
+        "target": "npc_main_comandante",
         "amount": 1
       }
     ],
