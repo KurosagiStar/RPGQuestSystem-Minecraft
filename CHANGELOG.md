@@ -1,5 +1,18 @@
 # Registro de Cambios (Changelog) - RPG Quest Engine
 
+## [1.6.1-wip] - 2026-11-25
+### Subido a Godlike (`7c4edd78`)
+- `config/rpg_quests.json`: corregidas 1415 instancias de `"required"` -> `"amount"`, `enderman` (`1`), repetibles (`6-8`), `minar_hierro`, `craftear_arcos` y descripciones de bosses (ej. `Returning Knight`).
+- `kubejs/server_scripts/village_npc_spawner.js` y `182` presets `*_ext_*.npc.snbt` en `config/easy_npc/preset/villager`.
+- `mods/rpgquestengine-1.0.0.jar` (`251,790` bytes, `2026-11-25T02:54:52+00:00`).
+
+### Pendiente de arreglar (para revisar entre ambos)
+1. **Quests repetibles infinitas y autocompletado desde la 2.ª vez:**
+   - Al completar una quest repetible y volver a hablar con el NPC, permite completarla infinitamente sin reiniciar el progreso/objetivo.
+   - Revisar `NpcDialogActionPacket.java` y `QuestEventListener.java` (limpieza de `doneTag` / `activeTag` / scoreboard y validación de cooldown).
+2. **Descripciones viejas en NPCs ya spawneados / clientes:**
+   - `SyncQuestConfigPacket` (`RPGQuestEngine.onPlayerLoggedIn`) sincroniza `rpg_quests.json` al Diario (`J`) y HUD, pero **Easy NPC** guarda el diálogo dentro del NBT de cada entidad ya spawneada en el mundo (los presets nuevos solo aplican a NPCs nuevos).
+
 ## [1.6.0-update] - 2026-11-22
 - **Guía RPG de Progresión (`F1` — `GearRoadmapScreen`, `UiStyle`, `QuestHudOverlay`):**
   - Nueva pantalla `[F1] Guía RPG` con 3 pestañas: **Armaduras**, **Armas** y **Fortalecimiento**.
