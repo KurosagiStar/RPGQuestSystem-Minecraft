@@ -620,7 +620,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -704,7 +704,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -1214,7 +1214,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -1985,8 +1985,8 @@
         "count": 1
       },
       {
-        "id": "cisco_mod:champion_coin",
-        "count": 5
+        "id": "cisco_mod:champion_loot_bag",
+        "count": 2
       }
     ],
     "rewardXpLevels": 25
@@ -10034,7 +10034,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10070,7 +10070,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10106,7 +10106,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10142,7 +10142,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10178,7 +10178,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10214,7 +10214,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10250,7 +10250,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10286,7 +10286,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10322,7 +10322,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10893,7 +10893,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10929,7 +10929,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -10965,7 +10965,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11001,7 +11001,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11037,7 +11037,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11073,7 +11073,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11109,7 +11109,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11145,7 +11145,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11181,7 +11181,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11217,7 +11217,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -11253,7 +11253,7 @@
       },
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       },
       {
         "id": "apotheosis:gem_dust",
@@ -49283,7 +49283,7 @@
     "suggestedLevel": 13,
     "doneTag": "q_npc_rep_ext_01_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "75 XP"
     ],
     "activeTag": "q_npc_rep_ext_01_q01_activa",
@@ -49292,7 +49292,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -49438,7 +49438,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_02_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_02_q03_activa",
@@ -49447,7 +49447,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -49593,7 +49593,7 @@
     "suggestedLevel": 20,
     "doneTag": "q_npc_rep_ext_04_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_04_q01_activa",
@@ -49602,7 +49602,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -49624,7 +49624,7 @@
     "suggestedLevel": 11,
     "doneTag": "q_npc_rep_ext_04_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "75 XP"
     ],
     "activeTag": "q_npc_rep_ext_04_q02_activa",
@@ -49633,7 +49633,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -49717,7 +49717,7 @@
     "suggestedLevel": 4,
     "doneTag": "q_npc_rep_ext_05_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_05_q01_activa",
@@ -49726,7 +49726,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -49934,7 +49934,7 @@
     "suggestedLevel": 17,
     "doneTag": "q_npc_rep_ext_07_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_07_q01_activa",
@@ -49943,7 +49943,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50027,7 +50027,7 @@
     "suggestedLevel": 17,
     "doneTag": "q_npc_rep_ext_07_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_07_q04_activa",
@@ -50036,7 +50036,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50151,7 +50151,7 @@
     "suggestedLevel": 4,
     "doneTag": "q_npc_rep_ext_09_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "75 XP"
     ],
     "activeTag": "q_npc_rep_ext_09_q01_activa",
@@ -50160,7 +50160,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50182,7 +50182,7 @@
     "suggestedLevel": 13,
     "doneTag": "q_npc_rep_ext_09_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_09_q02_activa",
@@ -50191,7 +50191,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50275,7 +50275,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_10_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_10_q01_activa",
@@ -50284,7 +50284,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50368,7 +50368,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_10_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_10_q04_activa",
@@ -50377,7 +50377,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50523,7 +50523,7 @@
     "suggestedLevel": 20,
     "doneTag": "q_npc_rep_ext_12_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_12_q01_activa",
@@ -50532,7 +50532,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50647,7 +50647,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_13_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_13_q02_activa",
@@ -50656,7 +50656,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50678,7 +50678,7 @@
     "suggestedLevel": 11,
     "doneTag": "q_npc_rep_ext_13_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_13_q03_activa",
@@ -50687,7 +50687,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50771,7 +50771,7 @@
     "suggestedLevel": 18,
     "doneTag": "q_npc_rep_ext_14_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_14_q03_activa",
@@ -50780,7 +50780,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -50802,7 +50802,7 @@
     "suggestedLevel": 12,
     "doneTag": "q_npc_rep_ext_15_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_15_q01_activa",
@@ -50811,7 +50811,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51112,7 +51112,7 @@
     "suggestedLevel": 5,
     "doneTag": "q_npc_rep_ext_18_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_18_q01_activa",
@@ -51121,7 +51121,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51329,7 +51329,7 @@
     "suggestedLevel": 20,
     "doneTag": "q_npc_rep_ext_19_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_19_q04_activa",
@@ -51338,7 +51338,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51453,7 +51453,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_21_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_21_q01_activa",
@@ -51462,7 +51462,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51577,7 +51577,7 @@
     "suggestedLevel": 19,
     "doneTag": "q_npc_rep_ext_22_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_22_q01_activa",
@@ -51586,7 +51586,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51639,7 +51639,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_22_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "75 XP"
     ],
     "activeTag": "q_npc_rep_ext_22_q03_activa",
@@ -51648,7 +51648,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51670,7 +51670,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_23_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_23_q01_activa",
@@ -51679,7 +51679,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51763,7 +51763,7 @@
     "suggestedLevel": 18,
     "doneTag": "q_npc_rep_ext_24_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_24_q01_activa",
@@ -51772,7 +51772,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51794,7 +51794,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_24_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_24_q02_activa",
@@ -51803,7 +51803,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51856,7 +51856,7 @@
     "suggestedLevel": 20,
     "doneTag": "q_npc_rep_ext_24_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_24_q04_activa",
@@ -51865,7 +51865,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51887,7 +51887,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_25_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_25_q01_activa",
@@ -51896,7 +51896,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51949,7 +51949,7 @@
     "suggestedLevel": 19,
     "doneTag": "q_npc_rep_ext_25_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_25_q03_activa",
@@ -51958,7 +51958,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -51980,7 +51980,7 @@
     "suggestedLevel": 12,
     "doneTag": "q_npc_rep_ext_25_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_25_q04_activa",
@@ -51989,7 +51989,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52104,7 +52104,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_26_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_26_q04_activa",
@@ -52113,7 +52113,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52135,7 +52135,7 @@
     "suggestedLevel": 16,
     "doneTag": "q_npc_rep_ext_27_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_27_q01_activa",
@@ -52144,7 +52144,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52259,7 +52259,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_28_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_28_q02_activa",
@@ -52268,7 +52268,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52290,7 +52290,7 @@
     "suggestedLevel": 15,
     "doneTag": "q_npc_rep_ext_28_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_28_q03_activa",
@@ -52299,7 +52299,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52383,7 +52383,7 @@
     "suggestedLevel": 17,
     "doneTag": "q_npc_rep_ext_29_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "75 XP"
     ],
     "activeTag": "q_npc_rep_ext_29_q02_activa",
@@ -52392,7 +52392,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52600,7 +52600,7 @@
     "suggestedLevel": 10,
     "doneTag": "q_npc_rep_ext_31_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_31_q02_activa",
@@ -52609,7 +52609,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52662,7 +52662,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_32_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_32_q01_activa",
@@ -52671,7 +52671,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52693,7 +52693,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_32_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "100 XP"
     ],
     "activeTag": "q_npc_rep_ext_32_q02_activa",
@@ -52702,7 +52702,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52755,7 +52755,7 @@
     "suggestedLevel": 5,
     "doneTag": "q_npc_rep_ext_33_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "75 XP"
     ],
     "activeTag": "q_npc_rep_ext_33_q01_activa",
@@ -52764,7 +52764,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52786,7 +52786,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_33_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_33_q02_activa",
@@ -52795,7 +52795,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -52910,7 +52910,7 @@
     "suggestedLevel": 6,
     "doneTag": "q_npc_rep_ext_34_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_34_q02_activa",
@@ -52919,7 +52919,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53034,7 +53034,7 @@
     "suggestedLevel": 18,
     "doneTag": "q_npc_rep_ext_35_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_35_q03_activa",
@@ -53043,7 +53043,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53065,7 +53065,7 @@
     "suggestedLevel": 14,
     "doneTag": "q_npc_rep_ext_35_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_35_q04_activa",
@@ -53074,7 +53074,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53127,7 +53127,7 @@
     "suggestedLevel": 13,
     "doneTag": "q_npc_rep_ext_36_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_36_q02_activa",
@@ -53136,7 +53136,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53251,7 +53251,7 @@
     "suggestedLevel": 14,
     "doneTag": "q_npc_rep_ext_37_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_37_q02_activa",
@@ -53260,7 +53260,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53344,7 +53344,7 @@
     "suggestedLevel": 4,
     "doneTag": "q_npc_rep_ext_38_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_38_q01_activa",
@@ -53353,7 +53353,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53530,7 +53530,7 @@
     "suggestedLevel": 7,
     "doneTag": "q_npc_rep_ext_40_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "150 XP"
     ],
     "activeTag": "q_npc_rep_ext_40_q01_activa",
@@ -53539,7 +53539,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53623,7 +53623,7 @@
     "suggestedLevel": 2,
     "doneTag": "q_npc_rep_ext_41_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_41_q01_activa",
@@ -53632,7 +53632,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53747,7 +53747,7 @@
     "suggestedLevel": 3,
     "doneTag": "q_npc_rep_ext_42_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_42_q02_activa",
@@ -53756,7 +53756,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53809,7 +53809,7 @@
     "suggestedLevel": 8,
     "doneTag": "q_npc_rep_ext_42_q04_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_42_q04_activa",
@@ -53818,7 +53818,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53964,7 +53964,7 @@
     "suggestedLevel": 10,
     "doneTag": "q_npc_rep_ext_44_q01_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "200 XP"
     ],
     "activeTag": "q_npc_rep_ext_44_q01_activa",
@@ -53973,7 +53973,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -53995,7 +53995,7 @@
     "suggestedLevel": 4,
     "doneTag": "q_npc_rep_ext_44_q02_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_44_q02_activa",
@@ -54004,7 +54004,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
@@ -54026,7 +54026,7 @@
     "suggestedLevel": 18,
     "doneTag": "q_npc_rep_ext_44_q03_lista",
     "rewards": [
-      "1x Moneda de Campeon",
+      "5x Moneda de Campeon",
       "50 XP"
     ],
     "activeTag": "q_npc_rep_ext_44_q03_activa",
@@ -54035,7 +54035,7 @@
     "rewardItems": [
       {
         "id": "cisco_mod:champion_coin",
-        "count": 1
+        "count": 5
       }
     ],
     "category": "REPEATABLE",
