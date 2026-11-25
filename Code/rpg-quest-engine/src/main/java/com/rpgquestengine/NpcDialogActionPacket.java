@@ -104,10 +104,11 @@ public class NpcDialogActionPacket {
             if ("COMPLETE".equalsIgnoreCase(msg.action)) {
                 if (q.doneTag == null || !tags.contains(q.doneTag)) return;
 
-                // Verificar y consumir ítems requeridos en etapas ITEM
+                // Verificar y consumir ítems requeridos en etapas ITEM / COLLECT / DELIVER
                 if (q.stages != null) {
                     for (QuestDefinition.QuestStage st : q.stages) {
-                        if ("ITEM".equalsIgnoreCase(st.type) && st.target != null && st.amount > 0) {
+                        if (("ITEM".equalsIgnoreCase(st.type) || "COLLECT".equalsIgnoreCase(st.type) || "DELIVER".equalsIgnoreCase(st.type))
+                                && st.target != null && st.amount > 0) {
                             ResourceLocation rl = ResourceLocation.tryParse(st.target);
                             Item reqItem = rl != null ? ForgeRegistries.ITEMS.getValue(rl) : null;
                             if (reqItem != null && reqItem != net.minecraft.world.item.Items.AIR) {
@@ -126,7 +127,8 @@ public class NpcDialogActionPacket {
                         }
                     }
                     for (QuestDefinition.QuestStage st : q.stages) {
-                        if ("ITEM".equalsIgnoreCase(st.type) && st.target != null && st.amount > 0) {
+                        if (("ITEM".equalsIgnoreCase(st.type) || "COLLECT".equalsIgnoreCase(st.type) || "DELIVER".equalsIgnoreCase(st.type))
+                                && st.target != null && st.amount > 0) {
                             ResourceLocation rl = ResourceLocation.tryParse(st.target);
                             Item reqItem = rl != null ? ForgeRegistries.ITEMS.getValue(rl) : null;
                             if (reqItem != null && reqItem != net.minecraft.world.item.Items.AIR) {
