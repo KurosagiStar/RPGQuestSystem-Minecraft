@@ -4,7 +4,7 @@
 ### Subido a Godlike (`7c4edd78`)
 - `config/rpg_quests.json`: corregidas 1415 instancias de `"required"` -> `"amount"`, `enderman` (`1`), repetibles (`6-8`), `minar_hierro`, `craftear_arcos` y descripciones de bosses (ej. `Returning Knight`).
 - `kubejs/server_scripts/village_npc_spawner.js` y `182` presets `*_ext_*.npc.snbt` en `config/easy_npc/preset/villager`.
-- `mods/rpgquestengine-1.0.0.jar` (`251,790` bytes, `2026-11-25T02:54:52+00:00`).
+- `mods/rpgquestengine-1.0.0.jar`: `/rpgquest reload` ahora envía `SyncQuestConfigPacket` a todos los jugadores conectados (`PacketDistributor.ALL.noArg()`) y ejecuta `checkAndSyncQuests` para cada uno.
 
 ### Pendiente de arreglar (para revisar entre ambos)
 1. **Quests repetibles infinitas y autocompletado desde la 2.ª vez:**

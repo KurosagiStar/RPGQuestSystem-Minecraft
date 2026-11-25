@@ -226,10 +226,11 @@ public class RPGQuestEngine {
                 .then(Commands.literal("reload")
                     .executes(ctx -> {
                         QuestConfig.loadConfig();
-                        if (ctx.getSource().getEntity() instanceof ServerPlayer sp) {
-                            checkAndSyncQuests(sp);
+                        NetworkHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
+                        for (ServerPlayer p : ctx.getSource().getServer().getPlayerList().getPlayers()) {
+                            checkAndSyncQuests(p);
                         }
-                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Configuración rpg_quests.json recargada (" + QuestConfig.QUESTS.size() + " misiones)."), false);
+                        ctx.getSource().sendSuccess(() -> Component.literal("§a[RPGQuestEngine] Configuración rpg_quests.json recargada y sincronizada (" + QuestConfig.QUESTS.size() + " misiones)."), false);
                         return 1;
                     })
                 )
