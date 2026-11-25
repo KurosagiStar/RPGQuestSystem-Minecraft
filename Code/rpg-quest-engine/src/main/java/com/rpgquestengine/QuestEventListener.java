@@ -249,16 +249,16 @@ public class QuestEventListener {
                 long posZ = (long) living.getZ();
 
                 // 1. Guardar referencia temporal del último NPC interactuado
-                for (String t : new java.util.ArrayList<>(sp.getTags())) {
+                for (String t : new java.util.ArrayList<>(RPGQuestEngine.getAllQuestTags(sp))) {
                     if (t.startsWith("rqe_last_npc_")) {
-                        sp.removeTag(t);
+                        RPGQuestEngine.removeQuestTag(sp, t);
                     }
                 }
-                sp.addTag("rqe_last_npc_" + entityUuid + "_" + posX + "_" + posZ);
+                RPGQuestEngine.addQuestTag(sp, "rqe_last_npc_" + entityUuid + "_" + posX + "_" + posZ);
 
                 // 2. Evaluar objetivos de hablar / entregar a este NPC (TALK / DELIVER)
                 for (QuestDefinition q : QuestConfig.QUESTS) {
-                    if (sp.getTags().contains(q.activeTag) && !sp.getTags().contains(q.completedTag)) {
+                    if (RPGQuestEngine.getAllQuestTags(sp).contains(q.activeTag) && !RPGQuestEngine.getAllQuestTags(sp).contains(q.completedTag)) {
                         for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                             QuestDefinition.QuestStage stage = q.stages.get(sIdx);
                             String stType = stage.type != null ? stage.type.toUpperCase() : "";
@@ -309,24 +309,24 @@ public class QuestEventListener {
 
                     // C) Si el jugador tiene la misión activa y no tenía ningún NPC asignado aún
                     boolean alreadyHasNpc = false;
-                    for (String t : sp.getTags()) {
+                    for (String t : RPGQuestEngine.getAllQuestTags(sp)) {
                         if (t.startsWith("rqe_pos_" + q.id + "_")) {
                             alreadyHasNpc = true;
                             break;
                         }
                     }
-                    if (!matches && sp.getTags().contains(q.activeTag) && !alreadyHasNpc) {
+                    if (!matches && RPGQuestEngine.getAllQuestTags(sp).contains(q.activeTag) && !alreadyHasNpc) {
                         matches = true;
                     }
 
                     if (matches) {
-                        for (String t : new java.util.ArrayList<>(sp.getTags())) {
+                        for (String t : new java.util.ArrayList<>(RPGQuestEngine.getAllQuestTags(sp))) {
                             if (t.startsWith("rqe_npc_" + q.id + "_") || t.startsWith("rqe_pos_" + q.id + "_")) {
-                                sp.removeTag(t);
+                                RPGQuestEngine.removeQuestTag(sp, t);
                             }
                         }
-                        sp.addTag("rqe_npc_" + q.id + "_" + entityUuid);
-                        sp.addTag("rqe_pos_" + q.id + "_" + posX + "_" + posZ);
+                        RPGQuestEngine.addQuestTag(sp, "rqe_npc_" + q.id + "_" + entityUuid);
+                        RPGQuestEngine.addQuestTag(sp, "rqe_pos_" + q.id + "_" + posX + "_" + posZ);
                     }
                 }
             }

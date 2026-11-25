@@ -38,15 +38,15 @@ public class AbandonQuestPacket {
             }
             if (target == null || "MAIN".equalsIgnoreCase(target.category)) return;
 
-            if (target.activeTag != null && !target.activeTag.isEmpty()) sp.removeTag(target.activeTag);
-            if (target.doneTag != null && !target.doneTag.isEmpty()) sp.removeTag(target.doneTag);
+            if (target.activeTag != null && !target.activeTag.isEmpty()) RPGQuestEngine.removeQuestTag(sp, target.activeTag);
+            if (target.doneTag != null && !target.doneTag.isEmpty()) RPGQuestEngine.removeQuestTag(sp, target.doneTag);
 
-            for (String t : new ArrayList<>(sp.getTags())) {
+            for (String t : new ArrayList<>(RPGQuestEngine.getAllQuestTags(sp))) {
                 if (t.startsWith("rqe_zone_" + target.id + "_")
                         || t.startsWith("rqe_npc_" + target.id + "_")
                         || t.startsWith("rqe_pos_" + target.id + "_")
                         || t.startsWith("rqe_ambush_" + target.id + "_")) {
-                    sp.removeTag(t);
+                    RPGQuestEngine.removeQuestTag(sp, t);
                 }
             }
 

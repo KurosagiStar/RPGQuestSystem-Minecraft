@@ -213,7 +213,7 @@ public class PartyManager {
         for (QuestDefinition q : QuestConfig.QUESTS) {
             if (!"MAIN".equalsIgnoreCase(q.category)) continue;
             for (ServerPlayer m : members) {
-                Set<String> tags = m.getTags();
+                Set<String> tags = RPGQuestEngine.getAllQuestTags(m);
                 if (q.completedTag != null && tags.contains(q.completedTag)) {
                     allCompletedMain.add(q.id);
                 } else if (q.activeTag != null && tags.contains(q.activeTag)) {
@@ -223,14 +223,14 @@ public class PartyManager {
         }
 
         for (ServerPlayer m : members) {
-            Set<String> tags = m.getTags();
+            Set<String> tags = RPGQuestEngine.getAllQuestTags(m);
             for (String qid : allCompletedMain) {
                 QuestDefinition q = QuestConfig.getQuestById(qid);
                 if (q == null) continue;
-                if (q.activeTag != null) m.removeTag(q.activeTag);
-                if (q.doneTag != null) m.removeTag(q.doneTag);
+                if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
+                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
                 if (q.completedTag != null && !tags.contains(q.completedTag)) {
-                    m.addTag(q.completedTag);
+                    RPGQuestEngine.addQuestTag(m, q.completedTag);
                     addPendingReward(m, q.id);
                 }
             }
@@ -239,7 +239,7 @@ public class PartyManager {
                 QuestDefinition q = QuestConfig.getQuestById(qid);
                 if (q == null) continue;
                 if (q.activeTag != null && !tags.contains(q.activeTag)) {
-                    m.addTag(q.activeTag);
+                    RPGQuestEngine.addQuestTag(m, q.activeTag);
                 }
             }
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
@@ -316,9 +316,9 @@ public class PartyManager {
         if (!"MAIN".equalsIgnoreCase(q.category) && !"CONTRACT".equalsIgnoreCase(q.category)) return;
         for (ServerPlayer m : getOnlineMembers(actor)) {
             if (m == actor) continue;
-            if (q.completedTag != null && m.getTags().contains(q.completedTag)) continue;
-            if (q.activeTag != null && !m.getTags().contains(q.activeTag)) {
-                m.addTag(q.activeTag);
+            if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+            if (q.activeTag != null && !RPGQuestEngine.hasQuestTag(m, q.activeTag)) {
+                RPGQuestEngine.addQuestTag(m, q.activeTag);
                 m.sendSystemMessage(Component.literal("§6[Grupo] §e" + actor.getScoreboardName() + " §faceptó: §e" + q.title));
                 NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
                 RPGQuestEngine.syncPlayerAfterDialog(m);
@@ -330,10 +330,10 @@ public class PartyManager {
         if (actor == null || q == null || !"MAIN".equalsIgnoreCase(q.category)) return;
         for (ServerPlayer m : getOnlineMembers(actor)) {
             if (m == actor) continue;
-            if (q.activeTag != null) m.removeTag(q.activeTag);
-            if (q.doneTag != null) m.removeTag(q.doneTag);
-            if (q.completedTag != null && !m.getTags().contains(q.completedTag)) {
-                m.addTag(q.completedTag);
+            if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
+            if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
+            if (q.completedTag != null && !RPGQuestEngine.hasQuestTag(m, q.completedTag)) {
+                RPGQuestEngine.addQuestTag(m, q.completedTag);
                 addPendingReward(m, q.id);
                 NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m),
                         new ShowBannerPacket(

@@ -144,6 +144,7 @@ public class RPGQuestEngine {
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer sp) {
+            migrateVanillaQuestTags(sp);
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
@@ -194,17 +195,17 @@ public class RPGQuestEngine {
                         Scoreboard sb = sp.getServer().getScoreboard();
 
                         int removedTags = 0;
-                        for (String t : new java.util.ArrayList<>(sp.getTags())) {
+                        for (String t : new java.util.ArrayList<>(getAllQuestTags(sp))) {
                             if (t.startsWith("q_") || t.startsWith("rqe_")) {
-                                sp.removeTag(t);
+                                removeQuestTag(sp, t);
                                 removedTags++;
                             }
                         }
 
                         for (QuestDefinition q : QuestConfig.QUESTS) {
-                            if (q.activeTag != null) sp.removeTag(q.activeTag);
-                            if (q.doneTag != null) sp.removeTag(q.doneTag);
-                            if (q.completedTag != null) sp.removeTag(q.completedTag);
+                            if (q.activeTag != null) removeQuestTag(sp, q.activeTag);
+                            if (q.doneTag != null) removeQuestTag(sp, q.doneTag);
+                            if (q.completedTag != null) removeQuestTag(sp, q.completedTag);
 
                             for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                                 QuestDefinition.QuestStage st = q.stages.get(sIdx);
@@ -389,7 +390,7 @@ public class RPGQuestEngine {
     }
 
     private void checkAndSyncQuests(ServerPlayer sp) {
-        Set<String> playerTags = sp.getTags();
+        Set<String> playerTags = getAllQuestTags(sp);
         ServerLevel level = sp.serverLevel();
         Scoreboard sb = sp.getServer().getScoreboard();
         Map<String, Integer> scores = new HashMap<>();
@@ -401,7 +402,7 @@ public class RPGQuestEngine {
                     QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
                     if (prereq != null && prereq.completedTag != null && !playerTags.contains(prereq.completedTag)) {
                         // El jugador no completó la misión previa: cancelar activación
-                        sp.removeTag(q.activeTag);
+                        removeQuestTag(sp, q.activeTag);
                         sp.displayClientMessage(net.minecraft.network.chat.Component.literal("§c[RPGQuestEngine] Bloqueado: Completa primero \"" + prereq.title + "\"."), true);
                         continue;
                     }
@@ -417,7 +418,7 @@ public class RPGQuestEngine {
                         }
                     }
                     if (blocked) {
-                        sp.removeTag(q.activeTag);
+                        removeQuestTag(sp, q.activeTag);
                         sp.displayClientMessage(net.minecraft.network.chat.Component.literal("§c[RPGQuestEngine] Esta ruta ha quedado bloqueada por tus decisiones."), true);
                         continue;
                     }
@@ -440,8 +441,8 @@ public class RPGQuestEngine {
                             if (uEnd > 0) {
                                 String uStr = rem.substring(0, uEnd);
                                 String posPart = rem.substring(uEnd + 1);
-                                sp.addTag("rqe_npc_" + q.id + "_" + uStr);
-                                sp.addTag("rqe_pos_" + q.id + "_" + posPart);
+                                addQuestTag(sp, "rqe_npc_" + q.id + "_" + uStr);
+                                addQuestTag(sp, "rqe_pos_" + q.id + "_" + posPart);
                             }
                             break;
                         }
@@ -617,7 +618,7 @@ public class RPGQuestEngine {
                                     }
                                     int zx = (int) Math.round(sp.getX() + dxOff);
                                     int zz = (int) Math.round(sp.getZ() + dzOff);
-                                    sp.addTag(zonePrefix + zx + "_" + zz);
+                                    addQuestTag(sp, zonePrefix + zx + "_" + zz);
                                     targetX = zx;
                                     targetZ = zz;
                                 }
@@ -630,7 +631,7 @@ public class RPGQuestEngine {
                                 checkAndSpawnNearbyMobs(level, sp, stage.mobToSpawn, stage.mobSpawnCount, stage.radius, waveTag);
                                 String ambushTag = "rqe_ambush_" + q.id + "_" + sIdx;
                                 if (stage.ambushTitle != null && !stage.ambushTitle.isEmpty() && !playerTags.contains(ambushTag)) {
-                                    sp.addTag(ambushTag);
+                                    addQuestTag(sp, ambushTag);
                                     sp.connection.send(new net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket(
                                             net.minecraft.network.chat.Component.literal(stage.ambushTitle)));
                                     level.playSound(null, sp.blockPosition(), net.minecraft.sounds.SoundEvents.RAVAGER_ROAR,
@@ -665,9 +666,9 @@ public class RPGQuestEngine {
 
                 if (q.doneTag != null && !q.doneTag.isEmpty()) {
                     if (allNonOptionalDone && !playerTags.contains(q.doneTag)) {
-                        sp.addTag(q.doneTag);
+                        addQuestTag(sp, q.doneTag);
                     } else if (!allNonOptionalDone && playerTags.contains(q.doneTag)) {
-                        sp.removeTag(q.doneTag);
+                        removeQuestTag(sp, q.doneTag);
                     }
                 }
             }
@@ -678,7 +679,7 @@ public class RPGQuestEngine {
             if (q.completedTag != null && playerTags.contains(q.completedTag)) {
                 String rewardedTag = "rqe_rewarded_" + q.id;
                 if (!playerTags.contains(rewardedTag)) {
-                    sp.addTag(rewardedTag);
+                    addQuestTag(sp, rewardedTag);
                     if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty()) {
                         sp.getServer().getCommands().performPrefixedCommand(
                                 sp.createCommandSourceStack().withPermission(4).withSuppressedOutput(),
@@ -744,7 +745,7 @@ public class RPGQuestEngine {
             }
         }
 
-        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncPlayerQuestsPacket(sp.getTags(), scores, npcLivePositions));
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncPlayerQuestsPacket(getAllQuestTags(sp), scores, npcLivePositions));
 
         // 3. Sincronizar tags de entidades vivas cercanas (radio 48 bloques) para garantizar marcadores actualizados en tiempo real
         net.minecraft.world.phys.AABB syncBox = sp.getBoundingBox().inflate(48.0D);
@@ -950,7 +951,7 @@ public class RPGQuestEngine {
         }
 
         checkAndSyncQuests(sp);
-        Set<String> tags = sp.getTags();
+        Set<String> tags = getAllQuestTags(sp);
 
         for (QuestDefinition q : npcQuests) {
             if (q.doneTag != null && tags.contains(q.doneTag)) {
@@ -1019,5 +1020,67 @@ public class RPGQuestEngine {
     private int handleNpcTalk(ServerPlayer sp, String npcId) {
         openNpcDialog(sp, npcId, npcId, -1);
         return 1;
+    }
+
+    // --- Almacenamiento ilimitado de quest tags en PersistentData (evita el límite vanilla de 1024 tags) ---
+    public static final String QUEST_TAGS_KEY = "rqe_quest_tags";
+
+    public static boolean hasQuestTag(ServerPlayer sp, String tag) {
+        if (sp == null || tag == null || tag.isEmpty()) return false;
+        net.minecraft.nbt.CompoundTag pd = sp.getPersistentData();
+        if (pd.contains(QUEST_TAGS_KEY, 10) && pd.getCompound(QUEST_TAGS_KEY).getBoolean(tag)) {
+            return true;
+        }
+        return sp.getTags().contains(tag);
+    }
+
+    public static void addQuestTag(ServerPlayer sp, String tag) {
+        if (sp == null || tag == null || tag.isEmpty()) return;
+        net.minecraft.nbt.CompoundTag pd = sp.getPersistentData();
+        net.minecraft.nbt.CompoundTag tagsNbt = pd.contains(QUEST_TAGS_KEY, 10)
+                ? pd.getCompound(QUEST_TAGS_KEY)
+                : new net.minecraft.nbt.CompoundTag();
+        tagsNbt.putBoolean(tag, true);
+        pd.put(QUEST_TAGS_KEY, tagsNbt);
+    }
+
+    public static void removeQuestTag(ServerPlayer sp, String tag) {
+        if (sp == null || tag == null || tag.isEmpty()) return;
+        net.minecraft.nbt.CompoundTag pd = sp.getPersistentData();
+        if (pd.contains(QUEST_TAGS_KEY, 10)) {
+            pd.getCompound(QUEST_TAGS_KEY).remove(tag);
+        }
+        sp.removeTag(tag);
+    }
+
+    public static Set<String> getAllQuestTags(ServerPlayer sp) {
+        Set<String> out = new java.util.HashSet<>(sp.getTags());
+        if (sp != null) {
+            net.minecraft.nbt.CompoundTag pd = sp.getPersistentData();
+            if (pd.contains(QUEST_TAGS_KEY, 10)) {
+                net.minecraft.nbt.CompoundTag tagsNbt = pd.getCompound(QUEST_TAGS_KEY);
+                for (String k : tagsNbt.getAllKeys()) {
+                    if (tagsNbt.getBoolean(k)) out.add(k);
+                }
+            }
+        }
+        return out;
+    }
+
+    public static void migrateVanillaQuestTags(ServerPlayer sp) {
+        if (sp == null) return;
+        List<String> toMigrate = new java.util.ArrayList<>();
+        for (String t : sp.getTags()) {
+            if (t.startsWith("q_") || t.startsWith("cisco_") || t.startsWith("rqe_")
+                    || t.endsWith("_act") || t.endsWith("_done") || t.endsWith("_comp")
+                    || t.endsWith("_activa") || t.endsWith("_lista") || t.endsWith("_entregada")
+                    || t.endsWith("_rewarded")) {
+                toMigrate.add(t);
+            }
+        }
+        for (String t : toMigrate) {
+            addQuestTag(sp, t);
+            removeQuestTag(sp, t);
+        }
     }
 }
