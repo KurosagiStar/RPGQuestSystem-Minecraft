@@ -11,6 +11,7 @@ public class PartyManager {
     public static class Party {
         public UUID leader;
         public final List<UUID> members = new ArrayList<>();
+        public final Map<UUID, String> memberNames = new HashMap<>();
         public final Set<String> completedMainIds = new HashSet<>();
         public final Set<String> activeMainIds = new HashSet<>();
         public final Map<UUID, List<String>> offlinePendingRewards = new HashMap<>();
@@ -65,6 +66,13 @@ public class PartyManager {
                     for (String qid : en.getValue()) qArr.add(qid);
                     offObj.add(en.getKey().toString(), qArr);
                 }
+                com.google.gson.JsonObject namesObj = new com.google.gson.JsonObject();
+                for (Map.Entry<UUID, String> ne : p.memberNames.entrySet()) {
+                    if (ne.getValue() != null && !ne.getValue().isEmpty()) {
+                        namesObj.addProperty(ne.getKey().toString(), ne.getValue());
+                    }
+                }
+                obj.add("memberNames", namesObj);
                 obj.add("offlinePending", offObj);
                 arr.add(obj);
             }
@@ -99,6 +107,14 @@ public class PartyManager {
                     if (obj.has("activeMain") && obj.get("activeMain").isJsonArray()) {
                         for (com.google.gson.JsonElement aEl : obj.getAsJsonArray("activeMain")) {
                             p.activeMainIds.add(aEl.getAsString());
+                        }
+                    }
+                    if (obj.has("memberNames") && obj.get("memberNames").isJsonObject()) {
+                        com.google.gson.JsonObject namesObj = obj.getAsJsonObject("memberNames");
+                        for (String uidKey : namesObj.keySet()) {
+                            try {
+                                p.memberNames.put(UUID.fromString(uidKey), namesObj.get(uidKey).getAsString());
+                            } catch (Exception ignored) {}
                         }
                     }
                     if (obj.has("offlinePending") && obj.get("offlinePending").isJsonObject()) {
@@ -569,6 +585,48 @@ public class PartyManager {
         }
     }
 
+    private static String resolveMemberName(Party p, UUID uid, MinecraftServer server, ServerPlayer onlineMp) {
+        if (onlineMp != null) {
+            String n = onlineMp.getScoreboardName();
+            if (p != null && !n.equals(p.memberNames.get(uid))) {
+                p.memberNames.put(uid, n);
+                saveParties();
+            }
+            return n;
+        }
+        if (p != null) {
+            String cached = p.memberNames.get(uid);
+            if (cached != null && !cached.isEmpty()) return cached;
+        }
+        String forgeCached = net.minecraftforge.common.UsernameCache.getLastKnownUsername(uid);
+        if (forgeCached != null && !forgeCached.isEmpty()) {
+            if (p != null) p.memberNames.put(uid, forgeCached);
+            return forgeCached;
+        }
+        if (server != null && server.getProfileCache() != null) {
+            var opt = server.getProfileCache().get(uid);
+            if (opt.isPresent() && opt.get().getName() != null && !opt.get().getName().isEmpty()) {
+                String profName = opt.get().getName();
+                if (p != null) p.memberNames.put(uid, profName);
+                return profName;
+            }
+        }
+        return uid.toString().substring(0, 8);
+    }
+
+    public static void syncPartyOnLogout(ServerPlayer leaving) {
+        if (leaving == null || leaving.getServer() == null) return;
+        Party p = PLAYER_TO_PARTY.get(leaving.getUUID());
+        if (p == null) return;
+        p.memberNames.put(leaving.getUUID(), leaving.getScoreboardName());
+        saveParties();
+        for (UUID uid : p.members) {
+            if (uid.equals(leaving.getUUID())) continue;
+            ServerPlayer m = leaving.getServer().getPlayerList().getPlayer(uid);
+            if (m != null) syncToPlayerInternal(m, leaving.getUUID());
+        }
+    }
+
     public static void syncParty(Party p, MinecraftServer server) {
         if (p == null || server == null) return;
         for (UUID uid : p.members) {
@@ -578,6 +636,10 @@ public class PartyManager {
     }
 
     public static void syncToPlayer(ServerPlayer sp) {
+        syncToPlayerInternal(sp, null);
+    }
+
+    private static void syncToPlayerInternal(ServerPlayer sp, UUID forceOfflineUuid) {
         if (sp == null || sp.getServer() == null) return;
         Party p = PLAYER_TO_PARTY.get(sp.getUUID());
         boolean inParty = p != null;
@@ -593,8 +655,8 @@ public class PartyManager {
         List<SyncPartyPacket.MemberEntry> members = new ArrayList<>();
         if (p != null) {
             for (UUID uid : p.members) {
-                ServerPlayer mp = sp.getServer().getPlayerList().getPlayer(uid);
-                String name = mp != null ? mp.getScoreboardName() : uid.toString().substring(0, 8);
+                ServerPlayer mp = uid.equals(forceOfflineUuid) ? null : sp.getServer().getPlayerList().getPlayer(uid);
+                String name = resolveMemberName(p, uid, sp.getServer(), mp);
                 members.add(new SyncPartyPacket.MemberEntry(uid.toString(), name, p.leader.equals(uid), mp != null));
             }
         }

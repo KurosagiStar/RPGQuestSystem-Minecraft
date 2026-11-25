@@ -151,9 +151,18 @@ public class RPGQuestEngine {
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);
             PartyManager.syncToPlayer(sp);
-            if (PartyManager.getParty(sp.getUUID()) != null) {
+            PartyManager.Party p = PartyManager.getParty(sp.getUUID());
+            if (p != null) {
                 PartyManager.syncMainQuestsWithParty(sp);
+                PartyManager.syncParty(p, sp.getServer());
             }
+        }
+    }
+
+    @SubscribeEvent
+    public void onPlayerLoggedOut(PlayerEvent.PlayerLoggedOutEvent event) {
+        if (event.getEntity() instanceof ServerPlayer sp) {
+            PartyManager.syncPartyOnLogout(sp);
         }
     }
 
