@@ -44,7 +44,9 @@ public class ClientPacketHandler {
             if (KeyBindings.OPEN_JOURNAL_KEY.consumeClick()) {
                 Minecraft mc = Minecraft.getInstance();
                 if (mc.screen == null) {
-                    QuestConfig.loadConfig();
+                    if (mc.isLocalServer()) {
+                        QuestConfig.loadConfig();
+                    }
                     mc.setScreen(new QuestJournalScreen());
                 }
             }

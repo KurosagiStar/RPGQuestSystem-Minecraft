@@ -155,6 +155,10 @@ public class QuestConfig {
             if (loaded != null) {
                 QUESTS = loaded;
                 rebuildIndices();
+                File questFile = FMLPaths.CONFIGDIR.get().resolve("rpg_quests.json").toFile();
+                try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(questFile), StandardCharsets.UTF_8)) {
+                    writer.write(json);
+                } catch (Exception ignored) {}
                 LOGGER.info("[RPGQuestEngine] Synced {} quests from server.", QUESTS.size());
             }
         } catch (Exception e) {
