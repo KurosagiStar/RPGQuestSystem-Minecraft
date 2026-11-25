@@ -142,6 +142,8 @@ public class NpcDialogActionPacket {
                             }
                         }
                     }
+                    sp.getInventory().setChanged();
+                    sp.containerMenu.broadcastChanges();
                 }
 
                 if (q.activeTag != null) RPGQuestEngine.removeQuestTag(sp, q.activeTag);
