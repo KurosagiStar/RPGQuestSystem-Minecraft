@@ -9570,7 +9570,7 @@
     "title": "Contrato: Plaga en la Bodega",
     "npc": "Tabernero",
     "npcId": "npc_contract_tabernero",
-    "description": "Arañas de cueva rondan los túneles bajo la taberna. Acaba con ellas.",
+    "description": "Arañas rondan los túneles bajo la taberna. Acaba con ellas.",
     "suggestedLevel": 10,
     "prerequisiteQuestId": "",
     "rewardXp": 140,
@@ -9594,8 +9594,8 @@
     "stages": [
       {
         "type": "KILL",
-        "description": "Elimina 8x Araña de cueva",
-        "target": "minecraft:cave_spider",
+        "description": "Elimina 8x Arañas",
+        "target": "minecraft:spider",
         "amount": 8
       }
     ],
