@@ -144,6 +144,7 @@ public class RPGQuestEngine {
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.getEntity() instanceof ServerPlayer sp) {
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);
@@ -174,6 +175,7 @@ public class RPGQuestEngine {
     @SubscribeEvent
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
         if (event.getEntity() instanceof ServerPlayer sp) {
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);

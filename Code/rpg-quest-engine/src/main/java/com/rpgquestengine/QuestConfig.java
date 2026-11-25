@@ -144,6 +144,24 @@ public class QuestConfig {
         }
     }
 
+    public static String getRawQuestsJson() {
+        return GSON.toJson(QUESTS);
+    }
+
+    public static void applyServerQuestsJson(String json) {
+        try {
+            java.lang.reflect.Type listType = new com.google.gson.reflect.TypeToken<List<QuestDefinition>>() {}.getType();
+            List<QuestDefinition> loaded = GSON.fromJson(json, listType);
+            if (loaded != null) {
+                QUESTS = loaded;
+                rebuildIndices();
+                LOGGER.info("[RPGQuestEngine] Synced {} quests from server.", QUESTS.size());
+            }
+        } catch (Exception e) {
+            LOGGER.error("[RPGQuestEngine] Error applying server quests JSON", e);
+        }
+    }
+
     private static void createDefaultQuests(File file) {
         List<QuestDefinition> defaults = new ArrayList<>();
 

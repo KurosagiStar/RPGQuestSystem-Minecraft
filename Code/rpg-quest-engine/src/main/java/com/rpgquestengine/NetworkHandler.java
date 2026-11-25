@@ -75,6 +75,10 @@ public class NetworkHandler {
                 ShowBannerPacket::encode,
                 ShowBannerPacket::decode,
                 ShowBannerPacket::handle);
+        CHANNEL.registerMessage(id++, SyncQuestConfigPacket.class,
+                SyncQuestConfigPacket::encode,
+                SyncQuestConfigPacket::decode,
+                SyncQuestConfigPacket::handle);
     }
 }
 
