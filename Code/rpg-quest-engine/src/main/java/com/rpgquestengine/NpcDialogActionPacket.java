@@ -138,33 +138,36 @@ public class NpcDialogActionPacket {
                                     if (!stStack.isEmpty() && stStack.getItem() == reqItem) {
                                         int take = Math.min(toRemove, stStack.getCount());
                                         stStack.shrink(take);
+                                        if (stStack.isEmpty()) {
+                                            sp.getInventory().setItem(s, ItemStack.EMPTY);
+                                        }
                                         toRemove -= take;
                                     }
                                 }
                             }
                         }
                     }
-                    sp.getInventory().setChanged();
-                    sp.containerMenu.broadcastChanges();
                 }
 
                 if (q.activeTag != null) RPGQuestEngine.removeQuestTag(sp, q.activeTag);
                 RPGQuestEngine.removeQuestTag(sp, q.doneTag);
                 if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null) {
                     RPGQuestEngine.addQuestTag(sp, q.completedTag);
-                } else if ("REPEATABLE".equalsIgnoreCase(q.category) && q.stages != null) {
-                    var sb = sp.getScoreboard();
-                    String pName = sp.getScoreboardName();
-                    for (int i = 0; i < q.stages.size(); i++) {
-                        String objName = "rqe_" + q.id + "_" + i;
-                        var obj = sb.getObjective(objName);
-                        if (obj != null) {
-                            sb.getOrCreatePlayerScore(pName, obj).setScore(0);
+                } else if ("REPEATABLE".equalsIgnoreCase(q.category)) {
+                    if (q.stages != null) {
+                        for (int i = 0; i < q.stages.size(); i++) {
+                            QuestDefinition.QuestStage st = q.stages.get(i);
+                            RPGQuestEngine.setInternalScore(sp, RPGQuestEngine.getInternalScoreKey(q.id, i, st.type), 0);
                         }
                     }
+                    RPGQuestEngine.onRepeatableCompleted(sp, q);
                 }
 
                 grantAllQuestRewards(sp, q, msg.choiceIndex);
+                sp.getInventory().setChanged();
+                sp.inventoryMenu.broadcastChanges();
+                sp.containerMenu.broadcastChanges();
+                sp.inventoryMenu.sendAllDataToRemote();
 
                 String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
                 String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";

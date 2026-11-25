@@ -93,7 +93,9 @@ public class QuestEventListener {
             if (blockId != null) {
                 String bId = blockId.toString();
                 incrementQuestTarget(sp, "MINE", bId);
-                if (!"minecraft:iron_ore".equals(bId)
+                if (bId.startsWith("minecraft:deepslate_") && bId.endsWith("_ore")) {
+                    incrementQuestTarget(sp, "MINE", "minecraft:" + bId.substring("minecraft:deepslate_".length()));
+                } else if (!"minecraft:iron_ore".equals(bId)
                         && (bId.contains("iron_ore") || event.getState().is(net.minecraft.tags.BlockTags.create(new ResourceLocation("forge", "ores/iron"))))) {
                     incrementQuestTarget(sp, "MINE", "minecraft:iron_ore");
                 }
@@ -354,12 +356,14 @@ public class QuestEventListener {
     }
 
     private static void incrementQuestTarget(ServerPlayer sp, String type, String target, int amount) {
+        Set<ServerPlayer> touched = new java.util.HashSet<>();
         for (QuestDefinition q : QuestConfig.QUESTS) {
             boolean shareWithParty = "MAIN".equalsIgnoreCase(q.category) || "CONTRACT".equalsIgnoreCase(q.category);
             java.util.List<ServerPlayer> recipients = shareWithParty ? PartyManager.getOnlineMembers(sp) : java.util.Collections.singletonList(sp);
             for (ServerPlayer targetPlayer : recipients) {
                 if (targetPlayer != sp && !targetPlayer.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
-                if (targetPlayer.getTags().contains(q.activeTag) && !targetPlayer.getTags().contains(q.completedTag)) {
+                Set<String> pTags = RPGQuestEngine.getAllQuestTags(targetPlayer);
+                if (q.activeTag != null && pTags.contains(q.activeTag) && (q.completedTag == null || !pTags.contains(q.completedTag))) {
                     for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                         QuestDefinition.QuestStage stage = q.stages.get(sIdx);
                         if (type.equalsIgnoreCase(stage.type)) {
@@ -372,11 +376,15 @@ public class QuestEventListener {
                                 }
                                 var score = sb.getOrCreatePlayerScore(targetPlayer.getScoreboardName(), obj);
                                 score.add(amount);
+                                touched.add(targetPlayer);
                             }
                         }
                     }
                 }
             }
+        }
+        for (ServerPlayer p : touched) {
+            RPGQuestEngine.syncPlayerAfterDialog(p);
         }
     }
 

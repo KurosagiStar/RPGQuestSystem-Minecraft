@@ -985,6 +985,7 @@ public class RPGQuestEngine {
         }
 
         QuestDefinition firstBlockedPrereq = null;
+        java.util.List<QuestDefinition> available = new java.util.ArrayList<>();
         for (QuestDefinition q : npcQuests) {
             if (q.completedTag != null && tags.contains(q.completedTag)) continue;
             if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
@@ -994,7 +995,12 @@ public class RPGQuestEngine {
                     continue;
                 }
             }
-            sendDialogPacket(sp, npcId, npcName, npcEntityId, "AVAILABLE", q);
+            available.add(q);
+        }
+
+        if (!available.isEmpty()) {
+            QuestDefinition chosen = chooseAvailableNpcQuest(sp, npcId, available);
+            sendDialogPacket(sp, npcId, npcName, npcEntityId, "AVAILABLE", chosen);
             return;
         }
 
@@ -1032,6 +1038,68 @@ public class RPGQuestEngine {
                         toRewardEntries(q.rewardItems),
                         toRewardEntries(q.randomRewards),
                         toRewardEntries(q.choiceRewards)));
+    }
+
+    private QuestDefinition chooseAvailableNpcQuest(ServerPlayer sp, String npcId, java.util.List<QuestDefinition> available) {
+        for (QuestDefinition q : available) {
+            if (!"REPEATABLE".equalsIgnoreCase(q.category)) {
+                return q;
+            }
+        }
+        if (available.size() <= 1) {
+            return available.get(0);
+        }
+
+        net.minecraft.nbt.CompoundTag pd = sp.getPersistentData();
+        net.minecraft.nbt.CompoundTag repState = pd.contains("rqe_rep_state", 10)
+                ? pd.getCompound("rqe_rep_state")
+                : new net.minecraft.nbt.CompoundTag();
+
+        String offerKey = "offer_" + npcId;
+        String dayKey = "day_" + npcId;
+        String lastKey = "last_" + npcId;
+        long currentDay = sp.level().getDayTime() / 24000L;
+
+        String currentOfferId = repState.getString(offerKey);
+        long offerDay = repState.contains(dayKey) ? repState.getLong(dayKey) : -1L;
+        String lastCompletedId = repState.getString(lastKey);
+
+        if (!currentOfferId.isEmpty() && offerDay == currentDay && !currentOfferId.equals(lastCompletedId)) {
+            for (QuestDefinition q : available) {
+                if (q.id.equals(currentOfferId)) {
+                    return q;
+                }
+            }
+        }
+
+        String excludeId = lastCompletedId.isEmpty() ? available.get(0).id : lastCompletedId;
+        java.util.List<QuestDefinition> candidates = new java.util.ArrayList<>();
+        for (QuestDefinition q : available) {
+            if (!q.id.equals(excludeId)) {
+                candidates.add(q);
+            }
+        }
+        if (candidates.isEmpty()) {
+            candidates = available;
+        }
+
+        QuestDefinition picked = candidates.get(sp.getRandom().nextInt(candidates.size()));
+        repState.putString(offerKey, picked.id);
+        repState.putLong(dayKey, currentDay);
+        pd.put("rqe_rep_state", repState);
+        return picked;
+    }
+
+    public static void onRepeatableCompleted(ServerPlayer sp, QuestDefinition q) {
+        if (sp == null || q == null || q.npcId == null || q.npcId.isEmpty()) return;
+        net.minecraft.nbt.CompoundTag pd = sp.getPersistentData();
+        net.minecraft.nbt.CompoundTag repState = pd.contains("rqe_rep_state", 10)
+                ? pd.getCompound("rqe_rep_state")
+                : new net.minecraft.nbt.CompoundTag();
+        repState.putString("last_" + q.npcId, q.id);
+        repState.remove("offer_" + q.npcId);
+        repState.remove("day_" + q.npcId);
+        pd.put("rqe_rep_state", repState);
     }
 
     private int handleNpcTalk(ServerPlayer sp, String npcId) {
