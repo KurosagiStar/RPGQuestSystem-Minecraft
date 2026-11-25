@@ -2,7 +2,10 @@ package com.rpgquestengine;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
@@ -27,6 +30,14 @@ public class QuestConfig {
     public static final java.util.Map<String, QuestDefinition> QUESTS_BY_ID = new java.util.HashMap<>();
     public static final java.util.Map<String, List<QuestDefinition>> QUESTS_BY_NPC = new java.util.HashMap<>();
     public static java.util.Map<String, double[]> NPC_LOCATIONS = new java.util.HashMap<>();
+
+    // Boss challenges loaded from "challenges" key in rpg_quests.json
+    public static List<ChallengeDefinition> CHALLENGES = new ArrayList<>();
+    public static final java.util.Map<String, ChallengeDefinition> CHALLENGES_BY_ID = new java.util.HashMap<>();
+
+    public static ChallengeDefinition getChallengeById(String id) {
+        return CHALLENGES_BY_ID.get(id);
+    }
 
     public static int hudPosX = 10;
     public static int hudPosY = 15;
@@ -74,6 +85,44 @@ public class QuestConfig {
         }
     }
 
+    // ── Internal helpers ────────────────────────────────────────────────────────
+
+    /** Parse a quests JSON that may be a bare list or {"quests":[...],"challenges":[...]}. */
+    private static void applyQuestsJson(String json) {
+        try {
+            JsonElement root = JsonParser.parseString(json);
+            Type questListType = new TypeToken<List<QuestDefinition>>() {}.getType();
+            Type challengeListType = new TypeToken<List<ChallengeDefinition>>() {}.getType();
+
+            if (root.isJsonArray()) {
+                // Legacy bare list – challenges stay as configured
+                List<QuestDefinition> loaded = GSON.fromJson(root, questListType);
+                if (loaded != null) QUESTS = loaded;
+            } else if (root.isJsonObject()) {
+                JsonObject obj = root.getAsJsonObject();
+                if (obj.has("quests")) {
+                    List<QuestDefinition> loaded = GSON.fromJson(obj.get("quests"), questListType);
+                    if (loaded != null) QUESTS = loaded;
+                }
+                if (obj.has("challenges")) {
+                    List<ChallengeDefinition> loaded = GSON.fromJson(obj.get("challenges"), challengeListType);
+                    if (loaded != null) {
+                        CHALLENGES = loaded;
+                        CHALLENGES_BY_ID.clear();
+                        for (ChallengeDefinition c : CHALLENGES) {
+                            if (c.id != null && !c.id.isEmpty()) CHALLENGES_BY_ID.put(c.id, c);
+                        }
+                    }
+                }
+            }
+            rebuildIndices();
+        } catch (Exception e) {
+            LOGGER.error("[RPGQuestEngine] Error parsing quests/challenges JSON", e);
+        }
+    }
+
+    // ── Public API ───────────────────────────────────────────────────────────────
+
     public static void loadConfig() {
         Path configDir = FMLPaths.CONFIGDIR.get();
         File questFile = configDir.resolve("rpg_quests.json").toFile();
@@ -89,11 +138,13 @@ public class QuestConfig {
             createDefaultQuests(questFile);
         } else {
             try (InputStreamReader reader = new InputStreamReader(new FileInputStream(questFile), StandardCharsets.UTF_8)) {
-                Type listType = new TypeToken<List<QuestDefinition>>() {}.getType();
-                List<QuestDefinition> loaded = GSON.fromJson(reader, listType);
-                if (loaded != null) QUESTS = loaded;
-                rebuildIndices();
-                LOGGER.info("[RPGQuestEngine] Loaded {} quests from rpg_quests.json", QUESTS.size());
+                StringBuilder sb = new StringBuilder();
+                char[] buf = new char[8192];
+                int n;
+                while ((n = reader.read(buf)) != -1) sb.append(buf, 0, n);
+                applyQuestsJson(sb.toString());
+                LOGGER.info("[RPGQuestEngine] Loaded {} quests, {} challenges from rpg_quests.json",
+                        QUESTS.size(), CHALLENGES.size());
             } catch (Exception e) {
                 LOGGER.error("[RPGQuestEngine] Error loading rpg_quests.json", e);
             }
@@ -145,22 +196,22 @@ public class QuestConfig {
     }
 
     public static String getRawQuestsJson() {
-        return GSON.toJson(QUESTS);
+        // Emit object wrapper so challenges are synced to clients
+        JsonObject root = new JsonObject();
+        root.add("quests", JsonParser.parseString(GSON.toJson(QUESTS)));
+        root.add("challenges", JsonParser.parseString(GSON.toJson(CHALLENGES)));
+        return GSON.toJson(root);
     }
 
     public static void applyServerQuestsJson(String json) {
         try {
-            java.lang.reflect.Type listType = new com.google.gson.reflect.TypeToken<List<QuestDefinition>>() {}.getType();
-            List<QuestDefinition> loaded = GSON.fromJson(json, listType);
-            if (loaded != null) {
-                QUESTS = loaded;
-                rebuildIndices();
-                File questFile = FMLPaths.CONFIGDIR.get().resolve("rpg_quests.json").toFile();
-                try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(questFile), StandardCharsets.UTF_8)) {
-                    writer.write(json);
-                } catch (Exception ignored) {}
-                LOGGER.info("[RPGQuestEngine] Synced {} quests from server.", QUESTS.size());
-            }
+            applyQuestsJson(json);
+            File questFile = FMLPaths.CONFIGDIR.get().resolve("rpg_quests.json").toFile();
+            try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(questFile), StandardCharsets.UTF_8)) {
+                writer.write(json);
+            } catch (Exception ignored) {}
+            LOGGER.info("[RPGQuestEngine] Synced {} quests, {} challenges from server.",
+                    QUESTS.size(), CHALLENGES.size());
         } catch (Exception e) {
             LOGGER.error("[RPGQuestEngine] Error applying server quests JSON", e);
         }

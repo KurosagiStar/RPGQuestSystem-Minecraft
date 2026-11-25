@@ -582,17 +582,23 @@ public class QuestJournalScreen extends Screen {
         int border = done ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL;
         UiStyle.drawRoundedCard(g, cx, cy, cw, ch, 4, UiStyle.BG_CARD, border, true);
 
+        // Read wither challenge from config
+        ChallengeDefinition witherDef = QuestConfig.getChallengeById("wither");
+        String witherTitle = witherDef != null ? witherDef.title : "Jefe Mundial: El Wither";
+        String witherDesc = witherDef != null ? witherDef.description
+                : "Invoca y derrota a un Wither por tu cuenta (4 Arena de Almas + 3 Calaveras Wither).";
+        String witherIcon = witherDef != null ? witherDef.iconItem : "minecraft:nether_star";
+
         // Cabecera
         UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cw - 4, 24, 0, UiStyle.BG_HEADER);
-        g.renderItem(new ItemStack(Items.NETHER_STAR), cx + 6, cy + 5);
-        g.drawString(this.font, "§c§lJefe Mundial: El Wither", cx + 28, cy + 5, 0xFF5555);
+        Item iconIt = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(witherIcon));
+        g.renderItem(iconIt != null && iconIt != Items.AIR ? new ItemStack(iconIt) : new ItemStack(Items.NETHER_STAR), cx + 6, cy + 5);
+        g.drawString(this.font, "§c§l" + witherTitle, cx + 28, cy + 5, 0xFF5555);
         String progTxt = onCooldown ? "§7Completado" : (done ? "§aProgreso: 1/1" : "§eProgreso: 0/1");
         g.drawString(this.font, progTxt, cx + 28, cy + 15, 0xFFFFFF);
 
         // Instrucción
-        List<FormattedCharSequence> descLines = this.font.split(
-                Component.literal("§7Invoca y derrota a un Wither por tu cuenta (4 Arena de Almas + 3 Calaveras Wither)."),
-                cw - 20);
+        List<FormattedCharSequence> descLines = this.font.split(Component.literal("§7" + witherDesc), cw - 20);
         int ty = cy + 34;
         for (FormattedCharSequence line : descLines) {
             g.drawString(this.font, line, cx + 10, ty, 0xCCCCCC);
@@ -604,44 +610,68 @@ public class QuestJournalScreen extends Screen {
         g.fill(cx + 10, rewY - 5, cx + cw - 10, rewY - 4, 0x55D4AF37);
         g.drawString(this.font, "§6Recompensas:", cx + 10, rewY, 0xFFD4AF37);
 
-        String[] rIds = {"cisco_mod:champion_coin", "apotheosis:mythic_material", "apotheosis:epic_material", "apotheosis:sigil_of_socketing", "minecraft:experience_bottle"};
-        int[] rCnt = {15, 3, 7, 1, 1};
-        String[] rTips = {"15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)", "1x Sigil of Socketing", "+15 Niveles"};
-        int hoverR = -1;
-        int sx = cx + 10;
-        int sy = rewY + 12;
-        for (int i = 0; i < rIds.length; i++) {
-            Item it = ForgeRegistries.ITEMS.getValue(new ResourceLocation(rIds[i]));
-            ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, rCnt[i]) : new ItemStack(Items.EMERALD, rCnt[i]);
-            drawMiniSlot(g, st, sx, sy, 0xFF5A4E36);
-            if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20) {
-                hoverR = i;
+        List<QuestDefinition.RewardItem> rItems = witherDef != null ? witherDef.rewardItems : java.util.Collections.emptyList();
+        // Legacy fallback if config has no rewardItems
+        if (rItems.isEmpty()) {
+            String[] rIds = {"cisco_mod:champion_coin", "apotheosis:mythic_material", "apotheosis:epic_material", "apotheosis:sigil_of_socketing", "minecraft:experience_bottle"};
+            int[] rCnt = {15, 3, 7, 1, 1};
+            String[] rTips = {"15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)", "1x Sigil of Socketing", "+15 Niveles"};
+            int hoverR = -1;
+            int sx = cx + 10;
+            int sy = rewY + 12;
+            for (int i = 0; i < rIds.length; i++) {
+                Item it = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(rIds[i]));
+                ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, rCnt[i]) : new ItemStack(Items.EMERALD, rCnt[i]);
+                drawMiniSlot(g, st, sx, sy, 0xFF5A4E36);
+                if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20) hoverR = i;
+                sx += 26;
             }
-            sx += 26;
+            int btnW2 = 135; int btnH2 = 20;
+            int btnX2 = cx + cw - btnW2 - 10; int btnY2 = rewY + 12;
+            if (onCooldown) {
+                long hrs2 = remCd / 3600; long mins2 = (remCd % 3600) / 60; long secs2 = remCd % 60;
+                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, String.format("§7En %dh %02dm %02ds", hrs2, mins2, secs2), 0xFF1E3324, 0xFF1E3324, 0, false);
+            } else if (done) {
+                boolean hov = mouseX >= btnX2 && mouseX <= btnX2 + btnW2 && mouseY >= btnY2 && mouseY <= btnY2 + btnH2;
+                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                clickables.add(new ClickableRegion(btnX2, btnY2, btnW2, btnH2, null, -1, 100));
+            } else {
+                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, "§7Derrota al Wither", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+            }
+            if (hoverR >= 0) g.renderTooltip(this.font, Component.literal("§e" + rTips[hoverR]), mouseX, mouseY);
+        } else {
+            int hoverR = -1;
+            int sx = cx + 10;
+            int sy = rewY + 12;
+            for (int i = 0; i < rItems.size(); i++) {
+                QuestDefinition.RewardItem r = rItems.get(i);
+                Item it = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(r.id));
+                ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, r.count) : new ItemStack(Items.EMERALD, r.count);
+                drawMiniSlot(g, st, sx, sy, 0xFF5A4E36);
+                if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20) hoverR = i;
+                sx += 26;
+            }
+            int btnW = 135; int btnH = 20;
+            int btnX = cx + cw - btnW - 10; int btnY = rewY + 12;
+            if (onCooldown) {
+                long hrs = remCd / 3600; long mins = (remCd % 3600) / 60; long secs = remCd % 60;
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, String.format("§7En %dh %02dm %02ds", hrs, mins, secs), 0xFF1E3324, 0xFF1E3324, 0, false);
+            } else if (done) {
+                boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
+            } else {
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7Derrota al Wither", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+            }
+            if (hoverR >= 0) {
+                ChallengeDefinition finalDef = witherDef;
+                g.renderTooltip(this.font, Component.literal("§e" + finalDef.getTooltip(hoverR)), mouseX, mouseY);
+            }
         }
 
-        // Botón Reclamar / Cooldown
+        // Shared btn size for Enderman card
         int btnW = 135;
         int btnH = 20;
-        int btnX = cx + cw - btnW - 10;
-        int btnY = sy;
-        if (onCooldown) {
-            long hrs = remCd / 3600;
-            long mins = (remCd % 3600) / 60;
-            long secs = remCd % 60;
-            String cdTxt = String.format("§7En %dh %02dm %02ds", hrs, mins, secs);
-            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, cdTxt, 0xFF1E3324, 0xFF1E3324, 0, false);
-        } else if (done) {
-            boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
-            clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
-        } else {
-            UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7Derrota al Wither", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
-        }
-
-        if (hoverR >= 0) {
-            g.renderTooltip(this.font, Component.literal("§e" + rTips[hoverR]), mouseX, mouseY);
-        }
 
         // Segunda tarjeta: Desafío Enderman (5 Endermans -> Ring of Hungerless)
         int ex = (w >= 750) ? (cx + cw + 14) : cx;

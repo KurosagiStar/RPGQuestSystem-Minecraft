@@ -84,14 +84,32 @@ public class ChallengeManager {
         ch.putLong("wither_next_ms", System.currentTimeMillis() + WITHER_COOLDOWN_MS);
         sp.getPersistentData().put("rqe_challenges", ch);
 
-        giveItem(sp, "cisco_mod:champion_coin", 15, "");
-        giveItem(sp, "apotheosis:mythic_material", 3, "");
-        giveItem(sp, "apotheosis:epic_material", 7, "");
-        giveItem(sp, "apotheosis:sigil_of_socketing", 1, "");
-        giveItem(sp, "apotheosis:gem", 1, "{affix_data:{rarity:\"apotheosis:epic\"},gem:\"apotheosis:core/warlord\"}");
-        sp.giveExperienceLevels(15);
+        // Read rewards from config; fall back to legacy hardcode if not configured
+        ChallengeDefinition def = QuestConfig.getChallengeById("wither");
+        if (def != null && !def.rewardItems.isEmpty()) {
+            for (QuestDefinition.RewardItem r : def.rewardItems) {
+                giveItem(sp, r.id, r.count, r.nbt != null ? r.nbt : "");
+            }
+            if (def.xpLevels > 0) sp.giveExperienceLevels(def.xpLevels);
 
-        sp.sendSystemMessage(Component.literal("§a[Desafío Wither Reclamado] §e+15 Monedas, 3x Godforged Pearl, 7x Epic Material, Sigil of Socketing, Gema Épica y 15 Niveles."));
+            StringBuilder msg = new StringBuilder("§a[Desafío Wither Reclamado] §e");
+            for (int i = 0; i < def.rewardItems.size(); i++) {
+                if (i > 0) msg.append(", ");
+                msg.append(def.getTooltip(i));
+            }
+            if (def.xpLevels > 0) msg.append(", +").append(def.xpLevels).append(" Niveles");
+            sp.sendSystemMessage(Component.literal(msg.toString()));
+        } else {
+            // Legacy fallback
+            giveItem(sp, "cisco_mod:champion_coin", 15, "");
+            giveItem(sp, "apotheosis:mythic_material", 3, "");
+            giveItem(sp, "apotheosis:epic_material", 7, "");
+            giveItem(sp, "apotheosis:sigil_of_socketing", 1, "");
+            giveItem(sp, "apotheosis:gem", 1, "{affix_data:{rarity:\"apotheosis:epic\"},gem:\"apotheosis:core/warlord\"}");
+            sp.giveExperienceLevels(15);
+            sp.sendSystemMessage(Component.literal("§a[Desafío Wither Reclamado] §e+15 Monedas, 3x Godforged Pearl, 7x Epic Material, Sigil of Socketing, Gema Épica y 15 Niveles."));
+        }
+
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
         syncToPlayer(sp);
     }
