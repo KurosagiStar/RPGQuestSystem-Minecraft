@@ -90,7 +90,12 @@ public class QuestEventListener {
             DailyQuestManager.onTaskProgress(sp, "MINE_BLOCK", 1);
             ResourceLocation blockId = ForgeRegistries.BLOCKS.getKey(event.getState().getBlock());
             if (blockId != null) {
-                incrementQuestTarget(sp, "MINE", blockId.toString());
+                String bId = blockId.toString();
+                incrementQuestTarget(sp, "MINE", bId);
+                if (!"minecraft:iron_ore".equals(bId)
+                        && (bId.contains("iron_ore") || event.getState().is(net.minecraft.tags.BlockTags.create(new ResourceLocation("forge", "ores/iron"))))) {
+                    incrementQuestTarget(sp, "MINE", "minecraft:iron_ore");
+                }
             }
         }
     }
