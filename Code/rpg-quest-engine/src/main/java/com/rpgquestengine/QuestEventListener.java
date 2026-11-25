@@ -281,6 +281,15 @@ public class QuestEventListener {
                                 if (targetMatch) {
                                     String internalKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
                                     RPGQuestEngine.setInternalScore(sp, internalKey, 1);
+                                    if ("MAIN".equalsIgnoreCase(q.category) || "CONTRACT".equalsIgnoreCase(q.category)) {
+                                        for (ServerPlayer mate : PartyManager.getOnlineMembers(sp)) {
+                                            if (mate != sp && mate.serverLevel().dimension().equals(sp.serverLevel().dimension())
+                                                    && q.activeTag != null && RPGQuestEngine.hasQuestTag(mate, q.activeTag)
+                                                    && (q.completedTag == null || !RPGQuestEngine.hasQuestTag(mate, q.completedTag))) {
+                                                RPGQuestEngine.setInternalScore(mate, internalKey, 1);
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }

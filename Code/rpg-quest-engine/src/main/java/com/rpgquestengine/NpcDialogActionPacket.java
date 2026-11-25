@@ -104,8 +104,10 @@ public class NpcDialogActionPacket {
             if ("COMPLETE".equalsIgnoreCase(msg.action)) {
                 if (q.doneTag == null || !tags.contains(q.doneTag)) return;
 
-                // Verificar y consumir ítems requeridos en etapas ITEM / COLLECT / DELIVER
-                if (q.stages != null) {
+                boolean partyObjAlreadyDone = tags.contains("rqe_party_obj_done_" + q.id);
+
+                // Verificar y consumir ítems requeridos en etapas ITEM / COLLECT / DELIVER (salvo que un miembro del grupo ya los haya entregado)
+                if (q.stages != null && !partyObjAlreadyDone) {
                     for (QuestDefinition.QuestStage st : q.stages) {
                         if (("ITEM".equalsIgnoreCase(st.type) || "COLLECT".equalsIgnoreCase(st.type) || "DELIVER".equalsIgnoreCase(st.type))
                                 && st.target != null && st.amount > 0) {
@@ -151,6 +153,7 @@ public class NpcDialogActionPacket {
 
                 if (q.activeTag != null) RPGQuestEngine.removeQuestTag(sp, q.activeTag);
                 RPGQuestEngine.removeQuestTag(sp, q.doneTag);
+                RPGQuestEngine.removeQuestTag(sp, "rqe_party_obj_done_" + q.id);
                 if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null) {
                     RPGQuestEngine.addQuestTag(sp, q.completedTag);
                     RPGQuestEngine.addQuestTag(sp, "rqe_rewarded_" + q.id);
@@ -171,7 +174,8 @@ public class NpcDialogActionPacket {
                 DailyQuestManager.onTaskProgress(sp, "NPC_TURNIN", 1);
                 NetworkHandler.CHANNEL.send(net.minecraftforge.network.PacketDistributor.PLAYER.with(() -> sp),
                         new PlayQuestSoundPacket(4));
-                PartyManager.onNpcQuestCompleted(sp, q);
+                PartyManager.onNpcQuestCompleted(sp, q, msg.choiceIndex);
+                PartyManager.syncUnlockedActiveMainQuests(sp);
                 RPGQuestEngine.syncPlayerAfterDialog(sp);
             } else if ("ACCEPT".equalsIgnoreCase(msg.action)) {
                 if (q.completedTag != null && tags.contains(q.completedTag)) return;

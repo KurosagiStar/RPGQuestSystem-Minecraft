@@ -222,23 +222,45 @@ public class PartyManager {
             }
         }
 
+        Set<String> prereqOfCompleted = new HashSet<>();
+        for (String qid : allCompletedMain) {
+            QuestDefinition cq = QuestConfig.getQuestById(qid);
+            if (cq != null && cq.prerequisiteQuestId != null && !cq.prerequisiteQuestId.isEmpty()) {
+                prereqOfCompleted.add(cq.prerequisiteQuestId);
+            }
+        }
+
         for (ServerPlayer m : members) {
             Set<String> tags = RPGQuestEngine.getAllQuestTags(m);
             for (String qid : allCompletedMain) {
                 QuestDefinition q = QuestConfig.getQuestById(qid);
-                if (q == null) continue;
-                if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
-                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
-                if (q.completedTag != null && !tags.contains(q.completedTag)) {
-                    RPGQuestEngine.addQuestTag(m, q.completedTag);
-                    RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
-                    addPendingReward(m, q.id);
+                if (q == null || (q.completedTag != null && tags.contains(q.completedTag))) continue;
+                boolean wasWorkingOnIt = (q.activeTag != null && tags.contains(q.activeTag))
+                        || tags.contains("rqe_party_obj_done_" + q.id);
+                if (wasWorkingOnIt && !prereqOfCompleted.contains(qid)) {
+                    if (q.activeTag != null) RPGQuestEngine.addQuestTag(m, q.activeTag);
+                    RPGQuestEngine.addQuestTag(m, "rqe_party_obj_done_" + q.id);
+                    if (q.doneTag != null) RPGQuestEngine.addQuestTag(m, q.doneTag);
+                } else {
+                    if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
+                    if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
+                    if (q.completedTag != null) {
+                        RPGQuestEngine.addQuestTag(m, q.completedTag);
+                        RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
+                        addPendingReward(m, q.id);
+                    }
                 }
             }
             for (String qid : allActiveMain) {
                 if (allCompletedMain.contains(qid)) continue;
                 QuestDefinition q = QuestConfig.getQuestById(qid);
                 if (q == null) continue;
+                if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                    QuestDefinition pre = QuestConfig.getQuestById(q.prerequisiteQuestId);
+                    if (pre != null && pre.completedTag != null && !RPGQuestEngine.hasQuestTag(m, pre.completedTag)) {
+                        continue;
+                    }
+                }
                 if (q.activeTag != null && !tags.contains(q.activeTag)) {
                     RPGQuestEngine.addQuestTag(m, q.activeTag);
                 }
@@ -318,6 +340,12 @@ public class PartyManager {
         for (ServerPlayer m : getOnlineMembers(actor)) {
             if (m == actor) continue;
             if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+            if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                QuestDefinition pre = QuestConfig.getQuestById(q.prerequisiteQuestId);
+                if (pre != null && pre.completedTag != null && !RPGQuestEngine.hasQuestTag(m, pre.completedTag)) {
+                    continue;
+                }
+            }
             if (q.activeTag != null && !RPGQuestEngine.hasQuestTag(m, q.activeTag)) {
                 RPGQuestEngine.resetQuestStageScores(m, q);
                 if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
@@ -329,25 +357,96 @@ public class PartyManager {
         }
     }
 
-    public static void onNpcQuestCompleted(ServerPlayer actor, QuestDefinition q) {
-        if (actor == null || q == null || !"MAIN".equalsIgnoreCase(q.category)) return;
-        for (ServerPlayer m : getOnlineMembers(actor)) {
-            if (m == actor) continue;
-            if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
-            if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
-            if (q.completedTag != null && !RPGQuestEngine.hasQuestTag(m, q.completedTag)) {
-                RPGQuestEngine.addQuestTag(m, q.completedTag);
-                RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
-                addPendingReward(m, q.id);
+    public static void syncUnlockedActiveMainQuests(ServerPlayer member) {
+        if (member == null) return;
+        List<ServerPlayer> online = getOnlineMembers(member);
+        if (online.size() <= 1) return;
+        Set<String> mTags = RPGQuestEngine.getAllQuestTags(member);
+        for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (!"MAIN".equalsIgnoreCase(q.category)) continue;
+            if (q.completedTag != null && mTags.contains(q.completedTag)) continue;
+            if (q.activeTag != null && mTags.contains(q.activeTag)) continue;
+            if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                QuestDefinition pre = QuestConfig.getQuestById(q.prerequisiteQuestId);
+                if (pre != null && pre.completedTag != null && !mTags.contains(pre.completedTag)) continue;
+            }
+            boolean mateHasActiveOrDone = false;
+            for (ServerPlayer other : online) {
+                if (other == member) continue;
+                if (q.activeTag != null && RPGQuestEngine.hasQuestTag(other, q.activeTag)) {
+                    mateHasActiveOrDone = true;
+                    break;
+                }
+            }
+            if (mateHasActiveOrDone && q.activeTag != null) {
+                RPGQuestEngine.resetQuestStageScores(member, q);
+                RPGQuestEngine.addQuestTag(member, q.activeTag);
+                mTags.add(q.activeTag);
+            }
+        }
+    }
+
+    public static void onNpcQuestCompleted(ServerPlayer actor, QuestDefinition q, int choiceIndex) {
+        if (actor == null || q == null) return;
+
+        if ("CONTRACT".equalsIgnoreCase(q.category)) {
+            for (ServerPlayer m : getOnlineMembers(actor)) {
+                if (m == actor) continue;
+                if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+                if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
+                if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
+                RPGQuestEngine.removeQuestTag(m, "rqe_party_obj_done_" + q.id);
+                if (q.completedTag != null) {
+                    RPGQuestEngine.addQuestTag(m, q.completedTag);
+                    RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
+                }
+
+                NpcDialogActionPacket.grantAllQuestRewards(m, q, choiceIndex);
+                m.getInventory().setChanged();
+                m.inventoryMenu.broadcastChanges();
+                m.containerMenu.broadcastChanges();
+                m.inventoryMenu.sendAllDataToRemote();
+
+                String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
+                String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
+                m.sendSystemMessage(Component.literal("§a[Grupo - Contrato Completado] §e" + actor.getScoreboardName()
+                        + " §fentregó §e" + q.title + "§f: recibiste tu recompensa" + xpTxt + lvlTxt));
+                DailyQuestManager.onTaskProgress(m, "NPC_TURNIN", 1);
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new PlayQuestSoundPacket(4));
+                RPGQuestEngine.syncPlayerAfterDialog(m);
+            }
+            return;
+        }
+
+        if ("MAIN".equalsIgnoreCase(q.category)) {
+            for (ServerPlayer m : getOnlineMembers(actor)) {
+                if (m == actor) continue;
+                if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+                if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
+                    QuestDefinition pre = QuestConfig.getQuestById(q.prerequisiteQuestId);
+                    if (pre != null && pre.completedTag != null && !RPGQuestEngine.hasQuestTag(m, pre.completedTag)) {
+                        continue;
+                    }
+                }
+                if (q.activeTag != null) RPGQuestEngine.addQuestTag(m, q.activeTag);
+                RPGQuestEngine.addQuestTag(m, "rqe_party_obj_done_" + q.id);
+                if (q.doneTag != null) RPGQuestEngine.addQuestTag(m, q.doneTag);
+                if (q.stages != null) {
+                    for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                        QuestDefinition.QuestStage st = q.stages.get(sIdx);
+                        RPGQuestEngine.setInternalScore(m, RPGQuestEngine.getInternalScoreKey(q.id, sIdx, st.type), Math.max(1, st.amount));
+                    }
+                }
+                String npcTarget = (q.npc != null && !q.npc.isEmpty()) ? q.npc : "el NPC";
                 NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m),
                         new ShowBannerPacket(
-                                actor.getScoreboardName() + " COMPLETÓ UNA MISIÓN",
+                                actor.getScoreboardName() + " ENTREGÓ LA MISIÓN",
                                 q.title,
-                                "§a[Presiona G para reclamar recompensas pendientes]",
+                                "§eVe personalmente con " + npcTarget + " para cobrar",
                                 0xFFFFCC00));
-                m.sendSystemMessage(Component.literal("§a[Grupo] §e" + actor.getScoreboardName() + " §fcompletó: §e" + q.title + " §7(Pulsa G para reclamar)"));
+                m.sendSystemMessage(Component.literal("§6[Grupo - Principal] §e" + actor.getScoreboardName()
+                        + " §fcompletó §e" + q.title + "§f. §aVe personalmente con " + npcTarget + " para entregar y cobrar."));
                 RPGQuestEngine.syncPlayerAfterDialog(m);
-                syncToPlayer(m);
             }
         }
     }
