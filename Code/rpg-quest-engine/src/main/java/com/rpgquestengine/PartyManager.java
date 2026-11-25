@@ -263,13 +263,17 @@ public class PartyManager {
             for (String qid : offlineQueued) {
                 QuestDefinition q = QuestConfig.getQuestById(qid);
                 if (q == null) continue;
-                if (q.completedTag != null && RPGQuestEngine.hasQuestTag(triggerPlayer, q.completedTag)) continue;
+                boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+                if (!isRep && q.completedTag != null && RPGQuestEngine.hasQuestTag(triggerPlayer, q.completedTag)) continue;
                 if (q.activeTag != null) RPGQuestEngine.removeQuestTag(triggerPlayer, q.activeTag);
                 if (q.doneTag != null) RPGQuestEngine.removeQuestTag(triggerPlayer, q.doneTag);
                 RPGQuestEngine.removeQuestTag(triggerPlayer, "rqe_party_obj_done_" + q.id);
-                if (q.completedTag != null) {
+                if (!isRep && q.completedTag != null) {
                     RPGQuestEngine.addQuestTag(triggerPlayer, q.completedTag);
                     RPGQuestEngine.addQuestTag(triggerPlayer, "rqe_rewarded_" + q.id);
+                } else if (isRep) {
+                    RPGQuestEngine.resetQuestStageScores(triggerPlayer, q);
+                    RPGQuestEngine.onRepeatableCompleted(triggerPlayer, q);
                 }
                 addPendingReward(triggerPlayer, q.id);
                 queuedCount++;
@@ -419,14 +423,16 @@ public class PartyManager {
 
     public static void onNpcQuestAccepted(ServerPlayer actor, QuestDefinition q) {
         if (actor == null || q == null) return;
-        if (!"MAIN".equalsIgnoreCase(q.category) && !"CONTRACT".equalsIgnoreCase(q.category)) return;
         Party p = PLAYER_TO_PARTY.get(actor.getUUID());
-        if (p != null && "MAIN".equalsIgnoreCase(q.category) && !p.completedMainIds.contains(q.id)) {
+        if (p == null) return;
+        if ("MAIN".equalsIgnoreCase(q.category) && !p.completedMainIds.contains(q.id)) {
             if (p.activeMainIds.add(q.id)) saveParties();
         }
+        boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+        Set<String> actorTags = RPGQuestEngine.getAllQuestTags(actor);
         for (ServerPlayer m : getOnlineMembers(actor)) {
             if (m == actor) continue;
-            if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+            if (!isRep && q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
             if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
                 QuestDefinition pre = QuestConfig.getQuestById(q.prerequisiteQuestId);
                 if (pre != null && pre.completedTag != null && !RPGQuestEngine.hasQuestTag(m, pre.completedTag)) {
@@ -437,6 +443,11 @@ public class PartyManager {
                 RPGQuestEngine.resetQuestStageScores(m, q);
                 if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
                 RPGQuestEngine.addQuestTag(m, q.activeTag);
+                for (String t : actorTags) {
+                    if (t.startsWith("rqe_pos_" + q.id + "_") || t.startsWith("rqe_npc_" + q.id + "_")) {
+                        RPGQuestEngine.addQuestTag(m, t);
+                    }
+                }
                 m.sendSystemMessage(Component.literal("§6[Grupo] §e" + actor.getScoreboardName() + " §faceptó: §e" + q.title));
                 NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
                 RPGQuestEngine.syncPlayerAfterDialog(m);
@@ -478,19 +489,23 @@ public class PartyManager {
         Party p = PLAYER_TO_PARTY.get(actor.getUUID());
         if (p == null) return;
 
-        if ("CONTRACT".equalsIgnoreCase(q.category)) {
+        if (!"MAIN".equalsIgnoreCase(q.category)) {
+            boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
             boolean queuedOffline = false;
             for (UUID uid : p.members) {
                 if (uid.equals(actor.getUUID())) continue;
                 ServerPlayer m = actor.getServer().getPlayerList().getPlayer(uid);
                 if (m != null) {
-                    if (q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
+                    if (!isRep && q.completedTag != null && RPGQuestEngine.hasQuestTag(m, q.completedTag)) continue;
                     if (q.activeTag != null) RPGQuestEngine.removeQuestTag(m, q.activeTag);
                     if (q.doneTag != null) RPGQuestEngine.removeQuestTag(m, q.doneTag);
                     RPGQuestEngine.removeQuestTag(m, "rqe_party_obj_done_" + q.id);
-                    if (q.completedTag != null) {
+                    if (!isRep && q.completedTag != null) {
                         RPGQuestEngine.addQuestTag(m, q.completedTag);
                         RPGQuestEngine.addQuestTag(m, "rqe_rewarded_" + q.id);
+                    } else if (isRep) {
+                        RPGQuestEngine.resetQuestStageScores(m, q);
+                        RPGQuestEngine.onRepeatableCompleted(m, q);
                     }
 
                     NpcDialogActionPacket.grantAllQuestRewards(m, q, choiceIndex);
@@ -501,7 +516,7 @@ public class PartyManager {
 
                     String xpTxt = q.rewardXp > 0 ? " §e(+" + q.rewardXp + " XP)" : "";
                     String lvlTxt = q.rewardXpLevels > 0 ? " §b(+" + q.rewardXpLevels + " Niveles)" : "";
-                    m.sendSystemMessage(Component.literal("§a[Grupo - Contrato Completado] §e" + actor.getScoreboardName()
+                    m.sendSystemMessage(Component.literal("§a[Grupo - Misión Completada] §e" + actor.getScoreboardName()
                             + " §fentregó §e" + q.title + "§f: recibiste tu recompensa" + xpTxt + lvlTxt));
                     DailyQuestManager.onTaskProgress(m, "NPC_TURNIN", 1);
                     NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new PlayQuestSoundPacket(4));

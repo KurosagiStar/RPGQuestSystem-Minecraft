@@ -459,7 +459,7 @@ public class RPGQuestEngine {
 
                 boolean allNonOptionalDone = true;
                 boolean partyObjDone = playerTags.contains("rqe_party_obj_done_" + q.id);
-                boolean shareStageWithParty = "MAIN".equalsIgnoreCase(q.category) || "CONTRACT".equalsIgnoreCase(q.category);
+                boolean shareStageWithParty = PartyManager.getParty(sp.getUUID()) != null;
 
                 for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                     QuestDefinition.QuestStage stage = q.stages.get(sIdx);
@@ -605,7 +605,7 @@ public class RPGQuestEngine {
                         for (ServerPlayer mate : PartyManager.getOnlineMembers(sp)) {
                             if (mate != sp && mate.serverLevel().dimension().equals(level.dimension())
                                     && q.activeTag != null && hasQuestTag(mate, q.activeTag)
-                                    && (q.completedTag == null || !hasQuestTag(mate, q.completedTag))) {
+                                    && (isRep || q.completedTag == null || !hasQuestTag(mate, q.completedTag))) {
                                 if (getInternalScore(mate, internalKey) < current) {
                                     setInternalScore(mate, internalKey, current);
                                 }

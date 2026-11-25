@@ -281,11 +281,12 @@ public class QuestEventListener {
                                 if (targetMatch) {
                                     String internalKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
                                     RPGQuestEngine.setInternalScore(sp, internalKey, 1);
-                                    if ("MAIN".equalsIgnoreCase(q.category) || "CONTRACT".equalsIgnoreCase(q.category)) {
+                                    if (PartyManager.getParty(sp.getUUID()) != null) {
+                                        boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
                                         for (ServerPlayer mate : PartyManager.getOnlineMembers(sp)) {
                                             if (mate != sp && mate.serverLevel().dimension().equals(sp.serverLevel().dimension())
                                                     && q.activeTag != null && RPGQuestEngine.hasQuestTag(mate, q.activeTag)
-                                                    && (q.completedTag == null || !RPGQuestEngine.hasQuestTag(mate, q.completedTag))) {
+                                                    && (isRep || q.completedTag == null || !RPGQuestEngine.hasQuestTag(mate, q.completedTag))) {
                                                 RPGQuestEngine.setInternalScore(mate, internalKey, 1);
                                             }
                                         }
@@ -368,12 +369,13 @@ public class QuestEventListener {
     private static void incrementQuestTarget(ServerPlayer sp, String type, String target, int amount) {
         Set<ServerPlayer> touched = new java.util.HashSet<>();
         for (QuestDefinition q : QuestConfig.QUESTS) {
-            boolean shareWithParty = "MAIN".equalsIgnoreCase(q.category) || "CONTRACT".equalsIgnoreCase(q.category);
+            boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+            boolean shareWithParty = PartyManager.getParty(sp.getUUID()) != null;
             java.util.List<ServerPlayer> recipients = shareWithParty ? PartyManager.getOnlineMembers(sp) : java.util.Collections.singletonList(sp);
             for (ServerPlayer targetPlayer : recipients) {
                 if (targetPlayer != sp && !targetPlayer.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
                 Set<String> pTags = RPGQuestEngine.getAllQuestTags(targetPlayer);
-                if (q.activeTag != null && pTags.contains(q.activeTag) && (q.completedTag == null || !pTags.contains(q.completedTag))) {
+                if (q.activeTag != null && pTags.contains(q.activeTag) && (isRep || q.completedTag == null || !pTags.contains(q.completedTag))) {
                     for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                         QuestDefinition.QuestStage stage = q.stages.get(sIdx);
                         if (type.equalsIgnoreCase(stage.type)) {
