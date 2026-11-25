@@ -3479,7 +3479,7 @@
     "title": "Encuentra un tablón de recompensas",
     "npc": "Comandante",
     "npcId": "npc_main_comandante",
-    "description": "Todo escudero necesita forjar su equipo y su conocimiento. Habla con el encargado para completar: Find a bounty board para avanzar en tu entrenamiento.",
+    "description": "Craftea 1x Tablón de Recompensas (Bounty Board de Bountiful) en tu mesa de crafteo o encuéntralo en una aldea. Luego regresa con Comandante para entregar.",
     "suggestedLevel": 73,
     "prerequisiteQuestId": "cisco_trials_5e23b10d82dbb573",
     "activeTag": "q_cisco_trials_22b92de71f6f923d_act",
@@ -3491,9 +3491,9 @@
     "rewardXp": 1675,
     "stages": [
       {
-        "type": "TALK",
-        "description": "Habla con el encargado para completar: Find a bounty board",
-        "target": "",
+        "type": "CRAFT",
+        "description": "Craftea 1x Tablón de Recompensas (bountiful:bountyboard)",
+        "target": "bountiful:bountyboard",
         "amount": 1
       }
     ],
