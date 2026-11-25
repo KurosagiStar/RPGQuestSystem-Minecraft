@@ -1,0 +1,48 @@
+﻿{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794344600000L,
+    description: "Trovador del Rio #66",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794344600000L,
+    name: "Trovador del Rio #66",
+    variantType: "PLAINS_ARMORER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#5599FF","bold":true,"text":"Trovador del Rio #66"}',
+    Tags: ["npc_sec_ext_66"],
+    CustomNameVisible: 1b,
+    EntityAttribute: {
+      IsAttackableByMonsters: 1b,
+      IsAttackableByPlayers: 1b,
+      IsInvulnerable: 0b,
+      NoGravity: 0b
+    },
+    Invulnerable: 0b,
+    NoGravity: 0b,
+    PersistenceRequired: 1b,
+    ObjectiveData: {
+      ObjectiveDataSet: [
+        { Type: "LOOK_AT_PLAYER" },
+        { Type: "LOOK_AT_MOB" },
+        { Type: "LOOK_AT_RESET" },
+        { Type: "RANDOM_STROLL" },
+        { Type: "FLOAT" }
+      ]
+    },
+    Profession: "ARMORER",
+    VariantType: "PLAINS_ARMORER",
+    VillagerData: {
+      profession: "minecraft:armorer",
+      type: "minecraft:plains"
+    },
+    id: "easy_npc:villager"
+  }
+}

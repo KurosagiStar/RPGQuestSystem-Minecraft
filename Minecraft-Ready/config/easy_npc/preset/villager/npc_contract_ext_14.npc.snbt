@@ -1,0 +1,48 @@
+﻿{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794344600000L,
+    description: "Tabernero Veterano #14",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794344600000L,
+    name: "Tabernero Veterano #14",
+    variantType: "SAVANNA_CARTOGRAPHER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#FF5555","bold":true,"text":"Tabernero Veterano #14"}',
+    Tags: ["npc_contract_ext_14"],
+    CustomNameVisible: 1b,
+    EntityAttribute: {
+      IsAttackableByMonsters: 1b,
+      IsAttackableByPlayers: 1b,
+      IsInvulnerable: 0b,
+      NoGravity: 0b
+    },
+    Invulnerable: 0b,
+    NoGravity: 0b,
+    PersistenceRequired: 1b,
+    ObjectiveData: {
+      ObjectiveDataSet: [
+        { Type: "LOOK_AT_PLAYER" },
+        { Type: "LOOK_AT_MOB" },
+        { Type: "LOOK_AT_RESET" },
+        { Type: "RANDOM_STROLL" },
+        { Type: "FLOAT" }
+      ]
+    },
+    Profession: "CARTOGRAPHER",
+    VariantType: "SAVANNA_CARTOGRAPHER",
+    VillagerData: {
+      profession: "minecraft:cartographer",
+      type: "minecraft:plains"
+    },
+    id: "easy_npc:villager"
+  }
+}

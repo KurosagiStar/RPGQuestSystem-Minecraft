@@ -1,0 +1,48 @@
+﻿{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794344600000L,
+    description: "Templario del Roble #10",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794344600000L,
+    name: "Templario del Roble #10",
+    variantType: "PLAINS_TOOLSMITH",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#FF5555","bold":true,"text":"Templario del Roble #10"}',
+    Tags: ["npc_contract_ext_10"],
+    CustomNameVisible: 1b,
+    EntityAttribute: {
+      IsAttackableByMonsters: 1b,
+      IsAttackableByPlayers: 1b,
+      IsInvulnerable: 0b,
+      NoGravity: 0b
+    },
+    Invulnerable: 0b,
+    NoGravity: 0b,
+    PersistenceRequired: 1b,
+    ObjectiveData: {
+      ObjectiveDataSet: [
+        { Type: "LOOK_AT_PLAYER" },
+        { Type: "LOOK_AT_MOB" },
+        { Type: "LOOK_AT_RESET" },
+        { Type: "RANDOM_STROLL" },
+        { Type: "FLOAT" }
+      ]
+    },
+    Profession: "TOOLSMITH",
+    VariantType: "PLAINS_TOOLSMITH",
+    VillagerData: {
+      profession: "minecraft:toolsmith",
+      type: "minecraft:plains"
+    },
+    id: "easy_npc:villager"
+  }
+}

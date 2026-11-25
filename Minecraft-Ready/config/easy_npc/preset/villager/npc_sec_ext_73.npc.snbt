@@ -1,0 +1,48 @@
+﻿{
+  PresetMetadata: {
+    author: "RPGQuestEngine",
+    category: "General",
+    created: 1794344600000L,
+    description: "Bibliotecario Errante #73",
+    entityTypeId: "easy_npc:villager",
+    modified: 1794344600000L,
+    name: "Bibliotecario Errante #73",
+    variantType: "SAVANNA_LEATHERWORKER",
+    version: "1.0.0"
+  },
+  data: {
+    ActionData: {
+      ActionEventSet: {
+        ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
+      }
+    },
+    CustomName: '{"color":"#5599FF","bold":true,"text":"Bibliotecario Errante #73"}',
+    Tags: ["npc_sec_ext_73"],
+    CustomNameVisible: 1b,
+    EntityAttribute: {
+      IsAttackableByMonsters: 1b,
+      IsAttackableByPlayers: 1b,
+      IsInvulnerable: 0b,
+      NoGravity: 0b
+    },
+    Invulnerable: 0b,
+    NoGravity: 0b,
+    PersistenceRequired: 1b,
+    ObjectiveData: {
+      ObjectiveDataSet: [
+        { Type: "LOOK_AT_PLAYER" },
+        { Type: "LOOK_AT_MOB" },
+        { Type: "LOOK_AT_RESET" },
+        { Type: "RANDOM_STROLL" },
+        { Type: "FLOAT" }
+      ]
+    },
+    Profession: "LEATHERWORKER",
+    VariantType: "SAVANNA_LEATHERWORKER",
+    VillagerData: {
+      profession: "minecraft:leatherworker",
+      type: "minecraft:plains"
+    },
+    id: "easy_npc:villager"
+  }
+}
