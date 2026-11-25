@@ -103,10 +103,61 @@ public class NpcDialogActionPacket {
             Set<String> tags = sp.getTags();
             if ("COMPLETE".equalsIgnoreCase(msg.action)) {
                 if (q.doneTag == null || !tags.contains(q.doneTag)) return;
+
+                // Verificar y consumir ítems requeridos en etapas ITEM
+                if (q.stages != null) {
+                    for (QuestDefinition.QuestStage st : q.stages) {
+                        if ("ITEM".equalsIgnoreCase(st.type) && st.target != null && st.amount > 0) {
+                            ResourceLocation rl = ResourceLocation.tryParse(st.target);
+                            Item reqItem = rl != null ? ForgeRegistries.ITEMS.getValue(rl) : null;
+                            if (reqItem != null && reqItem != net.minecraft.world.item.Items.AIR) {
+                                int have = 0;
+                                for (int s = 0; s < sp.getInventory().getContainerSize(); s++) {
+                                    ItemStack stStack = sp.getInventory().getItem(s);
+                                    if (!stStack.isEmpty() && stStack.getItem() == reqItem) {
+                                        have += stStack.getCount();
+                                    }
+                                }
+                                if (have < st.amount) {
+                                    sp.sendSystemMessage(Component.literal("§c[Misión] Te faltan ítems requeridos en tu inventario."));
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                    for (QuestDefinition.QuestStage st : q.stages) {
+                        if ("ITEM".equalsIgnoreCase(st.type) && st.target != null && st.amount > 0) {
+                            ResourceLocation rl = ResourceLocation.tryParse(st.target);
+                            Item reqItem = rl != null ? ForgeRegistries.ITEMS.getValue(rl) : null;
+                            if (reqItem != null && reqItem != net.minecraft.world.item.Items.AIR) {
+                                int toRemove = st.amount;
+                                for (int s = 0; s < sp.getInventory().getContainerSize() && toRemove > 0; s++) {
+                                    ItemStack stStack = sp.getInventory().getItem(s);
+                                    if (!stStack.isEmpty() && stStack.getItem() == reqItem) {
+                                        int take = Math.min(toRemove, stStack.getCount());
+                                        stStack.shrink(take);
+                                        toRemove -= take;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
                 if (q.activeTag != null) sp.removeTag(q.activeTag);
                 sp.removeTag(q.doneTag);
                 if (!"REPEATABLE".equalsIgnoreCase(q.category) && q.completedTag != null) {
                     sp.addTag(q.completedTag);
+                } else if ("REPEATABLE".equalsIgnoreCase(q.category) && q.stages != null) {
+                    var sb = sp.getScoreboard();
+                    String pName = sp.getScoreboardName();
+                    for (int i = 0; i < q.stages.size(); i++) {
+                        String objName = "rqe_" + q.id + "_" + i;
+                        var obj = sb.getObjective(objName);
+                        if (obj != null) {
+                            sb.getOrCreatePlayerScore(pName, obj).setScore(0);
+                        }
+                    }
                 }
 
                 grantAllQuestRewards(sp, q, msg.choiceIndex);
