@@ -23,6 +23,12 @@ public class ChallengeManager {
             ch.putLong("wither_next_ms", 0L);
             root.put("rqe_challenges", ch);
         }
+        long wardenNext = ch.getLong("warden_next_ms");
+        if (wardenNext > 0 && now >= wardenNext) {
+            ch.putInt("warden_kills", 0);
+            ch.putLong("warden_next_ms", 0L);
+            root.put("rqe_challenges", ch);
+        }
         return ch;
     }
 
@@ -129,6 +135,60 @@ public class ChallengeManager {
         }
     }
 
+    public static void onWardenKilled(ServerPlayer sp) {
+        if (sp == null) return;
+        for (ServerPlayer member : PartyManager.getOnlineMembers(sp)) {
+            CompoundTag ch = getData(member);
+            if (ch.getLong("warden_next_ms") > System.currentTimeMillis()) continue;
+            int kills = ch.getInt("warden_kills");
+            if (kills >= 3) continue;
+
+            kills++;
+            ch.putInt("warden_kills", kills);
+            member.getPersistentData().put("rqe_challenges", ch);
+            if (kills >= 3) {
+                member.sendSystemMessage(Component.literal("§6[Desafío Completado] §f¡Derrotaste 3 Wardens! Reclama tu recompensa en §eJ → Desafíos§f."));
+                NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> member), new PlayQuestSoundPacket(3));
+            }
+            syncToPlayer(member);
+        }
+    }
+
+    public static void claimWarden(ServerPlayer sp) {
+        if (sp == null) return;
+        CompoundTag ch = getData(sp);
+        if (ch.getLong("warden_next_ms") > System.currentTimeMillis()) return;
+        if (ch.getInt("warden_kills") < 3) return;
+
+        ch.putInt("warden_kills", 0);
+        ch.putLong("warden_next_ms", System.currentTimeMillis() + WITHER_COOLDOWN_MS);
+        sp.getPersistentData().put("rqe_challenges", ch);
+
+        ChallengeDefinition def = QuestConfig.getChallengeById("warden");
+        if (def != null && !def.rewardItems.isEmpty()) {
+            for (QuestDefinition.RewardItem r : def.rewardItems) {
+                giveItem(sp, r.id, r.count, r.nbt != null ? r.nbt : "");
+            }
+            if (def.xpLevels > 0) sp.giveExperienceLevels(def.xpLevels);
+
+            StringBuilder msg = new StringBuilder("§a[Desafío Warden Reclamado] §e");
+            for (int i = 0; i < def.rewardItems.size(); i++) {
+                if (i > 0) msg.append(", ");
+                msg.append(def.getTooltip(i));
+            }
+            if (def.xpLevels > 0) msg.append(", +").append(def.xpLevels).append(" Niveles");
+            sp.sendSystemMessage(Component.literal(msg.toString()));
+        } else {
+            giveItem(sp, "cisco_mod:champion_loot_bag", 6, "");
+            giveItem(sp, "apotheotic_additions:esoteric_material", 9, "");
+            sp.giveExperienceLevels(30);
+            sp.sendSystemMessage(Component.literal("§a[Desafío Warden Reclamado] §e6x Champion Loot Bag, 9x Galactic Core y +30 Niveles."));
+        }
+
+        NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new PlayQuestSoundPacket(4));
+        syncToPlayer(sp);
+    }
+
     public static void syncToPlayer(ServerPlayer sp) {
         if (sp == null) return;
         CompoundTag ch = getData(sp);
@@ -139,7 +199,12 @@ public class ChallengeManager {
                 : 0;
         int enderKills = ch.getInt("ender_kills");
         boolean enderClaimed = ch.getBoolean("ender_claimed");
+        int wardenKills = ch.getInt("warden_kills");
+        long wardenNext = ch.getLong("warden_next_ms");
+        int wardenRemSec = wardenNext > System.currentTimeMillis()
+                ? (int) ((wardenNext - System.currentTimeMillis()) / 1000L)
+                : 0;
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp),
-                new SyncChallengesPacket(done, remSec, enderKills, enderClaimed));
+                new SyncChallengesPacket(done, remSec, enderKills, enderClaimed, wardenKills, wardenRemSec));
     }
 }

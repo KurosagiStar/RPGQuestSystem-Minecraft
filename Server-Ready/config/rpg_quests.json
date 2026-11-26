@@ -55687,6 +55687,31 @@
         "1x Sigil of Socketing",
         "Gema Epica (Warlord)"
       ]
+    },
+    {
+      "id": "warden",
+      "title": "Jefe Mundial: El Warden",
+      "description": "Derrota 3 Wardens en las profundidades. Recompensa cada 6 horas reales.",
+      "iconItem": "minecraft:echo_shard",
+      "objective": "Elimina 3x Warden",
+      "cooldownHours": 6,
+      "xpLevels": 30,
+      "rewardItems": [
+        {
+          "id": "cisco_mod:champion_loot_bag",
+          "count": 6,
+          "nbt": ""
+        },
+        {
+          "id": "apotheotic_additions:esoteric_material",
+          "count": 9,
+          "nbt": ""
+        }
+      ],
+      "tooltips": [
+        "6x Champion Loot Bag",
+        "9x Galactic Core"
+      ]
     }
   ]
 }

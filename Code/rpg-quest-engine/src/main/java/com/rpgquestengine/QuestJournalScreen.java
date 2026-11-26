@@ -783,6 +783,96 @@ public class QuestJournalScreen extends Screen {
                 g.renderTooltip(this.font, Component.literal("§e1x Ring of Hungerless (Saturación)"), mouseX, mouseY);
             }
         }
+
+        // Tercera tarjeta: Desafío Warden (3 Wardens -> 6x Champion Loot Bag, 9x Galactic Core, +30 Niveles, 6h)
+        int wx = cx;
+        int wy = cy + ch + 10;
+        if (wy + ch <= bottomY - 4) {
+            long wRemCd = Math.max(0, ClientQuestData.CHALLENGE_WARDEN_CD_SEC - elapsedSec);
+            boolean wOnCd = wRemCd > 0;
+            int wKills = Math.min(3, ClientQuestData.CHALLENGE_WARDEN_KILLS);
+            boolean wDone = !wOnCd && wKills >= 3;
+
+            UiStyle.drawRoundedCard(g, wx, wy, cw, ch, 4, UiStyle.BG_CARD,
+                    wDone ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL, true);
+
+            ChallengeDefinition wardenDef = QuestConfig.getChallengeById("warden");
+            String wardenTitle = wardenDef != null ? wardenDef.title : "Jefe Mundial: El Warden";
+            String wardenDesc = wardenDef != null ? wardenDef.description
+                    : "Derrota 3 Wardens en las profundidades. Recompensa cada 6 horas reales.";
+            String wardenIcon = wardenDef != null ? wardenDef.iconItem : "minecraft:echo_shard";
+
+            UiStyle.drawRoundedRect(g, wx + 2, wy + 2, cw - 4, 24, 0, UiStyle.BG_HEADER);
+            Item wIconIt = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(wardenIcon));
+            g.renderItem(wIconIt != null && wIconIt != Items.AIR ? new ItemStack(wIconIt) : new ItemStack(Items.ECHO_SHARD),
+                    wx + 6, wy + 5);
+            g.drawString(this.font, "§3§l" + wardenTitle, wx + 28, wy + 5, 0x55FFFF);
+            String wProg = wOnCd ? "§7Completado" : (wDone ? "§aProgreso: 3/3" : "§eProgreso: " + wKills + "/3");
+            g.drawString(this.font, wProg, wx + 28, wy + 15, 0xFFFFFF);
+
+            List<FormattedCharSequence> wDescLines = this.font.split(Component.literal("§7" + wardenDesc), cw - 20);
+            int wty = wy + 34;
+            for (FormattedCharSequence line : wDescLines) {
+                g.drawString(this.font, line, wx + 10, wty, 0xCCCCCC);
+                wty += 11;
+            }
+
+            int wrewY = wy + ch - 62;
+            g.fill(wx + 10, wrewY - 5, wx + cw - 10, wrewY - 4, 0x55D4AF37);
+            g.drawString(this.font, "§6Recompensas:", wx + 10, wrewY, 0xFFD4AF37);
+
+            List<QuestDefinition.RewardItem> wItems = wardenDef != null ? wardenDef.rewardItems
+                    : java.util.Collections.emptyList();
+            int wHover = -1;
+            int wsx = wx + 10;
+            int wsy = wrewY + 12;
+            if (!wItems.isEmpty()) {
+                for (int i = 0; i < wItems.size(); i++) {
+                    QuestDefinition.RewardItem r = wItems.get(i);
+                    Item it = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(r.id));
+                    ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, r.count)
+                            : new ItemStack(Items.EMERALD, r.count);
+                    drawMiniSlot(g, st, wsx, wsy, 0xFF5A4E36);
+                    if (mouseX >= wsx && mouseX <= wsx + 20 && mouseY >= wsy && mouseY <= wsy + 20)
+                        wHover = i;
+                    wsx += 26;
+                }
+            } else {
+                String[] wIds = { "cisco_mod:champion_loot_bag", "apotheotic_additions:esoteric_material", "minecraft:experience_bottle" };
+                int[] wCnt = { 6, 9, 30 };
+                for (int i = 0; i < wIds.length; i++) {
+                    Item it = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(wIds[i]));
+                    ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, wCnt[i])
+                            : new ItemStack(Items.EMERALD, wCnt[i]);
+                    drawMiniSlot(g, st, wsx, wsy, 0xFF5A4E36);
+                    if (mouseX >= wsx && mouseX <= wsx + 20 && mouseY >= wsy && mouseY <= wsy + 20)
+                        wHover = i;
+                    wsx += 26;
+                }
+            }
+
+            int wbtnX = wx + cw - btnW - 10;
+            if (wOnCd) {
+                long hrs = wRemCd / 3600;
+                long mins = (wRemCd % 3600) / 60;
+                long secs = wRemCd % 60;
+                UiStyle.drawPillButton(g, this.font, wbtnX, wsy, btnW, btnH,
+                        String.format("§7En %dh %02dm %02ds", hrs, mins, secs), 0xFF1E3324, 0xFF1E3324, 0, false);
+            } else if (wDone) {
+                boolean hov = mouseX >= wbtnX && mouseX <= wbtnX + btnW && mouseY >= wsy && mouseY <= wsy + btnH;
+                UiStyle.drawPillButton(g, this.font, wbtnX, wsy, btnW, btnH, "§f§lReclamar",
+                        UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                clickables.add(new ClickableRegion(wbtnX, wsy, btnW, btnH, null, -1, 102));
+            } else {
+                UiStyle.drawPillButton(g, this.font, wbtnX, wsy, btnW, btnH, "§7Derrota 3 Wardens",
+                        UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+            }
+            if (wHover >= 0) {
+                String tip = (wardenDef != null && !wItems.isEmpty()) ? wardenDef.getTooltip(wHover)
+                        : (wHover == 0 ? "6x Champion Loot Bag" : (wHover == 1 ? "9x Galactic Core" : "+30 Niveles"));
+                g.renderTooltip(this.font, Component.literal("§e" + tip), mouseX, mouseY);
+            }
+        }
     }
 
     @Override
@@ -795,6 +885,9 @@ public class QuestJournalScreen extends Screen {
                         return true;
                     } else if (r.dailyClaimIdx() == 101) {
                         NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(2));
+                        return true;
+                    } else if (r.dailyClaimIdx() == 102) {
+                        NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(3));
                         return true;
                     } else if (r.dailyClaimIdx() >= 0) {
                         NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(r.dailyClaimIdx()));
