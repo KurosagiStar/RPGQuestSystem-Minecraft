@@ -55660,8 +55660,8 @@
           "nbt": ""
         },
         {
-          "id": "apotheosis:mythic_material",
-          "count": 3,
+          "id": "apotheotic_additions:esoteric_material",
+          "count": 9,
           "nbt": ""
         },
         {
@@ -55682,7 +55682,7 @@
       ],
       "tooltips": [
         "2x Champion Loot Bag",
-        "3x Godforged Pearl",
+        "9x Galactic Core",
         "7x Epic Material",
         "1x Sigil of Socketing",
         "Gema Epica (Warlord)"
