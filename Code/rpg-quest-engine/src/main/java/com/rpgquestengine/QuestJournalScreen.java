@@ -837,6 +837,12 @@ public class QuestJournalScreen extends Screen {
                         wHover = i;
                     wsx += 26;
                 }
+                if (wardenDef.xpLevels > 0) {
+                    drawMiniSlot(g, new ItemStack(Items.EXPERIENCE_BOTTLE, wardenDef.xpLevels), wsx, wsy, 0xFF3A7A9E);
+                    if (mouseX >= wsx && mouseX <= wsx + 20 && mouseY >= wsy && mouseY <= wsy + 20)
+                        wHover = 999;
+                    wsx += 26;
+                }
             } else {
                 String[] wIds = { "cisco_mod:champion_loot_bag", "apotheotic_additions:esoteric_material", "minecraft:experience_bottle" };
                 int[] wCnt = { 6, 9, 30 };
@@ -868,8 +874,14 @@ public class QuestJournalScreen extends Screen {
                         UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
             }
             if (wHover >= 0) {
-                String tip = (wardenDef != null && !wItems.isEmpty()) ? wardenDef.getTooltip(wHover)
-                        : (wHover == 0 ? "6x Champion Loot Bag" : (wHover == 1 ? "9x Galactic Core" : "+30 Niveles"));
+                String tip;
+                if (wHover == 999 && wardenDef != null) {
+                    tip = "+" + wardenDef.xpLevels + " Niveles";
+                } else if (wardenDef != null && !wItems.isEmpty()) {
+                    tip = wardenDef.getTooltip(wHover);
+                } else {
+                    tip = (wHover == 0 ? "6x Champion Loot Bag" : (wHover == 1 ? "9x Galactic Core" : "+30 Niveles"));
+                }
                 g.renderTooltip(this.font, Component.literal("§e" + tip), mouseX, mouseY);
             }
         }

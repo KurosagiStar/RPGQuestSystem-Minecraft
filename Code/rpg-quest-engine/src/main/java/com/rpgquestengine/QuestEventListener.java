@@ -150,6 +150,9 @@ public class QuestEventListener {
             if (victim.getType() == net.minecraft.world.entity.EntityType.WITHER) {
                 ChallengeManager.onWitherKilled(sp);
             }
+            if (victim.getType() == net.minecraft.world.entity.EntityType.WARDEN) {
+                ChallengeManager.onWardenKilled(sp);
+            }
             if (victim.getType() == net.minecraft.world.entity.EntityType.ZOMBIE) {
                 ChallengeManager.onEndermanKilled(sp);
             }

@@ -29,6 +29,8 @@ public class ChallengeActionPacket {
                 ChallengeManager.claimWither(sp);
             } else if (msg.action == 2) {
                 ChallengeManager.claimEnderman(sp);
+            } else if (msg.action == 3) {
+                ChallengeManager.claimWarden(sp);
             } else {
                 ChallengeManager.syncToPlayer(sp);
             }

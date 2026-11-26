@@ -12,12 +12,17 @@ public class SyncChallengesPacket {
     public final int witherCooldownSec;
     public final int enderKills;
     public final boolean enderClaimed;
+    public final int wardenKills;
+    public final int wardenCooldownSec;
 
-    public SyncChallengesPacket(boolean witherDone, int witherCooldownSec, int enderKills, boolean enderClaimed) {
+    public SyncChallengesPacket(boolean witherDone, int witherCooldownSec, int enderKills, boolean enderClaimed,
+            int wardenKills, int wardenCooldownSec) {
         this.witherDone = witherDone;
         this.witherCooldownSec = Math.max(0, witherCooldownSec);
         this.enderKills = Math.max(0, enderKills);
         this.enderClaimed = enderClaimed;
+        this.wardenKills = Math.max(0, wardenKills);
+        this.wardenCooldownSec = Math.max(0, wardenCooldownSec);
     }
 
     public static void encode(SyncChallengesPacket msg, FriendlyByteBuf buf) {
@@ -25,10 +30,13 @@ public class SyncChallengesPacket {
         buf.writeInt(msg.witherCooldownSec);
         buf.writeInt(msg.enderKills);
         buf.writeBoolean(msg.enderClaimed);
+        buf.writeInt(msg.wardenKills);
+        buf.writeInt(msg.wardenCooldownSec);
     }
 
     public static SyncChallengesPacket decode(FriendlyByteBuf buf) {
-        return new SyncChallengesPacket(buf.readBoolean(), buf.readInt(), buf.readInt(), buf.readBoolean());
+        return new SyncChallengesPacket(buf.readBoolean(), buf.readInt(), buf.readInt(), buf.readBoolean(),
+                buf.readInt(), buf.readInt());
     }
 
     public static void handle(SyncChallengesPacket msg, Supplier<NetworkEvent.Context> ctx) {
@@ -37,6 +45,8 @@ public class SyncChallengesPacket {
             ClientQuestData.CHALLENGE_WITHER_CD_SEC = msg.witherCooldownSec;
             ClientQuestData.CHALLENGE_ENDER_KILLS = msg.enderKills;
             ClientQuestData.CHALLENGE_ENDER_CLAIMED = msg.enderClaimed;
+            ClientQuestData.CHALLENGE_WARDEN_KILLS = msg.wardenKills;
+            ClientQuestData.CHALLENGE_WARDEN_CD_SEC = msg.wardenCooldownSec;
             ClientQuestData.CHALLENGE_SYNCED_AT_MS = System.currentTimeMillis();
         }));
         ctx.get().setPacketHandled(true);

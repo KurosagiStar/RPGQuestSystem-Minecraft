@@ -354,20 +354,9 @@ public class PartyManager {
                     }
                 }
             }
-            for (String qid : allActiveMain) {
-                if (allCompletedMain.contains(qid)) continue;
-                QuestDefinition q = QuestConfig.getQuestById(qid);
-                if (q == null) continue;
-                if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
-                    QuestDefinition pre = QuestConfig.getQuestById(q.prerequisiteQuestId);
-                    if (pre != null && pre.completedTag != null && !RPGQuestEngine.hasQuestTag(m, pre.completedTag)) {
-                        continue;
-                    }
-                }
-                if (q.activeTag != null && !tags.contains(q.activeTag)) {
-                    RPGQuestEngine.addQuestTag(m, q.activeTag);
-                }
-            }
+            // NO propagar quests activas de otros miembros.
+            // Solo se sincronizan las completadas (bloque de arriba).
+            // Cada jugador mantiene sus propias quests activas independientemente.
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> m), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
             RPGQuestEngine.syncPlayerAfterDialog(m);
             syncToPlayer(m);
