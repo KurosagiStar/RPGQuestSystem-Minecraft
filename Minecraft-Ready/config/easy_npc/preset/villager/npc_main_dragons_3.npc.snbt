@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#AA00AA","bold":true,"text":"Forjador Dracónico"}',
+    CustomName: '{"color": "#AA00AA", "bold": true, "text": "Cazador de Dragones III"}',
     UUID: [I; 1704435644, 1600403392, -1295714399, 94653086],
     Tags: ["npc_main_dragons_3"],
     DialogData: {

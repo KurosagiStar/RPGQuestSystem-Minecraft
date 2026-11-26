@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Exorcista Aprendiz #35"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Exorcista Aprendiz #35"}',
     Tags: ["npc_contract_ext_35"],
     CustomNameVisible: 1b,
     EntityAttribute: {

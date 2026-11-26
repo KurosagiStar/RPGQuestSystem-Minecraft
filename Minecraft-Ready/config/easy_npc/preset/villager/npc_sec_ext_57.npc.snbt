@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Curtidor Solitario #57"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Curtidor Solitario #57"}',
     Tags: ["npc_sec_ext_57"],
     CustomNameVisible: 1b,
     EntityAttribute: {

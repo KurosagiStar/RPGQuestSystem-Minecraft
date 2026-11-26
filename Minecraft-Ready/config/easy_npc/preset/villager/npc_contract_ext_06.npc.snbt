@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Capitan Marino del Rio #6"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Capitan Marino del Rio #6"}',
     Tags: ["npc_contract_ext_06"],
     CustomNameVisible: 1b,
     EntityAttribute: {

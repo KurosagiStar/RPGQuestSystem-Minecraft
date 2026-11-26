@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Capitan Marino del Roble #30"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Capitan Marino del Roble #30"}',
     Tags: ["npc_contract_ext_30"],
     CustomNameVisible: 1b,
     EntityAttribute: {

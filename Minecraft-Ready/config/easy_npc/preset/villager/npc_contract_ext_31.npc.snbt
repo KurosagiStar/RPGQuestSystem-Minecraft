@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazarrecompensas de la Mina #31"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazarrecompensas de la Mina #31"}',
     Tags: ["npc_contract_ext_31"],
     CustomNameVisible: 1b,
     EntityAttribute: {

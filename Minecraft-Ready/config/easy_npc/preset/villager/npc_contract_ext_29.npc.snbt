@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Inquisidor de la Pradera #29"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Inquisidor de la Pradera #29"}',
     Tags: ["npc_contract_ext_29"],
     CustomNameVisible: 1b,
     EntityAttribute: {

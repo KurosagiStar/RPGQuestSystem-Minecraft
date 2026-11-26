@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Cocinero del Rio #6"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Cocinero del Rio #6"}',
     Tags: ["npc_rep_ext_06"],
     CustomNameVisible: 1b,
     EntityAttribute: {

@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Vigía del Puesto"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Vigía del Puesto"}',
     Tags: ["npc_contract_vigia"],
     DialogData: {
       DialogDataSet: [

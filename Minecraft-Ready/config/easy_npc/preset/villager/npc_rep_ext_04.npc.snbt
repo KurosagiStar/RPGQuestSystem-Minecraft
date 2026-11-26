@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Granjero del Bosque #4"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Granjero del Bosque #4"}',
     Tags: ["npc_rep_ext_04"],
     CustomNameVisible: 1b,
     EntityAttribute: {

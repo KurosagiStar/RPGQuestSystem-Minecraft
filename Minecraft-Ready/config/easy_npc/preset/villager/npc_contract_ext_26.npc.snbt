@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Tabernero del Rio #26"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Tabernero del Rio #26"}',
     Tags: ["npc_contract_ext_26"],
     CustomNameVisible: 1b,
     EntityAttribute: {

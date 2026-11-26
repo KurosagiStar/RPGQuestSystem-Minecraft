@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazarrecompensas de la Frontera #7"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazarrecompensas de la Frontera #7"}',
     Tags: ["npc_contract_ext_07"],
     CustomNameVisible: 1b,
     EntityAttribute: {

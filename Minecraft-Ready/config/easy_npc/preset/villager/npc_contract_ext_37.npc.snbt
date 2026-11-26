@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazador Solitario #37"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazador Solitario #37"}',
     Tags: ["npc_contract_ext_37"],
     CustomNameVisible: 1b,
     EntityAttribute: {

@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FFFF","bold":true,"text":"Explorador del Sendero"}',
+    CustomName: '{"color": "#55FFFF", "bold": true, "text": "Maestro Viajero V"}',
     UUID: [I; -384525040, 592688547, -874242190, 1832274638],
     Tags: ["npc_main_traveller_5"],
     DialogData: {

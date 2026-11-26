@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Capitán Marino"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Capitán Marino"}',
     UUID: [I; 19361683, 385053263, -1210377317, 1446781069],
     Tags: ["npc_contract_explorador_marino"],
     DialogData: {

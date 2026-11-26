@@ -147,6 +147,7 @@ public class RPGQuestEngine {
             migrateVanillaQuestTags(sp);
             recoverQuestProgress(sp);
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);
@@ -187,6 +188,7 @@ public class RPGQuestEngine {
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
         if (event.getEntity() instanceof ServerPlayer sp) {
             NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
+            NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
             checkAndSyncQuests(sp);
             DailyQuestManager.syncToPlayer(sp);
             ChallengeManager.syncToPlayer(sp);
@@ -239,6 +241,12 @@ public class RPGQuestEngine {
                         QuestConfig.loadConfig();
                         PartyManager.loadParties();
                         NetworkHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
+                        NetworkHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new OpenAdminUiPacket(QuestConfig.NPC_LOCATIONS, false));
+                        for (ServerLevel lvl : ctx.getSource().getServer().getAllLevels()) {
+                            for (net.minecraft.world.entity.Entity e : lvl.getAllEntities()) {
+                                syncEntityNpcName(e);
+                            }
+                        }
                         for (ServerPlayer p : ctx.getSource().getServer().getPlayerList().getPlayers()) {
                             migrateVanillaQuestTags(p);
                             recoverQuestProgress(p);
@@ -472,27 +480,28 @@ public class RPGQuestEngine {
                     }
                 }
 
-                // Si la misión está activa pero aún no tiene NPC asignado, asignarle el último NPC interactuado
-                boolean hasAssignedPos = false;
-                for (String t : playerTags) {
-                    if (t.startsWith("rqe_pos_" + q.id + "_")) {
-                        hasAssignedPos = true;
-                        break;
-                    }
-                }
-                if (!hasAssignedPos) {
+                // Solo usar rqe_last_npc_ si la misión NO tiene npcId explícito configurado
+                if (q.npcId == null || q.npcId.isEmpty()) {
+                    boolean hasAssignedPos = false;
                     for (String t : playerTags) {
-                        if (t.startsWith("rqe_last_npc_")) {
-                            // formato: rqe_last_npc_{uuid}_{x}_{z}
-                            String rem = t.substring("rqe_last_npc_".length());
-                            int uEnd = rem.indexOf('_');
-                            if (uEnd > 0) {
-                                String uStr = rem.substring(0, uEnd);
-                                String posPart = rem.substring(uEnd + 1);
-                                addQuestTag(sp, "rqe_npc_" + q.id + "_" + uStr);
-                                addQuestTag(sp, "rqe_pos_" + q.id + "_" + posPart);
-                            }
+                        if (t.startsWith("rqe_pos_" + q.id + "_")) {
+                            hasAssignedPos = true;
                             break;
+                        }
+                    }
+                    if (!hasAssignedPos) {
+                        for (String t : playerTags) {
+                            if (t.startsWith("rqe_last_npc_")) {
+                                String rem = t.substring("rqe_last_npc_".length());
+                                int uEnd = rem.indexOf('_');
+                                if (uEnd > 0) {
+                                    String uStr = rem.substring(0, uEnd);
+                                    String posPart = rem.substring(uEnd + 1);
+                                    addQuestTag(sp, "rqe_npc_" + q.id + "_" + uStr);
+                                    addQuestTag(sp, "rqe_pos_" + q.id + "_" + posPart);
+                                }
+                                break;
+                            }
                         }
                     }
                 }
@@ -781,13 +790,12 @@ public class RPGQuestEngine {
         // Rastrear posición de los NPCs asignados a misiones activas
         Map<String, double[]> npcLivePositions = new HashMap<>();
 
-        // 1. Primero cargar última posición persistente de tags (funciona aún si el chunk está descargado)
+        // 1. Cargar última posición persistente de tags (usando lastIndexOf para soportar questIds con '_')
         for (String tag : playerTags) {
             if (tag.startsWith("rqe_pos_")) {
                 String remainder = tag.substring("rqe_pos_".length());
-                // formato: {questId}_{x}_{z}
-                int first_ = remainder.indexOf('_');
                 int second_ = remainder.lastIndexOf('_');
+                int first_ = second_ > 0 ? remainder.lastIndexOf('_', second_ - 1) : -1;
                 if (first_ > 0 && second_ > first_) {
                     String qId = remainder.substring(0, first_);
                     try {
@@ -799,7 +807,21 @@ public class RPGQuestEngine {
             }
         }
 
-        // 2. Si la entidad está viva y en chunks cargados, sobreescribir con su posición exacta en tiempo real
+        // 1b. Priorizar ubicación canónica de rpg_npc_locations.json si la misión tiene npcId explícito
+        for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (q.npcId != null && !q.npcId.isEmpty() && QuestConfig.NPC_LOCATIONS.containsKey(q.npcId)) {
+                if ((q.activeTag != null && playerTags.contains(q.activeTag))
+                        || (q.doneTag != null && playerTags.contains(q.doneTag))) {
+                    double[] cfgLoc = QuestConfig.NPC_LOCATIONS.get(q.npcId);
+                    if (cfgLoc != null && cfgLoc.length >= 3) {
+                        npcLivePositions.put(q.id, new double[]{cfgLoc[0], cfgLoc[2]});
+                    }
+                }
+            }
+        }
+
+        // 2. Si la entidad está viva en chunks cargados Y coincide con el npcId de la misión, usar posición exacta en vivo
+        List<String> invalidNpcTags = new java.util.ArrayList<>();
         for (String tag : playerTags) {
             if (tag.startsWith("rqe_npc_")) {
                 String remainder = tag.substring("rqe_npc_".length());
@@ -807,27 +829,58 @@ public class RPGQuestEngine {
                 if (lastUnderscore > 0) {
                     String qId = remainder.substring(0, lastUnderscore);
                     String uuidStr = remainder.substring(lastUnderscore + 1);
+                    QuestDefinition qDef = QuestConfig.getQuestById(qId);
                     try {
                         java.util.UUID uuid = java.util.UUID.fromString(uuidStr);
                         Entity npcEnt = level.getEntity(uuid);
                         if (npcEnt != null && npcEnt.isAlive()) {
-                            npcLivePositions.put(qId, new double[]{npcEnt.getX(), npcEnt.getZ()});
+                            if (qDef != null && qDef.npcId != null && !qDef.npcId.isEmpty()
+                                    && !npcEnt.getTags().contains(qDef.npcId)) {
+                                invalidNpcTags.add(tag);
+                            } else {
+                                npcLivePositions.put(qId, new double[]{npcEnt.getX(), npcEnt.getZ()});
+                            }
                         }
                     } catch (Exception ignored) {}
                 }
             }
         }
+        for (String badTag : invalidNpcTags) {
+            removeQuestTag(sp, badTag);
+        }
 
         NetworkHandler.CHANNEL.send(PacketDistributor.PLAYER.with(() -> sp), new SyncPlayerQuestsPacket(getAllQuestTags(sp), scores, npcLivePositions));
 
-        // 3. Sincronizar tags de entidades vivas cercanas (radio 48 bloques) para garantizar marcadores actualizados en tiempo real
+        // 3. Sincronizar tags y nombres de entidades vivas cercanas (radio 48 bloques)
         net.minecraft.world.phys.AABB syncBox = sp.getBoundingBox().inflate(48.0D);
         for (net.minecraft.world.entity.LivingEntity nearby : level.getEntitiesOfClass(net.minecraft.world.entity.LivingEntity.class, syncBox)) {
             if (nearby != sp && !nearby.getTags().isEmpty()) {
+                syncEntityNpcName(nearby);
                 NetworkHandler.CHANNEL.send(
                         PacketDistributor.PLAYER.with(() -> sp),
                         new SyncEntityTagsPacket(nearby.getId(), new java.util.ArrayList<>(nearby.getTags()))
                 );
+            }
+        }
+    }
+
+    public static void syncEntityNpcName(Entity ent) {
+        if (ent == null || ent.getTags().isEmpty()) return;
+        for (String t : ent.getTags()) {
+            if (t.startsWith("npc_")) {
+                List<QuestDefinition> qs = QuestConfig.getQuestsForNpc(t);
+                if (!qs.isEmpty()) {
+                    String expected = qs.get(0).npc;
+                    if (expected != null && !expected.isEmpty()) {
+                        Component cur = ent.getCustomName();
+                        if (cur == null || !expected.equals(cur.getString())) {
+                            net.minecraft.network.chat.Style st = cur != null ? cur.getStyle()
+                                    : net.minecraft.network.chat.Style.EMPTY.withColor(0x55FFFF).withBold(true);
+                            ent.setCustomName(Component.literal(expected).withStyle(st));
+                        }
+                    }
+                }
+                break;
             }
         }
     }

@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Ingeniero"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Ingeniero"}',
     UUID: [I; 1352987734, 429644783, 1397934465, -1198773318],
     Tags: ["npc_sec_ingeniero"],
     DialogData: {

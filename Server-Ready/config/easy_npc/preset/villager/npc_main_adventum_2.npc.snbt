@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Cronomante II"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Cronomante II"}',
     UUID: [I; 1680170747, -83943469, 2046260510, -20937804],
     Tags: ["npc_main_adventum_2"],
     DialogData: {

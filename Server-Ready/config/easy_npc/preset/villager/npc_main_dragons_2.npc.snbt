@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#AA00AA","bold":true,"text":"Cazadragones"}',
+    CustomName: '{"color": "#AA00AA", "bold": true, "text": "Cazador de Dragones II"}',
     UUID: [I; 576556746, -548586670, -1566162992, 1496301786],
     Tags: ["npc_main_dragons_2"],
     DialogData: {

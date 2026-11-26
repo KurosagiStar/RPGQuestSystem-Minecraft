@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Alquimista de la Frontera #47"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Alquimista de la Frontera #47"}',
     Tags: ["npc_sec_ext_47"],
     CustomNameVisible: 1b,
     EntityAttribute: {

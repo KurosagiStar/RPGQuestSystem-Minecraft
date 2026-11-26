@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Templario del Roble #10"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Templario del Roble #10"}',
     Tags: ["npc_contract_ext_10"],
     CustomNameVisible: 1b,
     EntityAttribute: {

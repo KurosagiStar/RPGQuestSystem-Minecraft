@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Pastor del Paso #8"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Pastor del Paso #8"}',
     Tags: ["npc_rep_ext_08"],
     CustomNameVisible: 1b,
     EntityAttribute: {

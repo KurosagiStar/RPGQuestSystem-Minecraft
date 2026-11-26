@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#AA00AA","bold":true,"text":"Ocultista del Vacio"}',
+    CustomName: '{"color": "#AA00AA", "bold": true, "text": "Ocultista"}',
     UUID: [I; -25291814, -878871507, -916030930, -350152805],
     Tags: ["npc_main_ocultista"],
     DialogData: {

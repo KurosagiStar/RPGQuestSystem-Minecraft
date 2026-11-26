@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Herrero Enano"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Cazador Nocturno"}',
     Tags: ["npc_rep_cazador_nocturno"],
     DialogData: {
       DialogDataSet: [

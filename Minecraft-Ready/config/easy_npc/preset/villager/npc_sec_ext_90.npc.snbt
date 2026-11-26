@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Astronomo del Roble #90"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Astronomo del Roble #90"}',
     Tags: ["npc_sec_ext_90"],
     CustomNameVisible: 1b,
     EntityAttribute: {

@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Granjero"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Granjero"}',
     UUID: [I; 747354207, 993965558, 2056160028, 97796707],
     Tags: ["npc_rep_granjero"],
     DialogData: {

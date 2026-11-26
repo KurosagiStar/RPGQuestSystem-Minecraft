@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Carbonero del Puerto #32"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Carbonero del Puerto #32"}',
     Tags: ["npc_rep_ext_32"],
     CustomNameVisible: 1b,
     EntityAttribute: {

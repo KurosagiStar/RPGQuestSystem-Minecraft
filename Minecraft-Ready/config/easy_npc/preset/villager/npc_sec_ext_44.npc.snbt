@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Astronomo del Bosque #44"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Astronomo del Bosque #44"}',
     Tags: ["npc_sec_ext_44"],
     CustomNameVisible: 1b,
     EntityAttribute: {

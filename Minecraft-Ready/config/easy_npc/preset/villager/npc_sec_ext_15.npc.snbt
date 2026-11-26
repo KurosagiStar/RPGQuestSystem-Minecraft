@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Fundidor Aprendiz #15"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Fundidor Aprendiz #15"}',
     Tags: ["npc_sec_ext_15"],
     CustomNameVisible: 1b,
     EntityAttribute: {

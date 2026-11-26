@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#AA00AA","bold":true,"text":"Sabio de Escamas"}',
+    CustomName: '{"color": "#AA00AA", "bold": true, "text": "Cazador de Dragones IV"}',
     UUID: [I; 645633561, -1978049001, 1393605741, 287184088],
     Tags: ["npc_main_dragons_4"],
     DialogData: {

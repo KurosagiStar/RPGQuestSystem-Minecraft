@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Cantero Errante #33"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Cantero Errante #33"}',
     Tags: ["npc_rep_ext_33"],
     CustomNameVisible: 1b,
     EntityAttribute: {

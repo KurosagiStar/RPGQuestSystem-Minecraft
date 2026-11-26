@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Guardabosques de la Pradera #9"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Guardabosques de la Pradera #9"}',
     Tags: ["npc_contract_ext_09"],
     CustomNameVisible: 1b,
     EntityAttribute: {

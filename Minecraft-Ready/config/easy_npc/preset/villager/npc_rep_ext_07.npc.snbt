@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Apicultor de la Frontera #7"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Apicultor de la Frontera #7"}',
     Tags: ["npc_rep_ext_07"],
     CustomNameVisible: 1b,
     EntityAttribute: {

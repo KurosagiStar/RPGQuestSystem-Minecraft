@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Pescador de la Costa #2"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Pescador de la Costa #2"}',
     Tags: ["npc_rep_ext_02"],
     CustomNameVisible: 1b,
     EntityAttribute: {

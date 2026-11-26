@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FFFF","bold":true,"text":"Pescador del Muelle"}',
+    CustomName: '{"color": "#55FFFF", "bold": true, "text": "Pescador del Muelle"}',
     Tags: ["npc_rep_pescador"],
     DialogData: {
       DialogDataSet: [

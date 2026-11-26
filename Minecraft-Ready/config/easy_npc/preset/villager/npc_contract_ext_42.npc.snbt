@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Capitan Marino de la Costa #42"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Capitan Marino de la Costa #42"}',
     Tags: ["npc_contract_ext_42"],
     CustomNameVisible: 1b,
     EntityAttribute: {

@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Alguacil del Puerto #32"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Alguacil del Puerto #32"}',
     Tags: ["npc_contract_ext_32"],
     CustomNameVisible: 1b,
     EntityAttribute: {

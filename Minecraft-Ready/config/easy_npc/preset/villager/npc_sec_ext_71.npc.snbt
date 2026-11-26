@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Armero de la Mina #71"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Armero de la Mina #71"}',
     Tags: ["npc_sec_ext_71"],
     CustomNameVisible: 1b,
     EntityAttribute: {

@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazador Errante #13"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazador Errante #13"}',
     Tags: ["npc_contract_ext_13"],
     CustomNameVisible: 1b,
     EntityAttribute: {

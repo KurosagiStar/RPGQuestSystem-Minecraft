@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Recolector de la Pradera #9"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Recolector de la Pradera #9"}',
     Tags: ["npc_rep_ext_09"],
     CustomNameVisible: 1b,
     EntityAttribute: {

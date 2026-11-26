@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Apicultor del Sur #40"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Apicultor del Sur #40"}',
     Tags: ["npc_rep_ext_40"],
     CustomNameVisible: 1b,
     EntityAttribute: {

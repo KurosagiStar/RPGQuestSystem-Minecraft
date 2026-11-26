@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Apicultor de la Pradera #29"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Apicultor de la Pradera #29"}',
     Tags: ["npc_rep_ext_29"],
     CustomNameVisible: 1b,
     EntityAttribute: {

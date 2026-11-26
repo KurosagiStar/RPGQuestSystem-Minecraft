@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Cazador de Bestias I"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Cazador de Bestias I"}',
     UUID: [I; -937584053, -1350860788, 896921340, 936642181],
     Tags: ["npc_main_beasts_1"],
     DialogData: {

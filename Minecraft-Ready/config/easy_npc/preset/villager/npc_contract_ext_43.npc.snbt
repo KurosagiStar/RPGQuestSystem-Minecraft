@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazarrecompensas del Norte #43"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazarrecompensas del Norte #43"}',
     Tags: ["npc_contract_ext_43"],
     CustomNameVisible: 1b,
     EntityAttribute: {

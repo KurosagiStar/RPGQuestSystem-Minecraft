@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Joyero del Roble #10"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Joyero del Roble #10"}',
     Tags: ["npc_sec_ext_10"],
     CustomNameVisible: 1b,
     EntityAttribute: {

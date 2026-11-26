@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Lenador del Oeste #38"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Lenador del Oeste #38"}',
     Tags: ["npc_rep_ext_38"],
     CustomNameVisible: 1b,
     EntityAttribute: {

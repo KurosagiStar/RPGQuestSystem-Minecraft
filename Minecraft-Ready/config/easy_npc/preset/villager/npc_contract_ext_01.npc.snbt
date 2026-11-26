@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazador del Valle #1"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazador del Valle #1"}',
     Tags: ["npc_contract_ext_01"],
     CustomNameVisible: 1b,
     EntityAttribute: {

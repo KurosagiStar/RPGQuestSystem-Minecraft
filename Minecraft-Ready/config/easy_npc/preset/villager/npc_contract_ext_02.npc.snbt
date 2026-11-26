@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Tabernero de la Costa #2"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Tabernero de la Costa #2"}',
     Tags: ["npc_contract_ext_02"],
     CustomNameVisible: 1b,
     EntityAttribute: {

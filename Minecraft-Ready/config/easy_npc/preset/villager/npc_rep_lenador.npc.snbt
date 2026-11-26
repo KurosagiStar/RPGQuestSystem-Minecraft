@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Leñador"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Leñador"}',
     UUID: [I; -1309334413, 407080693, -1244938528, 984725530],
     Tags: ["npc_rep_lenador"],
     DialogData: {

@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Herrero Enano"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Cartógrafo"}',
     Tags: ["npc_sec_cartografo"],
     DialogData: {
       DialogDataSet: [

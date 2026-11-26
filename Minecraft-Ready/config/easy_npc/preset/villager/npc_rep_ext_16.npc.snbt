@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Lenador Maestro #16"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Lenador Maestro #16"}',
     Tags: ["npc_rep_ext_16"],
     CustomNameVisible: 1b,
     EntityAttribute: {

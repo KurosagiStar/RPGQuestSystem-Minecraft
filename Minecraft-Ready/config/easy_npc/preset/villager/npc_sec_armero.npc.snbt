@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Maestro Armero"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Armero Maestro"}',
     Tags: ["npc_sec_armero"],
     DialogData: {
       DialogDataSet: [

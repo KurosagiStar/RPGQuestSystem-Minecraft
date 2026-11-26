@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Panadero del Norte #23"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Panadero del Norte #23"}',
     Tags: ["npc_rep_ext_23"],
     CustomNameVisible: 1b,
     EntityAttribute: {

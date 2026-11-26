@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Herrero Enano"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Capataz de la Mina"}',
     Tags: ["npc_sec_minero"],
     DialogData: {
       DialogDataSet: [

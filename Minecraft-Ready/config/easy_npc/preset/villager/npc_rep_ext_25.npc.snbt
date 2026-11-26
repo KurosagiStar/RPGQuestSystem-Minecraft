@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#55FF55","bold":true,"text":"Cazador Nocturno de la Colina #25"}',
+    CustomName: '{"color": "#55FF55", "bold": true, "text": "Cazador Nocturno de la Colina #25"}',
     Tags: ["npc_rep_ext_25"],
     CustomNameVisible: 1b,
     EntityAttribute: {

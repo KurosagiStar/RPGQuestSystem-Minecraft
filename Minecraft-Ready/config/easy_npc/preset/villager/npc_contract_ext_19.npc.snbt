@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#FF5555","bold":true,"text":"Cazarrecompensas del Este #19"}',
+    CustomName: '{"color": "#FF5555", "bold": true, "text": "Cazarrecompensas del Este #19"}',
     Tags: ["npc_contract_ext_19"],
     CustomNameVisible: 1b,
     EntityAttribute: {

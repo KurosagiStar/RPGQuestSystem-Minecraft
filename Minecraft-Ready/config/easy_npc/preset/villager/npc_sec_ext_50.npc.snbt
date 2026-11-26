@@ -16,7 +16,7 @@
         ON_INTERACTION: [{ Type: "OPEN_DEFAULT_DIALOG" }]
       }
     },
-    CustomName: '{"color":"#5599FF","bold":true,"text":"Bibliotecario del Roble #50"}',
+    CustomName: '{"color": "#5599FF", "bold": true, "text": "Bibliotecario del Roble #50"}',
     Tags: ["npc_sec_ext_50"],
     CustomNameVisible: 1b,
     EntityAttribute: {

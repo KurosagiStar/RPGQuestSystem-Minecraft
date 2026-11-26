@@ -26,7 +26,7 @@
       { Count: 1b, id: "minecraft:iron_chestplate" },
       { Count: 1b, id: "minecraft:iron_helmet" }
     ],
-    CustomName: '{"color":"#FFAA00","bold":true,"text":"Inquisidor"}',
+    CustomName: '{"color": "#FFAA00", "bold": true, "text": "Inquisidor"}',
     UUID: [I; 1644777920, -235134675, 959421125, 529040384],
     Tags: ["npc_contract_inquisidor"],
     DialogData: {
