@@ -28,6 +28,7 @@ public class QuestConfig {
 
     public static List<QuestDefinition> QUESTS = new ArrayList<>();
     public static final java.util.Map<String, QuestDefinition> QUESTS_BY_ID = new java.util.HashMap<>();
+    public static final java.util.Map<String, QuestDefinition> QUESTS_BY_ACTIVE_TAG = new java.util.HashMap<>();
     public static final java.util.Map<String, List<QuestDefinition>> QUESTS_BY_NPC = new java.util.HashMap<>();
     public static java.util.Map<String, double[]> NPC_LOCATIONS = new java.util.HashMap<>();
 
@@ -48,10 +49,14 @@ public class QuestConfig {
 
     public static void rebuildIndices() {
         QUESTS_BY_ID.clear();
+        QUESTS_BY_ACTIVE_TAG.clear();
         QUESTS_BY_NPC.clear();
         for (QuestDefinition q : QUESTS) {
             if (q.id != null && !q.id.isEmpty()) {
                 QUESTS_BY_ID.put(q.id, q);
+            }
+            if (q.activeTag != null && !q.activeTag.isEmpty()) {
+                QUESTS_BY_ACTIVE_TAG.put(q.activeTag, q);
             }
             if (q.npcId != null && !q.npcId.isEmpty()) {
                 QUESTS_BY_NPC.computeIfAbsent(q.npcId, k -> new ArrayList<>()).add(q);

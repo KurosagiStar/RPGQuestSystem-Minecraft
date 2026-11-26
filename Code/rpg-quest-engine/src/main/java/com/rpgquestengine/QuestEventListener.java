@@ -382,27 +382,27 @@ public class QuestEventListener {
         if (validRecipients.isEmpty()) return;
 
         Set<ServerPlayer> touched = new java.util.HashSet<>();
-        for (QuestDefinition q : QuestConfig.QUESTS) {
-            if (q.activeTag == null) continue;
-            boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
-            for (int rIdx = 0; rIdx < validRecipients.size(); rIdx++) {
-                Set<String> pTags = recipientTags.get(rIdx);
-                if (pTags.contains(q.activeTag) && (isRep || q.completedTag == null || !pTags.contains(q.completedTag))) {
-                    ServerPlayer targetPlayer = validRecipients.get(rIdx);
-                    for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
-                        QuestDefinition.QuestStage stage = q.stages.get(sIdx);
-                        if (type.equalsIgnoreCase(stage.type)) {
-                            if ("any".equalsIgnoreCase(stage.target) || target.equalsIgnoreCase(stage.target)) {
-                                String internalScoreKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
-                                var sb = targetPlayer.getServer().getScoreboard();
-                                var obj = sb.getObjective(internalScoreKey);
-                                if (obj == null) {
-                                    obj = sb.addObjective(internalScoreKey, net.minecraft.world.scores.criteria.ObjectiveCriteria.DUMMY, net.minecraft.network.chat.Component.literal(internalScoreKey), net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType.INTEGER);
-                                }
-                                var score = sb.getOrCreatePlayerScore(targetPlayer.getScoreboardName(), obj);
-                                score.add(amount);
-                                touched.add(targetPlayer);
+        for (int rIdx = 0; rIdx < validRecipients.size(); rIdx++) {
+            Set<String> pTags = recipientTags.get(rIdx);
+            ServerPlayer targetPlayer = validRecipients.get(rIdx);
+            for (String tag : pTags) {
+                QuestDefinition q = QuestConfig.QUESTS_BY_ACTIVE_TAG.get(tag);
+                if (q == null) continue;
+                boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
+                if (!isRep && q.completedTag != null && pTags.contains(q.completedTag)) continue;
+                for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
+                    QuestDefinition.QuestStage stage = q.stages.get(sIdx);
+                    if (type.equalsIgnoreCase(stage.type)) {
+                        if ("any".equalsIgnoreCase(stage.target) || target.equalsIgnoreCase(stage.target)) {
+                            String internalScoreKey = RPGQuestEngine.getInternalScoreKey(q.id, sIdx, stage.type);
+                            var sb = targetPlayer.getServer().getScoreboard();
+                            var obj = sb.getObjective(internalScoreKey);
+                            if (obj == null) {
+                                obj = sb.addObjective(internalScoreKey, net.minecraft.world.scores.criteria.ObjectiveCriteria.DUMMY, net.minecraft.network.chat.Component.literal(internalScoreKey), net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType.INTEGER);
                             }
+                            var score = sb.getOrCreatePlayerScore(targetPlayer.getScoreboardName(), obj);
+                            score.add(amount);
+                            touched.add(targetPlayer);
                         }
                     }
                 }
