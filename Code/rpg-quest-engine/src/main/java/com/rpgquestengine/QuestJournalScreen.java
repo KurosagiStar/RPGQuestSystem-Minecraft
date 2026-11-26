@@ -35,7 +35,10 @@ public class QuestJournalScreen extends Screen {
     private Button trackButton = null;
     private Button abandonButton = null;
 
-    private record ClickableRegion(int x, int y, int w, int h, QuestDefinition quest, int toggleCat, int dailyClaimIdx) {}
+    private record ClickableRegion(int x, int y, int w, int h, QuestDefinition quest, int toggleCat,
+            int dailyClaimIdx) {
+    }
+
     private final List<ClickableRegion> clickables = new ArrayList<>();
 
     public QuestJournalScreen() {
@@ -50,71 +53,74 @@ public class QuestJournalScreen extends Screen {
 
         this.addRenderableWidget(new UiStyle.OreButton(16, 8, 130, 18,
                 Component.literal("§fDiario de Misiones"), b -> {
-            activeMainTab = 0;
-            updateActionButtons();
-        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 0));
+                    activeMainTab = 0;
+                    updateActionButtons();
+                }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 0));
 
         this.addRenderableWidget(new UiStyle.OreButton(152, 8, 130, 18,
                 Component.literal("§fMisiones Diarias"), b -> {
-            activeMainTab = 1;
-            NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(-1));
-            updateActionButtons();
-        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 1));
+                    activeMainTab = 1;
+                    NetworkHandler.CHANNEL.sendToServer(new DailyQuestActionPacket(-1));
+                    updateActionButtons();
+                }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 1));
 
         this.addRenderableWidget(new UiStyle.OreButton(288, 8, 110, 18,
                 Component.literal("§fDesafíos"), b -> {
-            activeMainTab = 2;
-            NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(0));
-            updateActionButtons();
-        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 2));
+                    activeMainTab = 2;
+                    NetworkHandler.CHANNEL.sendToServer(new ChallengeActionPacket(0));
+                    updateActionButtons();
+                }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B, () -> activeMainTab == 2));
 
         this.addRenderableWidget(new UiStyle.OreButton(this.width - 204, 8, 98, 18,
                 Component.literal("§e[F1] §fGuía RPG"), b -> {
-            if (this.minecraft != null) this.minecraft.setScreen(new GearRoadmapScreen());
-        }, UiStyle.ACCENT_SLATE, 0xFF47474D));
+                    if (this.minecraft != null)
+                        this.minecraft.setScreen(new GearRoadmapScreen());
+                }, UiStyle.ACCENT_SLATE, 0xFF47474D));
 
         this.addRenderableWidget(new UiStyle.OreButton(this.width - 100, 8, 84, 18,
                 Component.literal("§e[G] §fGrupo"), b -> {
-            if (this.minecraft != null) this.minecraft.setScreen(new PartyScreen());
-        }, UiStyle.ACCENT_SLATE, 0xFF47474D));
+                    if (this.minecraft != null)
+                        this.minecraft.setScreen(new PartyScreen());
+                }, UiStyle.ACCENT_SLATE, 0xFF47474D));
 
         this.addRenderableWidget(new UiStyle.OreButton(16, this.height - 28, 100, 20,
                 Component.literal("§f⚙ Ajustar HUD"), b -> {
-            if (this.minecraft != null) {
-                this.minecraft.setScreen(new HudPositionScreen(this));
-            }
-        }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
+                    if (this.minecraft != null) {
+                        this.minecraft.setScreen(new HudPositionScreen(this));
+                    }
+                }, UiStyle.ACCENT_SLATE, 0xFF3A3F4B));
 
         this.trackButton = new UiStyle.OreButton(this.width - 146, this.height - 28, 130, 20,
                 Component.literal("§fSeguir"), b -> {
-            if (selectedQuest != null) {
-                if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
-                    QuestConfig.trackedQuestId = "none";
-                } else {
-                    QuestConfig.trackedQuestId = selectedQuest.id;
-                }
-                QuestConfig.saveSettings();
-                updateActionButtons();
-            }
-        }, UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN);
+                    if (selectedQuest != null) {
+                        if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
+                            QuestConfig.trackedQuestId = "none";
+                        } else {
+                            QuestConfig.trackedQuestId = selectedQuest.id;
+                        }
+                        QuestConfig.saveSettings();
+                        updateActionButtons();
+                    }
+                }, UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN);
         this.addRenderableWidget(this.trackButton);
 
         this.abandonButton = new UiStyle.OreButton(this.width - 252, this.height - 28, 100, 20,
                 Component.literal("§fAbandonar"), b -> {
-            if (selectedQuest != null && !"MAIN".equalsIgnoreCase(selectedQuest.category)) {
-                NetworkHandler.CHANNEL.sendToServer(new AbandonQuestPacket(selectedQuest.id));
-                ClientQuestData.removeTag(selectedQuest.activeTag);
-                ClientQuestData.removeTag(selectedQuest.doneTag);
-                if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
-                    QuestConfig.trackedQuestId = "none";
-                    QuestConfig.saveSettings();
-                }
-                QuestTitleBannerOverlay.showBanner("MISIÓN ABANDONADA", selectedQuest.title, ItemStack.EMPTY, 0xFFFF5555, "");
-                selectedQuest = null;
-                refreshQuestLists();
-                autoSelectQuest();
-            }
-        }, UiStyle.ACCENT_RED_DARK, 0xFFB83542);
+                    if (selectedQuest != null && !"MAIN".equalsIgnoreCase(selectedQuest.category)) {
+                        NetworkHandler.CHANNEL.sendToServer(new AbandonQuestPacket(selectedQuest.id));
+                        ClientQuestData.removeTag(selectedQuest.activeTag);
+                        ClientQuestData.removeTag(selectedQuest.doneTag);
+                        if (selectedQuest.id.equals(QuestConfig.trackedQuestId)) {
+                            QuestConfig.trackedQuestId = "none";
+                            QuestConfig.saveSettings();
+                        }
+                        QuestTitleBannerOverlay.showBanner("MISIÓN ABANDONADA", selectedQuest.title, ItemStack.EMPTY,
+                                0xFFFF5555, "");
+                        selectedQuest = null;
+                        refreshQuestLists();
+                        autoSelectQuest();
+                    }
+                }, UiStyle.ACCENT_RED_DARK, 0xFFB83542);
         this.addRenderableWidget(this.abandonButton);
 
         autoSelectQuest();
@@ -133,16 +139,21 @@ public class QuestJournalScreen extends Screen {
                 return;
             }
         }
-        if (!mainQuests.isEmpty()) selectedQuest = mainQuests.get(0);
-        else if (!secondaryQuests.isEmpty()) selectedQuest = secondaryQuests.get(0);
-        else if (!contractQuests.isEmpty()) selectedQuest = contractQuests.get(0);
-        else if (!completedQuests.isEmpty()) selectedQuest = completedQuests.get(0);
+        if (!mainQuests.isEmpty())
+            selectedQuest = mainQuests.get(0);
+        else if (!secondaryQuests.isEmpty())
+            selectedQuest = secondaryQuests.get(0);
+        else if (!contractQuests.isEmpty())
+            selectedQuest = contractQuests.get(0);
+        else if (!completedQuests.isEmpty())
+            selectedQuest = completedQuests.get(0);
         updateActionButtons();
     }
 
     private void updateActionButtons() {
         if (this.trackButton != null) {
-            boolean canTrack = activeMainTab == 0 && selectedQuest != null && !ClientQuestData.hasTag(selectedQuest.completedTag);
+            boolean canTrack = activeMainTab == 0 && selectedQuest != null
+                    && !ClientQuestData.hasTag(selectedQuest.completedTag);
             this.trackButton.visible = canTrack;
             if (canTrack) {
                 this.trackButton.setMessage(Component.literal(
@@ -186,7 +197,8 @@ public class QuestJournalScreen extends Screen {
 
     private QuestDefinition findQuestById(String id) {
         for (QuestDefinition q : QuestConfig.QUESTS) {
-            if (q.id.equalsIgnoreCase(id)) return q;
+            if (q.id.equalsIgnoreCase(id))
+                return q;
         }
         return null;
     }
@@ -194,7 +206,8 @@ public class QuestJournalScreen extends Screen {
     private ItemStack getQuestIcon(QuestDefinition q) {
         if (q.iconItem != null && !q.iconItem.isEmpty()) {
             Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(q.iconItem));
-            if (item != null && item != Items.AIR) return new ItemStack(item);
+            if (item != null && item != Items.AIR)
+                return new ItemStack(item);
         }
         String cat = q.category != null ? q.category.toUpperCase() : "SECONDARY";
         return switch (cat) {
@@ -247,8 +260,10 @@ public class QuestJournalScreen extends Screen {
         g.enableScissor(leftX - 8, topY, leftX + leftW + 4, bottomY);
         int curY = topY - leftScroll;
         curY = renderAccordion(g, 0, "MISIONES PRINCIPALES", openMain, mainQuests, leftX, curY, leftW, topY, bottomY);
-        curY = renderAccordion(g, 1, "MISIONES SECUNDARIAS", openSecondary, secondaryQuests, leftX, curY, leftW, topY, bottomY);
-        curY = renderAccordion(g, 2, "CONTRATOS Y REPETIBLES", openContract, contractQuests, leftX, curY, leftW, topY, bottomY);
+        curY = renderAccordion(g, 1, "MISIONES SECUNDARIAS", openSecondary, secondaryQuests, leftX, curY, leftW, topY,
+                bottomY);
+        curY = renderAccordion(g, 2, "CONTRATOS Y REPETIBLES", openContract, contractQuests, leftX, curY, leftW, topY,
+                bottomY);
         curY = renderAccordion(g, 3, "COMPLETADA", openCompleted, completedQuests, leftX, curY, leftW, topY, bottomY);
         g.disableScissor();
 
@@ -268,7 +283,7 @@ public class QuestJournalScreen extends Screen {
     }
 
     private int renderAccordion(GuiGraphics g, int catIdx, String title, boolean isOpen, List<QuestDefinition> list,
-                                int x, int y, int w, int clipTop, int clipBottom) {
+            int x, int y, int w, int clipTop, int clipBottom) {
         int hdrH = 20;
         UiStyle.drawRoundedCard(g, x, y, w, hdrH, 4, UiStyle.BG_HEADER, 0, false);
 
@@ -282,7 +297,8 @@ public class QuestJournalScreen extends Screen {
         }
         y += hdrH + 3;
 
-        if (!isOpen) return y + 2;
+        if (!isOpen)
+            return y + 2;
 
         if (list.isEmpty()) {
             g.drawString(this.font, "§8  Sin misiones", x + 6, y + 2, 0x666666);
@@ -364,7 +380,8 @@ public class QuestJournalScreen extends Screen {
 
                 List<FormattedCharSequence> lines = this.font.split(Component.literal(lineTxt), w - 24);
                 for (FormattedCharSequence l : lines) {
-                    if (cy + 11 > bottomY - 54) break;
+                    if (cy + 11 > bottomY - 54)
+                        break;
                     g.drawString(this.font, l, x + 22, cy, 0xFFFFFF);
                     cy += 11;
                 }
@@ -382,7 +399,8 @@ public class QuestJournalScreen extends Screen {
             String turnInTxt = turnInColor + "Regresa con " + sub + " para entregar.";
             List<FormattedCharSequence> tLines = this.font.split(Component.literal(turnInTxt), w - 24);
             for (FormattedCharSequence l : tLines) {
-                if (cy + 11 > bottomY - 54) break;
+                if (cy + 11 > bottomY - 54)
+                    break;
                 g.drawString(this.font, l, x + 22, cy, 0xFFFFFF);
                 cy += 11;
             }
@@ -399,12 +417,13 @@ public class QuestJournalScreen extends Screen {
             sx += 24;
         }
         if (selectedQuest.rewardXpLevels > 0) {
-            drawMiniSlot(g, new ItemStack(Items.ENCHANTED_BOOK), sx, sy, 0xFF3A7A9E);
+            drawMiniSlot(g, new ItemStack(Items.EXPERIENCE_BOTTLE, selectedQuest.rewardXpLevels), sx, sy, 0xFF3A7A9E);
             sx += 24;
         }
         if (selectedQuest.rewardItems != null) {
             for (QuestDefinition.RewardItem ri : selectedQuest.rewardItems) {
-                if (sx + 20 > x + w) break;
+                if (sx + 20 > x + w)
+                    break;
                 Item it = ForgeRegistries.ITEMS.getValue(new ResourceLocation(ri.id));
                 if (it != null && it != Items.AIR) {
                     drawMiniSlot(g, new ItemStack(it, ri.count), sx, sy, 0xFF5A4E36);
@@ -440,17 +459,20 @@ public class QuestJournalScreen extends Screen {
         int ty = y + 4;
         List<FormattedCharSequence> lines = this.font.split(Component.literal(lore), w - 8);
         for (FormattedCharSequence line : lines) {
-            if (ty + 12 > bottomY - 24) break;
+            if (ty + 12 > bottomY - 24)
+                break;
             g.drawString(this.font, line, x + 4, ty, 0xC8C0B0);
             ty += 12;
         }
 
-        g.drawString(this.font, "§8Nivel sugerido: §7" + Math.max(1, selectedQuest.suggestedLevel), x + 4, bottomY - 14, 0x888888);
+        g.drawString(this.font, "§8Nivel sugerido: §7" + Math.max(1, selectedQuest.suggestedLevel), x + 4, bottomY - 14,
+                0x888888);
     }
 
     private void renderDailyTab(GuiGraphics g, int x, int y, int w, int bottomY, int mouseX, int mouseY) {
         // Marco principal redondeado con sombra
-        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
+        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL,
+                true);
 
         // Barra superior de Progreso Diario (0..400)
         int barBoxH = 64;
@@ -461,11 +483,14 @@ public class QuestJournalScreen extends Screen {
         int trackX = x + 130;
         int trackW = w - 155;
         int trackY = y + 21;
-        UiStyle.drawProgressBar(g, trackX, trackY, trackW, 6, ClientQuestData.DAILY_POINTS / 400.0f, 0xFF2B2E38, UiStyle.ACCENT_GREEN);
+        UiStyle.drawProgressBar(g, trackX, trackY, trackW, 6, ClientQuestData.DAILY_POINTS / 400.0f, 0xFF2B2E38,
+                UiStyle.ACCENT_GREEN);
 
-        String[] msRewards = {"1x Moneda de Campeón + 100 XP", "2x Gem Dust + 1x Common Material", "2x Monedas + 2x Uncommon Material", "1x Sigil of Socketing + 250 XP"};
-        String[] msItemIds = {"cisco_mod:champion_coin", "apotheosis:gem_dust", "cisco_mod:champion_coin", "apotheosis:sigil_of_socketing"};
-        int[] msItemCounts = {1, 2, 2, 1};
+        String[] msRewards = { "1x Moneda de Campeón + 100 XP", "2x Gem Dust + 1x Common Material",
+                "2x Monedas + 2x Uncommon Material", "1x Sigil of Socketing + 250 XP" };
+        String[] msItemIds = { "cisco_mod:champion_coin", "apotheosis:gem_dust", "cisco_mod:champion_coin",
+                "apotheosis:sigil_of_socketing" };
+        int[] msItemCounts = { 1, 2, 2, 1 };
         int hoverMs = -1;
         for (int m = 0; m < 4; m++) {
             int nx = trackX + (trackW * (m + 1)) / 4 - 8;
@@ -540,13 +565,16 @@ public class QuestJournalScreen extends Screen {
             int btnW = cardW - 16;
             int btnH = 18;
             if (claimed) {
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§aReclamado ✔", 0xFF1E3324, 0xFF1E3324, 0, false);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§aReclamado ✔", 0xFF1E3324, 0xFF1E3324, 0,
+                        false);
             } else if (done) {
                 boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK,
+                        UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, i));
             } else {
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7En progreso", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7En progreso", UiStyle.ACCENT_SLATE,
+                        UiStyle.ACCENT_SLATE, 0, false);
             }
         }
 
@@ -559,12 +587,14 @@ public class QuestJournalScreen extends Screen {
         g.drawString(this.font, resetTxt, x + w - this.font.width(resetTxt) - 12, bottomY - 14, 0xAAAAAA);
 
         if (hoverMs >= 0) {
-            g.renderTooltip(this.font, Component.literal("§6Hito " + ((hoverMs + 1) * 100) + ": §f" + msRewards[hoverMs]), mouseX, mouseY);
+            g.renderTooltip(this.font,
+                    Component.literal("§6Hito " + ((hoverMs + 1) * 100) + ": §f" + msRewards[hoverMs]), mouseX, mouseY);
         }
     }
 
     private void renderChallengesTab(GuiGraphics g, int x, int y, int w, int bottomY, int mouseX, int mouseY) {
-        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL, true);
+        UiStyle.drawRoundedCard(g, x - 1, y - 1, w + 2, bottomY - y + 2, 7, UiStyle.BG_DARK, UiStyle.BORDER_PANEL,
+                true);
 
         g.drawString(this.font, "§cDESAFÍOS DE JEFE §7(Reinicio cada 6 horas reales)", x + 14, y + 12, 0xFFFFFF);
         g.fill(x + 14, y + 25, x + w - 14, y + 26, 0x55E0B84C);
@@ -592,7 +622,8 @@ public class QuestJournalScreen extends Screen {
         // Cabecera
         UiStyle.drawRoundedRect(g, cx + 2, cy + 2, cw - 4, 24, 0, UiStyle.BG_HEADER);
         Item iconIt = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(witherIcon));
-        g.renderItem(iconIt != null && iconIt != Items.AIR ? new ItemStack(iconIt) : new ItemStack(Items.NETHER_STAR), cx + 6, cy + 5);
+        g.renderItem(iconIt != null && iconIt != Items.AIR ? new ItemStack(iconIt) : new ItemStack(Items.NETHER_STAR),
+                cx + 6, cy + 5);
         g.drawString(this.font, "§c§l" + witherTitle, cx + 28, cy + 5, 0xFF5555);
         String progTxt = onCooldown ? "§7Completado" : (done ? "§aProgreso: 1/1" : "§eProgreso: 0/1");
         g.drawString(this.font, progTxt, cx + 28, cy + 15, 0xFFFFFF);
@@ -610,35 +641,48 @@ public class QuestJournalScreen extends Screen {
         g.fill(cx + 10, rewY - 5, cx + cw - 10, rewY - 4, 0x55D4AF37);
         g.drawString(this.font, "§6Recompensas:", cx + 10, rewY, 0xFFD4AF37);
 
-        List<QuestDefinition.RewardItem> rItems = witherDef != null ? witherDef.rewardItems : java.util.Collections.emptyList();
+        List<QuestDefinition.RewardItem> rItems = witherDef != null ? witherDef.rewardItems
+                : java.util.Collections.emptyList();
         // Legacy fallback if config has no rewardItems
         if (rItems.isEmpty()) {
-            String[] rIds = {"cisco_mod:champion_coin", "apotheosis:mythic_material", "apotheosis:epic_material", "apotheosis:sigil_of_socketing", "minecraft:experience_bottle"};
-            int[] rCnt = {15, 3, 7, 1, 1};
-            String[] rTips = {"15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)", "1x Sigil of Socketing", "+15 Niveles"};
+            String[] rIds = { "cisco_mod:champion_coin", "apotheosis:mythic_material", "apotheosis:epic_material",
+                    "apotheosis:sigil_of_socketing", "minecraft:experience_bottle" };
+            int[] rCnt = { 15, 3, 7, 1, 1 };
+            String[] rTips = { "15x Moneda de Campeón", "3x Godforged Pearl", "7x Epic Material (+1 Gema Épica)",
+                    "1x Sigil of Socketing", "+15 Niveles" };
             int hoverR = -1;
             int sx = cx + 10;
             int sy = rewY + 12;
             for (int i = 0; i < rIds.length; i++) {
                 Item it = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(rIds[i]));
-                ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, rCnt[i]) : new ItemStack(Items.EMERALD, rCnt[i]);
+                ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, rCnt[i])
+                        : new ItemStack(Items.EMERALD, rCnt[i]);
                 drawMiniSlot(g, st, sx, sy, 0xFF5A4E36);
-                if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20) hoverR = i;
+                if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20)
+                    hoverR = i;
                 sx += 26;
             }
-            int btnW2 = 135; int btnH2 = 20;
-            int btnX2 = cx + cw - btnW2 - 10; int btnY2 = rewY + 12;
+            int btnW2 = 135;
+            int btnH2 = 20;
+            int btnX2 = cx + cw - btnW2 - 10;
+            int btnY2 = rewY + 12;
             if (onCooldown) {
-                long hrs2 = remCd / 3600; long mins2 = (remCd % 3600) / 60; long secs2 = remCd % 60;
-                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, String.format("§7En %dh %02dm %02ds", hrs2, mins2, secs2), 0xFF1E3324, 0xFF1E3324, 0, false);
+                long hrs2 = remCd / 3600;
+                long mins2 = (remCd % 3600) / 60;
+                long secs2 = remCd % 60;
+                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2,
+                        String.format("§7En %dh %02dm %02ds", hrs2, mins2, secs2), 0xFF1E3324, 0xFF1E3324, 0, false);
             } else if (done) {
                 boolean hov = mouseX >= btnX2 && mouseX <= btnX2 + btnW2 && mouseY >= btnY2 && mouseY <= btnY2 + btnH2;
-                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, "§f§lReclamar",
+                        UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(btnX2, btnY2, btnW2, btnH2, null, -1, 100));
             } else {
-                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, "§7Derrota al Wither", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+                UiStyle.drawPillButton(g, this.font, btnX2, btnY2, btnW2, btnH2, "§7Derrota al Wither",
+                        UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
             }
-            if (hoverR >= 0) g.renderTooltip(this.font, Component.literal("§e" + rTips[hoverR]), mouseX, mouseY);
+            if (hoverR >= 0)
+                g.renderTooltip(this.font, Component.literal("§e" + rTips[hoverR]), mouseX, mouseY);
         } else {
             int hoverR = -1;
             int sx = cx + 10;
@@ -646,22 +690,31 @@ public class QuestJournalScreen extends Screen {
             for (int i = 0; i < rItems.size(); i++) {
                 QuestDefinition.RewardItem r = rItems.get(i);
                 Item it = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(r.id));
-                ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, r.count) : new ItemStack(Items.EMERALD, r.count);
+                ItemStack st = (it != null && it != Items.AIR) ? new ItemStack(it, r.count)
+                        : new ItemStack(Items.EMERALD, r.count);
                 drawMiniSlot(g, st, sx, sy, 0xFF5A4E36);
-                if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20) hoverR = i;
+                if (mouseX >= sx && mouseX <= sx + 20 && mouseY >= sy && mouseY <= sy + 20)
+                    hoverR = i;
                 sx += 26;
             }
-            int btnW = 135; int btnH = 20;
-            int btnX = cx + cw - btnW - 10; int btnY = rewY + 12;
+            int btnW = 135;
+            int btnH = 20;
+            int btnX = cx + cw - btnW - 10;
+            int btnY = rewY + 12;
             if (onCooldown) {
-                long hrs = remCd / 3600; long mins = (remCd % 3600) / 60; long secs = remCd % 60;
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, String.format("§7En %dh %02dm %02ds", hrs, mins, secs), 0xFF1E3324, 0xFF1E3324, 0, false);
+                long hrs = remCd / 3600;
+                long mins = (remCd % 3600) / 60;
+                long secs = remCd % 60;
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH,
+                        String.format("§7En %dh %02dm %02ds", hrs, mins, secs), 0xFF1E3324, 0xFF1E3324, 0, false);
             } else if (done) {
                 boolean hov = mouseX >= btnX && mouseX <= btnX + btnW && mouseY >= btnY && mouseY <= btnY + btnH;
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK,
+                        UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(btnX, btnY, btnW, btnH, null, -1, 100));
             } else {
-                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7Derrota al Wither", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+                UiStyle.drawPillButton(g, this.font, btnX, btnY, btnW, btnH, "§7Derrota al Wither",
+                        UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
             }
             if (hoverR >= 0) {
                 ChallengeDefinition finalDef = witherDef;
@@ -683,11 +736,13 @@ public class QuestJournalScreen extends Screen {
             boolean eClaimed = ClientQuestData.CHALLENGE_ENDER_CLAIMED;
             boolean eDone = eKills >= 10 && !eClaimed;
 
-            UiStyle.drawRoundedCard(g, ex, ey, ew, eh, 4, UiStyle.BG_CARD, eDone ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL, true);
+            UiStyle.drawRoundedCard(g, ex, ey, ew, eh, 4, UiStyle.BG_CARD,
+                    eDone ? UiStyle.ACCENT_GREEN : UiStyle.BORDER_PANEL, true);
             UiStyle.drawRoundedRect(g, ex + 2, ey + 2, ew - 4, 24, 0, UiStyle.BG_HEADER);
             g.renderItem(new ItemStack(Items.ROTTEN_FLESH), ex + 6, ey + 5);
             g.drawString(this.font, "§a§lCazador de Zombis §7(Único)", ex + 28, ey + 5, 0x77DD77);
-            String eProg = eClaimed ? "§7Reclamado (No repetible)" : (eDone ? "§aProgreso: 10/10" : "§eProgreso: " + eKills + "/10 §8• No repetible");
+            String eProg = eClaimed ? "§7Reclamado (No repetible)"
+                    : (eDone ? "§aProgreso: 10/10" : "§eProgreso: " + eKills + "/10 §8• No repetible");
             g.drawString(this.font, eProg, ex + 28, ey + 15, 0xFFFFFF);
 
             List<FormattedCharSequence> eDesc = this.font.split(
@@ -704,7 +759,8 @@ public class QuestJournalScreen extends Screen {
             g.drawString(this.font, "§6Recompensa:", ex + 10, erewY, 0xFFD4AF37);
 
             Item ringIt = ForgeRegistries.ITEMS.getValue(new ResourceLocation("ringsofascension:ring_hungerless"));
-            ItemStack ringSt = (ringIt != null && ringIt != Items.AIR) ? new ItemStack(ringIt, 1) : new ItemStack(Items.GOLDEN_APPLE, 1);
+            ItemStack ringSt = (ringIt != null && ringIt != Items.AIR) ? new ItemStack(ringIt, 1)
+                    : new ItemStack(Items.GOLDEN_APPLE, 1);
             int esx = ex + 10;
             int esy = erewY + 12;
             drawMiniSlot(g, ringSt, esx, esy, 0xFF5A4E36);
@@ -712,13 +768,16 @@ public class QuestJournalScreen extends Screen {
 
             int ebtnX = ex + ew - btnW - 10;
             if (eClaimed) {
-                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Completado", 0xFF1E3324, 0xFF1E3324, 0, false);
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Completado", 0xFF1E3324, 0xFF1E3324, 0,
+                        false);
             } else if (eDone) {
                 boolean hov = mouseX >= ebtnX && mouseX <= ebtnX + btnW && mouseY >= esy && mouseY <= esy + btnH;
-                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK, UiStyle.ACCENT_GREEN, 0, hov);
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§f§lReclamar", UiStyle.ACCENT_GREEN_DARK,
+                        UiStyle.ACCENT_GREEN, 0, hov);
                 clickables.add(new ClickableRegion(ebtnX, esy, btnW, btnH, null, -1, 101));
             } else {
-                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Mata 10 Zombis", UiStyle.ACCENT_SLATE, UiStyle.ACCENT_SLATE, 0, false);
+                UiStyle.drawPillButton(g, this.font, ebtnX, esy, btnW, btnH, "§7Mata 10 Zombis", UiStyle.ACCENT_SLATE,
+                        UiStyle.ACCENT_SLATE, 0, false);
             }
             if (hoverRing) {
                 g.renderTooltip(this.font, Component.literal("§e1x Ring of Hungerless (Saturación)"), mouseX, mouseY);
