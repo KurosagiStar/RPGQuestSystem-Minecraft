@@ -300,6 +300,33 @@ public class PartyManager {
             }
         }
 
+        // Limpiar completadas MAIN fuera de orden en el grupo y en miembros antes de propagar
+        for (ServerPlayer m : members) {
+            RPGQuestEngine.syncPlayerAfterDialog(m);
+        }
+        boolean prunedParty;
+        do {
+            prunedParty = false;
+            java.util.Iterator<String> it = p.completedMainIds.iterator();
+            while (it.hasNext()) {
+                String cid = it.next();
+                QuestDefinition cq = QuestConfig.getQuestById(cid);
+                if (cq != null && cq.prerequisiteQuestId != null && !cq.prerequisiteQuestId.isEmpty()
+                        && !p.completedMainIds.contains(cq.prerequisiteQuestId)) {
+                    it.remove();
+                    prunedParty = true;
+                    dirtyParty = true;
+                }
+            }
+        } while (prunedParty);
+        if (p.activeMainIds.removeIf(aid -> {
+            QuestDefinition aq = QuestConfig.getQuestById(aid);
+            return aq != null && aq.prerequisiteQuestId != null && !aq.prerequisiteQuestId.isEmpty()
+                    && !p.completedMainIds.contains(aq.prerequisiteQuestId);
+        })) {
+            dirtyParty = true;
+        }
+
         Set<String> allCompletedMain = new HashSet<>(p.completedMainIds);
         Set<String> allActiveMain = new HashSet<>(p.activeMainIds);
 

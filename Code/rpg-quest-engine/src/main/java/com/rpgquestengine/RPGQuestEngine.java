@@ -237,6 +237,7 @@ public class RPGQuestEngine {
                 .then(Commands.literal("reload")
                     .executes(ctx -> {
                         QuestConfig.loadConfig();
+                        PartyManager.loadParties();
                         NetworkHandler.CHANNEL.send(PacketDistributor.ALL.noArg(), new SyncQuestConfigPacket(QuestConfig.getRawQuestsJson()));
                         for (ServerPlayer p : ctx.getSource().getServer().getPlayerList().getPlayers()) {
                             migrateVanillaQuestTags(p);
@@ -401,11 +402,41 @@ public class RPGQuestEngine {
         }
     }
 
+    public static boolean hasFullPrerequisiteChain(QuestDefinition q, Set<String> playerTags) {
+        if (q == null) return true;
+        Set<String> visited = new java.util.HashSet<>();
+        String preId = q.prerequisiteQuestId;
+        while (preId != null && !preId.isEmpty() && visited.add(preId)) {
+            QuestDefinition pre = QuestConfig.getQuestById(preId);
+            if (pre == null) break;
+            if (pre.completedTag != null && !pre.completedTag.isEmpty() && !playerTags.contains(pre.completedTag)) {
+                return false;
+            }
+            preId = pre.prerequisiteQuestId;
+        }
+        return true;
+    }
+
     private void checkAndSyncQuests(ServerPlayer sp) {
         Set<String> playerTags = getAllQuestTags(sp);
         ServerLevel level = sp.serverLevel();
         Scoreboard sb = sp.getServer().getScoreboard();
         Map<String, Integer> scores = new HashMap<>();
+
+        // Limpiar completadas MAIN fuera de orden (saltadas sin cadena previa completa)
+        boolean purgedBrokenMain;
+        do {
+            purgedBrokenMain = false;
+            for (QuestDefinition q : QuestConfig.QUESTS) {
+                if ("MAIN".equalsIgnoreCase(q.category) && q.completedTag != null && playerTags.contains(q.completedTag)) {
+                    if (!hasFullPrerequisiteChain(q, playerTags)) {
+                        removeQuestTag(sp, q.completedTag);
+                        playerTags.remove(q.completedTag);
+                        purgedBrokenMain = true;
+                    }
+                }
+            }
+        } while (purgedBrokenMain);
 
         for (QuestDefinition q : QuestConfig.QUESTS) {
             boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
@@ -414,15 +445,15 @@ public class RPGQuestEngine {
                 playerTags.remove(q.completedTag);
             }
             if (playerTags.contains(q.activeTag) && (isRep || !playerTags.contains(q.completedTag))) {
-                // 1. Validar Prerrequisito si tiene uno configurado
-                if (q.prerequisiteQuestId != null && !q.prerequisiteQuestId.isEmpty()) {
-                    QuestDefinition prereq = QuestConfig.getQuestById(q.prerequisiteQuestId);
-                    if (prereq != null && prereq.completedTag != null && !playerTags.contains(prereq.completedTag)) {
-                        // El jugador no completó la misión previa: cancelar activación
-                        removeQuestTag(sp, q.activeTag);
-                        sp.displayClientMessage(net.minecraft.network.chat.Component.literal("§c[RPGQuestEngine] Bloqueado: Completa primero \"" + prereq.title + "\"."), true);
-                        continue;
-                    }
+                // 1. Validar cadena completa de prerrequisitos
+                if (!hasFullPrerequisiteChain(q, playerTags)) {
+                    removeQuestTag(sp, q.activeTag);
+                    if (q.doneTag != null) removeQuestTag(sp, q.doneTag);
+                    removeQuestTag(sp, "rqe_party_obj_done_" + q.id);
+                    playerTags.remove(q.activeTag);
+                    if (q.doneTag != null) playerTags.remove(q.doneTag);
+                    playerTags.remove("rqe_party_obj_done_" + q.id);
+                    continue;
                 }
 
                 // 1b. Validar blockedByTags (rutas ramificadas excluyentes)
@@ -1229,19 +1260,28 @@ public class RPGQuestEngine {
                             doneFtb.add(m.group(1).toUpperCase());
                         }
                         if (!doneFtb.isEmpty()) {
-                            for (QuestDefinition q : QuestConfig.QUESTS) {
-                                if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty()
-                                        && doneFtb.contains(q.ftbQuestId.toUpperCase())
-                                        && !"REPEATABLE".equalsIgnoreCase(q.category)
-                                        && q.completedTag != null && !q.completedTag.isEmpty()) {
-                                    if (!hasQuestTag(sp, q.completedTag)) {
+                            boolean addedAny;
+                            do {
+                                addedAny = false;
+                                Set<String> curTags = getAllQuestTags(sp);
+                                for (QuestDefinition q : QuestConfig.QUESTS) {
+                                    if (q.ftbQuestId != null && !q.ftbQuestId.isEmpty()
+                                            && doneFtb.contains(q.ftbQuestId.toUpperCase())
+                                            && !"REPEATABLE".equalsIgnoreCase(q.category)
+                                            && q.completedTag != null && !q.completedTag.isEmpty()
+                                            && !curTags.contains(q.completedTag)) {
+                                        if ("MAIN".equalsIgnoreCase(q.category) && !hasFullPrerequisiteChain(q, curTags)) {
+                                            continue;
+                                        }
                                         if (q.activeTag != null) removeQuestTag(sp, q.activeTag);
                                         if (q.doneTag != null) removeQuestTag(sp, q.doneTag);
                                         addQuestTag(sp, q.completedTag);
+                                        addQuestTag(sp, "rqe_rewarded_" + q.id);
+                                        curTags.add(q.completedTag);
+                                        addedAny = true;
                                     }
-                                    addQuestTag(sp, "rqe_rewarded_" + q.id);
                                 }
-                            }
+                            } while (addedAny);
                         }
                     }
                 }
