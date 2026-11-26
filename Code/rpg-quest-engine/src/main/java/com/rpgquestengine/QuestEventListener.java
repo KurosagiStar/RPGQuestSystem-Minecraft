@@ -84,6 +84,9 @@ public class QuestEventListener {
         }
     }
 
+    private static final net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block> FORGE_IRON_ORE_TAG =
+            net.minecraft.tags.BlockTags.create(new ResourceLocation("forge", "ores/iron"));
+
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
@@ -96,7 +99,7 @@ public class QuestEventListener {
                 if (bId.startsWith("minecraft:deepslate_") && bId.endsWith("_ore")) {
                     incrementQuestTarget(sp, "MINE", "minecraft:" + bId.substring("minecraft:deepslate_".length()));
                 } else if (!"minecraft:iron_ore".equals(bId)
-                        && (bId.contains("iron_ore") || event.getState().is(net.minecraft.tags.BlockTags.create(new ResourceLocation("forge", "ores/iron"))))) {
+                        && (bId.contains("iron_ore") || event.getState().is(FORGE_IRON_ORE_TAG))) {
                     incrementQuestTarget(sp, "MINE", "minecraft:iron_ore");
                 }
             }
@@ -367,15 +370,25 @@ public class QuestEventListener {
     }
 
     private static void incrementQuestTarget(ServerPlayer sp, String type, String target, int amount) {
+        boolean shareWithParty = PartyManager.getParty(sp.getUUID()) != null;
+        java.util.List<ServerPlayer> recipients = shareWithParty ? PartyManager.getOnlineMembers(sp) : java.util.Collections.singletonList(sp);
+        java.util.List<ServerPlayer> validRecipients = new java.util.ArrayList<>(recipients.size());
+        java.util.List<Set<String>> recipientTags = new java.util.ArrayList<>(recipients.size());
+        for (ServerPlayer targetPlayer : recipients) {
+            if (targetPlayer != sp && !targetPlayer.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
+            validRecipients.add(targetPlayer);
+            recipientTags.add(RPGQuestEngine.getAllQuestTags(targetPlayer));
+        }
+        if (validRecipients.isEmpty()) return;
+
         Set<ServerPlayer> touched = new java.util.HashSet<>();
         for (QuestDefinition q : QuestConfig.QUESTS) {
+            if (q.activeTag == null) continue;
             boolean isRep = "REPEATABLE".equalsIgnoreCase(q.category);
-            boolean shareWithParty = PartyManager.getParty(sp.getUUID()) != null;
-            java.util.List<ServerPlayer> recipients = shareWithParty ? PartyManager.getOnlineMembers(sp) : java.util.Collections.singletonList(sp);
-            for (ServerPlayer targetPlayer : recipients) {
-                if (targetPlayer != sp && !targetPlayer.serverLevel().dimension().equals(sp.serverLevel().dimension())) continue;
-                Set<String> pTags = RPGQuestEngine.getAllQuestTags(targetPlayer);
-                if (q.activeTag != null && pTags.contains(q.activeTag) && (isRep || q.completedTag == null || !pTags.contains(q.completedTag))) {
+            for (int rIdx = 0; rIdx < validRecipients.size(); rIdx++) {
+                Set<String> pTags = recipientTags.get(rIdx);
+                if (pTags.contains(q.activeTag) && (isRep || q.completedTag == null || !pTags.contains(q.completedTag))) {
+                    ServerPlayer targetPlayer = validRecipients.get(rIdx);
                     for (int sIdx = 0; sIdx < q.stages.size(); sIdx++) {
                         QuestDefinition.QuestStage stage = q.stages.get(sIdx);
                         if (type.equalsIgnoreCase(stage.type)) {
