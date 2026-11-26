@@ -701,19 +701,6 @@ public class RPGQuestEngine {
                     if (!stage.optional && current < required) {
                         allNonOptionalDone = false;
                         if ("SURVIVE".equals(type)) setInternalScore(sp, remKey, 0);
-                    } else if ("SURVIVE".equals(type) && current >= required && stage.spawnMobsOnEntry) {
-                        String waveTag = "rqe_wave_" + q.id + "_" + sIdx;
-                        int remaining = 0;
-                        for (net.minecraft.world.entity.Entity ent : level.getAllEntities()) {
-                            if (ent instanceof net.minecraft.world.entity.LivingEntity living && living.isAlive() && living.getTags().contains(waveTag)) {
-                                remaining++;
-                            }
-                        }
-                        setInternalScore(sp, remKey, remaining);
-                        scores.put(remKey, remaining);
-                        if (remaining > 0) {
-                            allNonOptionalDone = false;
-                        }
                     } else if ("SURVIVE".equals(type)) {
                         setInternalScore(sp, remKey, 0);
                     }
