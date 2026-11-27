@@ -618,28 +618,28 @@
       ],
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos crudos",
+          "description": "Pesca 30 Bacalaos crudos",
           "type": "FISH",
           "target": "minecraft:cod",
-          "amount": 6
+          "amount": 30
         }
       ],
       "rewardXp": 0,
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "elena_alquimia",
@@ -704,28 +704,28 @@
       ],
       "stages": [
         {
-          "description": "Cocina 8 Panes o Comida en horno",
+          "description": "Cocina 40 Panes o Comida en horno",
           "type": "SMELT",
           "target": "minecraft:bread",
-          "amount": 8
+          "amount": 40
         }
       ],
       "rewardXp": 0,
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "explorar_bioma",
@@ -1234,15 +1234,15 @@
       "rewardItems": [
         {
           "id": "minecraft:ender_pearl",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "rewards": [
@@ -1251,13 +1251,13 @@
       ],
       "stages": [
         {
-          "description": "Abate Endermen",
+          "description": "Abate 5x Endermen",
           "type": "KILL",
           "target": "minecraft:enderman",
-          "amount": 1
+          "amount": 5
         }
       ],
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "cisco_trials_6f010e22cd886969",
@@ -10081,15 +10081,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_panadero_trigo_act",
@@ -10098,12 +10098,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 8x Trigo",
+          "description": "Consigue 40x Trigo",
           "target": "minecraft:wheat",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_panadero_manzanas",
@@ -10118,15 +10118,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_panadero_manzanas_act",
@@ -10135,12 +10135,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 8x Manzana",
+          "description": "Consigue 40x Manzana",
           "target": "minecraft:apple",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_panadero_azucar",
@@ -10155,15 +10155,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_panadero_azucar_act",
@@ -10172,12 +10172,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 6x Azúcar",
+          "description": "Consigue 30x Azúcar",
           "target": "minecraft:sugar",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_pescador_salmon",
@@ -10192,15 +10192,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_pescador_salmon_act",
@@ -10209,12 +10209,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 6x Salmón crudo",
+          "description": "Consigue 30x Salmón crudo",
           "target": "minecraft:salmon",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_pescador_globo",
@@ -10229,15 +10229,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 4
+          "count": 20
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_pescador_globo_act",
@@ -10246,12 +10246,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 2x Pez globo",
+          "description": "Consigue 10x Pez globo",
           "target": "minecraft:pufferfish",
-          "amount": 2
+          "amount": 10
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_pescador_bacalao",
@@ -10266,15 +10266,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_pescador_bacalao_act",
@@ -10283,12 +10283,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 6x Bacalao crudo",
+          "description": "Consigue 30x Bacalao crudo",
           "target": "minecraft:cod",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_cazador_huesos",
@@ -10303,15 +10303,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_cazador_huesos_act",
@@ -10320,12 +10320,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 6x Hueso",
+          "description": "Consigue 30x Hueso",
           "target": "minecraft:bone",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_cazador_polvora",
@@ -10340,15 +10340,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 4
+          "count": 20
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_cazador_polvora_act",
@@ -10357,12 +10357,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 6x Pólvora",
+          "description": "Consigue 30x Pólvora",
           "target": "minecraft:gunpowder",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_cazador_perlas",
@@ -10377,15 +10377,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 5
+          "count": 25
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_cazador_perlas_act",
@@ -10394,12 +10394,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 4x Perla de Ender",
+          "description": "Consigue 20x Perla de Ender",
           "target": "minecraft:ender_pearl",
-          "amount": 4
+          "amount": 20
         }
       ],
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "sec_herbolario_miel",
@@ -10961,15 +10961,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_granjero_zanahorias_act",
@@ -10978,12 +10978,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 8x Zanahoria",
+          "description": "Consigue 40x Zanahoria",
           "target": "minecraft:carrot",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_granjero_patatas",
@@ -10998,15 +10998,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_granjero_patatas_act",
@@ -11015,12 +11015,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 8x Patata",
+          "description": "Consigue 40x Patata",
           "target": "minecraft:potato",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_granjero_cuero",
@@ -11035,15 +11035,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_granjero_cuero_act",
@@ -11052,12 +11052,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Consigue 6x Cuero",
+          "description": "Consigue 30x Cuero",
           "target": "minecraft:leather",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_roble",
@@ -11072,15 +11072,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_roble_act",
@@ -11089,12 +11089,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de roble",
+          "description": "Entrega 40x Tronco de roble",
           "target": "minecraft:oak_log",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_abeto",
@@ -11109,15 +11109,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_abeto_act",
@@ -11126,12 +11126,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de abeto",
+          "description": "Entrega 40x Tronco de abeto",
           "target": "minecraft:spruce_log",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_carbon_veg",
@@ -11146,15 +11146,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_carbon_veg_act",
@@ -11163,12 +11163,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 6x Carbón vegetal",
+          "description": "Entrega 30x Carbón vegetal",
           "target": "minecraft:charcoal",
-          "amount": 6
+          "amount": 30
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_abedul",
@@ -11183,15 +11183,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_abedul_act",
@@ -11200,12 +11200,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de abedul",
+          "description": "Entrega 40x Tronco de abedul",
           "target": "minecraft:birch_log",
-          "amount": 8
+          "amount": 40
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_tablones",
@@ -11220,15 +11220,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_tablones_act",
@@ -11237,12 +11237,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 24x Tablones de roble",
+          "description": "Entrega 120x Tablones de roble",
           "target": "minecraft:oak_planks",
-          "amount": 24
+          "amount": 120
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_palos",
@@ -11257,15 +11257,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 2
+          "count": 10
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_palos_act",
@@ -11274,12 +11274,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 32x Palos",
+          "description": "Entrega 160x Palos",
           "target": "minecraft:stick",
-          "amount": 32
+          "amount": 160
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_barriles",
@@ -11294,15 +11294,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_barriles_act",
@@ -11311,12 +11311,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 4x Barril",
+          "description": "Entrega 20x Barril",
           "target": "minecraft:barrel",
-          "amount": 4
+          "amount": 20
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "rep_lenador_fogatas",
@@ -11331,15 +11331,15 @@
       "rewardItems": [
         {
           "id": "minecraft:emerald",
-          "count": 3
+          "count": 15
         },
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         },
         {
           "id": "apotheosis:gem_dust",
-          "count": 2
+          "count": 10
         }
       ],
       "activeTag": "rep_lenador_fogatas_act",
@@ -11348,12 +11348,12 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 2x Fogata",
+          "description": "Entrega 10x Fogata",
           "target": "minecraft:campfire",
-          "amount": 2
+          "amount": 10
         }
       ],
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_sec_ext_01_q01",
@@ -50601,23 +50601,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Valle #1",
-      "description": "Panadero del Valle #1 solicita 12 Menas de Oro para sus trabajos.",
+      "description": "Panadero del Valle #1 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_01_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_01_q02",
@@ -50633,23 +50633,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Valle #1",
-      "description": "Reune 23 Huesos y entregalos a Panadero del Valle #1.",
+      "description": "Reune 40 Huesos y entregalos a Panadero del Valle #1.",
       "stages": [
         {
-          "description": "Entrega 8 Huesos",
+          "description": "Entrega 40 Huesos",
           "target": "minecraft:bone",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_01_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_01_q03",
@@ -50665,23 +50665,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Valle #1",
-      "description": "Pesca 3 Peces Tropicales frescos para Panadero del Valle #1.",
+      "description": "Pesca 15 Peces Tropicales frescos para Panadero del Valle #1.",
       "stages": [
         {
-          "description": "Pesca 3 Peces Tropicales",
+          "description": "Pesca 15 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 3
+          "amount": 15
         }
       ],
       "completedTag": "q_npc_rep_ext_01_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_02_q01",
@@ -50697,23 +50697,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador de la Costa #2",
-      "description": "Pescador de la Costa #2 solicita 20 Troncos de Roble para sus trabajos.",
+      "description": "Pescador de la Costa #2 solicita 40 Troncos de Roble para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Troncos de Roble",
+          "description": "Extrae 40 Troncos de Roble",
           "target": "minecraft:oak_log",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_02_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_02_q02",
@@ -50729,23 +50729,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador de la Costa #2",
-      "description": "Reune 5 Bolas de Slime y entregalos a Pescador de la Costa #2.",
+      "description": "Reune 25 Bolas de Slime y entregalos a Pescador de la Costa #2.",
       "stages": [
         {
-          "description": "Entrega 5 Bolas de Slime",
+          "description": "Entrega 25 Bolas de Slime",
           "target": "minecraft:slime_ball",
           "type": "ITEM",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_02_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_02_q03",
@@ -50761,23 +50761,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador de la Costa #2",
-      "description": "Pesca 15 Bacalaos frescos para Pescador de la Costa #2.",
+      "description": "Pesca 30 Bacalaos frescos para Pescador de la Costa #2.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_02_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_03_q01",
@@ -50793,7 +50793,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
@@ -50801,15 +50801,15 @@
       "description": "Cazador Nocturno del Norte #3 solicita 40 Troncos de Roble para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Troncos de Roble",
+          "description": "Extrae 40 Troncos de Roble",
           "target": "minecraft:oak_log",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_03_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_03_q02",
@@ -50825,23 +50825,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno del Norte #3",
-      "description": "Reune 15 Filetes Cocidos y entregalos a Cazador Nocturno del Norte #3.",
+      "description": "Reune 30 Filetes Cocidos y entregalos a Cazador Nocturno del Norte #3.",
       "stages": [
         {
-          "description": "Entrega 6 Filetes Cocidos",
+          "description": "Entrega 30 Filetes Cocidos",
           "target": "minecraft:cooked_beef",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_03_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_03_q03",
@@ -50857,23 +50857,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno del Norte #3",
-      "description": "Pesca 8 Bacalaos frescos para Cazador Nocturno del Norte #3.",
+      "description": "Pesca 40 Bacalaos frescos para Cazador Nocturno del Norte #3.",
       "stages": [
         {
-          "description": "Pesca 8 Bacalaos",
+          "description": "Pesca 40 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_03_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_03_q04",
@@ -50889,23 +50889,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno del Norte #3",
-      "description": "Cazador Nocturno del Norte #3 solicita 10 Menas de Redstone para sus trabajos.",
+      "description": "Cazador Nocturno del Norte #3 solicita 30 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Redstone",
+          "description": "Extrae 30 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_03_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_04_q01",
@@ -50921,23 +50921,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Bosque #4",
-      "description": "Granjero del Bosque #4 solicita 21 Menas de Hierro para sus trabajos.",
+      "description": "Granjero del Bosque #4 solicita 40 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Hierro",
+          "description": "Extrae 40 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_04_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_04_q02",
@@ -50953,23 +50953,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Bosque #4",
-      "description": "Reune 19 Cuero y entregalos a Granjero del Bosque #4.",
+      "description": "Reune 40 Cuero y entregalos a Granjero del Bosque #4.",
       "stages": [
         {
-          "description": "Entrega 8 Cuero",
+          "description": "Entrega 40 Cuero",
           "target": "minecraft:leather",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_04_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_04_q03",
@@ -50985,23 +50985,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Bosque #4",
-      "description": "Pesca 4 Salmones frescos para Granjero del Bosque #4.",
+      "description": "Pesca 20 Salmones frescos para Granjero del Bosque #4.",
       "stages": [
         {
-          "description": "Pesca 4 Salmones",
+          "description": "Pesca 20 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_04_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_04_q04",
@@ -51017,23 +51017,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Bosque #4",
-      "description": "Granjero del Bosque #4 solicita 37 Troncos de Roble para sus trabajos.",
+      "description": "Granjero del Bosque #4 solicita 40 Troncos de Roble para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Troncos de Roble",
+          "description": "Extrae 40 Troncos de Roble",
           "target": "minecraft:oak_log",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_04_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_05_q01",
@@ -51049,7 +51049,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
@@ -51058,14 +51058,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de roble",
+          "description": "Entrega 40x Tronco de roble",
           "target": "minecraft:oak_log",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_05_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_05_q02",
@@ -51081,7 +51081,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
@@ -51090,14 +51090,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de abedul",
+          "description": "Entrega 40x Tronco de abedul",
           "target": "minecraft:birch_log",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_05_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_05_q03",
@@ -51113,7 +51113,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
@@ -51122,14 +51122,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 6x Carbón vegetal",
+          "description": "Entrega 30x Carbón vegetal",
           "target": "minecraft:charcoal",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_05_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_06_q01",
@@ -51145,23 +51145,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Rio #6",
-      "description": "Cocinero del Rio #6 solicita 18 Menas de Carbon para sus trabajos.",
+      "description": "Cocinero del Rio #6 solicita 40 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Carbon",
+          "description": "Extrae 40 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_06_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_06_q02",
@@ -51177,23 +51177,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Rio #6",
-      "description": "Reune 24 Trigo y entregalos a Cocinero del Rio #6.",
+      "description": "Reune 40 Trigo y entregalos a Cocinero del Rio #6.",
       "stages": [
         {
-          "description": "Entrega 8 Trigo",
+          "description": "Entrega 40 Trigo",
           "target": "minecraft:wheat",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_06_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_06_q03",
@@ -51209,23 +51209,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Rio #6",
-      "description": "Pesca 11 Bacalaos frescos para Cocinero del Rio #6.",
+      "description": "Pesca 30 Bacalaos frescos para Cocinero del Rio #6.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_06_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_06_q04",
@@ -51241,23 +51241,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Rio #6",
-      "description": "Cocinero del Rio #6 solicita 11 Menas de Lapislazuli para sus trabajos.",
+      "description": "Cocinero del Rio #6 solicita 30 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Lapislazuli",
+          "description": "Extrae 30 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_06_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_07_q01",
@@ -51273,23 +51273,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Frontera #7",
-      "description": "Apicultor de la Frontera #7 solicita 28 Menas de Cobre para sus trabajos.",
+      "description": "Apicultor de la Frontera #7 solicita 40 Menas de Cobre para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Cobre",
+          "description": "Extrae 40 Menas de Cobre",
           "target": "minecraft:copper_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_07_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_07_q02",
@@ -51305,23 +51305,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Frontera #7",
-      "description": "Reune 9 Bolas de Slime y entregalos a Apicultor de la Frontera #7.",
+      "description": "Reune 30 Bolas de Slime y entregalos a Apicultor de la Frontera #7.",
       "stages": [
         {
-          "description": "Entrega 6 Bolas de Slime",
+          "description": "Entrega 30 Bolas de Slime",
           "target": "minecraft:slime_ball",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_07_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_07_q03",
@@ -51337,23 +51337,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Frontera #7",
-      "description": "Pesca 8 Salmones frescos para Apicultor de la Frontera #7.",
+      "description": "Pesca 40 Salmones frescos para Apicultor de la Frontera #7.",
       "stages": [
         {
-          "description": "Pesca 8 Salmones",
+          "description": "Pesca 40 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_07_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_07_q04",
@@ -51369,23 +51369,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Frontera #7",
-      "description": "Apicultor de la Frontera #7 solicita 13 Menas de Redstone para sus trabajos.",
+      "description": "Apicultor de la Frontera #7 solicita 30 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Redstone",
+          "description": "Extrae 30 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_07_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_08_q01",
@@ -51401,23 +51401,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Paso #8",
-      "description": "Pastor del Paso #8 solicita 10 Menas de Hierro para sus trabajos.",
+      "description": "Pastor del Paso #8 solicita 30 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Hierro",
+          "description": "Extrae 30 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_08_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_08_q02",
@@ -51433,23 +51433,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Paso #8",
-      "description": "Reune 9 Bolas de Slime y entregalos a Pastor del Paso #8.",
+      "description": "Reune 30 Bolas de Slime y entregalos a Pastor del Paso #8.",
       "stages": [
         {
-          "description": "Entrega 6 Bolas de Slime",
+          "description": "Entrega 30 Bolas de Slime",
           "target": "minecraft:slime_ball",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_08_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_08_q03",
@@ -51465,23 +51465,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Paso #8",
-      "description": "Pesca 6 Peces Tropicales frescos para Pastor del Paso #8.",
+      "description": "Pesca 30 Peces Tropicales frescos para Pastor del Paso #8.",
       "stages": [
         {
-          "description": "Pesca 6 Peces Tropicales",
+          "description": "Pesca 30 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_08_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_09_q01",
@@ -51497,23 +51497,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Pradera #9",
-      "description": "Recolector de la Pradera #9 solicita 28 Menas de Carbon para sus trabajos.",
+      "description": "Recolector de la Pradera #9 solicita 40 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Carbon",
+          "description": "Extrae 40 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_09_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_09_q02",
@@ -51529,23 +51529,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Pradera #9",
-      "description": "Reune 9 Polvora y entregalos a Recolector de la Pradera #9.",
+      "description": "Reune 30 Polvora y entregalos a Recolector de la Pradera #9.",
       "stages": [
         {
-          "description": "Entrega 6 Polvora",
+          "description": "Entrega 30 Polvora",
           "target": "minecraft:gunpowder",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_09_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_09_q03",
@@ -51561,23 +51561,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Pradera #9",
-      "description": "Pesca 4 Peces Tropicales frescos para Recolector de la Pradera #9.",
+      "description": "Pesca 20 Peces Tropicales frescos para Recolector de la Pradera #9.",
       "stages": [
         {
-          "description": "Pesca 4 Peces Tropicales",
+          "description": "Pesca 20 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_09_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_09_q04",
@@ -51593,23 +51593,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Pradera #9",
-      "description": "Recolector de la Pradera #9 solicita 11 Menas de Hierro para sus trabajos.",
+      "description": "Recolector de la Pradera #9 solicita 30 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Hierro",
+          "description": "Extrae 30 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_09_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_10_q01",
@@ -51625,23 +51625,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Roble #10",
-      "description": "Carbonero del Roble #10 solicita 6 Menas de Oro para sus trabajos.",
+      "description": "Carbonero del Roble #10 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_10_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_10_q02",
@@ -51657,23 +51657,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Roble #10",
-      "description": "Reune 13 Manzanas y entregalos a Carbonero del Roble #10.",
+      "description": "Reune 30 Manzanas y entregalos a Carbonero del Roble #10.",
       "stages": [
         {
-          "description": "Entrega 6 Manzanas",
+          "description": "Entrega 30 Manzanas",
           "target": "minecraft:apple",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_10_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_10_q03",
@@ -51689,23 +51689,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Roble #10",
-      "description": "Pesca 7 Salmones frescos para Carbonero del Roble #10.",
+      "description": "Pesca 35 Salmones frescos para Carbonero del Roble #10.",
       "stages": [
         {
-          "description": "Pesca 7 Salmones",
+          "description": "Pesca 35 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 7
+          "amount": 35
         }
       ],
       "completedTag": "q_npc_rep_ext_10_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_10_q04",
@@ -51721,23 +51721,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Roble #10",
-      "description": "Carbonero del Roble #10 solicita 3 Menas de Diamante para sus trabajos.",
+      "description": "Carbonero del Roble #10 solicita 15 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 3 Menas de Diamante",
+          "description": "Extrae 15 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 3
+          "amount": 15
         }
       ],
       "completedTag": "q_npc_rep_ext_10_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_11_q01",
@@ -51753,23 +51753,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Mina #11",
-      "description": "Cantero de la Mina #11 solicita 3 Menas de Diamante para sus trabajos.",
+      "description": "Cantero de la Mina #11 solicita 15 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 3 Menas de Diamante",
+          "description": "Extrae 15 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 3
+          "amount": 15
         }
       ],
       "completedTag": "q_npc_rep_ext_11_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_11_q02",
@@ -51785,23 +51785,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Mina #11",
-      "description": "Reune 17 Trigo y entregalos a Cantero de la Mina #11.",
+      "description": "Reune 40 Trigo y entregalos a Cantero de la Mina #11.",
       "stages": [
         {
-          "description": "Entrega 8 Trigo",
+          "description": "Entrega 40 Trigo",
           "target": "minecraft:wheat",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_11_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_11_q03",
@@ -51817,23 +51817,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Mina #11",
-      "description": "Pesca 5 Salmones frescos para Cantero de la Mina #11.",
+      "description": "Pesca 25 Salmones frescos para Cantero de la Mina #11.",
       "stages": [
         {
-          "description": "Pesca 5 Salmones",
+          "description": "Pesca 25 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_11_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_11_q04",
@@ -51849,23 +51849,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Mina #11",
-      "description": "Cantero de la Mina #11 solicita 16 Menas de Carbon para sus trabajos.",
+      "description": "Cantero de la Mina #11 solicita 30 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Carbon",
+          "description": "Extrae 30 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_11_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_12_q01",
@@ -51881,23 +51881,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Puerto #12",
-      "description": "Panadero del Puerto #12 solicita 2 Menas de Diamante para sus trabajos.",
+      "description": "Panadero del Puerto #12 solicita 10 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 2 Menas de Diamante",
+          "description": "Extrae 10 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 2
+          "amount": 10
         }
       ],
       "completedTag": "q_npc_rep_ext_12_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_12_q02",
@@ -51913,23 +51913,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Puerto #12",
-      "description": "Reune 10 Hilo y entregalos a Panadero del Puerto #12.",
+      "description": "Reune 30 Hilo y entregalos a Panadero del Puerto #12.",
       "stages": [
         {
-          "description": "Entrega 6 Hilo",
+          "description": "Entrega 30 Hilo",
           "target": "minecraft:string",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_12_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_12_q03",
@@ -51945,23 +51945,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Puerto #12",
-      "description": "Pesca 4 Peces Tropicales frescos para Panadero del Puerto #12.",
+      "description": "Pesca 20 Peces Tropicales frescos para Panadero del Puerto #12.",
       "stages": [
         {
-          "description": "Pesca 4 Peces Tropicales",
+          "description": "Pesca 20 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_12_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_13_q01",
@@ -51977,23 +51977,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Errante #13",
-      "description": "Pescador Errante #13 solicita 19 Troncos de Roble para sus trabajos.",
+      "description": "Pescador Errante #13 solicita 40 Troncos de Roble para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Troncos de Roble",
+          "description": "Extrae 40 Troncos de Roble",
           "target": "minecraft:oak_log",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_13_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_13_q02",
@@ -52009,23 +52009,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Errante #13",
-      "description": "Reune 10 Manzanas y entregalos a Pescador Errante #13.",
+      "description": "Reune 30 Manzanas y entregalos a Pescador Errante #13.",
       "stages": [
         {
-          "description": "Entrega 6 Manzanas",
+          "description": "Entrega 30 Manzanas",
           "target": "minecraft:apple",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_13_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_13_q03",
@@ -52041,23 +52041,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Errante #13",
-      "description": "Pesca 4 Salmones frescos para Pescador Errante #13.",
+      "description": "Pesca 20 Salmones frescos para Pescador Errante #13.",
       "stages": [
         {
-          "description": "Pesca 4 Salmones",
+          "description": "Pesca 20 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_13_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_14_q01",
@@ -52073,23 +52073,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Veterano #14",
-      "description": "Cazador Nocturno Veterano #14 solicita 7 Menas de Redstone para sus trabajos.",
+      "description": "Cazador Nocturno Veterano #14 solicita 35 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 7 Menas de Redstone",
+          "description": "Extrae 35 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 7
+          "amount": 35
         }
       ],
       "completedTag": "q_npc_rep_ext_14_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_14_q02",
@@ -52105,23 +52105,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Veterano #14",
-      "description": "Reune 22 Cana de Azucar y entregalos a Cazador Nocturno Veterano #14.",
+      "description": "Reune 40 Cana de Azucar y entregalos a Cazador Nocturno Veterano #14.",
       "stages": [
         {
-          "description": "Entrega 8 Cana de Azucar",
+          "description": "Entrega 40 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_14_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_14_q03",
@@ -52137,23 +52137,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Veterano #14",
-      "description": "Pesca 5 Bacalaos frescos para Cazador Nocturno Veterano #14.",
+      "description": "Pesca 25 Bacalaos frescos para Cazador Nocturno Veterano #14.",
       "stages": [
         {
-          "description": "Pesca 5 Bacalaos",
+          "description": "Pesca 25 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_14_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_15_q01",
@@ -52169,23 +52169,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Aprendiz #15",
-      "description": "Granjero Aprendiz #15 solicita 16 Menas de Hierro para sus trabajos.",
+      "description": "Granjero Aprendiz #15 solicita 30 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Hierro",
+          "description": "Extrae 30 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_15_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_15_q02",
@@ -52201,23 +52201,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Aprendiz #15",
-      "description": "Reune 16 Trigo y entregalos a Granjero Aprendiz #15.",
+      "description": "Reune 30 Trigo y entregalos a Granjero Aprendiz #15.",
       "stages": [
         {
-          "description": "Entrega 6 Trigo",
+          "description": "Entrega 30 Trigo",
           "target": "minecraft:wheat",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_15_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_15_q03",
@@ -52233,23 +52233,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Aprendiz #15",
-      "description": "Pesca 5 Salmones frescos para Granjero Aprendiz #15.",
+      "description": "Pesca 25 Salmones frescos para Granjero Aprendiz #15.",
       "stages": [
         {
-          "description": "Pesca 5 Salmones",
+          "description": "Pesca 25 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_15_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_16_q01",
@@ -52265,7 +52265,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
@@ -52274,14 +52274,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de abeto",
+          "description": "Entrega 40x Tronco de abeto",
           "target": "minecraft:spruce_log",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_16_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_16_q02",
@@ -52297,7 +52297,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
@@ -52306,14 +52306,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 24x Tablones de roble",
+          "description": "Entrega 120x Tablones de roble",
           "target": "minecraft:oak_planks",
-          "amount": 24
+          "amount": 120
         }
       ],
       "completedTag": "q_npc_rep_ext_16_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_16_q03",
@@ -52329,7 +52329,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
@@ -52338,14 +52338,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 4x Barril",
+          "description": "Entrega 20x Barril",
           "target": "minecraft:barrel",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_16_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_17_q01",
@@ -52361,23 +52361,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero Solitario #17",
-      "description": "Cocinero Solitario #17 solicita 2 Menas de Diamante para sus trabajos.",
+      "description": "Cocinero Solitario #17 solicita 10 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 2 Menas de Diamante",
+          "description": "Extrae 10 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 2
+          "amount": 10
         }
       ],
       "completedTag": "q_npc_rep_ext_17_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_17_q02",
@@ -52393,23 +52393,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero Solitario #17",
-      "description": "Reune 20 Trigo y entregalos a Cocinero Solitario #17.",
+      "description": "Reune 40 Trigo y entregalos a Cocinero Solitario #17.",
       "stages": [
         {
-          "description": "Entrega 8 Trigo",
+          "description": "Entrega 40 Trigo",
           "target": "minecraft:wheat",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_17_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_17_q03",
@@ -52425,23 +52425,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero Solitario #17",
-      "description": "Pesca 10 Salmones frescos para Cocinero Solitario #17.",
+      "description": "Pesca 30 Salmones frescos para Cocinero Solitario #17.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_17_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_17_q04",
@@ -52457,23 +52457,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero Solitario #17",
-      "description": "Cocinero Solitario #17 solicita 12 Menas de Lapislazuli para sus trabajos.",
+      "description": "Cocinero Solitario #17 solicita 30 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Lapislazuli",
+          "description": "Extrae 30 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_17_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_18_q01",
@@ -52489,23 +52489,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Oeste #18",
-      "description": "Apicultor del Oeste #18 solicita 9 Menas de Hierro para sus trabajos.",
+      "description": "Apicultor del Oeste #18 solicita 30 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Hierro",
+          "description": "Extrae 30 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_18_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_18_q02",
@@ -52521,23 +52521,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Oeste #18",
-      "description": "Reune 20 Huesos y entregalos a Apicultor del Oeste #18.",
+      "description": "Reune 40 Huesos y entregalos a Apicultor del Oeste #18.",
       "stages": [
         {
-          "description": "Entrega 8 Huesos",
+          "description": "Entrega 40 Huesos",
           "target": "minecraft:bone",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_18_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_18_q03",
@@ -52553,23 +52553,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Oeste #18",
-      "description": "Pesca 6 Salmones frescos para Apicultor del Oeste #18.",
+      "description": "Pesca 30 Salmones frescos para Apicultor del Oeste #18.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_18_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_18_q04",
@@ -52585,23 +52585,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Oeste #18",
-      "description": "Apicultor del Oeste #18 solicita 9 Menas de Oro para sus trabajos.",
+      "description": "Apicultor del Oeste #18 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_18_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_19_q01",
@@ -52617,23 +52617,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Este #19",
-      "description": "Pastor del Este #19 solicita 11 Menas de Hierro para sus trabajos.",
+      "description": "Pastor del Este #19 solicita 30 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Hierro",
+          "description": "Extrae 30 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_19_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_19_q02",
@@ -52649,23 +52649,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Este #19",
-      "description": "Reune 15 Filetes Cocidos y entregalos a Pastor del Este #19.",
+      "description": "Reune 30 Filetes Cocidos y entregalos a Pastor del Este #19.",
       "stages": [
         {
-          "description": "Entrega 6 Filetes Cocidos",
+          "description": "Entrega 30 Filetes Cocidos",
           "target": "minecraft:cooked_beef",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_19_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_19_q03",
@@ -52681,23 +52681,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Este #19",
-      "description": "Pesca 7 Salmones frescos para Pastor del Este #19.",
+      "description": "Pesca 35 Salmones frescos para Pastor del Este #19.",
       "stages": [
         {
-          "description": "Pesca 7 Salmones",
+          "description": "Pesca 35 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 7
+          "amount": 35
         }
       ],
       "completedTag": "q_npc_rep_ext_19_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_19_q04",
@@ -52713,23 +52713,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Este #19",
-      "description": "Pastor del Este #19 solicita 4 Menas de Lapislazuli para sus trabajos.",
+      "description": "Pastor del Este #19 solicita 20 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 4 Menas de Lapislazuli",
+          "description": "Extrae 20 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_19_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_20_q01",
@@ -52745,23 +52745,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector del Sur #20",
-      "description": "Recolector del Sur #20 solicita 6 Menas de Oro para sus trabajos.",
+      "description": "Recolector del Sur #20 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_20_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_20_q02",
@@ -52777,23 +52777,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector del Sur #20",
-      "description": "Reune 11 Huesos y entregalos a Recolector del Sur #20.",
+      "description": "Reune 30 Huesos y entregalos a Recolector del Sur #20.",
       "stages": [
         {
-          "description": "Entrega 6 Huesos",
+          "description": "Entrega 30 Huesos",
           "target": "minecraft:bone",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_20_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_20_q03",
@@ -52809,23 +52809,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector del Sur #20",
-      "description": "Pesca 11 Salmones frescos para Recolector del Sur #20.",
+      "description": "Pesca 30 Salmones frescos para Recolector del Sur #20.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_20_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_21_q01",
@@ -52841,23 +52841,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Valle #21",
-      "description": "Carbonero del Valle #21 solicita 5 Menas de Diamante para sus trabajos.",
+      "description": "Carbonero del Valle #21 solicita 25 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 5 Menas de Diamante",
+          "description": "Extrae 25 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_21_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_21_q02",
@@ -52873,23 +52873,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Valle #21",
-      "description": "Reune 20 Cana de Azucar y entregalos a Carbonero del Valle #21.",
+      "description": "Reune 40 Cana de Azucar y entregalos a Carbonero del Valle #21.",
       "stages": [
         {
-          "description": "Entrega 8 Cana de Azucar",
+          "description": "Entrega 40 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_21_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_21_q03",
@@ -52905,23 +52905,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Valle #21",
-      "description": "Pesca 9 Bacalaos frescos para Carbonero del Valle #21.",
+      "description": "Pesca 30 Bacalaos frescos para Carbonero del Valle #21.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_21_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_21_q04",
@@ -52937,23 +52937,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Valle #21",
-      "description": "Carbonero del Valle #21 solicita 14 Menas de Oro para sus trabajos.",
+      "description": "Carbonero del Valle #21 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_21_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_22_q01",
@@ -52969,23 +52969,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Costa #22",
-      "description": "Cantero de la Costa #22 solicita 10 Menas de Hierro para sus trabajos.",
+      "description": "Cantero de la Costa #22 solicita 30 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Hierro",
+          "description": "Extrae 30 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_22_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_22_q02",
@@ -53001,23 +53001,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Costa #22",
-      "description": "Reune 16 Manzanas y entregalos a Cantero de la Costa #22.",
+      "description": "Reune 30 Manzanas y entregalos a Cantero de la Costa #22.",
       "stages": [
         {
-          "description": "Entrega 6 Manzanas",
+          "description": "Entrega 30 Manzanas",
           "target": "minecraft:apple",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_22_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_22_q03",
@@ -53033,23 +53033,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero de la Costa #22",
-      "description": "Pesca 12 Salmones frescos para Cantero de la Costa #22.",
+      "description": "Pesca 30 Salmones frescos para Cantero de la Costa #22.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_22_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_23_q01",
@@ -53065,23 +53065,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Norte #23",
-      "description": "Panadero del Norte #23 solicita 38 Troncos de Roble para sus trabajos.",
+      "description": "Panadero del Norte #23 solicita 40 Troncos de Roble para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Troncos de Roble",
+          "description": "Extrae 40 Troncos de Roble",
           "target": "minecraft:oak_log",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_23_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_23_q02",
@@ -53097,23 +53097,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Norte #23",
-      "description": "Reune 11 Manzanas y entregalos a Panadero del Norte #23.",
+      "description": "Reune 30 Manzanas y entregalos a Panadero del Norte #23.",
       "stages": [
         {
-          "description": "Entrega 6 Manzanas",
+          "description": "Entrega 30 Manzanas",
           "target": "minecraft:apple",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_23_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_23_q03",
@@ -53129,23 +53129,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero del Norte #23",
-      "description": "Pesca 3 Peces Tropicales frescos para Panadero del Norte #23.",
+      "description": "Pesca 15 Peces Tropicales frescos para Panadero del Norte #23.",
       "stages": [
         {
-          "description": "Pesca 3 Peces Tropicales",
+          "description": "Pesca 15 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 3
+          "amount": 15
         }
       ],
       "completedTag": "q_npc_rep_ext_23_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_24_q01",
@@ -53161,23 +53161,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador del Bosque #24",
-      "description": "Pescador del Bosque #24 solicita 18 Menas de Redstone para sus trabajos.",
+      "description": "Pescador del Bosque #24 solicita 40 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Redstone",
+          "description": "Extrae 40 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_24_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_24_q02",
@@ -53193,23 +53193,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador del Bosque #24",
-      "description": "Reune 23 Plumas y entregalos a Pescador del Bosque #24.",
+      "description": "Reune 40 Plumas y entregalos a Pescador del Bosque #24.",
       "stages": [
         {
-          "description": "Entrega 8 Plumas",
+          "description": "Entrega 40 Plumas",
           "target": "minecraft:feather",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_24_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_24_q03",
@@ -53225,23 +53225,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador del Bosque #24",
-      "description": "Pesca 6 Peces Tropicales frescos para Pescador del Bosque #24.",
+      "description": "Pesca 30 Peces Tropicales frescos para Pescador del Bosque #24.",
       "stages": [
         {
-          "description": "Pesca 6 Peces Tropicales",
+          "description": "Pesca 30 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_24_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_24_q04",
@@ -53257,23 +53257,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador del Bosque #24",
-      "description": "Pescador del Bosque #24 solicita 6 Menas de Oro para sus trabajos.",
+      "description": "Pescador del Bosque #24 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_24_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_25_q01",
@@ -53289,23 +53289,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno de la Colina #25",
-      "description": "Cazador Nocturno de la Colina #25 solicita 15 Menas de Cobre para sus trabajos.",
+      "description": "Cazador Nocturno de la Colina #25 solicita 30 Menas de Cobre para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Cobre",
+          "description": "Extrae 30 Menas de Cobre",
           "target": "minecraft:copper_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_25_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_25_q02",
@@ -53321,23 +53321,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno de la Colina #25",
-      "description": "Reune 16 Polvora y entregalos a Cazador Nocturno de la Colina #25.",
+      "description": "Reune 30 Polvora y entregalos a Cazador Nocturno de la Colina #25.",
       "stages": [
         {
-          "description": "Entrega 6 Polvora",
+          "description": "Entrega 30 Polvora",
           "target": "minecraft:gunpowder",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_25_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_25_q03",
@@ -53353,23 +53353,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno de la Colina #25",
-      "description": "Pesca 11 Salmones frescos para Cazador Nocturno de la Colina #25.",
+      "description": "Pesca 30 Salmones frescos para Cazador Nocturno de la Colina #25.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_25_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_25_q04",
@@ -53385,23 +53385,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno de la Colina #25",
-      "description": "Cazador Nocturno de la Colina #25 solicita 11 Menas de Lapislazuli para sus trabajos.",
+      "description": "Cazador Nocturno de la Colina #25 solicita 30 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Lapislazuli",
+          "description": "Extrae 30 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_25_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_26_q01",
@@ -53417,23 +53417,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Rio #26",
-      "description": "Granjero del Rio #26 solicita 22 Menas de Hierro para sus trabajos.",
+      "description": "Granjero del Rio #26 solicita 40 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Hierro",
+          "description": "Extrae 40 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_26_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_26_q02",
@@ -53449,23 +53449,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Rio #26",
-      "description": "Reune 42 Trigo y entregalos a Granjero del Rio #26.",
+      "description": "Reune 40 Trigo y entregalos a Granjero del Rio #26.",
       "stages": [
         {
-          "description": "Entrega 8 Trigo",
+          "description": "Entrega 40 Trigo",
           "target": "minecraft:wheat",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_26_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_26_q03",
@@ -53481,23 +53481,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Rio #26",
-      "description": "Pesca 4 Peces Tropicales frescos para Granjero del Rio #26.",
+      "description": "Pesca 20 Peces Tropicales frescos para Granjero del Rio #26.",
       "stages": [
         {
-          "description": "Pesca 4 Peces Tropicales",
+          "description": "Pesca 20 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_26_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_26_q04",
@@ -53513,23 +53513,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero del Rio #26",
-      "description": "Granjero del Rio #26 solicita 14 Menas de Carbon para sus trabajos.",
+      "description": "Granjero del Rio #26 solicita 30 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Carbon",
+          "description": "Extrae 30 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_26_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_27_q01",
@@ -53545,7 +53545,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
@@ -53554,14 +53554,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de roble oscuro",
+          "description": "Entrega 40x Tronco de roble oscuro",
           "target": "minecraft:dark_oak_log",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_27_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_27_q02",
@@ -53577,7 +53577,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
@@ -53586,14 +53586,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 32x Palos",
+          "description": "Entrega 160x Palos",
           "target": "minecraft:stick",
-          "amount": 32
+          "amount": 160
         }
       ],
       "completedTag": "q_npc_rep_ext_27_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_27_q03",
@@ -53609,7 +53609,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
@@ -53618,14 +53618,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 2x Fogata",
+          "description": "Entrega 10x Fogata",
           "target": "minecraft:campfire",
-          "amount": 2
+          "amount": 10
         }
       ],
       "completedTag": "q_npc_rep_ext_27_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_28_q01",
@@ -53641,23 +53641,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Paso #28",
-      "description": "Cocinero del Paso #28 solicita 17 Menas de Redstone para sus trabajos.",
+      "description": "Cocinero del Paso #28 solicita 40 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Redstone",
+          "description": "Extrae 40 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_28_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_28_q02",
@@ -53673,23 +53673,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Paso #28",
-      "description": "Reune 13 Plumas y entregalos a Cocinero del Paso #28.",
+      "description": "Reune 30 Plumas y entregalos a Cocinero del Paso #28.",
       "stages": [
         {
-          "description": "Entrega 6 Plumas",
+          "description": "Entrega 30 Plumas",
           "target": "minecraft:feather",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_28_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_28_q03",
@@ -53705,23 +53705,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Paso #28",
-      "description": "Pesca 6 Peces Tropicales frescos para Cocinero del Paso #28.",
+      "description": "Pesca 30 Peces Tropicales frescos para Cocinero del Paso #28.",
       "stages": [
         {
-          "description": "Pesca 6 Peces Tropicales",
+          "description": "Pesca 30 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_28_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_28_q04",
@@ -53737,23 +53737,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Paso #28",
-      "description": "Cocinero del Paso #28 solicita 18 Menas de Redstone para sus trabajos.",
+      "description": "Cocinero del Paso #28 solicita 40 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Redstone",
+          "description": "Extrae 40 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_28_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_29_q01",
@@ -53769,23 +53769,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Pradera #29",
-      "description": "Apicultor de la Pradera #29 solicita 8 Menas de Oro para sus trabajos.",
+      "description": "Apicultor de la Pradera #29 solicita 40 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Oro",
+          "description": "Extrae 40 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_29_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_29_q02",
@@ -53801,23 +53801,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Pradera #29",
-      "description": "Reune 17 Cana de Azucar y entregalos a Apicultor de la Pradera #29.",
+      "description": "Reune 40 Cana de Azucar y entregalos a Apicultor de la Pradera #29.",
       "stages": [
         {
-          "description": "Entrega 8 Cana de Azucar",
+          "description": "Entrega 40 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_29_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_29_q03",
@@ -53833,23 +53833,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor de la Pradera #29",
-      "description": "Pesca 2 Peces Tropicales frescos para Apicultor de la Pradera #29.",
+      "description": "Pesca 10 Peces Tropicales frescos para Apicultor de la Pradera #29.",
       "stages": [
         {
-          "description": "Pesca 2 Peces Tropicales",
+          "description": "Pesca 10 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 2
+          "amount": 10
         }
       ],
       "completedTag": "q_npc_rep_ext_29_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_30_q01",
@@ -53865,23 +53865,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Roble #30",
-      "description": "Pastor del Roble #30 solicita 16 Menas de Oro para sus trabajos.",
+      "description": "Pastor del Roble #30 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_30_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_30_q02",
@@ -53897,23 +53897,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Roble #30",
-      "description": "Reune 9 Polvora y entregalos a Pastor del Roble #30.",
+      "description": "Reune 30 Polvora y entregalos a Pastor del Roble #30.",
       "stages": [
         {
-          "description": "Entrega 6 Polvora",
+          "description": "Entrega 30 Polvora",
           "target": "minecraft:gunpowder",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_30_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_30_q03",
@@ -53929,23 +53929,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Roble #30",
-      "description": "Pesca 10 Bacalaos frescos para Pastor del Roble #30.",
+      "description": "Pesca 30 Bacalaos frescos para Pastor del Roble #30.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_30_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_30_q04",
@@ -53961,23 +53961,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Roble #30",
-      "description": "Pastor del Roble #30 solicita 6 Menas de Redstone para sus trabajos.",
+      "description": "Pastor del Roble #30 solicita 30 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Redstone",
+          "description": "Extrae 30 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_30_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_31_q01",
@@ -53993,23 +53993,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Mina #31",
-      "description": "Recolector de la Mina #31 solicita 12 Menas de Oro para sus trabajos.",
+      "description": "Recolector de la Mina #31 solicita 30 Menas de Oro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Oro",
+          "description": "Extrae 30 Menas de Oro",
           "target": "minecraft:gold_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_31_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_31_q02",
@@ -54025,23 +54025,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Mina #31",
-      "description": "Reune 6 Polvora y entregalos a Recolector de la Mina #31.",
+      "description": "Reune 30 Polvora y entregalos a Recolector de la Mina #31.",
       "stages": [
         {
-          "description": "Entrega 6 Polvora",
+          "description": "Entrega 30 Polvora",
           "target": "minecraft:gunpowder",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_31_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_31_q03",
@@ -54057,23 +54057,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Mina #31",
-      "description": "Pesca 5 Peces Tropicales frescos para Recolector de la Mina #31.",
+      "description": "Pesca 25 Peces Tropicales frescos para Recolector de la Mina #31.",
       "stages": [
         {
-          "description": "Pesca 5 Peces Tropicales",
+          "description": "Pesca 25 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_31_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_32_q01",
@@ -54089,23 +54089,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Puerto #32",
-      "description": "Carbonero del Puerto #32 solicita 17 Menas de Redstone para sus trabajos.",
+      "description": "Carbonero del Puerto #32 solicita 40 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Redstone",
+          "description": "Extrae 40 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_32_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_32_q02",
@@ -54121,23 +54121,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Puerto #32",
-      "description": "Reune 17 Filetes Cocidos y entregalos a Carbonero del Puerto #32.",
+      "description": "Reune 40 Filetes Cocidos y entregalos a Carbonero del Puerto #32.",
       "stages": [
         {
-          "description": "Entrega 8 Filetes Cocidos",
+          "description": "Entrega 40 Filetes Cocidos",
           "target": "minecraft:cooked_beef",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_32_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_32_q03",
@@ -54153,23 +54153,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Puerto #32",
-      "description": "Pesca 13 Bacalaos frescos para Carbonero del Puerto #32.",
+      "description": "Pesca 30 Bacalaos frescos para Carbonero del Puerto #32.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_32_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_33_q01",
@@ -54185,23 +54185,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero Errante #33",
-      "description": "Cantero Errante #33 solicita 7 Menas de Lapislazuli para sus trabajos.",
+      "description": "Cantero Errante #33 solicita 35 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 7 Menas de Lapislazuli",
+          "description": "Extrae 35 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 7
+          "amount": 35
         }
       ],
       "completedTag": "q_npc_rep_ext_33_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_33_q02",
@@ -54217,23 +54217,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero Errante #33",
-      "description": "Reune 27 Cana de Azucar y entregalos a Cantero Errante #33.",
+      "description": "Reune 40 Cana de Azucar y entregalos a Cantero Errante #33.",
       "stages": [
         {
-          "description": "Entrega 8 Cana de Azucar",
+          "description": "Entrega 40 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_33_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_33_q03",
@@ -54249,23 +54249,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero Errante #33",
-      "description": "Pesca 6 Salmones frescos para Cantero Errante #33.",
+      "description": "Pesca 30 Salmones frescos para Cantero Errante #33.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_33_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_33_q04",
@@ -54281,23 +54281,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero Errante #33",
-      "description": "Cantero Errante #33 solicita 22 Menas de Cobre para sus trabajos.",
+      "description": "Cantero Errante #33 solicita 40 Menas de Cobre para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Cobre",
+          "description": "Extrae 40 Menas de Cobre",
           "target": "minecraft:copper_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_33_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_34_q01",
@@ -54313,23 +54313,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero Veterano #34",
-      "description": "Panadero Veterano #34 solicita 11 Menas de Lapislazuli para sus trabajos.",
+      "description": "Panadero Veterano #34 solicita 30 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Lapislazuli",
+          "description": "Extrae 30 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_34_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_34_q02",
@@ -54345,23 +54345,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero Veterano #34",
-      "description": "Reune 11 Plumas y entregalos a Panadero Veterano #34.",
+      "description": "Reune 30 Plumas y entregalos a Panadero Veterano #34.",
       "stages": [
         {
-          "description": "Entrega 6 Plumas",
+          "description": "Entrega 30 Plumas",
           "target": "minecraft:feather",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_34_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_34_q03",
@@ -54377,23 +54377,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero Veterano #34",
-      "description": "Pesca 9 Salmones frescos para Panadero Veterano #34.",
+      "description": "Pesca 30 Salmones frescos para Panadero Veterano #34.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_34_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_35_q01",
@@ -54409,23 +54409,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Aprendiz #35",
-      "description": "Pescador Aprendiz #35 solicita 9 Menas de Redstone para sus trabajos.",
+      "description": "Pescador Aprendiz #35 solicita 30 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Redstone",
+          "description": "Extrae 30 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_35_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_35_q02",
@@ -54441,23 +54441,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Aprendiz #35",
-      "description": "Reune 7 Manzanas y entregalos a Pescador Aprendiz #35.",
+      "description": "Reune 35 Manzanas y entregalos a Pescador Aprendiz #35.",
       "stages": [
         {
-          "description": "Entrega 7 Manzanas",
+          "description": "Entrega 35 Manzanas",
           "target": "minecraft:apple",
           "type": "ITEM",
-          "amount": 7
+          "amount": 35
         }
       ],
       "completedTag": "q_npc_rep_ext_35_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_35_q03",
@@ -54473,23 +54473,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Aprendiz #35",
-      "description": "Pesca 4 Peces Tropicales frescos para Pescador Aprendiz #35.",
+      "description": "Pesca 20 Peces Tropicales frescos para Pescador Aprendiz #35.",
       "stages": [
         {
-          "description": "Pesca 4 Peces Tropicales",
+          "description": "Pesca 20 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_35_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_35_q04",
@@ -54505,23 +54505,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pescador Aprendiz #35",
-      "description": "Pescador Aprendiz #35 solicita 17 Menas de Redstone para sus trabajos.",
+      "description": "Pescador Aprendiz #35 solicita 40 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Redstone",
+          "description": "Extrae 40 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_35_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_36_q01",
@@ -54537,23 +54537,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Maestro #36",
-      "description": "Cazador Nocturno Maestro #36 solicita 5 Menas de Diamante para sus trabajos.",
+      "description": "Cazador Nocturno Maestro #36 solicita 25 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 5 Menas de Diamante",
+          "description": "Extrae 25 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_36_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_36_q02",
@@ -54569,23 +54569,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Maestro #36",
-      "description": "Reune 24 Cana de Azucar y entregalos a Cazador Nocturno Maestro #36.",
+      "description": "Reune 40 Cana de Azucar y entregalos a Cazador Nocturno Maestro #36.",
       "stages": [
         {
-          "description": "Entrega 8 Cana de Azucar",
+          "description": "Entrega 40 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_36_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_36_q03",
@@ -54601,23 +54601,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Maestro #36",
-      "description": "Pesca 4 Peces Tropicales frescos para Cazador Nocturno Maestro #36.",
+      "description": "Pesca 20 Peces Tropicales frescos para Cazador Nocturno Maestro #36.",
       "stages": [
         {
-          "description": "Pesca 4 Peces Tropicales",
+          "description": "Pesca 20 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_36_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_36_q04",
@@ -54633,23 +54633,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cazador Nocturno Maestro #36",
-      "description": "Cazador Nocturno Maestro #36 solicita 14 Menas de Carbon para sus trabajos.",
+      "description": "Cazador Nocturno Maestro #36 solicita 30 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Carbon",
+          "description": "Extrae 30 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_36_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_37_q01",
@@ -54665,23 +54665,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Solitario #37",
-      "description": "Granjero Solitario #37 solicita 6 Menas de Redstone para sus trabajos.",
+      "description": "Granjero Solitario #37 solicita 30 Menas de Redstone para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Redstone",
+          "description": "Extrae 30 Menas de Redstone",
           "target": "minecraft:redstone_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_37_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_37_q02",
@@ -54697,23 +54697,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Solitario #37",
-      "description": "Reune 10 Hilo y entregalos a Granjero Solitario #37.",
+      "description": "Reune 30 Hilo y entregalos a Granjero Solitario #37.",
       "stages": [
         {
-          "description": "Entrega 6 Hilo",
+          "description": "Entrega 30 Hilo",
           "target": "minecraft:string",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_37_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_37_q03",
@@ -54729,23 +54729,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Solitario #37",
-      "description": "Pesca 5 Peces Tropicales frescos para Granjero Solitario #37.",
+      "description": "Pesca 25 Peces Tropicales frescos para Granjero Solitario #37.",
       "stages": [
         {
-          "description": "Pesca 5 Peces Tropicales",
+          "description": "Pesca 25 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_37_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_37_q04",
@@ -54761,23 +54761,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Granjero Solitario #37",
-      "description": "Granjero Solitario #37 solicita 4 Menas de Diamante para sus trabajos.",
+      "description": "Granjero Solitario #37 solicita 20 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 4 Menas de Diamante",
+          "description": "Extrae 20 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_37_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_38_q01",
@@ -54793,7 +54793,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
@@ -54802,14 +54802,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de acacia",
+          "description": "Entrega 40x Tronco de acacia",
           "target": "minecraft:acacia_log",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_38_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_38_q02",
@@ -54825,7 +54825,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
@@ -54834,14 +54834,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Tronco de roble",
+          "description": "Entrega 40x Tronco de roble",
           "target": "minecraft:oak_log",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_38_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_38_q03",
@@ -54857,7 +54857,7 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
@@ -54866,14 +54866,14 @@
       "stages": [
         {
           "type": "ITEM",
-          "description": "Entrega 8x Carbón vegetal",
+          "description": "Entrega 40x Carbón vegetal",
           "target": "minecraft:charcoal",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_38_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_39_q01",
@@ -54889,23 +54889,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Este #39",
-      "description": "Cocinero del Este #39 solicita 2 Menas de Diamante para sus trabajos.",
+      "description": "Cocinero del Este #39 solicita 10 Menas de Diamante para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 2 Menas de Diamante",
+          "description": "Extrae 10 Menas de Diamante",
           "target": "minecraft:diamond_ore",
           "type": "MINE",
-          "amount": 2
+          "amount": 10
         }
       ],
       "completedTag": "q_npc_rep_ext_39_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_39_q02",
@@ -54921,23 +54921,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Este #39",
-      "description": "Reune 25 Cana de Azucar y entregalos a Cocinero del Este #39.",
+      "description": "Reune 40 Cana de Azucar y entregalos a Cocinero del Este #39.",
       "stages": [
         {
-          "description": "Entrega 8 Cana de Azucar",
+          "description": "Entrega 40 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_39_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_39_q03",
@@ -54953,23 +54953,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cocinero del Este #39",
-      "description": "Pesca 15 Bacalaos frescos para Cocinero del Este #39.",
+      "description": "Pesca 30 Bacalaos frescos para Cocinero del Este #39.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_39_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_40_q01",
@@ -54985,23 +54985,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Sur #40",
-      "description": "Apicultor del Sur #40 solicita 4 Menas de Lapislazuli para sus trabajos.",
+      "description": "Apicultor del Sur #40 solicita 20 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 4 Menas de Lapislazuli",
+          "description": "Extrae 20 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_40_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_40_q02",
@@ -55017,23 +55017,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Sur #40",
-      "description": "Reune 24 Trigo y entregalos a Apicultor del Sur #40.",
+      "description": "Reune 40 Trigo y entregalos a Apicultor del Sur #40.",
       "stages": [
         {
-          "description": "Entrega 8 Trigo",
+          "description": "Entrega 40 Trigo",
           "target": "minecraft:wheat",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_40_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_40_q03",
@@ -55049,23 +55049,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Apicultor del Sur #40",
-      "description": "Pesca 12 Bacalaos frescos para Apicultor del Sur #40.",
+      "description": "Pesca 30 Bacalaos frescos para Apicultor del Sur #40.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_40_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_41_q01",
@@ -55081,23 +55081,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Valle #41",
-      "description": "Pastor del Valle #41 solicita 24 Menas de Cobre para sus trabajos.",
+      "description": "Pastor del Valle #41 solicita 40 Menas de Cobre para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Cobre",
+          "description": "Extrae 40 Menas de Cobre",
           "target": "minecraft:copper_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_41_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_41_q02",
@@ -55113,23 +55113,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Valle #41",
-      "description": "Reune 15 Cana de Azucar y entregalos a Pastor del Valle #41.",
+      "description": "Reune 30 Cana de Azucar y entregalos a Pastor del Valle #41.",
       "stages": [
         {
-          "description": "Entrega 6 Cana de Azucar",
+          "description": "Entrega 30 Cana de Azucar",
           "target": "minecraft:sugar_cane",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_41_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_41_q03",
@@ -55145,23 +55145,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Pastor del Valle #41",
-      "description": "Pesca 11 Salmones frescos para Pastor del Valle #41.",
+      "description": "Pesca 30 Salmones frescos para Pastor del Valle #41.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_41_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_42_q01",
@@ -55177,23 +55177,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Costa #42",
-      "description": "Recolector de la Costa #42 solicita 19 Menas de Carbon para sus trabajos.",
+      "description": "Recolector de la Costa #42 solicita 40 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Carbon",
+          "description": "Extrae 40 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_42_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_42_q02",
@@ -55209,23 +55209,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Costa #42",
-      "description": "Reune 18 Huesos y entregalos a Recolector de la Costa #42.",
+      "description": "Reune 40 Huesos y entregalos a Recolector de la Costa #42.",
       "stages": [
         {
-          "description": "Entrega 8 Huesos",
+          "description": "Entrega 40 Huesos",
           "target": "minecraft:bone",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_42_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_42_q03",
@@ -55241,23 +55241,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Costa #42",
-      "description": "Pesca 10 Salmones frescos para Recolector de la Costa #42.",
+      "description": "Pesca 30 Salmones frescos para Recolector de la Costa #42.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_42_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_42_q04",
@@ -55273,23 +55273,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Recolector de la Costa #42",
-      "description": "Recolector de la Costa #42 solicita 18 Menas de Hierro para sus trabajos.",
+      "description": "Recolector de la Costa #42 solicita 40 Menas de Hierro para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Hierro",
+          "description": "Extrae 40 Menas de Hierro",
           "target": "minecraft:iron_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_42_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_43_q01",
@@ -55305,23 +55305,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Norte #43",
-      "description": "Carbonero del Norte #43 solicita 31 Menas de Carbon para sus trabajos.",
+      "description": "Carbonero del Norte #43 solicita 40 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Carbon",
+          "description": "Extrae 40 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_43_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_43_q02",
@@ -55337,23 +55337,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Norte #43",
-      "description": "Reune 8 Bolas de Slime y entregalos a Carbonero del Norte #43.",
+      "description": "Reune 40 Bolas de Slime y entregalos a Carbonero del Norte #43.",
       "stages": [
         {
-          "description": "Entrega 8 Bolas de Slime",
+          "description": "Entrega 40 Bolas de Slime",
           "target": "minecraft:slime_ball",
           "type": "ITEM",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_43_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_43_q03",
@@ -55369,23 +55369,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Norte #43",
-      "description": "Pesca 14 Bacalaos frescos para Carbonero del Norte #43.",
+      "description": "Pesca 30 Bacalaos frescos para Carbonero del Norte #43.",
       "stages": [
         {
-          "description": "Pesca 6 Bacalaos",
+          "description": "Pesca 30 Bacalaos",
           "target": "minecraft:cod",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_43_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_43_q04",
@@ -55401,23 +55401,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Carbonero del Norte #43",
-      "description": "Carbonero del Norte #43 solicita 6 Menas de Lapislazuli para sus trabajos.",
+      "description": "Carbonero del Norte #43 solicita 30 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 6 Menas de Lapislazuli",
+          "description": "Extrae 30 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_43_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_44_q01",
@@ -55433,23 +55433,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero del Bosque #44",
-      "description": "Cantero del Bosque #44 solicita 37 Troncos de Roble para sus trabajos.",
+      "description": "Cantero del Bosque #44 solicita 40 Troncos de Roble para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Troncos de Roble",
+          "description": "Extrae 40 Troncos de Roble",
           "target": "minecraft:oak_log",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_44_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_44_q02",
@@ -55465,23 +55465,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero del Bosque #44",
-      "description": "Reune 13 Filetes Cocidos y entregalos a Cantero del Bosque #44.",
+      "description": "Reune 30 Filetes Cocidos y entregalos a Cantero del Bosque #44.",
       "stages": [
         {
-          "description": "Entrega 6 Filetes Cocidos",
+          "description": "Entrega 30 Filetes Cocidos",
           "target": "minecraft:cooked_beef",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_44_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_44_q03",
@@ -55497,23 +55497,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 5
+          "count": 25
         }
       ],
       "category": "REPEATABLE",
       "npc": "Cantero del Bosque #44",
-      "description": "Pesca 5 Peces Tropicales frescos para Cantero del Bosque #44.",
+      "description": "Pesca 25 Peces Tropicales frescos para Cantero del Bosque #44.",
       "stages": [
         {
-          "description": "Pesca 5 Peces Tropicales",
+          "description": "Pesca 25 Peces Tropicales",
           "target": "minecraft:tropical_fish",
           "type": "FISH",
-          "amount": 5
+          "amount": 25
         }
       ],
       "completedTag": "q_npc_rep_ext_44_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_45_q01",
@@ -55529,23 +55529,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero de la Colina #45",
-      "description": "Panadero de la Colina #45 solicita 26 Menas de Carbon para sus trabajos.",
+      "description": "Panadero de la Colina #45 solicita 40 Menas de Carbon para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 8 Menas de Carbon",
+          "description": "Extrae 40 Menas de Carbon",
           "target": "minecraft:coal_ore",
           "type": "MINE",
-          "amount": 8
+          "amount": 40
         }
       ],
       "completedTag": "q_npc_rep_ext_45_q01_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_45_q02",
@@ -55561,23 +55561,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero de la Colina #45",
-      "description": "Reune 9 Manzanas y entregalos a Panadero de la Colina #45.",
+      "description": "Reune 30 Manzanas y entregalos a Panadero de la Colina #45.",
       "stages": [
         {
-          "description": "Entrega 6 Manzanas",
+          "description": "Entrega 30 Manzanas",
           "target": "minecraft:apple",
           "type": "ITEM",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_45_q02_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     },
     {
       "id": "npc_rep_ext_45_q03",
@@ -55593,23 +55593,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 3
+          "count": 15
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero de la Colina #45",
-      "description": "Pesca 12 Salmones frescos para Panadero de la Colina #45.",
+      "description": "Pesca 30 Salmones frescos para Panadero de la Colina #45.",
       "stages": [
         {
-          "description": "Pesca 6 Salmones",
+          "description": "Pesca 30 Salmones",
           "target": "minecraft:salmon",
           "type": "FISH",
-          "amount": 6
+          "amount": 30
         }
       ],
       "completedTag": "q_npc_rep_ext_45_q03_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 3
+      "rewardXpLevels": 15
     },
     {
       "id": "npc_rep_ext_45_q04",
@@ -55625,23 +55625,23 @@
       "rewardItems": [
         {
           "id": "cisco_mod:champion_coin",
-          "count": 2
+          "count": 10
         }
       ],
       "category": "REPEATABLE",
       "npc": "Panadero de la Colina #45",
-      "description": "Panadero de la Colina #45 solicita 4 Menas de Lapislazuli para sus trabajos.",
+      "description": "Panadero de la Colina #45 solicita 20 Menas de Lapislazuli para sus trabajos.",
       "stages": [
         {
-          "description": "Extrae 4 Menas de Lapislazuli",
+          "description": "Extrae 20 Menas de Lapislazuli",
           "target": "minecraft:lapis_ore",
           "type": "MINE",
-          "amount": 4
+          "amount": 20
         }
       ],
       "completedTag": "q_npc_rep_ext_45_q04_fin",
       "rewardXp": 0,
-      "rewardXpLevels": 4
+      "rewardXpLevels": 20
     }
   ],
   "challenges": [
@@ -55660,8 +55660,8 @@
           "nbt": ""
         },
         {
-          "id": "apotheosis:mythic_material",
-          "count": 3,
+          "id": "apotheotic_additions:esoteric_material",
+          "count": 9,
           "nbt": ""
         },
         {
@@ -55682,10 +55682,35 @@
       ],
       "tooltips": [
         "2x Champion Loot Bag",
-        "3x Godforged Pearl",
+        "9x Galactic Core",
         "7x Epic Material",
         "1x Sigil of Socketing",
         "Gema Epica (Warlord)"
+      ]
+    },
+    {
+      "id": "warden",
+      "title": "Jefe Mundial: El Warden",
+      "description": "Derrota 3 Wardens en las profundidades. Recompensa cada 6 horas reales.",
+      "iconItem": "minecraft:echo_shard",
+      "objective": "Elimina 3x Warden",
+      "cooldownHours": 6,
+      "xpLevels": 30,
+      "rewardItems": [
+        {
+          "id": "cisco_mod:champion_loot_bag",
+          "count": 6,
+          "nbt": ""
+        },
+        {
+          "id": "apotheotic_additions:esoteric_material",
+          "count": 9,
+          "nbt": ""
+        }
+      ],
+      "tooltips": [
+        "6x Champion Loot Bag",
+        "9x Galactic Core"
       ]
     }
   ]
