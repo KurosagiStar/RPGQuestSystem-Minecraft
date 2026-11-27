@@ -56,6 +56,7 @@ public class RPGQuestEngine {
     public RPGQuestEngine() {
         INSTANCE = this;
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        PurityCubeItem.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
