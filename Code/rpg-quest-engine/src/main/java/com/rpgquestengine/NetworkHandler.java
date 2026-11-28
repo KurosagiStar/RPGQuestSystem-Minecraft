@@ -79,6 +79,10 @@ public class NetworkHandler {
                 SyncQuestConfigPacket::encode,
                 SyncQuestConfigPacket::decode,
                 SyncQuestConfigPacket::handle);
+        CHANNEL.registerMessage(id++, RerollReforgePacket.class,
+                RerollReforgePacket::encode,
+                RerollReforgePacket::decode,
+                RerollReforgePacket::handle);
     }
 }
 

@@ -353,6 +353,124 @@ public class QuestEventListener {
     }
 
     @SubscribeEvent
+    public static void onContainerOpen(net.minecraftforge.event.entity.player.PlayerContainerEvent.Open event) {
+        if (!(event.getEntity() instanceof ServerPlayer)) return;
+        var menu = event.getContainer();
+        if (menu == null) return;
+
+        boolean isIronFurnace = false;
+        for (Class<?> c = menu.getClass(); c != null && c != Object.class; c = c.getSuperclass()) {
+            if ("ironfurnaces.container.furnaces.BlockIronFurnaceContainerBase".equals(c.getName())) {
+                isIronFurnace = true;
+                break;
+            }
+        }
+        if (!isIronFurnace) return;
+
+        for (int i = 0; i < menu.slots.size(); i++) {
+            net.minecraft.world.inventory.Slot orig = menu.slots.get(i);
+            if (orig == null) continue;
+            String cls = orig.getClass().getName();
+            if ("ironfurnaces.container.slots.SlotIronFurnace".equals(cls)
+                    || "ironfurnaces.container.slots.SlotIronFurnaceOutputFactory".equals(cls)) {
+                IronFurnaceSlotWrapper wrapper = new IronFurnaceSlotWrapper(orig);
+                wrapper.index = orig.index;
+                menu.slots.set(i, wrapper);
+            }
+        }
+    }
+
+    private static class IronFurnaceSlotWrapper extends net.minecraft.world.inventory.Slot {
+        private final net.minecraft.world.inventory.Slot orig;
+        private ItemStack lastNonEmptySnapshot = ItemStack.EMPTY;
+        private boolean usedNormalRemove = false;
+
+        IronFurnaceSlotWrapper(net.minecraft.world.inventory.Slot orig) {
+            super(orig.container, orig.getContainerSlot(), orig.x, orig.y);
+            this.orig = orig;
+        }
+
+        @Override
+        public boolean isActive() {
+            return orig.isActive();
+        }
+
+        @Override
+        public boolean mayPlace(ItemStack stack) {
+            return orig.mayPlace(stack);
+        }
+
+        @Override
+        public boolean mayPickup(Player player) {
+            return orig.mayPickup(player);
+        }
+
+        @Override
+        public int getMaxStackSize() {
+            return orig.getMaxStackSize();
+        }
+
+        @Override
+        public int getMaxStackSize(ItemStack stack) {
+            return orig.getMaxStackSize(stack);
+        }
+
+        @Override
+        public boolean hasItem() {
+            return orig.hasItem();
+        }
+
+        @Override
+        public ItemStack getItem() {
+            ItemStack cur = orig.getItem();
+            if (!cur.isEmpty()) {
+                this.lastNonEmptySnapshot = cur.copy();
+            }
+            return cur;
+        }
+
+        @Override
+        public void set(ItemStack stack) {
+            orig.set(stack);
+        }
+
+        @Override
+        public void setByPlayer(ItemStack stack) {
+            orig.setByPlayer(stack);
+        }
+
+        @Override
+        public void setChanged() {
+            orig.setChanged();
+        }
+
+        @Override
+        public ItemStack remove(int amount) {
+            this.usedNormalRemove = true;
+            return orig.remove(amount);
+        }
+
+        @Override
+        public void onQuickCraft(ItemStack oldStack, ItemStack newStack) {
+            orig.onQuickCraft(oldStack, newStack);
+        }
+
+        @Override
+        public void onTake(Player player, ItemStack stack) {
+            boolean wasNormalRemove = this.usedNormalRemove;
+            this.usedNormalRemove = false;
+            ItemStack snapshot = this.lastNonEmptySnapshot;
+            this.lastNonEmptySnapshot = ItemStack.EMPTY;
+
+            orig.onTake(player, stack);
+
+            if (!wasNormalRemove && stack.isEmpty() && !snapshot.isEmpty() && !player.level().isClientSide()) {
+                net.minecraftforge.event.ForgeEventFactory.firePlayerSmeltedEvent(player, snapshot);
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void onItemSmelted(PlayerEvent.ItemSmeltedEvent event) {
         Player player = event.getEntity();
         if (player instanceof ServerPlayer sp) {

@@ -17,6 +17,7 @@ public class ClientPacketHandler {
         MinecraftForge.EVENT_BUS.register(new QuestHudOverlay());
         MinecraftForge.EVENT_BUS.register(new QuestTitleBannerOverlay());
         MinecraftForge.EVENT_BUS.register(new ClientKeyEvents());
+        MinecraftForge.EVENT_BUS.register(new ReforgingRerollClientHandler());
     }
 
     private static void onClientSetup(final FMLClientSetupEvent event) {
